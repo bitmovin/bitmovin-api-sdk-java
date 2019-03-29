@@ -1,0 +1,111 @@
+package com.bitmovin.api.sdk.encoding.inputs.http;
+
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+
+import feign.Param;
+import feign.QueryMap;
+import feign.RequestLine;
+import feign.Body;
+import feign.Headers;
+
+import com.bitmovin.api.sdk.model.*;
+import com.bitmovin.api.sdk.common.BitmovinException;
+import com.bitmovin.api.sdk.common.BitmovinDateExpander;
+import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
+import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
+import com.bitmovin.api.sdk.encoding.inputs.http.customdata.CustomdataApi;
+
+public class HttpApi {
+    public final CustomdataApi customdata;
+
+    private final HttpApiClient apiClient;
+
+    public HttpApi(BitmovinApiClientFactory clientFactory) {
+        if (clientFactory == null)
+        {
+            throw new IllegalArgumentException("Parameter 'clientFactory' may not be null.");
+        }
+
+        this.apiClient = clientFactory.createApiClient(HttpApiClient.class);
+
+        this.customdata = new CustomdataApi(clientFactory);
+    }
+
+    /**
+     * Fluent builder for creating an instance of HttpApi
+     */
+    public static BitmovinApiBuilder<HttpApi> builder() {
+        return new BitmovinApiBuilder<>(HttpApi.class);
+    }
+    
+    /**
+     * Create HTTP Input
+     * 
+     * @param httpInput The HTTP input to be created (optional)
+     * @return HttpInput
+     * @throws BitmovinException if fails to make API call
+     */
+    public HttpInput create(HttpInput httpInput) throws BitmovinException {
+        return this.apiClient.create(httpInput).getData().getResult();
+    }
+    
+    /**
+     * Delete HTTP Input
+     * 
+     * @param inputId Id of the input (required)
+     * @return HttpInput
+     * @throws BitmovinException if fails to make API call
+     */
+    public HttpInput delete(String inputId) throws BitmovinException {
+        return this.apiClient.delete(inputId).getData().getResult();
+    }
+    
+    /**
+     * HTTP Input Details
+     * 
+     * @param inputId Id of the input (required)
+     * @return HttpInput
+     * @throws BitmovinException if fails to make API call
+     */
+    public HttpInput get(String inputId) throws BitmovinException {
+        return this.apiClient.get(inputId).getData().getResult();
+    }
+    
+    /**
+     * List HTTP Inputs
+     * 
+     * @return List&lt;HttpInput&gt;
+     * @throws BitmovinException if fails to make API call
+     */
+    public PaginationResponse<HttpInput> list() throws BitmovinException {
+        return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+    }
+    /**
+     * List HTTP Inputs
+     * 
+     * @param queryParams The query parameters for sorting, filtering and paging options (optional)
+     * @return List&lt;HttpInput&gt;
+     * @throws BitmovinException if fails to make API call
+     */
+    public PaginationResponse<HttpInput> list(HttpInputListQueryParams queryParams) throws BitmovinException {
+        return this.apiClient.list(queryParams).getData().getResult();
+    }
+    
+    interface HttpApiClient {
+    
+        @RequestLine("POST /encoding/inputs/http")
+        ResponseEnvelope<HttpInput> create(HttpInput httpInput) throws BitmovinException;
+    
+        @RequestLine("DELETE /encoding/inputs/http/{input_id}")
+        ResponseEnvelope<HttpInput> delete(@Param(value = "input_id") String inputId) throws BitmovinException;
+    
+        @RequestLine("GET /encoding/inputs/http/{input_id}")
+        ResponseEnvelope<HttpInput> get(@Param(value = "input_id") String inputId) throws BitmovinException;
+    
+        @RequestLine("GET /encoding/inputs/http")
+        ResponseEnvelope<PaginationResponse<HttpInput>> list(@QueryMap Map<String, Object> queryParams) throws BitmovinException;
+    }
+}
