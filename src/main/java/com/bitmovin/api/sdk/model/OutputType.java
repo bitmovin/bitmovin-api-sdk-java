@@ -39,7 +39,10 @@ public enum OutputType {
   S3_ROLE_BASED("S3_ROLE_BASED"),
   
   
-  SFTP("SFTP");
+  SFTP("SFTP"),
+  
+  
+  AKAMAI_MSL("AKAMAI_MSL");
 
   private String value;
 

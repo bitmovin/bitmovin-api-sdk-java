@@ -20,7 +20,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.bitmovin.api.sdk</groupId>
   <artifactId>bitmovin-api-sdk</artifactId>
-  <version>1.12.0-alpha-1</version>
+  <version>1.13.0-alpha-0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -36,13 +36,13 @@ mvn clean install
 Add this dependency to your project's build file:
 
 ```groovy
-compile group: 'com.bitmovin.api.sdk', name= 'bitmovin-api-sdk', version: '1.12.0-alpha-1'
+compile group: 'com.bitmovin.api.sdk', name= 'bitmovin-api-sdk', version: '1.13.0-alpha-0'
 ```
 
 ## Initialization
 
 ```java
-import com.bitmovin.api.BitmovinApi;
+import com.bitmovin.api.sdk.BitmovinApi;
 
 BitmovinApi bitmovinApi = BitmovinApi.builder()
     .withApiKey("<YOUR_API_KEY>")

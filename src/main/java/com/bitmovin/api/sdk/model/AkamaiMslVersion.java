@@ -10,33 +10,16 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets MaxTransferUnitSize
+ * Gets or Sets AkamaiMslVersion
  */
-public enum MaxTransferUnitSize {
+public enum AkamaiMslVersion {
   
-  /**
-   * maximum 4x4 TU
-   */
-  MTU_4x4("MTU_4x4"),
   
-  /**
-   * maximum 8x8 TU
-   */
-  MTU_8x8("MTU_8x8"),
-  
-  /**
-   * maximum 16x16 TU
-   */
-  MTU_16x16("MTU_16x16"),
-  
-  /**
-   * maximum 32x32 TU
-   */
-  MTU_32x32("MTU_32x32");
+  MSL4("MSL4");
 
   private String value;
 
-  MaxTransferUnitSize(String value) {
+  AkamaiMslVersion(String value) {
     this.value = value;
   }
 
@@ -51,8 +34,8 @@ public enum MaxTransferUnitSize {
   }
 
   @JsonCreator
-  public static MaxTransferUnitSize fromValue(String text) {
-    for (MaxTransferUnitSize b : MaxTransferUnitSize.values()) {
+  public static AkamaiMslVersion fromValue(String text) {
+    for (AkamaiMslVersion b : AkamaiMslVersion.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

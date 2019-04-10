@@ -46,7 +46,7 @@ public class WidevineApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)
-     * @param widevineDrm TODO Add Description (optional)
+     * @param widevineDrm  (optional)
      * @return WidevineDrm
      * @throws BitmovinException if fails to make API call
      */
@@ -84,7 +84,7 @@ public class WidevineApi {
      * List Widevine DRMs of fMP4
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the fmp4 fragment. (required)
+     * @param muxingId Id of the fMP4 muxing (required)
      * @return List&lt;WidevineDrm&gt;
      * @throws BitmovinException if fails to make API call
      */
@@ -95,7 +95,7 @@ public class WidevineApi {
      * List Widevine DRMs of fMP4
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the fmp4 fragment. (required)
+     * @param muxingId Id of the fMP4 muxing (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;WidevineDrm&gt;
      * @throws BitmovinException if fails to make API call

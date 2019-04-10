@@ -22,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false)
 @JsonSubTypes({
   @JsonSubTypes.Type(value = Fmp4Muxing.class, name = "FMP4"),
+  @JsonSubTypes.Type(value = CmafMuxing.class, name = "CMAF"),
   @JsonSubTypes.Type(value = Mp4Muxing.class, name = "MP4"),
   @JsonSubTypes.Type(value = TsMuxing.class, name = "TS"),
   @JsonSubTypes.Type(value = WebmMuxing.class, name = "WEBM"),

@@ -7,8 +7,6 @@ import com.bitmovin.api.sdk.model.CodecConfigType;
 import com.bitmovin.api.sdk.model.EncodingMode;
 import com.bitmovin.api.sdk.model.PsnrPerStreamMode;
 import com.bitmovin.api.sdk.model.StatisticsPerTitleStream;
-import java.util.ArrayList;
-import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -30,8 +28,8 @@ public class BillableEncodingMinutes {
   @JsonProperty("psnrMode")
   private PsnrPerStreamMode psnrMode = null;
 
-  @JsonProperty("billableMinutesDetails")
-  private List<BillableEncodingMinutesDetails> billableMinutesDetails = new ArrayList<BillableEncodingMinutesDetails>();
+  @JsonProperty("billableMinutes")
+  private BillableEncodingMinutesDetails billableMinutes = null;
 
 
   /**
@@ -85,12 +83,17 @@ public class BillableEncodingMinutes {
     this.psnrMode = psnrMode;
   }
 
+
   /**
-   * Details about billable minutes for each resolution category
-   * @return billableMinutesDetails
+   * Get billableMinutes
+   * @return billableMinutes
    */
-  public List<BillableEncodingMinutesDetails> getBillableMinutesDetails() {
-    return billableMinutesDetails;
+  public BillableEncodingMinutesDetails getBillableMinutes() {
+    return billableMinutes;
+  }
+
+  public void setBillableMinutes(BillableEncodingMinutesDetails billableMinutes) {
+    this.billableMinutes = billableMinutes;
   }
 
 
@@ -107,12 +110,12 @@ public class BillableEncodingMinutes {
         Objects.equals(this.codec, billableEncodingMinutes.codec) &&
         Objects.equals(this.perTitleResultStream, billableEncodingMinutes.perTitleResultStream) &&
         Objects.equals(this.psnrMode, billableEncodingMinutes.psnrMode) &&
-        Objects.equals(this.billableMinutesDetails, billableEncodingMinutes.billableMinutesDetails);
+        Objects.equals(this.billableMinutes, billableEncodingMinutes.billableMinutes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(encodingMode, codec, perTitleResultStream, psnrMode, billableMinutesDetails);
+    return Objects.hash(encodingMode, codec, perTitleResultStream, psnrMode, billableMinutes);
   }
 
 
@@ -125,7 +128,7 @@ public class BillableEncodingMinutes {
     sb.append("    codec: ").append(toIndentedString(codec)).append("\n");
     sb.append("    perTitleResultStream: ").append(toIndentedString(perTitleResultStream)).append("\n");
     sb.append("    psnrMode: ").append(toIndentedString(psnrMode)).append("\n");
-    sb.append("    billableMinutesDetails: ").append(toIndentedString(billableMinutesDetails)).append("\n");
+    sb.append("    billableMinutes: ").append(toIndentedString(billableMinutes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

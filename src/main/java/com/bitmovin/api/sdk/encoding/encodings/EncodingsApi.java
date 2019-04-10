@@ -17,6 +17,7 @@ import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.encodings.live.LiveApi;
+import com.bitmovin.api.sdk.encoding.encodings.machineLearning.MachineLearningApi;
 import com.bitmovin.api.sdk.encoding.encodings.customdata.CustomdataApi;
 import com.bitmovin.api.sdk.encoding.encodings.streams.StreamsApi;
 import com.bitmovin.api.sdk.encoding.encodings.inputStreams.InputStreamsApi;
@@ -28,6 +29,7 @@ import com.bitmovin.api.sdk.encoding.encodings.keyframes.KeyframesApi;
 
 public class EncodingsApi {
     public final LiveApi live;
+    public final MachineLearningApi machineLearning;
     public final CustomdataApi customdata;
     public final StreamsApi streams;
     public final InputStreamsApi inputStreams;
@@ -48,6 +50,7 @@ public class EncodingsApi {
         this.apiClient = clientFactory.createApiClient(EncodingsApiClient.class);
 
         this.live = new LiveApi(clientFactory);
+        this.machineLearning = new MachineLearningApi(clientFactory);
         this.customdata = new CustomdataApi(clientFactory);
         this.streams = new StreamsApi(clientFactory);
         this.inputStreams = new InputStreamsApi(clientFactory);

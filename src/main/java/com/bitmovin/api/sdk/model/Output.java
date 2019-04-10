@@ -27,6 +27,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
   @JsonSubTypes.Type(value = S3Output.class, name = "S3"),
   @JsonSubTypes.Type(value = S3RoleBasedOutput.class, name = "S3_ROLE_BASED"),
   @JsonSubTypes.Type(value = SftpOutput.class, name = "SFTP"),
+  @JsonSubTypes.Type(value = AkamaiMslOutput.class, name = "AKAMAI_MSL"),
 })
 
 public class Output extends BitmovinResource {

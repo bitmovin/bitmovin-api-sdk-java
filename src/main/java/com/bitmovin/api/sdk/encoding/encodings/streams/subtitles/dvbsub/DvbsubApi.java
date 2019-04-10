@@ -59,7 +59,7 @@ public class DvbsubApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
-     * @param subtitleId TODO Add description (required)
+     * @param subtitleId Id of the subtitle. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */

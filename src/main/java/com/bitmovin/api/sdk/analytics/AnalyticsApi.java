@@ -5,11 +5,13 @@ import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.analytics.impressions.ImpressionsApi;
 import com.bitmovin.api.sdk.analytics.queries.QueriesApi;
 import com.bitmovin.api.sdk.analytics.licenses.LicensesApi;
+import com.bitmovin.api.sdk.analytics.outputs.OutputsApi;
 
 public class AnalyticsApi {
     public final ImpressionsApi impressions;
     public final QueriesApi queries;
     public final LicensesApi licenses;
+    public final OutputsApi outputs;
 
     public AnalyticsApi(BitmovinApiClientFactory clientFactory) {
         if (clientFactory == null)
@@ -20,6 +22,7 @@ public class AnalyticsApi {
         this.impressions = new ImpressionsApi(clientFactory);
         this.queries = new QueriesApi(clientFactory);
         this.licenses = new LicensesApi(clientFactory);
+        this.outputs = new OutputsApi(clientFactory);
     }
 
     /**

@@ -46,7 +46,7 @@ public class PrimetimeApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)
-     * @param primeTimeDrm TODO Add Description (optional)
+     * @param primeTimeDrm  (optional)
      * @return PrimeTimeDrm
      * @throws BitmovinException if fails to make API call
      */
@@ -58,7 +58,7 @@ public class PrimetimeApi {
      * Delete PrimeTime DRM from fMP4
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the fmp4 fragment. (required)
+     * @param muxingId Id of the fMP4 muxing (required)
      * @param drmId Id of the PrimeTime DRM configuration. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
@@ -71,7 +71,7 @@ public class PrimetimeApi {
      * PrimeTime DRM Details of fMP4
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the fmp4 fragment. (required)
+     * @param muxingId Id of the fMP4 muxing (required)
      * @param drmId Id of the PrimeTime DRM configuration. (required)
      * @return PrimeTimeDrm
      * @throws BitmovinException if fails to make API call
@@ -84,7 +84,7 @@ public class PrimetimeApi {
      * List PrimeTime DRMs of fMP4
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the fmp4 fragment. (required)
+     * @param muxingId Id of the fMP4 muxing (required)
      * @return List&lt;PrimeTimeDrm&gt;
      * @throws BitmovinException if fails to make API call
      */
@@ -95,7 +95,7 @@ public class PrimetimeApi {
      * List PrimeTime DRMs of fMP4
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the fmp4 fragment. (required)
+     * @param muxingId Id of the fMP4 muxing (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;PrimeTimeDrm&gt;
      * @throws BitmovinException if fails to make API call

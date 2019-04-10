@@ -12,30 +12,30 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class BillableEncodingMinutesDetails {
   @JsonProperty("UNKNOWN")
-  private Long UNKNOWN;
+  private Double UNKNOWN;
 
   @JsonProperty("AUDIO")
-  private Long AUDIO;
+  private Double AUDIO;
 
   @JsonProperty("SD")
-  private Long SD;
+  private Double SD;
 
   @JsonProperty("HD")
-  private Long HD;
+  private Double HD;
 
   @JsonProperty("UHD")
-  private Long UHD;
+  private Double UHD;
 
 
   /**
    * Only set if resolution information is not present.
    * @return UNKNOWN
    */
-  public Long getUNKNOWN() {
+  public Double getUNKNOWN() {
     return UNKNOWN;
   }
 
-  public void setUNKNOWN(Long UNKNOWN) {
+  public void setUNKNOWN(Double UNKNOWN) {
     this.UNKNOWN = UNKNOWN;
   }
 
@@ -44,11 +44,11 @@ public class BillableEncodingMinutesDetails {
    * Billable minutes for audio. Available if stream is an audio stream.
    * @return AUDIO
    */
-  public Long getAUDIO() {
+  public Double getAUDIO() {
     return AUDIO;
   }
 
-  public void setAUDIO(Long AUDIO) {
+  public void setAUDIO(Double AUDIO) {
     this.AUDIO = AUDIO;
   }
 
@@ -57,11 +57,11 @@ public class BillableEncodingMinutesDetails {
    * Billable minutes for SD resolutions.
    * @return SD
    */
-  public Long getSD() {
+  public Double getSD() {
     return SD;
   }
 
-  public void setSD(Long SD) {
+  public void setSD(Double SD) {
     this.SD = SD;
   }
 
@@ -70,11 +70,11 @@ public class BillableEncodingMinutesDetails {
    * Billable minutes for HD resolutions.
    * @return HD
    */
-  public Long getHD() {
+  public Double getHD() {
     return HD;
   }
 
-  public void setHD(Long HD) {
+  public void setHD(Double HD) {
     this.HD = HD;
   }
 
@@ -83,11 +83,11 @@ public class BillableEncodingMinutesDetails {
    * Billable minutes for UHD resolutions.
    * @return UHD
    */
-  public Long getUHD() {
+  public Double getUHD() {
     return UHD;
   }
 
-  public void setUHD(Long UHD) {
+  public void setUHD(Double UHD) {
     this.UHD = UHD;
   }
 

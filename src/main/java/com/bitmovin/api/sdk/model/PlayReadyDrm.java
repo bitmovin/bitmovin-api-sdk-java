@@ -26,6 +26,9 @@ public class PlayReadyDrm extends Drm {
   @JsonProperty("laUrl")
   private String laUrl;
 
+  @JsonProperty("pssh")
+  private String pssh;
+
   @JsonProperty("method")
   private PlayReadyEncryptionMethod method = null;
 
@@ -34,7 +37,7 @@ public class PlayReadyDrm extends Drm {
 
 
   /**
-   * 16 byte encryption key, 32 hexadecimal characters. Either key or keySeed is required.
+   * 16 byte encryption key, 32 hexadecimal characters. Either key or keySeed is required
    * @return key
    */
   public String getKey() {
@@ -47,7 +50,7 @@ public class PlayReadyDrm extends Drm {
 
 
   /**
-   * Key seed to generate key. Either key or keySeed is required.
+   * Key seed to generate key. Either key or keySeed is required
    * @return keySeed
    */
   public String getKeySeed() {
@@ -69,6 +72,19 @@ public class PlayReadyDrm extends Drm {
 
   public void setLaUrl(String laUrl) {
     this.laUrl = laUrl;
+  }
+
+
+  /**
+   * Base64 encoded pssh payload
+   * @return pssh
+   */
+  public String getPssh() {
+    return pssh;
+  }
+
+  public void setPssh(String pssh) {
+    this.pssh = pssh;
   }
 
 
@@ -110,6 +126,7 @@ public class PlayReadyDrm extends Drm {
     return Objects.equals(this.key, playReadyDrm.key) &&
         Objects.equals(this.keySeed, playReadyDrm.keySeed) &&
         Objects.equals(this.laUrl, playReadyDrm.laUrl) &&
+        Objects.equals(this.pssh, playReadyDrm.pssh) &&
         Objects.equals(this.method, playReadyDrm.method) &&
         Objects.equals(this.kid, playReadyDrm.kid) &&
         super.equals(o);
@@ -117,7 +134,7 @@ public class PlayReadyDrm extends Drm {
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, keySeed, laUrl, method, kid, super.hashCode());
+    return Objects.hash(key, keySeed, laUrl, pssh, method, kid, super.hashCode());
   }
 
 
@@ -129,6 +146,7 @@ public class PlayReadyDrm extends Drm {
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("    keySeed: ").append(toIndentedString(keySeed)).append("\n");
     sb.append("    laUrl: ").append(toIndentedString(laUrl)).append("\n");
+    sb.append("    pssh: ").append(toIndentedString(pssh)).append("\n");
     sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("    kid: ").append(toIndentedString(kid)).append("\n");
     sb.append("}");

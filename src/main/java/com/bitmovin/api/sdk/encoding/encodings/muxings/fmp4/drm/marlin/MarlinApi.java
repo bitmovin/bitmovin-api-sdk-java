@@ -46,7 +46,7 @@ public class MarlinApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)
-     * @param marlinDrm TODO Add Description (optional)
+     * @param marlinDrm  (optional)
      * @return MarlinDrm
      * @throws BitmovinException if fails to make API call
      */
@@ -58,7 +58,7 @@ public class MarlinApi {
      * Delete Marlin DRM from fMP4
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the fragmented mp4. (required)
+     * @param muxingId Id of the fMP4 muxing (required)
      * @param drmId Id of the Marlin DRM configuration. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
@@ -71,7 +71,7 @@ public class MarlinApi {
      * Marlin DRM Details of fMP4
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the fragmented mp4. (required)
+     * @param muxingId Id of the fMP4 muxing (required)
      * @param drmId Id of the Marlin DRM configuration. (required)
      * @return MarlinDrm
      * @throws BitmovinException if fails to make API call
@@ -84,7 +84,7 @@ public class MarlinApi {
      * List Marlin DRMs of fMP4
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the fragmented mp4. (required)
+     * @param muxingId Id of the fMP4 muxing (required)
      * @return List&lt;MarlinDrm&gt;
      * @throws BitmovinException if fails to make API call
      */
@@ -95,7 +95,7 @@ public class MarlinApi {
      * List Marlin DRMs of fMP4
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the fragmented mp4. (required)
+     * @param muxingId Id of the fMP4 muxing (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;MarlinDrm&gt;
      * @throws BitmovinException if fails to make API call

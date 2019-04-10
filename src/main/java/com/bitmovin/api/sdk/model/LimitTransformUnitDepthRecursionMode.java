@@ -10,17 +10,17 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Enables early exit from transfer unit depth recursion, for inter coded blocks.
+ * Enables early exit from transform unit depth recursion, for inter coded blocks.
  */
-public enum LimitTransferUnitDepthRecursionMode {
+public enum LimitTransformUnitDepthRecursionMode {
   
   /**
-   * Disable early exit from transfer unit dept recursion
+   * Disable early exit from transform unit dept recursion
    */
   DISABLED("DISABLED"),
   
   /**
-   * Decides to recurse to next higher depth based on cost comparison of full size transfer unit and split transfer unit.
+   * Decides to recurse to next higher depth based on cost comparison of full size transform unit and split transform unit.
    */
   LEVEL_1("LEVEL_1"),
   
@@ -41,7 +41,7 @@ public enum LimitTransferUnitDepthRecursionMode {
 
   private String value;
 
-  LimitTransferUnitDepthRecursionMode(String value) {
+  LimitTransformUnitDepthRecursionMode(String value) {
     this.value = value;
   }
 
@@ -56,8 +56,8 @@ public enum LimitTransferUnitDepthRecursionMode {
   }
 
   @JsonCreator
-  public static LimitTransferUnitDepthRecursionMode fromValue(String text) {
-    for (LimitTransferUnitDepthRecursionMode b : LimitTransferUnitDepthRecursionMode.values()) {
+  public static LimitTransformUnitDepthRecursionMode fromValue(String text) {
+    for (LimitTransformUnitDepthRecursionMode b : LimitTransformUnitDepthRecursionMode.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

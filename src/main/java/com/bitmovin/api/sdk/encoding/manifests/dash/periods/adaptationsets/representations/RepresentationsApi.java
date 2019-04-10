@@ -5,6 +5,7 @@ import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.manifests.dash.periods.adaptationsets.representations.vtt.VttApi;
 import com.bitmovin.api.sdk.encoding.manifests.dash.periods.adaptationsets.representations.sidecar.SidecarApi;
 import com.bitmovin.api.sdk.encoding.manifests.dash.periods.adaptationsets.representations.fmp4.Fmp4Api;
+import com.bitmovin.api.sdk.encoding.manifests.dash.periods.adaptationsets.representations.cmaf.CmafApi;
 import com.bitmovin.api.sdk.encoding.manifests.dash.periods.adaptationsets.representations.mp4.Mp4Api;
 import com.bitmovin.api.sdk.encoding.manifests.dash.periods.adaptationsets.representations.webm.WebmApi;
 
@@ -12,6 +13,7 @@ public class RepresentationsApi {
     public final VttApi vtt;
     public final SidecarApi sidecar;
     public final Fmp4Api fmp4;
+    public final CmafApi cmaf;
     public final Mp4Api mp4;
     public final WebmApi webm;
 
@@ -24,6 +26,7 @@ public class RepresentationsApi {
         this.vtt = new VttApi(clientFactory);
         this.sidecar = new SidecarApi(clientFactory);
         this.fmp4 = new Fmp4Api(clientFactory);
+        this.cmaf = new CmafApi(clientFactory);
         this.mp4 = new Mp4Api(clientFactory);
         this.webm = new WebmApi(clientFactory);
     }

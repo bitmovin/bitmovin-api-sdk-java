@@ -58,7 +58,7 @@ public class ClearkeyApi {
      * Delete ClearKey DRM from fMP4
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the fragmented mp4. (required)
+     * @param muxingId Id of the fMP4 muxing (required)
      * @param drmId Id of the ClearKey DRM configuration. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
@@ -71,7 +71,7 @@ public class ClearkeyApi {
      * ClearKey DRM Details of fMP4
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the fragmented mp4. (required)
+     * @param muxingId Id of the fMP4 muxing (required)
      * @param drmId Id of the ClearKey DRM configuration. (required)
      * @return ClearKeyDrm
      * @throws BitmovinException if fails to make API call
@@ -84,7 +84,7 @@ public class ClearkeyApi {
      * List ClearKey DRMs of fMP4
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the fragmented mp4. (required)
+     * @param muxingId Id of the fMP4 muxing (required)
      * @return List&lt;ClearKeyDrm&gt;
      * @throws BitmovinException if fails to make API call
      */
@@ -95,7 +95,7 @@ public class ClearkeyApi {
      * List ClearKey DRMs of fMP4
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the fragmented mp4. (required)
+     * @param muxingId Id of the fMP4 muxing (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;ClearKeyDrm&gt;
      * @throws BitmovinException if fails to make API call

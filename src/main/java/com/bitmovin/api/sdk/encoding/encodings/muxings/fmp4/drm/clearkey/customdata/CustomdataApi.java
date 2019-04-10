@@ -42,7 +42,7 @@ public class CustomdataApi {
      * ClearKey DRM Custom Data of fMP4
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the fragmented mp4. (required)
+     * @param muxingId Id of the fMP4 muxing (required)
      * @param drmId Id of the ClearKey DRM configuration. (required)
      * @return CustomData
      * @throws BitmovinException if fails to make API call

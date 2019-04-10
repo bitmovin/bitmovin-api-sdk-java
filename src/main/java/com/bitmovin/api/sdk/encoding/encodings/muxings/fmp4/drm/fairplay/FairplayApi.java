@@ -45,7 +45,7 @@ public class FairplayApi {
      * Add FairPlay DRM to fMP4
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the fmp4 fragment. (required)
+     * @param muxingId Id of the fMP4 muxing (required)
      * @param fairPlayDrm  (optional)
      * @return FairPlayDrm
      * @throws BitmovinException if fails to make API call
@@ -58,7 +58,7 @@ public class FairplayApi {
      * Delete FairPlay DRM from fMP4
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the fmp4 fragment. (required)
+     * @param muxingId Id of the fMP4 muxing (required)
      * @param drmId Id of the FairPlay DRM configuration. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
@@ -71,7 +71,7 @@ public class FairplayApi {
      * FairPlay DRM Details of fMP4
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the fmp4 fragment. (required)
+     * @param muxingId Id of the fMP4 muxing (required)
      * @param drmId Id of the FairPlay DRM configuration. (required)
      * @return FairPlayDrm
      * @throws BitmovinException if fails to make API call

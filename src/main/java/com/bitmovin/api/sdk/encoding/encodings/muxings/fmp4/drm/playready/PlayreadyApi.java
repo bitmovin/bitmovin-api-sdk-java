@@ -46,7 +46,7 @@ public class PlayreadyApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)
-     * @param playReadyDrm TODO Add Description (optional)
+     * @param playReadyDrm  (optional)
      * @return PlayReadyDrm
      * @throws BitmovinException if fails to make API call
      */
@@ -58,7 +58,7 @@ public class PlayreadyApi {
      * Delete PlayReady DRM from fMP4
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the fmp4 fragment. (required)
+     * @param muxingId Id of the fMP4 muxing (required)
      * @param drmId Id of the PlayReady DRM configuration. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
@@ -71,7 +71,7 @@ public class PlayreadyApi {
      * PlayReady DRM Details of fMP4
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the fmp4 fragment. (required)
+     * @param muxingId Id of the fMP4 muxing (required)
      * @param drmId Id of the PlayReady DRM configuration. (required)
      * @return PlayReadyDrm
      * @throws BitmovinException if fails to make API call
@@ -84,7 +84,7 @@ public class PlayreadyApi {
      * List PlayReady DRMs of fMP4
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the fmp4 fragment. (required)
+     * @param muxingId Id of the fMP4 muxing (required)
      * @return List&lt;PlayReadyDrm&gt;
      * @throws BitmovinException if fails to make API call
      */
@@ -95,7 +95,7 @@ public class PlayreadyApi {
      * List PlayReady DRMs of fMP4
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the fmp4 fragment. (required)
+     * @param muxingId Id of the fMP4 muxing (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;PlayReadyDrm&gt;
      * @throws BitmovinException if fails to make API call

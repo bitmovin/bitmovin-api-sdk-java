@@ -25,6 +25,7 @@ import com.bitmovin.api.sdk.encoding.encodings.streams.burnInSubtitles.BurnInSub
 import com.bitmovin.api.sdk.encoding.encodings.streams.captions.CaptionsApi;
 import com.bitmovin.api.sdk.encoding.encodings.streams.thumbnails.ThumbnailsApi;
 import com.bitmovin.api.sdk.encoding.encodings.streams.sprites.SpritesApi;
+import com.bitmovin.api.sdk.encoding.encodings.streams.qc.QcApi;
 
 public class StreamsApi {
     public final CustomdataApi customdata;
@@ -36,6 +37,7 @@ public class StreamsApi {
     public final CaptionsApi captions;
     public final ThumbnailsApi thumbnails;
     public final SpritesApi sprites;
+    public final QcApi qc;
 
     private final StreamsApiClient apiClient;
 
@@ -56,6 +58,7 @@ public class StreamsApi {
         this.captions = new CaptionsApi(clientFactory);
         this.thumbnails = new ThumbnailsApi(clientFactory);
         this.sprites = new SpritesApi(clientFactory);
+        this.qc = new QcApi(clientFactory);
     }
 
     /**

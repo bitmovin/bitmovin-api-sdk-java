@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.BitmovinResource;
 import com.bitmovin.api.sdk.model.EncodingOutput;
+import com.bitmovin.api.sdk.model.SidecarErrorMode;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -13,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * SidecarFile
+ * A file that is added to an encoding. The size limit for a sidecar file is 10 MB
  */
 
 public class SidecarFile extends BitmovinResource {
@@ -25,6 +26,9 @@ public class SidecarFile extends BitmovinResource {
 
   @JsonProperty("outputs")
   private List<EncodingOutput> outputs;
+
+  @JsonProperty("errorMode")
+  private SidecarErrorMode errorMode = null;
 
 
   /**
@@ -74,6 +78,19 @@ public class SidecarFile extends BitmovinResource {
   }
 
 
+  /**
+   * Get errorMode
+   * @return errorMode
+   */
+  public SidecarErrorMode getErrorMode() {
+    return errorMode;
+  }
+
+  public void setErrorMode(SidecarErrorMode errorMode) {
+    this.errorMode = errorMode;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -86,12 +103,13 @@ public class SidecarFile extends BitmovinResource {
     return Objects.equals(this.inputId, sidecarFile.inputId) &&
         Objects.equals(this.inputPath, sidecarFile.inputPath) &&
         Objects.equals(this.outputs, sidecarFile.outputs) &&
+        Objects.equals(this.errorMode, sidecarFile.errorMode) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(inputId, inputPath, outputs, super.hashCode());
+    return Objects.hash(inputId, inputPath, outputs, errorMode, super.hashCode());
   }
 
 
@@ -103,6 +121,7 @@ public class SidecarFile extends BitmovinResource {
     sb.append("    inputId: ").append(toIndentedString(inputId)).append("\n");
     sb.append("    inputPath: ").append(toIndentedString(inputPath)).append("\n");
     sb.append("    outputs: ").append(toIndentedString(outputs)).append("\n");
+    sb.append("    errorMode: ").append(toIndentedString(errorMode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

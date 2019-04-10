@@ -42,7 +42,7 @@ public class CustomdataApi {
      * PrimeTime DRM Custom Data of fMP4
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the fmp4 fragment. (required)
+     * @param muxingId Id of the fMP4 muxing (required)
      * @param drmId Id of the PrimeTime DRM configuration. (required)
      * @return CustomData
      * @throws BitmovinException if fails to make API call

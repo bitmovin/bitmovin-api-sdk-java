@@ -9,9 +9,9 @@ import com.bitmovin.api.sdk.model.EncodingMode;
 import com.bitmovin.api.sdk.model.ForceFlushMode;
 import com.bitmovin.api.sdk.model.LevelH265;
 import com.bitmovin.api.sdk.model.LimitReferences;
-import com.bitmovin.api.sdk.model.LimitTransferUnitDepthRecursionMode;
+import com.bitmovin.api.sdk.model.LimitTransformUnitDepthRecursionMode;
 import com.bitmovin.api.sdk.model.MaxCtuSize;
-import com.bitmovin.api.sdk.model.MaxTransferUnitSize;
+import com.bitmovin.api.sdk.model.MaxTransformUnitSize;
 import com.bitmovin.api.sdk.model.MinCodingUnitSize;
 import com.bitmovin.api.sdk.model.MotionSearch;
 import com.bitmovin.api.sdk.model.PixelFormat;
@@ -229,8 +229,8 @@ public class H265VideoConfiguration extends VideoConfiguration {
   @JsonProperty("refineRateDistortionCost")
   private Boolean refineRateDistortionCost;
 
-  @JsonProperty("limitTransferUnitDepthRecursion")
-  private LimitTransferUnitDepthRecursionMode limitTransferUnitDepthRecursion = null;
+  @JsonProperty("limitTransformUnitDepthRecursion")
+  private LimitTransformUnitDepthRecursionMode limitTransformUnitDepthRecursion = null;
 
   @JsonProperty("noiseReductionIntra")
   private Integer noiseReductionIntra;
@@ -241,8 +241,8 @@ public class H265VideoConfiguration extends VideoConfiguration {
   @JsonProperty("rateDistortionPenalty")
   private RateDistortionPenaltyMode rateDistortionPenalty = null;
 
-  @JsonProperty("maximumTransferUnitSize")
-  private MaxTransferUnitSize maximumTransferUnitSize = null;
+  @JsonProperty("maximumTransformUnitSize")
+  private MaxTransformUnitSize maximumTransformUnitSize = null;
 
   @JsonProperty("dynamicRateDistortionStrength")
   private Integer dynamicRateDistortionStrength;
@@ -1174,15 +1174,15 @@ public class H265VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Enables early exit from transfer unit depth recursion, for inter coded blocks. Default is DISABLED.
-   * @return limitTransferUnitDepthRecursion
+   * Enables early exit from transform unit depth recursion, for inter coded blocks. Default is DISABLED.
+   * @return limitTransformUnitDepthRecursion
    */
-  public LimitTransferUnitDepthRecursionMode getLimitTransferUnitDepthRecursion() {
-    return limitTransferUnitDepthRecursion;
+  public LimitTransformUnitDepthRecursionMode getLimitTransformUnitDepthRecursion() {
+    return limitTransformUnitDepthRecursion;
   }
 
-  public void setLimitTransferUnitDepthRecursion(LimitTransferUnitDepthRecursionMode limitTransferUnitDepthRecursion) {
-    this.limitTransferUnitDepthRecursion = limitTransferUnitDepthRecursion;
+  public void setLimitTransformUnitDepthRecursion(LimitTransformUnitDepthRecursionMode limitTransformUnitDepthRecursion) {
+    this.limitTransformUnitDepthRecursion = limitTransformUnitDepthRecursion;
   }
 
 
@@ -1217,7 +1217,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Penalty for 32x32 intra transfer units in non-I slices. Default DISABLED.
+   * Penalty for 32x32 intra transform units in non-I slices. Default DISABLED.
    * @return rateDistortionPenalty
    */
   public RateDistortionPenaltyMode getRateDistortionPenalty() {
@@ -1230,15 +1230,15 @@ public class H265VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Penalty for 32x32 intra transfer units in non-I slices. Default DISABLED.
-   * @return maximumTransferUnitSize
+   * Penalty for 32x32 intra transform units in non-I slices. Default DISABLED.
+   * @return maximumTransformUnitSize
    */
-  public MaxTransferUnitSize getMaximumTransferUnitSize() {
-    return maximumTransferUnitSize;
+  public MaxTransformUnitSize getMaximumTransformUnitSize() {
+    return maximumTransformUnitSize;
   }
 
-  public void setMaximumTransferUnitSize(MaxTransferUnitSize maximumTransferUnitSize) {
-    this.maximumTransferUnitSize = maximumTransferUnitSize;
+  public void setMaximumTransformUnitSize(MaxTransformUnitSize maximumTransformUnitSize) {
+    this.maximumTransformUnitSize = maximumTransformUnitSize;
   }
 
 
@@ -1680,11 +1680,11 @@ public class H265VideoConfiguration extends VideoConfiguration {
         Objects.equals(this.codingUnitLossless, h265VideoConfiguration.codingUnitLossless) &&
         Objects.equals(this.transformSkip, h265VideoConfiguration.transformSkip) &&
         Objects.equals(this.refineRateDistortionCost, h265VideoConfiguration.refineRateDistortionCost) &&
-        Objects.equals(this.limitTransferUnitDepthRecursion, h265VideoConfiguration.limitTransferUnitDepthRecursion) &&
+        Objects.equals(this.limitTransformUnitDepthRecursion, h265VideoConfiguration.limitTransformUnitDepthRecursion) &&
         Objects.equals(this.noiseReductionIntra, h265VideoConfiguration.noiseReductionIntra) &&
         Objects.equals(this.noiseReductionInter, h265VideoConfiguration.noiseReductionInter) &&
         Objects.equals(this.rateDistortionPenalty, h265VideoConfiguration.rateDistortionPenalty) &&
-        Objects.equals(this.maximumTransferUnitSize, h265VideoConfiguration.maximumTransferUnitSize) &&
+        Objects.equals(this.maximumTransformUnitSize, h265VideoConfiguration.maximumTransformUnitSize) &&
         Objects.equals(this.dynamicRateDistortionStrength, h265VideoConfiguration.dynamicRateDistortionStrength) &&
         Objects.equals(this.ssimRateDistortionOptimization, h265VideoConfiguration.ssimRateDistortionOptimization) &&
         Objects.equals(this.temporalMotionVectorPredictors, h265VideoConfiguration.temporalMotionVectorPredictors) &&
@@ -1717,7 +1717,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
 
   @Override
   public int hashCode() {
-    return Objects.hash(presetConfiguration, crf, profile, bframes, refFrames, qp, maxBitrate, minBitrate, bufsize, minGop, maxGop, openGop, minKeyframeInterval, maxKeyframeInterval, level, rcLookahead, bAdapt, maxCTUSize, tuIntraDepth, tuInterDepth, motionSearch, subMe, motionSearchRange, weightPredictionOnPSlice, weightPredictionOnBSlice, sao, masterDisplay, maxContentLightLevel, maxAverageLightLevel, hdr, sceneCutThreshold, adaptiveQuantizationMode, enableHlgSignaling, videoFormat, psyRateDistortionOptimization, psyRateDistortionOptimizedQuantization, enableHrdSignaling, cutree, minCodingUnitSize, lookaheadSlices, limitReferences, rectangularMotionPartitionsAnalysis, asymetricMotionPartitionsAnalysis, limitModes, maxMerge, earlySkip, recursionSkip, fastSearchForAngularIntraPredictions, evaluationOfIntraModesInBSlices, signHide, rateDistortionLevelForModeDecision, rateDistortionLevelForQuantization, qpMin, qpMax, wavefrontParallelProcessing, parallelModeDecision, parallelMotionEstimation, slices, copyPicture, levelHighTier, skipSplitRateDistortionAnalysis, codingUnitLossless, transformSkip, refineRateDistortionCost, limitTransferUnitDepthRecursion, noiseReductionIntra, noiseReductionInter, rateDistortionPenalty, maximumTransferUnitSize, dynamicRateDistortionStrength, ssimRateDistortionOptimization, temporalMotionVectorPredictors, analyzeSourceFramePixels, strongIntraSmoothing, constrainedIntraPrediction, scenecutBias, allowedRADLBeforeIDR, gopLookahead, bframeBias, forceFlush, adaptiveQuantizationStrength, adaptiveQuantizationMotion, quantizationGroupSize, strictCbr, qpOffsetChromaCb, qpOffsetChromaCr, ipRatio, pbRatio, quantizerCurveCompressionFactor, qpStep, grainOptimizedRateControl, blurQuants, blurComplexity, saoNonDeblock, limitSao, lowpassDct, super.hashCode());
+    return Objects.hash(presetConfiguration, crf, profile, bframes, refFrames, qp, maxBitrate, minBitrate, bufsize, minGop, maxGop, openGop, minKeyframeInterval, maxKeyframeInterval, level, rcLookahead, bAdapt, maxCTUSize, tuIntraDepth, tuInterDepth, motionSearch, subMe, motionSearchRange, weightPredictionOnPSlice, weightPredictionOnBSlice, sao, masterDisplay, maxContentLightLevel, maxAverageLightLevel, hdr, sceneCutThreshold, adaptiveQuantizationMode, enableHlgSignaling, videoFormat, psyRateDistortionOptimization, psyRateDistortionOptimizedQuantization, enableHrdSignaling, cutree, minCodingUnitSize, lookaheadSlices, limitReferences, rectangularMotionPartitionsAnalysis, asymetricMotionPartitionsAnalysis, limitModes, maxMerge, earlySkip, recursionSkip, fastSearchForAngularIntraPredictions, evaluationOfIntraModesInBSlices, signHide, rateDistortionLevelForModeDecision, rateDistortionLevelForQuantization, qpMin, qpMax, wavefrontParallelProcessing, parallelModeDecision, parallelMotionEstimation, slices, copyPicture, levelHighTier, skipSplitRateDistortionAnalysis, codingUnitLossless, transformSkip, refineRateDistortionCost, limitTransformUnitDepthRecursion, noiseReductionIntra, noiseReductionInter, rateDistortionPenalty, maximumTransformUnitSize, dynamicRateDistortionStrength, ssimRateDistortionOptimization, temporalMotionVectorPredictors, analyzeSourceFramePixels, strongIntraSmoothing, constrainedIntraPrediction, scenecutBias, allowedRADLBeforeIDR, gopLookahead, bframeBias, forceFlush, adaptiveQuantizationStrength, adaptiveQuantizationMotion, quantizationGroupSize, strictCbr, qpOffsetChromaCb, qpOffsetChromaCr, ipRatio, pbRatio, quantizerCurveCompressionFactor, qpStep, grainOptimizedRateControl, blurQuants, blurComplexity, saoNonDeblock, limitSao, lowpassDct, super.hashCode());
   }
 
 
@@ -1790,11 +1790,11 @@ public class H265VideoConfiguration extends VideoConfiguration {
     sb.append("    codingUnitLossless: ").append(toIndentedString(codingUnitLossless)).append("\n");
     sb.append("    transformSkip: ").append(toIndentedString(transformSkip)).append("\n");
     sb.append("    refineRateDistortionCost: ").append(toIndentedString(refineRateDistortionCost)).append("\n");
-    sb.append("    limitTransferUnitDepthRecursion: ").append(toIndentedString(limitTransferUnitDepthRecursion)).append("\n");
+    sb.append("    limitTransformUnitDepthRecursion: ").append(toIndentedString(limitTransformUnitDepthRecursion)).append("\n");
     sb.append("    noiseReductionIntra: ").append(toIndentedString(noiseReductionIntra)).append("\n");
     sb.append("    noiseReductionInter: ").append(toIndentedString(noiseReductionInter)).append("\n");
     sb.append("    rateDistortionPenalty: ").append(toIndentedString(rateDistortionPenalty)).append("\n");
-    sb.append("    maximumTransferUnitSize: ").append(toIndentedString(maximumTransferUnitSize)).append("\n");
+    sb.append("    maximumTransformUnitSize: ").append(toIndentedString(maximumTransformUnitSize)).append("\n");
     sb.append("    dynamicRateDistortionStrength: ").append(toIndentedString(dynamicRateDistortionStrength)).append("\n");
     sb.append("    ssimRateDistortionOptimization: ").append(toIndentedString(ssimRateDistortionOptimization)).append("\n");
     sb.append("    temporalMotionVectorPredictors: ").append(toIndentedString(temporalMotionVectorPredictors)).append("\n");

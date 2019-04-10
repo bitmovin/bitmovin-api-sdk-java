@@ -25,6 +25,7 @@ import com.bitmovin.api.sdk.encoding.outputs.gcs.GcsApi;
 import com.bitmovin.api.sdk.encoding.outputs.azure.AzureApi;
 import com.bitmovin.api.sdk.encoding.outputs.ftp.FtpApi;
 import com.bitmovin.api.sdk.encoding.outputs.sftp.SftpApi;
+import com.bitmovin.api.sdk.encoding.outputs.akamaiMsl.AkamaiMslApi;
 import com.bitmovin.api.sdk.encoding.outputs.akamaiNetstorage.AkamaiNetstorageApi;
 
 public class OutputsApi {
@@ -37,6 +38,7 @@ public class OutputsApi {
     public final AzureApi azure;
     public final FtpApi ftp;
     public final SftpApi sftp;
+    public final AkamaiMslApi akamaiMsl;
     public final AkamaiNetstorageApi akamaiNetstorage;
 
     private final OutputsApiClient apiClient;
@@ -58,6 +60,7 @@ public class OutputsApi {
         this.azure = new AzureApi(clientFactory);
         this.ftp = new FtpApi(clientFactory);
         this.sftp = new SftpApi(clientFactory);
+        this.akamaiMsl = new AkamaiMslApi(clientFactory);
         this.akamaiNetstorage = new AkamaiNetstorageApi(clientFactory);
     }
 
