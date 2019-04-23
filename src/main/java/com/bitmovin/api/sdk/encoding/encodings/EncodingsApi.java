@@ -22,7 +22,6 @@ import com.bitmovin.api.sdk.encoding.encodings.customdata.CustomdataApi;
 import com.bitmovin.api.sdk.encoding.encodings.streams.StreamsApi;
 import com.bitmovin.api.sdk.encoding.encodings.inputStreams.InputStreamsApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.MuxingsApi;
-import com.bitmovin.api.sdk.encoding.encodings.subtitles.SubtitlesApi;
 import com.bitmovin.api.sdk.encoding.encodings.captions.CaptionsApi;
 import com.bitmovin.api.sdk.encoding.encodings.sidecars.SidecarsApi;
 import com.bitmovin.api.sdk.encoding.encodings.keyframes.KeyframesApi;
@@ -34,7 +33,6 @@ public class EncodingsApi {
     public final StreamsApi streams;
     public final InputStreamsApi inputStreams;
     public final MuxingsApi muxings;
-    public final SubtitlesApi subtitles;
     public final CaptionsApi captions;
     public final SidecarsApi sidecars;
     public final KeyframesApi keyframes;
@@ -55,7 +53,6 @@ public class EncodingsApi {
         this.streams = new StreamsApi(clientFactory);
         this.inputStreams = new InputStreamsApi(clientFactory);
         this.muxings = new MuxingsApi(clientFactory);
-        this.subtitles = new SubtitlesApi(clientFactory);
         this.captions = new CaptionsApi(clientFactory);
         this.sidecars = new SidecarsApi(clientFactory);
         this.keyframes = new KeyframesApi(clientFactory);

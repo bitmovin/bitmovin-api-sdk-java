@@ -2,7 +2,6 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -13,21 +12,21 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class AnalyticsQueryTimeframe {
   @JsonProperty("start")
-  private Date start;
+  private String start;
 
   @JsonProperty("end")
-  private Date end;
+  private String end;
 
 
   /**
    * Start of timeframe which is queried
    * @return start
    */
-  public Date getStart() {
+  public String getStart() {
     return start;
   }
 
-  public void setStart(Date start) {
+  public void setStart(String start) {
     this.start = start;
   }
 
@@ -36,11 +35,11 @@ public class AnalyticsQueryTimeframe {
    * End of timeframe which is queried
    * @return end
    */
-  public Date getEnd() {
+  public String getEnd() {
     return end;
   }
 
-  public void setEnd(Date end) {
+  public void setEnd(String end) {
     this.end = end;
   }
 

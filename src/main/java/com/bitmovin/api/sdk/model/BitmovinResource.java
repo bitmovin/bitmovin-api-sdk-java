@@ -58,7 +58,7 @@ public class BitmovinResource extends BitmovinResponse {
   }
 
   /**
-   * Creation timestamp expressed in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Creation timestamp formatted in UTC: YYYY-MM-DDThh:mm:ssZ
    * @return createdAt
    */
   public Date getCreatedAt() {
@@ -66,7 +66,7 @@ public class BitmovinResource extends BitmovinResponse {
   }
 
   /**
-   * Modified timestamp expressed in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Modified timestamp formatted in UTC: YYYY-MM-DDThh:mm:ssZ
    * @return modifiedAt
    */
   public Date getModifiedAt() {

@@ -10,6 +10,7 @@ import com.bitmovin.api.sdk.encoding.encodings.EncodingsApi;
 import com.bitmovin.api.sdk.encoding.manifests.ManifestsApi;
 import com.bitmovin.api.sdk.encoding.infrastructure.InfrastructureApi;
 import com.bitmovin.api.sdk.encoding.statistics.StatisticsApi;
+import com.bitmovin.api.sdk.encoding.errorDefinitions.ErrorDefinitionsApi;
 
 public class EncodingApi {
     public final InputsApi inputs;
@@ -20,6 +21,7 @@ public class EncodingApi {
     public final ManifestsApi manifests;
     public final InfrastructureApi infrastructure;
     public final StatisticsApi statistics;
+    public final ErrorDefinitionsApi errorDefinitions;
 
     public EncodingApi(BitmovinApiClientFactory clientFactory) {
         if (clientFactory == null)
@@ -35,6 +37,7 @@ public class EncodingApi {
         this.manifests = new ManifestsApi(clientFactory);
         this.infrastructure = new InfrastructureApi(clientFactory);
         this.statistics = new StatisticsApi(clientFactory);
+        this.errorDefinitions = new ErrorDefinitionsApi(clientFactory);
     }
 
     /**

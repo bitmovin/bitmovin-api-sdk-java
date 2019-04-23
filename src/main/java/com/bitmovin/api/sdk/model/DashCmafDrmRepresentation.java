@@ -2,7 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.DashFmp4DrmRepresentation;
+import com.bitmovin.api.sdk.model.DashCmafRepresentation;
 import com.bitmovin.api.sdk.model.DashMuxingType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -12,7 +12,23 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  * DashCmafDrmRepresentation
  */
 
-public class DashCmafDrmRepresentation extends DashFmp4DrmRepresentation {
+public class DashCmafDrmRepresentation extends DashCmafRepresentation {
+  @JsonProperty("drmId")
+  private String drmId;
+
+
+  /**
+   * DRM Id
+   * @return drmId
+   */
+  public String getDrmId() {
+    return drmId;
+  }
+
+  public void setDrmId(String drmId) {
+    this.drmId = drmId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -22,12 +38,14 @@ public class DashCmafDrmRepresentation extends DashFmp4DrmRepresentation {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return super.equals(o);
+    DashCmafDrmRepresentation dashCmafDrmRepresentation = (DashCmafDrmRepresentation) o;
+    return Objects.equals(this.drmId, dashCmafDrmRepresentation.drmId) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode());
+    return Objects.hash(drmId, super.hashCode());
   }
 
 
@@ -36,6 +54,7 @@ public class DashCmafDrmRepresentation extends DashFmp4DrmRepresentation {
     StringBuilder sb = new StringBuilder();
     sb.append("class DashCmafDrmRepresentation {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    drmId: ").append(toIndentedString(drmId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

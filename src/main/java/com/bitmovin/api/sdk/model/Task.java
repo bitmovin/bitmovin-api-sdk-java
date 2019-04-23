@@ -135,7 +135,7 @@ public class Task extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the task was created, expressed in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Timestamp when the task was created, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
    * @return createdAt
    */
   public Date getCreatedAt() {
@@ -148,7 +148,7 @@ public class Task extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the task status changed to \&quot;QUEUED\&quot;, expressed in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Timestamp when the task status changed to \&quot;QUEUED\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
    * @return queuedAt
    */
   public Date getQueuedAt() {
@@ -161,7 +161,7 @@ public class Task extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the task status changed to to \&quot;RUNNING\&quot;, expressed in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Timestamp when the task status changed to to \&quot;RUNNING\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
    * @return runningAt
    */
   public Date getRunningAt() {
@@ -174,7 +174,7 @@ public class Task extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the task status changed to \&quot;FINISHED\&quot;, expressed in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Timestamp when the task status changed to \&quot;FINISHED\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
    * @return finishedAt
    */
   public Date getFinishedAt() {
@@ -187,7 +187,7 @@ public class Task extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the task status changed to \&quot;ERROR\&quot;, expressed in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Timestamp when the task status changed to \&quot;ERROR\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
    * @return errorAt
    */
   public Date getErrorAt() {

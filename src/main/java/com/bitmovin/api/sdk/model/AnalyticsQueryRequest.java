@@ -7,7 +7,6 @@ import com.bitmovin.api.sdk.model.AnalyticsInterval;
 import com.bitmovin.api.sdk.model.AnalyticsOrderByEntry;
 import com.bitmovin.api.sdk.model.AnalyticsQueryTimeframe;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -31,7 +30,7 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
   private String dimension;
 
   @JsonProperty("interval")
-  private List<AnalyticsInterval> interval;
+  private AnalyticsInterval interval = null;
 
   @JsonProperty("groupBy")
   private List<String> groupBy;
@@ -111,23 +110,15 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
   }
 
 
-  public AnalyticsQueryRequest addIntervalItem(AnalyticsInterval intervalItem) {
-    if (this.interval == null) {
-      this.interval = new ArrayList<>();
-    }
-    this.interval.add(intervalItem);
-    return this;
-  }
-
   /**
    * Get interval
    * @return interval
    */
-  public List<AnalyticsInterval> getInterval() {
+  public AnalyticsInterval getInterval() {
     return interval;
   }
 
-  public void setInterval(List<AnalyticsInterval> interval) {
+  public void setInterval(AnalyticsInterval interval) {
     this.interval = interval;
   }
 
@@ -154,7 +145,7 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
 
 
   /**
-   * Maximum number of rows returned (max. 150)
+   * Maximum number of rows returned (max. 200)
    * @return limit
    */
   public Long getLimit() {

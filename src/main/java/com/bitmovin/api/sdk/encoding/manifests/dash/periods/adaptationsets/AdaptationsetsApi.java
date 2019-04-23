@@ -5,7 +5,6 @@ import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.manifests.dash.periods.adaptationsets.audio.AudioApi;
 import com.bitmovin.api.sdk.encoding.manifests.dash.periods.adaptationsets.video.VideoApi;
 import com.bitmovin.api.sdk.encoding.manifests.dash.periods.adaptationsets.subtitle.SubtitleApi;
-import com.bitmovin.api.sdk.encoding.manifests.dash.periods.adaptationsets.custom.CustomApi;
 import com.bitmovin.api.sdk.encoding.manifests.dash.periods.adaptationsets.representations.RepresentationsApi;
 import com.bitmovin.api.sdk.encoding.manifests.dash.periods.adaptationsets.contentprotection.ContentprotectionApi;
 
@@ -13,7 +12,6 @@ public class AdaptationsetsApi {
     public final AudioApi audio;
     public final VideoApi video;
     public final SubtitleApi subtitle;
-    public final CustomApi custom;
     public final RepresentationsApi representations;
     public final ContentprotectionApi contentprotection;
 
@@ -26,7 +24,6 @@ public class AdaptationsetsApi {
         this.audio = new AudioApi(clientFactory);
         this.video = new VideoApi(clientFactory);
         this.subtitle = new SubtitleApi(clientFactory);
-        this.custom = new CustomApi(clientFactory);
         this.representations = new RepresentationsApi(clientFactory);
         this.contentprotection = new ContentprotectionApi(clientFactory);
     }

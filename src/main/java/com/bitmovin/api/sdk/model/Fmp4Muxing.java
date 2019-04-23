@@ -34,6 +34,9 @@ public class Fmp4Muxing extends Muxing {
   @JsonProperty("initSegmentNameTemplate")
   private String initSegmentNameTemplate;
 
+  @JsonProperty("writeDurationPerSample")
+  private Boolean writeDurationPerSample;
+
   @JsonProperty("segmentsMuxed")
   private Integer segmentsMuxed;
 
@@ -102,6 +105,19 @@ public class Fmp4Muxing extends Muxing {
     this.initSegmentNameTemplate = initSegmentNameTemplate;
   }
 
+
+  /**
+   * Writes the duration per sample into the sample entry in the Track Fragment Run Box. This could help to fix playback issues on legacy players. Enabling this flag increases the muxing overhead by 4 bytes per sample/frame.
+   * @return writeDurationPerSample
+   */
+  public Boolean getWriteDurationPerSample() {
+    return writeDurationPerSample;
+  }
+
+  public void setWriteDurationPerSample(Boolean writeDurationPerSample) {
+    this.writeDurationPerSample = writeDurationPerSample;
+  }
+
   /**
    * Number of segments which have been encoded
    * @return segmentsMuxed
@@ -125,13 +141,14 @@ public class Fmp4Muxing extends Muxing {
         Objects.equals(this.segmentNamingTemplate, fmp4Muxing.segmentNamingTemplate) &&
         Objects.equals(this.initSegmentName, fmp4Muxing.initSegmentName) &&
         Objects.equals(this.initSegmentNameTemplate, fmp4Muxing.initSegmentNameTemplate) &&
+        Objects.equals(this.writeDurationPerSample, fmp4Muxing.writeDurationPerSample) &&
         Objects.equals(this.segmentsMuxed, fmp4Muxing.segmentsMuxed) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(segmentLength, segmentNaming, segmentNamingTemplate, initSegmentName, initSegmentNameTemplate, segmentsMuxed, super.hashCode());
+    return Objects.hash(segmentLength, segmentNaming, segmentNamingTemplate, initSegmentName, initSegmentNameTemplate, writeDurationPerSample, segmentsMuxed, super.hashCode());
   }
 
 
@@ -145,6 +162,7 @@ public class Fmp4Muxing extends Muxing {
     sb.append("    segmentNamingTemplate: ").append(toIndentedString(segmentNamingTemplate)).append("\n");
     sb.append("    initSegmentName: ").append(toIndentedString(initSegmentName)).append("\n");
     sb.append("    initSegmentNameTemplate: ").append(toIndentedString(initSegmentNameTemplate)).append("\n");
+    sb.append("    writeDurationPerSample: ").append(toIndentedString(writeDurationPerSample)).append("\n");
     sb.append("    segmentsMuxed: ").append(toIndentedString(segmentsMuxed)).append("\n");
     sb.append("}");
     return sb.toString();

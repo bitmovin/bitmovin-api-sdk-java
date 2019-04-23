@@ -6,7 +6,6 @@ import com.bitmovin.api.sdk.model.AnalyticsFilter;
 import com.bitmovin.api.sdk.model.AnalyticsInterval;
 import com.bitmovin.api.sdk.model.AnalyticsOrderByEntry;
 import com.bitmovin.api.sdk.model.AnalyticsQueryRequest;
-import java.util.Date;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;

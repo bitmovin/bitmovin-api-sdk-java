@@ -42,6 +42,17 @@ public class LicensesApi {
     }
     
     /**
+     * Create Analytics License
+     * 
+     * @param analyticsLicense Analytics License to be created (optional)
+     * @return AnalyticsLicense
+     * @throws BitmovinException if fails to make API call
+     */
+    public AnalyticsLicense create(AnalyticsLicense analyticsLicense) throws BitmovinException {
+        return this.apiClient.create(analyticsLicense).getData().getResult();
+    }
+    
+    /**
      * Get License
      * 
      * @param licenseId License id (required)
@@ -63,6 +74,9 @@ public class LicensesApi {
     }
     
     interface LicensesApiClient {
+    
+        @RequestLine("POST /analytics/licenses")
+        ResponseEnvelope<AnalyticsLicense> create(AnalyticsLicense analyticsLicense) throws BitmovinException;
     
         @RequestLine("GET /analytics/licenses/{license_id}")
         ResponseEnvelope<AnalyticsLicense> get(@Param(value = "license_id") String licenseId) throws BitmovinException;

@@ -112,7 +112,7 @@ public class Subtask extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the subtask was created, expressed in UTC: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask was created, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
    * @return createdAt
    */
   public Date getCreatedAt() {
@@ -125,7 +125,7 @@ public class Subtask extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the subtask was last updated, expressed in UTC: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask was last updated, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
    * @return updatedAt
    */
   public Date getUpdatedAt() {
@@ -138,7 +138,7 @@ public class Subtask extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the subtask was started, expressed in UTC: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask was started, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
    * @return startedAt
    */
   public Date getStartedAt() {
@@ -151,7 +151,7 @@ public class Subtask extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the subtask status changed to &#39;QUEUED&#39;, expressed in UTC: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask status changed to &#39;QUEUED&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
    * @return queuedAt
    */
   public Date getQueuedAt() {
@@ -164,7 +164,7 @@ public class Subtask extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the subtask status changed to to &#39;RUNNING&#39;, expressed in UTC: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask status changed to to &#39;RUNNING&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
    * @return runningAt
    */
   public Date getRunningAt() {
@@ -177,7 +177,7 @@ public class Subtask extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the subtask status changed to &#39;FINISHED&#39;, expressed in UTC: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask status changed to &#39;FINISHED&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
    * @return finishedAt
    */
   public Date getFinishedAt() {
@@ -190,7 +190,7 @@ public class Subtask extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the subtask status changed to &#39;ERROR&#39;, expressed in UTC: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask status changed to &#39;ERROR&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
    * @return errorAt
    */
   public Date getErrorAt() {

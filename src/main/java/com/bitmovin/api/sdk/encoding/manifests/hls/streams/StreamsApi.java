@@ -16,11 +16,11 @@ import com.bitmovin.api.sdk.common.BitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
-import com.bitmovin.api.sdk.encoding.manifests.hls.streams.customTag.CustomTagApi;
+import com.bitmovin.api.sdk.encoding.manifests.hls.streams.customTags.CustomTagsApi;
 import com.bitmovin.api.sdk.encoding.manifests.hls.streams.iframe.IframeApi;
 
 public class StreamsApi {
-    public final CustomTagApi customTag;
+    public final CustomTagsApi customTags;
     public final IframeApi iframe;
 
     private final StreamsApiClient apiClient;
@@ -33,7 +33,7 @@ public class StreamsApi {
 
         this.apiClient = clientFactory.createApiClient(StreamsApiClient.class);
 
-        this.customTag = new CustomTagApi(clientFactory);
+        this.customTags = new CustomTagsApi(clientFactory);
         this.iframe = new IframeApi(clientFactory);
     }
 

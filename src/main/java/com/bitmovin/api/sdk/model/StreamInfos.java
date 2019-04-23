@@ -23,7 +23,7 @@ public class StreamInfos {
 
 
   /**
-   * Timestamp of the event expressed in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Timestamp of the event formatted in UTC: YYYY-MM-DDThh:mm:ssZ
    * @return time
    */
   public Date getTime() {

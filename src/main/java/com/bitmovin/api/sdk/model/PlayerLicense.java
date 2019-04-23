@@ -37,6 +37,10 @@ public class PlayerLicense extends BitmovinResponse {
   @JsonProperty("domains")
   private List<Domain> domains = new ArrayList<Domain>();
 
+  @JsonProperty("analyticsKey")
+  private String analyticsKey;
+
+
   /**
    * Name of the resource
    * @return name
@@ -45,8 +49,12 @@ public class PlayerLicense extends BitmovinResponse {
     return name;
   }
 
+  public void setName(String name) {
+    this.name = name;
+  }
+
   /**
-   * Creation timestamp expressed in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Creation timestamp formatted in UTC: YYYY-MM-DDThh:mm:ssZ
    * @return createdAt
    */
   public Date getCreatedAt() {
@@ -93,6 +101,14 @@ public class PlayerLicense extends BitmovinResponse {
     return domains;
   }
 
+  /**
+   * Analytics License Key
+   * @return analyticsKey
+   */
+  public String getAnalyticsKey() {
+    return analyticsKey;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -110,12 +126,13 @@ public class PlayerLicense extends BitmovinResponse {
         Objects.equals(this.maxImpressions, playerLicense.maxImpressions) &&
         Objects.equals(this.thirdPartyLicensingEnabled, playerLicense.thirdPartyLicensingEnabled) &&
         Objects.equals(this.domains, playerLicense.domains) &&
+        Objects.equals(this.analyticsKey, playerLicense.analyticsKey) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, createdAt, licenseKey, impressions, maxImpressions, thirdPartyLicensingEnabled, domains, super.hashCode());
+    return Objects.hash(name, createdAt, licenseKey, impressions, maxImpressions, thirdPartyLicensingEnabled, domains, analyticsKey, super.hashCode());
   }
 
 
@@ -131,6 +148,7 @@ public class PlayerLicense extends BitmovinResponse {
     sb.append("    maxImpressions: ").append(toIndentedString(maxImpressions)).append("\n");
     sb.append("    thirdPartyLicensingEnabled: ").append(toIndentedString(thirdPartyLicensingEnabled)).append("\n");
     sb.append("    domains: ").append(toIndentedString(domains)).append("\n");
+    sb.append("    analyticsKey: ").append(toIndentedString(analyticsKey)).append("\n");
     sb.append("}");
     return sb.toString();
   }

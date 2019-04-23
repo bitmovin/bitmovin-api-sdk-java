@@ -50,7 +50,7 @@ public class PlayerVersion extends BitmovinResponse {
   }
 
   /**
-   * Creation timestamp expressed in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Creation timestamp formatted in UTC: YYYY-MM-DDThh:mm:ssZ
    * @return createdAt
    */
   public Date getCreatedAt() {

@@ -2,8 +2,8 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.DashFmp4Representation;
 import com.bitmovin.api.sdk.model.DashMuxingType;
+import com.bitmovin.api.sdk.model.DashSegmentedRepresentation;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  * DashCmafRepresentation
  */
 
-public class DashCmafRepresentation extends DashFmp4Representation {
+public class DashCmafRepresentation extends DashSegmentedRepresentation {
 
   @Override
   public boolean equals(java.lang.Object o) {

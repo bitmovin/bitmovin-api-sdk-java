@@ -18,10 +18,12 @@ import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.statistics.encodings.liveStatistics.events.EventsApi;
 import com.bitmovin.api.sdk.encoding.statistics.encodings.liveStatistics.streams.StreamsApi;
+import com.bitmovin.api.sdk.encoding.statistics.encodings.liveStatistics.srt.SrtApi;
 
 public class LiveStatisticsApi {
     public final EventsApi events;
     public final StreamsApi streams;
+    public final SrtApi srt;
 
     private final LiveStatisticsApiClient apiClient;
 
@@ -35,6 +37,7 @@ public class LiveStatisticsApi {
 
         this.events = new EventsApi(clientFactory);
         this.streams = new StreamsApi(clientFactory);
+        this.srt = new SrtApi(clientFactory);
     }
 
     /**

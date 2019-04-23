@@ -17,9 +17,11 @@ import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.encodings.sidecars.customdata.CustomdataApi;
+import com.bitmovin.api.sdk.encoding.encodings.sidecars.webvtt.WebvttApi;
 
 public class SidecarsApi {
     public final CustomdataApi customdata;
+    public final WebvttApi webvtt;
 
     private final SidecarsApiClient apiClient;
 
@@ -32,6 +34,7 @@ public class SidecarsApi {
         this.apiClient = clientFactory.createApiClient(SidecarsApiClient.class);
 
         this.customdata = new CustomdataApi(clientFactory);
+        this.webvtt = new WebvttApi(clientFactory);
     }
 
     /**

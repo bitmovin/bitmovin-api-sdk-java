@@ -202,12 +202,6 @@ public class H265VideoConfiguration extends VideoConfiguration {
   @JsonProperty("wavefrontParallelProcessing")
   private Boolean wavefrontParallelProcessing;
 
-  @JsonProperty("parallelModeDecision")
-  private Boolean parallelModeDecision;
-
-  @JsonProperty("parallelMotionEstimation")
-  private Boolean parallelMotionEstimation;
-
   @JsonProperty("slices")
   private Integer slices;
 
@@ -1057,32 +1051,6 @@ public class H265VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * When enabled the encoder will distribute the analysis work of each CU (merge, inter, intra) across multiple worker threads. Default is disabled.
-   * @return parallelModeDecision
-   */
-  public Boolean getParallelModeDecision() {
-    return parallelModeDecision;
-  }
-
-  public void setParallelModeDecision(Boolean parallelModeDecision) {
-    this.parallelModeDecision = parallelModeDecision;
-  }
-
-
-  /**
-   * When enabled the encoder will distribute motion estimation across multiple worker threads when more than two references require motion searches for a given CU. Default is disabled.
-   * @return parallelMotionEstimation
-   */
-  public Boolean getParallelMotionEstimation() {
-    return parallelMotionEstimation;
-  }
-
-  public void setParallelMotionEstimation(Boolean parallelMotionEstimation) {
-    this.parallelMotionEstimation = parallelMotionEstimation;
-  }
-
-
-  /**
    * Encode each incoming frame as multiple parallel slices that may be decoded independently. Default is 1.
    * @return slices
    */
@@ -1671,8 +1639,6 @@ public class H265VideoConfiguration extends VideoConfiguration {
         Objects.equals(this.qpMin, h265VideoConfiguration.qpMin) &&
         Objects.equals(this.qpMax, h265VideoConfiguration.qpMax) &&
         Objects.equals(this.wavefrontParallelProcessing, h265VideoConfiguration.wavefrontParallelProcessing) &&
-        Objects.equals(this.parallelModeDecision, h265VideoConfiguration.parallelModeDecision) &&
-        Objects.equals(this.parallelMotionEstimation, h265VideoConfiguration.parallelMotionEstimation) &&
         Objects.equals(this.slices, h265VideoConfiguration.slices) &&
         Objects.equals(this.copyPicture, h265VideoConfiguration.copyPicture) &&
         Objects.equals(this.levelHighTier, h265VideoConfiguration.levelHighTier) &&
@@ -1717,7 +1683,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
 
   @Override
   public int hashCode() {
-    return Objects.hash(presetConfiguration, crf, profile, bframes, refFrames, qp, maxBitrate, minBitrate, bufsize, minGop, maxGop, openGop, minKeyframeInterval, maxKeyframeInterval, level, rcLookahead, bAdapt, maxCTUSize, tuIntraDepth, tuInterDepth, motionSearch, subMe, motionSearchRange, weightPredictionOnPSlice, weightPredictionOnBSlice, sao, masterDisplay, maxContentLightLevel, maxAverageLightLevel, hdr, sceneCutThreshold, adaptiveQuantizationMode, enableHlgSignaling, videoFormat, psyRateDistortionOptimization, psyRateDistortionOptimizedQuantization, enableHrdSignaling, cutree, minCodingUnitSize, lookaheadSlices, limitReferences, rectangularMotionPartitionsAnalysis, asymetricMotionPartitionsAnalysis, limitModes, maxMerge, earlySkip, recursionSkip, fastSearchForAngularIntraPredictions, evaluationOfIntraModesInBSlices, signHide, rateDistortionLevelForModeDecision, rateDistortionLevelForQuantization, qpMin, qpMax, wavefrontParallelProcessing, parallelModeDecision, parallelMotionEstimation, slices, copyPicture, levelHighTier, skipSplitRateDistortionAnalysis, codingUnitLossless, transformSkip, refineRateDistortionCost, limitTransformUnitDepthRecursion, noiseReductionIntra, noiseReductionInter, rateDistortionPenalty, maximumTransformUnitSize, dynamicRateDistortionStrength, ssimRateDistortionOptimization, temporalMotionVectorPredictors, analyzeSourceFramePixels, strongIntraSmoothing, constrainedIntraPrediction, scenecutBias, allowedRADLBeforeIDR, gopLookahead, bframeBias, forceFlush, adaptiveQuantizationStrength, adaptiveQuantizationMotion, quantizationGroupSize, strictCbr, qpOffsetChromaCb, qpOffsetChromaCr, ipRatio, pbRatio, quantizerCurveCompressionFactor, qpStep, grainOptimizedRateControl, blurQuants, blurComplexity, saoNonDeblock, limitSao, lowpassDct, super.hashCode());
+    return Objects.hash(presetConfiguration, crf, profile, bframes, refFrames, qp, maxBitrate, minBitrate, bufsize, minGop, maxGop, openGop, minKeyframeInterval, maxKeyframeInterval, level, rcLookahead, bAdapt, maxCTUSize, tuIntraDepth, tuInterDepth, motionSearch, subMe, motionSearchRange, weightPredictionOnPSlice, weightPredictionOnBSlice, sao, masterDisplay, maxContentLightLevel, maxAverageLightLevel, hdr, sceneCutThreshold, adaptiveQuantizationMode, enableHlgSignaling, videoFormat, psyRateDistortionOptimization, psyRateDistortionOptimizedQuantization, enableHrdSignaling, cutree, minCodingUnitSize, lookaheadSlices, limitReferences, rectangularMotionPartitionsAnalysis, asymetricMotionPartitionsAnalysis, limitModes, maxMerge, earlySkip, recursionSkip, fastSearchForAngularIntraPredictions, evaluationOfIntraModesInBSlices, signHide, rateDistortionLevelForModeDecision, rateDistortionLevelForQuantization, qpMin, qpMax, wavefrontParallelProcessing, slices, copyPicture, levelHighTier, skipSplitRateDistortionAnalysis, codingUnitLossless, transformSkip, refineRateDistortionCost, limitTransformUnitDepthRecursion, noiseReductionIntra, noiseReductionInter, rateDistortionPenalty, maximumTransformUnitSize, dynamicRateDistortionStrength, ssimRateDistortionOptimization, temporalMotionVectorPredictors, analyzeSourceFramePixels, strongIntraSmoothing, constrainedIntraPrediction, scenecutBias, allowedRADLBeforeIDR, gopLookahead, bframeBias, forceFlush, adaptiveQuantizationStrength, adaptiveQuantizationMotion, quantizationGroupSize, strictCbr, qpOffsetChromaCb, qpOffsetChromaCr, ipRatio, pbRatio, quantizerCurveCompressionFactor, qpStep, grainOptimizedRateControl, blurQuants, blurComplexity, saoNonDeblock, limitSao, lowpassDct, super.hashCode());
   }
 
 
@@ -1781,8 +1747,6 @@ public class H265VideoConfiguration extends VideoConfiguration {
     sb.append("    qpMin: ").append(toIndentedString(qpMin)).append("\n");
     sb.append("    qpMax: ").append(toIndentedString(qpMax)).append("\n");
     sb.append("    wavefrontParallelProcessing: ").append(toIndentedString(wavefrontParallelProcessing)).append("\n");
-    sb.append("    parallelModeDecision: ").append(toIndentedString(parallelModeDecision)).append("\n");
-    sb.append("    parallelMotionEstimation: ").append(toIndentedString(parallelMotionEstimation)).append("\n");
     sb.append("    slices: ").append(toIndentedString(slices)).append("\n");
     sb.append("    copyPicture: ").append(toIndentedString(copyPicture)).append("\n");
     sb.append("    levelHighTier: ").append(toIndentedString(levelHighTier)).append("\n");

@@ -22,7 +22,7 @@ public enum EncryptionMode {
   /**
    * The encryption method to use.
    */
-  CBS("CBS");
+  CBC("CBC");
 
   private String value;
 

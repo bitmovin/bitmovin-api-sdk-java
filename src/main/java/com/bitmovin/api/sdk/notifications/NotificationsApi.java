@@ -17,12 +17,12 @@ import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.notifications.webhooks.WebhooksApi;
-import com.bitmovin.api.sdk.notifications.state.StateApi;
+import com.bitmovin.api.sdk.notifications.states.StatesApi;
 import com.bitmovin.api.sdk.notifications.emails.EmailsApi;
 
 public class NotificationsApi {
     public final WebhooksApi webhooks;
-    public final StateApi state;
+    public final StatesApi states;
     public final EmailsApi emails;
 
     private final NotificationsApiClient apiClient;
@@ -36,7 +36,7 @@ public class NotificationsApi {
         this.apiClient = clientFactory.createApiClient(NotificationsApiClient.class);
 
         this.webhooks = new WebhooksApi(clientFactory);
-        this.state = new StateApi(clientFactory);
+        this.states = new StatesApi(clientFactory);
         this.emails = new EmailsApi(clientFactory);
     }
 
@@ -144,7 +144,7 @@ public class NotificationsApi {
         @RequestLine("GET /notifications")
         ResponseEnvelope<PaginationResponse<Notification>> list(@QueryMap Map<String, Object> queryParams) throws BitmovinException;
     
-        @RequestLine("GET /notifications/{notification_id}/state")
+        @RequestLine("GET /notifications/{notification_id}/states")
         ResponseEnvelope<PaginationResponse<NotificationStateEntry>> listByNotificationId(@Param(value = "notification_id") String notificationId, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
     
         @Headers("Content-Type: text/plain")

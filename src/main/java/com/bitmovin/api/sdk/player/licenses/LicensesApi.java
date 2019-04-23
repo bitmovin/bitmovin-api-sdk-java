@@ -16,10 +16,12 @@ import com.bitmovin.api.sdk.common.BitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
+import com.bitmovin.api.sdk.player.licenses.analytics.AnalyticsApi;
 import com.bitmovin.api.sdk.player.licenses.domains.DomainsApi;
 import com.bitmovin.api.sdk.player.licenses.thirdPartyLicensing.ThirdPartyLicensingApi;
 
 public class LicensesApi {
+    public final AnalyticsApi analytics;
     public final DomainsApi domains;
     public final ThirdPartyLicensingApi thirdPartyLicensing;
 
@@ -33,6 +35,7 @@ public class LicensesApi {
 
         this.apiClient = clientFactory.createApiClient(LicensesApiClient.class);
 
+        this.analytics = new AnalyticsApi(clientFactory);
         this.domains = new DomainsApi(clientFactory);
         this.thirdPartyLicensing = new ThirdPartyLicensingApi(clientFactory);
     }
@@ -42,6 +45,17 @@ public class LicensesApi {
      */
     public static BitmovinApiBuilder<LicensesApi> builder() {
         return new BitmovinApiBuilder<>(LicensesApi.class);
+    }
+    
+    /**
+     * Create Player License
+     * 
+     * @param playerLicense Player License to be created (optional)
+     * @return PlayerLicense
+     * @throws BitmovinException if fails to make API call
+     */
+    public PlayerLicense create(PlayerLicense playerLicense) throws BitmovinException {
+        return this.apiClient.create(playerLicense).getData().getResult();
     }
     
     /**
@@ -76,6 +90,9 @@ public class LicensesApi {
     }
     
     interface LicensesApiClient {
+    
+        @RequestLine("POST /player/licenses")
+        ResponseEnvelope<PlayerLicense> create(PlayerLicense playerLicense) throws BitmovinException;
     
         @RequestLine("GET /player/licenses/{license_id}")
         ResponseEnvelope<PlayerLicense> get(@Param(value = "license_id") String licenseId) throws BitmovinException;
