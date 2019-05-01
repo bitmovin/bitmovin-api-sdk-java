@@ -10,12 +10,12 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets DashMuxingType
+ * Gets or Sets DashRepresentationType
  */
-public enum DashMuxingType {
+public enum DashRepresentationType {
   
   /**
-   * Generates a SegmentTemplate based representation
+   * Generates a SegmentTemplate which will be positioned under the representation
    */
   TEMPLATE("TEMPLATE"),
   
@@ -31,7 +31,7 @@ public enum DashMuxingType {
 
   private String value;
 
-  DashMuxingType(String value) {
+  DashRepresentationType(String value) {
     this.value = value;
   }
 
@@ -46,8 +46,8 @@ public enum DashMuxingType {
   }
 
   @JsonCreator
-  public static DashMuxingType fromValue(String text) {
-    for (DashMuxingType b : DashMuxingType.values()) {
+  public static DashRepresentationType fromValue(String text) {
+    for (DashRepresentationType b : DashRepresentationType.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

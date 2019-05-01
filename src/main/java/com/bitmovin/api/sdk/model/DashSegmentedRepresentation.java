@@ -2,8 +2,9 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.DashMuxingType;
 import com.bitmovin.api.sdk.model.DashRepresentation;
+import com.bitmovin.api.sdk.model.DashRepresentationType;
+import com.bitmovin.api.sdk.model.DashRepresentationTypeMode;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -14,7 +15,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class DashSegmentedRepresentation extends DashRepresentation {
   @JsonProperty("type")
-  private DashMuxingType type = null;
+  private DashRepresentationType type = null;
+
+  @JsonProperty("mode")
+  private DashRepresentationTypeMode mode = null;
 
   @JsonProperty("segmentPath")
   private String segmentPath;
@@ -36,17 +40,30 @@ public class DashSegmentedRepresentation extends DashRepresentation {
    * Get type
    * @return type
    */
-  public DashMuxingType getType() {
+  public DashRepresentationType getType() {
     return type;
   }
 
-  public void setType(DashMuxingType type) {
+  public void setType(DashRepresentationType type) {
     this.type = type;
   }
 
 
   /**
-   * Path to segments
+   * Get mode
+   * @return mode
+   */
+  public DashRepresentationTypeMode getMode() {
+    return mode;
+  }
+
+  public void setMode(DashRepresentationTypeMode mode) {
+    this.mode = mode;
+  }
+
+
+  /**
+   * Path to segments. Will be used as the representation id if the type is set to TEMPLATE_ADAPTATION_SET
    * @return segmentPath
    */
   public String getSegmentPath() {
@@ -120,6 +137,7 @@ public class DashSegmentedRepresentation extends DashRepresentation {
     }
     DashSegmentedRepresentation dashSegmentedRepresentation = (DashSegmentedRepresentation) o;
     return Objects.equals(this.type, dashSegmentedRepresentation.type) &&
+        Objects.equals(this.mode, dashSegmentedRepresentation.mode) &&
         Objects.equals(this.segmentPath, dashSegmentedRepresentation.segmentPath) &&
         Objects.equals(this.startSegmentNumber, dashSegmentedRepresentation.startSegmentNumber) &&
         Objects.equals(this.endSegmentNumber, dashSegmentedRepresentation.endSegmentNumber) &&
@@ -130,7 +148,7 @@ public class DashSegmentedRepresentation extends DashRepresentation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, segmentPath, startSegmentNumber, endSegmentNumber, startKeyframeId, endKeyframeId, super.hashCode());
+    return Objects.hash(type, mode, segmentPath, startSegmentNumber, endSegmentNumber, startKeyframeId, endKeyframeId, super.hashCode());
   }
 
 
@@ -140,6 +158,7 @@ public class DashSegmentedRepresentation extends DashRepresentation {
     sb.append("class DashSegmentedRepresentation {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
     sb.append("    segmentPath: ").append(toIndentedString(segmentPath)).append("\n");
     sb.append("    startSegmentNumber: ").append(toIndentedString(startSegmentNumber)).append("\n");
     sb.append("    endSegmentNumber: ").append(toIndentedString(endSegmentNumber)).append("\n");

@@ -10,43 +10,23 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets PresetConfiguration
+ * Gets or Sets DashRepresentationTypeMode
  */
-public enum PresetConfiguration {
+public enum DashRepresentationTypeMode {
   
+  /**
+   * Generates representations containing segment templates. This is the default.
+   */
+  TEMPLATE_REPRESENTATION("TEMPLATE_REPRESENTATION"),
   
-  LIVE_HIGH_QUALITY("LIVE_HIGH_QUALITY"),
-  
-  
-  LIVE_LOW_LATENCY("LIVE_LOW_LATENCY"),
-  
-  
-  VOD_HIGH_QUALITY("VOD_HIGH_QUALITY"),
-  
-  
-  VOD_HIGH_SPEED("VOD_HIGH_SPEED"),
-  
-  
-  VOD_SPEED("VOD_SPEED"),
-  
-  
-  VOD_STANDARD("VOD_STANDARD"),
-  
-  
-  VOD_EXTRAHIGH_SPEED("VOD_EXTRAHIGH_SPEED"),
-  
-  
-  VOD_VERYHIGH_SPEED("VOD_VERYHIGH_SPEED"),
-  
-  
-  VOD_SUPERHIGH_SPEED("VOD_SUPERHIGH_SPEED"),
-  
-  
-  VOD_ULTRAHIGH_SPEED("VOD_ULTRAHIGH_SPEED");
+  /**
+   * Generates segment templates in the adaption sets. The representations will not contain any segment templates anymore.
+   */
+  TEMPLATE_ADAPTATION_SET("TEMPLATE_ADAPTATION_SET");
 
   private String value;
 
-  PresetConfiguration(String value) {
+  DashRepresentationTypeMode(String value) {
     this.value = value;
   }
 
@@ -61,8 +41,8 @@ public enum PresetConfiguration {
   }
 
   @JsonCreator
-  public static PresetConfiguration fromValue(String text) {
-    for (PresetConfiguration b : PresetConfiguration.values()) {
+  public static DashRepresentationTypeMode fromValue(String text) {
+    for (DashRepresentationTypeMode b : DashRepresentationTypeMode.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

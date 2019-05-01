@@ -2,7 +2,8 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.DashMuxingType;
+import com.bitmovin.api.sdk.model.DashRepresentationType;
+import com.bitmovin.api.sdk.model.DashRepresentationTypeMode;
 import com.bitmovin.api.sdk.model.DashSegmentedRepresentation;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
