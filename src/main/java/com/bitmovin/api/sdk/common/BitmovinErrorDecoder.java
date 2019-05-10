@@ -22,6 +22,11 @@ public class BitmovinErrorDecoder implements ErrorDecoder {
     public Exception decode(String methodKey, Response response) {
         try
         {
+            if (response.body() == null)
+            {
+                return new BitmovinException(response.reason(), response.status(), response.toString());
+            }
+
             Reader reader = response.body().asReader();
             if (!reader.markSupported())
             {

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -22,6 +23,7 @@ public class AudioMixFilter extends Filter {
   private AudioMixChannelLayout channelLayout = null;
 
   @JsonProperty("audioMixChannels")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<AudioMixChannel> audioMixChannels = new ArrayList<AudioMixChannel>();
 
 

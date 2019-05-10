@@ -8,7 +8,7 @@ import com.bitmovin.api.sdk.model.BitmovinResource;
 import com.bitmovin.api.sdk.model.DecodingErrorMode;
 import com.bitmovin.api.sdk.model.EncodingOutput;
 import com.bitmovin.api.sdk.model.Ignoring;
-import com.bitmovin.api.sdk.model.InputStream;
+import com.bitmovin.api.sdk.model.StreamInput;
 import com.bitmovin.api.sdk.model.StreamMetadata;
 import com.bitmovin.api.sdk.model.StreamMode;
 import com.bitmovin.api.sdk.model.StreamPerTitleSettings;
@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -26,10 +27,12 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class Stream extends BitmovinResource {
   @JsonProperty("inputStreams")
-  private List<InputStream> inputStreams = new ArrayList<InputStream>();
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<StreamInput> inputStreams = new ArrayList<StreamInput>();
 
   @JsonProperty("outputs")
-  private List<EncodingOutput> outputs;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<EncodingOutput> outputs = new ArrayList<EncodingOutput>();
 
   @JsonProperty("createQualityMetaData")
   private Boolean createQualityMetaData;
@@ -44,7 +47,8 @@ public class Stream extends BitmovinResource {
   private AbstractCondition conditions = null;
 
   @JsonProperty("ignoredBy")
-  private List<Ignoring> ignoredBy;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<Ignoring> ignoredBy = new ArrayList<Ignoring>();
 
   @JsonProperty("mode")
   private StreamMode mode = null;
@@ -62,7 +66,7 @@ public class Stream extends BitmovinResource {
   private AppliedStreamSettings appliedSettings = null;
 
 
-  public Stream addInputStreamsItem(InputStream inputStreamsItem) {
+  public Stream addInputStreamsItem(StreamInput inputStreamsItem) {
     this.inputStreams.add(inputStreamsItem);
     return this;
   }
@@ -71,11 +75,11 @@ public class Stream extends BitmovinResource {
    * Get inputStreams
    * @return inputStreams
    */
-  public List<InputStream> getInputStreams() {
+  public List<StreamInput> getInputStreams() {
     return inputStreams;
   }
 
-  public void setInputStreams(List<InputStream> inputStreams) {
+  public void setInputStreams(List<StreamInput> inputStreams) {
     this.inputStreams = inputStreams;
   }
 

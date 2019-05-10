@@ -8,6 +8,7 @@ import com.bitmovin.api.sdk.model.BitmovinResponse;
 import com.bitmovin.api.sdk.model.CustomAttribute;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -18,13 +19,16 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class AdaptationSet extends BitmovinResponse {
   @JsonProperty("customAttributes")
-  private List<CustomAttribute> customAttributes;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<CustomAttribute> customAttributes = new ArrayList<CustomAttribute>();
 
   @JsonProperty("roles")
-  private List<AdaptationSetRole> roles;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<AdaptationSetRole> roles = new ArrayList<AdaptationSetRole>();
 
   @JsonProperty("accessibilities")
-  private List<Accessibility> accessibilities;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<Accessibility> accessibilities = new ArrayList<Accessibility>();
 
 
   public AdaptationSet addCustomAttributesItem(CustomAttribute customAttributesItem) {

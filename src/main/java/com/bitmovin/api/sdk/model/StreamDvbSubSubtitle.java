@@ -3,10 +3,11 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.BitmovinResource;
-import com.bitmovin.api.sdk.model.InputStream;
+import com.bitmovin.api.sdk.model.StreamInput;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -17,18 +18,18 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class StreamDvbSubSubtitle extends BitmovinResource {
   @JsonProperty("inputStream")
-  private InputStream inputStream = null;
+  private StreamInput inputStream = null;
 
 
   /**
    * The input stream to extract the subtitle from
    * @return inputStream
    */
-  public InputStream getInputStream() {
+  public StreamInput getInputStream() {
     return inputStream;
   }
 
-  public void setInputStream(InputStream inputStream) {
+  public void setInputStream(StreamInput inputStream) {
     this.inputStream = inputStream;
   }
 

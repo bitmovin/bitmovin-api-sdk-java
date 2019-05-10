@@ -5,6 +5,7 @@ import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AclEntry;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -21,7 +22,8 @@ public class EncodingOutput {
   private String outputPath;
 
   @JsonProperty("acl")
-  private List<AclEntry> acl;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<AclEntry> acl = new ArrayList<AclEntry>();
 
 
   /**

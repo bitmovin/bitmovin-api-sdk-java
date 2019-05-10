@@ -28,6 +28,7 @@ import com.bitmovin.api.sdk.model.VideoFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -779,6 +780,8 @@ public class H265VideoConfiguration extends VideoConfiguration {
 
   /**
    * Psycho-visual rate-distortion retains fine details like film grain at the expense of more blocking artifacts. Higher values make the video appear sharper and more detailed but with a higher risk of blocking artifacts. Needs to have subMe with RD_IP, RD_ALL, RD_REF_IP, RD_REF_ALL, QPRD or FULL_RD
+   * minimum: 0
+   * maximum: 5
    * @return psyRateDistortionOptimization
    */
   public Double getPsyRateDistortionOptimization() {
@@ -792,6 +795,8 @@ public class H265VideoConfiguration extends VideoConfiguration {
 
   /**
    * Strength of psycho-visual optimizations in quantization. Only has an effect in presets which use RDOQ (rd-levels 4 and 5). The value must be between 0 and 50, 1.0 is typical
+   * minimum: 0
+   * maximum: 50
    * @return psyRateDistortionOptimizedQuantization
    */
   public Double getPsyRateDistortionOptimizedQuantization() {

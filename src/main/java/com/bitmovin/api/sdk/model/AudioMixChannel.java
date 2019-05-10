@@ -5,6 +5,7 @@ import java.util.Arrays;
 import com.bitmovin.api.sdk.model.SourceChannel;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -18,6 +19,7 @@ public class AudioMixChannel {
   private Integer channelNumber;
 
   @JsonProperty("sourceChannels")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<SourceChannel> sourceChannels = new ArrayList<SourceChannel>();
 
 

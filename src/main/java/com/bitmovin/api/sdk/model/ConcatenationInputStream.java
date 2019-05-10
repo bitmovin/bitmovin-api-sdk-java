@@ -2,12 +2,13 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.BasicInputStream;
 import com.bitmovin.api.sdk.model.ConcatenationInputConfiguration;
+import com.bitmovin.api.sdk.model.InputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -16,9 +17,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  * ConcatenationInputStream
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
-public class ConcatenationInputStream extends BasicInputStream {
+public class ConcatenationInputStream extends InputStream {
   @JsonProperty("concatenation")
-  private List<ConcatenationInputConfiguration> concatenation;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<ConcatenationInputConfiguration> concatenation = new ArrayList<ConcatenationInputConfiguration>();
 
 
   public ConcatenationInputStream addConcatenationItem(ConcatenationInputConfiguration concatenationItem) {

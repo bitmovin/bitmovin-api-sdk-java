@@ -56,10 +56,10 @@ public class LocalApi {
      * Delete Local Input
      * 
      * @param inputId Id of the input (required)
-     * @return LocalInput
+     * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */
-    public LocalInput delete(String inputId) throws BitmovinException {
+    public BitmovinResponse delete(String inputId) throws BitmovinException {
         return this.apiClient.delete(inputId).getData().getResult();
     }
     
@@ -100,7 +100,7 @@ public class LocalApi {
         ResponseEnvelope<LocalInput> create(LocalInput localInput) throws BitmovinException;
     
         @RequestLine("DELETE /encoding/inputs/local/{input_id}")
-        ResponseEnvelope<LocalInput> delete(@Param(value = "input_id") String inputId) throws BitmovinException;
+        ResponseEnvelope<BitmovinResponse> delete(@Param(value = "input_id") String inputId) throws BitmovinException;
     
         @RequestLine("GET /encoding/inputs/local/{input_id}")
         ResponseEnvelope<LocalInput> get(@Param(value = "input_id") String inputId) throws BitmovinException;

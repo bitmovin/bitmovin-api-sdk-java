@@ -6,6 +6,7 @@ import com.bitmovin.api.sdk.model.DailyStatistics;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -16,9 +17,12 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class DailyStatisticsPerLabel {
   @JsonProperty("date")
+  @com.fasterxml.jackson.annotation.JsonFormat
+        (shape = com.fasterxml.jackson.annotation.JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
   private Date date;
 
   @JsonProperty("labels")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<DailyStatistics> labels = new ArrayList<DailyStatistics>();
 
 

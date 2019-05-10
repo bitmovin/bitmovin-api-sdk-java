@@ -2,21 +2,17 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.InputStream;
 import com.bitmovin.api.sdk.model.StreamSelectionMode;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * IngestInputStream
+ * StreamInput
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
-public class IngestInputStream extends InputStream {
+
+public class StreamInput {
   @JsonProperty("inputId")
   private String inputId;
 
@@ -28,6 +24,9 @@ public class IngestInputStream extends InputStream {
 
   @JsonProperty("position")
   private Integer position;
+
+  @JsonProperty("inputStreamId")
+  private String inputStreamId;
 
 
   /**
@@ -82,6 +81,19 @@ public class IngestInputStream extends InputStream {
   }
 
 
+  /**
+   * Set this property instead of all others to reference an ingest, trimming or concatenation input stream
+   * @return inputStreamId
+   */
+  public String getInputStreamId() {
+    return inputStreamId;
+  }
+
+  public void setInputStreamId(String inputStreamId) {
+    this.inputStreamId = inputStreamId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -90,29 +102,30 @@ public class IngestInputStream extends InputStream {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    IngestInputStream ingestInputStream = (IngestInputStream) o;
-    return Objects.equals(this.inputId, ingestInputStream.inputId) &&
-        Objects.equals(this.inputPath, ingestInputStream.inputPath) &&
-        Objects.equals(this.selectionMode, ingestInputStream.selectionMode) &&
-        Objects.equals(this.position, ingestInputStream.position) &&
-        super.equals(o);
+    StreamInput streamInput = (StreamInput) o;
+    return Objects.equals(this.inputId, streamInput.inputId) &&
+        Objects.equals(this.inputPath, streamInput.inputPath) &&
+        Objects.equals(this.selectionMode, streamInput.selectionMode) &&
+        Objects.equals(this.position, streamInput.position) &&
+        Objects.equals(this.inputStreamId, streamInput.inputStreamId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(inputId, inputPath, selectionMode, position, super.hashCode());
+    return Objects.hash(inputId, inputPath, selectionMode, position, inputStreamId);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class IngestInputStream {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("class StreamInput {\n");
+    
     sb.append("    inputId: ").append(toIndentedString(inputId)).append("\n");
     sb.append("    inputPath: ").append(toIndentedString(inputPath)).append("\n");
     sb.append("    selectionMode: ").append(toIndentedString(selectionMode)).append("\n");
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
+    sb.append("    inputStreamId: ").append(toIndentedString(inputStreamId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

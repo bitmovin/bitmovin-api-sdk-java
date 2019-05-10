@@ -7,6 +7,7 @@ import com.bitmovin.api.sdk.model.BillableEncodingMinutes;
 import com.bitmovin.api.sdk.model.Statistics;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -23,13 +24,15 @@ public class StatisticsPerLabel extends Statistics {
   private Double billableMinutes;
 
   @JsonProperty("billableEncodingMinutes")
-  private List<BillableEncodingMinutes> billableEncodingMinutes;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<BillableEncodingMinutes> billableEncodingMinutes = new ArrayList<BillableEncodingMinutes>();
 
   @JsonProperty("billableTransmuxingMinutes")
   private Double billableTransmuxingMinutes;
 
   @JsonProperty("billableFeatureMinutes")
-  private List<BillableEncodingFeatureMinutes> billableFeatureMinutes;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<BillableEncodingFeatureMinutes> billableFeatureMinutes = new ArrayList<BillableEncodingFeatureMinutes>();
 
 
   /**

@@ -2,7 +2,11 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.StreamSelectionMode;
+import com.bitmovin.api.sdk.model.BitmovinResource;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -11,87 +15,17 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  * InputStream
  */
 
-public class InputStream {
-  @JsonProperty("inputId")
-  private String inputId;
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false)
+@JsonSubTypes({
+  @JsonSubTypes.Type(value = IngestInputStream.class, name = "INGEST"),
+  @JsonSubTypes.Type(value = ConcatenationInputStream.class, name = "CONCATENATION"),
+  @JsonSubTypes.Type(value = TimeBasedTrimmingInputStream.class, name = "TRIMMING_TIME_BASED"),
+  @JsonSubTypes.Type(value = TimecodeTrackTrimmingInputStream.class, name = "TRIMMING_TIME_CODE_TRACK"),
+  @JsonSubTypes.Type(value = H264PictureTimingTrimmingInputStream.class, name = "TRIMMING_H264_PICTURE_TIMING"),
+  @JsonSubTypes.Type(value = AudioMixInputStream.class, name = "AUDIO_MIX"),
+})
 
-  @JsonProperty("inputPath")
-  private String inputPath;
-
-  @JsonProperty("selectionMode")
-  private StreamSelectionMode selectionMode = null;
-
-  @JsonProperty("position")
-  private Integer position;
-
-  @JsonProperty("inputStreamId")
-  private String inputStreamId;
-
-
-  /**
-   * Id of input
-   * @return inputId
-   */
-  public String getInputId() {
-    return inputId;
-  }
-
-  public void setInputId(String inputId) {
-    this.inputId = inputId;
-  }
-
-
-  /**
-   * Path to media file
-   * @return inputPath
-   */
-  public String getInputPath() {
-    return inputPath;
-  }
-
-  public void setInputPath(String inputPath) {
-    this.inputPath = inputPath;
-  }
-
-
-  /**
-   * Specifies the algorithm how the stream in the input file will be selected
-   * @return selectionMode
-   */
-  public StreamSelectionMode getSelectionMode() {
-    return selectionMode;
-  }
-
-  public void setSelectionMode(StreamSelectionMode selectionMode) {
-    this.selectionMode = selectionMode;
-  }
-
-
-  /**
-   * Position of the stream
-   * @return position
-   */
-  public Integer getPosition() {
-    return position;
-  }
-
-  public void setPosition(Integer position) {
-    this.position = position;
-  }
-
-
-  /**
-   * Set this property instead of all others to reference an ingest, trimming or concatenation input stream
-   * @return inputStreamId
-   */
-  public String getInputStreamId() {
-    return inputStreamId;
-  }
-
-  public void setInputStreamId(String inputStreamId) {
-    this.inputStreamId = inputStreamId;
-  }
-
+public class InputStream extends BitmovinResource {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -101,17 +35,12 @@ public class InputStream {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InputStream inputStream = (InputStream) o;
-    return Objects.equals(this.inputId, inputStream.inputId) &&
-        Objects.equals(this.inputPath, inputStream.inputPath) &&
-        Objects.equals(this.selectionMode, inputStream.selectionMode) &&
-        Objects.equals(this.position, inputStream.position) &&
-        Objects.equals(this.inputStreamId, inputStream.inputStreamId);
+    return super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(inputId, inputPath, selectionMode, position, inputStreamId);
+    return Objects.hash(super.hashCode());
   }
 
 
@@ -119,12 +48,7 @@ public class InputStream {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InputStream {\n");
-    
-    sb.append("    inputId: ").append(toIndentedString(inputId)).append("\n");
-    sb.append("    inputPath: ").append(toIndentedString(inputPath)).append("\n");
-    sb.append("    selectionMode: ").append(toIndentedString(selectionMode)).append("\n");
-    sb.append("    position: ").append(toIndentedString(position)).append("\n");
-    sb.append("    inputStreamId: ").append(toIndentedString(inputStreamId)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -5,6 +5,7 @@ import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AutoRepresentation;
 import com.bitmovin.api.sdk.model.PerTitleConfiguration;
 import com.bitmovin.api.sdk.model.PerTitleFixedResolutionAndBitrateConfiguration;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;

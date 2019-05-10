@@ -5,6 +5,7 @@ import java.util.Arrays;
 import com.bitmovin.api.sdk.model.BitmovinResponse;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -33,7 +34,8 @@ public class BasicMediaInfo extends BitmovinResponse {
   private Boolean autoselect;
 
   @JsonProperty("characteristics")
-  private List<String> characteristics;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<String> characteristics = new ArrayList<String>();
 
 
   /**

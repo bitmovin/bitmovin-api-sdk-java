@@ -58,10 +58,10 @@ public class InputStreamsApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param inputStreamId Id of the input stream. (required)
-     * @return BasicInputStream
+     * @return InputStream
      * @throws BitmovinException if fails to make API call
      */
-    public BasicInputStream get(String encodingId, String inputStreamId) throws BitmovinException {
+    public InputStream get(String encodingId, String inputStreamId) throws BitmovinException {
         return this.apiClient.get(encodingId, inputStreamId).getData().getResult();
     }
     
@@ -69,10 +69,10 @@ public class InputStreamsApi {
      * List All Input Streams
      * 
      * @param encodingId Id of the encoding. (required)
-     * @return List&lt;BasicInputStream&gt;
+     * @return List&lt;InputStream&gt;
      * @throws BitmovinException if fails to make API call
      */
-    public PaginationResponse<BasicInputStream> list(String encodingId) throws BitmovinException {
+    public PaginationResponse<InputStream> list(String encodingId) throws BitmovinException {
         return this.apiClient.list(encodingId, new HashMap<String, Object>()).getData().getResult();
     }
     /**
@@ -80,19 +80,19 @@ public class InputStreamsApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
-     * @return List&lt;BasicInputStream&gt;
+     * @return List&lt;InputStream&gt;
      * @throws BitmovinException if fails to make API call
      */
-    public PaginationResponse<BasicInputStream> list(String encodingId, BasicInputStreamListQueryParams queryParams) throws BitmovinException {
+    public PaginationResponse<InputStream> list(String encodingId, InputStreamListQueryParams queryParams) throws BitmovinException {
         return this.apiClient.list(encodingId, queryParams).getData().getResult();
     }
     
     interface InputStreamsApiClient {
     
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/{input_stream_id}")
-        ResponseEnvelope<BasicInputStream> get(@Param(value = "encoding_id") String encodingId, @Param(value = "input_stream_id") String inputStreamId) throws BitmovinException;
+        ResponseEnvelope<InputStream> get(@Param(value = "encoding_id") String encodingId, @Param(value = "input_stream_id") String inputStreamId) throws BitmovinException;
     
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams")
-        ResponseEnvelope<PaginationResponse<BasicInputStream>> list(@Param(value = "encoding_id") String encodingId, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<InputStream>> list(@Param(value = "encoding_id") String encodingId, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
     }
 }

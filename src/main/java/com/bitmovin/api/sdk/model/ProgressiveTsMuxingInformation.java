@@ -8,6 +8,7 @@ import com.bitmovin.api.sdk.model.ProgressiveMuxingInformation;
 import com.bitmovin.api.sdk.model.ProgressiveTsMuxingInformationByteRanges;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -18,7 +19,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class ProgressiveTsMuxingInformation extends ProgressiveMuxingInformation {
   @JsonProperty("byteRanges")
-  private List<ProgressiveTsMuxingInformationByteRanges> byteRanges;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<ProgressiveTsMuxingInformationByteRanges> byteRanges = new ArrayList<ProgressiveTsMuxingInformationByteRanges>();
 
   /**
    * Byte ranges for the segments within the TS file

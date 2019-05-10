@@ -6,6 +6,7 @@ import com.bitmovin.api.sdk.model.MuxingInformationAudioTrack;
 import com.bitmovin.api.sdk.model.MuxingInformationVideoTrack;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -31,10 +32,12 @@ public class ProgressiveMuxingInformation {
   private Double duration;
 
   @JsonProperty("videoTracks")
-  private List<MuxingInformationVideoTrack> videoTracks;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<MuxingInformationVideoTrack> videoTracks = new ArrayList<MuxingInformationVideoTrack>();
 
   @JsonProperty("audioTracks")
-  private List<MuxingInformationAudioTrack> audioTracks;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<MuxingInformationAudioTrack> audioTracks = new ArrayList<MuxingInformationAudioTrack>();
 
   /**
    * The mime type of the muxing

@@ -2,8 +2,11 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.AnalyticsExportStatus;
 import com.bitmovin.api.sdk.model.AnalyticsExportTaskOutputTarget;
 import com.bitmovin.api.sdk.model.BitmovinResponse;
+import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -14,10 +17,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class AnalyticsExportTask extends BitmovinResponse {
   @JsonProperty("startTime")
-  private String startTime;
+  private Date startTime;
 
   @JsonProperty("endTime")
-  private String endTime;
+  private Date endTime;
 
   @JsonProperty("name")
   private String name;
@@ -31,16 +34,28 @@ public class AnalyticsExportTask extends BitmovinResponse {
   @JsonProperty("output")
   private AnalyticsExportTaskOutputTarget output = null;
 
+  @JsonProperty("progress")
+  private Integer progress;
+
+  @JsonProperty("status")
+  private AnalyticsExportStatus status = null;
+
+  @JsonProperty("startedAt")
+  private Date startedAt;
+
+  @JsonProperty("finishedAt")
+  private Date finishedAt;
+
 
   /**
    * Start of timeframe which is exported in UTC format
    * @return startTime
    */
-  public String getStartTime() {
+  public Date getStartTime() {
     return startTime;
   }
 
-  public void setStartTime(String startTime) {
+  public void setStartTime(Date startTime) {
     this.startTime = startTime;
   }
 
@@ -49,11 +64,11 @@ public class AnalyticsExportTask extends BitmovinResponse {
    * End of timeframe which is exported in UTC format
    * @return endTime
    */
-  public String getEndTime() {
+  public Date getEndTime() {
     return endTime;
   }
 
-  public void setEndTime(String endTime) {
+  public void setEndTime(Date endTime) {
     this.endTime = endTime;
   }
 
@@ -109,6 +124,43 @@ public class AnalyticsExportTask extends BitmovinResponse {
     this.output = output;
   }
 
+  /**
+   * Progress of the export task
+   * @return progress
+   */
+  public Integer getProgress() {
+    return progress;
+  }
+
+
+  /**
+   * Get status
+   * @return status
+   */
+  public AnalyticsExportStatus getStatus() {
+    return status;
+  }
+
+  public void setStatus(AnalyticsExportStatus status) {
+    this.status = status;
+  }
+
+  /**
+   * UTC timestamp when the export task started
+   * @return startedAt
+   */
+  public Date getStartedAt() {
+    return startedAt;
+  }
+
+  /**
+   * UTC timestamp when the export task finished
+   * @return finishedAt
+   */
+  public Date getFinishedAt() {
+    return finishedAt;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,12 +177,16 @@ public class AnalyticsExportTask extends BitmovinResponse {
         Objects.equals(this.description, analyticsExportTask.description) &&
         Objects.equals(this.licenseKey, analyticsExportTask.licenseKey) &&
         Objects.equals(this.output, analyticsExportTask.output) &&
+        Objects.equals(this.progress, analyticsExportTask.progress) &&
+        Objects.equals(this.status, analyticsExportTask.status) &&
+        Objects.equals(this.startedAt, analyticsExportTask.startedAt) &&
+        Objects.equals(this.finishedAt, analyticsExportTask.finishedAt) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startTime, endTime, name, description, licenseKey, output, super.hashCode());
+    return Objects.hash(startTime, endTime, name, description, licenseKey, output, progress, status, startedAt, finishedAt, super.hashCode());
   }
 
 
@@ -145,6 +201,10 @@ public class AnalyticsExportTask extends BitmovinResponse {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    licenseKey: ").append(toIndentedString(licenseKey)).append("\n");
     sb.append("    output: ").append(toIndentedString(output)).append("\n");
+    sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    startedAt: ").append(toIndentedString(startedAt)).append("\n");
+    sb.append("    finishedAt: ").append(toIndentedString(finishedAt)).append("\n");
     sb.append("}");
     return sb.toString();
   }

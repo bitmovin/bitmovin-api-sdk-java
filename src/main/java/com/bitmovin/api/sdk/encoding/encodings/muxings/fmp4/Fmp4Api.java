@@ -18,12 +18,10 @@ import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.fmp4.customdata.CustomdataApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.fmp4.drm.DrmApi;
-import com.bitmovin.api.sdk.encoding.encodings.muxings.fmp4.captions.CaptionsApi;
 
 public class Fmp4Api {
     public final CustomdataApi customdata;
     public final DrmApi drm;
-    public final CaptionsApi captions;
 
     private final Fmp4ApiClient apiClient;
 
@@ -37,7 +35,6 @@ public class Fmp4Api {
 
         this.customdata = new CustomdataApi(clientFactory);
         this.drm = new DrmApi(clientFactory);
-        this.captions = new CaptionsApi(clientFactory);
     }
 
     /**

@@ -8,6 +8,7 @@ import com.bitmovin.api.sdk.model.BroadcastTsTransportConfiguration;
 import com.bitmovin.api.sdk.model.BroadcastTsVideoInputStreamConfiguration;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -24,10 +25,12 @@ public class BroadcastTsMuxingConfiguration {
   private BroadcastTsProgramConfiguration program = null;
 
   @JsonProperty("videoStreams")
-  private List<BroadcastTsVideoInputStreamConfiguration> videoStreams;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<BroadcastTsVideoInputStreamConfiguration> videoStreams = new ArrayList<BroadcastTsVideoInputStreamConfiguration>();
 
   @JsonProperty("audioStreams")
-  private List<BroadcastTsAudioInputStreamConfiguration> audioStreams;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<BroadcastTsAudioInputStreamConfiguration> audioStreams = new ArrayList<BroadcastTsAudioInputStreamConfiguration>();
 
 
   /**

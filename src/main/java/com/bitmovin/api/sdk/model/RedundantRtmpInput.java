@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -21,6 +22,7 @@ public class RedundantRtmpInput extends Input {
   private Integer delayThreshold = 30;
 
   @JsonProperty("ingestPoints")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<RtmpIngestPoint> ingestPoints = new ArrayList<RtmpIngestPoint>();
 
 

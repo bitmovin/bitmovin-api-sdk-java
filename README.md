@@ -1,7 +1,5 @@
 # Bitmovin Java API Client
 
-***Important: This is an alpha version, there may be breaking changes.***
-
 [![bitmovin](http://bitmovin-a.akamaihd.net/webpages/bitmovin-logo-github.png)](http://www.bitmovin.com)
 
 Java-Client which enables you to seamlessly integrate the Bitmovin API into your projects. Using this API client requires an active account.
@@ -20,7 +18,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.bitmovin.api.sdk</groupId>
   <artifactId>bitmovin-api-sdk</artifactId>
-  <version>1.14.1-alpha-0</version>
+  <version>1.14.3</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -36,7 +34,7 @@ mvn clean install
 Add this dependency to your project's build file:
 
 ```groovy
-compile group: 'com.bitmovin.api.sdk', name= 'bitmovin-api-sdk', version: '1.14.1-alpha-0'
+compile group: 'com.bitmovin.api.sdk', name= 'bitmovin-api-sdk', version: '1.14.3'
 ```
 
 ## Initialization

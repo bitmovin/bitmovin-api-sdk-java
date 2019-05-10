@@ -25,11 +25,20 @@ public class BitmovinDecoder implements Decoder {
         return jsonNode.get("status") != null && jsonNode.get("status").asText().equals("SUCCESS");
     }
 
-    public Object decode(Response response, Type type) throws IOException, DecodeException, FeignException {
+    public Object decode(Response response, Type type) throws IOException, DecodeException, FeignException
+    {
+        if (response.body() == null)
+        {
+            return null;
+        }
+
         Reader reader = response.body().asReader();
-        if (!reader.markSupported()) {
+
+        if (!reader.markSupported())
+        {
             reader = new BufferedReader(reader, 1);
         }
+
         try
         {
             reader.mark(1);

@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -29,7 +30,8 @@ public class BitmovinResource extends BitmovinResponse {
   private Date modifiedAt;
 
   @JsonProperty("customData")
-  private Map<String, Object> customData;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private Map<String, Object> customData = new HashMap<String, Object>();
 
 
   /**

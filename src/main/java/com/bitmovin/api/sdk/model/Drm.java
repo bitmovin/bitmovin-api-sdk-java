@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -30,7 +31,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class Drm extends BitmovinResource {
   @JsonProperty("outputs")
-  private List<EncodingOutput> outputs;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<EncodingOutput> outputs = new ArrayList<EncodingOutput>();
 
 
   public Drm addOutputsItem(EncodingOutput outputsItem) {

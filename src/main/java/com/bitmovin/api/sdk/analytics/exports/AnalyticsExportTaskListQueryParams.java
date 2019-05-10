@@ -1,9 +1,9 @@
-package com.bitmovin.api.sdk.encoding.encodings.streams.burnInSubtitles.dvbsub;
+package com.bitmovin.api.sdk.analytics.exports;
 
 import java.util.HashMap;
 import com.bitmovin.api.sdk.model.*;
 
-public class StreamDvbSubSubtitleListQueryParams extends HashMap<String, Object> {
+public class AnalyticsExportTaskListQueryParams extends HashMap<String, Object> {
 
     public Integer getOffset() {
         return (Integer) this.get("offset");

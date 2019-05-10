@@ -7,6 +7,7 @@ import com.bitmovin.api.sdk.model.SrtStatisticRecv;
 import com.bitmovin.api.sdk.model.SrtStatisticSend;
 import com.bitmovin.api.sdk.model.SrtStatisticWindow;
 import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;

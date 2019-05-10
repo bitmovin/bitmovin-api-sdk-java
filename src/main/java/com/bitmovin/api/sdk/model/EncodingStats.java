@@ -9,6 +9,7 @@ import com.bitmovin.api.sdk.model.StatisticsPerStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -19,6 +20,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class EncodingStats {
   @JsonProperty("date")
+  @com.fasterxml.jackson.annotation.JsonFormat
+        (shape = com.fasterxml.jackson.annotation.JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
   private Date date;
 
   @JsonProperty("encodingId")
@@ -37,7 +40,8 @@ public class EncodingStats {
   private Double billableMinutes;
 
   @JsonProperty("billableEncodingMinutes")
-  private List<BillableEncodingMinutes> billableEncodingMinutes;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<BillableEncodingMinutes> billableEncodingMinutes = new ArrayList<BillableEncodingMinutes>();
 
   @JsonProperty("billableTransmuxingMinutes")
   private Double billableTransmuxingMinutes;
@@ -46,13 +50,16 @@ public class EncodingStats {
   private Double billableFeatureMinutes;
 
   @JsonProperty("streams")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<StatisticsPerStream> streams = new ArrayList<StatisticsPerStream>();
 
   @JsonProperty("muxings")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<StatisticsPerMuxing> muxings = new ArrayList<StatisticsPerMuxing>();
 
   @JsonProperty("features")
-  private List<BillableEncodingFeatureMinutes> features;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<BillableEncodingFeatureMinutes> features = new ArrayList<BillableEncodingFeatureMinutes>();
 
 
   /**

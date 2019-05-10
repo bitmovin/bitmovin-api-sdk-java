@@ -2,7 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.ConditionType;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -11,23 +11,14 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  * AbstractCondition
  */
 
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false)
+@JsonSubTypes({
+  @JsonSubTypes.Type(value = Condition.class, name = "CONDITION"),
+  @JsonSubTypes.Type(value = AndConjunction.class, name = "AND"),
+  @JsonSubTypes.Type(value = OrConjunction.class, name = "OR"),
+})
+
 public class AbstractCondition {
-  @JsonProperty("type")
-  private ConditionType type = null;
-
-
-  /**
-   * Get type
-   * @return type
-   */
-  public ConditionType getType() {
-    return type;
-  }
-
-  public void setType(ConditionType type) {
-    this.type = type;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -37,13 +28,12 @@ public class AbstractCondition {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AbstractCondition abstractCondition = (AbstractCondition) o;
-    return Objects.equals(this.type, abstractCondition.type);
+    return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type);
+    return Objects.hash();
   }
 
 
@@ -52,7 +42,6 @@ public class AbstractCondition {
     StringBuilder sb = new StringBuilder();
     sb.append("class AbstractCondition {\n");
     
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }

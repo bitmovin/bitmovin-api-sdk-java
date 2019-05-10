@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -35,10 +36,12 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class Muxing extends BitmovinResource {
   @JsonProperty("streams")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<MuxingStream> streams = new ArrayList<MuxingStream>();
 
   @JsonProperty("outputs")
-  private List<EncodingOutput> outputs;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<EncodingOutput> outputs = new ArrayList<EncodingOutput>();
 
   @JsonProperty("avgBitrate")
   private Long avgBitrate;
@@ -50,7 +53,8 @@ public class Muxing extends BitmovinResource {
   private Long maxBitrate;
 
   @JsonProperty("ignoredBy")
-  private List<Ignoring> ignoredBy;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<Ignoring> ignoredBy = new ArrayList<Ignoring>();
 
   @JsonProperty("streamConditionsMode")
   private StreamConditionsMode streamConditionsMode = null;

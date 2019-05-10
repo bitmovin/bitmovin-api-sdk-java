@@ -42,10 +42,10 @@ public class ExportsApi {
      * Create Export Task
      * 
      * @param analyticsExportTask The export task to be created (optional)
-     * @return AnalyticsExportTaskDetails
+     * @return AnalyticsExportTask
      * @throws BitmovinException if fails to make API call
      */
-    public AnalyticsExportTaskDetails create(AnalyticsExportTask analyticsExportTask) throws BitmovinException {
+    public AnalyticsExportTask create(AnalyticsExportTask analyticsExportTask) throws BitmovinException {
         return this.apiClient.create(analyticsExportTask).getData().getResult();
     }
     
@@ -53,42 +53,42 @@ public class ExportsApi {
      * Get export task
      * 
      * @param exportTaskId Export task id (required)
-     * @return AnalyticsExportTaskDetails
+     * @return AnalyticsExportTask
      * @throws BitmovinException if fails to make API call
      */
-    public AnalyticsExportTaskDetails get(String exportTaskId) throws BitmovinException {
+    public AnalyticsExportTask get(String exportTaskId) throws BitmovinException {
         return this.apiClient.get(exportTaskId).getData().getResult();
     }
     
     /**
      * List Export Tasks
      * 
-     * @return List&lt;AnalyticsExportTaskDetails&gt;
+     * @return List&lt;AnalyticsExportTask&gt;
      * @throws BitmovinException if fails to make API call
      */
-    public PaginationResponse<AnalyticsExportTaskDetails> list() throws BitmovinException {
+    public PaginationResponse<AnalyticsExportTask> list() throws BitmovinException {
         return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
     }
     /**
      * List Export Tasks
      * 
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
-     * @return List&lt;AnalyticsExportTaskDetails&gt;
+     * @return List&lt;AnalyticsExportTask&gt;
      * @throws BitmovinException if fails to make API call
      */
-    public PaginationResponse<AnalyticsExportTaskDetails> list(AnalyticsExportTaskDetailsListQueryParams queryParams) throws BitmovinException {
+    public PaginationResponse<AnalyticsExportTask> list(AnalyticsExportTaskListQueryParams queryParams) throws BitmovinException {
         return this.apiClient.list(queryParams).getData().getResult();
     }
     
     interface ExportsApiClient {
     
         @RequestLine("POST /analytics/exports")
-        ResponseEnvelope<AnalyticsExportTaskDetails> create(AnalyticsExportTask analyticsExportTask) throws BitmovinException;
+        ResponseEnvelope<AnalyticsExportTask> create(AnalyticsExportTask analyticsExportTask) throws BitmovinException;
     
         @RequestLine("GET /analytics/exports/{export_task_id}")
-        ResponseEnvelope<AnalyticsExportTaskDetails> get(@Param(value = "export_task_id") String exportTaskId) throws BitmovinException;
+        ResponseEnvelope<AnalyticsExportTask> get(@Param(value = "export_task_id") String exportTaskId) throws BitmovinException;
     
         @RequestLine("GET /analytics/exports")
-        ResponseEnvelope<PaginationResponse<AnalyticsExportTaskDetails>> list(@QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<AnalyticsExportTask>> list(@QueryMap Map<String, Object> queryParams) throws BitmovinException;
     }
 }

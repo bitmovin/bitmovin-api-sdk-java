@@ -7,6 +7,7 @@ import com.bitmovin.api.sdk.model.Domain;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -35,6 +36,7 @@ public class PlayerLicense extends BitmovinResponse {
   private Boolean thirdPartyLicensingEnabled;
 
   @JsonProperty("domains")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<Domain> domains = new ArrayList<Domain>();
 
   @JsonProperty("analyticsKey")

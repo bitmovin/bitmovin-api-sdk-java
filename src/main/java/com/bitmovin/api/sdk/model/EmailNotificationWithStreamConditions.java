@@ -2,11 +2,12 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.AbstractCondition;
 import com.bitmovin.api.sdk.model.EmailNotification;
-import com.bitmovin.api.sdk.model.StreamCondition;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -17,10 +18,11 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class EmailNotificationWithStreamConditions extends EmailNotification {
   @JsonProperty("conditions")
-  private List<StreamCondition> conditions;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<AbstractCondition> conditions = new ArrayList<AbstractCondition>();
 
 
-  public EmailNotificationWithStreamConditions addConditionsItem(StreamCondition conditionsItem) {
+  public EmailNotificationWithStreamConditions addConditionsItem(AbstractCondition conditionsItem) {
     if (this.conditions == null) {
       this.conditions = new ArrayList<>();
     }
@@ -32,11 +34,11 @@ public class EmailNotificationWithStreamConditions extends EmailNotification {
    * Get conditions
    * @return conditions
    */
-  public List<StreamCondition> getConditions() {
+  public List<AbstractCondition> getConditions() {
     return conditions;
   }
 
-  public void setConditions(List<StreamCondition> conditions) {
+  public void setConditions(List<AbstractCondition> conditions) {
     this.conditions = conditions;
   }
 

@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -107,7 +108,8 @@ public class H264VideoConfiguration extends VideoConfiguration {
   private H264Trellis trellis = null;
 
   @JsonProperty("partitions")
-  private List<H264Partition> partitions;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<H264Partition> partitions = new ArrayList<H264Partition>();
 
   @JsonProperty("slices")
   private Integer slices;
@@ -543,7 +545,7 @@ public class H264VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Scene Change sensitivity. The higher the value, the more likely an I-Frame will be inserted. Set to 0 to disable it.
+   * Scene change sensitivity. The higher the value, the more likely an I-frame will be inserted. Set to 0 to disable it which is advised for scenarios where fixed GOP is required, e.g., adaptive streaming outputs like DASH, HLS and Smooth. Having this setting enabled can improve quality for progressive output with an increased internal chunk length (see &#x60;internalChunkLength&#x60; of muxings).
    * minimum: 0
    * maximum: 100
    * @return sceneCutThreshold

@@ -2,11 +2,9 @@ package com.bitmovin.api.sdk.encoding.encodings.muxings.cmaf.captions;
 
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
-import com.bitmovin.api.sdk.encoding.encodings.muxings.cmaf.captions.webvtt.WebvttApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.cmaf.captions.ttml.TtmlApi;
 
 public class CaptionsApi {
-    public final WebvttApi webvtt;
     public final TtmlApi ttml;
 
     public CaptionsApi(BitmovinApiClientFactory clientFactory) {
@@ -15,7 +13,6 @@ public class CaptionsApi {
             throw new IllegalArgumentException("Parameter 'clientFactory' may not be null.");
         }
 
-        this.webvtt = new WebvttApi(clientFactory);
         this.ttml = new TtmlApi(clientFactory);
     }
 

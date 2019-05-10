@@ -8,6 +8,7 @@ import com.bitmovin.api.sdk.model.AnalyticsOrderByEntry;
 import com.bitmovin.api.sdk.model.AnalyticsQueryTimeframe;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -21,10 +22,12 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
   private String licenseKey;
 
   @JsonProperty("filters")
-  private List<AnalyticsFilter> filters;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<AnalyticsFilter> filters = new ArrayList<AnalyticsFilter>();
 
   @JsonProperty("orderBy")
-  private List<AnalyticsOrderByEntry> orderBy;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<AnalyticsOrderByEntry> orderBy = new ArrayList<AnalyticsOrderByEntry>();
 
   @JsonProperty("dimension")
   private String dimension;
@@ -33,7 +36,8 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
   private AnalyticsInterval interval = null;
 
   @JsonProperty("groupBy")
-  private List<String> groupBy;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<String> groupBy = new ArrayList<String>();
 
   @JsonProperty("limit")
   private Long limit;

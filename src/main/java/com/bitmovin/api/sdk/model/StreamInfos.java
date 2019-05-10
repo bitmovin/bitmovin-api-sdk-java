@@ -6,6 +6,7 @@ import com.bitmovin.api.sdk.model.StreamInfosDetails;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -19,7 +20,8 @@ public class StreamInfos {
   private Date time;
 
   @JsonProperty("streamInfos")
-  private List<StreamInfosDetails> streamInfos;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<StreamInfosDetails> streamInfos = new ArrayList<StreamInfosDetails>();
 
 
   /**

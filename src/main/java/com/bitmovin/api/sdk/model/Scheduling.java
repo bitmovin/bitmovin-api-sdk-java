@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -17,7 +18,8 @@ public class Scheduling {
   private Integer priority;
 
   @JsonProperty("prewarmedInstancePoolIds")
-  private List<String> prewarmedInstancePoolIds;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<String> prewarmedInstancePoolIds = new ArrayList<String>();
 
 
   /**

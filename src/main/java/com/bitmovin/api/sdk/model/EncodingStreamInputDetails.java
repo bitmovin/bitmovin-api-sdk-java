@@ -8,6 +8,7 @@ import com.bitmovin.api.sdk.model.SubtitleStream;
 import com.bitmovin.api.sdk.model.VideoStream;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -33,19 +34,24 @@ public class EncodingStreamInputDetails {
   private Long bitrate;
 
   @JsonProperty("tags")
-  private List<String> tags;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<String> tags = new ArrayList<String>();
 
   @JsonProperty("videoStreams")
-  private List<VideoStream> videoStreams;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<VideoStream> videoStreams = new ArrayList<VideoStream>();
 
   @JsonProperty("audioStreams")
-  private List<AudioStream> audioStreams;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<AudioStream> audioStreams = new ArrayList<AudioStream>();
 
   @JsonProperty("metaStreams")
-  private List<MediaStream> metaStreams;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<MediaStream> metaStreams = new ArrayList<MediaStream>();
 
   @JsonProperty("subtitleStreams")
-  private List<SubtitleStream> subtitleStreams;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<SubtitleStream> subtitleStreams = new ArrayList<SubtitleStream>();
 
   /**
    * Format name

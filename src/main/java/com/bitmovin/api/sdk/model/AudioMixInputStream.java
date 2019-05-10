@@ -4,11 +4,12 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AudioMixInputChannelLayout;
 import com.bitmovin.api.sdk.model.AudioMixInputStreamChannel;
-import com.bitmovin.api.sdk.model.BasicInputStream;
+import com.bitmovin.api.sdk.model.InputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -17,12 +18,13 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  * AudioMixInputStream
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
-public class AudioMixInputStream extends BasicInputStream {
+public class AudioMixInputStream extends InputStream {
   @JsonProperty("channelLayout")
   private AudioMixInputChannelLayout channelLayout = null;
 
   @JsonProperty("audioMixChannels")
-  private List<AudioMixInputStreamChannel> audioMixChannels;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<AudioMixInputStreamChannel> audioMixChannels = new ArrayList<AudioMixInputStreamChannel>();
 
 
   /**

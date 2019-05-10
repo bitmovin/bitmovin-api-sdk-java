@@ -6,6 +6,7 @@ import com.bitmovin.api.sdk.model.AudioGroup;
 import com.bitmovin.api.sdk.model.VariantStreamDroppingMode;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -19,6 +20,7 @@ public class AudioGroupConfiguration {
   private VariantStreamDroppingMode droppingMode = null;
 
   @JsonProperty("groups")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<AudioGroup> groups = new ArrayList<AudioGroup>();
 
 

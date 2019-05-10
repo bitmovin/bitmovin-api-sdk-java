@@ -7,6 +7,7 @@ import com.bitmovin.api.sdk.model.BillableEncodingMinutes;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -17,6 +18,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class DailyStatistics {
   @JsonProperty("date")
+  @com.fasterxml.jackson.annotation.JsonFormat
+        (shape = com.fasterxml.jackson.annotation.JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
   private Date date;
 
   @JsonProperty("bytesEncoded")
@@ -29,16 +32,18 @@ public class DailyStatistics {
   private Double billableMinutes;
 
   @JsonProperty("label")
-  private Date label;
+  private String label;
 
   @JsonProperty("billableEncodingMinutes")
-  private List<BillableEncodingMinutes> billableEncodingMinutes;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<BillableEncodingMinutes> billableEncodingMinutes = new ArrayList<BillableEncodingMinutes>();
 
   @JsonProperty("billableTransmuxingMinutes")
   private Double billableTransmuxingMinutes;
 
   @JsonProperty("billableFeatureMinutes")
-  private List<BillableEncodingFeatureMinutes> billableFeatureMinutes;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<BillableEncodingFeatureMinutes> billableFeatureMinutes = new ArrayList<BillableEncodingFeatureMinutes>();
 
 
   /**
@@ -97,11 +102,11 @@ public class DailyStatistics {
    * Label identifier.
    * @return label
    */
-  public Date getLabel() {
+  public String getLabel() {
     return label;
   }
 
-  public void setLabel(Date label) {
+  public void setLabel(String label) {
     this.label = label;
   }
 

@@ -2,10 +2,11 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.BasicInputStream;
+import com.bitmovin.api.sdk.model.InputStream;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -14,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  * TimecodeTrackTrimmingInputStream
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
-public class TimecodeTrackTrimmingInputStream extends BasicInputStream {
+public class TimecodeTrackTrimmingInputStream extends InputStream {
   @JsonProperty("inputStreamId")
   private String inputStreamId;
 

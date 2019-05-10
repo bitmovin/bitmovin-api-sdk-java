@@ -10,6 +10,7 @@ import com.bitmovin.api.sdk.model.Trimming;
 import com.bitmovin.api.sdk.model.Tweaks;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -35,16 +36,20 @@ public class StartEncodingRequest {
   private EncodingMode encodingMode = null;
 
   @JsonProperty("previewDashManifests")
-  private List<ManifestResource> previewDashManifests;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<ManifestResource> previewDashManifests = new ArrayList<ManifestResource>();
 
   @JsonProperty("previewHlsManifests")
-  private List<ManifestResource> previewHlsManifests;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<ManifestResource> previewHlsManifests = new ArrayList<ManifestResource>();
 
   @JsonProperty("vodDashManifests")
-  private List<ManifestResource> vodDashManifests;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<ManifestResource> vodDashManifests = new ArrayList<ManifestResource>();
 
   @JsonProperty("vodHlsManifests")
-  private List<ManifestResource> vodHlsManifests;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<ManifestResource> vodHlsManifests = new ArrayList<ManifestResource>();
 
   @JsonProperty("perTitle")
   private PerTitle perTitle = null;

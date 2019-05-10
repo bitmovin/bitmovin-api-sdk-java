@@ -8,6 +8,9 @@ import feign.Feign;
 import feign.Logger;
 import feign.jackson.JacksonEncoder;
 
+import java.text.SimpleDateFormat;
+import java.util.TimeZone;
+
 public class BitmovinApiClientFactoryImpl implements BitmovinApiClientFactory {
     private final String apiKey;
     private final String tenantOrgId;
@@ -59,10 +62,14 @@ public class BitmovinApiClientFactoryImpl implements BitmovinApiClientFactory {
     }
 
     protected ObjectMapper createObjectMapper() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
         return new ObjectMapper()
             .setSerializationInclusion(JsonInclude.Include.NON_NULL)
+            .setDateFormat(dateFormat)
             .configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false)
             .configure(SerializationFeature.INDENT_OUTPUT, true)
+            .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false)
             .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 

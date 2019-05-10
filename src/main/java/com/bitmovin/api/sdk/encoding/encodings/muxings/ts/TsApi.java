@@ -18,12 +18,10 @@ import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.ts.customdata.CustomdataApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.ts.drm.DrmApi;
-import com.bitmovin.api.sdk.encoding.encodings.muxings.ts.captions.CaptionsApi;
 
 public class TsApi {
     public final CustomdataApi customdata;
     public final DrmApi drm;
-    public final CaptionsApi captions;
 
     private final TsApiClient apiClient;
 
@@ -37,7 +35,6 @@ public class TsApi {
 
         this.customdata = new CustomdataApi(clientFactory);
         this.drm = new DrmApi(clientFactory);
-        this.captions = new CaptionsApi(clientFactory);
     }
 
     /**

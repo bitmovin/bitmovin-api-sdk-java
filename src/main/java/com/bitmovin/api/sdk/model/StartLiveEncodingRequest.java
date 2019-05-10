@@ -9,6 +9,7 @@ import com.bitmovin.api.sdk.model.LiveHlsManifest;
 import com.bitmovin.api.sdk.model.ReuploadSettings;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -22,10 +23,12 @@ public class StartLiveEncodingRequest {
   private String streamKey;
 
   @JsonProperty("hlsManifests")
-  private List<LiveHlsManifest> hlsManifests;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<LiveHlsManifest> hlsManifests = new ArrayList<LiveHlsManifest>();
 
   @JsonProperty("dashManifests")
-  private List<LiveDashManifest> dashManifests;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<LiveDashManifest> dashManifests = new ArrayList<LiveDashManifest>();
 
   @JsonProperty("liveEncodingMode")
   private EncodingMode liveEncodingMode = null;

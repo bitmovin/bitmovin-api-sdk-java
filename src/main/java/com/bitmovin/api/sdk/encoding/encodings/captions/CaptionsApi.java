@@ -2,11 +2,9 @@ package com.bitmovin.api.sdk.encoding.encodings.captions;
 
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
-import com.bitmovin.api.sdk.encoding.encodings.captions.extract.ExtractApi;
 import com.bitmovin.api.sdk.encoding.encodings.captions.scc.SccApi;
 
 public class CaptionsApi {
-    public final ExtractApi extract;
     public final SccApi scc;
 
     public CaptionsApi(BitmovinApiClientFactory clientFactory) {
@@ -15,7 +13,6 @@ public class CaptionsApi {
             throw new IllegalArgumentException("Parameter 'clientFactory' may not be null.");
         }
 
-        this.extract = new ExtractApi(clientFactory);
         this.scc = new SccApi(clientFactory);
     }
 

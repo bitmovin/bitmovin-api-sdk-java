@@ -9,6 +9,7 @@ import com.bitmovin.api.sdk.model.ColorSpace;
 import com.bitmovin.api.sdk.model.ColorTransfer;
 import com.bitmovin.api.sdk.model.InputColorRange;
 import com.bitmovin.api.sdk.model.InputColorSpace;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;

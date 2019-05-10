@@ -6,6 +6,7 @@ import com.bitmovin.api.sdk.model.MuxingInformationAudioTrack;
 import com.bitmovin.api.sdk.model.MuxingInformationVideoTrack;
 import com.bitmovin.api.sdk.model.ProgressiveMuxingInformation;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;

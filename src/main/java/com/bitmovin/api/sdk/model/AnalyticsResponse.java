@@ -5,6 +5,7 @@ import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AnalyticsColumnLabel;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -15,13 +16,15 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class AnalyticsResponse {
   @JsonProperty("rows")
-  private List<Object> rows;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<Object> rows = new ArrayList<Object>();
 
   @JsonProperty("rowCount")
   private Long rowCount;
 
   @JsonProperty("columnLabels")
-  private List<AnalyticsColumnLabel> columnLabels;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<AnalyticsColumnLabel> columnLabels = new ArrayList<AnalyticsColumnLabel>();
 
 
   public AnalyticsResponse addRowsItem(Object rowsItem) {

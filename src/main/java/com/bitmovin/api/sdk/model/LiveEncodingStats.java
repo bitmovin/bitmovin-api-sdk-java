@@ -7,6 +7,7 @@ import com.bitmovin.api.sdk.model.LiveEncodingStatus;
 import com.bitmovin.api.sdk.model.StreamInfos;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -20,10 +21,12 @@ public class LiveEncodingStats {
   private LiveEncodingStatus status = null;
 
   @JsonProperty("events")
-  private List<LiveEncodingStatsEvent> events;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<LiveEncodingStatsEvent> events = new ArrayList<LiveEncodingStatsEvent>();
 
   @JsonProperty("statistics")
-  private List<StreamInfos> statistics;
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<StreamInfos> statistics = new ArrayList<StreamInfos>();
 
 
   /**
