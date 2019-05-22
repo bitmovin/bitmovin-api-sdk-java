@@ -35,6 +35,9 @@ public class EnhancedWatermarkFilter extends Filter {
   @JsonProperty("unit")
   private PositionUnit unit = null;
 
+  @JsonProperty("opacity")
+  private Double opacity;
+
 
   /**
    * URL of the file to be used as watermark image. Supported image formats: PNG, JPEG, BMP, GIF
@@ -114,6 +117,19 @@ public class EnhancedWatermarkFilter extends Filter {
   }
 
 
+  /**
+   * Opacity to apply on the watermark image. Valid values are from 0.0 (completely transparent) to 1.0 (not transparent at all)
+   * @return opacity
+   */
+  public Double getOpacity() {
+    return opacity;
+  }
+
+  public void setOpacity(Double opacity) {
+    this.opacity = opacity;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -129,12 +145,13 @@ public class EnhancedWatermarkFilter extends Filter {
         Objects.equals(this.top, enhancedWatermarkFilter.top) &&
         Objects.equals(this.bottom, enhancedWatermarkFilter.bottom) &&
         Objects.equals(this.unit, enhancedWatermarkFilter.unit) &&
+        Objects.equals(this.opacity, enhancedWatermarkFilter.opacity) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(image, left, right, top, bottom, unit, super.hashCode());
+    return Objects.hash(image, left, right, top, bottom, unit, opacity, super.hashCode());
   }
 
 
@@ -149,6 +166,7 @@ public class EnhancedWatermarkFilter extends Filter {
     sb.append("    top: ").append(toIndentedString(top)).append("\n");
     sb.append("    bottom: ").append(toIndentedString(bottom)).append("\n");
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
+    sb.append("    opacity: ").append(toIndentedString(opacity)).append("\n");
     sb.append("}");
     return sb.toString();
   }

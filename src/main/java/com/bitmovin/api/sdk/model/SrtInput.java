@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.BackupSrtInputs;
 import com.bitmovin.api.sdk.model.Input;
 import com.bitmovin.api.sdk.model.SrtMode;
 import java.util.Date;
@@ -38,6 +39,9 @@ public class SrtInput extends Input {
   @JsonProperty("keyLength")
   private Integer keyLength;
 
+  @JsonProperty("backupSrtInputs")
+  private BackupSrtInputs backupSrtInputs = null;
+
 
   /**
    * The SRT mode to use
@@ -66,7 +70,7 @@ public class SrtInput extends Input {
 
 
   /**
-   * The port to connect to or listen on. Has to be 2088 if using LISTENER mode.
+   * The port to connect to or listen on. Has to be one of [2088, 2089, 2090, 2091] when using LISTENER mode.
    * @return port
    */
   public Integer getPort() {
@@ -130,6 +134,19 @@ public class SrtInput extends Input {
   }
 
 
+  /**
+   * Get backupSrtInputs
+   * @return backupSrtInputs
+   */
+  public BackupSrtInputs getBackupSrtInputs() {
+    return backupSrtInputs;
+  }
+
+  public void setBackupSrtInputs(BackupSrtInputs backupSrtInputs) {
+    this.backupSrtInputs = backupSrtInputs;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -146,12 +163,13 @@ public class SrtInput extends Input {
         Objects.equals(this.latency, srtInput.latency) &&
         Objects.equals(this.passphrase, srtInput.passphrase) &&
         Objects.equals(this.keyLength, srtInput.keyLength) &&
+        Objects.equals(this.backupSrtInputs, srtInput.backupSrtInputs) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mode, host, port, path, latency, passphrase, keyLength, super.hashCode());
+    return Objects.hash(mode, host, port, path, latency, passphrase, keyLength, backupSrtInputs, super.hashCode());
   }
 
 
@@ -167,6 +185,7 @@ public class SrtInput extends Input {
     sb.append("    latency: ").append(toIndentedString(latency)).append("\n");
     sb.append("    passphrase: ").append(toIndentedString(passphrase)).append("\n");
     sb.append("    keyLength: ").append(toIndentedString(keyLength)).append("\n");
+    sb.append("    backupSrtInputs: ").append(toIndentedString(backupSrtInputs)).append("\n");
     sb.append("}");
     return sb.toString();
   }

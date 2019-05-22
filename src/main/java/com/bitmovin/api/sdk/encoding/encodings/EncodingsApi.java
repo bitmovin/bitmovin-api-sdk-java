@@ -158,10 +158,10 @@ public class EncodingsApi {
      * 
      * @param encodingId Id of the encoding (required)
      * @param startEncodingRequest  (optional)
-     * @return StartEncodingRequest
+     * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */
-    public StartEncodingRequest start(String encodingId, StartEncodingRequest startEncodingRequest) throws BitmovinException {
+    public BitmovinResponse start(String encodingId, StartEncodingRequest startEncodingRequest) throws BitmovinException {
         return this.apiClient.start(encodingId, startEncodingRequest).getData().getResult();
     }
     
@@ -211,7 +211,7 @@ public class EncodingsApi {
         ResponseEnvelope<BitmovinResponse> reschedule(@Param(value = "encoding_id") String encodingId, RescheduleEncodingRequest rescheduleEncodingRequest) throws BitmovinException;
     
         @RequestLine("POST /encoding/encodings/{encoding_id}/start")
-        ResponseEnvelope<StartEncodingRequest> start(@Param(value = "encoding_id") String encodingId, StartEncodingRequest startEncodingRequest) throws BitmovinException;
+        ResponseEnvelope<BitmovinResponse> start(@Param(value = "encoding_id") String encodingId, StartEncodingRequest startEncodingRequest) throws BitmovinException;
     
         @RequestLine("GET /encoding/encodings/{encoding_id}/status")
         ResponseEnvelope<Task> status(@Param(value = "encoding_id") String encodingId) throws BitmovinException;

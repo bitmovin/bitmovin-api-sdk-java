@@ -29,6 +29,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
   @JsonSubTypes.Type(value = ScaleFilter.class, name = "SCALE"),
   @JsonSubTypes.Type(value = InterlaceFilter.class, name = "INTERLACE"),
   @JsonSubTypes.Type(value = AudioVolumeFilter.class, name = "AUDIO_VOLUME"),
+  @JsonSubTypes.Type(value = EbuR128SinglePassFilter.class, name = "EBU_R128_SINGLE_PASS"),
 })
 
 public class Filter extends BitmovinResource {

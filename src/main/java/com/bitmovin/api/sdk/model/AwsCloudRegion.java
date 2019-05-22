@@ -15,41 +15,80 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum AwsCloudRegion {
   
-  
+  /**
+   * US East (N. Virginia)
+   */
   US_EAST_1("US_EAST_1"),
   
-  
+  /**
+   * US East (Ohio)
+   */
   US_EAST_2("US_EAST_2"),
   
-  
+  /**
+   * US West (N. California)
+   */
   US_WEST_1("US_WEST_1"),
   
-  
+  /**
+   * US West (Oregon)
+   */
   US_WEST_2("US_WEST_2"),
   
-  
+  /**
+   * EU (Ireland)
+   */
   EU_WEST_1("EU_WEST_1"),
   
-  
+  /**
+   * EU (Frankfurt)
+   */
   EU_CENTRAL_1("EU_CENTRAL_1"),
   
-  
+  /**
+   * Asia Pacific (Singapore)
+   */
   AP_SOUTHEAST_1("AP_SOUTHEAST_1"),
   
-  
+  /**
+   * Asia Pacific (Sydney)
+   */
   AP_SOUTHEAST_2("AP_SOUTHEAST_2"),
   
-  
+  /**
+   * Asia Pacific (Tokyo)
+   */
   AP_NORTHEAST_1("AP_NORTHEAST_1"),
   
-  
+  /**
+   * Asia Pacific (Seoul)
+   */
   AP_NORTHEAST_2("AP_NORTHEAST_2"),
   
-  
+  /**
+   * Asia Pacific (Mumbai)
+   */
   AP_SOUTH_1("AP_SOUTH_1"),
   
+  /**
+   * South America (São Paulo)
+   */
+  SA_EAST_1("SA_EAST_1"),
   
-  SA_EAST_1("SA_EAST_1");
+  /**
+   * EU (London)
+   */
+  EU_WEST_2("EU_WEST_2"),
+  
+  /**
+   * EU (Paris)
+   */
+  EU_WEST_3("EU_WEST_3"),
+  
+  /**
+   * Canada (Central)
+   */
+  CA_CENTRAL_1("CA_CENTRAL_1");
 
   private String value;
 

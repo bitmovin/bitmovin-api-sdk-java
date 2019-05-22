@@ -60,9 +60,36 @@ public class SrtApi {
         return this.apiClient.list(encodingId, queryParams).getData().getResult();
     }
     
+    /**
+     * List Statistics For SRT Live Stream Input
+     * 
+     * @param encodingId Id of the encoding. (required)
+     * @param srtInputId Id of the SRT input. (required)
+     * @return List&lt;SrtStatistics&gt;
+     * @throws BitmovinException if fails to make API call
+     */
+    public PaginationResponse<SrtStatistics> listBySrtInputId(String encodingId, String srtInputId) throws BitmovinException {
+        return this.apiClient.listBySrtInputId(encodingId, srtInputId, new HashMap<String, Object>()).getData().getResult();
+    }
+    /**
+     * List Statistics For SRT Live Stream Input
+     * 
+     * @param encodingId Id of the encoding. (required)
+     * @param srtInputId Id of the SRT input. (required)
+     * @param queryParams The query parameters for sorting, filtering and paging options (optional)
+     * @return List&lt;SrtStatistics&gt;
+     * @throws BitmovinException if fails to make API call
+     */
+    public PaginationResponse<SrtStatistics> listBySrtInputId(String encodingId, String srtInputId, SrtStatisticsListBySrtInputIdQueryParams queryParams) throws BitmovinException {
+        return this.apiClient.listBySrtInputId(encodingId, srtInputId, queryParams).getData().getResult();
+    }
+    
     interface SrtApiClient {
     
         @RequestLine("GET /encoding/statistics/encodings/{encoding_id}/live-statistics/srt")
         ResponseEnvelope<PaginationResponse<SrtStatistics>> list(@Param(value = "encoding_id") String encodingId, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
+    
+        @RequestLine("GET /encoding/statistics/encodings/{encoding_id}/live-statistics/srt/{srt_input_id}")
+        ResponseEnvelope<PaginationResponse<SrtStatistics>> listBySrtInputId(@Param(value = "encoding_id") String encodingId, @Param(value = "srt_input_id") String srtInputId, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
     }
 }

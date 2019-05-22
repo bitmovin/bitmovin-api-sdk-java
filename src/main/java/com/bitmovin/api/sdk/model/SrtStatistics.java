@@ -26,6 +26,12 @@ public class SrtStatistics {
   @JsonProperty("encodingId")
   private String encodingId;
 
+  @JsonProperty("srtInputId")
+  private String srtInputId;
+
+  @JsonProperty("srtInputSelected")
+  private Boolean srtInputSelected;
+
   @JsonProperty("orgId")
   private String orgId;
 
@@ -81,6 +87,32 @@ public class SrtStatistics {
 
   public void setEncodingId(String encodingId) {
     this.encodingId = encodingId;
+  }
+
+
+  /**
+   * UUID of the SRT input used to capture this statistics
+   * @return srtInputId
+   */
+  public String getSrtInputId() {
+    return srtInputId;
+  }
+
+  public void setSrtInputId(String srtInputId) {
+    this.srtInputId = srtInputId;
+  }
+
+
+  /**
+   * Whether the SRT input that generated this statistics was selected (i.e. actively used) at the time or not
+   * @return srtInputSelected
+   */
+  public Boolean getSrtInputSelected() {
+    return srtInputSelected;
+  }
+
+  public void setSrtInputSelected(Boolean srtInputSelected) {
+    this.srtInputSelected = srtInputSelected;
   }
 
 
@@ -174,6 +206,8 @@ public class SrtStatistics {
     return Objects.equals(this.id, srtStatistics.id) &&
         Objects.equals(this.createdAt, srtStatistics.createdAt) &&
         Objects.equals(this.encodingId, srtStatistics.encodingId) &&
+        Objects.equals(this.srtInputId, srtStatistics.srtInputId) &&
+        Objects.equals(this.srtInputSelected, srtStatistics.srtInputSelected) &&
         Objects.equals(this.orgId, srtStatistics.orgId) &&
         Objects.equals(this.userId, srtStatistics.userId) &&
         Objects.equals(this.link, srtStatistics.link) &&
@@ -184,7 +218,7 @@ public class SrtStatistics {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, encodingId, orgId, userId, link, window, recv, send);
+    return Objects.hash(id, createdAt, encodingId, srtInputId, srtInputSelected, orgId, userId, link, window, recv, send);
   }
 
 
@@ -196,6 +230,8 @@ public class SrtStatistics {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    encodingId: ").append(toIndentedString(encodingId)).append("\n");
+    sb.append("    srtInputId: ").append(toIndentedString(srtInputId)).append("\n");
+    sb.append("    srtInputSelected: ").append(toIndentedString(srtInputSelected)).append("\n");
     sb.append("    orgId: ").append(toIndentedString(orgId)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    link: ").append(toIndentedString(link)).append("\n");

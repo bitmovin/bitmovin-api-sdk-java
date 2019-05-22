@@ -991,7 +991,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Level of rate-distortion optimization in mode decision. The lower the value the faster the encode, the higher the value higher the compression efficiency. Valid range: 0 - 6
+   * Level of rate-distortion optimization in mode decision. The lower the value the faster the encode, the higher the value higher the compression efficiency. Valid range: 0 - 4
    * @return rateDistortionLevelForModeDecision
    */
   public Integer getRateDistortionLevelForModeDecision() {

@@ -49,7 +49,10 @@ public enum FilterType {
   INTERLACE("INTERLACE"),
   
   
-  AUDIO_VOLUME("AUDIO_VOLUME");
+  AUDIO_VOLUME("AUDIO_VOLUME"),
+  
+  
+  EBU_R128_SINGLE_PASS("EBU_R128_SINGLE_PASS");
 
   private String value;
 

@@ -16,7 +16,13 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum AkamaiMslStreamFormat {
   
   
-  DASH("DASH");
+  DASH("DASH"),
+  
+  
+  HLS("HLS"),
+  
+  
+  CMAF("CMAF");
 
   private String value;
 

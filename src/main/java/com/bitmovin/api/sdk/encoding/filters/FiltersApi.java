@@ -24,6 +24,7 @@ import com.bitmovin.api.sdk.encoding.filters.rotate.RotateApi;
 import com.bitmovin.api.sdk.encoding.filters.deinterlace.DeinterlaceApi;
 import com.bitmovin.api.sdk.encoding.filters.audioMix.AudioMixApi;
 import com.bitmovin.api.sdk.encoding.filters.denoiseHqdn3d.DenoiseHqdn3dApi;
+import com.bitmovin.api.sdk.encoding.filters.ebuR128SinglePass.EbuR128SinglePassApi;
 import com.bitmovin.api.sdk.encoding.filters.text.TextApi;
 import com.bitmovin.api.sdk.encoding.filters.interlace.InterlaceApi;
 import com.bitmovin.api.sdk.encoding.filters.unsharp.UnsharpApi;
@@ -39,6 +40,7 @@ public class FiltersApi {
     public final DeinterlaceApi deinterlace;
     public final AudioMixApi audioMix;
     public final DenoiseHqdn3dApi denoiseHqdn3d;
+    public final EbuR128SinglePassApi ebuR128SinglePass;
     public final TextApi text;
     public final InterlaceApi interlace;
     public final UnsharpApi unsharp;
@@ -63,6 +65,7 @@ public class FiltersApi {
         this.deinterlace = new DeinterlaceApi(clientFactory);
         this.audioMix = new AudioMixApi(clientFactory);
         this.denoiseHqdn3d = new DenoiseHqdn3dApi(clientFactory);
+        this.ebuR128SinglePass = new EbuR128SinglePassApi(clientFactory);
         this.text = new TextApi(clientFactory);
         this.interlace = new InterlaceApi(clientFactory);
         this.unsharp = new UnsharpApi(clientFactory);

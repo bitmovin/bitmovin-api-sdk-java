@@ -15,41 +15,80 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum CloudRegion {
   
-  
+  /**
+   * AWS US East (N. Virginia)
+   */
   AWS_US_EAST_1("AWS_US_EAST_1"),
   
-  
+  /**
+   * AWS US East (Ohio)
+   */
   AWS_US_EAST_2("AWS_US_EAST_2"),
   
-  
+  /**
+   * AWS US West (N. California)
+   */
   AWS_US_WEST_1("AWS_US_WEST_1"),
   
-  
+  /**
+   * AWS US West (Oregon)
+   */
   AWS_US_WEST_2("AWS_US_WEST_2"),
   
-  
+  /**
+   * AWS EU (Ireland)
+   */
   AWS_EU_WEST_1("AWS_EU_WEST_1"),
   
-  
+  /**
+   * AWS EU (Frankfurt)
+   */
   AWS_EU_CENTRAL_1("AWS_EU_CENTRAL_1"),
   
-  
+  /**
+   * AWS Asia Pacific (Singapore)
+   */
   AWS_AP_SOUTHEAST_1("AWS_AP_SOUTHEAST_1"),
   
-  
+  /**
+   * AWS Asia Pacific (Sydney)
+   */
   AWS_AP_SOUTHEAST_2("AWS_AP_SOUTHEAST_2"),
   
-  
+  /**
+   * AWS Asia Pacific (Tokyo)
+   */
   AWS_AP_NORTHEAST_1("AWS_AP_NORTHEAST_1"),
   
-  
+  /**
+   * AWS Asia Pacific (Seoul)
+   */
   AWS_AP_NORTHEAST_2("AWS_AP_NORTHEAST_2"),
   
-  
+  /**
+   * AWS Asia Pacific (Mumbai)
+   */
   AWS_AP_SOUTH_1("AWS_AP_SOUTH_1"),
   
-  
+  /**
+   * AWS South America (São Paulo)
+   */
   AWS_SA_EAST_1("AWS_SA_EAST_1"),
+  
+  /**
+   * AWS EU (London)
+   */
+  AWS_EU_WEST_2("AWS_EU_WEST_2"),
+  
+  /**
+   * AWS EU (Paris)
+   */
+  AWS_EU_WEST_3("AWS_EU_WEST_3"),
+  
+  /**
+   * AWS Canada (Central)
+   */
+  AWS_CA_CENTRAL_1("AWS_CA_CENTRAL_1"),
   
   /**
    * Google Council Bluffs, Iowa, USA

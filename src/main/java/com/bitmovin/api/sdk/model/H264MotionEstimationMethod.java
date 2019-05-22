@@ -28,17 +28,7 @@ public enum H264MotionEstimationMethod {
   /**
    * uneven multi-hexagon search
    */
-  UMH("UMH"),
-  
-  /**
-   * exhaustive search
-   */
-  ESA("ESA"),
-  
-  /**
-   * hadamard exhaustive search (slow)
-   */
-  TESA("TESA");
+  UMH("UMH");
 
   private String value;
 

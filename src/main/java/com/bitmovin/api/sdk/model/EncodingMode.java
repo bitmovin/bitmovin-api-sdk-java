@@ -31,7 +31,7 @@ public enum EncodingMode {
   TWO_PASS("TWO_PASS"),
   
   /**
-   * Three pass encoding for best quality
+   * Three pass encoding for best quality (this only works for VoD workflows)
    */
   THREE_PASS("THREE_PASS");
 
