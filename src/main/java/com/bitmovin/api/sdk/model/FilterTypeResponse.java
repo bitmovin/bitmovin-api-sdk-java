@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class FilterTypeResponse {
   @JsonProperty("type")
-  private FilterType type = null;
+  private FilterType type;
 
 
   /**
@@ -25,6 +25,12 @@ public class FilterTypeResponse {
     return type;
   }
 
+  /**
+   * The type of the filter
+   *
+   * @param type
+   * The type of the filter
+   */
   public void setType(FilterType type) {
     this.type = type;
   }

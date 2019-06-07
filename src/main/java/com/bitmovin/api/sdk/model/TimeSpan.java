@@ -27,6 +27,12 @@ public class TimeSpan {
     return from;
   }
 
+  /**
+   * Start offset of the time frame in milliseconds
+   *
+   * @param from
+   * Start offset of the time frame in milliseconds
+   */
   public void setFrom(Long from) {
     this.from = from;
   }
@@ -40,6 +46,12 @@ public class TimeSpan {
     return to;
   }
 
+  /**
+   * End offset of the time frame in milliseconds
+   *
+   * @param to
+   * End offset of the time frame in milliseconds
+   */
   public void setTo(Long to) {
     this.to = to;
   }

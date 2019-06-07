@@ -30,7 +30,7 @@ public class MjpegVideoConfiguration extends CodecConfiguration {
   private Integer qScale;
 
   @JsonProperty("pixelFormat")
-  private PixelFormat pixelFormat = null;
+  private PixelFormat pixelFormat;
 
 
   /**
@@ -41,6 +41,12 @@ public class MjpegVideoConfiguration extends CodecConfiguration {
     return width;
   }
 
+  /**
+   * Width of the encoded video
+   *
+   * @param width
+   * Width of the encoded video
+   */
   public void setWidth(Integer width) {
     this.width = width;
   }
@@ -54,6 +60,12 @@ public class MjpegVideoConfiguration extends CodecConfiguration {
     return height;
   }
 
+  /**
+   * Height of the encoded video
+   *
+   * @param height
+   * Height of the encoded video
+   */
   public void setHeight(Integer height) {
     this.height = height;
   }
@@ -67,6 +79,12 @@ public class MjpegVideoConfiguration extends CodecConfiguration {
     return rate;
   }
 
+  /**
+   * Target frame rate of the encoded video!
+   *
+   * @param rate
+   * Target frame rate of the encoded video!
+   */
   public void setRate(Double rate) {
     this.rate = rate;
   }
@@ -80,6 +98,12 @@ public class MjpegVideoConfiguration extends CodecConfiguration {
     return qScale;
   }
 
+  /**
+   * The quality scale parameter
+   *
+   * @param qScale
+   * The quality scale parameter
+   */
   public void setQScale(Integer qScale) {
     this.qScale = qScale;
   }
@@ -93,6 +117,11 @@ public class MjpegVideoConfiguration extends CodecConfiguration {
     return pixelFormat;
   }
 
+  /**
+   * Set pixelFormat
+   *
+   * @param pixelFormat
+   */
   public void setPixelFormat(PixelFormat pixelFormat) {
     this.pixelFormat = pixelFormat;
   }

@@ -28,7 +28,7 @@ public class AesEncryptionDrm extends Drm {
   private String keyFileUri;
 
   @JsonProperty("method")
-  private AesEncryptionMethod method = null;
+  private AesEncryptionMethod method;
 
 
   /**
@@ -39,6 +39,12 @@ public class AesEncryptionDrm extends Drm {
     return key;
   }
 
+  /**
+   * 16 byte Encryption key, 32 hexadecimal characters
+   *
+   * @param key
+   * 16 byte Encryption key, 32 hexadecimal characters
+   */
   public void setKey(String key) {
     this.key = key;
   }
@@ -52,6 +58,12 @@ public class AesEncryptionDrm extends Drm {
     return iv;
   }
 
+  /**
+   * 16 byte initialization vector
+   *
+   * @param iv
+   * 16 byte initialization vector
+   */
   public void setIv(String iv) {
     this.iv = iv;
   }
@@ -65,6 +77,12 @@ public class AesEncryptionDrm extends Drm {
     return keyFileUri;
   }
 
+  /**
+   * Path relative to the output for referencing in the manifest. If this value is not set the key file will be written automatically to the output folder.
+   *
+   * @param keyFileUri
+   * Path relative to the output for referencing in the manifest. If this value is not set the key file will be written automatically to the output folder.
+   */
   public void setKeyFileUri(String keyFileUri) {
     this.keyFileUri = keyFileUri;
   }
@@ -78,6 +96,11 @@ public class AesEncryptionDrm extends Drm {
     return method;
   }
 
+  /**
+   * Set method
+   *
+   * @param method
+   */
   public void setMethod(AesEncryptionMethod method) {
     this.method = method;
   }

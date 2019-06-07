@@ -29,6 +29,12 @@ public class AnalyticsPercentileQueryRequest extends AnalyticsQueryRequest {
     return percentile;
   }
 
+  /**
+   * The percentage (0-99) used for percentile queries.
+   *
+   * @param percentile
+   * The percentage (0-99) used for percentile queries.
+   */
   public void setPercentile(Long percentile) {
     this.percentile = percentile;
   }

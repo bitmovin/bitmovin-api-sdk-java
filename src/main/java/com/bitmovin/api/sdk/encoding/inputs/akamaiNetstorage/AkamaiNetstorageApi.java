@@ -44,7 +44,7 @@ public class AkamaiNetstorageApi {
     /**
      * Create Akamai NetStorage Input
      * 
-     * @param akamaiNetStorageInput The Akamai NetStorage input to be created (optional)
+     * @param akamaiNetStorageInput The Akamai NetStorage input to be created (required)
      * @return AkamaiNetStorageInput
      * @throws BitmovinException if fails to make API call
      */

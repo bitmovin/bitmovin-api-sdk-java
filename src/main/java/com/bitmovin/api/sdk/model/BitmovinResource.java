@@ -42,6 +42,12 @@ public class BitmovinResource extends BitmovinResponse {
     return name;
   }
 
+  /**
+   * Name of the resource. Can be freely chosen by the user.
+   *
+   * @param name
+   * Name of the resource. Can be freely chosen by the user.
+   */
   public void setName(String name) {
     this.name = name;
   }
@@ -55,6 +61,12 @@ public class BitmovinResource extends BitmovinResponse {
     return description;
   }
 
+  /**
+   * Description of the resource. Can be freely chosen by the user.
+   *
+   * @param description
+   * Description of the resource. Can be freely chosen by the user.
+   */
   public void setDescription(String description) {
     this.description = description;
   }
@@ -92,6 +104,12 @@ public class BitmovinResource extends BitmovinResponse {
     return customData;
   }
 
+  /**
+   * User-specific meta data. This can hold anything.
+   *
+   * @param customData
+   * User-specific meta data. This can hold anything.
+   */
   public void setCustomData(Map<String, Object> customData) {
     this.customData = customData;
   }

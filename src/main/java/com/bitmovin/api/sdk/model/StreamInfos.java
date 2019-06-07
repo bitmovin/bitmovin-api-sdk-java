@@ -32,6 +32,12 @@ public class StreamInfos {
     return time;
   }
 
+  /**
+   * Timestamp of the event formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   *
+   * @param time
+   * Timestamp of the event formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   */
   public void setTime(Date time) {
     this.time = time;
   }
@@ -53,6 +59,12 @@ public class StreamInfos {
     return streamInfos;
   }
 
+  /**
+   * Details about billable minutes for each resolution category
+   *
+   * @param streamInfos
+   * Details about billable minutes for each resolution category
+   */
   public void setStreamInfos(List<StreamInfosDetails> streamInfos) {
     this.streamInfos = streamInfos;
   }

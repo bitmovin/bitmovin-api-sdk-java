@@ -47,6 +47,12 @@ public class AdaptationSet extends BitmovinResponse {
     return customAttributes;
   }
 
+  /**
+   * Custom adaptation set attributes
+   *
+   * @param customAttributes
+   * Custom adaptation set attributes
+   */
   public void setCustomAttributes(List<CustomAttribute> customAttributes) {
     this.customAttributes = customAttributes;
   }
@@ -68,6 +74,12 @@ public class AdaptationSet extends BitmovinResponse {
     return roles;
   }
 
+  /**
+   * Roles of the adaptation set
+   *
+   * @param roles
+   * Roles of the adaptation set
+   */
   public void setRoles(List<AdaptationSetRole> roles) {
     this.roles = roles;
   }
@@ -89,6 +101,12 @@ public class AdaptationSet extends BitmovinResponse {
     return accessibilities;
   }
 
+  /**
+   * Provide signaling of CEA 607 and CEA 708
+   *
+   * @param accessibilities
+   * Provide signaling of CEA 607 and CEA 708
+   */
   public void setAccessibilities(List<Accessibility> accessibilities) {
     this.accessibilities = accessibilities;
   }

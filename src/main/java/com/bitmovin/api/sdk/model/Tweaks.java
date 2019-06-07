@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class Tweaks {
   @JsonProperty("audioVideoSyncMode")
-  private AudioVideoSyncMode audioVideoSyncMode = null;
+  private AudioVideoSyncMode audioVideoSyncMode;
 
 
   /**
@@ -25,6 +25,12 @@ public class Tweaks {
     return audioVideoSyncMode;
   }
 
+  /**
+   * Defines special audio video sync handling
+   *
+   * @param audioVideoSyncMode
+   * Defines special audio video sync handling
+   */
   public void setAudioVideoSyncMode(AudioVideoSyncMode audioVideoSyncMode) {
     this.audioVideoSyncMode = audioVideoSyncMode;
   }

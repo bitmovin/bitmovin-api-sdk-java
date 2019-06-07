@@ -18,13 +18,13 @@ public class ResponseEnvelope<T> {
   private String requestId;
 
   @JsonProperty("status")
-  private ResponseStatus status = null;
+  private ResponseStatus status;
 
   @JsonProperty("data")
-  private ResultWrapper<T> data = null;
+  private ResultWrapper<T> data;
 
   @JsonProperty("more")
-  private Object more = null;
+  private Object more;
 
   /**
    * Unique correlation id
@@ -59,6 +59,12 @@ public class ResponseEnvelope<T> {
     return more;
   }
 
+  /**
+   * Additional endpoint specific information
+   *
+   * @param more
+   * Additional endpoint specific information
+   */
   public void setMore(Object more) {
     this.more = more;
   }

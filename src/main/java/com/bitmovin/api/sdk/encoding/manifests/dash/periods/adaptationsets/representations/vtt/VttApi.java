@@ -44,7 +44,7 @@ public class VttApi {
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
      * @param adaptationsetId Id of the adaptation set (required)
-     * @param dashVttRepresentation The VTT representation to be added to the adaptation set (optional)
+     * @param dashVttRepresentation The VTT representation to be added to the adaptation set (required)
      * @return DashVttRepresentation
      * @throws BitmovinException if fails to make API call
      */

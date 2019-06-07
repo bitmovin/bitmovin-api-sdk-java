@@ -43,7 +43,7 @@ public class TenantsApi {
      * 
      * @param organizationId Id of the organization (required)
      * @param groupId Id of the group (required)
-     * @param tenant Tenant details (optional)
+     * @param tenant Tenant details (required)
      * @return Tenant
      * @throws BitmovinException if fails to make API call
      */

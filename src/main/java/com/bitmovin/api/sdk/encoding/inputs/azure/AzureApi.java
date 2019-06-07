@@ -44,7 +44,7 @@ public class AzureApi {
     /**
      * Create Azure Input
      * 
-     * @param azureInput The Azure input to be created (optional)
+     * @param azureInput The Azure input to be created (required)
      * @return AzureInput
      * @throws BitmovinException if fails to make API call
      */

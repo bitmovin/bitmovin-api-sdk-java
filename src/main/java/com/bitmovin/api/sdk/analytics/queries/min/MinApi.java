@@ -41,7 +41,7 @@ public class MinApi {
     /**
      * Min
      * 
-     * @param analyticsMinQueryRequest  (optional)
+     * @param analyticsMinQueryRequest  (required)
      * @return AnalyticsResponse
      * @throws BitmovinException if fails to make API call
      */

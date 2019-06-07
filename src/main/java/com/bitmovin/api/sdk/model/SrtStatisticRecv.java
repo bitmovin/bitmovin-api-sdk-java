@@ -48,6 +48,11 @@ public class SrtStatisticRecv {
     return bytes;
   }
 
+  /**
+   * Set bytes
+   *
+   * @param bytes
+   */
   public void setBytes(Long bytes) {
     this.bytes = bytes;
   }
@@ -61,6 +66,11 @@ public class SrtStatisticRecv {
     return bytesDropped;
   }
 
+  /**
+   * Set bytesDropped
+   *
+   * @param bytesDropped
+   */
   public void setBytesDropped(Long bytesDropped) {
     this.bytesDropped = bytesDropped;
   }
@@ -74,6 +84,11 @@ public class SrtStatisticRecv {
     return bytesLost;
   }
 
+  /**
+   * Set bytesLost
+   *
+   * @param bytesLost
+   */
   public void setBytesLost(Long bytesLost) {
     this.bytesLost = bytesLost;
   }
@@ -87,6 +102,11 @@ public class SrtStatisticRecv {
     return mbitRate;
   }
 
+  /**
+   * Set mbitRate
+   *
+   * @param mbitRate
+   */
   public void setMbitRate(Double mbitRate) {
     this.mbitRate = mbitRate;
   }
@@ -100,6 +120,11 @@ public class SrtStatisticRecv {
     return packets;
   }
 
+  /**
+   * Set packets
+   *
+   * @param packets
+   */
   public void setPackets(Long packets) {
     this.packets = packets;
   }
@@ -113,6 +138,11 @@ public class SrtStatisticRecv {
     return packetsBelated;
   }
 
+  /**
+   * Set packetsBelated
+   *
+   * @param packetsBelated
+   */
   public void setPacketsBelated(Long packetsBelated) {
     this.packetsBelated = packetsBelated;
   }
@@ -126,6 +156,11 @@ public class SrtStatisticRecv {
     return packetsDropped;
   }
 
+  /**
+   * Set packetsDropped
+   *
+   * @param packetsDropped
+   */
   public void setPacketsDropped(Long packetsDropped) {
     this.packetsDropped = packetsDropped;
   }
@@ -139,6 +174,11 @@ public class SrtStatisticRecv {
     return packetsLost;
   }
 
+  /**
+   * Set packetsLost
+   *
+   * @param packetsLost
+   */
   public void setPacketsLost(Long packetsLost) {
     this.packetsLost = packetsLost;
   }
@@ -152,6 +192,11 @@ public class SrtStatisticRecv {
     return packetsRetransmitted;
   }
 
+  /**
+   * Set packetsRetransmitted
+   *
+   * @param packetsRetransmitted
+   */
   public void setPacketsRetransmitted(Long packetsRetransmitted) {
     this.packetsRetransmitted = packetsRetransmitted;
   }

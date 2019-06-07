@@ -46,7 +46,7 @@ public class PrimetimeApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)
-     * @param primeTimeDrm  (optional)
+     * @param primeTimeDrm  (required)
      * @return PrimeTimeDrm
      * @throws BitmovinException if fails to make API call
      */

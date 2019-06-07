@@ -33,6 +33,12 @@ public class ObjectDetectionBoundingBox {
     return topLeftX;
   }
 
+  /**
+   * Horizontal position of the top left corner, given as a fraction of the frame width
+   *
+   * @param topLeftX
+   * Horizontal position of the top left corner, given as a fraction of the frame width
+   */
   public void setTopLeftX(Double topLeftX) {
     this.topLeftX = topLeftX;
   }
@@ -46,6 +52,12 @@ public class ObjectDetectionBoundingBox {
     return topLeftY;
   }
 
+  /**
+   * Vertical position of the top left corner, given as a fraction of the frame height
+   *
+   * @param topLeftY
+   * Vertical position of the top left corner, given as a fraction of the frame height
+   */
   public void setTopLeftY(Double topLeftY) {
     this.topLeftY = topLeftY;
   }
@@ -59,6 +71,12 @@ public class ObjectDetectionBoundingBox {
     return bottomRightX;
   }
 
+  /**
+   * Horizontal position of the bottom right corner, given as a fraction of the frame width
+   *
+   * @param bottomRightX
+   * Horizontal position of the bottom right corner, given as a fraction of the frame width
+   */
   public void setBottomRightX(Double bottomRightX) {
     this.bottomRightX = bottomRightX;
   }
@@ -72,6 +90,12 @@ public class ObjectDetectionBoundingBox {
     return bottomRightY;
   }
 
+  /**
+   * Vertical position of the bottom right corner, given as a fraction of the frame height
+   *
+   * @param bottomRightY
+   * Vertical position of the bottom right corner, given as a fraction of the frame height
+   */
   public void setBottomRightY(Double bottomRightY) {
     this.bottomRightY = bottomRightY;
   }

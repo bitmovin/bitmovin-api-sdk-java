@@ -44,6 +44,12 @@ public class WebmMuxing extends Muxing {
     return segmentLength;
   }
 
+  /**
+   * Length of the fragments in seconds
+   *
+   * @param segmentLength
+   * Length of the fragments in seconds
+   */
   public void setSegmentLength(Double segmentLength) {
     this.segmentLength = segmentLength;
   }
@@ -57,6 +63,12 @@ public class WebmMuxing extends Muxing {
     return segmentNaming;
   }
 
+  /**
+   * Segment naming policy
+   *
+   * @param segmentNaming
+   * Segment naming policy
+   */
   public void setSegmentNaming(String segmentNaming) {
     this.segmentNaming = segmentNaming;
   }
@@ -70,6 +82,12 @@ public class WebmMuxing extends Muxing {
     return segmentNamingTemplate;
   }
 
+  /**
+   * Segment naming policy containing a placeholder of the format &#39;{rand_chars:x}&#39;, which will be replaced by a random alphanumeric string of length x (default 32) on each (re)start of the encoding. The resulting string will be copied to the segmentNaming property. Intended to avoid re-use of segment names after restarting a live encoding. If segmentNamingTemplate is set, segmentNaming must not be set.
+   *
+   * @param segmentNamingTemplate
+   * Segment naming policy containing a placeholder of the format &#39;{rand_chars:x}&#39;, which will be replaced by a random alphanumeric string of length x (default 32) on each (re)start of the encoding. The resulting string will be copied to the segmentNaming property. Intended to avoid re-use of segment names after restarting a live encoding. If segmentNamingTemplate is set, segmentNaming must not be set.
+   */
   public void setSegmentNamingTemplate(String segmentNamingTemplate) {
     this.segmentNamingTemplate = segmentNamingTemplate;
   }
@@ -83,6 +101,12 @@ public class WebmMuxing extends Muxing {
     return initSegmentName;
   }
 
+  /**
+   * Init segment name
+   *
+   * @param initSegmentName
+   * Init segment name
+   */
   public void setInitSegmentName(String initSegmentName) {
     this.initSegmentName = initSegmentName;
   }
@@ -96,6 +120,12 @@ public class WebmMuxing extends Muxing {
     return initSegmentNameTemplate;
   }
 
+  /**
+   * Segment naming policy containing a placeholder of the format &#39;{rand_chars:x}&#39;, which will be replaced by a random alphanumeric string of length x (default 32) on each (re)start of the encoding. The resulting string will be copied to the initSegmentName property. Intended to avoid re-use of segment names after restarting a live encoding. If initSegmentNameTemplate is set, initSegmentName must not be set.
+   *
+   * @param initSegmentNameTemplate
+   * Segment naming policy containing a placeholder of the format &#39;{rand_chars:x}&#39;, which will be replaced by a random alphanumeric string of length x (default 32) on each (re)start of the encoding. The resulting string will be copied to the initSegmentName property. Intended to avoid re-use of segment names after restarting a live encoding. If initSegmentNameTemplate is set, initSegmentName must not be set.
+   */
   public void setInitSegmentNameTemplate(String initSegmentNameTemplate) {
     this.initSegmentNameTemplate = initSegmentNameTemplate;
   }

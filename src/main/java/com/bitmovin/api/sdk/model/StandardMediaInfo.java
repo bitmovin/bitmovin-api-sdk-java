@@ -26,6 +26,12 @@ public class StandardMediaInfo extends SegmentsMediaInfo {
     return uri;
   }
 
+  /**
+   * The URI of the Rendition
+   *
+   * @param uri
+   * The URI of the Rendition
+   */
   public void setUri(String uri) {
     this.uri = uri;
   }

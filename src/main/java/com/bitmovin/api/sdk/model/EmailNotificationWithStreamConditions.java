@@ -38,6 +38,11 @@ public class EmailNotificationWithStreamConditions extends EmailNotification {
     return conditions;
   }
 
+  /**
+   * Set conditions
+   *
+   * @param conditions
+   */
   public void setConditions(List<AbstractCondition> conditions) {
     this.conditions = conditions;
   }

@@ -29,6 +29,12 @@ public class EncodingStatisticsVod extends EncodingStatistics {
     return timeEnqueued;
   }
 
+  /**
+   * Time in seconds encoded for this encoding.
+   *
+   * @param timeEnqueued
+   * Time in seconds encoded for this encoding.
+   */
   public void setTimeEnqueued(Long timeEnqueued) {
     this.timeEnqueued = timeEnqueued;
   }
@@ -42,6 +48,12 @@ public class EncodingStatisticsVod extends EncodingStatistics {
     return realTimeFactor;
   }
 
+  /**
+   * The realtime factor.
+   *
+   * @param realTimeFactor
+   * The realtime factor.
+   */
   public void setRealTimeFactor(Double realTimeFactor) {
     this.realTimeFactor = realTimeFactor;
   }

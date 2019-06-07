@@ -31,6 +31,12 @@ public class AudioConfiguration extends CodecConfiguration {
     return bitrate;
   }
 
+  /**
+   * Target bitrate for the encoded audio in bps
+   *
+   * @param bitrate
+   * Target bitrate for the encoded audio in bps
+   */
   public void setBitrate(Long bitrate) {
     this.bitrate = bitrate;
   }
@@ -44,6 +50,12 @@ public class AudioConfiguration extends CodecConfiguration {
     return rate;
   }
 
+  /**
+   * Audio sampling rate Hz
+   *
+   * @param rate
+   * Audio sampling rate Hz
+   */
   public void setRate(Double rate) {
     this.rate = rate;
   }

@@ -43,6 +43,11 @@ public class AnalyticsResponse {
     return rows;
   }
 
+  /**
+   * Set rows
+   *
+   * @param rows
+   */
   public void setRows(List<Object> rows) {
     this.rows = rows;
   }
@@ -56,6 +61,12 @@ public class AnalyticsResponse {
     return rowCount;
   }
 
+  /**
+   * Number of rows returned
+   *
+   * @param rowCount
+   * Number of rows returned
+   */
   public void setRowCount(Long rowCount) {
     this.rowCount = rowCount;
   }
@@ -77,6 +88,11 @@ public class AnalyticsResponse {
     return columnLabels;
   }
 
+  /**
+   * Set columnLabels
+   *
+   * @param columnLabels
+   */
   public void setColumnLabels(List<AnalyticsColumnLabel> columnLabels) {
     this.columnLabels = columnLabels;
   }

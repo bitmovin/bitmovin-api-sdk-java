@@ -31,7 +31,7 @@ public class ProgressiveTsMuxing extends Muxing {
   private Double startOffset;
 
   @JsonProperty("internalChunkLength")
-  private InternalChunkLength internalChunkLength = null;
+  private InternalChunkLength internalChunkLength;
 
 
   /**
@@ -42,6 +42,12 @@ public class ProgressiveTsMuxing extends Muxing {
     return segmentLength;
   }
 
+  /**
+   * Length of the segments in seconds
+   *
+   * @param segmentLength
+   * Length of the segments in seconds
+   */
   public void setSegmentLength(Double segmentLength) {
     this.segmentLength = segmentLength;
   }
@@ -55,6 +61,12 @@ public class ProgressiveTsMuxing extends Muxing {
     return filename;
   }
 
+  /**
+   * Name of the new Video
+   *
+   * @param filename
+   * Name of the new Video
+   */
   public void setFilename(String filename) {
     this.filename = filename;
   }
@@ -68,6 +80,12 @@ public class ProgressiveTsMuxing extends Muxing {
     return startOffset;
   }
 
+  /**
+   * Offset of MPEG-TS timestamps in seconds. E.g., first packet will start with PTS 900,000 for a 10 seconds offset (90,000 MPEG-TS timescale).
+   *
+   * @param startOffset
+   * Offset of MPEG-TS timestamps in seconds. E.g., first packet will start with PTS 900,000 for a 10 seconds offset (90,000 MPEG-TS timescale).
+   */
   public void setStartOffset(Double startOffset) {
     this.startOffset = startOffset;
   }
@@ -81,6 +99,12 @@ public class ProgressiveTsMuxing extends Muxing {
     return internalChunkLength;
   }
 
+  /**
+   * Modifies the internal chunk length used for chunked encoding
+   *
+   * @param internalChunkLength
+   * Modifies the internal chunk length used for chunked encoding
+   */
   public void setInternalChunkLength(InternalChunkLength internalChunkLength) {
     this.internalChunkLength = internalChunkLength;
   }

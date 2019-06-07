@@ -46,7 +46,7 @@ public class FairplayApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the progressive TS fragment. (required)
-     * @param fairPlayDrm  (optional)
+     * @param fairPlayDrm  (required)
      * @return FairPlayDrm
      * @throws BitmovinException if fails to make API call
      */

@@ -34,6 +34,12 @@ public class EncodingOutput {
     return outputId;
   }
 
+  /**
+   * Id of the corresponding output
+   *
+   * @param outputId
+   * Id of the corresponding output
+   */
   public void setOutputId(String outputId) {
     this.outputId = outputId;
   }
@@ -47,6 +53,12 @@ public class EncodingOutput {
     return outputPath;
   }
 
+  /**
+   * Subdirectory where to save the files to
+   *
+   * @param outputPath
+   * Subdirectory where to save the files to
+   */
   public void setOutputPath(String outputPath) {
     this.outputPath = outputPath;
   }
@@ -68,6 +80,11 @@ public class EncodingOutput {
     return acl;
   }
 
+  /**
+   * Set acl
+   *
+   * @param acl
+   */
   public void setAcl(List<AclEntry> acl) {
     this.acl = acl;
   }

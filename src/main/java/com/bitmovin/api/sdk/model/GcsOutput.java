@@ -28,7 +28,7 @@ public class GcsOutput extends Output {
   private String bucketName;
 
   @JsonProperty("cloudRegion")
-  private GoogleCloudRegion cloudRegion = null;
+  private GoogleCloudRegion cloudRegion;
 
 
   /**
@@ -39,6 +39,12 @@ public class GcsOutput extends Output {
     return accessKey;
   }
 
+  /**
+   * GCS access key
+   *
+   * @param accessKey
+   * GCS access key
+   */
   public void setAccessKey(String accessKey) {
     this.accessKey = accessKey;
   }
@@ -52,6 +58,12 @@ public class GcsOutput extends Output {
     return secretKey;
   }
 
+  /**
+   * GCS secret key
+   *
+   * @param secretKey
+   * GCS secret key
+   */
   public void setSecretKey(String secretKey) {
     this.secretKey = secretKey;
   }
@@ -65,6 +77,12 @@ public class GcsOutput extends Output {
     return bucketName;
   }
 
+  /**
+   * Name of the bucket
+   *
+   * @param bucketName
+   * Name of the bucket
+   */
   public void setBucketName(String bucketName) {
     this.bucketName = bucketName;
   }
@@ -78,6 +96,11 @@ public class GcsOutput extends Output {
     return cloudRegion;
   }
 
+  /**
+   * Set cloudRegion
+   *
+   * @param cloudRegion
+   */
   public void setCloudRegion(GoogleCloudRegion cloudRegion) {
     this.cloudRegion = cloudRegion;
   }

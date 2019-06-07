@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class BackupSrtInputs {
   @JsonProperty("delayThreshold")
-  private Integer delayThreshold = 30;
+  private Integer delayThreshold;
 
   @JsonProperty("srtInputs")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -31,6 +31,12 @@ public class BackupSrtInputs {
     return delayThreshold;
   }
 
+  /**
+   * When there is no input signal present for this number of seconds, the encoder will switch to the next input
+   *
+   * @param delayThreshold
+   * When there is no input signal present for this number of seconds, the encoder will switch to the next input
+   */
   public void setDelayThreshold(Integer delayThreshold) {
     this.delayThreshold = delayThreshold;
   }
@@ -49,6 +55,11 @@ public class BackupSrtInputs {
     return srtInputs;
   }
 
+  /**
+   * Set srtInputs
+   *
+   * @param srtInputs
+   */
   public void setSrtInputs(List<SrtInput> srtInputs) {
     this.srtInputs = srtInputs;
   }

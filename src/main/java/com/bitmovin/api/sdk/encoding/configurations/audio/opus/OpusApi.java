@@ -44,7 +44,7 @@ public class OpusApi {
     /**
      * Create Opus Codec Configuration
      * 
-     * @param opusAudioConfiguration  (optional)
+     * @param opusAudioConfiguration  (required)
      * @return OpusAudioConfiguration
      * @throws BitmovinException if fails to make API call
      */

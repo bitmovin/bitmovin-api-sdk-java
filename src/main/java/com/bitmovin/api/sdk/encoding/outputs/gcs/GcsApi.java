@@ -44,7 +44,7 @@ public class GcsApi {
     /**
      * Create GCS Output
      * 
-     * @param gcsOutput The GCS output to be created (optional)
+     * @param gcsOutput The GCS output to be created (required)
      * @return GcsOutput
      * @throws BitmovinException if fails to make API call
      */

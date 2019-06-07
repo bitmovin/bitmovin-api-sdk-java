@@ -38,6 +38,12 @@ public class SegmentedRawMuxing extends Muxing {
     return segmentLength;
   }
 
+  /**
+   * Length of the fragments in seconds
+   *
+   * @param segmentLength
+   * Length of the fragments in seconds
+   */
   public void setSegmentLength(Double segmentLength) {
     this.segmentLength = segmentLength;
   }
@@ -51,6 +57,12 @@ public class SegmentedRawMuxing extends Muxing {
     return segmentNaming;
   }
 
+  /**
+   * Segment naming policy
+   *
+   * @param segmentNaming
+   * Segment naming policy
+   */
   public void setSegmentNaming(String segmentNaming) {
     this.segmentNaming = segmentNaming;
   }

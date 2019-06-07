@@ -44,7 +44,7 @@ public class ErrorApi {
     /**
      * Add Encoding Error Webhook
      * 
-     * @param webhook  (optional)
+     * @param webhook  (required)
      * @return Webhook
      * @throws BitmovinException if fails to make API call
      */
@@ -56,7 +56,7 @@ public class ErrorApi {
      * Add Encoding Error Webhook for specific Encoding Resource
      * 
      * @param encodingId Id of the encoding (required)
-     * @param webhook  (optional)
+     * @param webhook  (required)
      * @return Webhook
      * @throws BitmovinException if fails to make API call
      */

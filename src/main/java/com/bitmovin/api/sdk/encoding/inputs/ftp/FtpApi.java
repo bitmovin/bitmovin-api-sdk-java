@@ -44,7 +44,7 @@ public class FtpApi {
     /**
      * Create FTP Input
      * 
-     * @param ftpInput The FTP input to be created (optional)
+     * @param ftpInput The FTP input to be created (required)
      * @return FtpInput
      * @throws BitmovinException if fails to make API call
      */

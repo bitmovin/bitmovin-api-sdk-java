@@ -34,6 +34,12 @@ public class AwsAccount extends BitmovinResource {
     return accessKey;
   }
 
+  /**
+   * Amazon access key
+   *
+   * @param accessKey
+   * Amazon access key
+   */
   public void setAccessKey(String accessKey) {
     this.accessKey = accessKey;
   }
@@ -47,6 +53,12 @@ public class AwsAccount extends BitmovinResource {
     return secretKey;
   }
 
+  /**
+   * Amazon secret key
+   *
+   * @param secretKey
+   * Amazon secret key
+   */
   public void setSecretKey(String secretKey) {
     this.secretKey = secretKey;
   }
@@ -60,6 +72,12 @@ public class AwsAccount extends BitmovinResource {
     return accountNumber;
   }
 
+  /**
+   * Amazon account number (12 digits as per AWS spec)
+   *
+   * @param accountNumber
+   * Amazon account number (12 digits as per AWS spec)
+   */
   public void setAccountNumber(String accountNumber) {
     this.accountNumber = accountNumber;
   }

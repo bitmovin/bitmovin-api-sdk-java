@@ -33,7 +33,7 @@ public class WatermarkFilter extends Filter {
   private Integer bottom;
 
   @JsonProperty("unit")
-  private PositionUnit unit = null;
+  private PositionUnit unit;
 
 
   /**
@@ -44,6 +44,12 @@ public class WatermarkFilter extends Filter {
     return image;
   }
 
+  /**
+   * URL of the file to be used as watermark image. Supported image formats: PNG, JPEG, BMP, GIF
+   *
+   * @param image
+   * URL of the file to be used as watermark image. Supported image formats: PNG, JPEG, BMP, GIF
+   */
   public void setImage(String image) {
     this.image = image;
   }
@@ -57,6 +63,12 @@ public class WatermarkFilter extends Filter {
     return left;
   }
 
+  /**
+   * Distance from the left edge of the input video to the left edge of the watermark image. May not be set if &#39;right&#39; is set.
+   *
+   * @param left
+   * Distance from the left edge of the input video to the left edge of the watermark image. May not be set if &#39;right&#39; is set.
+   */
   public void setLeft(Integer left) {
     this.left = left;
   }
@@ -70,6 +82,12 @@ public class WatermarkFilter extends Filter {
     return right;
   }
 
+  /**
+   * Distance from the right edge of the input video to the right edge of the watermark image . May not be set if &#39;left&#39; is set.
+   *
+   * @param right
+   * Distance from the right edge of the input video to the right edge of the watermark image . May not be set if &#39;left&#39; is set.
+   */
   public void setRight(Integer right) {
     this.right = right;
   }
@@ -83,6 +101,12 @@ public class WatermarkFilter extends Filter {
     return top;
   }
 
+  /**
+   * Distance from the top edge of the input video to the top edge of the watermark image. May not be set if &#39;bottom&#39; is set.
+   *
+   * @param top
+   * Distance from the top edge of the input video to the top edge of the watermark image. May not be set if &#39;bottom&#39; is set.
+   */
   public void setTop(Integer top) {
     this.top = top;
   }
@@ -96,6 +120,12 @@ public class WatermarkFilter extends Filter {
     return bottom;
   }
 
+  /**
+   * Distance from the bottom edge of the input video to the bottom edge of the watermark image. May not be set if &#39;top&#39; is set.
+   *
+   * @param bottom
+   * Distance from the bottom edge of the input video to the bottom edge of the watermark image. May not be set if &#39;top&#39; is set.
+   */
   public void setBottom(Integer bottom) {
     this.bottom = bottom;
   }
@@ -109,6 +139,11 @@ public class WatermarkFilter extends Filter {
     return unit;
   }
 
+  /**
+   * Set unit
+   *
+   * @param unit
+   */
   public void setUnit(PositionUnit unit) {
     this.unit = unit;
   }

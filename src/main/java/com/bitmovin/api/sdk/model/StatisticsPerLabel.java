@@ -43,6 +43,12 @@ public class StatisticsPerLabel extends Statistics {
     return label;
   }
 
+  /**
+   * An optional error message, when the event is in error state (occurs at event: ERROR)
+   *
+   * @param label
+   * An optional error message, when the event is in error state (occurs at event: ERROR)
+   */
   public void setLabel(String label) {
     this.label = label;
   }
@@ -56,6 +62,12 @@ public class StatisticsPerLabel extends Statistics {
     return billableMinutes;
   }
 
+  /**
+   * The billable minutes.
+   *
+   * @param billableMinutes
+   * The billable minutes.
+   */
   public void setBillableMinutes(Double billableMinutes) {
     this.billableMinutes = billableMinutes;
   }
@@ -77,6 +89,12 @@ public class StatisticsPerLabel extends Statistics {
     return billableTransmuxingMinutes;
   }
 
+  /**
+   * Billable minutes for muxings.
+   *
+   * @param billableTransmuxingMinutes
+   * Billable minutes for muxings.
+   */
   public void setBillableTransmuxingMinutes(Double billableTransmuxingMinutes) {
     this.billableTransmuxingMinutes = billableTransmuxingMinutes;
   }

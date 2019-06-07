@@ -25,6 +25,12 @@ public class CustomXmlElement extends BitmovinResponse {
     return data;
   }
 
+  /**
+   * String representation of the XML element
+   *
+   * @param data
+   * String representation of the XML element
+   */
   public void setData(String data) {
     this.data = data;
   }

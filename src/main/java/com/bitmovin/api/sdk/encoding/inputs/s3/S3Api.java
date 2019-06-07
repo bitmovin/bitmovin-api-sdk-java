@@ -44,7 +44,7 @@ public class S3Api {
     /**
      * Create S3 Input
      * 
-     * @param s3Input The S3 input to be created (optional)
+     * @param s3Input The S3 input to be created (required)
      * @return S3Input
      * @throws BitmovinException if fails to make API call
      */

@@ -40,6 +40,12 @@ public class SmoothStreamingRepresentation extends BitmovinResource {
     return encodingId;
   }
 
+  /**
+   * Id of the encoding
+   *
+   * @param encodingId
+   * Id of the encoding
+   */
   public void setEncodingId(String encodingId) {
     this.encodingId = encodingId;
   }
@@ -53,6 +59,12 @@ public class SmoothStreamingRepresentation extends BitmovinResource {
     return muxingId;
   }
 
+  /**
+   * Id of the muxing.
+   *
+   * @param muxingId
+   * Id of the muxing.
+   */
   public void setMuxingId(String muxingId) {
     this.muxingId = muxingId;
   }
@@ -66,6 +78,12 @@ public class SmoothStreamingRepresentation extends BitmovinResource {
     return mediaFile;
   }
 
+  /**
+   * The Smooth Streaming ismv or isma file that will be referenced in the manifest.
+   *
+   * @param mediaFile
+   * The Smooth Streaming ismv or isma file that will be referenced in the manifest.
+   */
   public void setMediaFile(String mediaFile) {
     this.mediaFile = mediaFile;
   }
@@ -79,6 +97,12 @@ public class SmoothStreamingRepresentation extends BitmovinResource {
     return language;
   }
 
+  /**
+   * Language of the MP4 file
+   *
+   * @param language
+   * Language of the MP4 file
+   */
   public void setLanguage(String language) {
     this.language = language;
   }
@@ -92,6 +116,12 @@ public class SmoothStreamingRepresentation extends BitmovinResource {
     return trackName;
   }
 
+  /**
+   * Track where this MP4 shoudl be added
+   *
+   * @param trackName
+   * Track where this MP4 shoudl be added
+   */
   public void setTrackName(String trackName) {
     this.trackName = trackName;
   }

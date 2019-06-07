@@ -40,6 +40,12 @@ public class CustomData {
     return customData;
   }
 
+  /**
+   * User-specific meta data. This can hold a custom JSON object.
+   *
+   * @param customData
+   * User-specific meta data. This can hold a custom JSON object.
+   */
   public void setCustomData(Map<String, Object> customData) {
     this.customData = customData;
   }
@@ -53,6 +59,12 @@ public class CustomData {
     return createdAt;
   }
 
+  /**
+   * Creation timestamp formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   *
+   * @param createdAt
+   * Creation timestamp formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   */
   public void setCreatedAt(Date createdAt) {
     this.createdAt = createdAt;
   }

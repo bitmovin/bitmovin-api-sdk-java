@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class AudioGroupConfiguration {
   @JsonProperty("droppingMode")
-  private VariantStreamDroppingMode droppingMode = null;
+  private VariantStreamDroppingMode droppingMode;
 
   @JsonProperty("groups")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -32,6 +32,12 @@ public class AudioGroupConfiguration {
     return droppingMode;
   }
 
+  /**
+   * Dropping mode
+   *
+   * @param droppingMode
+   * Dropping mode
+   */
   public void setDroppingMode(VariantStreamDroppingMode droppingMode) {
     this.droppingMode = droppingMode;
   }
@@ -50,6 +56,12 @@ public class AudioGroupConfiguration {
     return groups;
   }
 
+  /**
+   * Audio groups
+   *
+   * @param groups
+   * Audio groups
+   */
   public void setGroups(List<AudioGroup> groups) {
     this.groups = groups;
   }

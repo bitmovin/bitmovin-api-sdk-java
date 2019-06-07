@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class SccCaption extends BitmovinResource {
   @JsonProperty("input")
-  private InputPath input = null;
+  private InputPath input;
 
 
   /**
@@ -29,6 +29,12 @@ public class SccCaption extends BitmovinResource {
     return input;
   }
 
+  /**
+   * The input location to get the scc file from
+   *
+   * @param input
+   * The input location to get the scc file from
+   */
   public void setInput(InputPath input) {
     this.input = input;
   }

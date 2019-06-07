@@ -44,7 +44,7 @@ public class FtpApi {
     /**
      * Create FTP Output
      * 
-     * @param ftpOutput The FTP output to be created (optional)
+     * @param ftpOutput The FTP output to be created (required)
      * @return FtpOutput
      * @throws BitmovinException if fails to make API call
      */

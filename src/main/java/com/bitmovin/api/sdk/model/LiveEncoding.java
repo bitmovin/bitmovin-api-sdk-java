@@ -27,6 +27,12 @@ public class LiveEncoding {
     return streamKey;
   }
 
+  /**
+   * Stream key of the live encoder
+   *
+   * @param streamKey
+   * Stream key of the live encoder
+   */
   public void setStreamKey(String streamKey) {
     this.streamKey = streamKey;
   }
@@ -40,6 +46,12 @@ public class LiveEncoding {
     return encoderIp;
   }
 
+  /**
+   * IP address of the live encoder
+   *
+   * @param encoderIp
+   * IP address of the live encoder
+   */
   public void setEncoderIp(String encoderIp) {
     this.encoderIp = encoderIp;
   }

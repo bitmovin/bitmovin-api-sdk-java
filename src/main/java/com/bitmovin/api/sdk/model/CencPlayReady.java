@@ -27,6 +27,12 @@ public class CencPlayReady {
     return laUrl;
   }
 
+  /**
+   * Url of the license server. Either the laUrl or the pssh needs to be provided.
+   *
+   * @param laUrl
+   * Url of the license server. Either the laUrl or the pssh needs to be provided.
+   */
   public void setLaUrl(String laUrl) {
     this.laUrl = laUrl;
   }
@@ -40,6 +46,12 @@ public class CencPlayReady {
     return pssh;
   }
 
+  /**
+   * Base64 encoded pssh payload.
+   *
+   * @param pssh
+   * Base64 encoded pssh payload.
+   */
   public void setPssh(String pssh) {
     this.pssh = pssh;
   }

@@ -34,7 +34,7 @@ public class Thumbnail extends BitmovinResource {
   private List<EncodingOutput> outputs = new ArrayList<EncodingOutput>();
 
   @JsonProperty("unit")
-  private ThumbnailUnit unit = null;
+  private ThumbnailUnit unit;
 
 
   /**
@@ -45,6 +45,12 @@ public class Thumbnail extends BitmovinResource {
     return height;
   }
 
+  /**
+   * Height of the thumbnail
+   *
+   * @param height
+   * Height of the thumbnail
+   */
   public void setHeight(Integer height) {
     this.height = height;
   }
@@ -58,6 +64,12 @@ public class Thumbnail extends BitmovinResource {
     return pattern;
   }
 
+  /**
+   *  Pattern which describes the thumbnail filenames. For example with thumbnail-%number%.png as pattern and 3 positions: thumbnail-3_0.png, thumbnail-5_0.png and thumbnail-25_5.png. (The number represents the position in the source video in seconds, in the previous example the first filename represents the thumbnail at 3s, the second one at 5s and the third one at 25.5s)
+   *
+   * @param pattern
+   *  Pattern which describes the thumbnail filenames. For example with thumbnail-%number%.png as pattern and 3 positions: thumbnail-3_0.png, thumbnail-5_0.png and thumbnail-25_5.png. (The number represents the position in the source video in seconds, in the previous example the first filename represents the thumbnail at 3s, the second one at 5s and the third one at 25.5s)
+   */
   public void setPattern(String pattern) {
     this.pattern = pattern;
   }
@@ -76,6 +88,12 @@ public class Thumbnail extends BitmovinResource {
     return positions;
   }
 
+  /**
+   * Position in the unit where the thumbnail should be created from.
+   *
+   * @param positions
+   * Position in the unit where the thumbnail should be created from.
+   */
   public void setPositions(List<Double> positions) {
     this.positions = positions;
   }
@@ -97,6 +115,11 @@ public class Thumbnail extends BitmovinResource {
     return outputs;
   }
 
+  /**
+   * Set outputs
+   *
+   * @param outputs
+   */
   public void setOutputs(List<EncodingOutput> outputs) {
     this.outputs = outputs;
   }
@@ -110,6 +133,11 @@ public class Thumbnail extends BitmovinResource {
     return unit;
   }
 
+  /**
+   * Set unit
+   *
+   * @param unit
+   */
   public void setUnit(ThumbnailUnit unit) {
     this.unit = unit;
   }

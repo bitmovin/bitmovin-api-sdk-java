@@ -53,7 +53,7 @@ public class SmoothApi {
     /**
      * Create Smooth Streaming Manifest
      * 
-     * @param smoothStreamingManifest  (optional)
+     * @param smoothStreamingManifest  (required)
      * @return SmoothStreamingManifest
      * @throws BitmovinException if fails to make API call
      */

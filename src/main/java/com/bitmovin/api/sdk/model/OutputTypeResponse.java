@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class OutputTypeResponse {
   @JsonProperty("type")
-  private OutputType type = null;
+  private OutputType type;
 
 
   /**
@@ -25,6 +25,12 @@ public class OutputTypeResponse {
     return type;
   }
 
+  /**
+   * The type of the output
+   *
+   * @param type
+   * The type of the output
+   */
   public void setType(OutputType type) {
     this.type = type;
   }

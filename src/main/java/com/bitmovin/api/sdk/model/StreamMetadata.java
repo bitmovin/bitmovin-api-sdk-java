@@ -24,6 +24,12 @@ public class StreamMetadata {
     return language;
   }
 
+  /**
+   * Language of the media contained in the stream. If the value is not set, then no metadata tag is set for the media stream.
+   *
+   * @param language
+   * Language of the media contained in the stream. If the value is not set, then no metadata tag is set for the media stream.
+   */
   public void setLanguage(String language) {
     this.language = language;
   }

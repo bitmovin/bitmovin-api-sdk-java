@@ -32,10 +32,10 @@ public class S3Output extends Output {
   private String md5MetaTag;
 
   @JsonProperty("cloudRegion")
-  private AwsCloudRegion cloudRegion = null;
+  private AwsCloudRegion cloudRegion;
 
   @JsonProperty("signatureVersion")
-  private S3SignatureVersion signatureVersion = null;
+  private S3SignatureVersion signatureVersion;
 
 
   /**
@@ -46,6 +46,12 @@ public class S3Output extends Output {
     return bucketName;
   }
 
+  /**
+   * Amazon S3 bucket name
+   *
+   * @param bucketName
+   * Amazon S3 bucket name
+   */
   public void setBucketName(String bucketName) {
     this.bucketName = bucketName;
   }
@@ -59,6 +65,12 @@ public class S3Output extends Output {
     return accessKey;
   }
 
+  /**
+   * Amazon S3 access key
+   *
+   * @param accessKey
+   * Amazon S3 access key
+   */
   public void setAccessKey(String accessKey) {
     this.accessKey = accessKey;
   }
@@ -72,6 +84,12 @@ public class S3Output extends Output {
     return secretKey;
   }
 
+  /**
+   * Amazon S3 secret key
+   *
+   * @param secretKey
+   * Amazon S3 secret key
+   */
   public void setSecretKey(String secretKey) {
     this.secretKey = secretKey;
   }
@@ -85,6 +103,12 @@ public class S3Output extends Output {
     return md5MetaTag;
   }
 
+  /**
+   * If set a user defined tag (x-amz-meta-) with that key will be used to store the MD5 hash of the file.
+   *
+   * @param md5MetaTag
+   * If set a user defined tag (x-amz-meta-) with that key will be used to store the MD5 hash of the file.
+   */
   public void setMd5MetaTag(String md5MetaTag) {
     this.md5MetaTag = md5MetaTag;
   }
@@ -98,6 +122,11 @@ public class S3Output extends Output {
     return cloudRegion;
   }
 
+  /**
+   * Set cloudRegion
+   *
+   * @param cloudRegion
+   */
   public void setCloudRegion(AwsCloudRegion cloudRegion) {
     this.cloudRegion = cloudRegion;
   }
@@ -111,6 +140,11 @@ public class S3Output extends Output {
     return signatureVersion;
   }
 
+  /**
+   * Set signatureVersion
+   *
+   * @param signatureVersion
+   */
   public void setSignatureVersion(S3SignatureVersion signatureVersion) {
     this.signatureVersion = signatureVersion;
   }

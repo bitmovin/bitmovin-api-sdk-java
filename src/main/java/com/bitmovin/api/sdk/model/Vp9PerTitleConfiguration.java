@@ -27,6 +27,12 @@ public class Vp9PerTitleConfiguration extends PerTitleConfiguration {
     return targetQualityCrf;
   }
 
+  /**
+   * Desired target quality of the highest representation expressed as CRF value
+   *
+   * @param targetQualityCrf
+   * Desired target quality of the highest representation expressed as CRF value
+   */
   public void setTargetQualityCrf(Double targetQualityCrf) {
     this.targetQualityCrf = targetQualityCrf;
   }

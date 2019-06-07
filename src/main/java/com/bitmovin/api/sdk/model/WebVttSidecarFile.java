@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class WebVttSidecarFile extends SidecarFile {
   @JsonProperty("segmentation")
-  private WebVttSidecarFileSegmentation segmentation = null;
+  private WebVttSidecarFileSegmentation segmentation;
 
 
   /**
@@ -31,6 +31,11 @@ public class WebVttSidecarFile extends SidecarFile {
     return segmentation;
   }
 
+  /**
+   * Set segmentation
+   *
+   * @param segmentation
+   */
   public void setSegmentation(WebVttSidecarFileSegmentation segmentation) {
     this.segmentation = segmentation;
   }

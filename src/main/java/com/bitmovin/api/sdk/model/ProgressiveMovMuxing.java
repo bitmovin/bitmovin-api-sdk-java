@@ -25,7 +25,7 @@ public class ProgressiveMovMuxing extends Muxing {
   private String filename;
 
   @JsonProperty("internalChunkLength")
-  private InternalChunkLength internalChunkLength = null;
+  private InternalChunkLength internalChunkLength;
 
 
   /**
@@ -36,6 +36,12 @@ public class ProgressiveMovMuxing extends Muxing {
     return filename;
   }
 
+  /**
+   * The output file name
+   *
+   * @param filename
+   * The output file name
+   */
   public void setFilename(String filename) {
     this.filename = filename;
   }
@@ -49,6 +55,12 @@ public class ProgressiveMovMuxing extends Muxing {
     return internalChunkLength;
   }
 
+  /**
+   * Modifies the internal chunk length used for chunked encoding
+   *
+   * @param internalChunkLength
+   * Modifies the internal chunk length used for chunked encoding
+   */
   public void setInternalChunkLength(InternalChunkLength internalChunkLength) {
     this.internalChunkLength = internalChunkLength;
   }

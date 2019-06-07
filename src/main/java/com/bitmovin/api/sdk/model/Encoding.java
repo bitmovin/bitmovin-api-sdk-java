@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class Encoding extends BitmovinResource {
   @JsonProperty("cloudRegion")
-  private CloudRegion cloudRegion = null;
+  private CloudRegion cloudRegion;
 
   @JsonProperty("encoderVersion")
   private String encoderVersion;
@@ -29,7 +29,7 @@ public class Encoding extends BitmovinResource {
   private String infrastructureId;
 
   @JsonProperty("infrastructure")
-  private InfrastructureSettings infrastructure = null;
+  private InfrastructureSettings infrastructure;
 
   @JsonProperty("labels")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -44,6 +44,11 @@ public class Encoding extends BitmovinResource {
     return cloudRegion;
   }
 
+  /**
+   * Set cloudRegion
+   *
+   * @param cloudRegion
+   */
   public void setCloudRegion(CloudRegion cloudRegion) {
     this.cloudRegion = cloudRegion;
   }
@@ -57,6 +62,12 @@ public class Encoding extends BitmovinResource {
     return encoderVersion;
   }
 
+  /**
+   * Version of the encoder
+   *
+   * @param encoderVersion
+   * Version of the encoder
+   */
   public void setEncoderVersion(String encoderVersion) {
     this.encoderVersion = encoderVersion;
   }
@@ -70,6 +81,12 @@ public class Encoding extends BitmovinResource {
     return infrastructureId;
   }
 
+  /**
+   * Define an external infrastructure to run the encoding on. Note If you set this value, the &#x60;cloudRegion&#x60; must be &#39;EXTERNAL&#39;.
+   *
+   * @param infrastructureId
+   * Define an external infrastructure to run the encoding on. Note If you set this value, the &#x60;cloudRegion&#x60; must be &#39;EXTERNAL&#39;.
+   */
   public void setInfrastructureId(String infrastructureId) {
     this.infrastructureId = infrastructureId;
   }
@@ -83,6 +100,11 @@ public class Encoding extends BitmovinResource {
     return infrastructure;
   }
 
+  /**
+   * Set infrastructure
+   *
+   * @param infrastructure
+   */
   public void setInfrastructure(InfrastructureSettings infrastructure) {
     this.infrastructure = infrastructure;
   }
@@ -104,6 +126,12 @@ public class Encoding extends BitmovinResource {
     return labels;
   }
 
+  /**
+   * You may pass a list of groups associated with this encoding. This will enable you to group results in the statistics resource
+   *
+   * @param labels
+   * You may pass a list of groups associated with this encoding. This will enable you to group results in the statistics resource
+   */
   public void setLabels(List<String> labels) {
     this.labels = labels;
   }

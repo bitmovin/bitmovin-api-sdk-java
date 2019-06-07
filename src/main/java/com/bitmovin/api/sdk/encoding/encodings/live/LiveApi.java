@@ -75,7 +75,7 @@ public class LiveApi {
      * Start Live Encoding
      * 
      * @param encodingId Id of the encoding (required)
-     * @param startLiveEncodingRequest  (optional)
+     * @param startLiveEncodingRequest  (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */

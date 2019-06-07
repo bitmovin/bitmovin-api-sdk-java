@@ -69,7 +69,7 @@ public class StreamsApi {
      * Add Stream
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param stream  (optional)
+     * @param stream  (required)
      * @return Stream
      * @throws BitmovinException if fails to make API call
      */

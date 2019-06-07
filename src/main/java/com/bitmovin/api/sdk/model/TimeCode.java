@@ -24,6 +24,12 @@ public class TimeCode {
     return timeCodeStart;
   }
 
+  /**
+   * Specify start timecode for writing.
+   *
+   * @param timeCodeStart
+   * Specify start timecode for writing.
+   */
   public void setTimeCodeStart(String timeCodeStart) {
     this.timeCodeStart = timeCodeStart;
   }

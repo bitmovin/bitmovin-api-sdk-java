@@ -32,6 +32,12 @@ public class PlaintextId3Tag extends Id3Tag {
     return text;
   }
 
+  /**
+   * Plain Text Data
+   *
+   * @param text
+   * Plain Text Data
+   */
   public void setText(String text) {
     this.text = text;
   }
@@ -45,6 +51,12 @@ public class PlaintextId3Tag extends Id3Tag {
     return frameId;
   }
 
+  /**
+   * 4 character long Frame ID
+   *
+   * @param frameId
+   * 4 character long Frame ID
+   */
   public void setFrameId(String frameId) {
     this.frameId = frameId;
   }

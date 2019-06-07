@@ -51,6 +51,11 @@ public class Drm extends BitmovinResource {
     return outputs;
   }
 
+  /**
+   * Set outputs
+   *
+   * @param outputs
+   */
   public void setOutputs(List<EncodingOutput> outputs) {
     this.outputs = outputs;
   }

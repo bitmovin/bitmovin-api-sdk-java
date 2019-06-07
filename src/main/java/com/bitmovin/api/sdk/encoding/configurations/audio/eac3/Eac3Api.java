@@ -44,7 +44,7 @@ public class Eac3Api {
     /**
      * Create E-AC3 Codec Configuration
      * 
-     * @param eac3AudioConfiguration  (optional)
+     * @param eac3AudioConfiguration  (required)
      * @return Eac3AudioConfiguration
      * @throws BitmovinException if fails to make API call
      */

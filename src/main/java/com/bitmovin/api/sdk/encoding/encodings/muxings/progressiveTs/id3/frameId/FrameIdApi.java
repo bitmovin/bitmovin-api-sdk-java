@@ -46,7 +46,7 @@ public class FrameIdApi {
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param muxingId ID of the Progressive TS Muxing (required)
-     * @param frameIdId3Tag  (optional)
+     * @param frameIdId3Tag  (required)
      * @return FrameIdId3Tag
      * @throws BitmovinException if fails to make API call
      */

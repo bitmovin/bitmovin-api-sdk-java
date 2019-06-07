@@ -20,7 +20,7 @@ public class StreamInput {
   private String inputPath;
 
   @JsonProperty("selectionMode")
-  private StreamSelectionMode selectionMode = null;
+  private StreamSelectionMode selectionMode;
 
   @JsonProperty("position")
   private Integer position;
@@ -37,6 +37,12 @@ public class StreamInput {
     return inputId;
   }
 
+  /**
+   * Id of input
+   *
+   * @param inputId
+   * Id of input
+   */
   public void setInputId(String inputId) {
     this.inputId = inputId;
   }
@@ -50,6 +56,12 @@ public class StreamInput {
     return inputPath;
   }
 
+  /**
+   * Path to media file
+   *
+   * @param inputPath
+   * Path to media file
+   */
   public void setInputPath(String inputPath) {
     this.inputPath = inputPath;
   }
@@ -63,6 +75,12 @@ public class StreamInput {
     return selectionMode;
   }
 
+  /**
+   * Specifies the algorithm how the stream in the input file will be selected
+   *
+   * @param selectionMode
+   * Specifies the algorithm how the stream in the input file will be selected
+   */
   public void setSelectionMode(StreamSelectionMode selectionMode) {
     this.selectionMode = selectionMode;
   }
@@ -76,6 +94,12 @@ public class StreamInput {
     return position;
   }
 
+  /**
+   * Position of the stream
+   *
+   * @param position
+   * Position of the stream
+   */
   public void setPosition(Integer position) {
     this.position = position;
   }
@@ -89,6 +113,12 @@ public class StreamInput {
     return inputStreamId;
   }
 
+  /**
+   * Set this property instead of all others to reference an ingest, trimming or concatenation input stream
+   *
+   * @param inputStreamId
+   * Set this property instead of all others to reference an ingest, trimming or concatenation input stream
+   */
   public void setInputStreamId(String inputStreamId) {
     this.inputStreamId = inputStreamId;
   }

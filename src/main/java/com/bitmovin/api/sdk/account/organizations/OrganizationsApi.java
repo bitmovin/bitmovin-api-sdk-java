@@ -44,7 +44,7 @@ public class OrganizationsApi {
     /**
      * Add Organization
      * 
-     * @param organization Orgnaization Details (optional)
+     * @param organization Orgnaization Details (required)
      * @return Organization
      * @throws BitmovinException if fails to make API call
      */

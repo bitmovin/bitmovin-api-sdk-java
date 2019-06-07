@@ -46,6 +46,12 @@ public class BasicMediaInfo extends BitmovinResponse {
     return groupId;
   }
 
+  /**
+   * The value is a quoted-string which specifies the group to which the Rendition belongs.
+   *
+   * @param groupId
+   * The value is a quoted-string which specifies the group to which the Rendition belongs.
+   */
   public void setGroupId(String groupId) {
     this.groupId = groupId;
   }
@@ -59,6 +65,12 @@ public class BasicMediaInfo extends BitmovinResponse {
     return language;
   }
 
+  /**
+   * Primary language in the rendition.
+   *
+   * @param language
+   * Primary language in the rendition.
+   */
   public void setLanguage(String language) {
     this.language = language;
   }
@@ -72,6 +84,12 @@ public class BasicMediaInfo extends BitmovinResponse {
     return assocLanguage;
   }
 
+  /**
+   * Identifies a language that is associated with the Rendition.
+   *
+   * @param assocLanguage
+   * Identifies a language that is associated with the Rendition.
+   */
   public void setAssocLanguage(String assocLanguage) {
     this.assocLanguage = assocLanguage;
   }
@@ -85,6 +103,12 @@ public class BasicMediaInfo extends BitmovinResponse {
     return name;
   }
 
+  /**
+   * Human readable description of the rendition.
+   *
+   * @param name
+   * Human readable description of the rendition.
+   */
   public void setName(String name) {
     this.name = name;
   }
@@ -98,6 +122,12 @@ public class BasicMediaInfo extends BitmovinResponse {
     return isDefault;
   }
 
+  /**
+   * If set to true, the client SHOULD play this Rendition of the content in the absence of information from the user.
+   *
+   * @param isDefault
+   * If set to true, the client SHOULD play this Rendition of the content in the absence of information from the user.
+   */
   public void setIsDefault(Boolean isDefault) {
     this.isDefault = isDefault;
   }
@@ -111,6 +141,12 @@ public class BasicMediaInfo extends BitmovinResponse {
     return autoselect;
   }
 
+  /**
+   * If set to true, the client MAY choose to play this Rendition in the absence of explicit user preference.
+   *
+   * @param autoselect
+   * If set to true, the client MAY choose to play this Rendition in the absence of explicit user preference.
+   */
   public void setAutoselect(Boolean autoselect) {
     this.autoselect = autoselect;
   }
@@ -132,6 +168,12 @@ public class BasicMediaInfo extends BitmovinResponse {
     return characteristics;
   }
 
+  /**
+   * Contains Uniform Type Identifiers
+   *
+   * @param characteristics
+   * Contains Uniform Type Identifiers
+   */
   public void setCharacteristics(List<String> characteristics) {
     this.characteristics = characteristics;
   }

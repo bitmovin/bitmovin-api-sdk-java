@@ -41,7 +41,7 @@ public class ErrorApi {
     /**
      * Add Encoding Error Email Notification (All Encodings)
      * 
-     * @param encodingErrorEmailNotification Add a new email notification if an encoding received an error (optional)
+     * @param encodingErrorEmailNotification Add a new email notification if an encoding received an error (required)
      * @return List&lt;EncodingErrorEmailNotification&gt;
      * @throws BitmovinException if fails to make API call
      */
@@ -53,7 +53,7 @@ public class ErrorApi {
      * Add Encoding Error Email Notification (Specific Encoding)
      * 
      * @param encodingId Id of the encoding resource (required)
-     * @param emailNotification The email notifications object (optional)
+     * @param emailNotification The email notifications object (required)
      * @return EmailNotification
      * @throws BitmovinException if fails to make API call
      */
@@ -65,7 +65,7 @@ public class ErrorApi {
      * Replace Encoding Error Email Notification
      * 
      * @param notificationId Id of the email notification (required)
-     * @param emailNotification The email notification with the updated values (optional)
+     * @param emailNotification The email notification with the updated values (required)
      * @return EmailNotification
      * @throws BitmovinException if fails to make API call
      */

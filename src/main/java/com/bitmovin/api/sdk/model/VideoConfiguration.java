@@ -32,10 +32,10 @@ public class VideoConfiguration extends CodecConfiguration {
   private Double rate;
 
   @JsonProperty("pixelFormat")
-  private PixelFormat pixelFormat = null;
+  private PixelFormat pixelFormat;
 
   @JsonProperty("colorConfig")
-  private ColorConfig colorConfig = null;
+  private ColorConfig colorConfig;
 
   @JsonProperty("sampleAspectRatioNumerator")
   private Integer sampleAspectRatioNumerator;
@@ -44,7 +44,7 @@ public class VideoConfiguration extends CodecConfiguration {
   private Integer sampleAspectRatioDenominator;
 
   @JsonProperty("encodingMode")
-  private EncodingMode encodingMode = null;
+  private EncodingMode encodingMode;
 
 
   /**
@@ -55,6 +55,12 @@ public class VideoConfiguration extends CodecConfiguration {
     return width;
   }
 
+  /**
+   * Width of the encoded video in pixels
+   *
+   * @param width
+   * Width of the encoded video in pixels
+   */
   public void setWidth(Integer width) {
     this.width = width;
   }
@@ -68,6 +74,12 @@ public class VideoConfiguration extends CodecConfiguration {
     return height;
   }
 
+  /**
+   * Height of the encoded video in pixels
+   *
+   * @param height
+   * Height of the encoded video in pixels
+   */
   public void setHeight(Integer height) {
     this.height = height;
   }
@@ -81,6 +93,12 @@ public class VideoConfiguration extends CodecConfiguration {
     return bitrate;
   }
 
+  /**
+   * Target bitrate for the encoded video in bps. Either bitrate or crf is required.
+   *
+   * @param bitrate
+   * Target bitrate for the encoded video in bps. Either bitrate or crf is required.
+   */
   public void setBitrate(Long bitrate) {
     this.bitrate = bitrate;
   }
@@ -94,6 +112,12 @@ public class VideoConfiguration extends CodecConfiguration {
     return rate;
   }
 
+  /**
+   * Target frame rate of the encoded video. Must be set for live encodings
+   *
+   * @param rate
+   * Target frame rate of the encoded video. Must be set for live encodings
+   */
   public void setRate(Double rate) {
     this.rate = rate;
   }
@@ -107,6 +131,11 @@ public class VideoConfiguration extends CodecConfiguration {
     return pixelFormat;
   }
 
+  /**
+   * Set pixelFormat
+   *
+   * @param pixelFormat
+   */
   public void setPixelFormat(PixelFormat pixelFormat) {
     this.pixelFormat = pixelFormat;
   }
@@ -120,6 +149,11 @@ public class VideoConfiguration extends CodecConfiguration {
     return colorConfig;
   }
 
+  /**
+   * Set colorConfig
+   *
+   * @param colorConfig
+   */
   public void setColorConfig(ColorConfig colorConfig) {
     this.colorConfig = colorConfig;
   }
@@ -133,6 +167,12 @@ public class VideoConfiguration extends CodecConfiguration {
     return sampleAspectRatioNumerator;
   }
 
+  /**
+   * The numerator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioDenominator is set.
+   *
+   * @param sampleAspectRatioNumerator
+   * The numerator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioDenominator is set.
+   */
   public void setSampleAspectRatioNumerator(Integer sampleAspectRatioNumerator) {
     this.sampleAspectRatioNumerator = sampleAspectRatioNumerator;
   }
@@ -146,6 +186,12 @@ public class VideoConfiguration extends CodecConfiguration {
     return sampleAspectRatioDenominator;
   }
 
+  /**
+   * The denominator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioNumerator is set.
+   *
+   * @param sampleAspectRatioDenominator
+   * The denominator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioNumerator is set.
+   */
   public void setSampleAspectRatioDenominator(Integer sampleAspectRatioDenominator) {
     this.sampleAspectRatioDenominator = sampleAspectRatioDenominator;
   }
@@ -159,6 +205,12 @@ public class VideoConfiguration extends CodecConfiguration {
     return encodingMode;
   }
 
+  /**
+   * The mode of the encoding
+   *
+   * @param encodingMode
+   * The mode of the encoding
+   */
   public void setEncodingMode(EncodingMode encodingMode) {
     this.encodingMode = encodingMode;
   }

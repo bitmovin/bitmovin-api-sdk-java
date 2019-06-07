@@ -44,7 +44,7 @@ public class LocalApi {
     /**
      * Create Local Output
      * 
-     * @param localOutput The Local output to be created (optional)
+     * @param localOutput The Local output to be created (required)
      * @return LocalOutput
      * @throws BitmovinException if fails to make API call
      */

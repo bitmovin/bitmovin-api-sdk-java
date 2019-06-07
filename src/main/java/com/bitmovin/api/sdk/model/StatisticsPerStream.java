@@ -48,25 +48,25 @@ public class StatisticsPerStream {
   private Long bitrate;
 
   @JsonProperty("codec")
-  private CodecConfigType codec = null;
+  private CodecConfigType codec;
 
   @JsonProperty("resolution")
-  private StatisticsResolution resolution = null;
+  private StatisticsResolution resolution;
 
   @JsonProperty("encodingMode")
-  private EncodingMode encodingMode = null;
+  private EncodingMode encodingMode;
 
   @JsonProperty("encodingModeMultiplicator")
   private Double encodingModeMultiplicator;
 
   @JsonProperty("perTitleResultStream")
-  private StatisticsPerTitleStream perTitleResultStream = null;
+  private StatisticsPerTitleStream perTitleResultStream;
 
   @JsonProperty("perTitleMultiplicator")
   private Double perTitleMultiplicator;
 
   @JsonProperty("psnrMode")
-  private PsnrPerStreamMode psnrMode = null;
+  private PsnrPerStreamMode psnrMode;
 
   @JsonProperty("psnrMultiplicator")
   private Double psnrMultiplicator;
@@ -80,6 +80,12 @@ public class StatisticsPerStream {
     return streamId;
   }
 
+  /**
+   * ID of the stream
+   *
+   * @param streamId
+   * ID of the stream
+   */
   public void setStreamId(String streamId) {
     this.streamId = streamId;
   }
@@ -93,6 +99,12 @@ public class StatisticsPerStream {
     return codecConfigId;
   }
 
+  /**
+   * ID of the condec configuration
+   *
+   * @param codecConfigId
+   * ID of the condec configuration
+   */
   public void setCodecConfigId(String codecConfigId) {
     this.codecConfigId = codecConfigId;
   }
@@ -106,6 +118,12 @@ public class StatisticsPerStream {
     return multiplicator;
   }
 
+  /**
+   * Multiplier for the encoded minutes. Depends on muxing type.
+   *
+   * @param multiplicator
+   * Multiplier for the encoded minutes. Depends on muxing type.
+   */
   public void setMultiplicator(Double multiplicator) {
     this.multiplicator = multiplicator;
   }
@@ -119,6 +137,12 @@ public class StatisticsPerStream {
     return encodedBytes;
   }
 
+  /**
+   * Encoded bytes.
+   *
+   * @param encodedBytes
+   * Encoded bytes.
+   */
   public void setEncodedBytes(Long encodedBytes) {
     this.encodedBytes = encodedBytes;
   }
@@ -132,6 +156,12 @@ public class StatisticsPerStream {
     return encodedSeconds;
   }
 
+  /**
+   * Length of the stream.
+   *
+   * @param encodedSeconds
+   * Length of the stream.
+   */
   public void setEncodedSeconds(Double encodedSeconds) {
     this.encodedSeconds = encodedSeconds;
   }
@@ -145,6 +175,12 @@ public class StatisticsPerStream {
     return billableMinutes;
   }
 
+  /**
+   * Minutes you will be charged for (billableMinutes &#x3D; encodedSeconds * multiplicator)
+   *
+   * @param billableMinutes
+   * Minutes you will be charged for (billableMinutes &#x3D; encodedSeconds * multiplicator)
+   */
   public void setBillableMinutes(Double billableMinutes) {
     this.billableMinutes = billableMinutes;
   }
@@ -158,6 +194,12 @@ public class StatisticsPerStream {
     return width;
   }
 
+  /**
+   * Video width, only if video stream
+   *
+   * @param width
+   * Video width, only if video stream
+   */
   public void setWidth(Long width) {
     this.width = width;
   }
@@ -171,6 +213,12 @@ public class StatisticsPerStream {
     return height;
   }
 
+  /**
+   * Video height, only if video stream
+   *
+   * @param height
+   * Video height, only if video stream
+   */
   public void setHeight(Long height) {
     this.height = height;
   }
@@ -184,6 +232,12 @@ public class StatisticsPerStream {
     return rate;
   }
 
+  /**
+   * If it&#39; a video stream this value is the FPS, for audio it&#39;s the sample rate.
+   *
+   * @param rate
+   * If it&#39; a video stream this value is the FPS, for audio it&#39;s the sample rate.
+   */
   public void setRate(Long rate) {
     this.rate = rate;
   }
@@ -197,6 +251,12 @@ public class StatisticsPerStream {
     return bitrate;
   }
 
+  /**
+   * Bitrate of the stream
+   *
+   * @param bitrate
+   * Bitrate of the stream
+   */
   public void setBitrate(Long bitrate) {
     this.bitrate = bitrate;
   }
@@ -210,6 +270,11 @@ public class StatisticsPerStream {
     return codec;
   }
 
+  /**
+   * Set codec
+   *
+   * @param codec
+   */
   public void setCodec(CodecConfigType codec) {
     this.codec = codec;
   }
@@ -223,6 +288,11 @@ public class StatisticsPerStream {
     return resolution;
   }
 
+  /**
+   * Set resolution
+   *
+   * @param resolution
+   */
   public void setResolution(StatisticsResolution resolution) {
     this.resolution = resolution;
   }
@@ -236,6 +306,11 @@ public class StatisticsPerStream {
     return encodingMode;
   }
 
+  /**
+   * Set encodingMode
+   *
+   * @param encodingMode
+   */
   public void setEncodingMode(EncodingMode encodingMode) {
     this.encodingMode = encodingMode;
   }
@@ -249,6 +324,12 @@ public class StatisticsPerStream {
     return encodingModeMultiplicator;
   }
 
+  /**
+   * The output minutes multiplicator for the given encodingMode
+   *
+   * @param encodingModeMultiplicator
+   * The output minutes multiplicator for the given encodingMode
+   */
   public void setEncodingModeMultiplicator(Double encodingModeMultiplicator) {
     this.encodingModeMultiplicator = encodingModeMultiplicator;
   }
@@ -262,6 +343,11 @@ public class StatisticsPerStream {
     return perTitleResultStream;
   }
 
+  /**
+   * Set perTitleResultStream
+   *
+   * @param perTitleResultStream
+   */
   public void setPerTitleResultStream(StatisticsPerTitleStream perTitleResultStream) {
     this.perTitleResultStream = perTitleResultStream;
   }
@@ -275,6 +361,12 @@ public class StatisticsPerStream {
     return perTitleMultiplicator;
   }
 
+  /**
+   * The output minutes multiplicator for per-title
+   *
+   * @param perTitleMultiplicator
+   * The output minutes multiplicator for per-title
+   */
   public void setPerTitleMultiplicator(Double perTitleMultiplicator) {
     this.perTitleMultiplicator = perTitleMultiplicator;
   }
@@ -288,6 +380,11 @@ public class StatisticsPerStream {
     return psnrMode;
   }
 
+  /**
+   * Set psnrMode
+   *
+   * @param psnrMode
+   */
   public void setPsnrMode(PsnrPerStreamMode psnrMode) {
     this.psnrMode = psnrMode;
   }
@@ -301,6 +398,12 @@ public class StatisticsPerStream {
     return psnrMultiplicator;
   }
 
+  /**
+   * The output minutes multiplicator for psnr streams
+   *
+   * @param psnrMultiplicator
+   * The output minutes multiplicator for psnr streams
+   */
   public void setPsnrMultiplicator(Double psnrMultiplicator) {
     this.psnrMultiplicator = psnrMultiplicator;
   }

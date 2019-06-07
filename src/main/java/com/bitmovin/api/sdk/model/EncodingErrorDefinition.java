@@ -26,7 +26,7 @@ public class EncodingErrorDefinition {
   private String description;
 
   @JsonProperty("retryHint")
-  private ErrorRetryHint retryHint = null;
+  private ErrorRetryHint retryHint;
 
 
   /**
@@ -37,6 +37,12 @@ public class EncodingErrorDefinition {
     return code;
   }
 
+  /**
+   * The error code.
+   *
+   * @param code
+   * The error code.
+   */
   public void setCode(Integer code) {
     this.code = code;
   }
@@ -50,6 +56,12 @@ public class EncodingErrorDefinition {
     return category;
   }
 
+  /**
+   * The error category.
+   *
+   * @param category
+   * The error category.
+   */
   public void setCategory(String category) {
     this.category = category;
   }
@@ -63,6 +75,12 @@ public class EncodingErrorDefinition {
     return message;
   }
 
+  /**
+   * The error message, optional. Can include placeholders like {1}, {2} which are replaced with the respective dependency when the error is thrown.
+   *
+   * @param message
+   * The error message, optional. Can include placeholders like {1}, {2} which are replaced with the respective dependency when the error is thrown.
+   */
   public void setMessage(String message) {
     this.message = message;
   }
@@ -76,6 +94,12 @@ public class EncodingErrorDefinition {
     return description;
   }
 
+  /**
+   * The returned error description.
+   *
+   * @param description
+   * The returned error description.
+   */
   public void setDescription(String description) {
     this.description = description;
   }
@@ -89,6 +113,12 @@ public class EncodingErrorDefinition {
     return retryHint;
   }
 
+  /**
+   * Indicates if the call that caused the error should be retried.
+   *
+   * @param retryHint
+   * Indicates if the call that caused the error should be retried.
+   */
   public void setRetryHint(ErrorRetryHint retryHint) {
     this.retryHint = retryHint;
   }

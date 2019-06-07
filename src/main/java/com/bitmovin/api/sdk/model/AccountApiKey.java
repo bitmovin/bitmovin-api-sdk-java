@@ -28,6 +28,12 @@ public class AccountApiKey extends BitmovinResource {
     return value;
   }
 
+  /**
+   * Key value for authentication with the Bitmovin API
+   *
+   * @param value
+   * Key value for authentication with the Bitmovin API
+   */
   public void setValue(String value) {
     this.value = value;
   }

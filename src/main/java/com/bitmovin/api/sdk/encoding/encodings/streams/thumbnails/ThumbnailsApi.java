@@ -46,7 +46,7 @@ public class ThumbnailsApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
-     * @param thumbnail  (optional)
+     * @param thumbnail  (required)
      * @return Thumbnail
      * @throws BitmovinException if fails to make API call
      */

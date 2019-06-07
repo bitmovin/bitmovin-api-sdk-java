@@ -43,7 +43,7 @@ public class PermissionsApi {
      * 
      * @param organizationId Id of the organization (required)
      * @param groupId Id of the group (required)
-     * @param acl  (optional)
+     * @param acl  (required)
      * @return Acl
      * @throws BitmovinException if fails to make API call
      */

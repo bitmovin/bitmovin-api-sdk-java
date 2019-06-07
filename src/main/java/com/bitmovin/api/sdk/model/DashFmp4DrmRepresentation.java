@@ -27,6 +27,12 @@ public class DashFmp4DrmRepresentation extends DashFmp4Representation {
     return drmId;
   }
 
+  /**
+   * DRM Id
+   *
+   * @param drmId
+   * DRM Id
+   */
   public void setDrmId(String drmId) {
     this.drmId = drmId;
   }

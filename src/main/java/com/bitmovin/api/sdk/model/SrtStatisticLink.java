@@ -30,6 +30,11 @@ public class SrtStatisticLink {
     return bandwidth;
   }
 
+  /**
+   * Set bandwidth
+   *
+   * @param bandwidth
+   */
   public void setBandwidth(Double bandwidth) {
     this.bandwidth = bandwidth;
   }
@@ -43,6 +48,11 @@ public class SrtStatisticLink {
     return maxBandwidth;
   }
 
+  /**
+   * Set maxBandwidth
+   *
+   * @param maxBandwidth
+   */
   public void setMaxBandwidth(Double maxBandwidth) {
     this.maxBandwidth = maxBandwidth;
   }
@@ -56,6 +66,11 @@ public class SrtStatisticLink {
     return rtt;
   }
 
+  /**
+   * Set rtt
+   *
+   * @param rtt
+   */
   public void setRtt(Double rtt) {
     this.rtt = rtt;
   }

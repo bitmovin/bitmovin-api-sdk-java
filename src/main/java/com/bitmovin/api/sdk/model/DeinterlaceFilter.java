@@ -20,13 +20,13 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
 public class DeinterlaceFilter extends Filter {
   @JsonProperty("parity")
-  private PictureFieldParity parity = null;
+  private PictureFieldParity parity;
 
   @JsonProperty("mode")
-  private DeinterlaceMode mode = null;
+  private DeinterlaceMode mode;
 
   @JsonProperty("frameSelectionMode")
-  private DeinterlaceFrameSelectionMode frameSelectionMode = null;
+  private DeinterlaceFrameSelectionMode frameSelectionMode;
 
 
   /**
@@ -37,6 +37,11 @@ public class DeinterlaceFilter extends Filter {
     return parity;
   }
 
+  /**
+   * Set parity
+   *
+   * @param parity
+   */
   public void setParity(PictureFieldParity parity) {
     this.parity = parity;
   }
@@ -50,6 +55,11 @@ public class DeinterlaceFilter extends Filter {
     return mode;
   }
 
+  /**
+   * Set mode
+   *
+   * @param mode
+   */
   public void setMode(DeinterlaceMode mode) {
     this.mode = mode;
   }
@@ -63,6 +73,11 @@ public class DeinterlaceFilter extends Filter {
     return frameSelectionMode;
   }
 
+  /**
+   * Set frameSelectionMode
+   *
+   * @param frameSelectionMode
+   */
   public void setFrameSelectionMode(DeinterlaceFrameSelectionMode frameSelectionMode) {
     this.frameSelectionMode = frameSelectionMode;
   }

@@ -44,7 +44,7 @@ public class EnhancedWatermarkApi {
     /**
      * Create Enhanced Watermark Filter
      * 
-     * @param enhancedWatermarkFilter Only one horizontal and one vertical distance parameter is allowed, either top or bottom, and either left or right. See example body. (optional)
+     * @param enhancedWatermarkFilter Only one horizontal and one vertical distance parameter is allowed, either top or bottom, and either left or right. See example body. (required)
      * @return EnhancedWatermarkFilter
      * @throws BitmovinException if fails to make API call
      */

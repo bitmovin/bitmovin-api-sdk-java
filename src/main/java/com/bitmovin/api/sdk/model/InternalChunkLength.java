@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class InternalChunkLength {
   @JsonProperty("mode")
-  private ChunkLengthMode mode = null;
+  private ChunkLengthMode mode;
 
   @JsonProperty("customChunkLength")
   private Double customChunkLength;
@@ -28,6 +28,12 @@ public class InternalChunkLength {
     return mode;
   }
 
+  /**
+   * Defines how the internal chunk length for encoding will be determined
+   *
+   * @param mode
+   * Defines how the internal chunk length for encoding will be determined
+   */
   public void setMode(ChunkLengthMode mode) {
     this.mode = mode;
   }
@@ -43,6 +49,16 @@ public class InternalChunkLength {
     return customChunkLength;
   }
 
+  /**
+   * Defines a custom internal chunk length in seconds to be used for encoding if mode is set to &#x60;CUSTOM&#x60;. Valid range is from 1 to 180 seconds
+   * minimum: 1
+   * maximum: 180
+   *
+   * @param customChunkLength
+   * Defines a custom internal chunk length in seconds to be used for encoding if mode is set to &#x60;CUSTOM&#x60;. Valid range is from 1 to 180 seconds
+   * minimum: 1
+   * maximum: 180
+   */
   public void setCustomChunkLength(Double customChunkLength) {
     this.customChunkLength = customChunkLength;
   }

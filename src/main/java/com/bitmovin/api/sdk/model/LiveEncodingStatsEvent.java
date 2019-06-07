@@ -18,7 +18,7 @@ public class LiveEncodingStatsEvent {
   private Date time;
 
   @JsonProperty("details")
-  private LiveEncodingStatsEventDetails details = null;
+  private LiveEncodingStatsEventDetails details;
 
 
   /**
@@ -29,6 +29,12 @@ public class LiveEncodingStatsEvent {
     return time;
   }
 
+  /**
+   * Timestamp of the event formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   *
+   * @param time
+   * Timestamp of the event formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   */
   public void setTime(Date time) {
     this.time = time;
   }
@@ -42,6 +48,11 @@ public class LiveEncodingStatsEvent {
     return details;
   }
 
+  /**
+   * Set details
+   *
+   * @param details
+   */
   public void setDetails(LiveEncodingStatsEventDetails details) {
     this.details = details;
   }

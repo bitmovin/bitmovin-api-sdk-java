@@ -29,6 +29,12 @@ public class LocalOutput extends Output {
     return path;
   }
 
+  /**
+   * Path to your local storage
+   *
+   * @param path
+   * Path to your local storage
+   */
   public void setPath(String path) {
     this.path = path;
   }

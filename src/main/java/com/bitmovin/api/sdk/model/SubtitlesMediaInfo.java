@@ -26,6 +26,12 @@ public class SubtitlesMediaInfo extends StandardMediaInfo {
     return forced;
   }
 
+  /**
+   * A value of true indicates that the Rendition contains content which is considered essential to play.
+   *
+   * @param forced
+   * A value of true indicates that the Rendition contains content which is considered essential to play.
+   */
   public void setForced(Boolean forced) {
     this.forced = forced;
   }

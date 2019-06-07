@@ -18,7 +18,7 @@ public class Condition extends AbstractCondition {
   private String attribute;
 
   @JsonProperty("operator")
-  private ConditionOperator operator = null;
+  private ConditionOperator operator;
 
   @JsonProperty("value")
   private String value;
@@ -32,6 +32,12 @@ public class Condition extends AbstractCondition {
     return attribute;
   }
 
+  /**
+   * The attribute that should be used for the evaluation
+   *
+   * @param attribute
+   * The attribute that should be used for the evaluation
+   */
   public void setAttribute(String attribute) {
     this.attribute = attribute;
   }
@@ -45,6 +51,12 @@ public class Condition extends AbstractCondition {
     return operator;
   }
 
+  /**
+   * The operator that should be used for the evaluation
+   *
+   * @param operator
+   * The operator that should be used for the evaluation
+   */
   public void setOperator(ConditionOperator operator) {
     this.operator = operator;
   }
@@ -58,6 +70,12 @@ public class Condition extends AbstractCondition {
     return value;
   }
 
+  /**
+   * The value that should be used for comparison
+   *
+   * @param value
+   * The value that should be used for comparison
+   */
   public void setValue(String value) {
     this.value = value;
   }

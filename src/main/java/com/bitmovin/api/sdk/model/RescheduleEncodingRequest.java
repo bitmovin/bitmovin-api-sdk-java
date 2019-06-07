@@ -24,6 +24,12 @@ public class RescheduleEncodingRequest {
     return infrastructureId;
   }
 
+  /**
+   * Id of a custom infrastructure, e.g., Kubernetes Cluster
+   *
+   * @param infrastructureId
+   * Id of a custom infrastructure, e.g., Kubernetes Cluster
+   */
   public void setInfrastructureId(String infrastructureId) {
     this.infrastructureId = infrastructureId;
   }

@@ -44,7 +44,7 @@ public class Mp3Api {
     /**
      * Create MP3 Codec Configuration
      * 
-     * @param mp3AudioConfiguration  (optional)
+     * @param mp3AudioConfiguration  (required)
      * @return Mp3AudioConfiguration
      * @throws BitmovinException if fails to make API call
      */

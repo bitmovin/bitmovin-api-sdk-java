@@ -56,7 +56,7 @@ public class KubernetesApi {
     /**
      * Connect Kubernetes Cluster
      * 
-     * @param kubernetesCluster  (optional)
+     * @param kubernetesCluster  (required)
      * @return KubernetesCluster
      * @throws BitmovinException if fails to make API call
      */

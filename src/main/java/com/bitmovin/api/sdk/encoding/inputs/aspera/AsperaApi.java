@@ -44,7 +44,7 @@ public class AsperaApi {
     /**
      * Create Aspera Input
      * 
-     * @param asperaInput The Aspera input to be created (optional)
+     * @param asperaInput The Aspera input to be created (required)
      * @return AsperaInput
      * @throws BitmovinException if fails to make API call
      */

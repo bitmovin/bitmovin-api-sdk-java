@@ -26,10 +26,10 @@ public class AkamaiMslOutput extends Output {
   private String eventName;
 
   @JsonProperty("streamFormat")
-  private AkamaiMslStreamFormat streamFormat = null;
+  private AkamaiMslStreamFormat streamFormat;
 
   @JsonProperty("mslVersion")
-  private AkamaiMslVersion mslVersion = null;
+  private AkamaiMslVersion mslVersion;
 
 
   /**
@@ -40,6 +40,12 @@ public class AkamaiMslOutput extends Output {
     return streamId;
   }
 
+  /**
+   * The Akamai stream ID
+   *
+   * @param streamId
+   * The Akamai stream ID
+   */
   public void setStreamId(Integer streamId) {
     this.streamId = streamId;
   }
@@ -53,6 +59,12 @@ public class AkamaiMslOutput extends Output {
     return eventName;
   }
 
+  /**
+   * The Akamai event name
+   *
+   * @param eventName
+   * The Akamai event name
+   */
   public void setEventName(String eventName) {
     this.eventName = eventName;
   }
@@ -66,6 +78,11 @@ public class AkamaiMslOutput extends Output {
     return streamFormat;
   }
 
+  /**
+   * Set streamFormat
+   *
+   * @param streamFormat
+   */
   public void setStreamFormat(AkamaiMslStreamFormat streamFormat) {
     this.streamFormat = streamFormat;
   }
@@ -79,6 +96,11 @@ public class AkamaiMslOutput extends Output {
     return mslVersion;
   }
 
+  /**
+   * Set mslVersion
+   *
+   * @param mslVersion
+   */
   public void setMslVersion(AkamaiMslVersion mslVersion) {
     this.mslVersion = mslVersion;
   }

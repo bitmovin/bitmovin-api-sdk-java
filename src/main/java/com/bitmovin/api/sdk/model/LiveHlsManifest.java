@@ -33,6 +33,12 @@ public class LiveHlsManifest {
     return manifestId;
   }
 
+  /**
+   * Hls manifest ids
+   *
+   * @param manifestId
+   * Hls manifest ids
+   */
   public void setManifestId(String manifestId) {
     this.manifestId = manifestId;
   }
@@ -46,6 +52,12 @@ public class LiveHlsManifest {
     return timeshift;
   }
 
+  /**
+   * Timeshift in seconds
+   *
+   * @param timeshift
+   * Timeshift in seconds
+   */
   public void setTimeshift(Double timeshift) {
     this.timeshift = timeshift;
   }
@@ -59,6 +71,12 @@ public class LiveHlsManifest {
     return liveEdgeOffset;
   }
 
+  /**
+   * Live edge offset in seconds
+   *
+   * @param liveEdgeOffset
+   * Live edge offset in seconds
+   */
   public void setLiveEdgeOffset(Double liveEdgeOffset) {
     this.liveEdgeOffset = liveEdgeOffset;
   }
@@ -72,6 +90,12 @@ public class LiveHlsManifest {
     return insertProgramDateTime;
   }
 
+  /**
+   * Specifies if the EXT-X-PROGRAM-DATETIME tag will be included
+   *
+   * @param insertProgramDateTime
+   * Specifies if the EXT-X-PROGRAM-DATETIME tag will be included
+   */
   public void setInsertProgramDateTime(Boolean insertProgramDateTime) {
     this.insertProgramDateTime = insertProgramDateTime;
   }

@@ -39,6 +39,12 @@ public class ConcatenationInputStream extends InputStream {
     return concatenation;
   }
 
+  /**
+   * Concatenation configuration for the output of this stream
+   *
+   * @param concatenation
+   * Concatenation configuration for the output of this stream
+   */
   public void setConcatenation(List<ConcatenationInputConfiguration> concatenation) {
     this.concatenation = concatenation;
   }

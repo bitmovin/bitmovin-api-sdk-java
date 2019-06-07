@@ -16,10 +16,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class DashSegmentedRepresentation extends DashRepresentation {
   @JsonProperty("type")
-  private DashRepresentationType type = null;
+  private DashRepresentationType type;
 
   @JsonProperty("mode")
-  private DashRepresentationTypeMode mode = null;
+  private DashRepresentationTypeMode mode;
 
   @JsonProperty("segmentPath")
   private String segmentPath;
@@ -45,6 +45,11 @@ public class DashSegmentedRepresentation extends DashRepresentation {
     return type;
   }
 
+  /**
+   * Set type
+   *
+   * @param type
+   */
   public void setType(DashRepresentationType type) {
     this.type = type;
   }
@@ -58,6 +63,11 @@ public class DashSegmentedRepresentation extends DashRepresentation {
     return mode;
   }
 
+  /**
+   * Set mode
+   *
+   * @param mode
+   */
   public void setMode(DashRepresentationTypeMode mode) {
     this.mode = mode;
   }
@@ -71,6 +81,12 @@ public class DashSegmentedRepresentation extends DashRepresentation {
     return segmentPath;
   }
 
+  /**
+   * Path to segments. Will be used as the representation id if the type is set to TEMPLATE_ADAPTATION_SET
+   *
+   * @param segmentPath
+   * Path to segments. Will be used as the representation id if the type is set to TEMPLATE_ADAPTATION_SET
+   */
   public void setSegmentPath(String segmentPath) {
     this.segmentPath = segmentPath;
   }
@@ -84,6 +100,12 @@ public class DashSegmentedRepresentation extends DashRepresentation {
     return startSegmentNumber;
   }
 
+  /**
+   * Number of the first segment
+   *
+   * @param startSegmentNumber
+   * Number of the first segment
+   */
   public void setStartSegmentNumber(Long startSegmentNumber) {
     this.startSegmentNumber = startSegmentNumber;
   }
@@ -97,6 +119,12 @@ public class DashSegmentedRepresentation extends DashRepresentation {
     return endSegmentNumber;
   }
 
+  /**
+   * Number of the last segment. Default is the last one that was encoded
+   *
+   * @param endSegmentNumber
+   * Number of the last segment. Default is the last one that was encoded
+   */
   public void setEndSegmentNumber(Long endSegmentNumber) {
     this.endSegmentNumber = endSegmentNumber;
   }
@@ -110,6 +138,12 @@ public class DashSegmentedRepresentation extends DashRepresentation {
     return startKeyframeId;
   }
 
+  /**
+   * Id of the Keyframe to start with
+   *
+   * @param startKeyframeId
+   * Id of the Keyframe to start with
+   */
   public void setStartKeyframeId(String startKeyframeId) {
     this.startKeyframeId = startKeyframeId;
   }
@@ -123,6 +157,12 @@ public class DashSegmentedRepresentation extends DashRepresentation {
     return endKeyframeId;
   }
 
+  /**
+   * Id of the Keyframe to end with
+   *
+   * @param endKeyframeId
+   * Id of the Keyframe to end with
+   */
   public void setEndKeyframeId(String endKeyframeId) {
     this.endKeyframeId = endKeyframeId;
   }

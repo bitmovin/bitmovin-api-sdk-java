@@ -33,7 +33,7 @@ public class EnhancedWatermarkFilter extends Filter {
   private Double bottom;
 
   @JsonProperty("unit")
-  private PositionUnit unit = null;
+  private PositionUnit unit;
 
   @JsonProperty("opacity")
   private Double opacity;
@@ -47,6 +47,12 @@ public class EnhancedWatermarkFilter extends Filter {
     return image;
   }
 
+  /**
+   * URL of the file to be used as watermark image. Supported image formats: PNG, JPEG, BMP, GIF
+   *
+   * @param image
+   * URL of the file to be used as watermark image. Supported image formats: PNG, JPEG, BMP, GIF
+   */
   public void setImage(String image) {
     this.image = image;
   }
@@ -60,6 +66,12 @@ public class EnhancedWatermarkFilter extends Filter {
     return left;
   }
 
+  /**
+   * Distance from the left edge of the input video to the left edge of the watermark image. May not be set if &#39;right&#39; is set.
+   *
+   * @param left
+   * Distance from the left edge of the input video to the left edge of the watermark image. May not be set if &#39;right&#39; is set.
+   */
   public void setLeft(Double left) {
     this.left = left;
   }
@@ -73,6 +85,12 @@ public class EnhancedWatermarkFilter extends Filter {
     return right;
   }
 
+  /**
+   * Distance from the right edge of the input video to the right edge of the watermark image . May not be set if &#39;left&#39; is set.
+   *
+   * @param right
+   * Distance from the right edge of the input video to the right edge of the watermark image . May not be set if &#39;left&#39; is set.
+   */
   public void setRight(Double right) {
     this.right = right;
   }
@@ -86,6 +104,12 @@ public class EnhancedWatermarkFilter extends Filter {
     return top;
   }
 
+  /**
+   * Distance from the top edge of the input video to the top edge of the watermark image. May not be set if &#39;bottom&#39; is set.
+   *
+   * @param top
+   * Distance from the top edge of the input video to the top edge of the watermark image. May not be set if &#39;bottom&#39; is set.
+   */
   public void setTop(Double top) {
     this.top = top;
   }
@@ -99,6 +123,12 @@ public class EnhancedWatermarkFilter extends Filter {
     return bottom;
   }
 
+  /**
+   * Distance from the bottom edge of the input video to the bottom edge of the watermark image. May not be set if &#39;top&#39; is set.
+   *
+   * @param bottom
+   * Distance from the bottom edge of the input video to the bottom edge of the watermark image. May not be set if &#39;top&#39; is set.
+   */
   public void setBottom(Double bottom) {
     this.bottom = bottom;
   }
@@ -112,6 +142,11 @@ public class EnhancedWatermarkFilter extends Filter {
     return unit;
   }
 
+  /**
+   * Set unit
+   *
+   * @param unit
+   */
   public void setUnit(PositionUnit unit) {
     this.unit = unit;
   }
@@ -125,6 +160,12 @@ public class EnhancedWatermarkFilter extends Filter {
     return opacity;
   }
 
+  /**
+   * Opacity to apply on the watermark image. Valid values are from 0.0 (completely transparent) to 1.0 (not transparent at all)
+   *
+   * @param opacity
+   * Opacity to apply on the watermark image. Valid values are from 0.0 (completely transparent) to 1.0 (not transparent at all)
+   */
   public void setOpacity(Double opacity) {
     this.opacity = opacity;
   }

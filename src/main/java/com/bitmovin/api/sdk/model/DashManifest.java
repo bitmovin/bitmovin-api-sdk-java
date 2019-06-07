@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class DashManifest extends Manifest {
   @JsonProperty("profile")
-  private DashProfile profile = null;
+  private DashProfile profile;
 
   @JsonProperty("manifestName")
   private String manifestName;
@@ -45,6 +45,11 @@ public class DashManifest extends Manifest {
     return profile;
   }
 
+  /**
+   * Set profile
+   *
+   * @param profile
+   */
   public void setProfile(DashProfile profile) {
     this.profile = profile;
   }
@@ -58,6 +63,12 @@ public class DashManifest extends Manifest {
     return manifestName;
   }
 
+  /**
+   * The filename of your manifest
+   *
+   * @param manifestName
+   * The filename of your manifest
+   */
   public void setManifestName(String manifestName) {
     this.manifestName = manifestName;
   }
@@ -79,6 +90,12 @@ public class DashManifest extends Manifest {
     return namespaces;
   }
 
+  /**
+   * List of additional XML namespaces to add to the DASH Manifest
+   *
+   * @param namespaces
+   * List of additional XML namespaces to add to the DASH Manifest
+   */
   public void setNamespaces(List<XmlNamespace> namespaces) {
     this.namespaces = namespaces;
   }
@@ -100,6 +117,12 @@ public class DashManifest extends Manifest {
     return utcTimings;
   }
 
+  /**
+   * List of UTC Timings to use for live streaming
+   *
+   * @param utcTimings
+   * List of UTC Timings to use for live streaming
+   */
   public void setUtcTimings(List<UtcTiming> utcTimings) {
     this.utcTimings = utcTimings;
   }

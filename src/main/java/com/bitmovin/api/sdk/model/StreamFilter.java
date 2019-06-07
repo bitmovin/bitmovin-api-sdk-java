@@ -27,6 +27,12 @@ public class StreamFilter {
     return id;
   }
 
+  /**
+   * The id of the filter that should be used in the stream
+   *
+   * @param id
+   * The id of the filter that should be used in the stream
+   */
   public void setId(String id) {
     this.id = id;
   }
@@ -40,6 +46,12 @@ public class StreamFilter {
     return position;
   }
 
+  /**
+   * Defines the order in which filters are applied. Filters are applied in ascending order.
+   *
+   * @param position
+   * Defines the order in which filters are applied. Filters are applied in ascending order.
+   */
   public void setPosition(Integer position) {
     this.position = position;
   }

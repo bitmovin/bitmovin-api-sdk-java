@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class Mp2AudioConfiguration extends AudioConfiguration {
   @JsonProperty("channelLayout")
-  private ChannelLayout channelLayout = null;
+  private ChannelLayout channelLayout;
 
 
   /**
@@ -29,6 +29,12 @@ public class Mp2AudioConfiguration extends AudioConfiguration {
     return channelLayout;
   }
 
+  /**
+   * Channel layout of the audio codec configuration
+   *
+   * @param channelLayout
+   * Channel layout of the audio codec configuration
+   */
   public void setChannelLayout(ChannelLayout channelLayout) {
     this.channelLayout = channelLayout;
   }

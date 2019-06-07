@@ -42,7 +42,7 @@ public class ImpressionsApi {
      * Impression Details
      * 
      * @param impressionId Impression id (required)
-     * @param analyticsLicense Analytics license (optional)
+     * @param analyticsLicense Analytics license (required)
      * @return AnalyticsImpressionDetails
      * @throws BitmovinException if fails to make API call
      */

@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class LiveEncodingStatsEventDetails {
   @JsonProperty("eventName")
-  private LiveEncodingEventName eventName = null;
+  private LiveEncodingEventName eventName;
 
   @JsonProperty("avDriftInSeconds")
   private Integer avDriftInSeconds;
@@ -34,6 +34,11 @@ public class LiveEncodingStatsEventDetails {
     return eventName;
   }
 
+  /**
+   * Set eventName
+   *
+   * @param eventName
+   */
   public void setEventName(LiveEncodingEventName eventName) {
     this.eventName = eventName;
   }
@@ -47,6 +52,12 @@ public class LiveEncodingStatsEventDetails {
     return avDriftInSeconds;
   }
 
+  /**
+   * The Audio/Video Drift in seconds. The drift was corrected by the RESYNCING event (occurs at event: RESYNCING)
+   *
+   * @param avDriftInSeconds
+   * The Audio/Video Drift in seconds. The drift was corrected by the RESYNCING event (occurs at event: RESYNCING)
+   */
   public void setAvDriftInSeconds(Integer avDriftInSeconds) {
     this.avDriftInSeconds = avDriftInSeconds;
   }
@@ -60,6 +71,12 @@ public class LiveEncodingStatsEventDetails {
     return idleDurationInSeconds;
   }
 
+  /**
+   * The time the stream was in idle state in seconds (occurs at event: IDLE)
+   *
+   * @param idleDurationInSeconds
+   * The time the stream was in idle state in seconds (occurs at event: IDLE)
+   */
   public void setIdleDurationInSeconds(Integer idleDurationInSeconds) {
     this.idleDurationInSeconds = idleDurationInSeconds;
   }
@@ -73,6 +90,12 @@ public class LiveEncodingStatsEventDetails {
     return errorMessage;
   }
 
+  /**
+   * An optional error message, when the event is in error state (occurs at event: ERROR)
+   *
+   * @param errorMessage
+   * An optional error message, when the event is in error state (occurs at event: ERROR)
+   */
   public void setErrorMessage(String errorMessage) {
     this.errorMessage = errorMessage;
   }

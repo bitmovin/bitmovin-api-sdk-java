@@ -42,7 +42,7 @@ public class WebvttApi {
      * Add WebVTT sidecar file
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param webVttSidecarFile  (optional)
+     * @param webVttSidecarFile  (required)
      * @return WebVttSidecarFile
      * @throws BitmovinException if fails to make API call
      */

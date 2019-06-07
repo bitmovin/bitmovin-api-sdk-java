@@ -57,7 +57,7 @@ public class Muxing extends BitmovinResource {
   private List<Ignoring> ignoredBy = new ArrayList<Ignoring>();
 
   @JsonProperty("streamConditionsMode")
-  private StreamConditionsMode streamConditionsMode = null;
+  private StreamConditionsMode streamConditionsMode;
 
 
   public Muxing addStreamsItem(MuxingStream streamsItem) {
@@ -73,6 +73,11 @@ public class Muxing extends BitmovinResource {
     return streams;
   }
 
+  /**
+   * Set streams
+   *
+   * @param streams
+   */
   public void setStreams(List<MuxingStream> streams) {
     this.streams = streams;
   }
@@ -94,6 +99,11 @@ public class Muxing extends BitmovinResource {
     return outputs;
   }
 
+  /**
+   * Set outputs
+   *
+   * @param outputs
+   */
   public void setOutputs(List<EncodingOutput> outputs) {
     this.outputs = outputs;
   }
@@ -139,6 +149,12 @@ public class Muxing extends BitmovinResource {
     return streamConditionsMode;
   }
 
+  /**
+   * Specifies how to handle streams that don&#39;t fulfill stream conditions
+   *
+   * @param streamConditionsMode
+   * Specifies how to handle streams that don&#39;t fulfill stream conditions
+   */
   public void setStreamConditionsMode(StreamConditionsMode streamConditionsMode) {
     this.streamConditionsMode = streamConditionsMode;
   }

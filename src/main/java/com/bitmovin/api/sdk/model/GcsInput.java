@@ -21,7 +21,7 @@ public class GcsInput extends Input {
   private String bucketName;
 
   @JsonProperty("cloudRegion")
-  private GoogleCloudRegion cloudRegion = null;
+  private GoogleCloudRegion cloudRegion;
 
   @JsonProperty("accessKey")
   private String accessKey;
@@ -38,6 +38,12 @@ public class GcsInput extends Input {
     return bucketName;
   }
 
+  /**
+   * Name of the bucket
+   *
+   * @param bucketName
+   * Name of the bucket
+   */
   public void setBucketName(String bucketName) {
     this.bucketName = bucketName;
   }
@@ -51,6 +57,12 @@ public class GcsInput extends Input {
     return cloudRegion;
   }
 
+  /**
+   * The cloud region in which the bucket is located. Is used to determine the ideal location for your encodings automatically.
+   *
+   * @param cloudRegion
+   * The cloud region in which the bucket is located. Is used to determine the ideal location for your encodings automatically.
+   */
   public void setCloudRegion(GoogleCloudRegion cloudRegion) {
     this.cloudRegion = cloudRegion;
   }
@@ -64,6 +76,12 @@ public class GcsInput extends Input {
     return accessKey;
   }
 
+  /**
+   * GCS access key
+   *
+   * @param accessKey
+   * GCS access key
+   */
   public void setAccessKey(String accessKey) {
     this.accessKey = accessKey;
   }
@@ -77,6 +95,12 @@ public class GcsInput extends Input {
     return secretKey;
   }
 
+  /**
+   * GCS secret key
+   *
+   * @param secretKey
+   * GCS secret key
+   */
   public void setSecretKey(String secretKey) {
     this.secretKey = secretKey;
   }

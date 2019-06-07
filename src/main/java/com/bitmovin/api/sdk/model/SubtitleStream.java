@@ -28,6 +28,12 @@ public class SubtitleStream extends MediaStream {
     return language;
   }
 
+  /**
+   * Language of the stream
+   *
+   * @param language
+   * Language of the stream
+   */
   public void setLanguage(String language) {
     this.language = language;
   }
@@ -41,6 +47,12 @@ public class SubtitleStream extends MediaStream {
     return hearingImpaired;
   }
 
+  /**
+   * Hearing impaired support
+   *
+   * @param hearingImpaired
+   * Hearing impaired support
+   */
   public void setHearingImpaired(Boolean hearingImpaired) {
     this.hearingImpaired = hearingImpaired;
   }

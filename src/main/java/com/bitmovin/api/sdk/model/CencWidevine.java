@@ -24,6 +24,12 @@ public class CencWidevine {
     return pssh;
   }
 
+  /**
+   * Base64 encoded pssh payload
+   *
+   * @param pssh
+   * Base64 encoded pssh payload
+   */
   public void setPssh(String pssh) {
     this.pssh = pssh;
   }

@@ -28,6 +28,12 @@ public class DashRepresentation extends BitmovinResponse {
     return encodingId;
   }
 
+  /**
+   * UUID of an encoding
+   *
+   * @param encodingId
+   * UUID of an encoding
+   */
   public void setEncodingId(String encodingId) {
     this.encodingId = encodingId;
   }
@@ -41,6 +47,12 @@ public class DashRepresentation extends BitmovinResponse {
     return muxingId;
   }
 
+  /**
+   * UUID of a muxing
+   *
+   * @param muxingId
+   * UUID of a muxing
+   */
   public void setMuxingId(String muxingId) {
     this.muxingId = muxingId;
   }

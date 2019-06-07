@@ -48,7 +48,7 @@ public class PeriodsApi {
      * Add Period
      * 
      * @param manifestId Id of the manifest (required)
-     * @param period The Period to be added to the manifest (optional)
+     * @param period The Period to be added to the manifest (required)
      * @return Period
      * @throws BitmovinException if fails to make API call
      */

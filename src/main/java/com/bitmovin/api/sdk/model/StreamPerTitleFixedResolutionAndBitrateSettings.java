@@ -20,7 +20,7 @@ public class StreamPerTitleFixedResolutionAndBitrateSettings {
   private Integer maxBitrate;
 
   @JsonProperty("bitrateSelectionMode")
-  private BitrateSelectionMode bitrateSelectionMode = null;
+  private BitrateSelectionMode bitrateSelectionMode;
 
   @JsonProperty("lowComplexityBoundaryForMaxBitrate")
   private Double lowComplexityBoundaryForMaxBitrate;
@@ -37,6 +37,12 @@ public class StreamPerTitleFixedResolutionAndBitrateSettings {
     return minBitrate;
   }
 
+  /**
+   * The minimum bitrate that will be used for that template.
+   *
+   * @param minBitrate
+   * The minimum bitrate that will be used for that template.
+   */
   public void setMinBitrate(Integer minBitrate) {
     this.minBitrate = minBitrate;
   }
@@ -50,6 +56,12 @@ public class StreamPerTitleFixedResolutionAndBitrateSettings {
     return maxBitrate;
   }
 
+  /**
+   * The maximum bitrate that will be used for that template.
+   *
+   * @param maxBitrate
+   * The maximum bitrate that will be used for that template.
+   */
   public void setMaxBitrate(Integer maxBitrate) {
     this.maxBitrate = maxBitrate;
   }
@@ -63,6 +75,12 @@ public class StreamPerTitleFixedResolutionAndBitrateSettings {
     return bitrateSelectionMode;
   }
 
+  /**
+   * Bitrate selection mode
+   *
+   * @param bitrateSelectionMode
+   * Bitrate selection mode
+   */
   public void setBitrateSelectionMode(BitrateSelectionMode bitrateSelectionMode) {
     this.bitrateSelectionMode = bitrateSelectionMode;
   }
@@ -76,6 +94,12 @@ public class StreamPerTitleFixedResolutionAndBitrateSettings {
     return lowComplexityBoundaryForMaxBitrate;
   }
 
+  /**
+   * Low complexity boundary for max bitrate
+   *
+   * @param lowComplexityBoundaryForMaxBitrate
+   * Low complexity boundary for max bitrate
+   */
   public void setLowComplexityBoundaryForMaxBitrate(Double lowComplexityBoundaryForMaxBitrate) {
     this.lowComplexityBoundaryForMaxBitrate = lowComplexityBoundaryForMaxBitrate;
   }
@@ -89,6 +113,12 @@ public class StreamPerTitleFixedResolutionAndBitrateSettings {
     return highComplexityBoundaryForMaxBitrate;
   }
 
+  /**
+   * High complexity boundary for max bitrate
+   *
+   * @param highComplexityBoundaryForMaxBitrate
+   * High complexity boundary for max bitrate
+   */
   public void setHighComplexityBoundaryForMaxBitrate(Double highComplexityBoundaryForMaxBitrate) {
     this.highComplexityBoundaryForMaxBitrate = highComplexityBoundaryForMaxBitrate;
   }

@@ -24,6 +24,12 @@ public class PlayerLicenseAnalytics {
     return analyticsKey;
   }
 
+  /**
+   * Analytics License Key
+   *
+   * @param analyticsKey
+   * Analytics License Key
+   */
   public void setAnalyticsKey(String analyticsKey) {
     this.analyticsKey = analyticsKey;
   }

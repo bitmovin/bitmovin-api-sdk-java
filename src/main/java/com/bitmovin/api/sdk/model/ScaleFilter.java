@@ -24,7 +24,7 @@ public class ScaleFilter extends Filter {
   private Integer height;
 
   @JsonProperty("scalingAlgorithm")
-  private ScalingAlgorithm scalingAlgorithm = null;
+  private ScalingAlgorithm scalingAlgorithm;
 
   @JsonProperty("sampleAspectRatioNumerator")
   private Integer sampleAspectRatioNumerator;
@@ -41,6 +41,12 @@ public class ScaleFilter extends Filter {
     return width;
   }
 
+  /**
+   * The width of the output frame in pixel. If not set: codec configuration width will be used.
+   *
+   * @param width
+   * The width of the output frame in pixel. If not set: codec configuration width will be used.
+   */
   public void setWidth(Integer width) {
     this.width = width;
   }
@@ -54,6 +60,12 @@ public class ScaleFilter extends Filter {
     return height;
   }
 
+  /**
+   * The height of the output frame in pixel. If not set: codec configuration height will be used.
+   *
+   * @param height
+   * The height of the output frame in pixel. If not set: codec configuration height will be used.
+   */
   public void setHeight(Integer height) {
     this.height = height;
   }
@@ -67,6 +79,11 @@ public class ScaleFilter extends Filter {
     return scalingAlgorithm;
   }
 
+  /**
+   * Set scalingAlgorithm
+   *
+   * @param scalingAlgorithm
+   */
   public void setScalingAlgorithm(ScalingAlgorithm scalingAlgorithm) {
     this.scalingAlgorithm = scalingAlgorithm;
   }
@@ -80,6 +97,12 @@ public class ScaleFilter extends Filter {
     return sampleAspectRatioNumerator;
   }
 
+  /**
+   * The numerator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioDenominator is set.
+   *
+   * @param sampleAspectRatioNumerator
+   * The numerator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioDenominator is set.
+   */
   public void setSampleAspectRatioNumerator(Integer sampleAspectRatioNumerator) {
     this.sampleAspectRatioNumerator = sampleAspectRatioNumerator;
   }
@@ -93,6 +116,12 @@ public class ScaleFilter extends Filter {
     return sampleAspectRatioDenominator;
   }
 
+  /**
+   * The denominator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioNumerator is set.
+   *
+   * @param sampleAspectRatioDenominator
+   * The denominator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioNumerator is set.
+   */
   public void setSampleAspectRatioDenominator(Integer sampleAspectRatioDenominator) {
     this.sampleAspectRatioDenominator = sampleAspectRatioDenominator;
   }

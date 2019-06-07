@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class Subtask extends BitmovinResponse {
   @JsonProperty("status")
-  private Status status = null;
+  private Status status;
 
   @JsonProperty("progress")
   private Integer progress;
@@ -61,6 +61,12 @@ public class Subtask extends BitmovinResponse {
     return status;
   }
 
+  /**
+   * Current status
+   *
+   * @param status
+   * Current status
+   */
   public void setStatus(Status status) {
     this.status = status;
   }
@@ -74,6 +80,12 @@ public class Subtask extends BitmovinResponse {
     return progress;
   }
 
+  /**
+   * Progress in percent
+   *
+   * @param progress
+   * Progress in percent
+   */
   public void setProgress(Integer progress) {
     this.progress = progress;
   }
@@ -87,6 +99,12 @@ public class Subtask extends BitmovinResponse {
     return name;
   }
 
+  /**
+   * Name of the subtask
+   *
+   * @param name
+   * Name of the subtask
+   */
   public void setName(String name) {
     this.name = name;
   }
@@ -108,6 +126,12 @@ public class Subtask extends BitmovinResponse {
     return messages;
   }
 
+  /**
+   * Task specific messages
+   *
+   * @param messages
+   * Task specific messages
+   */
   public void setMessages(List<Message> messages) {
     this.messages = messages;
   }
@@ -121,6 +145,12 @@ public class Subtask extends BitmovinResponse {
     return createdAt;
   }
 
+  /**
+   * Timestamp when the subtask was created, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   *
+   * @param createdAt
+   * Timestamp when the subtask was created, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   */
   public void setCreatedAt(Date createdAt) {
     this.createdAt = createdAt;
   }
@@ -134,6 +164,12 @@ public class Subtask extends BitmovinResponse {
     return updatedAt;
   }
 
+  /**
+   * Timestamp when the subtask was last updated, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   *
+   * @param updatedAt
+   * Timestamp when the subtask was last updated, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   */
   public void setUpdatedAt(Date updatedAt) {
     this.updatedAt = updatedAt;
   }
@@ -147,6 +183,12 @@ public class Subtask extends BitmovinResponse {
     return startedAt;
   }
 
+  /**
+   * Timestamp when the subtask was started, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   *
+   * @param startedAt
+   * Timestamp when the subtask was started, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   */
   public void setStartedAt(Date startedAt) {
     this.startedAt = startedAt;
   }
@@ -160,6 +202,12 @@ public class Subtask extends BitmovinResponse {
     return queuedAt;
   }
 
+  /**
+   * Timestamp when the subtask status changed to &#39;QUEUED&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   *
+   * @param queuedAt
+   * Timestamp when the subtask status changed to &#39;QUEUED&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   */
   public void setQueuedAt(Date queuedAt) {
     this.queuedAt = queuedAt;
   }
@@ -173,6 +221,12 @@ public class Subtask extends BitmovinResponse {
     return runningAt;
   }
 
+  /**
+   * Timestamp when the subtask status changed to to &#39;RUNNING&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   *
+   * @param runningAt
+   * Timestamp when the subtask status changed to to &#39;RUNNING&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   */
   public void setRunningAt(Date runningAt) {
     this.runningAt = runningAt;
   }
@@ -186,6 +240,12 @@ public class Subtask extends BitmovinResponse {
     return finishedAt;
   }
 
+  /**
+   * Timestamp when the subtask status changed to &#39;FINISHED&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   *
+   * @param finishedAt
+   * Timestamp when the subtask status changed to &#39;FINISHED&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   */
   public void setFinishedAt(Date finishedAt) {
     this.finishedAt = finishedAt;
   }
@@ -199,6 +259,12 @@ public class Subtask extends BitmovinResponse {
     return errorAt;
   }
 
+  /**
+   * Timestamp when the subtask status changed to &#39;ERROR&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   *
+   * @param errorAt
+   * Timestamp when the subtask status changed to &#39;ERROR&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   */
   public void setErrorAt(Date errorAt) {
     this.errorAt = errorAt;
   }

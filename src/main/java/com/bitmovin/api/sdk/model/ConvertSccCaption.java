@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class ConvertSccCaption extends BitmovinResource {
   @JsonProperty("input")
-  private InputPath input = null;
+  private InputPath input;
 
   @JsonProperty("outputs")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -32,10 +32,10 @@ public class ConvertSccCaption extends BitmovinResource {
   private String fileName;
 
   @JsonProperty("outputFormat")
-  private StreamCaptionOutputFormat outputFormat = null;
+  private StreamCaptionOutputFormat outputFormat;
 
   @JsonProperty("webVttSettings")
-  private ConvertSccCaptionWebVttSettings webVttSettings = null;
+  private ConvertSccCaptionWebVttSettings webVttSettings;
 
 
   /**
@@ -46,6 +46,12 @@ public class ConvertSccCaption extends BitmovinResource {
     return input;
   }
 
+  /**
+   * The input location to get the scc file from
+   *
+   * @param input
+   * The input location to get the scc file from
+   */
   public void setInput(InputPath input) {
     this.input = input;
   }
@@ -64,6 +70,11 @@ public class ConvertSccCaption extends BitmovinResource {
     return outputs;
   }
 
+  /**
+   * Set outputs
+   *
+   * @param outputs
+   */
   public void setOutputs(List<EncodingOutput> outputs) {
     this.outputs = outputs;
   }
@@ -77,6 +88,12 @@ public class ConvertSccCaption extends BitmovinResource {
     return fileName;
   }
 
+  /**
+   * Name of the captions file
+   *
+   * @param fileName
+   * Name of the captions file
+   */
   public void setFileName(String fileName) {
     this.fileName = fileName;
   }
@@ -90,6 +107,11 @@ public class ConvertSccCaption extends BitmovinResource {
     return outputFormat;
   }
 
+  /**
+   * Set outputFormat
+   *
+   * @param outputFormat
+   */
   public void setOutputFormat(StreamCaptionOutputFormat outputFormat) {
     this.outputFormat = outputFormat;
   }
@@ -103,6 +125,12 @@ public class ConvertSccCaption extends BitmovinResource {
     return webVttSettings;
   }
 
+  /**
+   * Optional settings when converting SCC to WebVTT
+   *
+   * @param webVttSettings
+   * Optional settings when converting SCC to WebVTT
+   */
   public void setWebVttSettings(ConvertSccCaptionWebVttSettings webVttSettings) {
     this.webVttSettings = webVttSettings;
   }

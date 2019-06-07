@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class NotificationStateEntry extends BitmovinResponse {
   @JsonProperty("state")
-  private NotificationStates state = null;
+  private NotificationStates state;
 
   @JsonProperty("muted")
   private Boolean muted;
@@ -39,6 +39,11 @@ public class NotificationStateEntry extends BitmovinResponse {
     return state;
   }
 
+  /**
+   * Set state
+   *
+   * @param state
+   */
   public void setState(NotificationStates state) {
     this.state = state;
   }
@@ -52,6 +57,12 @@ public class NotificationStateEntry extends BitmovinResponse {
     return muted;
   }
 
+  /**
+   * Indicate if notification was sent
+   *
+   * @param muted
+   * Indicate if notification was sent
+   */
   public void setMuted(Boolean muted) {
     this.muted = muted;
   }
@@ -65,6 +76,12 @@ public class NotificationStateEntry extends BitmovinResponse {
     return notificationId;
   }
 
+  /**
+   * The notification this state belongs to
+   *
+   * @param notificationId
+   * The notification this state belongs to
+   */
   public void setNotificationId(String notificationId) {
     this.notificationId = notificationId;
   }
@@ -78,6 +95,12 @@ public class NotificationStateEntry extends BitmovinResponse {
     return resourceId;
   }
 
+  /**
+   * Indicate if triggered for specific resource
+   *
+   * @param resourceId
+   * Indicate if triggered for specific resource
+   */
   public void setResourceId(String resourceId) {
     this.resourceId = resourceId;
   }
@@ -91,6 +114,11 @@ public class NotificationStateEntry extends BitmovinResponse {
     return triggeredAt;
   }
 
+  /**
+   * Set triggeredAt
+   *
+   * @param triggeredAt
+   */
   public void setTriggeredAt(Date triggeredAt) {
     this.triggeredAt = triggeredAt;
   }

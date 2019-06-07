@@ -41,7 +41,7 @@ public class DomainsApi {
     /**
      * Add Domain
      * 
-     * @param customWebPlayerBuildDomain  (optional)
+     * @param customWebPlayerBuildDomain  (required)
      * @return CustomWebPlayerBuildDomain
      * @throws BitmovinException if fails to make API call
      */

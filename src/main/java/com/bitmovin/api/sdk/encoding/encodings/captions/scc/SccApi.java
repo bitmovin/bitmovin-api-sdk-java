@@ -45,7 +45,7 @@ public class SccApi {
      * Convert SCC captions
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param convertSccCaption The SCC captions to be created (optional)
+     * @param convertSccCaption The SCC captions to be created (required)
      * @return ConvertSccCaption
      * @throws BitmovinException if fails to make API call
      */

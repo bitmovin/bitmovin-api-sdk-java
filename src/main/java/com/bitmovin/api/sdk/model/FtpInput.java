@@ -43,6 +43,12 @@ public class FtpInput extends Input {
     return host;
   }
 
+  /**
+   * Host URL or IP of the FTP server
+   *
+   * @param host
+   * Host URL or IP of the FTP server
+   */
   public void setHost(String host) {
     this.host = host;
   }
@@ -56,6 +62,12 @@ public class FtpInput extends Input {
     return port;
   }
 
+  /**
+   * Port to use, standard for FTP: 21
+   *
+   * @param port
+   * Port to use, standard for FTP: 21
+   */
   public void setPort(Integer port) {
     this.port = port;
   }
@@ -69,6 +81,12 @@ public class FtpInput extends Input {
     return passive;
   }
 
+  /**
+   * Use passive mode. Default is true.
+   *
+   * @param passive
+   * Use passive mode. Default is true.
+   */
   public void setPassive(Boolean passive) {
     this.passive = passive;
   }
@@ -82,6 +100,12 @@ public class FtpInput extends Input {
     return username;
   }
 
+  /**
+   * Your FTP Username
+   *
+   * @param username
+   * Your FTP Username
+   */
   public void setUsername(String username) {
     this.username = username;
   }
@@ -95,6 +119,12 @@ public class FtpInput extends Input {
     return password;
   }
 
+  /**
+   * Your FTP password
+   *
+   * @param password
+   * Your FTP password
+   */
   public void setPassword(String password) {
     this.password = password;
   }
@@ -108,6 +138,12 @@ public class FtpInput extends Input {
     return remoteVerificationEnabled;
   }
 
+  /**
+   * Ensure that connections originate from the declared ftp host. Default is true.
+   *
+   * @param remoteVerificationEnabled
+   * Ensure that connections originate from the declared ftp host. Default is true.
+   */
   public void setRemoteVerificationEnabled(Boolean remoteVerificationEnabled) {
     this.remoteVerificationEnabled = remoteVerificationEnabled;
   }

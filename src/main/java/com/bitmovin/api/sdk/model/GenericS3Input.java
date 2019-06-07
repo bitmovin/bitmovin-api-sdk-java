@@ -30,7 +30,7 @@ public class GenericS3Input extends Input {
   private Boolean ssl;
 
   @JsonProperty("signatureVersion")
-  private S3SignatureVersion signatureVersion = null;
+  private S3SignatureVersion signatureVersion;
 
   @JsonProperty("accessKey")
   private String accessKey;
@@ -47,6 +47,12 @@ public class GenericS3Input extends Input {
     return bucketName;
   }
 
+  /**
+   * Your generic S3 bucket name
+   *
+   * @param bucketName
+   * Your generic S3 bucket name
+   */
   public void setBucketName(String bucketName) {
     this.bucketName = bucketName;
   }
@@ -60,6 +66,12 @@ public class GenericS3Input extends Input {
     return host;
   }
 
+  /**
+   * The generic S3 server hostname (or IP address)
+   *
+   * @param host
+   * The generic S3 server hostname (or IP address)
+   */
   public void setHost(String host) {
     this.host = host;
   }
@@ -73,6 +85,12 @@ public class GenericS3Input extends Input {
     return port;
   }
 
+  /**
+   * The port on which the generic S3 server is running on (if not provided 8000 will be used)
+   *
+   * @param port
+   * The port on which the generic S3 server is running on (if not provided 8000 will be used)
+   */
   public void setPort(Integer port) {
     this.port = port;
   }
@@ -86,6 +104,12 @@ public class GenericS3Input extends Input {
     return ssl;
   }
 
+  /**
+   * Controls whether SSL is used or not
+   *
+   * @param ssl
+   * Controls whether SSL is used or not
+   */
   public void setSsl(Boolean ssl) {
     this.ssl = ssl;
   }
@@ -99,6 +123,12 @@ public class GenericS3Input extends Input {
     return signatureVersion;
   }
 
+  /**
+   * Specifies the method used for authentication
+   *
+   * @param signatureVersion
+   * Specifies the method used for authentication
+   */
   public void setSignatureVersion(S3SignatureVersion signatureVersion) {
     this.signatureVersion = signatureVersion;
   }
@@ -112,6 +142,12 @@ public class GenericS3Input extends Input {
     return accessKey;
   }
 
+  /**
+   * Your generic S3 access key
+   *
+   * @param accessKey
+   * Your generic S3 access key
+   */
   public void setAccessKey(String accessKey) {
     this.accessKey = accessKey;
   }
@@ -125,6 +161,12 @@ public class GenericS3Input extends Input {
     return secretKey;
   }
 
+  /**
+   * Your generic S3 secret key
+   *
+   * @param secretKey
+   * Your generic S3 secret key
+   */
   public void setSecretKey(String secretKey) {
     this.secretKey = secretKey;
   }

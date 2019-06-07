@@ -48,7 +48,7 @@ public class TsApi {
      * Add TS Segment Muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param tsMuxing  (optional)
+     * @param tsMuxing  (required)
      * @return TsMuxing
      * @throws BitmovinException if fails to make API call
      */

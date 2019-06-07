@@ -24,6 +24,12 @@ public class AutoRepresentation {
     return adoptConfigurationThreshold;
   }
 
+  /**
+   * This is the threshold if the settings of the lower or the upper representation (codec configuration) should be used, when representations are added automatically
+   *
+   * @param adoptConfigurationThreshold
+   * This is the threshold if the settings of the lower or the upper representation (codec configuration) should be used, when representations are added automatically
+   */
   public void setAdoptConfigurationThreshold(Double adoptConfigurationThreshold) {
     this.adoptConfigurationThreshold = adoptConfigurationThreshold;
   }

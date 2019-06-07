@@ -42,6 +42,11 @@ public class PaginationResponse<T> {
     return totalCount;
   }
 
+  /**
+   * Set totalCount
+   *
+   * @param totalCount
+   */
   public void setTotalCount(Long totalCount) {
     this.totalCount = totalCount;
   }
@@ -55,6 +60,11 @@ public class PaginationResponse<T> {
     return offset;
   }
 
+  /**
+   * Set offset
+   *
+   * @param offset
+   */
   public void setOffset(Integer offset) {
     this.offset = offset;
   }
@@ -68,6 +78,11 @@ public class PaginationResponse<T> {
     return limit;
   }
 
+  /**
+   * Set limit
+   *
+   * @param limit
+   */
   public void setLimit(Integer limit) {
     this.limit = limit;
   }
@@ -81,6 +96,11 @@ public class PaginationResponse<T> {
     return previous;
   }
 
+  /**
+   * Set previous
+   *
+   * @param previous
+   */
   public void setPrevious(String previous) {
     this.previous = previous;
   }
@@ -94,6 +114,11 @@ public class PaginationResponse<T> {
     return next;
   }
 
+  /**
+   * Set next
+   *
+   * @param next
+   */
   public void setNext(String next) {
     this.next = next;
   }
@@ -115,6 +140,11 @@ public class PaginationResponse<T> {
     return items;
   }
 
+  /**
+   * Set items
+   *
+   * @param items
+   */
   public void setItems(List<T> items) {
     this.items = items;
   }

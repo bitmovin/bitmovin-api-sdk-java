@@ -28,6 +28,12 @@ public class DashVttRepresentation extends BitmovinResource {
     return vttUrl;
   }
 
+  /**
+   * URL of the referenced VTT file
+   *
+   * @param vttUrl
+   * URL of the referenced VTT file
+   */
   public void setVttUrl(String vttUrl) {
     this.vttUrl = vttUrl;
   }

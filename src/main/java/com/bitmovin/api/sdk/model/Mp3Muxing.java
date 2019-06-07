@@ -32,6 +32,12 @@ public class Mp3Muxing extends Muxing {
     return filename;
   }
 
+  /**
+   * Name of the new file
+   *
+   * @param filename
+   * Name of the new file
+   */
   public void setFilename(String filename) {
     this.filename = filename;
   }

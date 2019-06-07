@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class CustomPlayerBuildStatus {
   @JsonProperty("status")
-  private Status status = null;
+  private Status status;
 
   @JsonProperty("eta")
   private Integer eta;
@@ -24,7 +24,7 @@ public class CustomPlayerBuildStatus {
   private Integer progress;
 
   @JsonProperty("messages")
-  private Message messages = null;
+  private Message messages;
 
   @JsonProperty("subtasks")
   private String subtasks;
@@ -38,6 +38,12 @@ public class CustomPlayerBuildStatus {
     return status;
   }
 
+  /**
+   * Status of the player build
+   *
+   * @param status
+   * Status of the player build
+   */
   public void setStatus(Status status) {
     this.status = status;
   }
@@ -51,6 +57,12 @@ public class CustomPlayerBuildStatus {
     return eta;
   }
 
+  /**
+   * The estimated time span of the custom player build in seconds.
+   *
+   * @param eta
+   * The estimated time span of the custom player build in seconds.
+   */
   public void setEta(Integer eta) {
     this.eta = eta;
   }
@@ -64,6 +76,12 @@ public class CustomPlayerBuildStatus {
     return progress;
   }
 
+  /**
+   * The actual progress of the custom player build.
+   *
+   * @param progress
+   * The actual progress of the custom player build.
+   */
   public void setProgress(Integer progress) {
     this.progress = progress;
   }
@@ -77,6 +95,11 @@ public class CustomPlayerBuildStatus {
     return messages;
   }
 
+  /**
+   * Set messages
+   *
+   * @param messages
+   */
   public void setMessages(Message messages) {
     this.messages = messages;
   }
@@ -90,6 +113,11 @@ public class CustomPlayerBuildStatus {
     return subtasks;
   }
 
+  /**
+   * Set subtasks
+   *
+   * @param subtasks
+   */
   public void setSubtasks(String subtasks) {
     this.subtasks = subtasks;
   }

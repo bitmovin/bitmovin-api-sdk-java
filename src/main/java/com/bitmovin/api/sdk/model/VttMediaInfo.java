@@ -32,6 +32,12 @@ public class VttMediaInfo extends BasicMediaInfo {
     return vttUrl;
   }
 
+  /**
+   * The URL of the referenced VTT file
+   *
+   * @param vttUrl
+   * The URL of the referenced VTT file
+   */
   public void setVttUrl(String vttUrl) {
     this.vttUrl = vttUrl;
   }
@@ -45,6 +51,12 @@ public class VttMediaInfo extends BasicMediaInfo {
     return uri;
   }
 
+  /**
+   * The URI of the Rendition
+   *
+   * @param uri
+   * The URI of the Rendition
+   */
   public void setUri(String uri) {
     this.uri = uri;
   }
@@ -58,6 +70,12 @@ public class VttMediaInfo extends BasicMediaInfo {
     return forced;
   }
 
+  /**
+   * A value of true indicates that the Rendition contains content which is considered essential to play.
+   *
+   * @param forced
+   * A value of true indicates that the Rendition contains content which is considered essential to play.
+   */
   public void setForced(Boolean forced) {
     this.forced = forced;
   }

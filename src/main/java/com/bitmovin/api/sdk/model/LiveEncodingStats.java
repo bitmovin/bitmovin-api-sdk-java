@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class LiveEncodingStats {
   @JsonProperty("status")
-  private LiveEncodingStatus status = null;
+  private LiveEncodingStatus status;
 
   @JsonProperty("events")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -37,6 +37,11 @@ public class LiveEncodingStats {
     return status;
   }
 
+  /**
+   * Set status
+   *
+   * @param status
+   */
   public void setStatus(LiveEncodingStatus status) {
     this.status = status;
   }
@@ -58,6 +63,12 @@ public class LiveEncodingStats {
     return events;
   }
 
+  /**
+   * List of events
+   *
+   * @param events
+   * List of events
+   */
   public void setEvents(List<LiveEncodingStatsEvent> events) {
     this.events = events;
   }
@@ -79,6 +90,12 @@ public class LiveEncodingStats {
     return statistics;
   }
 
+  /**
+   * List of statistics
+   *
+   * @param statistics
+   * List of statistics
+   */
   public void setStatistics(List<StreamInfos> statistics) {
     this.statistics = statistics;
   }

@@ -33,6 +33,11 @@ public class StreamDetails {
     return id;
   }
 
+  /**
+   * Set id
+   *
+   * @param id
+   */
   public void setId(String id) {
     this.id = id;
   }
@@ -46,6 +51,11 @@ public class StreamDetails {
     return codec;
   }
 
+  /**
+   * Set codec
+   *
+   * @param codec
+   */
   public void setCodec(String codec) {
     this.codec = codec;
   }
@@ -59,6 +69,11 @@ public class StreamDetails {
     return duration;
   }
 
+  /**
+   * Set duration
+   *
+   * @param duration
+   */
   public void setDuration(Integer duration) {
     this.duration = duration;
   }
@@ -72,6 +87,11 @@ public class StreamDetails {
     return position;
   }
 
+  /**
+   * Set position
+   *
+   * @param position
+   */
   public void setPosition(Integer position) {
     this.position = position;
   }

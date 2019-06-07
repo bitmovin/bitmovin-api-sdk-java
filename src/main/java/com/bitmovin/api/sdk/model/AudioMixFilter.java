@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
 public class AudioMixFilter extends Filter {
   @JsonProperty("channelLayout")
-  private AudioMixChannelLayout channelLayout = null;
+  private AudioMixChannelLayout channelLayout;
 
   @JsonProperty("audioMixChannels")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -35,6 +35,12 @@ public class AudioMixFilter extends Filter {
     return channelLayout;
   }
 
+  /**
+   * Channel layout of the audio codec configuration
+   *
+   * @param channelLayout
+   * Channel layout of the audio codec configuration
+   */
   public void setChannelLayout(AudioMixChannelLayout channelLayout) {
     this.channelLayout = channelLayout;
   }
@@ -53,6 +59,12 @@ public class AudioMixFilter extends Filter {
     return audioMixChannels;
   }
 
+  /**
+   * List of mixed channels that matches the channel layout
+   *
+   * @param audioMixChannels
+   * List of mixed channels that matches the channel layout
+   */
   public void setAudioMixChannels(List<AudioMixChannel> audioMixChannels) {
     this.audioMixChannels = audioMixChannels;
   }

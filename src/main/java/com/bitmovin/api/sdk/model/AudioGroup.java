@@ -27,6 +27,12 @@ public class AudioGroup {
     return name;
   }
 
+  /**
+   * Name of the audio group
+   *
+   * @param name
+   * Name of the audio group
+   */
   public void setName(String name) {
     this.name = name;
   }
@@ -42,6 +48,16 @@ public class AudioGroup {
     return priority;
   }
 
+  /**
+   * Priority of the audio group
+   * minimum: 0
+   * maximum: 100
+   *
+   * @param priority
+   * Priority of the audio group
+   * minimum: 0
+   * maximum: 100
+   */
   public void setPriority(Integer priority) {
     this.priority = priority;
   }

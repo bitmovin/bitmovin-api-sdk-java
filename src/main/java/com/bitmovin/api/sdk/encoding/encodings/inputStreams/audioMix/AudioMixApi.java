@@ -42,7 +42,7 @@ public class AudioMixApi {
      * Add audio mix input stream
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param audioMixInputStream  (optional)
+     * @param audioMixInputStream  (required)
      * @return AudioMixInputStream
      * @throws BitmovinException if fails to make API call
      */

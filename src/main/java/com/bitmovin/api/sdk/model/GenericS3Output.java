@@ -37,7 +37,7 @@ public class GenericS3Output extends Output {
   private Boolean ssl;
 
   @JsonProperty("signatureVersion")
-  private S3SignatureVersion signatureVersion = null;
+  private S3SignatureVersion signatureVersion;
 
 
   /**
@@ -48,6 +48,12 @@ public class GenericS3Output extends Output {
     return accessKey;
   }
 
+  /**
+   * Your generic S3 access key
+   *
+   * @param accessKey
+   * Your generic S3 access key
+   */
   public void setAccessKey(String accessKey) {
     this.accessKey = accessKey;
   }
@@ -61,6 +67,12 @@ public class GenericS3Output extends Output {
     return secretKey;
   }
 
+  /**
+   * Your generic S3 secret key
+   *
+   * @param secretKey
+   * Your generic S3 secret key
+   */
   public void setSecretKey(String secretKey) {
     this.secretKey = secretKey;
   }
@@ -74,6 +86,12 @@ public class GenericS3Output extends Output {
     return bucketName;
   }
 
+  /**
+   * Name of the bucket
+   *
+   * @param bucketName
+   * Name of the bucket
+   */
   public void setBucketName(String bucketName) {
     this.bucketName = bucketName;
   }
@@ -87,6 +105,12 @@ public class GenericS3Output extends Output {
     return host;
   }
 
+  /**
+   * The Generic S3 server hostname (or IP address)
+   *
+   * @param host
+   * The Generic S3 server hostname (or IP address)
+   */
   public void setHost(String host) {
     this.host = host;
   }
@@ -100,6 +124,12 @@ public class GenericS3Output extends Output {
     return port;
   }
 
+  /**
+   * The port on which the Generic S3 server is running on (if not provided 8000 will be used)
+   *
+   * @param port
+   * The port on which the Generic S3 server is running on (if not provided 8000 will be used)
+   */
   public void setPort(Integer port) {
     this.port = port;
   }
@@ -113,6 +143,12 @@ public class GenericS3Output extends Output {
     return ssl;
   }
 
+  /**
+   * Controls whether SSL is used or not
+   *
+   * @param ssl
+   * Controls whether SSL is used or not
+   */
   public void setSsl(Boolean ssl) {
     this.ssl = ssl;
   }
@@ -126,6 +162,12 @@ public class GenericS3Output extends Output {
     return signatureVersion;
   }
 
+  /**
+   * Specifies the method used for authentication
+   *
+   * @param signatureVersion
+   * Specifies the method used for authentication
+   */
   public void setSignatureVersion(S3SignatureVersion signatureVersion) {
     this.signatureVersion = signatureVersion;
   }

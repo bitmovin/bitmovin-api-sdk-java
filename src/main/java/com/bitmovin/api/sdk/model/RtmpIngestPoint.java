@@ -27,6 +27,12 @@ public class RtmpIngestPoint {
     return applicationName;
   }
 
+  /**
+   * The name of the application where the ingest is streamed to. This has to be unique for each ingest point
+   *
+   * @param applicationName
+   * The name of the application where the ingest is streamed to. This has to be unique for each ingest point
+   */
   public void setApplicationName(String applicationName) {
     this.applicationName = applicationName;
   }
@@ -40,6 +46,12 @@ public class RtmpIngestPoint {
     return streamKey;
   }
 
+  /**
+   * The stream key for the backup input
+   *
+   * @param streamKey
+   * The stream key for the backup input
+   */
   public void setStreamKey(String streamKey) {
     this.streamKey = streamKey;
   }

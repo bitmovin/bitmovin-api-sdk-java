@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class Message extends BitmovinResponse {
   @JsonProperty("type")
-  private MessageType type = null;
+  private MessageType type;
 
   @JsonProperty("text")
   private String text;
@@ -32,7 +32,7 @@ public class Message extends BitmovinResponse {
   private List<Link> links = new ArrayList<Link>();
 
   @JsonProperty("more")
-  private Object more = null;
+  private Object more;
 
   @JsonProperty("date")
   private Date date;
@@ -46,6 +46,12 @@ public class Message extends BitmovinResponse {
     return type;
   }
 
+  /**
+   * Message type giving a hint on the importance of the message (log level)
+   *
+   * @param type
+   * Message type giving a hint on the importance of the message (log level)
+   */
   public void setType(MessageType type) {
     this.type = type;
   }
@@ -59,6 +65,12 @@ public class Message extends BitmovinResponse {
     return text;
   }
 
+  /**
+   * Message text
+   *
+   * @param text
+   * Message text
+   */
   public void setText(String text) {
     this.text = text;
   }
@@ -72,6 +84,12 @@ public class Message extends BitmovinResponse {
     return field;
   }
 
+  /**
+   * Name of the field to which the message is referring to
+   *
+   * @param field
+   * Name of the field to which the message is referring to
+   */
   public void setField(String field) {
     this.field = field;
   }
@@ -93,6 +111,12 @@ public class Message extends BitmovinResponse {
     return links;
   }
 
+  /**
+   * collection of links to webpages containing further information on the topic
+   *
+   * @param links
+   * collection of links to webpages containing further information on the topic
+   */
   public void setLinks(List<Link> links) {
     this.links = links;
   }
@@ -106,6 +130,12 @@ public class Message extends BitmovinResponse {
     return more;
   }
 
+  /**
+   * Service-specific information
+   *
+   * @param more
+   * Service-specific information
+   */
   public void setMore(Object more) {
     this.more = more;
   }
@@ -119,6 +149,12 @@ public class Message extends BitmovinResponse {
     return date;
   }
 
+  /**
+   * Timestamp when the message occured
+   *
+   * @param date
+   * Timestamp when the message occured
+   */
   public void setDate(Date date) {
     this.date = date;
   }

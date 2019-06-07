@@ -35,6 +35,12 @@ public class FairPlayDrm extends Drm {
     return key;
   }
 
+  /**
+   * 16 byte Encryption key, 32 hexadecimal characters
+   *
+   * @param key
+   * 16 byte Encryption key, 32 hexadecimal characters
+   */
   public void setKey(String key) {
     this.key = key;
   }
@@ -48,6 +54,12 @@ public class FairPlayDrm extends Drm {
     return iv;
   }
 
+  /**
+   * 16 byte initialization vector
+   *
+   * @param iv
+   * 16 byte initialization vector
+   */
   public void setIv(String iv) {
     this.iv = iv;
   }
@@ -61,6 +73,12 @@ public class FairPlayDrm extends Drm {
     return uri;
   }
 
+  /**
+   * Url of the licensing server
+   *
+   * @param uri
+   * Url of the licensing server
+   */
   public void setUri(String uri) {
     this.uri = uri;
   }

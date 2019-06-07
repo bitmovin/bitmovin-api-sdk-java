@@ -46,7 +46,7 @@ public class CencApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)
-     * @param cencDrm The CencDrm to be created (optional)
+     * @param cencDrm The CencDrm to be created (required)
      * @return CencDrm
      * @throws BitmovinException if fails to make API call
      */

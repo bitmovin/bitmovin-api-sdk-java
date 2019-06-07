@@ -33,6 +33,12 @@ public class ProgressiveTsMuxingInformationByteRanges {
     return segmentNumber;
   }
 
+  /**
+   * Number of the segment (starting at 0)
+   *
+   * @param segmentNumber
+   * Number of the segment (starting at 0)
+   */
   public void setSegmentNumber(Integer segmentNumber) {
     this.segmentNumber = segmentNumber;
   }
@@ -46,6 +52,12 @@ public class ProgressiveTsMuxingInformationByteRanges {
     return startBytes;
   }
 
+  /**
+   * The position of the first byte of the segment
+   *
+   * @param startBytes
+   * The position of the first byte of the segment
+   */
   public void setStartBytes(Long startBytes) {
     this.startBytes = startBytes;
   }
@@ -59,6 +71,12 @@ public class ProgressiveTsMuxingInformationByteRanges {
     return endBytes;
   }
 
+  /**
+   * The position of the last byte of the segment
+   *
+   * @param endBytes
+   * The position of the last byte of the segment
+   */
   public void setEndBytes(Long endBytes) {
     this.endBytes = endBytes;
   }
@@ -72,6 +90,12 @@ public class ProgressiveTsMuxingInformationByteRanges {
     return duration;
   }
 
+  /**
+   * The duration of the segment in seconds
+   *
+   * @param duration
+   * The duration of the segment in seconds
+   */
   public void setDuration(Double duration) {
     this.duration = duration;
   }

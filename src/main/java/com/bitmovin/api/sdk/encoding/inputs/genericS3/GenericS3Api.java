@@ -44,7 +44,7 @@ public class GenericS3Api {
     /**
      * Create Generic S3 Input
      * 
-     * @param genericS3Input The GenericS3 input to be created (optional)
+     * @param genericS3Input The GenericS3 input to be created (required)
      * @return GenericS3Input
      * @throws BitmovinException if fails to make API call
      */

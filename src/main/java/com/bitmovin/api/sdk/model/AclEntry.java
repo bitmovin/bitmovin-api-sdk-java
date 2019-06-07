@@ -17,7 +17,7 @@ public class AclEntry {
   private String scope;
 
   @JsonProperty("permission")
-  private AclPermission permission = null;
+  private AclPermission permission;
 
 
   /**
@@ -28,6 +28,11 @@ public class AclEntry {
     return scope;
   }
 
+  /**
+   * Set scope
+   *
+   * @param scope
+   */
   public void setScope(String scope) {
     this.scope = scope;
   }
@@ -41,6 +46,11 @@ public class AclEntry {
     return permission;
   }
 
+  /**
+   * Set permission
+   *
+   * @param permission
+   */
   public void setPermission(AclPermission permission) {
     this.permission = permission;
   }

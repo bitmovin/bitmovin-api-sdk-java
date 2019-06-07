@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
 public class SrtInput extends Input {
   @JsonProperty("mode")
-  private SrtMode mode = null;
+  private SrtMode mode;
 
   @JsonProperty("host")
   private String host;
@@ -40,7 +40,7 @@ public class SrtInput extends Input {
   private Integer keyLength;
 
   @JsonProperty("backupSrtInputs")
-  private BackupSrtInputs backupSrtInputs = null;
+  private BackupSrtInputs backupSrtInputs;
 
 
   /**
@@ -51,6 +51,12 @@ public class SrtInput extends Input {
     return mode;
   }
 
+  /**
+   * The SRT mode to use
+   *
+   * @param mode
+   * The SRT mode to use
+   */
   public void setMode(SrtMode mode) {
     this.mode = mode;
   }
@@ -64,6 +70,12 @@ public class SrtInput extends Input {
     return host;
   }
 
+  /**
+   * The name or IP of the host providing the SRT stream (only used in CALLER mode)
+   *
+   * @param host
+   * The name or IP of the host providing the SRT stream (only used in CALLER mode)
+   */
   public void setHost(String host) {
     this.host = host;
   }
@@ -77,6 +89,12 @@ public class SrtInput extends Input {
     return port;
   }
 
+  /**
+   * The port to connect to or listen on. Has to be one of [2088, 2089, 2090, 2091] when using LISTENER mode.
+   *
+   * @param port
+   * The port to connect to or listen on. Has to be one of [2088, 2089, 2090, 2091] when using LISTENER mode.
+   */
   public void setPort(Integer port) {
     this.port = port;
   }
@@ -90,6 +108,12 @@ public class SrtInput extends Input {
     return path;
   }
 
+  /**
+   * The path parameter of the SRT stream
+   *
+   * @param path
+   * The path parameter of the SRT stream
+   */
   public void setPath(String path) {
     this.path = path;
   }
@@ -103,6 +127,12 @@ public class SrtInput extends Input {
     return latency;
   }
 
+  /**
+   * The maximum accepted transmission latency in milliseconds (when both parties set different values, the maximum of the two is used for both)
+   *
+   * @param latency
+   * The maximum accepted transmission latency in milliseconds (when both parties set different values, the maximum of the two is used for both)
+   */
   public void setLatency(Integer latency) {
     this.latency = latency;
   }
@@ -116,6 +146,12 @@ public class SrtInput extends Input {
     return passphrase;
   }
 
+  /**
+   * The passphrase used to secure the SRT stream. For AES-128 encryption, you must enter a 16-character passphrase; for AES-256, you must enter a 32-character passphrase
+   *
+   * @param passphrase
+   * The passphrase used to secure the SRT stream. For AES-128 encryption, you must enter a 16-character passphrase; for AES-256, you must enter a 32-character passphrase
+   */
   public void setPassphrase(String passphrase) {
     this.passphrase = passphrase;
   }
@@ -129,6 +165,12 @@ public class SrtInput extends Input {
     return keyLength;
   }
 
+  /**
+   * The type of AES encryption determines the length of the key (passphrase). AES-128 uses a 16-character (128-bit) passphrase, and AES-256 uses a 32-character (256-bit) passphrase.
+   *
+   * @param keyLength
+   * The type of AES encryption determines the length of the key (passphrase). AES-128 uses a 16-character (128-bit) passphrase, and AES-256 uses a 32-character (256-bit) passphrase.
+   */
   public void setKeyLength(Integer keyLength) {
     this.keyLength = keyLength;
   }
@@ -142,6 +184,11 @@ public class SrtInput extends Input {
     return backupSrtInputs;
   }
 
+  /**
+   * Set backupSrtInputs
+   *
+   * @param backupSrtInputs
+   */
   public void setBackupSrtInputs(BackupSrtInputs backupSrtInputs) {
     this.backupSrtInputs = backupSrtInputs;
   }

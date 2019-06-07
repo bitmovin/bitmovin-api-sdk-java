@@ -46,7 +46,7 @@ public class WidevineApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP4 muxing. (required)
-     * @param widevineDrm  (optional)
+     * @param widevineDrm  (required)
      * @return WidevineDrm
      * @throws BitmovinException if fails to make API call
      */

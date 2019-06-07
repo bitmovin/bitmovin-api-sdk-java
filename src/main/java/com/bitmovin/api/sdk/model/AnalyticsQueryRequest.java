@@ -33,7 +33,7 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
   private String dimension;
 
   @JsonProperty("interval")
-  private AnalyticsInterval interval = null;
+  private AnalyticsInterval interval;
 
   @JsonProperty("groupBy")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -54,6 +54,12 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
     return licenseKey;
   }
 
+  /**
+   * Analytics license key
+   *
+   * @param licenseKey
+   * Analytics license key
+   */
   public void setLicenseKey(String licenseKey) {
     this.licenseKey = licenseKey;
   }
@@ -75,6 +81,11 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
     return filters;
   }
 
+  /**
+   * Set filters
+   *
+   * @param filters
+   */
   public void setFilters(List<AnalyticsFilter> filters) {
     this.filters = filters;
   }
@@ -96,6 +107,11 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
     return orderBy;
   }
 
+  /**
+   * Set orderBy
+   *
+   * @param orderBy
+   */
   public void setOrderBy(List<AnalyticsOrderByEntry> orderBy) {
     this.orderBy = orderBy;
   }
@@ -109,6 +125,11 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
     return dimension;
   }
 
+  /**
+   * Set dimension
+   *
+   * @param dimension
+   */
   public void setDimension(String dimension) {
     this.dimension = dimension;
   }
@@ -122,6 +143,11 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
     return interval;
   }
 
+  /**
+   * Set interval
+   *
+   * @param interval
+   */
   public void setInterval(AnalyticsInterval interval) {
     this.interval = interval;
   }
@@ -143,6 +169,11 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
     return groupBy;
   }
 
+  /**
+   * Set groupBy
+   *
+   * @param groupBy
+   */
   public void setGroupBy(List<String> groupBy) {
     this.groupBy = groupBy;
   }
@@ -156,6 +187,12 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
     return limit;
   }
 
+  /**
+   * Maximum number of rows returned (max. 200)
+   *
+   * @param limit
+   * Maximum number of rows returned (max. 200)
+   */
   public void setLimit(Long limit) {
     this.limit = limit;
   }
@@ -169,6 +206,12 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
     return offset;
   }
 
+  /**
+   * Offset of data
+   *
+   * @param offset
+   * Offset of data
+   */
   public void setOffset(Long offset) {
     this.offset = offset;
   }

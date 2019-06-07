@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class Av1VideoConfiguration extends VideoConfiguration {
   @JsonProperty("keyPlacementMode")
-  private Av1KeyPlacementMode keyPlacementMode = null;
+  private Av1KeyPlacementMode keyPlacementMode;
 
   @JsonProperty("adaptiveQuantMode")
-  private Av1AdaptiveQuantMode adaptiveQuantMode = null;
+  private Av1AdaptiveQuantMode adaptiveQuantMode;
 
   @JsonProperty("lagInFrames")
   private Integer lagInFrames;
@@ -105,6 +105,11 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return keyPlacementMode;
   }
 
+  /**
+   * Set keyPlacementMode
+   *
+   * @param keyPlacementMode
+   */
   public void setKeyPlacementMode(Av1KeyPlacementMode keyPlacementMode) {
     this.keyPlacementMode = keyPlacementMode;
   }
@@ -118,6 +123,11 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return adaptiveQuantMode;
   }
 
+  /**
+   * Set adaptiveQuantMode
+   *
+   * @param adaptiveQuantMode
+   */
   public void setAdaptiveQuantMode(Av1AdaptiveQuantMode adaptiveQuantMode) {
     this.adaptiveQuantMode = adaptiveQuantMode;
   }
@@ -133,6 +143,16 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return lagInFrames;
   }
 
+  /**
+   * Number of frames to look ahead for alternate reference frame selection
+   * minimum: 0
+   * maximum: 25
+   *
+   * @param lagInFrames
+   * Number of frames to look ahead for alternate reference frame selection
+   * minimum: 0
+   * maximum: 25
+   */
   public void setLagInFrames(Integer lagInFrames) {
     this.lagInFrames = lagInFrames;
   }
@@ -146,6 +166,12 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return minQ;
   }
 
+  /**
+   * Minimum (best quality) quantizer
+   *
+   * @param minQ
+   * Minimum (best quality) quantizer
+   */
   public void setMinQ(Integer minQ) {
     this.minQ = minQ;
   }
@@ -159,6 +185,12 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return maxQ;
   }
 
+  /**
+   * Maximum (worst quality) quantizer
+   *
+   * @param maxQ
+   * Maximum (worst quality) quantizer
+   */
   public void setMaxQ(Integer maxQ) {
     this.maxQ = maxQ;
   }
@@ -174,6 +206,16 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return undershootPct;
   }
 
+  /**
+   * Rate control adaptation undershoot control
+   * minimum: 0
+   * maximum: 1000
+   *
+   * @param undershootPct
+   * Rate control adaptation undershoot control
+   * minimum: 0
+   * maximum: 1000
+   */
   public void setUndershootPct(Integer undershootPct) {
     this.undershootPct = undershootPct;
   }
@@ -189,6 +231,16 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return overshootPct;
   }
 
+  /**
+   * Rate control adaptation overshoot control
+   * minimum: 0
+   * maximum: 1000
+   *
+   * @param overshootPct
+   * Rate control adaptation overshoot control
+   * minimum: 0
+   * maximum: 1000
+   */
   public void setOvershootPct(Integer overshootPct) {
     this.overshootPct = overshootPct;
   }
@@ -202,6 +254,12 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return clientBufferSize;
   }
 
+  /**
+   * Decoder buffer size in milliseconds
+   *
+   * @param clientBufferSize
+   * Decoder buffer size in milliseconds
+   */
   public void setClientBufferSize(Long clientBufferSize) {
     this.clientBufferSize = clientBufferSize;
   }
@@ -215,6 +273,12 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return clientInitialBufferSize;
   }
 
+  /**
+   * Decoder buffer initial size in milliseconds
+   *
+   * @param clientInitialBufferSize
+   * Decoder buffer initial size in milliseconds
+   */
   public void setClientInitialBufferSize(Long clientInitialBufferSize) {
     this.clientInitialBufferSize = clientInitialBufferSize;
   }
@@ -228,6 +292,12 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return clientOptimalBufferSize;
   }
 
+  /**
+   * Decoder buffer optimal size in milliseconds
+   *
+   * @param clientOptimalBufferSize
+   * Decoder buffer optimal size in milliseconds
+   */
   public void setClientOptimalBufferSize(Long clientOptimalBufferSize) {
     this.clientOptimalBufferSize = clientOptimalBufferSize;
   }
@@ -243,6 +313,16 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return tileColumns;
   }
 
+  /**
+   * Number of tile columns to use, log2
+   * minimum: 0
+   * maximum: 6
+   *
+   * @param tileColumns
+   * Number of tile columns to use, log2
+   * minimum: 0
+   * maximum: 6
+   */
   public void setTileColumns(Integer tileColumns) {
     this.tileColumns = tileColumns;
   }
@@ -258,6 +338,16 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return tileRows;
   }
 
+  /**
+   * Number of tile rows to use, log2
+   * minimum: 0
+   * maximum: 2
+   *
+   * @param tileRows
+   * Number of tile rows to use, log2
+   * minimum: 0
+   * maximum: 2
+   */
   public void setTileRows(Integer tileRows) {
     this.tileRows = tileRows;
   }
@@ -271,6 +361,12 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return isAutomaticAltRefFramesEnabled;
   }
 
+  /**
+   * Enable automatic set and use alf frames
+   *
+   * @param isAutomaticAltRefFramesEnabled
+   * Enable automatic set and use alf frames
+   */
   public void setIsAutomaticAltRefFramesEnabled(Boolean isAutomaticAltRefFramesEnabled) {
     this.isAutomaticAltRefFramesEnabled = isAutomaticAltRefFramesEnabled;
   }
@@ -284,6 +380,12 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return arnrMaxFrames;
   }
 
+  /**
+   * The max number of frames to create arf
+   *
+   * @param arnrMaxFrames
+   * The max number of frames to create arf
+   */
   public void setArnrMaxFrames(Integer arnrMaxFrames) {
     this.arnrMaxFrames = arnrMaxFrames;
   }
@@ -297,6 +399,12 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return arnrStrength;
   }
 
+  /**
+   * The filter strength for the arf
+   *
+   * @param arnrStrength
+   * The filter strength for the arf
+   */
   public void setArnrStrength(Integer arnrStrength) {
     this.arnrStrength = arnrStrength;
   }
@@ -310,6 +418,12 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return maxIntraRate;
   }
 
+  /**
+   * Maximum data rate for intra frames, expressed as a percentage of the average per-frame bitrate. Default value 0 meaning unlimited
+   *
+   * @param maxIntraRate
+   * Maximum data rate for intra frames, expressed as a percentage of the average per-frame bitrate. Default value 0 meaning unlimited
+   */
   public void setMaxIntraRate(Long maxIntraRate) {
     this.maxIntraRate = maxIntraRate;
   }
@@ -323,6 +437,12 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return isLossless;
   }
 
+  /**
+   * Lossless encoding mode
+   *
+   * @param isLossless
+   * Lossless encoding mode
+   */
   public void setIsLossless(Boolean isLossless) {
     this.isLossless = isLossless;
   }
@@ -336,6 +456,12 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return isFrameParallel;
   }
 
+  /**
+   * Enable frame parallel decoding feature
+   *
+   * @param isFrameParallel
+   * Enable frame parallel decoding feature
+   */
   public void setIsFrameParallel(Boolean isFrameParallel) {
     this.isFrameParallel = isFrameParallel;
   }
@@ -349,6 +475,12 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return sharpness;
   }
 
+  /**
+   * Sets the sharpness
+   *
+   * @param sharpness
+   * Sets the sharpness
+   */
   public void setSharpness(Integer sharpness) {
     this.sharpness = sharpness;
   }
@@ -362,6 +494,12 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return isFrameBoostEnabled;
   }
 
+  /**
+   * Enable quality boost by lowering frame level Q periodically
+   *
+   * @param isFrameBoostEnabled
+   * Enable quality boost by lowering frame level Q periodically
+   */
   public void setIsFrameBoostEnabled(Boolean isFrameBoostEnabled) {
     this.isFrameBoostEnabled = isFrameBoostEnabled;
   }
@@ -375,6 +513,12 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return noiseSensitivity;
   }
 
+  /**
+   * Enable noise sensitivity on Y channel
+   *
+   * @param noiseSensitivity
+   * Enable noise sensitivity on Y channel
+   */
   public void setNoiseSensitivity(Boolean noiseSensitivity) {
     this.noiseSensitivity = noiseSensitivity;
   }
@@ -388,6 +532,12 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return minGfInterval;
   }
 
+  /**
+   * Minimum interval between GF/ARF frames
+   *
+   * @param minGfInterval
+   * Minimum interval between GF/ARF frames
+   */
   public void setMinGfInterval(Integer minGfInterval) {
     this.minGfInterval = minGfInterval;
   }
@@ -401,6 +551,12 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return maxGfInterval;
   }
 
+  /**
+   * Maximum interval between GF/ARF frames
+   *
+   * @param maxGfInterval
+   * Maximum interval between GF/ARF frames
+   */
   public void setMaxGfInterval(Integer maxGfInterval) {
     this.maxGfInterval = maxGfInterval;
   }
@@ -414,6 +570,12 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return numTileGroups;
   }
 
+  /**
+   * Maximum number of tile groups
+   *
+   * @param numTileGroups
+   * Maximum number of tile groups
+   */
   public void setNumTileGroups(Integer numTileGroups) {
     this.numTileGroups = numTileGroups;
   }
@@ -427,6 +589,12 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return mtuSize;
   }
 
+  /**
+   * Maximum number of bytes in a tile group
+   *
+   * @param mtuSize
+   * Maximum number of bytes in a tile group
+   */
   public void setMtuSize(Integer mtuSize) {
     this.mtuSize = mtuSize;
   }

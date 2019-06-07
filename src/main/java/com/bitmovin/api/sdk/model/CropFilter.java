@@ -30,7 +30,7 @@ public class CropFilter extends Filter {
   private Integer bottom;
 
   @JsonProperty("unit")
-  private PositionUnit unit = null;
+  private PositionUnit unit;
 
 
   /**
@@ -41,6 +41,12 @@ public class CropFilter extends Filter {
     return left;
   }
 
+  /**
+   * Amount of pixels which will be cropped of the input video from the left side.
+   *
+   * @param left
+   * Amount of pixels which will be cropped of the input video from the left side.
+   */
   public void setLeft(Integer left) {
     this.left = left;
   }
@@ -54,6 +60,12 @@ public class CropFilter extends Filter {
     return right;
   }
 
+  /**
+   * Amount of pixels which will be cropped of the input video from the right side.
+   *
+   * @param right
+   * Amount of pixels which will be cropped of the input video from the right side.
+   */
   public void setRight(Integer right) {
     this.right = right;
   }
@@ -67,6 +79,12 @@ public class CropFilter extends Filter {
     return top;
   }
 
+  /**
+   * Amount of pixels which will be cropped of the input video from the top.
+   *
+   * @param top
+   * Amount of pixels which will be cropped of the input video from the top.
+   */
   public void setTop(Integer top) {
     this.top = top;
   }
@@ -80,6 +98,12 @@ public class CropFilter extends Filter {
     return bottom;
   }
 
+  /**
+   * Amount of pixels which will be cropped of the input video from the bottom.
+   *
+   * @param bottom
+   * Amount of pixels which will be cropped of the input video from the bottom.
+   */
   public void setBottom(Integer bottom) {
     this.bottom = bottom;
   }
@@ -93,6 +117,11 @@ public class CropFilter extends Filter {
     return unit;
   }
 
+  /**
+   * Set unit
+   *
+   * @param unit
+   */
   public void setUnit(PositionUnit unit) {
     this.unit = unit;
   }

@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class Ignoring {
   @JsonProperty("ignoredBy")
-  private IgnoredBy ignoredBy = null;
+  private IgnoredBy ignoredBy;
 
   @JsonProperty("ignoredByDescription")
   private String ignoredByDescription;

@@ -19,10 +19,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
 public class InterlaceFilter extends Filter {
   @JsonProperty("mode")
-  private InterlaceMode mode = null;
+  private InterlaceMode mode;
 
   @JsonProperty("verticalLowPassFilteringMode")
-  private VerticalLowPassFilteringMode verticalLowPassFilteringMode = null;
+  private VerticalLowPassFilteringMode verticalLowPassFilteringMode;
 
 
   /**
@@ -33,6 +33,11 @@ public class InterlaceFilter extends Filter {
     return mode;
   }
 
+  /**
+   * Set mode
+   *
+   * @param mode
+   */
   public void setMode(InterlaceMode mode) {
     this.mode = mode;
   }
@@ -46,6 +51,11 @@ public class InterlaceFilter extends Filter {
     return verticalLowPassFilteringMode;
   }
 
+  /**
+   * Set verticalLowPassFilteringMode
+   *
+   * @param verticalLowPassFilteringMode
+   */
   public void setVerticalLowPassFilteringMode(VerticalLowPassFilteringMode verticalLowPassFilteringMode) {
     this.verticalLowPassFilteringMode = verticalLowPassFilteringMode;
   }

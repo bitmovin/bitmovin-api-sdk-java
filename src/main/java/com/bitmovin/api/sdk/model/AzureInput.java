@@ -34,6 +34,12 @@ public class AzureInput extends Input {
     return accountName;
   }
 
+  /**
+   * Azure Account Name
+   *
+   * @param accountName
+   * Azure Account Name
+   */
   public void setAccountName(String accountName) {
     this.accountName = accountName;
   }
@@ -47,6 +53,12 @@ public class AzureInput extends Input {
     return accountKey;
   }
 
+  /**
+   * Azure Account Key
+   *
+   * @param accountKey
+   * Azure Account Key
+   */
   public void setAccountKey(String accountKey) {
     this.accountKey = accountKey;
   }
@@ -60,6 +72,12 @@ public class AzureInput extends Input {
     return container;
   }
 
+  /**
+   * Name of the bucket
+   *
+   * @param container
+   * Name of the bucket
+   */
   public void setContainer(String container) {
     this.container = container;
   }

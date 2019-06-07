@@ -46,6 +46,12 @@ public class AccountInformation extends BitmovinResource {
     return email;
   }
 
+  /**
+   * Email address of the account.
+   *
+   * @param email
+   * Email address of the account.
+   */
   public void setEmail(String email) {
     this.email = email;
   }
@@ -64,6 +70,12 @@ public class AccountInformation extends BitmovinResource {
     return apiKeys;
   }
 
+  /**
+   * ApiKeys associated with the account
+   *
+   * @param apiKeys
+   * ApiKeys associated with the account
+   */
   public void setApiKeys(List<AccountApiKey> apiKeys) {
     this.apiKeys = apiKeys;
   }
@@ -77,6 +89,12 @@ public class AccountInformation extends BitmovinResource {
     return firstName;
   }
 
+  /**
+   * First name of the tenant.
+   *
+   * @param firstName
+   * First name of the tenant.
+   */
   public void setFirstName(String firstName) {
     this.firstName = firstName;
   }
@@ -90,6 +108,12 @@ public class AccountInformation extends BitmovinResource {
     return lastName;
   }
 
+  /**
+   * Last name of the tenant.
+   *
+   * @param lastName
+   * Last name of the tenant.
+   */
   public void setLastName(String lastName) {
     this.lastName = lastName;
   }
@@ -103,6 +127,12 @@ public class AccountInformation extends BitmovinResource {
     return phone;
   }
 
+  /**
+   * Phone number of the tenant.
+   *
+   * @param phone
+   * Phone number of the tenant.
+   */
   public void setPhone(String phone) {
     this.phone = phone;
   }
@@ -116,6 +146,12 @@ public class AccountInformation extends BitmovinResource {
     return company;
   }
 
+  /**
+   * Company name of the tenant.
+   *
+   * @param company
+   * Company name of the tenant.
+   */
   public void setCompany(String company) {
     this.company = company;
   }

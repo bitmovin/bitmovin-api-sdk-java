@@ -44,7 +44,7 @@ public class ContentprotectionApi {
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
      * @param adaptationsetId Id of the adaptation set (required)
-     * @param contentProtection The content protection to be added to the adaptation set (optional)
+     * @param contentProtection The content protection to be added to the adaptation set (required)
      * @return ContentProtection
      * @throws BitmovinException if fails to make API call
      */

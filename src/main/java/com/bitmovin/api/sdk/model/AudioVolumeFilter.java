@@ -21,7 +21,7 @@ public class AudioVolumeFilter extends Filter {
   private Double volume;
 
   @JsonProperty("unit")
-  private AudioVolumeUnit unit = null;
+  private AudioVolumeUnit unit;
 
 
   /**
@@ -32,6 +32,12 @@ public class AudioVolumeFilter extends Filter {
     return volume;
   }
 
+  /**
+   * Audio volume value
+   *
+   * @param volume
+   * Audio volume value
+   */
   public void setVolume(Double volume) {
     this.volume = volume;
   }
@@ -45,6 +51,11 @@ public class AudioVolumeFilter extends Filter {
     return unit;
   }
 
+  /**
+   * Set unit
+   *
+   * @param unit
+   */
   public void setUnit(AudioVolumeUnit unit) {
     this.unit = unit;
   }

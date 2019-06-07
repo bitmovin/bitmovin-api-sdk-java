@@ -33,6 +33,12 @@ public class SmoothStreamingManifest extends Manifest {
     return serverManifestName;
   }
 
+  /**
+   * Filename of the server manifest
+   *
+   * @param serverManifestName
+   * Filename of the server manifest
+   */
   public void setServerManifestName(String serverManifestName) {
     this.serverManifestName = serverManifestName;
   }
@@ -46,6 +52,12 @@ public class SmoothStreamingManifest extends Manifest {
     return clientManifestName;
   }
 
+  /**
+   * Filename of the client manifest
+   *
+   * @param clientManifestName
+   * Filename of the client manifest
+   */
   public void setClientManifestName(String clientManifestName) {
     this.clientManifestName = clientManifestName;
   }

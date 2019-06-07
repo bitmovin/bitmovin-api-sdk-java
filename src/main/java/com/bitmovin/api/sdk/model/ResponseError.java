@@ -18,10 +18,10 @@ public class ResponseError {
   private String requestId;
 
   @JsonProperty("status")
-  private ResponseStatus status = null;
+  private ResponseStatus status;
 
   @JsonProperty("data")
-  private ResponseErrorData data = null;
+  private ResponseErrorData data;
 
   /**
    * Unique correlation id

@@ -42,7 +42,7 @@ public class ThirdPartyLicensingApi {
      * Enable Third Party Licensing
      * 
      * @param licenseId Id of the Player License (required)
-     * @param playerThirdPartyLicensing Third Party Licensing settings to apply to Player License (optional)
+     * @param playerThirdPartyLicensing Third Party Licensing settings to apply to Player License (required)
      * @return PlayerThirdPartyLicensing
      * @throws BitmovinException if fails to make API call
      */

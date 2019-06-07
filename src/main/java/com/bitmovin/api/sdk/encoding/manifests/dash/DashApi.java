@@ -50,7 +50,7 @@ public class DashApi {
     /**
      * Create DASH Manifest
      * 
-     * @param dashManifest The DASH manifest to be created (optional)
+     * @param dashManifest The DASH manifest to be created (required)
      * @return DashManifest
      * @throws BitmovinException if fails to make API call
      */

@@ -32,6 +32,12 @@ public class FrameIdId3Tag extends Id3Tag {
     return bytes;
   }
 
+  /**
+   * Base64 Encoded Data
+   *
+   * @param bytes
+   * Base64 Encoded Data
+   */
   public void setBytes(String bytes) {
     this.bytes = bytes;
   }
@@ -45,6 +51,12 @@ public class FrameIdId3Tag extends Id3Tag {
     return frameId;
   }
 
+  /**
+   * 4 character long Frame ID
+   *
+   * @param frameId
+   * 4 character long Frame ID
+   */
   public void setFrameId(String frameId) {
     this.frameId = frameId;
   }

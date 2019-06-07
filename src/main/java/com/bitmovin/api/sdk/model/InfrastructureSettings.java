@@ -17,7 +17,7 @@ public class InfrastructureSettings {
   private String infrastructureId;
 
   @JsonProperty("cloudRegion")
-  private CloudRegion cloudRegion = null;
+  private CloudRegion cloudRegion;
 
 
   /**
@@ -28,6 +28,12 @@ public class InfrastructureSettings {
     return infrastructureId;
   }
 
+  /**
+   * Id of a custom infrastructure, e.g., Kubernetes Cluster
+   *
+   * @param infrastructureId
+   * Id of a custom infrastructure, e.g., Kubernetes Cluster
+   */
   public void setInfrastructureId(String infrastructureId) {
     this.infrastructureId = infrastructureId;
   }
@@ -41,6 +47,11 @@ public class InfrastructureSettings {
     return cloudRegion;
   }
 
+  /**
+   * Set cloudRegion
+   *
+   * @param cloudRegion
+   */
   public void setCloudRegion(CloudRegion cloudRegion) {
     this.cloudRegion = cloudRegion;
   }

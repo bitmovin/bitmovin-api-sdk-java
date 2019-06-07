@@ -33,6 +33,12 @@ public class StreamFilterList {
     return filters;
   }
 
+  /**
+   * List of stream filters
+   *
+   * @param filters
+   * List of stream filters
+   */
   public void setFilters(List<StreamFilter> filters) {
     this.filters = filters;
   }

@@ -49,6 +49,11 @@ public class ZixiInput extends Input {
     return host;
   }
 
+  /**
+   * Set host
+   *
+   * @param host
+   */
   public void setHost(String host) {
     this.host = host;
   }
@@ -62,6 +67,11 @@ public class ZixiInput extends Input {
     return port;
   }
 
+  /**
+   * Set port
+   *
+   * @param port
+   */
   public void setPort(Integer port) {
     this.port = port;
   }
@@ -75,6 +85,11 @@ public class ZixiInput extends Input {
     return stream;
   }
 
+  /**
+   * Set stream
+   *
+   * @param stream
+   */
   public void setStream(String stream) {
     this.stream = stream;
   }
@@ -88,6 +103,11 @@ public class ZixiInput extends Input {
     return password;
   }
 
+  /**
+   * Set password
+   *
+   * @param password
+   */
   public void setPassword(String password) {
     this.password = password;
   }
@@ -101,6 +121,11 @@ public class ZixiInput extends Input {
     return latency;
   }
 
+  /**
+   * Set latency
+   *
+   * @param latency
+   */
   public void setLatency(Integer latency) {
     this.latency = latency;
   }
@@ -114,6 +139,11 @@ public class ZixiInput extends Input {
     return minBitrate;
   }
 
+  /**
+   * Set minBitrate
+   *
+   * @param minBitrate
+   */
   public void setMinBitrate(Integer minBitrate) {
     this.minBitrate = minBitrate;
   }
@@ -127,6 +157,11 @@ public class ZixiInput extends Input {
     return decryptionType;
   }
 
+  /**
+   * Set decryptionType
+   *
+   * @param decryptionType
+   */
   public void setDecryptionType(String decryptionType) {
     this.decryptionType = decryptionType;
   }
@@ -140,6 +175,11 @@ public class ZixiInput extends Input {
     return decryptionKey;
   }
 
+  /**
+   * Set decryptionKey
+   *
+   * @param decryptionKey
+   */
   public void setDecryptionKey(String decryptionKey) {
     this.decryptionKey = decryptionKey;
   }

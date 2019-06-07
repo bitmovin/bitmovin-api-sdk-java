@@ -17,7 +17,7 @@ public class SourceChannel {
   private Double gain;
 
   @JsonProperty("type")
-  private SourceChannelType type = null;
+  private SourceChannelType type;
 
   @JsonProperty("channelNumber")
   private Integer channelNumber;
@@ -31,6 +31,12 @@ public class SourceChannel {
     return gain;
   }
 
+  /**
+   * Gain for this source channel. Default is 1.0.
+   *
+   * @param gain
+   * Gain for this source channel. Default is 1.0.
+   */
   public void setGain(Double gain) {
     this.gain = gain;
   }
@@ -44,6 +50,11 @@ public class SourceChannel {
     return type;
   }
 
+  /**
+   * Set type
+   *
+   * @param type
+   */
   public void setType(SourceChannelType type) {
     this.type = type;
   }
@@ -57,6 +68,12 @@ public class SourceChannel {
     return channelNumber;
   }
 
+  /**
+   * Number of this source channel. If type is &#39;CHANNEL_NUMBER&#39;, this must be set.
+   *
+   * @param channelNumber
+   * Number of this source channel. If type is &#39;CHANNEL_NUMBER&#39;, this must be set.
+   */
   public void setChannelNumber(Integer channelNumber) {
     this.channelNumber = channelNumber;
   }

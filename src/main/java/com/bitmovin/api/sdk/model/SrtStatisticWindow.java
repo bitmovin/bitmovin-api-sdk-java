@@ -30,6 +30,11 @@ public class SrtStatisticWindow {
     return congestion;
   }
 
+  /**
+   * Set congestion
+   *
+   * @param congestion
+   */
   public void setCongestion(Long congestion) {
     this.congestion = congestion;
   }
@@ -43,6 +48,11 @@ public class SrtStatisticWindow {
     return flight;
   }
 
+  /**
+   * Set flight
+   *
+   * @param flight
+   */
   public void setFlight(Long flight) {
     this.flight = flight;
   }
@@ -56,6 +66,11 @@ public class SrtStatisticWindow {
     return flow;
   }
 
+  /**
+   * Set flow
+   *
+   * @param flow
+   */
   public void setFlow(Long flow) {
     this.flow = flow;
   }

@@ -44,7 +44,7 @@ public class TextApi {
     /**
      * Create Text Filter
      * 
-     * @param textFilter  (optional)
+     * @param textFilter  (required)
      * @return TextFilter
      * @throws BitmovinException if fails to make API call
      */

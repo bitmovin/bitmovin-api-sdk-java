@@ -40,6 +40,12 @@ public class AudioStream extends MediaStream {
     return sampleRate;
   }
 
+  /**
+   * Audio sampling rate in Hz
+   *
+   * @param sampleRate
+   * Audio sampling rate in Hz
+   */
   public void setSampleRate(Integer sampleRate) {
     this.sampleRate = sampleRate;
   }
@@ -53,6 +59,12 @@ public class AudioStream extends MediaStream {
     return bitrate;
   }
 
+  /**
+   * Bitrate in bps
+   *
+   * @param bitrate
+   * Bitrate in bps
+   */
   public void setBitrate(Long bitrate) {
     this.bitrate = bitrate;
   }
@@ -66,6 +78,12 @@ public class AudioStream extends MediaStream {
     return rate;
   }
 
+  /**
+   * Bitrate in bps
+   *
+   * @param rate
+   * Bitrate in bps
+   */
   public void setRate(Long rate) {
     this.rate = rate;
   }
@@ -79,6 +97,12 @@ public class AudioStream extends MediaStream {
     return channelFormat;
   }
 
+  /**
+   * Audio channel format
+   *
+   * @param channelFormat
+   * Audio channel format
+   */
   public void setChannelFormat(String channelFormat) {
     this.channelFormat = channelFormat;
   }
@@ -92,6 +116,12 @@ public class AudioStream extends MediaStream {
     return language;
   }
 
+  /**
+   * Language of the stream
+   *
+   * @param language
+   * Language of the stream
+   */
   public void setLanguage(String language) {
     this.language = language;
   }
@@ -105,6 +135,12 @@ public class AudioStream extends MediaStream {
     return hearingImpaired;
   }
 
+  /**
+   * Hearing impaired support
+   *
+   * @param hearingImpaired
+   * Hearing impaired support
+   */
   public void setHearingImpaired(Boolean hearingImpaired) {
     this.hearingImpaired = hearingImpaired;
   }

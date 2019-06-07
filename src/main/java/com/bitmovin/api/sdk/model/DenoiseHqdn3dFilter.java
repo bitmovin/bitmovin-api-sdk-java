@@ -37,6 +37,12 @@ public class DenoiseHqdn3dFilter extends Filter {
     return lumaSpatial;
   }
 
+  /**
+   * A non-negative floating point number which specifies spatial luma strength. It defaults to 4.0.
+   *
+   * @param lumaSpatial
+   * A non-negative floating point number which specifies spatial luma strength. It defaults to 4.0.
+   */
   public void setLumaSpatial(Double lumaSpatial) {
     this.lumaSpatial = lumaSpatial;
   }
@@ -50,6 +56,12 @@ public class DenoiseHqdn3dFilter extends Filter {
     return chromaSpatial;
   }
 
+  /**
+   * A non-negative floating point number which specifies spatial chroma strength. It defaults to 3.0*luma_spatial/4.0.
+   *
+   * @param chromaSpatial
+   * A non-negative floating point number which specifies spatial chroma strength. It defaults to 3.0*luma_spatial/4.0.
+   */
   public void setChromaSpatial(Double chromaSpatial) {
     this.chromaSpatial = chromaSpatial;
   }
@@ -63,6 +75,12 @@ public class DenoiseHqdn3dFilter extends Filter {
     return lumaTmp;
   }
 
+  /**
+   * A floating point number which specifies luma temporal strength. It defaults to 6.0*luma_spatial/4.0.
+   *
+   * @param lumaTmp
+   * A floating point number which specifies luma temporal strength. It defaults to 6.0*luma_spatial/4.0.
+   */
   public void setLumaTmp(Double lumaTmp) {
     this.lumaTmp = lumaTmp;
   }
@@ -76,6 +94,12 @@ public class DenoiseHqdn3dFilter extends Filter {
     return chromaTmp;
   }
 
+  /**
+   * A floating point number which specifies chroma temporal strength. It defaults to luma_tmp*chroma_spatial/luma_spatial.
+   *
+   * @param chromaTmp
+   * A floating point number which specifies chroma temporal strength. It defaults to luma_tmp*chroma_spatial/luma_spatial.
+   */
   public void setChromaTmp(Double chromaTmp) {
     this.chromaTmp = chromaTmp;
   }

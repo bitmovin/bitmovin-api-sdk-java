@@ -24,6 +24,11 @@ public class MuxingStream {
     return streamId;
   }
 
+  /**
+   * Set streamId
+   *
+   * @param streamId
+   */
   public void setStreamId(String streamId) {
     this.streamId = streamId;
   }

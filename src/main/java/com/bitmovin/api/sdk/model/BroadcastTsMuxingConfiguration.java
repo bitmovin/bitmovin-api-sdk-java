@@ -19,10 +19,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class BroadcastTsMuxingConfiguration {
   @JsonProperty("transport")
-  private BroadcastTsTransportConfiguration transport = null;
+  private BroadcastTsTransportConfiguration transport;
 
   @JsonProperty("program")
-  private BroadcastTsProgramConfiguration program = null;
+  private BroadcastTsProgramConfiguration program;
 
   @JsonProperty("videoStreams")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -41,6 +41,12 @@ public class BroadcastTsMuxingConfiguration {
     return transport;
   }
 
+  /**
+   * Transport configuration details for the Broadcast TS muxing.
+   *
+   * @param transport
+   * Transport configuration details for the Broadcast TS muxing.
+   */
   public void setTransport(BroadcastTsTransportConfiguration transport) {
     this.transport = transport;
   }
@@ -54,6 +60,12 @@ public class BroadcastTsMuxingConfiguration {
     return program;
   }
 
+  /**
+   * Program configuration details for the Broadcast TS muxing.
+   *
+   * @param program
+   * Program configuration details for the Broadcast TS muxing.
+   */
   public void setProgram(BroadcastTsProgramConfiguration program) {
     this.program = program;
   }
@@ -75,6 +87,11 @@ public class BroadcastTsMuxingConfiguration {
     return videoStreams;
   }
 
+  /**
+   * Set videoStreams
+   *
+   * @param videoStreams
+   */
   public void setVideoStreams(List<BroadcastTsVideoInputStreamConfiguration> videoStreams) {
     this.videoStreams = videoStreams;
   }
@@ -96,6 +113,11 @@ public class BroadcastTsMuxingConfiguration {
     return audioStreams;
   }
 
+  /**
+   * Set audioStreams
+   *
+   * @param audioStreams
+   */
   public void setAudioStreams(List<BroadcastTsAudioInputStreamConfiguration> audioStreams) {
     this.audioStreams = audioStreams;
   }

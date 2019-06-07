@@ -41,7 +41,7 @@ public class ExportsApi {
     /**
      * Create Export Task
      * 
-     * @param analyticsExportTask The export task to be created (optional)
+     * @param analyticsExportTask The export task to be created (required)
      * @return AnalyticsExportTask
      * @throws BitmovinException if fails to make API call
      */

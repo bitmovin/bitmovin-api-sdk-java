@@ -20,10 +20,10 @@ public class PlayerThirdPartyLicensing {
   private Integer licenseCheckTimeout;
 
   @JsonProperty("errorAction")
-  private PlayerThirdPartyLicensingErrorAction errorAction = null;
+  private PlayerThirdPartyLicensingErrorAction errorAction;
 
   @JsonProperty("timeoutAction")
-  private PlayerThirdPartyLicensingErrorAction timeoutAction = null;
+  private PlayerThirdPartyLicensingErrorAction timeoutAction;
 
 
   /**
@@ -34,6 +34,12 @@ public class PlayerThirdPartyLicensing {
     return licenseCheckServer;
   }
 
+  /**
+   * URL to your license check server
+   *
+   * @param licenseCheckServer
+   * URL to your license check server
+   */
   public void setLicenseCheckServer(String licenseCheckServer) {
     this.licenseCheckServer = licenseCheckServer;
   }
@@ -49,6 +55,16 @@ public class PlayerThirdPartyLicensing {
     return licenseCheckTimeout;
   }
 
+  /**
+   * Timeout in ms
+   * minimum: 100
+   * maximum: 2000
+   *
+   * @param licenseCheckTimeout
+   * Timeout in ms
+   * minimum: 100
+   * maximum: 2000
+   */
   public void setLicenseCheckTimeout(Integer licenseCheckTimeout) {
     this.licenseCheckTimeout = licenseCheckTimeout;
   }
@@ -62,6 +78,12 @@ public class PlayerThirdPartyLicensing {
     return errorAction;
   }
 
+  /**
+   * Specify if the Licensing Request should fail or not on Third Party Licensing Error
+   *
+   * @param errorAction
+   * Specify if the Licensing Request should fail or not on Third Party Licensing Error
+   */
   public void setErrorAction(PlayerThirdPartyLicensingErrorAction errorAction) {
     this.errorAction = errorAction;
   }
@@ -75,6 +97,12 @@ public class PlayerThirdPartyLicensing {
     return timeoutAction;
   }
 
+  /**
+   * Specify if the Licensing Request should fail or not on Third Party Licensing timeout
+   *
+   * @param timeoutAction
+   * Specify if the Licensing Request should fail or not on Third Party Licensing timeout
+   */
   public void setTimeoutAction(PlayerThirdPartyLicensingErrorAction timeoutAction) {
     this.timeoutAction = timeoutAction;
   }

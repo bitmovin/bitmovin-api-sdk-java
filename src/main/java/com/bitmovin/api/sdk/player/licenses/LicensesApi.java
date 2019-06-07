@@ -50,7 +50,7 @@ public class LicensesApi {
     /**
      * Create Player License
      * 
-     * @param playerLicense Player License to be created (optional)
+     * @param playerLicense Player License to be created (required)
      * @return PlayerLicense
      * @throws BitmovinException if fails to make API call
      */

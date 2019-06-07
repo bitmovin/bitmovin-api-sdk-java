@@ -21,7 +21,7 @@ public class StreamInfo extends BitmovinResource {
   private String audio;
 
   @JsonProperty("audioGroups")
-  private AudioGroupConfiguration audioGroups = null;
+  private AudioGroupConfiguration audioGroups;
 
   @JsonProperty("video")
   private String video;
@@ -56,6 +56,12 @@ public class StreamInfo extends BitmovinResource {
   @JsonProperty("endSegmentNumber")
   private Long endSegmentNumber;
 
+  @JsonProperty("forceFrameRateAttribute")
+  private Boolean forceFrameRateAttribute;
+
+  @JsonProperty("forceVideoRangeAttribute")
+  private Boolean forceVideoRangeAttribute;
+
 
   /**
    * It MUST match the value of the GROUP-ID attribute of an Audio EXT-X-MEDIA tag elsewhere in the Master Playlist. Either this or &#x60;audioGroups&#x60; must be set.
@@ -65,6 +71,12 @@ public class StreamInfo extends BitmovinResource {
     return audio;
   }
 
+  /**
+   * It MUST match the value of the GROUP-ID attribute of an Audio EXT-X-MEDIA tag elsewhere in the Master Playlist. Either this or &#x60;audioGroups&#x60; must be set.
+   *
+   * @param audio
+   * It MUST match the value of the GROUP-ID attribute of an Audio EXT-X-MEDIA tag elsewhere in the Master Playlist. Either this or &#x60;audioGroups&#x60; must be set.
+   */
   public void setAudio(String audio) {
     this.audio = audio;
   }
@@ -78,6 +90,12 @@ public class StreamInfo extends BitmovinResource {
     return audioGroups;
   }
 
+  /**
+   * HLS Audio Group Configuration. You will want to use this configuration property in case you specify conditions on audio streams. The first matching audio group will be used for the specific variant stream. Either this or &#x60;audio&#x60; must be set.
+   *
+   * @param audioGroups
+   * HLS Audio Group Configuration. You will want to use this configuration property in case you specify conditions on audio streams. The first matching audio group will be used for the specific variant stream. Either this or &#x60;audio&#x60; must be set.
+   */
   public void setAudioGroups(AudioGroupConfiguration audioGroups) {
     this.audioGroups = audioGroups;
   }
@@ -91,6 +109,12 @@ public class StreamInfo extends BitmovinResource {
     return video;
   }
 
+  /**
+   * It MUST match the value of the GROUP-ID attribute of a Video EXT-X-MEDIA tag elsewhere in the Master Playlist
+   *
+   * @param video
+   * It MUST match the value of the GROUP-ID attribute of a Video EXT-X-MEDIA tag elsewhere in the Master Playlist
+   */
   public void setVideo(String video) {
     this.video = video;
   }
@@ -104,6 +128,12 @@ public class StreamInfo extends BitmovinResource {
     return subtitles;
   }
 
+  /**
+   * It MUST match the value of the GROUP-ID attribute of a Subtitles EXT-X-MEDIA tag elsewhere in the Master Playlist
+   *
+   * @param subtitles
+   * It MUST match the value of the GROUP-ID attribute of a Subtitles EXT-X-MEDIA tag elsewhere in the Master Playlist
+   */
   public void setSubtitles(String subtitles) {
     this.subtitles = subtitles;
   }
@@ -117,6 +147,12 @@ public class StreamInfo extends BitmovinResource {
     return closedCaptions;
   }
 
+  /**
+   * If the value is not &#39;NONE&#39;, it MUST match the value of the GROUP-ID attribute of a Closed Captions EXT-X-MEDIA tag elsewhere in the Playlist
+   *
+   * @param closedCaptions
+   * If the value is not &#39;NONE&#39;, it MUST match the value of the GROUP-ID attribute of a Closed Captions EXT-X-MEDIA tag elsewhere in the Playlist
+   */
   public void setClosedCaptions(String closedCaptions) {
     this.closedCaptions = closedCaptions;
   }
@@ -130,6 +166,12 @@ public class StreamInfo extends BitmovinResource {
     return encodingId;
   }
 
+  /**
+   * Id of the encoding.
+   *
+   * @param encodingId
+   * Id of the encoding.
+   */
   public void setEncodingId(String encodingId) {
     this.encodingId = encodingId;
   }
@@ -143,6 +185,12 @@ public class StreamInfo extends BitmovinResource {
     return streamId;
   }
 
+  /**
+   * Id of the stream.
+   *
+   * @param streamId
+   * Id of the stream.
+   */
   public void setStreamId(String streamId) {
     this.streamId = streamId;
   }
@@ -156,6 +204,12 @@ public class StreamInfo extends BitmovinResource {
     return muxingId;
   }
 
+  /**
+   * Id of the muxing.
+   *
+   * @param muxingId
+   * Id of the muxing.
+   */
   public void setMuxingId(String muxingId) {
     this.muxingId = muxingId;
   }
@@ -169,6 +223,12 @@ public class StreamInfo extends BitmovinResource {
     return drmId;
   }
 
+  /**
+   * Id of the DRM.
+   *
+   * @param drmId
+   * Id of the DRM.
+   */
   public void setDrmId(String drmId) {
     this.drmId = drmId;
   }
@@ -182,6 +242,12 @@ public class StreamInfo extends BitmovinResource {
     return segmentPath;
   }
 
+  /**
+   * Path to segments.
+   *
+   * @param segmentPath
+   * Path to segments.
+   */
   public void setSegmentPath(String segmentPath) {
     this.segmentPath = segmentPath;
   }
@@ -195,6 +261,12 @@ public class StreamInfo extends BitmovinResource {
     return uri;
   }
 
+  /**
+   * The URI of the playlist file.
+   *
+   * @param uri
+   * The URI of the playlist file.
+   */
   public void setUri(String uri) {
     this.uri = uri;
   }
@@ -208,6 +280,12 @@ public class StreamInfo extends BitmovinResource {
     return startSegmentNumber;
   }
 
+  /**
+   * Number of the first segment. Default is 0.
+   *
+   * @param startSegmentNumber
+   * Number of the first segment. Default is 0.
+   */
   public void setStartSegmentNumber(Long startSegmentNumber) {
     this.startSegmentNumber = startSegmentNumber;
   }
@@ -221,8 +299,52 @@ public class StreamInfo extends BitmovinResource {
     return endSegmentNumber;
   }
 
+  /**
+   * Number of the last segment. Default is the last one that was encoded.
+   *
+   * @param endSegmentNumber
+   * Number of the last segment. Default is the last one that was encoded.
+   */
   public void setEndSegmentNumber(Long endSegmentNumber) {
     this.endSegmentNumber = endSegmentNumber;
+  }
+
+
+  /**
+   * Force the addition of the frame rate attribute to all stream infos.
+   * @return forceFrameRateAttribute
+   */
+  public Boolean getForceFrameRateAttribute() {
+    return forceFrameRateAttribute;
+  }
+
+  /**
+   * Force the addition of the frame rate attribute to all stream infos.
+   *
+   * @param forceFrameRateAttribute
+   * Force the addition of the frame rate attribute to all stream infos.
+   */
+  public void setForceFrameRateAttribute(Boolean forceFrameRateAttribute) {
+    this.forceFrameRateAttribute = forceFrameRateAttribute;
+  }
+
+
+  /**
+   * Force the addition of the video-range attribute to all stream infos.
+   * @return forceVideoRangeAttribute
+   */
+  public Boolean getForceVideoRangeAttribute() {
+    return forceVideoRangeAttribute;
+  }
+
+  /**
+   * Force the addition of the video-range attribute to all stream infos.
+   *
+   * @param forceVideoRangeAttribute
+   * Force the addition of the video-range attribute to all stream infos.
+   */
+  public void setForceVideoRangeAttribute(Boolean forceVideoRangeAttribute) {
+    this.forceVideoRangeAttribute = forceVideoRangeAttribute;
   }
 
 
@@ -248,12 +370,14 @@ public class StreamInfo extends BitmovinResource {
         Objects.equals(this.uri, streamInfo.uri) &&
         Objects.equals(this.startSegmentNumber, streamInfo.startSegmentNumber) &&
         Objects.equals(this.endSegmentNumber, streamInfo.endSegmentNumber) &&
+        Objects.equals(this.forceFrameRateAttribute, streamInfo.forceFrameRateAttribute) &&
+        Objects.equals(this.forceVideoRangeAttribute, streamInfo.forceVideoRangeAttribute) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(audio, audioGroups, video, subtitles, closedCaptions, encodingId, streamId, muxingId, drmId, segmentPath, uri, startSegmentNumber, endSegmentNumber, super.hashCode());
+    return Objects.hash(audio, audioGroups, video, subtitles, closedCaptions, encodingId, streamId, muxingId, drmId, segmentPath, uri, startSegmentNumber, endSegmentNumber, forceFrameRateAttribute, forceVideoRangeAttribute, super.hashCode());
   }
 
 
@@ -275,6 +399,8 @@ public class StreamInfo extends BitmovinResource {
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
     sb.append("    startSegmentNumber: ").append(toIndentedString(startSegmentNumber)).append("\n");
     sb.append("    endSegmentNumber: ").append(toIndentedString(endSegmentNumber)).append("\n");
+    sb.append("    forceFrameRateAttribute: ").append(toIndentedString(forceFrameRateAttribute)).append("\n");
+    sb.append("    forceVideoRangeAttribute: ").append(toIndentedString(forceVideoRangeAttribute)).append("\n");
     sb.append("}");
     return sb.toString();
   }

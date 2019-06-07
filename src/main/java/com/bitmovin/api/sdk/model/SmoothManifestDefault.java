@@ -23,7 +23,7 @@ public class SmoothManifestDefault extends SmoothStreamingManifest {
   private String encodingId;
 
   @JsonProperty("version")
-  private SmoothManifestDefaultVersion version = null;
+  private SmoothManifestDefaultVersion version;
 
 
   /**
@@ -34,6 +34,12 @@ public class SmoothManifestDefault extends SmoothStreamingManifest {
     return encodingId;
   }
 
+  /**
+   * The id of the encoding to create a default manifest from
+   *
+   * @param encodingId
+   * The id of the encoding to create a default manifest from
+   */
   public void setEncodingId(String encodingId) {
     this.encodingId = encodingId;
   }
@@ -47,6 +53,12 @@ public class SmoothManifestDefault extends SmoothStreamingManifest {
     return version;
   }
 
+  /**
+   * The version of the default manifest generator
+   *
+   * @param version
+   * The version of the default manifest generator
+   */
   public void setVersion(SmoothManifestDefaultVersion version) {
     this.version = version;
   }

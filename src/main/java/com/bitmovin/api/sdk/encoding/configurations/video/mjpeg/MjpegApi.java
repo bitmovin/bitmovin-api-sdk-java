@@ -44,7 +44,7 @@ public class MjpegApi {
     /**
      * Create MJPEG Codec Configuration
      * 
-     * @param mjpegVideoConfiguration  (optional)
+     * @param mjpegVideoConfiguration  (required)
      * @return MjpegVideoConfiguration
      * @throws BitmovinException if fails to make API call
      */

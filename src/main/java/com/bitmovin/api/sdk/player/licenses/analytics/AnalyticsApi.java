@@ -42,7 +42,7 @@ public class AnalyticsApi {
      * Activate Analytics
      * 
      * @param licenseId Id of the Player License (required)
-     * @param playerLicenseAnalytics The Analytics key to be added to the Player License (optional)
+     * @param playerLicenseAnalytics The Analytics key to be added to the Player License (required)
      * @return PlayerLicenseAnalytics
      * @throws BitmovinException if fails to make API call
      */

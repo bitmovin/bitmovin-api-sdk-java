@@ -31,6 +31,12 @@ public class EncodingStatistics {
     return date;
   }
 
+  /**
+   * Date, format. yyyy-MM-dd
+   *
+   * @param date
+   * Date, format. yyyy-MM-dd
+   */
   public void setDate(Date date) {
     this.date = date;
   }
@@ -44,6 +50,12 @@ public class EncodingStatistics {
     return bytesEncoded;
   }
 
+  /**
+   * Bytes encoded for this encoding.
+   *
+   * @param bytesEncoded
+   * Bytes encoded for this encoding.
+   */
   public void setBytesEncoded(Long bytesEncoded) {
     this.bytesEncoded = bytesEncoded;
   }
@@ -57,6 +69,12 @@ public class EncodingStatistics {
     return timeEncoded;
   }
 
+  /**
+   * Time in seconds encoded for this encoding.
+   *
+   * @param timeEncoded
+   * Time in seconds encoded for this encoding.
+   */
   public void setTimeEncoded(Long timeEncoded) {
     this.timeEncoded = timeEncoded;
   }

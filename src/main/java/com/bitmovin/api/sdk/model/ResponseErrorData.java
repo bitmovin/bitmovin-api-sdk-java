@@ -42,6 +42,12 @@ public class ResponseErrorData {
     return code;
   }
 
+  /**
+   * Contains an error code as defined in https://bitmovin.com/encoding-documentation/bitmovin-api/#/introduction/api-error-codes 
+   *
+   * @param code
+   * Contains an error code as defined in https://bitmovin.com/encoding-documentation/bitmovin-api/#/introduction/api-error-codes 
+   */
   public void setCode(Integer code) {
     this.code = code;
   }
@@ -55,6 +61,12 @@ public class ResponseErrorData {
     return message;
   }
 
+  /**
+   * General error message
+   *
+   * @param message
+   * General error message
+   */
   public void setMessage(String message) {
     this.message = message;
   }
@@ -68,6 +80,12 @@ public class ResponseErrorData {
     return developerMessage;
   }
 
+  /**
+   * More detailed message meant for developers
+   *
+   * @param developerMessage
+   * More detailed message meant for developers
+   */
   public void setDeveloperMessage(String developerMessage) {
     this.developerMessage = developerMessage;
   }
@@ -89,6 +107,12 @@ public class ResponseErrorData {
     return links;
   }
 
+  /**
+   * collection of links to webpages containing further information on the topic
+   *
+   * @param links
+   * collection of links to webpages containing further information on the topic
+   */
   public void setLinks(List<Link> links) {
     this.links = links;
   }
@@ -110,6 +134,12 @@ public class ResponseErrorData {
     return details;
   }
 
+  /**
+   * collection of messages containing more detailed information on the cause of the error
+   *
+   * @param details
+   * collection of messages containing more detailed information on the cause of the error
+   */
   public void setDetails(List<Message> details) {
     this.details = details;
   }

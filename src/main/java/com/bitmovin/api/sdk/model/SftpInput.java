@@ -40,6 +40,12 @@ public class SftpInput extends Input {
     return host;
   }
 
+  /**
+   * Host Url or IP of the SFTP server
+   *
+   * @param host
+   * Host Url or IP of the SFTP server
+   */
   public void setHost(String host) {
     this.host = host;
   }
@@ -53,6 +59,12 @@ public class SftpInput extends Input {
     return port;
   }
 
+  /**
+   * Port to use, standard for SFTP: 22
+   *
+   * @param port
+   * Port to use, standard for SFTP: 22
+   */
   public void setPort(Integer port) {
     this.port = port;
   }
@@ -66,6 +78,12 @@ public class SftpInput extends Input {
     return passive;
   }
 
+  /**
+   * Use passive mode. Default is true.
+   *
+   * @param passive
+   * Use passive mode. Default is true.
+   */
   public void setPassive(Boolean passive) {
     this.passive = passive;
   }
@@ -79,6 +97,12 @@ public class SftpInput extends Input {
     return username;
   }
 
+  /**
+   * Your SFTP Username
+   *
+   * @param username
+   * Your SFTP Username
+   */
   public void setUsername(String username) {
     this.username = username;
   }
@@ -92,6 +116,12 @@ public class SftpInput extends Input {
     return password;
   }
 
+  /**
+   * Your SFTP password
+   *
+   * @param password
+   * Your SFTP password
+   */
   public void setPassword(String password) {
     this.password = password;
   }

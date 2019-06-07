@@ -44,7 +44,7 @@ public class GcsApi {
     /**
      * Create GCS Input
      * 
-     * @param gcsInput The GcsInput to be created (optional)
+     * @param gcsInput The GcsInput to be created (required)
      * @return GcsInput
      * @throws BitmovinException if fails to make API call
      */

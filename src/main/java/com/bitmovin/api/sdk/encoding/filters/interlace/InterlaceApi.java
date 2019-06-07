@@ -44,7 +44,7 @@ public class InterlaceApi {
     /**
      * Create Interlace Filter
      * 
-     * @param interlaceFilter  (optional)
+     * @param interlaceFilter  (required)
      * @return InterlaceFilter
      * @throws BitmovinException if fails to make API call
      */

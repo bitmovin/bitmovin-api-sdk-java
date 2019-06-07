@@ -44,7 +44,7 @@ public class UdpMulticastApi {
     /**
      * Create UDP multicast input
      * 
-     * @param udpMulticastInput The UdpMulticastInput to be created (optional)
+     * @param udpMulticastInput The UdpMulticastInput to be created (required)
      * @return UdpMulticastInput
      * @throws BitmovinException if fails to make API call
      */

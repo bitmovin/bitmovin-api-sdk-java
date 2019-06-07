@@ -23,10 +23,10 @@ public class HlsManifest extends Manifest {
   private String manifestName;
 
   @JsonProperty("hlsMediaPlaylistVersion")
-  private HlsVersion hlsMediaPlaylistVersion = null;
+  private HlsVersion hlsMediaPlaylistVersion;
 
   @JsonProperty("hlsMasterPlaylistVersion")
-  private HlsVersion hlsMasterPlaylistVersion = null;
+  private HlsVersion hlsMasterPlaylistVersion;
 
 
   /**
@@ -37,6 +37,12 @@ public class HlsManifest extends Manifest {
     return manifestName;
   }
 
+  /**
+   * The filename of your manifest
+   *
+   * @param manifestName
+   * The filename of your manifest
+   */
   public void setManifestName(String manifestName) {
     this.manifestName = manifestName;
   }
@@ -50,6 +56,12 @@ public class HlsManifest extends Manifest {
     return hlsMediaPlaylistVersion;
   }
 
+  /**
+   * If this is set, the EXT-X-VERSION tags of the Media Playlists are set to the provided version
+   *
+   * @param hlsMediaPlaylistVersion
+   * If this is set, the EXT-X-VERSION tags of the Media Playlists are set to the provided version
+   */
   public void setHlsMediaPlaylistVersion(HlsVersion hlsMediaPlaylistVersion) {
     this.hlsMediaPlaylistVersion = hlsMediaPlaylistVersion;
   }
@@ -63,6 +75,12 @@ public class HlsManifest extends Manifest {
     return hlsMasterPlaylistVersion;
   }
 
+  /**
+   * If this is set, the EXT-X-VERSION tag of the Master Playlist is set to the provided version
+   *
+   * @param hlsMasterPlaylistVersion
+   * If this is set, the EXT-X-VERSION tag of the Master Playlist is set to the provided version
+   */
   public void setHlsMasterPlaylistVersion(HlsVersion hlsMasterPlaylistVersion) {
     this.hlsMasterPlaylistVersion = hlsMasterPlaylistVersion;
   }

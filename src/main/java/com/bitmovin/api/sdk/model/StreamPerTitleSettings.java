@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class StreamPerTitleSettings {
   @JsonProperty("fixedResolutionAndBitrateSettings")
-  private StreamPerTitleFixedResolutionAndBitrateSettings fixedResolutionAndBitrateSettings = null;
+  private StreamPerTitleFixedResolutionAndBitrateSettings fixedResolutionAndBitrateSettings;
 
 
   /**
@@ -25,6 +25,12 @@ public class StreamPerTitleSettings {
     return fixedResolutionAndBitrateSettings;
   }
 
+  /**
+   * Settings for PER_TITLE_TEMPLATE_FIXED_RESOLUTION_AND_BITRATE mode
+   *
+   * @param fixedResolutionAndBitrateSettings
+   * Settings for PER_TITLE_TEMPLATE_FIXED_RESOLUTION_AND_BITRATE mode
+   */
   public void setFixedResolutionAndBitrateSettings(StreamPerTitleFixedResolutionAndBitrateSettings fixedResolutionAndBitrateSettings) {
     this.fixedResolutionAndBitrateSettings = fixedResolutionAndBitrateSettings;
   }

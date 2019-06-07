@@ -28,6 +28,12 @@ public class IFramePlaylist extends BitmovinResource {
     return filename;
   }
 
+  /**
+   * The filename of your I-frame playlist
+   *
+   * @param filename
+   * The filename of your I-frame playlist
+   */
   public void setFilename(String filename) {
     this.filename = filename;
   }

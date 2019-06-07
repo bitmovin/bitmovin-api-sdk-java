@@ -48,7 +48,7 @@ public class CmafApi {
      * Add CMAF muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param cmafMuxing  (optional)
+     * @param cmafMuxing  (required)
      * @return CmafMuxing
      * @throws BitmovinException if fails to make API call
      */

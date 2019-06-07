@@ -45,7 +45,7 @@ public class ContentprotectionApi {
      * @param periodId Id of the period (required)
      * @param adaptationsetId Id of the adaptation set (required)
      * @param representationId Id of the representation (required)
-     * @param contentProtection The content protection to be added to the WebM representation (optional)
+     * @param contentProtection The content protection to be added to the WebM representation (required)
      * @return ContentProtection
      * @throws BitmovinException if fails to make API call
      */

@@ -44,7 +44,7 @@ public class SftpApi {
     /**
      * Create SFTP Output
      * 
-     * @param sftpOutput The SFTP output to be created. (optional)
+     * @param sftpOutput The SFTP output to be created. (required)
      * @return SftpOutput
      * @throws BitmovinException if fails to make API call
      */

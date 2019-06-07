@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class InputStreamTypeResponse {
   @JsonProperty("type")
-  private InputStreamType type = null;
+  private InputStreamType type;
 
 
   /**
@@ -25,6 +25,12 @@ public class InputStreamTypeResponse {
     return type;
   }
 
+  /**
+   * The type of the input stream
+   *
+   * @param type
+   * The type of the input stream
+   */
   public void setType(InputStreamType type) {
     this.type = type;
   }

@@ -27,6 +27,12 @@ public class DashCmafDrmRepresentation extends DashCmafRepresentation {
     return drmId;
   }
 
+  /**
+   * DRM Id
+   *
+   * @param drmId
+   * DRM Id
+   */
   public void setDrmId(String drmId) {
     this.drmId = drmId;
   }

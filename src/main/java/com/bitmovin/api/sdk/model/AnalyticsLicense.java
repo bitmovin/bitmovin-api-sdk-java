@@ -28,6 +28,12 @@ public class AnalyticsLicense extends BitmovinResponse {
     return name;
   }
 
+  /**
+   * Name of the Analytics License
+   *
+   * @param name
+   * Name of the Analytics License
+   */
   public void setName(String name) {
     this.name = name;
   }
@@ -41,6 +47,12 @@ public class AnalyticsLicense extends BitmovinResponse {
     return licenseKey;
   }
 
+  /**
+   * License Key
+   *
+   * @param licenseKey
+   * License Key
+   */
   public void setLicenseKey(String licenseKey) {
     this.licenseKey = licenseKey;
   }

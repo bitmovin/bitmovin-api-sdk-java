@@ -42,7 +42,7 @@ public class TimecodeTrackApi {
      * Add Timecode Track Trimming Input Stream
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param timecodeTrackTrimmingInputStream  (optional)
+     * @param timecodeTrackTrimmingInputStream  (required)
      * @return TimecodeTrackTrimmingInputStream
      * @throws BitmovinException if fails to make API call
      */

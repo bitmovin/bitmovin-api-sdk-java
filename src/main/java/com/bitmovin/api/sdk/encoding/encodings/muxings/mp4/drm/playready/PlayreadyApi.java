@@ -46,7 +46,7 @@ public class PlayreadyApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP4 muxing. (required)
-     * @param playReadyDrm  (optional)
+     * @param playReadyDrm  (required)
      * @return PlayReadyDrm
      * @throws BitmovinException if fails to make API call
      */

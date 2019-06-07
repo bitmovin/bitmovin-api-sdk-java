@@ -48,7 +48,7 @@ public class Mp3Api {
      * Add MP3 Muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param mp3Muxing  (optional)
+     * @param mp3Muxing  (required)
      * @return Mp3Muxing
      * @throws BitmovinException if fails to make API call
      */

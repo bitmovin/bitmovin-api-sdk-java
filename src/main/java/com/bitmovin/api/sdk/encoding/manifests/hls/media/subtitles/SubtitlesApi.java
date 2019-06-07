@@ -42,7 +42,7 @@ public class SubtitlesApi {
      * Add Subtitles Media
      * 
      * @param manifestId Id of the hls manifest. (required)
-     * @param subtitlesMediaInfo  (optional)
+     * @param subtitlesMediaInfo  (required)
      * @return SubtitlesMediaInfo
      * @throws BitmovinException if fails to make API call
      */

@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
 public class TextFilter extends Filter {
   @JsonProperty("font")
-  private TextFilterFont font = null;
+  private TextFilterFont font;
 
   @JsonProperty("box")
   private Boolean box;
@@ -80,6 +80,11 @@ public class TextFilter extends Filter {
     return font;
   }
 
+  /**
+   * Set font
+   *
+   * @param font
+   */
   public void setFont(TextFilterFont font) {
     this.font = font;
   }
@@ -93,6 +98,12 @@ public class TextFilter extends Filter {
     return box;
   }
 
+  /**
+   * If set to true a box is drawn around the text using the background color.
+   *
+   * @param box
+   * If set to true a box is drawn around the text using the background color.
+   */
   public void setBox(Boolean box) {
     this.box = box;
   }
@@ -106,6 +117,12 @@ public class TextFilter extends Filter {
     return boxBorderWidth;
   }
 
+  /**
+   * The width of the box drawn around the text.
+   *
+   * @param boxBorderWidth
+   * The width of the box drawn around the text.
+   */
   public void setBoxBorderWidth(Integer boxBorderWidth) {
     this.boxBorderWidth = boxBorderWidth;
   }
@@ -119,6 +136,12 @@ public class TextFilter extends Filter {
     return boxColor;
   }
 
+  /**
+   * The background color to be used for drawing the box.
+   *
+   * @param boxColor
+   * The background color to be used for drawing the box.
+   */
   public void setBoxColor(String boxColor) {
     this.boxColor = boxColor;
   }
@@ -132,6 +155,12 @@ public class TextFilter extends Filter {
     return lineSpacing;
   }
 
+  /**
+   * Line spacing of the border around the box in pixels
+   *
+   * @param lineSpacing
+   * Line spacing of the border around the box in pixels
+   */
   public void setLineSpacing(Integer lineSpacing) {
     this.lineSpacing = lineSpacing;
   }
@@ -145,6 +174,12 @@ public class TextFilter extends Filter {
     return borderWidth;
   }
 
+  /**
+   * Width of the border around the text
+   *
+   * @param borderWidth
+   * Width of the border around the text
+   */
   public void setBorderWidth(Integer borderWidth) {
     this.borderWidth = borderWidth;
   }
@@ -158,6 +193,12 @@ public class TextFilter extends Filter {
     return fixBounds;
   }
 
+  /**
+   * If set to true, it will fix text coordinates to avoid clipping if necessary
+   *
+   * @param fixBounds
+   * If set to true, it will fix text coordinates to avoid clipping if necessary
+   */
   public void setFixBounds(Boolean fixBounds) {
     this.fixBounds = fixBounds;
   }
@@ -171,6 +212,12 @@ public class TextFilter extends Filter {
     return fontColor;
   }
 
+  /**
+   * The color to be used to draw the text
+   *
+   * @param fontColor
+   * The color to be used to draw the text
+   */
   public void setFontColor(String fontColor) {
     this.fontColor = fontColor;
   }
@@ -184,6 +231,12 @@ public class TextFilter extends Filter {
     return fontSize;
   }
 
+  /**
+   * Font size to be used to draw the text
+   *
+   * @param fontSize
+   * Font size to be used to draw the text
+   */
   public void setFontSize(Integer fontSize) {
     this.fontSize = fontSize;
   }
@@ -197,6 +250,12 @@ public class TextFilter extends Filter {
     return fontSizeExpression;
   }
 
+  /**
+   * An expression for the Font size. Either fontSize or fontSizeExpression can be set at the same time. The following variables are valid: main_h, h, H for input height and main_w, w, W for the input_width
+   *
+   * @param fontSizeExpression
+   * An expression for the Font size. Either fontSize or fontSizeExpression can be set at the same time. The following variables are valid: main_h, h, H for input height and main_w, w, W for the input_width
+   */
   public void setFontSizeExpression(String fontSizeExpression) {
     this.fontSizeExpression = fontSizeExpression;
   }
@@ -210,6 +269,12 @@ public class TextFilter extends Filter {
     return alpha;
   }
 
+  /**
+   * If set, alpha blending for the text is applied. Values are valid between 0.0 and 1.0.
+   *
+   * @param alpha
+   * If set, alpha blending for the text is applied. Values are valid between 0.0 and 1.0.
+   */
   public void setAlpha(Integer alpha) {
     this.alpha = alpha;
   }
@@ -223,6 +288,12 @@ public class TextFilter extends Filter {
     return shadowColor;
   }
 
+  /**
+   * Color of the shadow
+   *
+   * @param shadowColor
+   * Color of the shadow
+   */
   public void setShadowColor(String shadowColor) {
     this.shadowColor = shadowColor;
   }
@@ -236,6 +307,12 @@ public class TextFilter extends Filter {
     return shadowX;
   }
 
+  /**
+   * X offset of the shadow
+   *
+   * @param shadowX
+   * X offset of the shadow
+   */
   public void setShadowX(Integer shadowX) {
     this.shadowX = shadowX;
   }
@@ -249,6 +326,12 @@ public class TextFilter extends Filter {
     return shadowY;
   }
 
+  /**
+   * Y offset of the shadow
+   *
+   * @param shadowY
+   * Y offset of the shadow
+   */
   public void setShadowY(Integer shadowY) {
     this.shadowY = shadowY;
   }
@@ -262,6 +345,12 @@ public class TextFilter extends Filter {
     return timecode;
   }
 
+  /**
+   * If set, the timecode representation in \&quot;hh:mm:ss[:;.]ff\&quot; format will be applied
+   *
+   * @param timecode
+   * If set, the timecode representation in \&quot;hh:mm:ss[:;.]ff\&quot; format will be applied
+   */
   public void setTimecode(String timecode) {
     this.timecode = timecode;
   }
@@ -275,6 +364,12 @@ public class TextFilter extends Filter {
     return text;
   }
 
+  /**
+   * String to be drawn
+   *
+   * @param text
+   * String to be drawn
+   */
   public void setText(String text) {
     this.text = text;
   }
@@ -288,6 +383,12 @@ public class TextFilter extends Filter {
     return x;
   }
 
+  /**
+   * X position of the text. Also an expression can be used. The following variables are valid: line_h - height of each text line; main_h - input height; main_w - input width; n - number of input frame; text_h - Text height; text_w - Text width
+   *
+   * @param x
+   * X position of the text. Also an expression can be used. The following variables are valid: line_h - height of each text line; main_h - input height; main_w - input width; n - number of input frame; text_h - Text height; text_w - Text width
+   */
   public void setX(String x) {
     this.x = x;
   }
@@ -301,6 +402,12 @@ public class TextFilter extends Filter {
     return y;
   }
 
+  /**
+   * Y position of the text. Also an expression can be used. The following variables are valid: line_h - height of each text line; main_h - input height; main_w - input width; n - number of input frame; text_h - Text height; text_w - Text width
+   *
+   * @param y
+   * Y position of the text. Also an expression can be used. The following variables are valid: line_h - height of each text line; main_h - input height; main_w - input width; n - number of input frame; text_h - Text height; text_w - Text width
+   */
   public void setY(String y) {
     this.y = y;
   }

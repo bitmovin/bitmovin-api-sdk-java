@@ -18,19 +18,19 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class BillableEncodingMinutes {
   @JsonProperty("encodingMode")
-  private EncodingMode encodingMode = null;
+  private EncodingMode encodingMode;
 
   @JsonProperty("codec")
-  private CodecConfigType codec = null;
+  private CodecConfigType codec;
 
   @JsonProperty("perTitleResultStream")
-  private StatisticsPerTitleStream perTitleResultStream = null;
+  private StatisticsPerTitleStream perTitleResultStream;
 
   @JsonProperty("psnrMode")
-  private PsnrPerStreamMode psnrMode = null;
+  private PsnrPerStreamMode psnrMode;
 
   @JsonProperty("billableMinutes")
-  private BillableEncodingMinutesDetails billableMinutes = null;
+  private BillableEncodingMinutesDetails billableMinutes;
 
 
   /**
@@ -41,6 +41,11 @@ public class BillableEncodingMinutes {
     return encodingMode;
   }
 
+  /**
+   * Set encodingMode
+   *
+   * @param encodingMode
+   */
   public void setEncodingMode(EncodingMode encodingMode) {
     this.encodingMode = encodingMode;
   }
@@ -54,6 +59,11 @@ public class BillableEncodingMinutes {
     return codec;
   }
 
+  /**
+   * Set codec
+   *
+   * @param codec
+   */
   public void setCodec(CodecConfigType codec) {
     this.codec = codec;
   }
@@ -67,6 +77,11 @@ public class BillableEncodingMinutes {
     return perTitleResultStream;
   }
 
+  /**
+   * Set perTitleResultStream
+   *
+   * @param perTitleResultStream
+   */
   public void setPerTitleResultStream(StatisticsPerTitleStream perTitleResultStream) {
     this.perTitleResultStream = perTitleResultStream;
   }
@@ -80,6 +95,11 @@ public class BillableEncodingMinutes {
     return psnrMode;
   }
 
+  /**
+   * Set psnrMode
+   *
+   * @param psnrMode
+   */
   public void setPsnrMode(PsnrPerStreamMode psnrMode) {
     this.psnrMode = psnrMode;
   }
@@ -93,6 +113,11 @@ public class BillableEncodingMinutes {
     return billableMinutes;
   }
 
+  /**
+   * Set billableMinutes
+   *
+   * @param billableMinutes
+   */
   public void setBillableMinutes(BillableEncodingMinutesDetails billableMinutes) {
     this.billableMinutes = billableMinutes;
   }

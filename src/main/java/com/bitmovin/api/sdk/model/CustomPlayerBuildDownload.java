@@ -28,6 +28,12 @@ public class CustomPlayerBuildDownload {
     return downloadLink;
   }
 
+  /**
+   * The link to download the custom built player
+   *
+   * @param downloadLink
+   * The link to download the custom built player
+   */
   public void setDownloadLink(String downloadLink) {
     this.downloadLink = downloadLink;
   }
@@ -41,6 +47,12 @@ public class CustomPlayerBuildDownload {
     return expiresAt;
   }
 
+  /**
+   * Until this date the download link is valid and can be downloaded.
+   *
+   * @param expiresAt
+   * Until this date the download link is valid and can be downloaded.
+   */
   public void setExpiresAt(Date expiresAt) {
     this.expiresAt = expiresAt;
   }

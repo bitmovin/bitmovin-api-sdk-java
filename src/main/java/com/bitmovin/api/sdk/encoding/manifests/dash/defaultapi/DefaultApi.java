@@ -41,7 +41,7 @@ public class DefaultApi {
     /**
      * Create DASH Manifest Default
      * 
-     * @param dashManifestDefault The DASH Manifest Default to be created (optional)
+     * @param dashManifestDefault The DASH Manifest Default to be created (required)
      * @return DashManifestDefault
      * @throws BitmovinException if fails to make API call
      */

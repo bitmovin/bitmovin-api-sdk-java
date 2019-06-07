@@ -48,7 +48,7 @@ public class ObjectDetectionApi {
      * Add object detection configuration to an encoding
      * 
      * @param encodingId Id of the encoding (required)
-     * @param objectDetectionConfiguration The object detection configuration to be created (optional)
+     * @param objectDetectionConfiguration The object detection configuration to be created (required)
      * @return ObjectDetectionConfiguration
      * @throws BitmovinException if fails to make API call
      */

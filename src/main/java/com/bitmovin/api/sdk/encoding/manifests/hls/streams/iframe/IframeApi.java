@@ -43,7 +43,7 @@ public class IframeApi {
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param streamId Id of the variant stream. (required)
-     * @param iframePlaylist  (optional)
+     * @param iframePlaylist  (required)
      * @return IFramePlaylist
      * @throws BitmovinException if fails to make API call
      */

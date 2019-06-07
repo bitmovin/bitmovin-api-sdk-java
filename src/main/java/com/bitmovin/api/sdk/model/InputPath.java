@@ -27,6 +27,12 @@ public class InputPath {
     return inputId;
   }
 
+  /**
+   * Id of input
+   *
+   * @param inputId
+   * Id of input
+   */
   public void setInputId(String inputId) {
     this.inputId = inputId;
   }
@@ -40,6 +46,12 @@ public class InputPath {
     return inputPath;
   }
 
+  /**
+   * Path to media file
+   *
+   * @param inputPath
+   * Path to media file
+   */
   public void setInputPath(String inputPath) {
     this.inputPath = inputPath;
   }

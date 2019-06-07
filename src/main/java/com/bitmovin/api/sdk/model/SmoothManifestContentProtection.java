@@ -34,6 +34,12 @@ public class SmoothManifestContentProtection extends BitmovinResource {
     return encodingId;
   }
 
+  /**
+   * Id of the encoding.
+   *
+   * @param encodingId
+   * Id of the encoding.
+   */
   public void setEncodingId(String encodingId) {
     this.encodingId = encodingId;
   }
@@ -47,6 +53,12 @@ public class SmoothManifestContentProtection extends BitmovinResource {
     return muxingId;
   }
 
+  /**
+   * Id of the muxing.
+   *
+   * @param muxingId
+   * Id of the muxing.
+   */
   public void setMuxingId(String muxingId) {
     this.muxingId = muxingId;
   }
@@ -60,6 +72,12 @@ public class SmoothManifestContentProtection extends BitmovinResource {
     return drmId;
   }
 
+  /**
+   * Id of the drm.
+   *
+   * @param drmId
+   * Id of the drm.
+   */
   public void setDrmId(String drmId) {
     this.drmId = drmId;
   }

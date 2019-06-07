@@ -24,7 +24,7 @@ public class IngestInputStream extends InputStream {
   private String inputPath;
 
   @JsonProperty("selectionMode")
-  private StreamSelectionMode selectionMode = null;
+  private StreamSelectionMode selectionMode;
 
   @JsonProperty("position")
   private Integer position;
@@ -38,6 +38,12 @@ public class IngestInputStream extends InputStream {
     return inputId;
   }
 
+  /**
+   * Id of input
+   *
+   * @param inputId
+   * Id of input
+   */
   public void setInputId(String inputId) {
     this.inputId = inputId;
   }
@@ -51,6 +57,12 @@ public class IngestInputStream extends InputStream {
     return inputPath;
   }
 
+  /**
+   * Path to media file
+   *
+   * @param inputPath
+   * Path to media file
+   */
   public void setInputPath(String inputPath) {
     this.inputPath = inputPath;
   }
@@ -64,6 +76,12 @@ public class IngestInputStream extends InputStream {
     return selectionMode;
   }
 
+  /**
+   * Specifies the algorithm how the stream in the input file will be selected
+   *
+   * @param selectionMode
+   * Specifies the algorithm how the stream in the input file will be selected
+   */
   public void setSelectionMode(StreamSelectionMode selectionMode) {
     this.selectionMode = selectionMode;
   }
@@ -77,6 +95,12 @@ public class IngestInputStream extends InputStream {
     return position;
   }
 
+  /**
+   * Position of the stream
+   *
+   * @param position
+   * Position of the stream
+   */
   public void setPosition(Integer position) {
     this.position = position;
   }

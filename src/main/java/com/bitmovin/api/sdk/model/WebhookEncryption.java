@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class WebhookEncryption {
   @JsonProperty("type")
-  private EncryptionType type = null;
+  private EncryptionType type;
 
   @JsonProperty("key")
   private String key;
@@ -28,6 +28,12 @@ public class WebhookEncryption {
     return type;
   }
 
+  /**
+   * The encryption algorithm used for the webhook
+   *
+   * @param type
+   * The encryption algorithm used for the webhook
+   */
   public void setType(EncryptionType type) {
     this.type = type;
   }
@@ -41,6 +47,12 @@ public class WebhookEncryption {
     return key;
   }
 
+  /**
+   * The key of the encryption
+   *
+   * @param key
+   * The key of the encryption
+   */
   public void setKey(String key) {
     this.key = key;
   }

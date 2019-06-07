@@ -31,13 +31,13 @@ public class StartLiveEncodingRequest {
   private List<LiveDashManifest> dashManifests = new ArrayList<LiveDashManifest>();
 
   @JsonProperty("liveEncodingMode")
-  private EncodingMode liveEncodingMode = null;
+  private EncodingMode liveEncodingMode;
 
   @JsonProperty("reuploadSettings")
-  private ReuploadSettings reuploadSettings = null;
+  private ReuploadSettings reuploadSettings;
 
   @JsonProperty("autoRestartConfiguration")
-  private AutoRestartConfiguration autoRestartConfiguration = null;
+  private AutoRestartConfiguration autoRestartConfiguration;
 
 
   /**
@@ -48,6 +48,12 @@ public class StartLiveEncodingRequest {
     return streamKey;
   }
 
+  /**
+   * Key for the stream. (a-zA-Z, 3-20 characters)
+   *
+   * @param streamKey
+   * Key for the stream. (a-zA-Z, 3-20 characters)
+   */
   public void setStreamKey(String streamKey) {
     this.streamKey = streamKey;
   }
@@ -69,6 +75,12 @@ public class StartLiveEncodingRequest {
     return hlsManifests;
   }
 
+  /**
+   * List of Hls manifests to use for this live encoding
+   *
+   * @param hlsManifests
+   * List of Hls manifests to use for this live encoding
+   */
   public void setHlsManifests(List<LiveHlsManifest> hlsManifests) {
     this.hlsManifests = hlsManifests;
   }
@@ -90,6 +102,12 @@ public class StartLiveEncodingRequest {
     return dashManifests;
   }
 
+  /**
+   * List of Dash manifests to use for this live encoding
+   *
+   * @param dashManifests
+   * List of Dash manifests to use for this live encoding
+   */
   public void setDashManifests(List<LiveDashManifest> dashManifests) {
     this.dashManifests = dashManifests;
   }
@@ -103,6 +121,12 @@ public class StartLiveEncodingRequest {
     return liveEncodingMode;
   }
 
+  /**
+   * The pass mode of the encoding
+   *
+   * @param liveEncodingMode
+   * The pass mode of the encoding
+   */
   public void setLiveEncodingMode(EncodingMode liveEncodingMode) {
     this.liveEncodingMode = liveEncodingMode;
   }
@@ -116,6 +140,12 @@ public class StartLiveEncodingRequest {
     return reuploadSettings;
   }
 
+  /**
+   * Reupload specific files during a live encoding. This can be helpful if an automatic life cycle policy is enabled on the output storage
+   *
+   * @param reuploadSettings
+   * Reupload specific files during a live encoding. This can be helpful if an automatic life cycle policy is enabled on the output storage
+   */
   public void setReuploadSettings(ReuploadSettings reuploadSettings) {
     this.reuploadSettings = reuploadSettings;
   }
@@ -129,6 +159,12 @@ public class StartLiveEncodingRequest {
     return autoRestartConfiguration;
   }
 
+  /**
+   * Configuration for auto restarting the live encoding
+   *
+   * @param autoRestartConfiguration
+   * Configuration for auto restarting the live encoding
+   */
   public void setAutoRestartConfiguration(AutoRestartConfiguration autoRestartConfiguration) {
     this.autoRestartConfiguration = autoRestartConfiguration;
   }

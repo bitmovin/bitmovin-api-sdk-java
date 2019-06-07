@@ -24,7 +24,7 @@ public class ObjectDetectionResult extends BitmovinResponse {
   private Double score;
 
   @JsonProperty("boundingBox")
-  private ObjectDetectionBoundingBox boundingBox = null;
+  private ObjectDetectionBoundingBox boundingBox;
 
 
   /**
@@ -35,6 +35,12 @@ public class ObjectDetectionResult extends BitmovinResponse {
     return detectedObject;
   }
 
+  /**
+   * Name of the object that has been detected (in English)
+   *
+   * @param detectedObject
+   * Name of the object that has been detected (in English)
+   */
   public void setDetectedObject(String detectedObject) {
     this.detectedObject = detectedObject;
   }
@@ -48,6 +54,12 @@ public class ObjectDetectionResult extends BitmovinResponse {
     return timestamp;
   }
 
+  /**
+   * Time in seconds where the object was detected in the video
+   *
+   * @param timestamp
+   * Time in seconds where the object was detected in the video
+   */
   public void setTimestamp(Double timestamp) {
     this.timestamp = timestamp;
   }
@@ -61,6 +73,12 @@ public class ObjectDetectionResult extends BitmovinResponse {
     return score;
   }
 
+  /**
+   * A number between 0 and 1 indicating the confidence of the detection
+   *
+   * @param score
+   * A number between 0 and 1 indicating the confidence of the detection
+   */
   public void setScore(Double score) {
     this.score = score;
   }
@@ -74,6 +92,12 @@ public class ObjectDetectionResult extends BitmovinResponse {
     return boundingBox;
   }
 
+  /**
+   * A box indicating the position and size of the detected object within the frame
+   *
+   * @param boundingBox
+   * A box indicating the position and size of the detected object within the frame
+   */
   public void setBoundingBox(ObjectDetectionBoundingBox boundingBox) {
     this.boundingBox = boundingBox;
   }

@@ -20,7 +20,7 @@ public class PerTitleFixedResolutionAndBitrateConfiguration {
   private Double forcedRenditionAboveHighestFixedRepresentationFactor;
 
   @JsonProperty("forcedRenditionAboveHighestFixedRepresentationCalculationMode")
-  private PerTitleFixedResolutionAndBitrateConfigurationMode forcedRenditionAboveHighestFixedRepresentationCalculationMode = null;
+  private PerTitleFixedResolutionAndBitrateConfigurationMode forcedRenditionAboveHighestFixedRepresentationCalculationMode;
 
 
   /**
@@ -32,6 +32,14 @@ public class PerTitleFixedResolutionAndBitrateConfiguration {
     return forcedRenditionAboveHighestFixedRepresentation;
   }
 
+  /**
+   * Number of forced renditions above the highest fixed representation (e.g. FIXED_RESOLUTION_AND_BITRATE). Forced renditions will be added, also if the Per-Title algorithm chooses the user defined force rendition to be the highest one.
+   * minimum: 1
+   *
+   * @param forcedRenditionAboveHighestFixedRepresentation
+   * Number of forced renditions above the highest fixed representation (e.g. FIXED_RESOLUTION_AND_BITRATE). Forced renditions will be added, also if the Per-Title algorithm chooses the user defined force rendition to be the highest one.
+   * minimum: 1
+   */
   public void setForcedRenditionAboveHighestFixedRepresentation(Integer forcedRenditionAboveHighestFixedRepresentation) {
     this.forcedRenditionAboveHighestFixedRepresentation = forcedRenditionAboveHighestFixedRepresentation;
   }
@@ -45,6 +53,12 @@ public class PerTitleFixedResolutionAndBitrateConfiguration {
     return forcedRenditionAboveHighestFixedRepresentationFactor;
   }
 
+  /**
+   * The factor to calculate the bitrate that will be chosen based on the bitrate of the last FIXED_RESOLUTION.
+   *
+   * @param forcedRenditionAboveHighestFixedRepresentationFactor
+   * The factor to calculate the bitrate that will be chosen based on the bitrate of the last FIXED_RESOLUTION.
+   */
   public void setForcedRenditionAboveHighestFixedRepresentationFactor(Double forcedRenditionAboveHighestFixedRepresentationFactor) {
     this.forcedRenditionAboveHighestFixedRepresentationFactor = forcedRenditionAboveHighestFixedRepresentationFactor;
   }
@@ -58,6 +72,12 @@ public class PerTitleFixedResolutionAndBitrateConfiguration {
     return forcedRenditionAboveHighestFixedRepresentationCalculationMode;
   }
 
+  /**
+   * Mode to calculate the bitrate of the next representation
+   *
+   * @param forcedRenditionAboveHighestFixedRepresentationCalculationMode
+   * Mode to calculate the bitrate of the next representation
+   */
   public void setForcedRenditionAboveHighestFixedRepresentationCalculationMode(PerTitleFixedResolutionAndBitrateConfigurationMode forcedRenditionAboveHighestFixedRepresentationCalculationMode) {
     this.forcedRenditionAboveHighestFixedRepresentationCalculationMode = forcedRenditionAboveHighestFixedRepresentationCalculationMode;
   }

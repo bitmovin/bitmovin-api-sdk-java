@@ -44,7 +44,7 @@ public class HttpsApi {
     /**
      * Create HTTPS Input
      * 
-     * @param httpsInput The Https input to be created (optional)
+     * @param httpsInput The Https input to be created (required)
      * @return HttpsInput
      * @throws BitmovinException if fails to make API call
      */

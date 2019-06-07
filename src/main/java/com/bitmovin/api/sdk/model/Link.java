@@ -27,6 +27,12 @@ public class Link {
     return href;
   }
 
+  /**
+   * webpage target URL
+   *
+   * @param href
+   * webpage target URL
+   */
   public void setHref(String href) {
     this.href = href;
   }
@@ -40,6 +46,12 @@ public class Link {
     return title;
   }
 
+  /**
+   * Short description of the linked page
+   *
+   * @param title
+   * Short description of the linked page
+   */
   public void setTitle(String title) {
     this.title = title;
   }

@@ -44,7 +44,7 @@ public class SrtApi {
     /**
      * Create SRT input
      * 
-     * @param srtInput The SrtInput to be created (optional)
+     * @param srtInput The SrtInput to be created (required)
      * @return SrtInput
      * @throws BitmovinException if fails to make API call
      */

@@ -27,6 +27,12 @@ public class AnalyticsExportTaskOutputTarget {
     return outputPath;
   }
 
+  /**
+   * Path where the export should be saved
+   *
+   * @param outputPath
+   * Path where the export should be saved
+   */
   public void setOutputPath(String outputPath) {
     this.outputPath = outputPath;
   }
@@ -40,6 +46,12 @@ public class AnalyticsExportTaskOutputTarget {
     return outputId;
   }
 
+  /**
+   * Id of the output that should be used
+   *
+   * @param outputId
+   * Id of the output that should be used
+   */
   public void setOutputId(String outputId) {
     this.outputId = outputId;
   }

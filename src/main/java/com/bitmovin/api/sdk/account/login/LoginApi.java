@@ -41,7 +41,7 @@ public class LoginApi {
     /**
      * Login
      * 
-     * @param login  (optional)
+     * @param login  (required)
      * @return AccountInformation
      * @throws BitmovinException if fails to make API call
      */

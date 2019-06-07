@@ -23,7 +23,7 @@ public class ErrorDetails {
   private String text;
 
   @JsonProperty("retryHint")
-  private RetryHint retryHint = null;
+  private RetryHint retryHint;
 
 
   /**
@@ -34,6 +34,12 @@ public class ErrorDetails {
     return code;
   }
 
+  /**
+   * Specific error code
+   *
+   * @param code
+   * Specific error code
+   */
   public void setCode(Integer code) {
     this.code = code;
   }
@@ -47,6 +53,12 @@ public class ErrorDetails {
     return category;
   }
 
+  /**
+   * Error group name
+   *
+   * @param category
+   * Error group name
+   */
   public void setCategory(String category) {
     this.category = category;
   }
@@ -60,6 +72,12 @@ public class ErrorDetails {
     return text;
   }
 
+  /**
+   * Detailed error message
+   *
+   * @param text
+   * Detailed error message
+   */
   public void setText(String text) {
     this.text = text;
   }
@@ -73,6 +91,12 @@ public class ErrorDetails {
     return retryHint;
   }
 
+  /**
+   * Information if the encoding could potentially succeed when retrying.
+   *
+   * @param retryHint
+   * Information if the encoding could potentially succeed when retrying.
+   */
   public void setRetryHint(RetryHint retryHint) {
     this.retryHint = retryHint;
   }

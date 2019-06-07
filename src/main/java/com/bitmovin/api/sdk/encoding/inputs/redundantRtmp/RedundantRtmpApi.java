@@ -41,7 +41,7 @@ public class RedundantRtmpApi {
     /**
      * Create Redundant RTMP Input
      * 
-     * @param redundantRtmpInput The Redundant RTMP input to be created (optional)
+     * @param redundantRtmpInput The Redundant RTMP input to be created (required)
      * @return RedundantRtmpInput
      * @throws BitmovinException if fails to make API call
      */

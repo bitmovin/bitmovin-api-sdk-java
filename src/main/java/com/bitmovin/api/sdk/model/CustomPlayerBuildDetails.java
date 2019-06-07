@@ -33,6 +33,12 @@ public class CustomPlayerBuildDetails extends BitmovinResource {
     return playerVersion;
   }
 
+  /**
+   * The player version that should be used for the custom player build. If not set the &#39;latest&#39; version is used. 
+   *
+   * @param playerVersion
+   * The player version that should be used for the custom player build. If not set the &#39;latest&#39; version is used. 
+   */
   public void setPlayerVersion(String playerVersion) {
     this.playerVersion = playerVersion;
   }
@@ -51,6 +57,12 @@ public class CustomPlayerBuildDetails extends BitmovinResource {
     return domains;
   }
 
+  /**
+   * The domains that the player is locked to. If not set the player will only work with &#39;localhost&#39;. Not more than 49 additional domains can be added. 
+   *
+   * @param domains
+   * The domains that the player is locked to. If not set the player will only work with &#39;localhost&#39;. Not more than 49 additional domains can be added. 
+   */
   public void setDomains(List<String> domains) {
     this.domains = domains;
   }

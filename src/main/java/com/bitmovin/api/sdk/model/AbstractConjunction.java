@@ -36,6 +36,12 @@ public class AbstractConjunction extends AbstractCondition {
     return conditions;
   }
 
+  /**
+   * Array to perform the AND/OR evaluation on
+   *
+   * @param conditions
+   * Array to perform the AND/OR evaluation on
+   */
   public void setConditions(List<AbstractCondition> conditions) {
     this.conditions = conditions;
   }

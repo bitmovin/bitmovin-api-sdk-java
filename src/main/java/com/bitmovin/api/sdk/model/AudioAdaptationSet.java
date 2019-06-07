@@ -29,6 +29,12 @@ public class AudioAdaptationSet extends AdaptationSet {
     return lang;
   }
 
+  /**
+   * ISO 639-1 (Alpha-2) code identifying the language of the audio adaptation set
+   *
+   * @param lang
+   * ISO 639-1 (Alpha-2) code identifying the language of the audio adaptation set
+   */
   public void setLang(String lang) {
     this.lang = lang;
   }

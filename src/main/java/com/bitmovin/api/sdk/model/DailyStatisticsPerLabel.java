@@ -34,6 +34,12 @@ public class DailyStatisticsPerLabel {
     return date;
   }
 
+  /**
+   * Date, format. yyyy-MM-dd
+   *
+   * @param date
+   * Date, format. yyyy-MM-dd
+   */
   public void setDate(Date date) {
     this.date = date;
   }
@@ -52,6 +58,12 @@ public class DailyStatisticsPerLabel {
     return labels;
   }
 
+  /**
+   * List of labels and their aggregated statistics
+   *
+   * @param labels
+   * List of labels and their aggregated statistics
+   */
   public void setLabels(List<DailyStatistics> labels) {
     this.labels = labels;
   }

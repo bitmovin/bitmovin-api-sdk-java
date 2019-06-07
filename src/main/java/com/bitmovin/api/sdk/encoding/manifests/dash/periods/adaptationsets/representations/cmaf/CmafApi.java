@@ -50,7 +50,7 @@ public class CmafApi {
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
      * @param adaptationsetId Id of the adaptation set (required)
-     * @param dashCmafRepresentation The CMAF representation to be added to the adaptation set (optional)
+     * @param dashCmafRepresentation The CMAF representation to be added to the adaptation set (required)
      * @return DashCmafRepresentation
      * @throws BitmovinException if fails to make API call
      */

@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
 public class AudioMixInputStream extends InputStream {
   @JsonProperty("channelLayout")
-  private AudioMixInputChannelLayout channelLayout = null;
+  private AudioMixInputChannelLayout channelLayout;
 
   @JsonProperty("audioMixChannels")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -35,6 +35,12 @@ public class AudioMixInputStream extends InputStream {
     return channelLayout;
   }
 
+  /**
+   * Channel layout of the audio mix input stream
+   *
+   * @param channelLayout
+   * Channel layout of the audio mix input stream
+   */
   public void setChannelLayout(AudioMixInputChannelLayout channelLayout) {
     this.channelLayout = channelLayout;
   }
@@ -56,6 +62,11 @@ public class AudioMixInputStream extends InputStream {
     return audioMixChannels;
   }
 
+  /**
+   * Set audioMixChannels
+   *
+   * @param audioMixChannels
+   */
   public void setAudioMixChannels(List<AudioMixInputStreamChannel> audioMixChannels) {
     this.audioMixChannels = audioMixChannels;
   }

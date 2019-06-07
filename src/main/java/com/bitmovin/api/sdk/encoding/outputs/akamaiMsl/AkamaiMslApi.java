@@ -44,7 +44,7 @@ public class AkamaiMslApi {
     /**
      * Create Akamai MSL Output
      * 
-     * @param akamaiMslOutput The Akamai MSL output to be created (optional)
+     * @param akamaiMslOutput The Akamai MSL output to be created (required)
      * @return AkamaiMslOutput
      * @throws BitmovinException if fails to make API call
      */

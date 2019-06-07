@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
 public class S3Input extends Input {
   @JsonProperty("cloudRegion")
-  private AwsCloudRegion cloudRegion = null;
+  private AwsCloudRegion cloudRegion;
 
   @JsonProperty("bucketName")
   private String bucketName;
@@ -38,6 +38,12 @@ public class S3Input extends Input {
     return cloudRegion;
   }
 
+  /**
+   * The cloud region in which the bucket is located. Is used to determine the ideal location for your encodings automatically.
+   *
+   * @param cloudRegion
+   * The cloud region in which the bucket is located. Is used to determine the ideal location for your encodings automatically.
+   */
   public void setCloudRegion(AwsCloudRegion cloudRegion) {
     this.cloudRegion = cloudRegion;
   }
@@ -51,6 +57,12 @@ public class S3Input extends Input {
     return bucketName;
   }
 
+  /**
+   * Name of the bucket
+   *
+   * @param bucketName
+   * Name of the bucket
+   */
   public void setBucketName(String bucketName) {
     this.bucketName = bucketName;
   }
@@ -64,6 +76,12 @@ public class S3Input extends Input {
     return accessKey;
   }
 
+  /**
+   * Amazon access key
+   *
+   * @param accessKey
+   * Amazon access key
+   */
   public void setAccessKey(String accessKey) {
     this.accessKey = accessKey;
   }
@@ -77,6 +95,12 @@ public class S3Input extends Input {
     return secretKey;
   }
 
+  /**
+   * Amazon secret key
+   *
+   * @param secretKey
+   * Amazon secret key
+   */
   public void setSecretKey(String secretKey) {
     this.secretKey = secretKey;
   }

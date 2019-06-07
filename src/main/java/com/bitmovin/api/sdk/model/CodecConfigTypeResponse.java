@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class CodecConfigTypeResponse {
   @JsonProperty("type")
-  private CodecConfigType type = null;
+  private CodecConfigType type;
 
 
   /**
@@ -25,6 +25,12 @@ public class CodecConfigTypeResponse {
     return type;
   }
 
+  /**
+   * The type of the codec config
+   *
+   * @param type
+   * The type of the codec config
+   */
   public void setType(CodecConfigType type) {
     this.type = type;
   }

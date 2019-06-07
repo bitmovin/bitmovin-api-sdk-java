@@ -31,6 +31,12 @@ public class AudioMixChannel {
     return channelNumber;
   }
 
+  /**
+   * Channel number of this mix (starting with 0)
+   *
+   * @param channelNumber
+   * Channel number of this mix (starting with 0)
+   */
   public void setChannelNumber(Integer channelNumber) {
     this.channelNumber = channelNumber;
   }
@@ -49,6 +55,12 @@ public class AudioMixChannel {
     return sourceChannels;
   }
 
+  /**
+   * List of source channels to be mixed
+   *
+   * @param sourceChannels
+   * List of source channels to be mixed
+   */
   public void setSourceChannels(List<SourceChannel> sourceChannels) {
     this.sourceChannels = sourceChannels;
   }

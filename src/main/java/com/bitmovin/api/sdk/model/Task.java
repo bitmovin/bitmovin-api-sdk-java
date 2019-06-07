@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class Task extends BitmovinResponse {
   @JsonProperty("status")
-  private Status status = null;
+  private Status status;
 
   @JsonProperty("eta")
   private Double eta;
@@ -53,7 +53,7 @@ public class Task extends BitmovinResponse {
   private Date errorAt;
 
   @JsonProperty("error")
-  private ErrorDetails error = null;
+  private ErrorDetails error;
 
 
   /**
@@ -64,6 +64,12 @@ public class Task extends BitmovinResponse {
     return status;
   }
 
+  /**
+   * Current status
+   *
+   * @param status
+   * Current status
+   */
   public void setStatus(Status status) {
     this.status = status;
   }
@@ -77,6 +83,12 @@ public class Task extends BitmovinResponse {
     return eta;
   }
 
+  /**
+   * Estimated ETA in seconds
+   *
+   * @param eta
+   * Estimated ETA in seconds
+   */
   public void setEta(Double eta) {
     this.eta = eta;
   }
@@ -90,6 +102,12 @@ public class Task extends BitmovinResponse {
     return progress;
   }
 
+  /**
+   * Progress in percent
+   *
+   * @param progress
+   * Progress in percent
+   */
   public void setProgress(Integer progress) {
     this.progress = progress;
   }
@@ -111,6 +129,12 @@ public class Task extends BitmovinResponse {
     return subtasks;
   }
 
+  /**
+   * List of subtasks
+   *
+   * @param subtasks
+   * List of subtasks
+   */
   public void setSubtasks(List<Subtask> subtasks) {
     this.subtasks = subtasks;
   }
@@ -132,6 +156,12 @@ public class Task extends BitmovinResponse {
     return messages;
   }
 
+  /**
+   * Task specific messages
+   *
+   * @param messages
+   * Task specific messages
+   */
   public void setMessages(List<Message> messages) {
     this.messages = messages;
   }
@@ -145,6 +175,12 @@ public class Task extends BitmovinResponse {
     return createdAt;
   }
 
+  /**
+   * Timestamp when the task was created, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   *
+   * @param createdAt
+   * Timestamp when the task was created, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   */
   public void setCreatedAt(Date createdAt) {
     this.createdAt = createdAt;
   }
@@ -158,6 +194,12 @@ public class Task extends BitmovinResponse {
     return queuedAt;
   }
 
+  /**
+   * Timestamp when the task status changed to \&quot;QUEUED\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   *
+   * @param queuedAt
+   * Timestamp when the task status changed to \&quot;QUEUED\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   */
   public void setQueuedAt(Date queuedAt) {
     this.queuedAt = queuedAt;
   }
@@ -171,6 +213,12 @@ public class Task extends BitmovinResponse {
     return runningAt;
   }
 
+  /**
+   * Timestamp when the task status changed to to \&quot;RUNNING\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   *
+   * @param runningAt
+   * Timestamp when the task status changed to to \&quot;RUNNING\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   */
   public void setRunningAt(Date runningAt) {
     this.runningAt = runningAt;
   }
@@ -184,6 +232,12 @@ public class Task extends BitmovinResponse {
     return finishedAt;
   }
 
+  /**
+   * Timestamp when the task status changed to \&quot;FINISHED\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   *
+   * @param finishedAt
+   * Timestamp when the task status changed to \&quot;FINISHED\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   */
   public void setFinishedAt(Date finishedAt) {
     this.finishedAt = finishedAt;
   }
@@ -197,6 +251,12 @@ public class Task extends BitmovinResponse {
     return errorAt;
   }
 
+  /**
+   * Timestamp when the task status changed to \&quot;ERROR\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   *
+   * @param errorAt
+   * Timestamp when the task status changed to \&quot;ERROR\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   */
   public void setErrorAt(Date errorAt) {
     this.errorAt = errorAt;
   }
@@ -210,6 +270,12 @@ public class Task extends BitmovinResponse {
     return error;
   }
 
+  /**
+   * Additional optional error details
+   *
+   * @param error
+   * Additional optional error details
+   */
   public void setError(ErrorDetails error) {
     this.error = error;
   }

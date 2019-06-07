@@ -68,7 +68,7 @@ public class EncodingsApi {
     /**
      * Create Encoding
      * 
-     * @param encoding The Encoding to be created (optional)
+     * @param encoding The Encoding to be created (required)
      * @return Encoding
      * @throws BitmovinException if fails to make API call
      */
@@ -133,7 +133,7 @@ public class EncodingsApi {
      * Reprioritize Encoding
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param reprioritizeEncodingRequest  (optional)
+     * @param reprioritizeEncodingRequest  (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */
@@ -145,7 +145,7 @@ public class EncodingsApi {
      * Reschedule Encoding
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param rescheduleEncodingRequest  (optional)
+     * @param rescheduleEncodingRequest  (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */

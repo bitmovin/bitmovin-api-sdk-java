@@ -28,6 +28,12 @@ public class Tenant extends BitmovinResource {
     return eMail;
   }
 
+  /**
+   * Email address of the tenant.
+   *
+   * @param eMail
+   * Email address of the tenant.
+   */
   public void setEMail(String eMail) {
     this.eMail = eMail;
   }

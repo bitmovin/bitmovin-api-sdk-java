@@ -44,7 +44,7 @@ public class H264Api {
     /**
      * Create H264/AVC Codec Configuration
      * 
-     * @param h264VideoConfiguration  (optional)
+     * @param h264VideoConfiguration  (required)
      * @return H264VideoConfiguration
      * @throws BitmovinException if fails to make API call
      */

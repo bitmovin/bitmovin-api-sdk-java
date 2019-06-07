@@ -27,6 +27,12 @@ public class UtcTiming {
     return value;
   }
 
+  /**
+   * The server to get the time from
+   *
+   * @param value
+   * The server to get the time from
+   */
   public void setValue(String value) {
     this.value = value;
   }
@@ -40,6 +46,12 @@ public class UtcTiming {
     return schemeIdUri;
   }
 
+  /**
+   * The scheme id to use. Please refer to the DASH standard.
+   *
+   * @param schemeIdUri
+   * The scheme id to use. Please refer to the DASH standard.
+   */
   public void setSchemeIdUri(String schemeIdUri) {
     this.schemeIdUri = schemeIdUri;
   }

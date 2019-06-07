@@ -17,7 +17,7 @@ public class AudioMixInputStreamChannel {
   private String inputStreamId;
 
   @JsonProperty("outputChannelType")
-  private AudioMixChannelType outputChannelType = null;
+  private AudioMixChannelType outputChannelType;
 
   @JsonProperty("outputChannelNumber")
   private Integer outputChannelNumber;
@@ -31,6 +31,12 @@ public class AudioMixInputStreamChannel {
     return inputStreamId;
   }
 
+  /**
+   * The id of the input stream that should be used for mixing.
+   *
+   * @param inputStreamId
+   * The id of the input stream that should be used for mixing.
+   */
   public void setInputStreamId(String inputStreamId) {
     this.inputStreamId = inputStreamId;
   }
@@ -44,6 +50,11 @@ public class AudioMixInputStreamChannel {
     return outputChannelType;
   }
 
+  /**
+   * Set outputChannelType
+   *
+   * @param outputChannelType
+   */
   public void setOutputChannelType(AudioMixChannelType outputChannelType) {
     this.outputChannelType = outputChannelType;
   }
@@ -57,6 +68,12 @@ public class AudioMixInputStreamChannel {
     return outputChannelNumber;
   }
 
+  /**
+   * Number of this output channel. If type is &#39;CHANNEL_NUMBER&#39;, this must be set.
+   *
+   * @param outputChannelNumber
+   * Number of this output channel. If type is &#39;CHANNEL_NUMBER&#39;, this must be set.
+   */
   public void setOutputChannelNumber(Integer outputChannelNumber) {
     this.outputChannelNumber = outputChannelNumber;
   }

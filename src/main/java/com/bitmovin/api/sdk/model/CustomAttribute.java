@@ -27,6 +27,12 @@ public class CustomAttribute {
     return key;
   }
 
+  /**
+   * unique string identifier for the custom attribute
+   *
+   * @param key
+   * unique string identifier for the custom attribute
+   */
   public void setKey(String key) {
     this.key = key;
   }
@@ -40,6 +46,12 @@ public class CustomAttribute {
     return value;
   }
 
+  /**
+   * value of the custom attribute
+   *
+   * @param value
+   * value of the custom attribute
+   */
   public void setValue(String value) {
     this.value = value;
   }

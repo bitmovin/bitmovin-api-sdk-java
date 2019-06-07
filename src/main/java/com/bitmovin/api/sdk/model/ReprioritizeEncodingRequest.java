@@ -26,6 +26,16 @@ public class ReprioritizeEncodingRequest {
     return priority;
   }
 
+  /**
+   * Priority of the Encoding
+   * minimum: 0
+   * maximum: 100
+   *
+   * @param priority
+   * Priority of the Encoding
+   * minimum: 0
+   * maximum: 100
+   */
   public void setPriority(Integer priority) {
     this.priority = priority;
   }

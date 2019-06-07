@@ -44,7 +44,7 @@ public class SftpApi {
     /**
      * Create SFTP Input
      * 
-     * @param sftpInput The SFTP input to be created (optional)
+     * @param sftpInput The SFTP input to be created (required)
      * @return SftpInput
      * @throws BitmovinException if fails to make API call
      */

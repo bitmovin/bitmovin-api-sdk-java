@@ -54,6 +54,12 @@ public class DailyStatistics {
     return date;
   }
 
+  /**
+   * Date for the shown data. Format: yyyy-MM-dd
+   *
+   * @param date
+   * Date for the shown data. Format: yyyy-MM-dd
+   */
   public void setDate(Date date) {
     this.date = date;
   }
@@ -67,6 +73,12 @@ public class DailyStatistics {
     return bytesEncoded;
   }
 
+  /**
+   * Bytes encoded.
+   *
+   * @param bytesEncoded
+   * Bytes encoded.
+   */
   public void setBytesEncoded(Long bytesEncoded) {
     this.bytesEncoded = bytesEncoded;
   }
@@ -80,6 +92,12 @@ public class DailyStatistics {
     return timeEncoded;
   }
 
+  /**
+   * Time in seconds encoded for this day.
+   *
+   * @param timeEncoded
+   * Time in seconds encoded for this day.
+   */
   public void setTimeEncoded(Long timeEncoded) {
     this.timeEncoded = timeEncoded;
   }
@@ -93,6 +111,12 @@ public class DailyStatistics {
     return billableMinutes;
   }
 
+  /**
+   * The billable minutes.
+   *
+   * @param billableMinutes
+   * The billable minutes.
+   */
   public void setBillableMinutes(Double billableMinutes) {
     this.billableMinutes = billableMinutes;
   }
@@ -106,6 +130,12 @@ public class DailyStatistics {
     return label;
   }
 
+  /**
+   * Label identifier.
+   *
+   * @param label
+   * Label identifier.
+   */
   public void setLabel(String label) {
     this.label = label;
   }
@@ -127,6 +157,12 @@ public class DailyStatistics {
     return billableTransmuxingMinutes;
   }
 
+  /**
+   * Billable minutes for muxings.
+   *
+   * @param billableTransmuxingMinutes
+   * Billable minutes for muxings.
+   */
   public void setBillableTransmuxingMinutes(Double billableTransmuxingMinutes) {
     this.billableTransmuxingMinutes = billableTransmuxingMinutes;
   }

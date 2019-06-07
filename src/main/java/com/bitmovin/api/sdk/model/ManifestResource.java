@@ -24,6 +24,12 @@ public class ManifestResource {
     return manifestId;
   }
 
+  /**
+   * Id of the manifest resource
+   *
+   * @param manifestId
+   * Id of the manifest resource
+   */
   public void setManifestId(String manifestId) {
     this.manifestId = manifestId;
   }

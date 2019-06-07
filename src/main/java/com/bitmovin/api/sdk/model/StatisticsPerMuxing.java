@@ -29,7 +29,7 @@ public class StatisticsPerMuxing {
   private Double billableMinutes;
 
   @JsonProperty("muxingType")
-  private MuxingType muxingType = null;
+  private MuxingType muxingType;
 
 
   /**
@@ -40,6 +40,12 @@ public class StatisticsPerMuxing {
     return streamId;
   }
 
+  /**
+   * ID of the stream
+   *
+   * @param streamId
+   * ID of the stream
+   */
   public void setStreamId(String streamId) {
     this.streamId = streamId;
   }
@@ -53,6 +59,12 @@ public class StatisticsPerMuxing {
     return muxingId;
   }
 
+  /**
+   * ID of the muxing
+   *
+   * @param muxingId
+   * ID of the muxing
+   */
   public void setMuxingId(String muxingId) {
     this.muxingId = muxingId;
   }
@@ -66,6 +78,12 @@ public class StatisticsPerMuxing {
     return multiplicator;
   }
 
+  /**
+   * Multiplier for the encoded minutes. Depends on muxing type.
+   *
+   * @param multiplicator
+   * Multiplier for the encoded minutes. Depends on muxing type.
+   */
   public void setMultiplicator(Double multiplicator) {
     this.multiplicator = multiplicator;
   }
@@ -79,6 +97,12 @@ public class StatisticsPerMuxing {
     return encodedBytes;
   }
 
+  /**
+   * Encoded bytes.
+   *
+   * @param encodedBytes
+   * Encoded bytes.
+   */
   public void setEncodedBytes(Long encodedBytes) {
     this.encodedBytes = encodedBytes;
   }
@@ -92,6 +116,12 @@ public class StatisticsPerMuxing {
     return billableMinutes;
   }
 
+  /**
+   * Resulting minutes you will be charged for.
+   *
+   * @param billableMinutes
+   * Resulting minutes you will be charged for.
+   */
   public void setBillableMinutes(Double billableMinutes) {
     this.billableMinutes = billableMinutes;
   }
@@ -105,6 +135,11 @@ public class StatisticsPerMuxing {
     return muxingType;
   }
 
+  /**
+   * Set muxingType
+   *
+   * @param muxingType
+   */
   public void setMuxingType(MuxingType muxingType) {
     this.muxingType = muxingType;
   }

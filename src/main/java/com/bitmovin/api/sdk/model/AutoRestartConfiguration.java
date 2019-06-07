@@ -40,6 +40,14 @@ public class AutoRestartConfiguration {
     return segmentsWrittenTimeout;
   }
 
+  /**
+   * If no segments were generated for the given number of seconds, a restart is triggered. Minimum: 30.0
+   * minimum: 30
+   *
+   * @param segmentsWrittenTimeout
+   * If no segments were generated for the given number of seconds, a restart is triggered. Minimum: 30.0
+   * minimum: 30
+   */
   public void setSegmentsWrittenTimeout(Double segmentsWrittenTimeout) {
     this.segmentsWrittenTimeout = segmentsWrittenTimeout;
   }
@@ -54,6 +62,14 @@ public class AutoRestartConfiguration {
     return bytesWrittenTimeout;
   }
 
+  /**
+   * If no data was written for the given number of seconds, a restart is triggered. Minimum: 30.0
+   * minimum: 30
+   *
+   * @param bytesWrittenTimeout
+   * If no data was written for the given number of seconds, a restart is triggered. Minimum: 30.0
+   * minimum: 30
+   */
   public void setBytesWrittenTimeout(Double bytesWrittenTimeout) {
     this.bytesWrittenTimeout = bytesWrittenTimeout;
   }
@@ -68,6 +84,14 @@ public class AutoRestartConfiguration {
     return framesWrittenTimeout;
   }
 
+  /**
+   * If no frames were generated for the given number of seconds, a restart is triggered. Minimum: 30.0
+   * minimum: 30
+   *
+   * @param framesWrittenTimeout
+   * If no frames were generated for the given number of seconds, a restart is triggered. Minimum: 30.0
+   * minimum: 30
+   */
   public void setFramesWrittenTimeout(Double framesWrittenTimeout) {
     this.framesWrittenTimeout = framesWrittenTimeout;
   }
@@ -82,6 +106,14 @@ public class AutoRestartConfiguration {
     return hlsManifestsUpdateTimeout;
   }
 
+  /**
+   * If HLS manifests were not updated for the given number of seconds, a restart is triggered. Minimum: 30.0
+   * minimum: 30
+   *
+   * @param hlsManifestsUpdateTimeout
+   * If HLS manifests were not updated for the given number of seconds, a restart is triggered. Minimum: 30.0
+   * minimum: 30
+   */
   public void setHlsManifestsUpdateTimeout(Double hlsManifestsUpdateTimeout) {
     this.hlsManifestsUpdateTimeout = hlsManifestsUpdateTimeout;
   }
@@ -96,6 +128,14 @@ public class AutoRestartConfiguration {
     return dashManifestsUpdateTimeout;
   }
 
+  /**
+   * If DASH manifests were not updated for the given number of seconds, a restart is triggered. Minimum: 30.0
+   * minimum: 30
+   *
+   * @param dashManifestsUpdateTimeout
+   * If DASH manifests were not updated for the given number of seconds, a restart is triggered. Minimum: 30.0
+   * minimum: 30
+   */
   public void setDashManifestsUpdateTimeout(Double dashManifestsUpdateTimeout) {
     this.dashManifestsUpdateTimeout = dashManifestsUpdateTimeout;
   }
@@ -109,6 +149,12 @@ public class AutoRestartConfiguration {
     return scheduleExpression;
   }
 
+  /**
+   * Defines a schedule for restarts using the unix crontab syntax. This example would trigger a restart every monday at 05:30 (AM)
+   *
+   * @param scheduleExpression
+   * Defines a schedule for restarts using the unix crontab syntax. This example would trigger a restart every monday at 05:30 (AM)
+   */
   public void setScheduleExpression(String scheduleExpression) {
     this.scheduleExpression = scheduleExpression;
   }

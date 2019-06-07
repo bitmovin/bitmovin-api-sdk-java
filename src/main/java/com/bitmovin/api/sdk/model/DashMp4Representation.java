@@ -25,6 +25,12 @@ public class DashMp4Representation extends DashRepresentation {
     return filePath;
   }
 
+  /**
+   * Path to the MP4 file
+   *
+   * @param filePath
+   * Path to the MP4 file
+   */
   public void setFilePath(String filePath) {
     this.filePath = filePath;
   }

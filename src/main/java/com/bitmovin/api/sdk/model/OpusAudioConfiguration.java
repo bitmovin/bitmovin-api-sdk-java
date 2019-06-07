@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class OpusAudioConfiguration extends AudioConfiguration {
   @JsonProperty("channelLayout")
-  private OpusChannelLayout channelLayout = null;
+  private OpusChannelLayout channelLayout;
 
 
   /**
@@ -29,6 +29,12 @@ public class OpusAudioConfiguration extends AudioConfiguration {
     return channelLayout;
   }
 
+  /**
+   * Channel layout of the audio codec configuration
+   *
+   * @param channelLayout
+   * Channel layout of the audio codec configuration
+   */
   public void setChannelLayout(OpusChannelLayout channelLayout) {
     this.channelLayout = channelLayout;
   }

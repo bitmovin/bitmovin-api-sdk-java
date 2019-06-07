@@ -47,7 +47,7 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
   private Integer cpuUsed;
 
   @JsonProperty("noiseSensitivity")
-  private Vp8NoiseSensitivity noiseSensitivity = null;
+  private Vp8NoiseSensitivity noiseSensitivity;
 
   @JsonProperty("sharpness")
   private Integer sharpness;
@@ -65,7 +65,7 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
   private Double maxKeyframeInterval;
 
   @JsonProperty("quality")
-  private Vp8Quality quality = null;
+  private Vp8Quality quality;
 
   @JsonProperty("staticThresh")
   private Integer staticThresh;
@@ -77,7 +77,7 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
   private Integer arnrStrength;
 
   @JsonProperty("arnrType")
-  private Vp8ArnrType arnrType = null;
+  private Vp8ArnrType arnrType;
 
 
   /**
@@ -90,6 +90,16 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
     return crf;
   }
 
+  /**
+   * Sets the constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
+   * minimum: 0
+   * maximum: 63
+   *
+   * @param crf
+   * Sets the constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
+   * minimum: 0
+   * maximum: 63
+   */
   public void setCrf(Integer crf) {
     this.crf = crf;
   }
@@ -105,6 +115,16 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
     return lagInFrames;
   }
 
+  /**
+   * Number of frames to look ahead for alternate reference frame selection.
+   * minimum: 0
+   * maximum: 25
+   *
+   * @param lagInFrames
+   * Number of frames to look ahead for alternate reference frame selection.
+   * minimum: 0
+   * maximum: 25
+   */
   public void setLagInFrames(Integer lagInFrames) {
     this.lagInFrames = lagInFrames;
   }
@@ -118,6 +138,12 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
     return maxIntraRate;
   }
 
+  /**
+   * Maximum I-frame bitrate (percentage) 0&#x3D;unlimited
+   *
+   * @param maxIntraRate
+   * Maximum I-frame bitrate (percentage) 0&#x3D;unlimited
+   */
   public void setMaxIntraRate(Long maxIntraRate) {
     this.maxIntraRate = maxIntraRate;
   }
@@ -133,6 +159,16 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
     return qpMin;
   }
 
+  /**
+   * Sets the minimum of quantization factor.
+   * minimum: 0
+   * maximum: 63
+   *
+   * @param qpMin
+   * Sets the minimum of quantization factor.
+   * minimum: 0
+   * maximum: 63
+   */
   public void setQpMin(Integer qpMin) {
     this.qpMin = qpMin;
   }
@@ -148,6 +184,16 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
     return qpMax;
   }
 
+  /**
+   * Sets the maximum of quantization factor.
+   * minimum: 0
+   * maximum: 63
+   *
+   * @param qpMax
+   * Sets the maximum of quantization factor.
+   * minimum: 0
+   * maximum: 63
+   */
   public void setQpMax(Integer qpMax) {
     this.qpMax = qpMax;
   }
@@ -163,6 +209,16 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
     return rateUndershootPct;
   }
 
+  /**
+   * Datarate undershoot (min) target (percentage).
+   * minimum: 0
+   * maximum: 100
+   *
+   * @param rateUndershootPct
+   * Datarate undershoot (min) target (percentage).
+   * minimum: 0
+   * maximum: 100
+   */
   public void setRateUndershootPct(Integer rateUndershootPct) {
     this.rateUndershootPct = rateUndershootPct;
   }
@@ -178,6 +234,16 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
     return rateOvershootPct;
   }
 
+  /**
+   * Datarate overshoot (max) target (percentage).
+   * minimum: 0
+   * maximum: 100
+   *
+   * @param rateOvershootPct
+   * Datarate overshoot (max) target (percentage).
+   * minimum: 0
+   * maximum: 100
+   */
   public void setRateOvershootPct(Integer rateOvershootPct) {
     this.rateOvershootPct = rateOvershootPct;
   }
@@ -199,6 +265,11 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
     return noiseSensitivity;
   }
 
+  /**
+   * Set noiseSensitivity
+   *
+   * @param noiseSensitivity
+   */
   public void setNoiseSensitivity(Vp8NoiseSensitivity noiseSensitivity) {
     this.noiseSensitivity = noiseSensitivity;
   }
@@ -214,6 +285,16 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
     return sharpness;
   }
 
+  /**
+   * Loop filter sharpness.
+   * minimum: 0
+   * maximum: 7
+   *
+   * @param sharpness
+   * Loop filter sharpness.
+   * minimum: 0
+   * maximum: 7
+   */
   public void setSharpness(Integer sharpness) {
     this.sharpness = sharpness;
   }
@@ -227,6 +308,12 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
     return minGop;
   }
 
+  /**
+   * Minimum GOP length, the minimum distance between I-frames.
+   *
+   * @param minGop
+   * Minimum GOP length, the minimum distance between I-frames.
+   */
   public void setMinGop(Integer minGop) {
     this.minGop = minGop;
   }
@@ -240,6 +327,12 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
     return maxGop;
   }
 
+  /**
+   * Maximum GOP length, the maximum distance between I-frames
+   *
+   * @param maxGop
+   * Maximum GOP length, the maximum distance between I-frames
+   */
   public void setMaxGop(Integer maxGop) {
     this.maxGop = maxGop;
   }
@@ -253,6 +346,12 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
     return minKeyframeInterval;
   }
 
+  /**
+   * Minimum interval in seconds between key frames
+   *
+   * @param minKeyframeInterval
+   * Minimum interval in seconds between key frames
+   */
   public void setMinKeyframeInterval(Double minKeyframeInterval) {
     this.minKeyframeInterval = minKeyframeInterval;
   }
@@ -266,6 +365,12 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
     return maxKeyframeInterval;
   }
 
+  /**
+   * Maximum interval in seconds between key frames
+   *
+   * @param maxKeyframeInterval
+   * Maximum interval in seconds between key frames
+   */
   public void setMaxKeyframeInterval(Double maxKeyframeInterval) {
     this.maxKeyframeInterval = maxKeyframeInterval;
   }
@@ -279,6 +384,11 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
     return quality;
   }
 
+  /**
+   * Set quality
+   *
+   * @param quality
+   */
   public void setQuality(Vp8Quality quality) {
     this.quality = quality;
   }
@@ -293,6 +403,14 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
     return staticThresh;
   }
 
+  /**
+   * A change threshold on blocks below which they will be skipped by the encoder.
+   * minimum: 0
+   *
+   * @param staticThresh
+   * A change threshold on blocks below which they will be skipped by the encoder.
+   * minimum: 0
+   */
   public void setStaticThresh(Integer staticThresh) {
     this.staticThresh = staticThresh;
   }
@@ -308,6 +426,16 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
     return arnrMaxFrames;
   }
 
+  /**
+   * altref noise reduction max frame count.
+   * minimum: 0
+   * maximum: 15
+   *
+   * @param arnrMaxFrames
+   * altref noise reduction max frame count.
+   * minimum: 0
+   * maximum: 15
+   */
   public void setArnrMaxFrames(Integer arnrMaxFrames) {
     this.arnrMaxFrames = arnrMaxFrames;
   }
@@ -323,6 +451,16 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
     return arnrStrength;
   }
 
+  /**
+   * altref noise reduction filter strength.
+   * minimum: 0
+   * maximum: 6
+   *
+   * @param arnrStrength
+   * altref noise reduction filter strength.
+   * minimum: 0
+   * maximum: 6
+   */
   public void setArnrStrength(Integer arnrStrength) {
     this.arnrStrength = arnrStrength;
   }
@@ -336,6 +474,11 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
     return arnrType;
   }
 
+  /**
+   * Set arnrType
+   *
+   * @param arnrType
+   */
   public void setArnrType(Vp8ArnrType arnrType) {
     this.arnrType = arnrType;
   }

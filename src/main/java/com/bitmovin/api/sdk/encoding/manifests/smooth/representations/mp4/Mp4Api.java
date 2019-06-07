@@ -42,7 +42,7 @@ public class Mp4Api {
      * Add MP4 Representation to Smooth Streaming Manifest
      * 
      * @param manifestId Id of the Smooth Streaming manifest. (required)
-     * @param smoothStreamingRepresentation  (optional)
+     * @param smoothStreamingRepresentation  (required)
      * @return SmoothStreamingRepresentation
      * @throws BitmovinException if fails to make API call
      */

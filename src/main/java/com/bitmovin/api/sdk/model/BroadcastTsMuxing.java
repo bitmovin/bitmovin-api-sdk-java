@@ -29,10 +29,10 @@ public class BroadcastTsMuxing extends Muxing {
   private String filename;
 
   @JsonProperty("configuration")
-  private BroadcastTsMuxingConfiguration _configuration = null;
+  private BroadcastTsMuxingConfiguration _configuration;
 
   @JsonProperty("internalChunkLength")
-  private InternalChunkLength internalChunkLength = null;
+  private InternalChunkLength internalChunkLength;
 
 
   /**
@@ -43,6 +43,12 @@ public class BroadcastTsMuxing extends Muxing {
     return segmentLength;
   }
 
+  /**
+   * Length of the segments in seconds.
+   *
+   * @param segmentLength
+   * Length of the segments in seconds.
+   */
   public void setSegmentLength(Double segmentLength) {
     this.segmentLength = segmentLength;
   }
@@ -56,6 +62,12 @@ public class BroadcastTsMuxing extends Muxing {
     return filename;
   }
 
+  /**
+   * Name of the new Video
+   *
+   * @param filename
+   * Name of the new Video
+   */
   public void setFilename(String filename) {
     this.filename = filename;
   }
@@ -69,6 +81,11 @@ public class BroadcastTsMuxing extends Muxing {
     return _configuration;
   }
 
+  /**
+   * Set _configuration
+   *
+   * @param _configuration
+   */
   public void setConfiguration(BroadcastTsMuxingConfiguration _configuration) {
     this._configuration = _configuration;
   }
@@ -82,6 +99,12 @@ public class BroadcastTsMuxing extends Muxing {
     return internalChunkLength;
   }
 
+  /**
+   * Modifies the internal chunk length used for chunked encoding
+   *
+   * @param internalChunkLength
+   * Modifies the internal chunk length used for chunked encoding
+   */
   public void setInternalChunkLength(InternalChunkLength internalChunkLength) {
     this.internalChunkLength = internalChunkLength;
   }

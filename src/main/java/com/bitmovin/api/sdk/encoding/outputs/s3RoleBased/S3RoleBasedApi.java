@@ -44,7 +44,7 @@ public class S3RoleBasedApi {
     /**
      * Create S3 Role-based Output
      * 
-     * @param s3RoleBasedOutput The S3 Role-based output to be created (optional)
+     * @param s3RoleBasedOutput The S3 Role-based output to be created (required)
      * @return S3RoleBasedOutput
      * @throws BitmovinException if fails to make API call
      */

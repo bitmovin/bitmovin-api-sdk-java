@@ -36,6 +36,12 @@ public class Trimming {
     return offset;
   }
 
+  /**
+   * Defines the offset in seconds from which the encoding should start, beginning at 0.
+   *
+   * @param offset
+   * Defines the offset in seconds from which the encoding should start, beginning at 0.
+   */
   public void setOffset(Double offset) {
     this.offset = offset;
   }
@@ -49,6 +55,12 @@ public class Trimming {
     return duration;
   }
 
+  /**
+   * Defines how many seconds from the input will be encoded.
+   *
+   * @param duration
+   * Defines how many seconds from the input will be encoded.
+   */
   public void setDuration(Double duration) {
     this.duration = duration;
   }
@@ -62,6 +74,12 @@ public class Trimming {
     return ignoreDurationIfInputTooShort;
   }
 
+  /**
+   * If set, \&quot;duration\&quot; will be interpreted as a maximum and not cause an error if the input is too short
+   *
+   * @param ignoreDurationIfInputTooShort
+   * If set, \&quot;duration\&quot; will be interpreted as a maximum and not cause an error if the input is too short
+   */
   public void setIgnoreDurationIfInputTooShort(Boolean ignoreDurationIfInputTooShort) {
     this.ignoreDurationIfInputTooShort = ignoreDurationIfInputTooShort;
   }
@@ -75,6 +93,12 @@ public class Trimming {
     return startPicTiming;
   }
 
+  /**
+   * Defines the H264 picture timing of the first frame from which the encoding should start. Any defined offset or duration in seconds will be ignored.
+   *
+   * @param startPicTiming
+   * Defines the H264 picture timing of the first frame from which the encoding should start. Any defined offset or duration in seconds will be ignored.
+   */
   public void setStartPicTiming(String startPicTiming) {
     this.startPicTiming = startPicTiming;
   }
@@ -88,6 +112,12 @@ public class Trimming {
     return endPicTiming;
   }
 
+  /**
+   * Defines the H264 picture timing of the last frame, that will be included in the encoding. Any defined offset or duration in seconds will be ignored.
+   *
+   * @param endPicTiming
+   * Defines the H264 picture timing of the last frame, that will be included in the encoding. Any defined offset or duration in seconds will be ignored.
+   */
   public void setEndPicTiming(String endPicTiming) {
     this.endPicTiming = endPicTiming;
   }

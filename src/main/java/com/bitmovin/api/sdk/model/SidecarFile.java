@@ -30,7 +30,7 @@ public class SidecarFile extends BitmovinResource {
   private List<EncodingOutput> outputs = new ArrayList<EncodingOutput>();
 
   @JsonProperty("errorMode")
-  private SidecarErrorMode errorMode = null;
+  private SidecarErrorMode errorMode;
 
 
   /**
@@ -41,6 +41,12 @@ public class SidecarFile extends BitmovinResource {
     return inputId;
   }
 
+  /**
+   * Id of input
+   *
+   * @param inputId
+   * Id of input
+   */
   public void setInputId(String inputId) {
     this.inputId = inputId;
   }
@@ -54,6 +60,12 @@ public class SidecarFile extends BitmovinResource {
     return inputPath;
   }
 
+  /**
+   * Path to sidecar file
+   *
+   * @param inputPath
+   * Path to sidecar file
+   */
   public void setInputPath(String inputPath) {
     this.inputPath = inputPath;
   }
@@ -75,6 +87,11 @@ public class SidecarFile extends BitmovinResource {
     return outputs;
   }
 
+  /**
+   * Set outputs
+   *
+   * @param outputs
+   */
   public void setOutputs(List<EncodingOutput> outputs) {
     this.outputs = outputs;
   }
@@ -88,6 +105,11 @@ public class SidecarFile extends BitmovinResource {
     return errorMode;
   }
 
+  /**
+   * Set errorMode
+   *
+   * @param errorMode
+   */
   public void setErrorMode(SidecarErrorMode errorMode) {
     this.errorMode = errorMode;
   }

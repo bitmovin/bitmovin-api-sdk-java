@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class Manifest extends BitmovinResource {
   @JsonProperty("type")
-  private ManifestType type = null;
+  private ManifestType type;
 
   @JsonProperty("outputs")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -48,6 +48,12 @@ public class Manifest extends BitmovinResource {
     return outputs;
   }
 
+  /**
+   * The outputs to store the manifest
+   *
+   * @param outputs
+   * The outputs to store the manifest
+   */
   public void setOutputs(List<EncodingOutput> outputs) {
     this.outputs = outputs;
   }

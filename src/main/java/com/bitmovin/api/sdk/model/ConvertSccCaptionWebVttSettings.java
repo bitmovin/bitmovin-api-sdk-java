@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class ConvertSccCaptionWebVttSettings {
   @JsonProperty("positionMode")
-  private ConvertSccPositionMode positionMode = null;
+  private ConvertSccPositionMode positionMode;
 
   @JsonProperty("removeFlash")
   private Boolean removeFlash;
@@ -31,6 +31,11 @@ public class ConvertSccCaptionWebVttSettings {
     return positionMode;
   }
 
+  /**
+   * Set positionMode
+   *
+   * @param positionMode
+   */
   public void setPositionMode(ConvertSccPositionMode positionMode) {
     this.positionMode = positionMode;
   }
@@ -44,6 +49,12 @@ public class ConvertSccCaptionWebVttSettings {
     return removeFlash;
   }
 
+  /**
+   * Remove flash (blinking) information when converting SCC to WebVTT
+   *
+   * @param removeFlash
+   * Remove flash (blinking) information when converting SCC to WebVTT
+   */
   public void setRemoveFlash(Boolean removeFlash) {
     this.removeFlash = removeFlash;
   }
@@ -57,6 +68,12 @@ public class ConvertSccCaptionWebVttSettings {
     return removeColor;
   }
 
+  /**
+   * Remove color information when converting SCC to WebVTT
+   *
+   * @param removeColor
+   * Remove color information when converting SCC to WebVTT
+   */
   public void setRemoveColor(Boolean removeColor) {
     this.removeColor = removeColor;
   }

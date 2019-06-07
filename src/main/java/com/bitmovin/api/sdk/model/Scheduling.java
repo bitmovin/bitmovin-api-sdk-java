@@ -32,6 +32,16 @@ public class Scheduling {
     return priority;
   }
 
+  /**
+   * Specify the priority of this encoding (0 - 100). Higher numbers mean higher priority. Default is 50.
+   * minimum: 0
+   * maximum: 100
+   *
+   * @param priority
+   * Specify the priority of this encoding (0 - 100). Higher numbers mean higher priority. Default is 50.
+   * minimum: 0
+   * maximum: 100
+   */
   public void setPriority(Integer priority) {
     this.priority = priority;
   }
@@ -53,6 +63,12 @@ public class Scheduling {
     return prewarmedInstancePoolIds;
   }
 
+  /**
+   * List of prewarmed Instance pools. If set, prewarmed instances from pools with these IDs will be used for the Encoding if available. The pool IDs will be tried in the order in which they are passed.
+   *
+   * @param prewarmedInstancePoolIds
+   * List of prewarmed Instance pools. If set, prewarmed instances from pools with these IDs will be used for the Encoding if available. The pool IDs will be tried in the order in which they are passed.
+   */
   public void setPrewarmedInstancePoolIds(List<String> prewarmedInstancePoolIds) {
     this.prewarmedInstancePoolIds = prewarmedInstancePoolIds;
   }

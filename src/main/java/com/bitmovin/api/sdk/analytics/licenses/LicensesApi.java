@@ -44,7 +44,7 @@ public class LicensesApi {
     /**
      * Create Analytics License
      * 
-     * @param analyticsLicense Analytics License to be created (optional)
+     * @param analyticsLicense Analytics License to be created (required)
      * @return AnalyticsLicense
      * @throws BitmovinException if fails to make API call
      */

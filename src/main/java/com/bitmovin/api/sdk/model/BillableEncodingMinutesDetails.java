@@ -36,6 +36,12 @@ public class BillableEncodingMinutesDetails {
     return UNKNOWN;
   }
 
+  /**
+   * Only set if resolution information is not present.
+   *
+   * @param UNKNOWN
+   * Only set if resolution information is not present.
+   */
   public void setUNKNOWN(Double UNKNOWN) {
     this.UNKNOWN = UNKNOWN;
   }
@@ -49,6 +55,12 @@ public class BillableEncodingMinutesDetails {
     return AUDIO;
   }
 
+  /**
+   * Billable minutes for audio. Available if stream is an audio stream.
+   *
+   * @param AUDIO
+   * Billable minutes for audio. Available if stream is an audio stream.
+   */
   public void setAUDIO(Double AUDIO) {
     this.AUDIO = AUDIO;
   }
@@ -62,6 +74,12 @@ public class BillableEncodingMinutesDetails {
     return SD;
   }
 
+  /**
+   * Billable minutes for SD resolutions.
+   *
+   * @param SD
+   * Billable minutes for SD resolutions.
+   */
   public void setSD(Double SD) {
     this.SD = SD;
   }
@@ -75,6 +93,12 @@ public class BillableEncodingMinutesDetails {
     return HD;
   }
 
+  /**
+   * Billable minutes for HD resolutions.
+   *
+   * @param HD
+   * Billable minutes for HD resolutions.
+   */
   public void setHD(Double HD) {
     this.HD = HD;
   }
@@ -88,6 +112,12 @@ public class BillableEncodingMinutesDetails {
     return UHD;
   }
 
+  /**
+   * Billable minutes for UHD resolutions.
+   *
+   * @param UHD
+   * Billable minutes for UHD resolutions.
+   */
   public void setUHD(Double UHD) {
     this.UHD = UHD;
   }

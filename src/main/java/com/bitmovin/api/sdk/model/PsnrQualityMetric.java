@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class PsnrQualityMetric {
   @JsonProperty("timeSpan")
-  private TimeSpan timeSpan = null;
+  private TimeSpan timeSpan;
 
   @JsonProperty("psnr")
   private Double psnr;
@@ -28,6 +28,11 @@ public class PsnrQualityMetric {
     return timeSpan;
   }
 
+  /**
+   * Set timeSpan
+   *
+   * @param timeSpan
+   */
   public void setTimeSpan(TimeSpan timeSpan) {
     this.timeSpan = timeSpan;
   }
@@ -41,6 +46,12 @@ public class PsnrQualityMetric {
     return psnr;
   }
 
+  /**
+   * Peak signal-to-noise ratio
+   *
+   * @param psnr
+   * Peak signal-to-noise ratio
+   */
   public void setPsnr(Double psnr) {
     this.psnr = psnr;
   }

@@ -38,6 +38,16 @@ public class BroadcastTsTransportConfiguration {
     return muxrate;
   }
 
+  /**
+   * Output rate in bps. The value zero implies to use minimal rate. The minimal rate leaves approximately 15kbps of null packets in the stream.
+   * minimum: 0
+   * maximum: 1000000000
+   *
+   * @param muxrate
+   * Output rate in bps. The value zero implies to use minimal rate. The minimal rate leaves approximately 15kbps of null packets in the stream.
+   * minimum: 0
+   * maximum: 1000000000
+   */
   public void setMuxrate(Double muxrate) {
     this.muxrate = muxrate;
   }
@@ -51,6 +61,12 @@ public class BroadcastTsTransportConfiguration {
     return stopOnError;
   }
 
+  /**
+   * Stop mux on errors. If true, implies halt multiplexing when any error is encountered. If false, errors are ignored and multiplexing continues. Note that the recovery from an error will usually result in an illegal transport stream and artifacts on a decoder.
+   *
+   * @param stopOnError
+   * Stop mux on errors. If true, implies halt multiplexing when any error is encountered. If false, errors are ignored and multiplexing continues. Note that the recovery from an error will usually result in an illegal transport stream and artifacts on a decoder.
+   */
   public void setStopOnError(Boolean stopOnError) {
     this.stopOnError = stopOnError;
   }
@@ -64,6 +80,12 @@ public class BroadcastTsTransportConfiguration {
     return preventEmptyAdaptionFieldsInVideo;
   }
 
+  /**
+   * If true, prevents adaptation fields with length field equal to zero in video, i.e., zero-length AF. Please note that this condition can only occur when pesAlign for the input stream is set to true.
+   *
+   * @param preventEmptyAdaptionFieldsInVideo
+   * If true, prevents adaptation fields with length field equal to zero in video, i.e., zero-length AF. Please note that this condition can only occur when pesAlign for the input stream is set to true.
+   */
   public void setPreventEmptyAdaptionFieldsInVideo(Boolean preventEmptyAdaptionFieldsInVideo) {
     this.preventEmptyAdaptionFieldsInVideo = preventEmptyAdaptionFieldsInVideo;
   }
@@ -79,6 +101,16 @@ public class BroadcastTsTransportConfiguration {
     return patRepetitionRatePerSec;
   }
 
+  /**
+   * Program Association Table (PAT) repetition rate per second. Number of PATs per second.
+   * minimum: 0.001
+   * maximum: 1000
+   *
+   * @param patRepetitionRatePerSec
+   * Program Association Table (PAT) repetition rate per second. Number of PATs per second.
+   * minimum: 0.001
+   * maximum: 1000
+   */
   public void setPatRepetitionRatePerSec(Double patRepetitionRatePerSec) {
     this.patRepetitionRatePerSec = patRepetitionRatePerSec;
   }
@@ -94,6 +126,16 @@ public class BroadcastTsTransportConfiguration {
     return pmtRepetitionRatePerSec;
   }
 
+  /**
+   * Program Map Table (PMT) repetition rate per second. Number of PMTs for each program per second.
+   * minimum: 0.001
+   * maximum: 1000
+   *
+   * @param pmtRepetitionRatePerSec
+   * Program Map Table (PMT) repetition rate per second. Number of PMTs for each program per second.
+   * minimum: 0.001
+   * maximum: 1000
+   */
   public void setPmtRepetitionRatePerSec(Double pmtRepetitionRatePerSec) {
     this.pmtRepetitionRatePerSec = pmtRepetitionRatePerSec;
   }

@@ -29,6 +29,12 @@ public class SubtitleAdaptationSet extends AdaptationSet {
     return lang;
   }
 
+  /**
+   * ISO 639-1 (Alpha-2) code identifying the language of the subtitle adaptation set
+   *
+   * @param lang
+   * ISO 639-1 (Alpha-2) code identifying the language of the subtitle adaptation set
+   */
   public void setLang(String lang) {
     this.lang = lang;
   }

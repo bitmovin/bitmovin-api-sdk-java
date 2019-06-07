@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class HeAacV2AudioConfiguration extends AudioConfiguration {
   @JsonProperty("channelLayout")
-  private AacChannelLayout channelLayout = null;
+  private AacChannelLayout channelLayout;
 
 
   /**
@@ -29,6 +29,12 @@ public class HeAacV2AudioConfiguration extends AudioConfiguration {
     return channelLayout;
   }
 
+  /**
+   * Channel layout of the audio codec configuration
+   *
+   * @param channelLayout
+   * Channel layout of the audio codec configuration
+   */
   public void setChannelLayout(AacChannelLayout channelLayout) {
     this.channelLayout = channelLayout;
   }

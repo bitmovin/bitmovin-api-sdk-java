@@ -43,7 +43,7 @@ public class VideoApi {
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
-     * @param videoAdaptationSet The video adaptation set to be added to the period (optional)
+     * @param videoAdaptationSet The video adaptation set to be added to the period (required)
      * @return VideoAdaptationSet
      * @throws BitmovinException if fails to make API call
      */

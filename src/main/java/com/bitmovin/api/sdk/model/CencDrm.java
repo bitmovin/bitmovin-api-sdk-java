@@ -30,25 +30,25 @@ public class CencDrm extends Drm {
   private String kid;
 
   @JsonProperty("encryptionMode")
-  private EncryptionMode encryptionMode = null;
+  private EncryptionMode encryptionMode;
 
   @JsonProperty("ivSize")
-  private IvSize ivSize = null;
+  private IvSize ivSize;
 
   @JsonProperty("enablePiffCompatibility")
   private Boolean enablePiffCompatibility;
 
   @JsonProperty("widevine")
-  private CencWidevine widevine = null;
+  private CencWidevine widevine;
 
   @JsonProperty("playReady")
-  private CencPlayReady playReady = null;
+  private CencPlayReady playReady;
 
   @JsonProperty("marlin")
-  private CencMarlin marlin = null;
+  private CencMarlin marlin;
 
   @JsonProperty("fairPlay")
-  private CencFairPlay fairPlay = null;
+  private CencFairPlay fairPlay;
 
 
   /**
@@ -59,6 +59,12 @@ public class CencDrm extends Drm {
     return key;
   }
 
+  /**
+   * 16 byte encryption key, 32 hexadecimal characters
+   *
+   * @param key
+   * 16 byte encryption key, 32 hexadecimal characters
+   */
   public void setKey(String key) {
     this.key = key;
   }
@@ -72,6 +78,12 @@ public class CencDrm extends Drm {
     return kid;
   }
 
+  /**
+   * 16 byte encryption key id. Required for any other DRM but FairPlay
+   *
+   * @param kid
+   * 16 byte encryption key id. Required for any other DRM but FairPlay
+   */
   public void setKid(String kid) {
     this.kid = kid;
   }
@@ -85,6 +97,12 @@ public class CencDrm extends Drm {
     return encryptionMode;
   }
 
+  /**
+   * The encryption method to use. Default is &#x60;CTR&#x60;
+   *
+   * @param encryptionMode
+   * The encryption method to use. Default is &#x60;CTR&#x60;
+   */
   public void setEncryptionMode(EncryptionMode encryptionMode) {
     this.encryptionMode = encryptionMode;
   }
@@ -98,6 +116,12 @@ public class CencDrm extends Drm {
     return ivSize;
   }
 
+  /**
+   * Size of the initialization vector
+   *
+   * @param ivSize
+   * Size of the initialization vector
+   */
   public void setIvSize(IvSize ivSize) {
     this.ivSize = ivSize;
   }
@@ -111,6 +135,12 @@ public class CencDrm extends Drm {
     return enablePiffCompatibility;
   }
 
+  /**
+   * Enables compatibility with the Protected Interoperable File Format (PIFF) specification
+   *
+   * @param enablePiffCompatibility
+   * Enables compatibility with the Protected Interoperable File Format (PIFF) specification
+   */
   public void setEnablePiffCompatibility(Boolean enablePiffCompatibility) {
     this.enablePiffCompatibility = enablePiffCompatibility;
   }
@@ -124,6 +154,12 @@ public class CencDrm extends Drm {
     return widevine;
   }
 
+  /**
+   * Configuration for Widevine DRM
+   *
+   * @param widevine
+   * Configuration for Widevine DRM
+   */
   public void setWidevine(CencWidevine widevine) {
     this.widevine = widevine;
   }
@@ -137,6 +173,12 @@ public class CencDrm extends Drm {
     return playReady;
   }
 
+  /**
+   * Configuration for PlayReady DRM
+   *
+   * @param playReady
+   * Configuration for PlayReady DRM
+   */
   public void setPlayReady(CencPlayReady playReady) {
     this.playReady = playReady;
   }
@@ -150,6 +192,12 @@ public class CencDrm extends Drm {
     return marlin;
   }
 
+  /**
+   * Configuration for Marlin DRM
+   *
+   * @param marlin
+   * Configuration for Marlin DRM
+   */
   public void setMarlin(CencMarlin marlin) {
     this.marlin = marlin;
   }
@@ -163,6 +211,12 @@ public class CencDrm extends Drm {
     return fairPlay;
   }
 
+  /**
+   * Configuration for FairPlay DRM
+   *
+   * @param fairPlay
+   * Configuration for FairPlay DRM
+   */
   public void setFairPlay(CencFairPlay fairPlay) {
     this.fairPlay = fairPlay;
   }

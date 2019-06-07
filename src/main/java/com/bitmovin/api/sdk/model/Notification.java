@@ -47,6 +47,12 @@ public class Notification extends BitmovinResponse {
     return resolve;
   }
 
+  /**
+   * Notify when condition resolves after it was met
+   *
+   * @param resolve
+   * Notify when condition resolves after it was met
+   */
   public void setResolve(Boolean resolve) {
     this.resolve = resolve;
   }
@@ -60,6 +66,12 @@ public class Notification extends BitmovinResponse {
     return resourceId;
   }
 
+  /**
+   * Specific resource, e.g. encoding id
+   *
+   * @param resourceId
+   * Specific resource, e.g. encoding id
+   */
   public void setResourceId(String resourceId) {
     this.resourceId = resourceId;
   }
@@ -73,6 +85,12 @@ public class Notification extends BitmovinResponse {
     return triggeredAt;
   }
 
+  /**
+   * Last time the notification was triggered
+   *
+   * @param triggeredAt
+   * Last time the notification was triggered
+   */
   public void setTriggeredAt(Date triggeredAt) {
     this.triggeredAt = triggeredAt;
   }
@@ -86,6 +104,11 @@ public class Notification extends BitmovinResponse {
     return type;
   }
 
+  /**
+   * Set type
+   *
+   * @param type
+   */
   public void setType(String type) {
     this.type = type;
   }
@@ -99,6 +122,11 @@ public class Notification extends BitmovinResponse {
     return eventType;
   }
 
+  /**
+   * Set eventType
+   *
+   * @param eventType
+   */
   public void setEventType(String eventType) {
     this.eventType = eventType;
   }
@@ -112,6 +140,11 @@ public class Notification extends BitmovinResponse {
     return category;
   }
 
+  /**
+   * Set category
+   *
+   * @param category
+   */
   public void setCategory(String category) {
     this.category = category;
   }
@@ -125,6 +158,11 @@ public class Notification extends BitmovinResponse {
     return resourceType;
   }
 
+  /**
+   * Set resourceType
+   *
+   * @param resourceType
+   */
   public void setResourceType(String resourceType) {
     this.resourceType = resourceType;
   }
@@ -138,6 +176,11 @@ public class Notification extends BitmovinResponse {
     return muted;
   }
 
+  /**
+   * Set muted
+   *
+   * @param muted
+   */
   public void setMuted(Boolean muted) {
     this.muted = muted;
   }

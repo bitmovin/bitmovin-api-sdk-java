@@ -48,7 +48,7 @@ public class BroadcastTsApi {
      * Add Broadcast TS Muxing
      * 
      * @param encodingId ID of the encoding. (required)
-     * @param broadcastTsMuxing  (optional)
+     * @param broadcastTsMuxing  (required)
      * @return BroadcastTsMuxing
      * @throws BitmovinException if fails to make API call
      */

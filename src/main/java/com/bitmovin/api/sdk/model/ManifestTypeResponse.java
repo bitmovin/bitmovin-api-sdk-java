@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class ManifestTypeResponse {
   @JsonProperty("type")
-  private ManifestType type = null;
+  private ManifestType type;
 
 
   /**
@@ -25,6 +25,12 @@ public class ManifestTypeResponse {
     return type;
   }
 
+  /**
+   * The type of the manifest
+   *
+   * @param type
+   * The type of the manifest
+   */
   public void setType(ManifestType type) {
     this.type = type;
   }

@@ -41,7 +41,7 @@ public class MaxApi {
     /**
      * Max
      * 
-     * @param analyticsMaxQueryRequest  (optional)
+     * @param analyticsMaxQueryRequest  (required)
      * @return AnalyticsResponse
      * @throws BitmovinException if fails to make API call
      */

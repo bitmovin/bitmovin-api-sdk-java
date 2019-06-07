@@ -42,6 +42,11 @@ public class SrtStatisticSend {
     return bytes;
   }
 
+  /**
+   * Set bytes
+   *
+   * @param bytes
+   */
   public void setBytes(Long bytes) {
     this.bytes = bytes;
   }
@@ -55,6 +60,11 @@ public class SrtStatisticSend {
     return bytesDropped;
   }
 
+  /**
+   * Set bytesDropped
+   *
+   * @param bytesDropped
+   */
   public void setBytesDropped(Long bytesDropped) {
     this.bytesDropped = bytesDropped;
   }
@@ -68,6 +78,11 @@ public class SrtStatisticSend {
     return mbitRate;
   }
 
+  /**
+   * Set mbitRate
+   *
+   * @param mbitRate
+   */
   public void setMbitRate(Double mbitRate) {
     this.mbitRate = mbitRate;
   }
@@ -81,6 +96,11 @@ public class SrtStatisticSend {
     return packets;
   }
 
+  /**
+   * Set packets
+   *
+   * @param packets
+   */
   public void setPackets(Long packets) {
     this.packets = packets;
   }
@@ -94,6 +114,11 @@ public class SrtStatisticSend {
     return packetsDropped;
   }
 
+  /**
+   * Set packetsDropped
+   *
+   * @param packetsDropped
+   */
   public void setPacketsDropped(Long packetsDropped) {
     this.packetsDropped = packetsDropped;
   }
@@ -107,6 +132,11 @@ public class SrtStatisticSend {
     return packetsLost;
   }
 
+  /**
+   * Set packetsLost
+   *
+   * @param packetsLost
+   */
   public void setPacketsLost(Long packetsLost) {
     this.packetsLost = packetsLost;
   }
@@ -120,6 +150,11 @@ public class SrtStatisticSend {
     return packetsRetransmitted;
   }
 
+  /**
+   * Set packetsRetransmitted
+   *
+   * @param packetsRetransmitted
+   */
   public void setPacketsRetransmitted(Long packetsRetransmitted) {
     this.packetsRetransmitted = packetsRetransmitted;
   }

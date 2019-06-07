@@ -41,7 +41,7 @@ public class SumApi {
     /**
      * Sum
      * 
-     * @param analyticsSumQueryRequest  (optional)
+     * @param analyticsSumQueryRequest  (required)
      * @return AnalyticsResponse
      * @throws BitmovinException if fails to make API call
      */

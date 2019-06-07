@@ -36,6 +36,11 @@ public class DomainList {
     return domains;
   }
 
+  /**
+   * Set domains
+   *
+   * @param domains
+   */
   public void setDomains(List<Domain> domains) {
     this.domains = domains;
   }

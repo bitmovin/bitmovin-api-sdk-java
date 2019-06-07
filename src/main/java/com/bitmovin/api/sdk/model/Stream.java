@@ -44,26 +44,26 @@ public class Stream extends BitmovinResource {
   private Integer segmentsEncoded;
 
   @JsonProperty("conditions")
-  private AbstractCondition conditions = null;
+  private AbstractCondition conditions;
 
   @JsonProperty("ignoredBy")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<Ignoring> ignoredBy = new ArrayList<Ignoring>();
 
   @JsonProperty("mode")
-  private StreamMode mode = null;
+  private StreamMode mode;
 
   @JsonProperty("perTitleSettings")
-  private StreamPerTitleSettings perTitleSettings = null;
+  private StreamPerTitleSettings perTitleSettings;
 
   @JsonProperty("metadata")
-  private StreamMetadata metadata = null;
+  private StreamMetadata metadata;
 
   @JsonProperty("decodingErrorMode")
-  private DecodingErrorMode decodingErrorMode = null;
+  private DecodingErrorMode decodingErrorMode;
 
   @JsonProperty("appliedSettings")
-  private AppliedStreamSettings appliedSettings = null;
+  private AppliedStreamSettings appliedSettings;
 
 
   public Stream addInputStreamsItem(StreamInput inputStreamsItem) {
@@ -79,6 +79,11 @@ public class Stream extends BitmovinResource {
     return inputStreams;
   }
 
+  /**
+   * Set inputStreams
+   *
+   * @param inputStreams
+   */
   public void setInputStreams(List<StreamInput> inputStreams) {
     this.inputStreams = inputStreams;
   }
@@ -100,6 +105,11 @@ public class Stream extends BitmovinResource {
     return outputs;
   }
 
+  /**
+   * Set outputs
+   *
+   * @param outputs
+   */
   public void setOutputs(List<EncodingOutput> outputs) {
     this.outputs = outputs;
   }
@@ -113,6 +123,12 @@ public class Stream extends BitmovinResource {
     return createQualityMetaData;
   }
 
+  /**
+   * Set true to create quality metadata for this stream
+   *
+   * @param createQualityMetaData
+   * Set true to create quality metadata for this stream
+   */
   public void setCreateQualityMetaData(Boolean createQualityMetaData) {
     this.createQualityMetaData = createQualityMetaData;
   }
@@ -126,6 +142,12 @@ public class Stream extends BitmovinResource {
     return codecConfigId;
   }
 
+  /**
+   * Id of the codec configuration
+   *
+   * @param codecConfigId
+   * Id of the codec configuration
+   */
   public void setCodecConfigId(String codecConfigId) {
     this.codecConfigId = codecConfigId;
   }
@@ -139,6 +161,12 @@ public class Stream extends BitmovinResource {
     return segmentsEncoded;
   }
 
+  /**
+   * Number of encoded segments. Available after encoding finishes.
+   *
+   * @param segmentsEncoded
+   * Number of encoded segments. Available after encoding finishes.
+   */
   public void setSegmentsEncoded(Integer segmentsEncoded) {
     this.segmentsEncoded = segmentsEncoded;
   }
@@ -152,6 +180,12 @@ public class Stream extends BitmovinResource {
     return conditions;
   }
 
+  /**
+   * Conditions to evaluate before creating the stream. If this evaluation fails, the stream won&#39;t be created. All muxings that depend on the stream will also not be created.
+   *
+   * @param conditions
+   * Conditions to evaluate before creating the stream. If this evaluation fails, the stream won&#39;t be created. All muxings that depend on the stream will also not be created.
+   */
   public void setConditions(AbstractCondition conditions) {
     this.conditions = conditions;
   }
@@ -173,6 +207,12 @@ public class Stream extends BitmovinResource {
     return ignoredBy;
   }
 
+  /**
+   * If this is set and contains objects, then this stream has been ignored during the encoding process
+   *
+   * @param ignoredBy
+   * If this is set and contains objects, then this stream has been ignored during the encoding process
+   */
   public void setIgnoredBy(List<Ignoring> ignoredBy) {
     this.ignoredBy = ignoredBy;
   }
@@ -186,6 +226,12 @@ public class Stream extends BitmovinResource {
     return mode;
   }
 
+  /**
+   * Mode of the stream
+   *
+   * @param mode
+   * Mode of the stream
+   */
   public void setMode(StreamMode mode) {
     this.mode = mode;
   }
@@ -199,6 +245,12 @@ public class Stream extends BitmovinResource {
     return perTitleSettings;
   }
 
+  /**
+   * Settings to configure Per-Title on stream level
+   *
+   * @param perTitleSettings
+   * Settings to configure Per-Title on stream level
+   */
   public void setPerTitleSettings(StreamPerTitleSettings perTitleSettings) {
     this.perTitleSettings = perTitleSettings;
   }
@@ -212,6 +264,11 @@ public class Stream extends BitmovinResource {
     return metadata;
   }
 
+  /**
+   * Set metadata
+   *
+   * @param metadata
+   */
   public void setMetadata(StreamMetadata metadata) {
     this.metadata = metadata;
   }
@@ -225,6 +282,12 @@ public class Stream extends BitmovinResource {
     return decodingErrorMode;
   }
 
+  /**
+   * Determines how to react to errors during decoding
+   *
+   * @param decodingErrorMode
+   * Determines how to react to errors during decoding
+   */
   public void setDecodingErrorMode(DecodingErrorMode decodingErrorMode) {
     this.decodingErrorMode = decodingErrorMode;
   }

@@ -27,6 +27,12 @@ public class AnalyticsQueryTimeframe {
     return start;
   }
 
+  /**
+   * Start of timeframe which is queried
+   *
+   * @param start
+   * Start of timeframe which is queried
+   */
   public void setStart(String start) {
     this.start = start;
   }
@@ -40,6 +46,12 @@ public class AnalyticsQueryTimeframe {
     return end;
   }
 
+  /**
+   * End of timeframe which is queried
+   *
+   * @param end
+   * End of timeframe which is queried
+   */
   public void setEnd(String end) {
     this.end = end;
   }

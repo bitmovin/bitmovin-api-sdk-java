@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class VorbisAudioConfiguration extends AudioConfiguration {
   @JsonProperty("channelLayout")
-  private VorbisChannelLayout channelLayout = null;
+  private VorbisChannelLayout channelLayout;
 
 
   /**
@@ -29,6 +29,12 @@ public class VorbisAudioConfiguration extends AudioConfiguration {
     return channelLayout;
   }
 
+  /**
+   * Channel layout of the audio codec configuration
+   *
+   * @param channelLayout
+   * Channel layout of the audio codec configuration
+   */
   public void setChannelLayout(VorbisChannelLayout channelLayout) {
     this.channelLayout = channelLayout;
   }

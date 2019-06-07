@@ -28,6 +28,12 @@ public class CustomWebPlayerBuildDomain extends BitmovinResource {
     return domain;
   }
 
+  /**
+   * Domain where the player is allowed to play
+   *
+   * @param domain
+   * Domain where the player is allowed to play
+   */
   public void setDomain(String domain) {
     this.domain = domain;
   }

@@ -51,6 +51,12 @@ public class PlayerLicense extends BitmovinResponse {
     return name;
   }
 
+  /**
+   * Name of the resource
+   *
+   * @param name
+   * Name of the resource
+   */
   public void setName(String name) {
     this.name = name;
   }

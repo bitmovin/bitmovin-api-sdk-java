@@ -23,16 +23,16 @@ public class Webhook extends BitmovinResource {
   private String url;
 
   @JsonProperty("method")
-  private WebhookHttpMethod method = null;
+  private WebhookHttpMethod method;
 
   @JsonProperty("insecureSsl")
   private Boolean insecureSsl;
 
   @JsonProperty("encryption")
-  private WebhookEncryption encryption = null;
+  private WebhookEncryption encryption;
 
   @JsonProperty("signature")
-  private WebhookSignature signature = null;
+  private WebhookSignature signature;
 
 
   /**
@@ -43,6 +43,12 @@ public class Webhook extends BitmovinResource {
     return url;
   }
 
+  /**
+   * Webhook url
+   *
+   * @param url
+   * Webhook url
+   */
   public void setUrl(String url) {
     this.url = url;
   }
@@ -56,6 +62,12 @@ public class Webhook extends BitmovinResource {
     return method;
   }
 
+  /**
+   * HTTP method used for the webhook
+   *
+   * @param method
+   * HTTP method used for the webhook
+   */
   public void setMethod(WebhookHttpMethod method) {
     this.method = method;
   }
@@ -69,6 +81,12 @@ public class Webhook extends BitmovinResource {
     return insecureSsl;
   }
 
+  /**
+   * Whether to skip SSL certification verification or not
+   *
+   * @param insecureSsl
+   * Whether to skip SSL certification verification or not
+   */
   public void setInsecureSsl(Boolean insecureSsl) {
     this.insecureSsl = insecureSsl;
   }
@@ -82,6 +100,12 @@ public class Webhook extends BitmovinResource {
     return encryption;
   }
 
+  /**
+   * Encryption used for the webhook
+   *
+   * @param encryption
+   * Encryption used for the webhook
+   */
   public void setEncryption(WebhookEncryption encryption) {
     this.encryption = encryption;
   }
@@ -95,6 +119,12 @@ public class Webhook extends BitmovinResource {
     return signature;
   }
 
+  /**
+   * Signature used for the webhook
+   *
+   * @param signature
+   * Signature used for the webhook
+   */
   public void setSignature(WebhookSignature signature) {
     this.signature = signature;
   }

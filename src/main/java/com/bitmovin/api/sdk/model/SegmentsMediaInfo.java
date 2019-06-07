@@ -44,6 +44,12 @@ public class SegmentsMediaInfo extends BasicMediaInfo {
     return segmentPath;
   }
 
+  /**
+   * Path to segments.
+   *
+   * @param segmentPath
+   * Path to segments.
+   */
   public void setSegmentPath(String segmentPath) {
     this.segmentPath = segmentPath;
   }
@@ -57,6 +63,12 @@ public class SegmentsMediaInfo extends BasicMediaInfo {
     return encodingId;
   }
 
+  /**
+   * Id of the encoding.
+   *
+   * @param encodingId
+   * Id of the encoding.
+   */
   public void setEncodingId(String encodingId) {
     this.encodingId = encodingId;
   }
@@ -70,6 +82,12 @@ public class SegmentsMediaInfo extends BasicMediaInfo {
     return streamId;
   }
 
+  /**
+   * Id of the stream.
+   *
+   * @param streamId
+   * Id of the stream.
+   */
   public void setStreamId(String streamId) {
     this.streamId = streamId;
   }
@@ -83,6 +101,12 @@ public class SegmentsMediaInfo extends BasicMediaInfo {
     return muxingId;
   }
 
+  /**
+   * Id of the muxing.
+   *
+   * @param muxingId
+   * Id of the muxing.
+   */
   public void setMuxingId(String muxingId) {
     this.muxingId = muxingId;
   }
@@ -96,6 +120,12 @@ public class SegmentsMediaInfo extends BasicMediaInfo {
     return drmId;
   }
 
+  /**
+   * Id of the DRM.
+   *
+   * @param drmId
+   * Id of the DRM.
+   */
   public void setDrmId(String drmId) {
     this.drmId = drmId;
   }
@@ -109,6 +139,12 @@ public class SegmentsMediaInfo extends BasicMediaInfo {
     return startSegmentNumber;
   }
 
+  /**
+   * Number of the first segment. Default is 0.
+   *
+   * @param startSegmentNumber
+   * Number of the first segment. Default is 0.
+   */
   public void setStartSegmentNumber(Long startSegmentNumber) {
     this.startSegmentNumber = startSegmentNumber;
   }
@@ -122,6 +158,12 @@ public class SegmentsMediaInfo extends BasicMediaInfo {
     return endSegmentNumber;
   }
 
+  /**
+   * Number of the last segment. Default is the last one that was encoded.
+   *
+   * @param endSegmentNumber
+   * Number of the last segment. Default is the last one that was encoded.
+   */
   public void setEndSegmentNumber(Long endSegmentNumber) {
     this.endSegmentNumber = endSegmentNumber;
   }

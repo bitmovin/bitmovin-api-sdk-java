@@ -41,7 +41,7 @@ public class DefaultApi {
     /**
      * Create Smooth Streaming Manifest Default
      * 
-     * @param smoothManifestDefault  (optional)
+     * @param smoothManifestDefault  (required)
      * @return SmoothManifestDefault
      * @throws BitmovinException if fails to make API call
      */

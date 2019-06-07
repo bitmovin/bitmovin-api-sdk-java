@@ -30,6 +30,12 @@ public class LiveDashManifest {
     return manifestId;
   }
 
+  /**
+   * Dash manifest ids
+   *
+   * @param manifestId
+   * Dash manifest ids
+   */
   public void setManifestId(String manifestId) {
     this.manifestId = manifestId;
   }
@@ -43,6 +49,12 @@ public class LiveDashManifest {
     return timeshift;
   }
 
+  /**
+   * Timeshift in seconds
+   *
+   * @param timeshift
+   * Timeshift in seconds
+   */
   public void setTimeshift(Double timeshift) {
     this.timeshift = timeshift;
   }
@@ -56,6 +68,12 @@ public class LiveDashManifest {
     return liveEdgeOffset;
   }
 
+  /**
+   * Live edge offset in seconds
+   *
+   * @param liveEdgeOffset
+   * Live edge offset in seconds
+   */
   public void setLiveEdgeOffset(Double liveEdgeOffset) {
     this.liveEdgeOffset = liveEdgeOffset;
   }

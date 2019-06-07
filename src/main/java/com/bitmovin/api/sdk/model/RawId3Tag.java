@@ -29,6 +29,12 @@ public class RawId3Tag extends Id3Tag {
     return bytes;
   }
 
+  /**
+   * Base64 Encoded Data
+   *
+   * @param bytes
+   * Base64 Encoded Data
+   */
   public void setBytes(String bytes) {
     this.bytes = bytes;
   }

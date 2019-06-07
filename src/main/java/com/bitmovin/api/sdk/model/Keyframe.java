@@ -20,7 +20,7 @@ public class Keyframe extends BitmovinResource {
   private Double time;
 
   @JsonProperty("segmentCut")
-  private Boolean segmentCut = true;
+  private Boolean segmentCut;
 
 
   /**
@@ -31,6 +31,12 @@ public class Keyframe extends BitmovinResource {
     return time;
   }
 
+  /**
+   * Time in seconds where the keyframe should be inserted
+   *
+   * @param time
+   * Time in seconds where the keyframe should be inserted
+   */
   public void setTime(Double time) {
     this.time = time;
   }
@@ -44,6 +50,12 @@ public class Keyframe extends BitmovinResource {
     return segmentCut;
   }
 
+  /**
+   * Instructs the encoder to cut the segment at this position
+   *
+   * @param segmentCut
+   * Instructs the encoder to cut the segment at this position
+   */
   public void setSegmentCut(Boolean segmentCut) {
     this.segmentCut = segmentCut;
   }

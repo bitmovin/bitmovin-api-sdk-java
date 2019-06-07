@@ -29,6 +29,12 @@ public class BroadcastTsVideoInputStreamConfiguration extends BroadcastTsInputSt
     return insertAccessUnitDelimiterInAvc;
   }
 
+  /**
+   * If true, add access unit delimiters (AUD) to AVC stream if AUD is missing from input elementary stream.
+   *
+   * @param insertAccessUnitDelimiterInAvc
+   * If true, add access unit delimiters (AUD) to AVC stream if AUD is missing from input elementary stream.
+   */
   public void setInsertAccessUnitDelimiterInAvc(Boolean insertAccessUnitDelimiterInAvc) {
     this.insertAccessUnitDelimiterInAvc = insertAccessUnitDelimiterInAvc;
   }
@@ -44,6 +50,16 @@ public class BroadcastTsVideoInputStreamConfiguration extends BroadcastTsInputSt
     return maxDecodeDelay;
   }
 
+  /**
+   * Maximum Decoder Delay in 90 KHz cycles. When non-zero, the difference between the PCR and the DTS for each picture as it is inserted into the output transport stream is limited to this number of 90 KHz cycles. Values below 1000 are treated as 0 and ignored. Valid Range [0, 1000-900000]
+   * minimum: 1000
+   * maximum: 900000
+   *
+   * @param maxDecodeDelay
+   * Maximum Decoder Delay in 90 KHz cycles. When non-zero, the difference between the PCR and the DTS for each picture as it is inserted into the output transport stream is limited to this number of 90 KHz cycles. Values below 1000 are treated as 0 and ignored. Valid Range [0, 1000-900000]
+   * minimum: 1000
+   * maximum: 900000
+   */
   public void setMaxDecodeDelay(Integer maxDecodeDelay) {
     this.maxDecodeDelay = maxDecodeDelay;
   }

@@ -32,6 +32,12 @@ public class MarlinDrm extends Drm {
     return key;
   }
 
+  /**
+   * 16 byte key in hex (32 characters)
+   *
+   * @param key
+   * 16 byte key in hex (32 characters)
+   */
   public void setKey(String key) {
     this.key = key;
   }
@@ -45,6 +51,12 @@ public class MarlinDrm extends Drm {
     return kid;
   }
 
+  /**
+   * 16 byte key in hex (32 characters)
+   *
+   * @param kid
+   * 16 byte key in hex (32 characters)
+   */
   public void setKid(String kid) {
     this.kid = kid;
   }

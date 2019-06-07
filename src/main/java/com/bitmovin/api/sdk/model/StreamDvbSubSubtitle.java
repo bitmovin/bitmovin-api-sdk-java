@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class StreamDvbSubSubtitle extends BitmovinResource {
   @JsonProperty("inputStream")
-  private StreamInput inputStream = null;
+  private StreamInput inputStream;
 
 
   /**
@@ -29,6 +29,12 @@ public class StreamDvbSubSubtitle extends BitmovinResource {
     return inputStream;
   }
 
+  /**
+   * The input stream to extract the subtitle from
+   *
+   * @param inputStream
+   * The input stream to extract the subtitle from
+   */
   public void setInputStream(StreamInput inputStream) {
     this.inputStream = inputStream;
   }

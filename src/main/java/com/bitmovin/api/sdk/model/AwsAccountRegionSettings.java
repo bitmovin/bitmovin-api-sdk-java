@@ -48,6 +48,12 @@ public class AwsAccountRegionSettings extends BitmovinResource {
     return limitParallelEncodings;
   }
 
+  /**
+   * Limit for the amount of running encodings at a time. Leave empty for no limit.
+   *
+   * @param limitParallelEncodings
+   * Limit for the amount of running encodings at a time. Leave empty for no limit.
+   */
   public void setLimitParallelEncodings(Long limitParallelEncodings) {
     this.limitParallelEncodings = limitParallelEncodings;
   }
@@ -61,6 +67,12 @@ public class AwsAccountRegionSettings extends BitmovinResource {
     return maximumAmountOfCoordinatorsAndWorkersInRegion;
   }
 
+  /**
+   * Maximum amount of encoding coordinators and workers allowed in this region at any time. Leave empty for no limit.
+   *
+   * @param maximumAmountOfCoordinatorsAndWorkersInRegion
+   * Maximum amount of encoding coordinators and workers allowed in this region at any time. Leave empty for no limit.
+   */
   public void setMaximumAmountOfCoordinatorsAndWorkersInRegion(Long maximumAmountOfCoordinatorsAndWorkersInRegion) {
     this.maximumAmountOfCoordinatorsAndWorkersInRegion = maximumAmountOfCoordinatorsAndWorkersInRegion;
   }
@@ -74,6 +86,12 @@ public class AwsAccountRegionSettings extends BitmovinResource {
     return maxMoneyToSpendPerMonth;
   }
 
+  /**
+   * Limit the amount of money to spend in this region on this account. Leave empty for no limit.
+   *
+   * @param maxMoneyToSpendPerMonth
+   * Limit the amount of money to spend in this region on this account. Leave empty for no limit.
+   */
   public void setMaxMoneyToSpendPerMonth(Double maxMoneyToSpendPerMonth) {
     this.maxMoneyToSpendPerMonth = maxMoneyToSpendPerMonth;
   }
@@ -87,6 +105,12 @@ public class AwsAccountRegionSettings extends BitmovinResource {
     return securityGroupId;
   }
 
+  /**
+   * Id of the security group for encoding instances
+   *
+   * @param securityGroupId
+   * Id of the security group for encoding instances
+   */
   public void setSecurityGroupId(String securityGroupId) {
     this.securityGroupId = securityGroupId;
   }
@@ -100,6 +124,12 @@ public class AwsAccountRegionSettings extends BitmovinResource {
     return subnetId;
   }
 
+  /**
+   * Id of the subnet for encoding instances
+   *
+   * @param subnetId
+   * Id of the subnet for encoding instances
+   */
   public void setSubnetId(String subnetId) {
     this.subnetId = subnetId;
   }
@@ -121,6 +151,12 @@ public class AwsAccountRegionSettings extends BitmovinResource {
     return machineTypes;
   }
 
+  /**
+   * Which machine types are allowed to be deployed. Leave empty for no machine type restrictions.
+   *
+   * @param machineTypes
+   * Which machine types are allowed to be deployed. Leave empty for no machine type restrictions.
+   */
   public void setMachineTypes(List<String> machineTypes) {
     this.machineTypes = machineTypes;
   }
@@ -136,6 +172,16 @@ public class AwsAccountRegionSettings extends BitmovinResource {
     return sshPort;
   }
 
+  /**
+   * Custom SSH port. Valid values: 1 - 65535. Leave empty if the default SSH port 22 is OK.
+   * minimum: 1
+   * maximum: 65535
+   *
+   * @param sshPort
+   * Custom SSH port. Valid values: 1 - 65535. Leave empty if the default SSH port 22 is OK.
+   * minimum: 1
+   * maximum: 65535
+   */
   public void setSshPort(Integer sshPort) {
     this.sshPort = sshPort;
   }

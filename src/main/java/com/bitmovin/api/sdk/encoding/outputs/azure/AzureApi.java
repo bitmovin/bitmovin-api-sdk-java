@@ -44,7 +44,7 @@ public class AzureApi {
     /**
      * Create Azure Output
      * 
-     * @param azureOutput The Azure output to be created (optional)
+     * @param azureOutput The Azure output to be created (required)
      * @return AzureOutput
      * @throws BitmovinException if fails to make API call
      */

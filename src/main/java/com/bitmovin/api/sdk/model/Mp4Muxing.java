@@ -30,13 +30,13 @@ public class Mp4Muxing extends Muxing {
   private Integer fragmentDuration;
 
   @JsonProperty("timeCode")
-  private TimeCode timeCode = null;
+  private TimeCode timeCode;
 
   @JsonProperty("fragmentedMP4MuxingManifestType")
-  private FragmentedMp4MuxingManifestType fragmentedMP4MuxingManifestType = null;
+  private FragmentedMp4MuxingManifestType fragmentedMP4MuxingManifestType;
 
   @JsonProperty("internalChunkLength")
-  private InternalChunkLength internalChunkLength = null;
+  private InternalChunkLength internalChunkLength;
 
 
   /**
@@ -47,6 +47,12 @@ public class Mp4Muxing extends Muxing {
     return filename;
   }
 
+  /**
+   * Name of the new Video
+   *
+   * @param filename
+   * Name of the new Video
+   */
   public void setFilename(String filename) {
     this.filename = filename;
   }
@@ -60,6 +66,12 @@ public class Mp4Muxing extends Muxing {
     return fragmentDuration;
   }
 
+  /**
+   *  Duration of fragments in milliseconds. Required for Fragmented MP4 Muxing (for Smooth Streaming or DASH On-Demand). Not setting this will result in unfragmented mp4.
+   *
+   * @param fragmentDuration
+   *  Duration of fragments in milliseconds. Required for Fragmented MP4 Muxing (for Smooth Streaming or DASH On-Demand). Not setting this will result in unfragmented mp4.
+   */
   public void setFragmentDuration(Integer fragmentDuration) {
     this.fragmentDuration = fragmentDuration;
   }
@@ -73,6 +85,11 @@ public class Mp4Muxing extends Muxing {
     return timeCode;
   }
 
+  /**
+   * Set timeCode
+   *
+   * @param timeCode
+   */
   public void setTimeCode(TimeCode timeCode) {
     this.timeCode = timeCode;
   }
@@ -86,6 +103,11 @@ public class Mp4Muxing extends Muxing {
     return fragmentedMP4MuxingManifestType;
   }
 
+  /**
+   * Set fragmentedMP4MuxingManifestType
+   *
+   * @param fragmentedMP4MuxingManifestType
+   */
   public void setFragmentedMP4MuxingManifestType(FragmentedMp4MuxingManifestType fragmentedMP4MuxingManifestType) {
     this.fragmentedMP4MuxingManifestType = fragmentedMP4MuxingManifestType;
   }
@@ -99,6 +121,12 @@ public class Mp4Muxing extends Muxing {
     return internalChunkLength;
   }
 
+  /**
+   * Modifies the internal chunk length used for chunked encoding
+   *
+   * @param internalChunkLength
+   * Modifies the internal chunk length used for chunked encoding
+   */
   public void setInternalChunkLength(InternalChunkLength internalChunkLength) {
     this.internalChunkLength = internalChunkLength;
   }

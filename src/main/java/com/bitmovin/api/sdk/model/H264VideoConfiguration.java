@@ -36,13 +36,13 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class H264VideoConfiguration extends VideoConfiguration {
   @JsonProperty("presetConfiguration")
-  private PresetConfiguration presetConfiguration = null;
+  private PresetConfiguration presetConfiguration;
 
   @JsonProperty("crf")
   private Double crf;
 
   @JsonProperty("profile")
-  private ProfileH264 profile = null;
+  private ProfileH264 profile;
 
   @JsonProperty("bframes")
   private Integer bframes;
@@ -57,7 +57,7 @@ public class H264VideoConfiguration extends VideoConfiguration {
   private Integer qpMax;
 
   @JsonProperty("mvPredictionMode")
-  private MvPredictionMode mvPredictionMode = null;
+  private MvPredictionMode mvPredictionMode;
 
   @JsonProperty("mvSearchRangeMax")
   private Integer mvSearchRangeMax;
@@ -90,22 +90,22 @@ public class H264VideoConfiguration extends VideoConfiguration {
   private Double maxKeyframeInterval;
 
   @JsonProperty("level")
-  private LevelH264 level = null;
+  private LevelH264 level;
 
   @JsonProperty("bAdaptiveStrategy")
-  private BAdapt bAdaptiveStrategy = null;
+  private BAdapt bAdaptiveStrategy;
 
   @JsonProperty("motionEstimationMethod")
-  private H264MotionEstimationMethod motionEstimationMethod = null;
+  private H264MotionEstimationMethod motionEstimationMethod;
 
   @JsonProperty("rcLookahead")
   private Integer rcLookahead;
 
   @JsonProperty("subMe")
-  private H264SubMe subMe = null;
+  private H264SubMe subMe;
 
   @JsonProperty("trellis")
-  private H264Trellis trellis = null;
+  private H264Trellis trellis;
 
   @JsonProperty("partitions")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -115,19 +115,19 @@ public class H264VideoConfiguration extends VideoConfiguration {
   private Integer slices;
 
   @JsonProperty("interlaceMode")
-  private H264InterlaceMode interlaceMode = null;
+  private H264InterlaceMode interlaceMode;
 
   @JsonProperty("sceneCutThreshold")
   private Integer sceneCutThreshold;
 
   @JsonProperty("nalHrd")
-  private H264NalHrd nalHrd = null;
+  private H264NalHrd nalHrd;
 
   @JsonProperty("bPyramid")
-  private H264BPyramid bPyramid = null;
+  private H264BPyramid bPyramid;
 
   @JsonProperty("cea608708SubtitleConfig")
-  private Cea608708SubtitleConfiguration cea608708SubtitleConfig = null;
+  private Cea608708SubtitleConfiguration cea608708SubtitleConfig;
 
   @JsonProperty("deblockAlpha")
   private Integer deblockAlpha;
@@ -136,7 +136,7 @@ public class H264VideoConfiguration extends VideoConfiguration {
   private Integer deblockBeta;
 
   @JsonProperty("adaptiveQuantizationMode")
-  private AdaptiveQuantMode adaptiveQuantizationMode = null;
+  private AdaptiveQuantMode adaptiveQuantizationMode;
 
   @JsonProperty("adaptiveQuantizationStrength")
   private Double adaptiveQuantizationStrength;
@@ -154,7 +154,7 @@ public class H264VideoConfiguration extends VideoConfiguration {
   private Boolean weightedPredictionBFrames;
 
   @JsonProperty("weightedPredictionPFrames")
-  private WeightedPredictionPFrames weightedPredictionPFrames = null;
+  private WeightedPredictionPFrames weightedPredictionPFrames;
 
   @JsonProperty("macroblockTreeRatecontrol")
   private Boolean macroblockTreeRatecontrol;
@@ -177,6 +177,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return presetConfiguration;
   }
 
+  /**
+   * Use a set of well defined configurations preset to support certain use cases. Can be overwritten with more specific values.
+   *
+   * @param presetConfiguration
+   * Use a set of well defined configurations preset to support certain use cases. Can be overwritten with more specific values.
+   */
   public void setPresetConfiguration(PresetConfiguration presetConfiguration) {
     this.presetConfiguration = presetConfiguration;
   }
@@ -192,6 +198,16 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return crf;
   }
 
+  /**
+   * Sets the constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
+   * minimum: 0
+   * maximum: 51
+   *
+   * @param crf
+   * Sets the constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
+   * minimum: 0
+   * maximum: 51
+   */
   public void setCrf(Double crf) {
     this.crf = crf;
   }
@@ -205,6 +221,11 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return profile;
   }
 
+  /**
+   * Set profile
+   *
+   * @param profile
+   */
   public void setProfile(ProfileH264 profile) {
     this.profile = profile;
   }
@@ -220,6 +241,16 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return bframes;
   }
 
+  /**
+   * Sets the amount of b frames.
+   * minimum: 0
+   * maximum: 16
+   *
+   * @param bframes
+   * Sets the amount of b frames.
+   * minimum: 0
+   * maximum: 16
+   */
   public void setBframes(Integer bframes) {
     this.bframes = bframes;
   }
@@ -235,6 +266,16 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return refFrames;
   }
 
+  /**
+   * Sets the amount of reference frames.
+   * minimum: 1
+   * maximum: 16
+   *
+   * @param refFrames
+   * Sets the amount of reference frames.
+   * minimum: 1
+   * maximum: 16
+   */
   public void setRefFrames(Integer refFrames) {
     this.refFrames = refFrames;
   }
@@ -250,6 +291,16 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return qpMin;
   }
 
+  /**
+   * Sets the minimum of quantization factor.
+   * minimum: 0
+   * maximum: 69
+   *
+   * @param qpMin
+   * Sets the minimum of quantization factor.
+   * minimum: 0
+   * maximum: 69
+   */
   public void setQpMin(Integer qpMin) {
     this.qpMin = qpMin;
   }
@@ -265,6 +316,16 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return qpMax;
   }
 
+  /**
+   * Sets the maximum of quantization factor.
+   * minimum: 0
+   * maximum: 69
+   *
+   * @param qpMax
+   * Sets the maximum of quantization factor.
+   * minimum: 0
+   * maximum: 69
+   */
   public void setQpMax(Integer qpMax) {
     this.qpMax = qpMax;
   }
@@ -278,6 +339,11 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return mvPredictionMode;
   }
 
+  /**
+   * Set mvPredictionMode
+   *
+   * @param mvPredictionMode
+   */
   public void setMvPredictionMode(MvPredictionMode mvPredictionMode) {
     this.mvPredictionMode = mvPredictionMode;
   }
@@ -293,6 +359,16 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return mvSearchRangeMax;
   }
 
+  /**
+   * Sets the maximum Motion-Vector-Search-Range
+   * minimum: 16
+   * maximum: 24
+   *
+   * @param mvSearchRangeMax
+   * Sets the maximum Motion-Vector-Search-Range
+   * minimum: 16
+   * maximum: 24
+   */
   public void setMvSearchRangeMax(Integer mvSearchRangeMax) {
     this.mvSearchRangeMax = mvSearchRangeMax;
   }
@@ -306,6 +382,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return cabac;
   }
 
+  /**
+   * Enable or disable CABAC
+   *
+   * @param cabac
+   * Enable or disable CABAC
+   */
   public void setCabac(Boolean cabac) {
     this.cabac = cabac;
   }
@@ -319,6 +401,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return maxBitrate;
   }
 
+  /**
+   * Maximum Bitrate
+   *
+   * @param maxBitrate
+   * Maximum Bitrate
+   */
   public void setMaxBitrate(Long maxBitrate) {
     this.maxBitrate = maxBitrate;
   }
@@ -332,6 +420,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return minBitrate;
   }
 
+  /**
+   * Minimum Bitrate
+   *
+   * @param minBitrate
+   * Minimum Bitrate
+   */
   public void setMinBitrate(Long minBitrate) {
     this.minBitrate = minBitrate;
   }
@@ -345,6 +439,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return bufsize;
   }
 
+  /**
+   * Playback device buffer size
+   *
+   * @param bufsize
+   * Playback device buffer size
+   */
   public void setBufsize(Long bufsize) {
     this.bufsize = bufsize;
   }
@@ -358,6 +458,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return minGop;
   }
 
+  /**
+   * Minimum GOP length, the minimum distance between I-frames
+   *
+   * @param minGop
+   * Minimum GOP length, the minimum distance between I-frames
+   */
   public void setMinGop(Integer minGop) {
     this.minGop = minGop;
   }
@@ -371,6 +477,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return maxGop;
   }
 
+  /**
+   * Maximum GOP length, the maximum distance between I-frames
+   *
+   * @param maxGop
+   * Maximum GOP length, the maximum distance between I-frames
+   */
   public void setMaxGop(Integer maxGop) {
     this.maxGop = maxGop;
   }
@@ -384,6 +496,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return openGop;
   }
 
+  /**
+   * Enable open-gop, allows referencing frames from a previous gop
+   *
+   * @param openGop
+   * Enable open-gop, allows referencing frames from a previous gop
+   */
   public void setOpenGop(Boolean openGop) {
     this.openGop = openGop;
   }
@@ -397,6 +515,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return minKeyframeInterval;
   }
 
+  /**
+   * Minimum interval in seconds between key frames
+   *
+   * @param minKeyframeInterval
+   * Minimum interval in seconds between key frames
+   */
   public void setMinKeyframeInterval(Double minKeyframeInterval) {
     this.minKeyframeInterval = minKeyframeInterval;
   }
@@ -410,6 +534,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return maxKeyframeInterval;
   }
 
+  /**
+   * Maximum interval in seconds between key frames
+   *
+   * @param maxKeyframeInterval
+   * Maximum interval in seconds between key frames
+   */
   public void setMaxKeyframeInterval(Double maxKeyframeInterval) {
     this.maxKeyframeInterval = maxKeyframeInterval;
   }
@@ -423,6 +553,11 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return level;
   }
 
+  /**
+   * Set level
+   *
+   * @param level
+   */
   public void setLevel(LevelH264 level) {
     this.level = level;
   }
@@ -436,6 +571,11 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return bAdaptiveStrategy;
   }
 
+  /**
+   * Set bAdaptiveStrategy
+   *
+   * @param bAdaptiveStrategy
+   */
   public void setBAdaptiveStrategy(BAdapt bAdaptiveStrategy) {
     this.bAdaptiveStrategy = bAdaptiveStrategy;
   }
@@ -449,6 +589,11 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return motionEstimationMethod;
   }
 
+  /**
+   * Set motionEstimationMethod
+   *
+   * @param motionEstimationMethod
+   */
   public void setMotionEstimationMethod(H264MotionEstimationMethod motionEstimationMethod) {
     this.motionEstimationMethod = motionEstimationMethod;
   }
@@ -464,6 +609,16 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return rcLookahead;
   }
 
+  /**
+   * Number of frames for frame-type decision lookahead
+   * minimum: 0
+   * maximum: 250
+   *
+   * @param rcLookahead
+   * Number of frames for frame-type decision lookahead
+   * minimum: 0
+   * maximum: 250
+   */
   public void setRcLookahead(Integer rcLookahead) {
     this.rcLookahead = rcLookahead;
   }
@@ -477,6 +632,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return subMe;
   }
 
+  /**
+   * Subpixel motion estimation and mode decision
+   *
+   * @param subMe
+   * Subpixel motion estimation and mode decision
+   */
   public void setSubMe(H264SubMe subMe) {
     this.subMe = subMe;
   }
@@ -490,6 +651,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return trellis;
   }
 
+  /**
+   * Enables or disables Trellis quantization. NOTE: This requires cabac
+   *
+   * @param trellis
+   * Enables or disables Trellis quantization. NOTE: This requires cabac
+   */
   public void setTrellis(H264Trellis trellis) {
     this.trellis = trellis;
   }
@@ -511,6 +678,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return partitions;
   }
 
+  /**
+   * Partitions to consider. Analyzing more partition options improves quality at the cost of speed.
+   *
+   * @param partitions
+   * Partitions to consider. Analyzing more partition options improves quality at the cost of speed.
+   */
   public void setPartitions(List<H264Partition> partitions) {
     this.partitions = partitions;
   }
@@ -526,6 +699,16 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return slices;
   }
 
+  /**
+   * Number of slices per frame.
+   * minimum: 1
+   * maximum: 45
+   *
+   * @param slices
+   * Number of slices per frame.
+   * minimum: 1
+   * maximum: 45
+   */
   public void setSlices(Integer slices) {
     this.slices = slices;
   }
@@ -539,6 +722,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return interlaceMode;
   }
 
+  /**
+   * Using TOP_FIELD_FIRST or BOTTOM_FIELD_FIRST will output interlaced video
+   *
+   * @param interlaceMode
+   * Using TOP_FIELD_FIRST or BOTTOM_FIELD_FIRST will output interlaced video
+   */
   public void setInterlaceMode(H264InterlaceMode interlaceMode) {
     this.interlaceMode = interlaceMode;
   }
@@ -554,6 +743,16 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return sceneCutThreshold;
   }
 
+  /**
+   * Scene change sensitivity. The higher the value, the more likely an I-frame will be inserted. Set to 0 to disable it which is advised for scenarios where fixed GOP is required, e.g., adaptive streaming outputs like DASH, HLS and Smooth. Having this setting enabled can improve quality for progressive output with an increased internal chunk length (see &#x60;internalChunkLength&#x60; of muxings).
+   * minimum: 0
+   * maximum: 100
+   *
+   * @param sceneCutThreshold
+   * Scene change sensitivity. The higher the value, the more likely an I-frame will be inserted. Set to 0 to disable it which is advised for scenarios where fixed GOP is required, e.g., adaptive streaming outputs like DASH, HLS and Smooth. Having this setting enabled can improve quality for progressive output with an increased internal chunk length (see &#x60;internalChunkLength&#x60; of muxings).
+   * minimum: 0
+   * maximum: 100
+   */
   public void setSceneCutThreshold(Integer sceneCutThreshold) {
     this.sceneCutThreshold = sceneCutThreshold;
   }
@@ -567,6 +766,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return nalHrd;
   }
 
+  /**
+   * Signal hypothetical reference decoder (HRD) information (requires bufsize to be set)
+   *
+   * @param nalHrd
+   * Signal hypothetical reference decoder (HRD) information (requires bufsize to be set)
+   */
   public void setNalHrd(H264NalHrd nalHrd) {
     this.nalHrd = nalHrd;
   }
@@ -580,6 +785,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return bPyramid;
   }
 
+  /**
+   * Keep some B-frames as references
+   *
+   * @param bPyramid
+   * Keep some B-frames as references
+   */
   public void setBPyramid(H264BPyramid bPyramid) {
     this.bPyramid = bPyramid;
   }
@@ -593,6 +804,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return cea608708SubtitleConfig;
   }
 
+  /**
+   * Defines whether CEA 608/708 subtitles are copied from the input video stream
+   *
+   * @param cea608708SubtitleConfig
+   * Defines whether CEA 608/708 subtitles are copied from the input video stream
+   */
   public void setCea608708SubtitleConfig(Cea608708SubtitleConfiguration cea608708SubtitleConfig) {
     this.cea608708SubtitleConfig = cea608708SubtitleConfig;
   }
@@ -606,6 +823,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return deblockAlpha;
   }
 
+  /**
+   * Strength of the in-loop deblocking filter. Higher values deblock more effectively but also soften the image
+   *
+   * @param deblockAlpha
+   * Strength of the in-loop deblocking filter. Higher values deblock more effectively but also soften the image
+   */
   public void setDeblockAlpha(Integer deblockAlpha) {
     this.deblockAlpha = deblockAlpha;
   }
@@ -619,6 +842,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return deblockBeta;
   }
 
+  /**
+   * Threshold of the in-loop deblocking filter. Higher values apply deblocking stronger on non flat blocks, lower values on flat blocks
+   *
+   * @param deblockBeta
+   * Threshold of the in-loop deblocking filter. Higher values apply deblocking stronger on non flat blocks, lower values on flat blocks
+   */
   public void setDeblockBeta(Integer deblockBeta) {
     this.deblockBeta = deblockBeta;
   }
@@ -632,6 +861,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return adaptiveQuantizationMode;
   }
 
+  /**
+   * Controls the adaptive quantization algorithm
+   *
+   * @param adaptiveQuantizationMode
+   * Controls the adaptive quantization algorithm
+   */
   public void setAdaptiveQuantizationMode(AdaptiveQuantMode adaptiveQuantizationMode) {
     this.adaptiveQuantizationMode = adaptiveQuantizationMode;
   }
@@ -645,6 +880,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return adaptiveQuantizationStrength;
   }
 
+  /**
+   * Values greater than 1 reduce blocking and blurring in flat and textured areas. Values less than 1 reduces ringing artifacts at the cost of more banding artifacts. Negative values are not allowed
+   *
+   * @param adaptiveQuantizationStrength
+   * Values greater than 1 reduce blocking and blurring in flat and textured areas. Values less than 1 reduces ringing artifacts at the cost of more banding artifacts. Negative values are not allowed
+   */
   public void setAdaptiveQuantizationStrength(Double adaptiveQuantizationStrength) {
     this.adaptiveQuantizationStrength = adaptiveQuantizationStrength;
   }
@@ -658,6 +899,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return mixedReferences;
   }
 
+  /**
+   * Allow references on a per partition basis, rather than per-macroblock basis
+   *
+   * @param mixedReferences
+   * Allow references on a per partition basis, rather than per-macroblock basis
+   */
   public void setMixedReferences(Boolean mixedReferences) {
     this.mixedReferences = mixedReferences;
   }
@@ -671,6 +918,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return adaptiveSpatialTransform;
   }
 
+  /**
+   * Enables adaptive spatial transform (high profile 8x8 transform)
+   *
+   * @param adaptiveSpatialTransform
+   * Enables adaptive spatial transform (high profile 8x8 transform)
+   */
   public void setAdaptiveSpatialTransform(Boolean adaptiveSpatialTransform) {
     this.adaptiveSpatialTransform = adaptiveSpatialTransform;
   }
@@ -684,6 +937,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return fastSkipDetectionPFrames;
   }
 
+  /**
+   * Enables fast skip detection on P-frames. Disabling this very slightly increases quality but at a large speed loss
+   *
+   * @param fastSkipDetectionPFrames
+   * Enables fast skip detection on P-frames. Disabling this very slightly increases quality but at a large speed loss
+   */
   public void setFastSkipDetectionPFrames(Boolean fastSkipDetectionPFrames) {
     this.fastSkipDetectionPFrames = fastSkipDetectionPFrames;
   }
@@ -697,6 +956,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return weightedPredictionBFrames;
   }
 
+  /**
+   * Enable open-gop, allows referencing frames from a previous gop
+   *
+   * @param weightedPredictionBFrames
+   * Enable open-gop, allows referencing frames from a previous gop
+   */
   public void setWeightedPredictionBFrames(Boolean weightedPredictionBFrames) {
     this.weightedPredictionBFrames = weightedPredictionBFrames;
   }
@@ -710,6 +975,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return weightedPredictionPFrames;
   }
 
+  /**
+   * Defines the mode for weighted prediction for P-frames
+   *
+   * @param weightedPredictionPFrames
+   * Defines the mode for weighted prediction for P-frames
+   */
   public void setWeightedPredictionPFrames(WeightedPredictionPFrames weightedPredictionPFrames) {
     this.weightedPredictionPFrames = weightedPredictionPFrames;
   }
@@ -723,6 +994,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return macroblockTreeRatecontrol;
   }
 
+  /**
+   * Enable macroblock tree ratecontrol. Macroblock tree rate control tracks how often blocks of the frame are used for prediciting future frames
+   *
+   * @param macroblockTreeRatecontrol
+   * Enable macroblock tree ratecontrol. Macroblock tree rate control tracks how often blocks of the frame are used for prediciting future frames
+   */
   public void setMacroblockTreeRatecontrol(Boolean macroblockTreeRatecontrol) {
     this.macroblockTreeRatecontrol = macroblockTreeRatecontrol;
   }
@@ -736,6 +1013,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return quantizerCurveCompression;
   }
 
+  /**
+   * Ratio between constant bitrate (0.0) and constant quantizer (1.0). Valid range 0.0 - 1.0
+   *
+   * @param quantizerCurveCompression
+   * Ratio between constant bitrate (0.0) and constant quantizer (1.0). Valid range 0.0 - 1.0
+   */
   public void setQuantizerCurveCompression(Double quantizerCurveCompression) {
     this.quantizerCurveCompression = quantizerCurveCompression;
   }
@@ -749,6 +1032,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return psyRateDistortionOptimization;
   }
 
+  /**
+   * Psychovisual Rate Distortion retains fine details like film grain at the expense of more blocking artifacts. Higher values make the video appear sharper and more detailed but with a higher risk of blocking artifacts. Needs to have subMe with RD_IP, RD_ALL, RD_REF_IP or RD_REF_ALL
+   *
+   * @param psyRateDistortionOptimization
+   * Psychovisual Rate Distortion retains fine details like film grain at the expense of more blocking artifacts. Higher values make the video appear sharper and more detailed but with a higher risk of blocking artifacts. Needs to have subMe with RD_IP, RD_ALL, RD_REF_IP or RD_REF_ALL
+   */
   public void setPsyRateDistortionOptimization(Double psyRateDistortionOptimization) {
     this.psyRateDistortionOptimization = psyRateDistortionOptimization;
   }
@@ -762,6 +1051,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
     return psyTrellis;
   }
 
+  /**
+   * Higher values will improve sharpness and detail retention but might come at costs of artifacts. Needs to have trellis enabled
+   *
+   * @param psyTrellis
+   * Higher values will improve sharpness and detail retention but might come at costs of artifacts. Needs to have trellis enabled
+   */
   public void setPsyTrellis(Double psyTrellis) {
     this.psyTrellis = psyTrellis;
   }

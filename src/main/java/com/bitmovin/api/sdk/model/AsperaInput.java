@@ -43,6 +43,12 @@ public class AsperaInput extends Input {
     return minBandwidth;
   }
 
+  /**
+   * Minimal download bandwidth. Examples: 100k, 100m, 100g
+   *
+   * @param minBandwidth
+   * Minimal download bandwidth. Examples: 100k, 100m, 100g
+   */
   public void setMinBandwidth(String minBandwidth) {
     this.minBandwidth = minBandwidth;
   }
@@ -56,6 +62,12 @@ public class AsperaInput extends Input {
     return maxBandwidth;
   }
 
+  /**
+   * Maximal download bandwidth. Examples: 100k, 100m, 100g
+   *
+   * @param maxBandwidth
+   * Maximal download bandwidth. Examples: 100k, 100m, 100g
+   */
   public void setMaxBandwidth(String maxBandwidth) {
     this.maxBandwidth = maxBandwidth;
   }
@@ -69,6 +81,12 @@ public class AsperaInput extends Input {
     return host;
   }
 
+  /**
+   * Host to use for Aspera transfers
+   *
+   * @param host
+   * Host to use for Aspera transfers
+   */
   public void setHost(String host) {
     this.host = host;
   }
@@ -82,6 +100,12 @@ public class AsperaInput extends Input {
     return username;
   }
 
+  /**
+   * Username to log into Aspera host (either password and user must be set or token)
+   *
+   * @param username
+   * Username to log into Aspera host (either password and user must be set or token)
+   */
   public void setUsername(String username) {
     this.username = username;
   }
@@ -95,6 +119,12 @@ public class AsperaInput extends Input {
     return password;
   }
 
+  /**
+   * corresponding password (either password and user must be set or token)
+   *
+   * @param password
+   * corresponding password (either password and user must be set or token)
+   */
   public void setPassword(String password) {
     this.password = password;
   }
@@ -108,6 +138,12 @@ public class AsperaInput extends Input {
     return token;
   }
 
+  /**
+   * Token used for authentication (either password and user must be set or token)
+   *
+   * @param token
+   * Token used for authentication (either password and user must be set or token)
+   */
   public void setToken(String token) {
     this.token = token;
   }

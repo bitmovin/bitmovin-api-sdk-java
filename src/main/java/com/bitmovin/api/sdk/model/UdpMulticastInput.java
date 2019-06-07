@@ -31,6 +31,12 @@ public class UdpMulticastInput extends Input {
     return host;
   }
 
+  /**
+   * Host name or IP address to use
+   *
+   * @param host
+   * Host name or IP address to use
+   */
   public void setHost(String host) {
     this.host = host;
   }
@@ -44,6 +50,12 @@ public class UdpMulticastInput extends Input {
     return port;
   }
 
+  /**
+   * Port to use
+   *
+   * @param port
+   * Port to use
+   */
   public void setPort(Integer port) {
     this.port = port;
   }

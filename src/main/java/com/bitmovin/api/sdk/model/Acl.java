@@ -23,7 +23,7 @@ public class Acl extends BitmovinResource {
   private String resource;
 
   @JsonProperty("policy")
-  private Policy policy = null;
+  private Policy policy;
 
   @JsonProperty("permissions")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -38,6 +38,12 @@ public class Acl extends BitmovinResource {
     return resource;
   }
 
+  /**
+   * Resource to define the permission for.
+   *
+   * @param resource
+   * Resource to define the permission for.
+   */
   public void setResource(String resource) {
     this.resource = resource;
   }
@@ -51,6 +57,11 @@ public class Acl extends BitmovinResource {
     return policy;
   }
 
+  /**
+   * Set policy
+   *
+   * @param policy
+   */
   public void setPolicy(Policy policy) {
     this.policy = policy;
   }
@@ -69,6 +80,12 @@ public class Acl extends BitmovinResource {
     return permissions;
   }
 
+  /**
+   * Permissions to assign.
+   *
+   * @param permissions
+   * Permissions to assign.
+   */
   public void setPermissions(List<Permission> permissions) {
     this.permissions = permissions;
   }

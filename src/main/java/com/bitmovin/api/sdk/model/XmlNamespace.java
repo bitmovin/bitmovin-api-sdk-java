@@ -27,6 +27,12 @@ public class XmlNamespace {
     return prefix;
   }
 
+  /**
+   * Name of the XML Namespace reference
+   *
+   * @param prefix
+   * Name of the XML Namespace reference
+   */
   public void setPrefix(String prefix) {
     this.prefix = prefix;
   }
@@ -40,6 +46,12 @@ public class XmlNamespace {
     return uri;
   }
 
+  /**
+   * Source of the XML Namespace reference
+   *
+   * @param uri
+   * Source of the XML Namespace reference
+   */
   public void setUri(String uri) {
     this.uri = uri;
   }

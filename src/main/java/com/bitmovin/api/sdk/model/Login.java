@@ -27,6 +27,12 @@ public class Login {
     return eMail;
   }
 
+  /**
+   * Email address of the account.
+   *
+   * @param eMail
+   * Email address of the account.
+   */
   public void setEMail(String eMail) {
     this.eMail = eMail;
   }
@@ -40,6 +46,12 @@ public class Login {
     return password;
   }
 
+  /**
+   * Password of the account.
+   *
+   * @param password
+   * Password of the account.
+   */
   public void setPassword(String password) {
     this.password = password;
   }

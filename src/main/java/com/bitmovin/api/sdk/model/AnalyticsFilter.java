@@ -17,7 +17,7 @@ public class AnalyticsFilter {
   private String name;
 
   @JsonProperty("operator")
-  private AnalyticsOperator operator = null;
+  private AnalyticsOperator operator;
 
   @JsonProperty("value")
   private String value;
@@ -31,6 +31,11 @@ public class AnalyticsFilter {
     return name;
   }
 
+  /**
+   * Set name
+   *
+   * @param name
+   */
   public void setName(String name) {
     this.name = name;
   }
@@ -44,6 +49,11 @@ public class AnalyticsFilter {
     return operator;
   }
 
+  /**
+   * Set operator
+   *
+   * @param operator
+   */
   public void setOperator(AnalyticsOperator operator) {
     this.operator = operator;
   }
@@ -57,6 +67,12 @@ public class AnalyticsFilter {
     return value;
   }
 
+  /**
+   * The value to compare to the property specified by the name
+   *
+   * @param value
+   * The value to compare to the property specified by the name
+   */
   public void setValue(String value) {
     this.value = value;
   }

@@ -28,6 +28,12 @@ public class RotateFilter extends Filter {
     return rotation;
   }
 
+  /**
+   * Rotation of the video in degrees. A positive value will rotate the video clockwise and a negative one counter clockwise.
+   *
+   * @param rotation
+   * Rotation of the video in degrees. A positive value will rotate the video clockwise and a negative one counter clockwise.
+   */
   public void setRotation(Integer rotation) {
     this.rotation = rotation;
   }

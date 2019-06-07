@@ -46,7 +46,7 @@ public class SccApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
-     * @param sccCaption  (optional)
+     * @param sccCaption  (required)
      * @return SccCaption
      * @throws BitmovinException if fails to make API call
      */

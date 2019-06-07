@@ -44,7 +44,7 @@ public class ScaleApi {
     /**
      * Create Scale Filter
      * 
-     * @param scaleFilter  (optional)
+     * @param scaleFilter  (required)
      * @return ScaleFilter
      * @throws BitmovinException if fails to make API call
      */

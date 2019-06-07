@@ -27,7 +27,7 @@ public class PrewarmEncoderSettings extends BitmovinResource {
   private Integer maxPrewarmed;
 
   @JsonProperty("logLevel")
-  private LogLevel logLevel = null;
+  private LogLevel logLevel;
 
 
   /**
@@ -38,6 +38,12 @@ public class PrewarmEncoderSettings extends BitmovinResource {
     return encoderVersion;
   }
 
+  /**
+   * Encoder Version to be prewarmed. Only one encoder of this version can be prewarmed per cluster.
+   *
+   * @param encoderVersion
+   * Encoder Version to be prewarmed. Only one encoder of this version can be prewarmed per cluster.
+   */
   public void setEncoderVersion(String encoderVersion) {
     this.encoderVersion = encoderVersion;
   }
@@ -51,6 +57,12 @@ public class PrewarmEncoderSettings extends BitmovinResource {
     return minPrewarmed;
   }
 
+  /**
+   * The minimum number of prewarmed encoders of this Version
+   *
+   * @param minPrewarmed
+   * The minimum number of prewarmed encoders of this Version
+   */
   public void setMinPrewarmed(Integer minPrewarmed) {
     this.minPrewarmed = minPrewarmed;
   }
@@ -64,6 +76,12 @@ public class PrewarmEncoderSettings extends BitmovinResource {
     return maxPrewarmed;
   }
 
+  /**
+   * The maximum number of concurrent prewarmed encoders of this Version
+   *
+   * @param maxPrewarmed
+   * The maximum number of concurrent prewarmed encoders of this Version
+   */
   public void setMaxPrewarmed(Integer maxPrewarmed) {
     this.maxPrewarmed = maxPrewarmed;
   }
@@ -77,6 +95,11 @@ public class PrewarmEncoderSettings extends BitmovinResource {
     return logLevel;
   }
 
+  /**
+   * Set logLevel
+   *
+   * @param logLevel
+   */
   public void setLogLevel(LogLevel logLevel) {
     this.logLevel = logLevel;
   }

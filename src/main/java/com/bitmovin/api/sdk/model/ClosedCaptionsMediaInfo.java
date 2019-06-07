@@ -29,6 +29,12 @@ public class ClosedCaptionsMediaInfo extends SegmentsMediaInfo {
     return instreamId;
   }
 
+  /**
+   * Specifies a Rendition within the segments in the Media Playlist. (See HLS spec 4.3.4.1. EXT-X-MEDIA INSTREAM-ID)
+   *
+   * @param instreamId
+   * Specifies a Rendition within the segments in the Media Playlist. (See HLS spec 4.3.4.1. EXT-X-MEDIA INSTREAM-ID)
+   */
   public void setInstreamId(String instreamId) {
     this.instreamId = instreamId;
   }
@@ -42,6 +48,12 @@ public class ClosedCaptionsMediaInfo extends SegmentsMediaInfo {
     return forced;
   }
 
+  /**
+   * A value of true indicates that the Rendition contains content which is considered essential to play.
+   *
+   * @param forced
+   * A value of true indicates that the Rendition contains content which is considered essential to play.
+   */
   public void setForced(Boolean forced) {
     this.forced = forced;
   }

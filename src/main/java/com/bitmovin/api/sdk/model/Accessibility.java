@@ -27,6 +27,12 @@ public class Accessibility {
     return value;
   }
 
+  /**
+   * Can be either list of languages or a complete map of services (or CC channels, in CEA-608 terminology)
+   *
+   * @param value
+   * Can be either list of languages or a complete map of services (or CC channels, in CEA-608 terminology)
+   */
   public void setValue(String value) {
     this.value = value;
   }
@@ -40,6 +46,12 @@ public class Accessibility {
     return schemeIdUri;
   }
 
+  /**
+   * The scheme id to use. Please refer to the DASH standard.
+   *
+   * @param schemeIdUri
+   * The scheme id to use. Please refer to the DASH standard.
+   */
   public void setSchemeIdUri(String schemeIdUri) {
     this.schemeIdUri = schemeIdUri;
   }

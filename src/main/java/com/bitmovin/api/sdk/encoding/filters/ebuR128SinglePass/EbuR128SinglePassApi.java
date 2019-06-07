@@ -44,7 +44,7 @@ public class EbuR128SinglePassApi {
     /**
      * Create EBU R128 Single Pass Filter
      * 
-     * @param ebuR128SinglePassFilter  (optional)
+     * @param ebuR128SinglePassFilter  (required)
      * @return EbuR128SinglePassFilter
      * @throws BitmovinException if fails to make API call
      */

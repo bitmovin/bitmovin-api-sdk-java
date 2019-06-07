@@ -43,7 +43,7 @@ public class SrtApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
-     * @param burnInSubtitleSrt  (optional)
+     * @param burnInSubtitleSrt  (required)
      * @return BurnInSubtitleSrt
      * @throws BitmovinException if fails to make API call
      */

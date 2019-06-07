@@ -19,10 +19,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class BurnInSubtitleSrt extends BitmovinResource {
   @JsonProperty("characterEncoding")
-  private CaptionCharacterEncoding characterEncoding = null;
+  private CaptionCharacterEncoding characterEncoding;
 
   @JsonProperty("input")
-  private InputPath input = null;
+  private InputPath input;
 
 
   /**
@@ -33,6 +33,12 @@ public class BurnInSubtitleSrt extends BitmovinResource {
     return characterEncoding;
   }
 
+  /**
+   * Character encoding of the SRT file
+   *
+   * @param characterEncoding
+   * Character encoding of the SRT file
+   */
   public void setCharacterEncoding(CaptionCharacterEncoding characterEncoding) {
     this.characterEncoding = characterEncoding;
   }
@@ -46,6 +52,12 @@ public class BurnInSubtitleSrt extends BitmovinResource {
     return input;
   }
 
+  /**
+   * The input location to get the SRT file from
+   *
+   * @param input
+   * The input location to get the SRT file from
+   */
   public void setInput(InputPath input) {
     this.input = input;
   }

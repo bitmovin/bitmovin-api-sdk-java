@@ -17,7 +17,7 @@ public class AnalyticsOrderByEntry {
   private String name;
 
   @JsonProperty("order")
-  private AnalyticsOrder order = null;
+  private AnalyticsOrder order;
 
 
   /**
@@ -28,6 +28,11 @@ public class AnalyticsOrderByEntry {
     return name;
   }
 
+  /**
+   * Set name
+   *
+   * @param name
+   */
   public void setName(String name) {
     this.name = name;
   }
@@ -41,6 +46,11 @@ public class AnalyticsOrderByEntry {
     return order;
   }
 
+  /**
+   * Set order
+   *
+   * @param order
+   */
   public void setOrder(AnalyticsOrder order) {
     this.order = order;
   }

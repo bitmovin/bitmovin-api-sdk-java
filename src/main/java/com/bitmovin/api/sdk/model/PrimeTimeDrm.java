@@ -35,6 +35,12 @@ public class PrimeTimeDrm extends Drm {
     return key;
   }
 
+  /**
+   * 16 byte Encryption key, 32 hexadecimal characters
+   *
+   * @param key
+   * 16 byte Encryption key, 32 hexadecimal characters
+   */
   public void setKey(String key) {
     this.key = key;
   }
@@ -48,6 +54,12 @@ public class PrimeTimeDrm extends Drm {
     return kid;
   }
 
+  /**
+   * 16 byte Key id, 32 hexadecimal characters
+   *
+   * @param kid
+   * 16 byte Key id, 32 hexadecimal characters
+   */
   public void setKid(String kid) {
     this.kid = kid;
   }
@@ -61,6 +73,12 @@ public class PrimeTimeDrm extends Drm {
     return pssh;
   }
 
+  /**
+   * Base 64 Encoded
+   *
+   * @param pssh
+   * Base 64 Encoded
+   */
   public void setPssh(String pssh) {
     this.pssh = pssh;
   }

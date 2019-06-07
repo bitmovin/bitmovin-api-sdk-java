@@ -48,7 +48,7 @@ public class Fmp4Api {
      * Add fMP4 Segment Muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param fmp4Muxing  (optional)
+     * @param fmp4Muxing  (required)
      * @return Fmp4Muxing
      * @throws BitmovinException if fails to make API call
      */

@@ -35,6 +35,12 @@ public class AkamaiNetStorageOutput extends Output {
     return host;
   }
 
+  /**
+   * Host to use for Akamai NetStorage transfers
+   *
+   * @param host
+   * Host to use for Akamai NetStorage transfers
+   */
   public void setHost(String host) {
     this.host = host;
   }
@@ -48,6 +54,12 @@ public class AkamaiNetStorageOutput extends Output {
     return username;
   }
 
+  /**
+   * Your Akamai NetStorage Username
+   *
+   * @param username
+   * Your Akamai NetStorage Username
+   */
   public void setUsername(String username) {
     this.username = username;
   }
@@ -61,6 +73,12 @@ public class AkamaiNetStorageOutput extends Output {
     return password;
   }
 
+  /**
+   * Your Akamai NetStorage password
+   *
+   * @param password
+   * Your Akamai NetStorage password
+   */
   public void setPassword(String password) {
     this.password = password;
   }

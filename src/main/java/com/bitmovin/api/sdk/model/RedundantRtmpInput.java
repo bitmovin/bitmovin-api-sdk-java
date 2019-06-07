@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
 public class RedundantRtmpInput extends Input {
   @JsonProperty("delayThreshold")
-  private Integer delayThreshold = 30;
+  private Integer delayThreshold;
 
   @JsonProperty("ingestPoints")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -34,6 +34,12 @@ public class RedundantRtmpInput extends Input {
     return delayThreshold;
   }
 
+  /**
+   * When there is no input signal present and this threshold in seconds is reached it will switch to another ingest point
+   *
+   * @param delayThreshold
+   * When there is no input signal present and this threshold in seconds is reached it will switch to another ingest point
+   */
   public void setDelayThreshold(Integer delayThreshold) {
     this.delayThreshold = delayThreshold;
   }
@@ -52,6 +58,11 @@ public class RedundantRtmpInput extends Input {
     return ingestPoints;
   }
 
+  /**
+   * Set ingestPoints
+   *
+   * @param ingestPoints
+   */
   public void setIngestPoints(List<RtmpIngestPoint> ingestPoints) {
     this.ingestPoints = ingestPoints;
   }

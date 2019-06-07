@@ -110,6 +110,12 @@ public class EncodingStreamInputDetails {
     return tags;
   }
 
+  /**
+   * Additional metadata saved in the input file
+   *
+   * @param tags
+   * Additional metadata saved in the input file
+   */
   public void setTags(List<String> tags) {
     this.tags = tags;
   }

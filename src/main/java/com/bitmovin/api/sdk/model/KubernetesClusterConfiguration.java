@@ -27,6 +27,12 @@ public class KubernetesClusterConfiguration {
     return parallelEncodings;
   }
 
+  /**
+   * Number of parallel scheduled encodings on the Kubernetes cluster
+   *
+   * @param parallelEncodings
+   * Number of parallel scheduled encodings on the Kubernetes cluster
+   */
   public void setParallelEncodings(Integer parallelEncodings) {
     this.parallelEncodings = parallelEncodings;
   }
@@ -40,6 +46,12 @@ public class KubernetesClusterConfiguration {
     return workersPerEncoding;
   }
 
+  /**
+   * Number of worker nodes used for each encoding on the Kubernetes cluster
+   *
+   * @param workersPerEncoding
+   * Number of worker nodes used for each encoding on the Kubernetes cluster
+   */
   public void setWorkersPerEncoding(Integer workersPerEncoding) {
     this.workersPerEncoding = workersPerEncoding;
   }

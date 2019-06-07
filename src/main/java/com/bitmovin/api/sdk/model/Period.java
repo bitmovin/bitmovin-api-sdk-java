@@ -28,6 +28,12 @@ public class Period extends BitmovinResponse {
     return start;
   }
 
+  /**
+   * Starting time in seconds
+   *
+   * @param start
+   * Starting time in seconds
+   */
   public void setStart(Double start) {
     this.start = start;
   }
@@ -41,6 +47,12 @@ public class Period extends BitmovinResponse {
     return duration;
   }
 
+  /**
+   * Duration in seconds
+   *
+   * @param duration
+   * Duration in seconds
+   */
   public void setDuration(Double duration) {
     this.duration = duration;
   }

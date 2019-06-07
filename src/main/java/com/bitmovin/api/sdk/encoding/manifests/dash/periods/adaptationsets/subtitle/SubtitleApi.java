@@ -43,7 +43,7 @@ public class SubtitleApi {
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
-     * @param subtitleAdaptationSet The subtitle adaptation set to be added to the period (optional)
+     * @param subtitleAdaptationSet The subtitle adaptation set to be added to the period (required)
      * @return SubtitleAdaptationSet
      * @throws BitmovinException if fails to make API call
      */

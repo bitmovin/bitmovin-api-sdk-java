@@ -39,16 +39,16 @@ public class SrtStatistics {
   private String userId;
 
   @JsonProperty("link")
-  private SrtStatisticLink link = null;
+  private SrtStatisticLink link;
 
   @JsonProperty("window")
-  private SrtStatisticWindow window = null;
+  private SrtStatisticWindow window;
 
   @JsonProperty("recv")
-  private SrtStatisticRecv recv = null;
+  private SrtStatisticRecv recv;
 
   @JsonProperty("send")
-  private SrtStatisticSend send = null;
+  private SrtStatisticSend send;
 
 
   /**
@@ -59,6 +59,12 @@ public class SrtStatistics {
     return id;
   }
 
+  /**
+   * UUID of the statistic event
+   *
+   * @param id
+   * UUID of the statistic event
+   */
   public void setId(String id) {
     this.id = id;
   }
@@ -72,6 +78,12 @@ public class SrtStatistics {
     return createdAt;
   }
 
+  /**
+   * Timestamp when the srt statistics event was created, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   *
+   * @param createdAt
+   * Timestamp when the srt statistics event was created, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   */
   public void setCreatedAt(Date createdAt) {
     this.createdAt = createdAt;
   }
@@ -85,6 +97,12 @@ public class SrtStatistics {
     return encodingId;
   }
 
+  /**
+   * UUID of an encoding
+   *
+   * @param encodingId
+   * UUID of an encoding
+   */
   public void setEncodingId(String encodingId) {
     this.encodingId = encodingId;
   }
@@ -98,6 +116,12 @@ public class SrtStatistics {
     return srtInputId;
   }
 
+  /**
+   * UUID of the SRT input used to capture this statistics
+   *
+   * @param srtInputId
+   * UUID of the SRT input used to capture this statistics
+   */
   public void setSrtInputId(String srtInputId) {
     this.srtInputId = srtInputId;
   }
@@ -111,6 +135,12 @@ public class SrtStatistics {
     return srtInputSelected;
   }
 
+  /**
+   * Whether the SRT input that generated this statistics was selected (i.e. actively used) at the time or not
+   *
+   * @param srtInputSelected
+   * Whether the SRT input that generated this statistics was selected (i.e. actively used) at the time or not
+   */
   public void setSrtInputSelected(Boolean srtInputSelected) {
     this.srtInputSelected = srtInputSelected;
   }
@@ -124,6 +154,12 @@ public class SrtStatistics {
     return orgId;
   }
 
+  /**
+   * UUID of the associated organization
+   *
+   * @param orgId
+   * UUID of the associated organization
+   */
   public void setOrgId(String orgId) {
     this.orgId = orgId;
   }
@@ -137,6 +173,12 @@ public class SrtStatistics {
     return userId;
   }
 
+  /**
+   * UUID of the associated api-user
+   *
+   * @param userId
+   * UUID of the associated api-user
+   */
   public void setUserId(String userId) {
     this.userId = userId;
   }
@@ -150,6 +192,11 @@ public class SrtStatistics {
     return link;
   }
 
+  /**
+   * Set link
+   *
+   * @param link
+   */
   public void setLink(SrtStatisticLink link) {
     this.link = link;
   }
@@ -163,6 +210,11 @@ public class SrtStatistics {
     return window;
   }
 
+  /**
+   * Set window
+   *
+   * @param window
+   */
   public void setWindow(SrtStatisticWindow window) {
     this.window = window;
   }
@@ -176,6 +228,11 @@ public class SrtStatistics {
     return recv;
   }
 
+  /**
+   * Set recv
+   *
+   * @param recv
+   */
   public void setRecv(SrtStatisticRecv recv) {
     this.recv = recv;
   }
@@ -189,6 +246,11 @@ public class SrtStatistics {
     return send;
   }
 
+  /**
+   * Set send
+   *
+   * @param send
+   */
   public void setSend(SrtStatisticSend send) {
     this.send = send;
   }

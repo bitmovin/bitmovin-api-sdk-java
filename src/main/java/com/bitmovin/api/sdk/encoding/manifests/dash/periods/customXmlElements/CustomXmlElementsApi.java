@@ -43,7 +43,7 @@ public class CustomXmlElementsApi {
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
-     * @param customXmlElement Data of the custom XML element to be added to the period (optional)
+     * @param customXmlElement Data of the custom XML element to be added to the period (required)
      * @return CustomXmlElement
      * @throws BitmovinException if fails to make API call
      */

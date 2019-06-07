@@ -28,6 +28,12 @@ public class Domain extends BitmovinResource {
     return url;
   }
 
+  /**
+   * Host where the player is allowed to play
+   *
+   * @param url
+   * Host where the player is allowed to play
+   */
   public void setUrl(String url) {
     this.url = url;
   }

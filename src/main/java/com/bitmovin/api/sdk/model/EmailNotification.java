@@ -34,6 +34,11 @@ public class EmailNotification extends Notification {
     return emails;
   }
 
+  /**
+   * Set emails
+   *
+   * @param emails
+   */
   public void setEmails(List<String> emails) {
     this.emails = emails;
   }

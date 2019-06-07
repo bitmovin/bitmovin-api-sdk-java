@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class MediaInfoTypeResponse {
   @JsonProperty("type")
-  private MediaInfoType type = null;
+  private MediaInfoType type;
 
 
   /**
@@ -25,6 +25,12 @@ public class MediaInfoTypeResponse {
     return type;
   }
 
+  /**
+   * The type of the media-info
+   *
+   * @param type
+   * The type of the media-info
+   */
   public void setType(MediaInfoType type) {
     this.type = type;
   }

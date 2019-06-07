@@ -47,7 +47,7 @@ public class DrmApi {
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
      * @param adaptationsetId Id of the adaptation set (required)
-     * @param dashFmp4DrmRepresentation The DRM fMP4 representation to be added to the adaptation set (optional)
+     * @param dashFmp4DrmRepresentation The DRM fMP4 representation to be added to the adaptation set (required)
      * @return DashFmp4DrmRepresentation
      * @throws BitmovinException if fails to make API call
      */

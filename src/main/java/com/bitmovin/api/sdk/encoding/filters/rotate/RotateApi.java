@@ -44,7 +44,7 @@ public class RotateApi {
     /**
      * Create Rotate Filter
      * 
-     * @param rotateFilter  (optional)
+     * @param rotateFilter  (required)
      * @return RotateFilter
      * @throws BitmovinException if fails to make API call
      */

@@ -27,6 +27,12 @@ public class AppliedStreamSettings {
     return width;
   }
 
+  /**
+   * The applied width. Useful if the width in the configuration was undefined
+   *
+   * @param width
+   * The applied width. Useful if the width in the configuration was undefined
+   */
   public void setWidth(Integer width) {
     this.width = width;
   }
@@ -40,6 +46,12 @@ public class AppliedStreamSettings {
     return height;
   }
 
+  /**
+   * The applied height. Useful if the height in the configuration was undefined
+   *
+   * @param height
+   * The applied height. Useful if the height in the configuration was undefined
+   */
   public void setHeight(Integer height) {
     this.height = height;
   }

@@ -41,7 +41,7 @@ public class LiveInputStreamChangedApi {
     /**
      * Add Live Input Stream Changed Email Notification (All Encodings)
      * 
-     * @param emailNotificationWithStreamConditions The email notifications object (optional)
+     * @param emailNotificationWithStreamConditions The email notifications object (required)
      * @return EmailNotificationWithStreamConditions
      * @throws BitmovinException if fails to make API call
      */
@@ -53,7 +53,7 @@ public class LiveInputStreamChangedApi {
      * Add Live Input Stream Changed Email Notification (Specific Encoding)
      * 
      * @param encodingId Id of the encoding resource (required)
-     * @param emailNotificationWithStreamConditions The email notifications object (optional)
+     * @param emailNotificationWithStreamConditions The email notifications object (required)
      * @return EmailNotificationWithStreamConditions
      * @throws BitmovinException if fails to make API call
      */
@@ -65,7 +65,7 @@ public class LiveInputStreamChangedApi {
      * Replace Live Input Stream Changed Email Notification
      * 
      * @param notificationId Id of the email notification (required)
-     * @param emailNotificationWithStreamConditions The email notification with the updated values (optional)
+     * @param emailNotificationWithStreamConditions The email notification with the updated values (required)
      * @return EmailNotificationWithStreamConditions
      * @throws BitmovinException if fails to make API call
      */

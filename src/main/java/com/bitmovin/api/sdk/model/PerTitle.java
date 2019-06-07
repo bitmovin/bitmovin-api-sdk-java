@@ -16,13 +16,13 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class PerTitle {
   @JsonProperty("h264Configuration")
-  private H264PerTitleConfiguration h264Configuration = null;
+  private H264PerTitleConfiguration h264Configuration;
 
   @JsonProperty("h265Configuration")
-  private H265PerTitleConfiguration h265Configuration = null;
+  private H265PerTitleConfiguration h265Configuration;
 
   @JsonProperty("vp9Configuration")
-  private Vp9PerTitleConfiguration vp9Configuration = null;
+  private Vp9PerTitleConfiguration vp9Configuration;
 
 
   /**
@@ -33,6 +33,12 @@ public class PerTitle {
     return h264Configuration;
   }
 
+  /**
+   * Per-Title configuration for H264
+   *
+   * @param h264Configuration
+   * Per-Title configuration for H264
+   */
   public void setH264Configuration(H264PerTitleConfiguration h264Configuration) {
     this.h264Configuration = h264Configuration;
   }
@@ -46,6 +52,12 @@ public class PerTitle {
     return h265Configuration;
   }
 
+  /**
+   * Per-Title configuration for H265
+   *
+   * @param h265Configuration
+   * Per-Title configuration for H265
+   */
   public void setH265Configuration(H265PerTitleConfiguration h265Configuration) {
     this.h265Configuration = h265Configuration;
   }
@@ -59,6 +71,12 @@ public class PerTitle {
     return vp9Configuration;
   }
 
+  /**
+   * Per-Title configuration for VP9
+   *
+   * @param vp9Configuration
+   * Per-Title configuration for VP9
+   */
   public void setVp9Configuration(Vp9PerTitleConfiguration vp9Configuration) {
     this.vp9Configuration = vp9Configuration;
   }

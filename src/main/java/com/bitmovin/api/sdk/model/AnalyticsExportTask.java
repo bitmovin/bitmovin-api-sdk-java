@@ -32,13 +32,13 @@ public class AnalyticsExportTask extends BitmovinResponse {
   private String licenseKey;
 
   @JsonProperty("output")
-  private AnalyticsExportTaskOutputTarget output = null;
+  private AnalyticsExportTaskOutputTarget output;
 
   @JsonProperty("progress")
   private Integer progress;
 
   @JsonProperty("status")
-  private AnalyticsExportStatus status = null;
+  private AnalyticsExportStatus status;
 
   @JsonProperty("startedAt")
   private Date startedAt;
@@ -55,6 +55,12 @@ public class AnalyticsExportTask extends BitmovinResponse {
     return startTime;
   }
 
+  /**
+   * Start of timeframe which is exported in UTC format
+   *
+   * @param startTime
+   * Start of timeframe which is exported in UTC format
+   */
   public void setStartTime(Date startTime) {
     this.startTime = startTime;
   }
@@ -68,6 +74,12 @@ public class AnalyticsExportTask extends BitmovinResponse {
     return endTime;
   }
 
+  /**
+   * End of timeframe which is exported in UTC format
+   *
+   * @param endTime
+   * End of timeframe which is exported in UTC format
+   */
   public void setEndTime(Date endTime) {
     this.endTime = endTime;
   }
@@ -81,6 +93,12 @@ public class AnalyticsExportTask extends BitmovinResponse {
     return name;
   }
 
+  /**
+   * Name of the export task
+   *
+   * @param name
+   * Name of the export task
+   */
   public void setName(String name) {
     this.name = name;
   }
@@ -94,6 +112,12 @@ public class AnalyticsExportTask extends BitmovinResponse {
     return description;
   }
 
+  /**
+   * Export task description
+   *
+   * @param description
+   * Export task description
+   */
   public void setDescription(String description) {
     this.description = description;
   }
@@ -107,6 +131,12 @@ public class AnalyticsExportTask extends BitmovinResponse {
     return licenseKey;
   }
 
+  /**
+   * License key
+   *
+   * @param licenseKey
+   * License key
+   */
   public void setLicenseKey(String licenseKey) {
     this.licenseKey = licenseKey;
   }
@@ -120,6 +150,11 @@ public class AnalyticsExportTask extends BitmovinResponse {
     return output;
   }
 
+  /**
+   * Set output
+   *
+   * @param output
+   */
   public void setOutput(AnalyticsExportTaskOutputTarget output) {
     this.output = output;
   }
@@ -141,6 +176,11 @@ public class AnalyticsExportTask extends BitmovinResponse {
     return status;
   }
 
+  /**
+   * Set status
+   *
+   * @param status
+   */
   public void setStatus(AnalyticsExportStatus status) {
     this.status = status;
   }

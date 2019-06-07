@@ -44,7 +44,7 @@ public class Mp2Api {
     /**
      * Create MP2 Codec Configuration
      * 
-     * @param mp2AudioConfiguration  (optional)
+     * @param mp2AudioConfiguration  (required)
      * @return Mp2AudioConfiguration
      * @throws BitmovinException if fails to make API call
      */

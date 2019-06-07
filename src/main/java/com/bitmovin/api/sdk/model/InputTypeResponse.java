@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class InputTypeResponse {
   @JsonProperty("type")
-  private InputType type = null;
+  private InputType type;
 
 
   /**
@@ -25,6 +25,12 @@ public class InputTypeResponse {
     return type;
   }
 
+  /**
+   * The type of the input
+   *
+   * @param type
+   * The type of the input
+   */
   public void setType(InputType type) {
     this.type = type;
   }

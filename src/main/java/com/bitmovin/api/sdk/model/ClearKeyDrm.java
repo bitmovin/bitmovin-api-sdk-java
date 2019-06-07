@@ -32,6 +32,12 @@ public class ClearKeyDrm extends Drm {
     return key;
   }
 
+  /**
+   * 16 byte encryption key, 32 hexadecimal characters
+   *
+   * @param key
+   * 16 byte encryption key, 32 hexadecimal characters
+   */
   public void setKey(String key) {
     this.key = key;
   }
@@ -45,6 +51,12 @@ public class ClearKeyDrm extends Drm {
     return kid;
   }
 
+  /**
+   * 16 byte key id
+   *
+   * @param kid
+   * 16 byte key id
+   */
   public void setKid(String kid) {
     this.kid = kid;
   }

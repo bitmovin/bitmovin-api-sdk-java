@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class CustomTag extends BitmovinResource {
   @JsonProperty("positionMode")
-  private PositionMode positionMode = null;
+  private PositionMode positionMode;
 
   @JsonProperty("keyframeId")
   private String keyframeId;
@@ -41,6 +41,12 @@ public class CustomTag extends BitmovinResource {
     return positionMode;
   }
 
+  /**
+   * The positioning mode that should be used when inserting the placement opportunity
+   *
+   * @param positionMode
+   * The positioning mode that should be used when inserting the placement opportunity
+   */
   public void setPositionMode(PositionMode positionMode) {
     this.positionMode = positionMode;
   }
@@ -54,6 +60,12 @@ public class CustomTag extends BitmovinResource {
     return keyframeId;
   }
 
+  /**
+   * Id of keyframe where the custom tag should be inserted. Required, when KEYFRAME is selected as position mode.
+   *
+   * @param keyframeId
+   * Id of keyframe where the custom tag should be inserted. Required, when KEYFRAME is selected as position mode.
+   */
   public void setKeyframeId(String keyframeId) {
     this.keyframeId = keyframeId;
   }
@@ -67,6 +79,12 @@ public class CustomTag extends BitmovinResource {
     return time;
   }
 
+  /**
+   * Time in seconds where the custom tag should be inserted. Required, when TIME is selected as position mode.
+   *
+   * @param time
+   * Time in seconds where the custom tag should be inserted. Required, when TIME is selected as position mode.
+   */
   public void setTime(Double time) {
     this.time = time;
   }
@@ -80,6 +98,12 @@ public class CustomTag extends BitmovinResource {
     return segment;
   }
 
+  /**
+   * The custom tag will be inserted before the specified segment. Required, when SEGMENT is selected as position mode.
+   *
+   * @param segment
+   * The custom tag will be inserted before the specified segment. Required, when SEGMENT is selected as position mode.
+   */
   public void setSegment(Long segment) {
     this.segment = segment;
   }
@@ -93,6 +117,12 @@ public class CustomTag extends BitmovinResource {
     return data;
   }
 
+  /**
+   * The data to be contained in the custom tag.
+   *
+   * @param data
+   * The data to be contained in the custom tag.
+   */
   public void setData(String data) {
     this.data = data;
   }

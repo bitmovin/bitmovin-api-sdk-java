@@ -48,7 +48,7 @@ public class GroupsApi {
      * Add Group
      * 
      * @param organizationId Id of the organization (required)
-     * @param group Tenant Group details (optional)
+     * @param group Tenant Group details (required)
      * @return Group
      * @throws BitmovinException if fails to make API call
      */

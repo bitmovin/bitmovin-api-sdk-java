@@ -26,7 +26,7 @@ public class BroadcastTsInputStreamConfiguration {
   private Boolean alignPes;
 
   @JsonProperty("setRaiOnAu")
-  private RaiUnit setRaiOnAu = null;
+  private RaiUnit setRaiOnAu;
 
 
   /**
@@ -37,6 +37,12 @@ public class BroadcastTsInputStreamConfiguration {
     return streamId;
   }
 
+  /**
+   * The UUID of the stream to which this configuration belongs to. This has to be a ID of a stream that has been added to the current muxing.
+   *
+   * @param streamId
+   * The UUID of the stream to which this configuration belongs to. This has to be a ID of a stream that has been added to the current muxing.
+   */
   public void setStreamId(String streamId) {
     this.streamId = streamId;
   }
@@ -52,6 +58,16 @@ public class BroadcastTsInputStreamConfiguration {
     return packetIdentifier;
   }
 
+  /**
+   * An integer value. Packet Identifier (PID) for this stream.
+   * minimum: 16
+   * maximum: 8190
+   *
+   * @param packetIdentifier
+   * An integer value. Packet Identifier (PID) for this stream.
+   * minimum: 16
+   * maximum: 8190
+   */
   public void setPacketIdentifier(Integer packetIdentifier) {
     this.packetIdentifier = packetIdentifier;
   }
@@ -65,6 +81,12 @@ public class BroadcastTsInputStreamConfiguration {
     return startWithDiscontinuityIndicator;
   }
 
+  /**
+   * Start stream with initial discontinuity indicator set to one. If true, set the discontinuity indicator in the first packet for this PID.
+   *
+   * @param startWithDiscontinuityIndicator
+   * Start stream with initial discontinuity indicator set to one. If true, set the discontinuity indicator in the first packet for this PID.
+   */
   public void setStartWithDiscontinuityIndicator(Boolean startWithDiscontinuityIndicator) {
     this.startWithDiscontinuityIndicator = startWithDiscontinuityIndicator;
   }
@@ -78,6 +100,12 @@ public class BroadcastTsInputStreamConfiguration {
     return alignPes;
   }
 
+  /**
+   * Align access units to PES packets. If true, align access units to PES packet headers. Uses adaptation field stuffing to position an access unit at the beginning of each PES packet.
+   *
+   * @param alignPes
+   * Align access units to PES packets. If true, align access units to PES packet headers. Uses adaptation field stuffing to position an access unit at the beginning of each PES packet.
+   */
   public void setAlignPes(Boolean alignPes) {
     this.alignPes = alignPes;
   }
@@ -91,6 +119,11 @@ public class BroadcastTsInputStreamConfiguration {
     return setRaiOnAu;
   }
 
+  /**
+   * Set setRaiOnAu
+   *
+   * @param setRaiOnAu
+   */
   public void setSetRaiOnAu(RaiUnit setRaiOnAu) {
     this.setRaiOnAu = setRaiOnAu;
   }

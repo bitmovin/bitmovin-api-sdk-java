@@ -27,6 +27,12 @@ public class CencFairPlay {
     return iv;
   }
 
+  /**
+   * Initialization vector as hexadecimal string
+   *
+   * @param iv
+   * Initialization vector as hexadecimal string
+   */
   public void setIv(String iv) {
     this.iv = iv;
   }
@@ -40,6 +46,12 @@ public class CencFairPlay {
     return uri;
   }
 
+  /**
+   * URL of the licensing server
+   *
+   * @param uri
+   * URL of the licensing server
+   */
   public void setUri(String uri) {
     this.uri = uri;
   }

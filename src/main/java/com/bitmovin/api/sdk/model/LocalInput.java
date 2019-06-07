@@ -28,6 +28,12 @@ public class LocalInput extends Input {
     return path;
   }
 
+  /**
+   * Path to your local storage
+   *
+   * @param path
+   * Path to your local storage
+   */
   public void setPath(String path) {
     this.path = path;
   }

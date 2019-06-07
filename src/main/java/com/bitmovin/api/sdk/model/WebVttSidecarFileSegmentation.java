@@ -24,6 +24,12 @@ public class WebVttSidecarFileSegmentation {
     return segmentLength;
   }
 
+  /**
+   * The length of the WebVTT fragments in seconds
+   *
+   * @param segmentLength
+   * The length of the WebVTT fragments in seconds
+   */
   public void setSegmentLength(Double segmentLength) {
     this.segmentLength = segmentLength;
   }

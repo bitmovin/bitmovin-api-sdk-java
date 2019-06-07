@@ -54,7 +54,7 @@ public class ProgressiveTsApi {
      * Add Progressive TS Muxing
      * 
      * @param encodingId ID of the encoding. (required)
-     * @param progressiveTsMuxing  (optional)
+     * @param progressiveTsMuxing  (required)
      * @return ProgressiveTsMuxing
      * @throws BitmovinException if fails to make API call
      */

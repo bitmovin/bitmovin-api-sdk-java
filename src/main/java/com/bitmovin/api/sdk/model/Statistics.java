@@ -27,6 +27,12 @@ public class Statistics {
     return bytesEncodedTotal;
   }
 
+  /**
+   * Bytes encoded total.
+   *
+   * @param bytesEncodedTotal
+   * Bytes encoded total.
+   */
   public void setBytesEncodedTotal(Long bytesEncodedTotal) {
     this.bytesEncodedTotal = bytesEncodedTotal;
   }
@@ -40,6 +46,12 @@ public class Statistics {
     return timeEncodedTotal;
   }
 
+  /**
+   * Time in seconds encoded for all contained daily statistics.
+   *
+   * @param timeEncodedTotal
+   * Time in seconds encoded for all contained daily statistics.
+   */
   public void setTimeEncodedTotal(Long timeEncodedTotal) {
     this.timeEncodedTotal = timeEncodedTotal;
   }

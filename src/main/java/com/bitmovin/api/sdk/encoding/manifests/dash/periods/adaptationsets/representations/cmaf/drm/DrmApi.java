@@ -47,7 +47,7 @@ public class DrmApi {
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
      * @param adaptationsetId Id of the adaptation set (required)
-     * @param dashCmafDrmRepresentation The DRM CMAF representation to be added to the adaptation set (optional)
+     * @param dashCmafDrmRepresentation The DRM CMAF representation to be added to the adaptation set (required)
      * @return DashCmafDrmRepresentation
      * @throws BitmovinException if fails to make API call
      */

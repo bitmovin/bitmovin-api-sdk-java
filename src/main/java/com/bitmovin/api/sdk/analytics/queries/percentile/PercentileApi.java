@@ -41,7 +41,7 @@ public class PercentileApi {
     /**
      * Percentile
      * 
-     * @param analyticsPercentileQueryRequest  (optional)
+     * @param analyticsPercentileQueryRequest  (required)
      * @return AnalyticsResponse
      * @throws BitmovinException if fails to make API call
      */

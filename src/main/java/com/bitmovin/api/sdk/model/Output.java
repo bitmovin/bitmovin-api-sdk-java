@@ -53,6 +53,11 @@ public class Output extends BitmovinResource {
     return acl;
   }
 
+  /**
+   * Set acl
+   *
+   * @param acl
+   */
   public void setAcl(List<AclEntry> acl) {
     this.acl = acl;
   }

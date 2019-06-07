@@ -25,7 +25,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class Id3Tag extends BitmovinResource {
   @JsonProperty("positionMode")
-  private Id3TagPositionMode positionMode = null;
+  private Id3TagPositionMode positionMode;
 
   @JsonProperty("frame")
   private Long frame;
@@ -42,6 +42,11 @@ public class Id3Tag extends BitmovinResource {
     return positionMode;
   }
 
+  /**
+   * Set positionMode
+   *
+   * @param positionMode
+   */
   public void setPositionMode(Id3TagPositionMode positionMode) {
     this.positionMode = positionMode;
   }
@@ -55,6 +60,12 @@ public class Id3Tag extends BitmovinResource {
     return frame;
   }
 
+  /**
+   * Frame number at which the Tag should be inserted
+   *
+   * @param frame
+   * Frame number at which the Tag should be inserted
+   */
   public void setFrame(Long frame) {
     this.frame = frame;
   }
@@ -68,6 +79,12 @@ public class Id3Tag extends BitmovinResource {
     return time;
   }
 
+  /**
+   * Time in seconds where the Tag should be inserted
+   *
+   * @param time
+   * Time in seconds where the Tag should be inserted
+   */
   public void setTime(Double time) {
     this.time = time;
   }

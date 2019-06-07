@@ -44,7 +44,7 @@ public class ZixiApi {
     /**
      * Create Zixi input
      * 
-     * @param zixiInput The ZixiInput to be created (optional)
+     * @param zixiInput The ZixiInput to be created (required)
      * @return ZixiInput
      * @throws BitmovinException if fails to make API call
      */

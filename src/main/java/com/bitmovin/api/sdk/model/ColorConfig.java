@@ -35,25 +35,25 @@ public class ColorConfig {
   private Boolean copyColorTransferFlag;
 
   @JsonProperty("chromaLocation")
-  private ChromaLocation chromaLocation = null;
+  private ChromaLocation chromaLocation;
 
   @JsonProperty("colorSpace")
-  private ColorSpace colorSpace = null;
+  private ColorSpace colorSpace;
 
   @JsonProperty("colorPrimaries")
-  private ColorPrimaries colorPrimaries = null;
+  private ColorPrimaries colorPrimaries;
 
   @JsonProperty("colorRange")
-  private ColorRange colorRange = null;
+  private ColorRange colorRange;
 
   @JsonProperty("colorTransfer")
-  private ColorTransfer colorTransfer = null;
+  private ColorTransfer colorTransfer;
 
   @JsonProperty("inputColorSpace")
-  private InputColorSpace inputColorSpace = null;
+  private InputColorSpace inputColorSpace;
 
   @JsonProperty("inputColorRange")
-  private InputColorRange inputColorRange = null;
+  private InputColorRange inputColorRange;
 
 
   /**
@@ -64,6 +64,12 @@ public class ColorConfig {
     return copyChromaLocationFlag;
   }
 
+  /**
+   * Copy the chroma location setting from the input source
+   *
+   * @param copyChromaLocationFlag
+   * Copy the chroma location setting from the input source
+   */
   public void setCopyChromaLocationFlag(Boolean copyChromaLocationFlag) {
     this.copyChromaLocationFlag = copyChromaLocationFlag;
   }
@@ -77,6 +83,12 @@ public class ColorConfig {
     return copyColorSpaceFlag;
   }
 
+  /**
+   * Copy the color space setting from the input source
+   *
+   * @param copyColorSpaceFlag
+   * Copy the color space setting from the input source
+   */
   public void setCopyColorSpaceFlag(Boolean copyColorSpaceFlag) {
     this.copyColorSpaceFlag = copyColorSpaceFlag;
   }
@@ -90,6 +102,12 @@ public class ColorConfig {
     return copyColorPrimariesFlag;
   }
 
+  /**
+   * Copy the color primaries setting from the input source
+   *
+   * @param copyColorPrimariesFlag
+   * Copy the color primaries setting from the input source
+   */
   public void setCopyColorPrimariesFlag(Boolean copyColorPrimariesFlag) {
     this.copyColorPrimariesFlag = copyColorPrimariesFlag;
   }
@@ -103,6 +121,12 @@ public class ColorConfig {
     return copyColorRangeFlag;
   }
 
+  /**
+   * Copy the color range setting from the input source
+   *
+   * @param copyColorRangeFlag
+   * Copy the color range setting from the input source
+   */
   public void setCopyColorRangeFlag(Boolean copyColorRangeFlag) {
     this.copyColorRangeFlag = copyColorRangeFlag;
   }
@@ -116,6 +140,12 @@ public class ColorConfig {
     return copyColorTransferFlag;
   }
 
+  /**
+   * Copy the color transfer setting from the input source
+   *
+   * @param copyColorTransferFlag
+   * Copy the color transfer setting from the input source
+   */
   public void setCopyColorTransferFlag(Boolean copyColorTransferFlag) {
     this.copyColorTransferFlag = copyColorTransferFlag;
   }
@@ -129,6 +159,12 @@ public class ColorConfig {
     return chromaLocation;
   }
 
+  /**
+   * The chroma location to be applied
+   *
+   * @param chromaLocation
+   * The chroma location to be applied
+   */
   public void setChromaLocation(ChromaLocation chromaLocation) {
     this.chromaLocation = chromaLocation;
   }
@@ -142,6 +178,12 @@ public class ColorConfig {
     return colorSpace;
   }
 
+  /**
+   * The color space to be applied
+   *
+   * @param colorSpace
+   * The color space to be applied
+   */
   public void setColorSpace(ColorSpace colorSpace) {
     this.colorSpace = colorSpace;
   }
@@ -155,6 +197,12 @@ public class ColorConfig {
     return colorPrimaries;
   }
 
+  /**
+   * The color primaries to be applied
+   *
+   * @param colorPrimaries
+   * The color primaries to be applied
+   */
   public void setColorPrimaries(ColorPrimaries colorPrimaries) {
     this.colorPrimaries = colorPrimaries;
   }
@@ -168,6 +216,12 @@ public class ColorConfig {
     return colorRange;
   }
 
+  /**
+   * The color range to be applied
+   *
+   * @param colorRange
+   * The color range to be applied
+   */
   public void setColorRange(ColorRange colorRange) {
     this.colorRange = colorRange;
   }
@@ -181,6 +235,12 @@ public class ColorConfig {
     return colorTransfer;
   }
 
+  /**
+   * The color transfer to be applied
+   *
+   * @param colorTransfer
+   * The color transfer to be applied
+   */
   public void setColorTransfer(ColorTransfer colorTransfer) {
     this.colorTransfer = colorTransfer;
   }
@@ -194,6 +254,12 @@ public class ColorConfig {
     return inputColorSpace;
   }
 
+  /**
+   * Override the color space detected in the input file. If not set the input color space will be automatically detected if possible.
+   *
+   * @param inputColorSpace
+   * Override the color space detected in the input file. If not set the input color space will be automatically detected if possible.
+   */
   public void setInputColorSpace(InputColorSpace inputColorSpace) {
     this.inputColorSpace = inputColorSpace;
   }
@@ -207,6 +273,12 @@ public class ColorConfig {
     return inputColorRange;
   }
 
+  /**
+   * Override the color range detected in the input file. If not set the input color range will be automatically detected if possible.
+   *
+   * @param inputColorRange
+   * Override the color range detected in the input file. If not set the input color range will be automatically detected if possible.
+   */
   public void setInputColorRange(InputColorRange inputColorRange) {
     this.inputColorRange = inputColorRange;
   }

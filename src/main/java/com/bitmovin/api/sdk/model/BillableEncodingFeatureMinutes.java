@@ -33,6 +33,12 @@ public class BillableEncodingFeatureMinutes {
     return featureType;
   }
 
+  /**
+   * The name of the feature.
+   *
+   * @param featureType
+   * The name of the feature.
+   */
   public void setFeatureType(String featureType) {
     this.featureType = featureType;
   }
@@ -46,6 +52,12 @@ public class BillableEncodingFeatureMinutes {
     return encodedMinutes;
   }
 
+  /**
+   * Encoded minutes related to this feature.
+   *
+   * @param encodedMinutes
+   * Encoded minutes related to this feature.
+   */
   public void setEncodedMinutes(Double encodedMinutes) {
     this.encodedMinutes = encodedMinutes;
   }
@@ -59,6 +71,12 @@ public class BillableEncodingFeatureMinutes {
     return featureMultiplier;
   }
 
+  /**
+   * The multiplier used for this feature.
+   *
+   * @param featureMultiplier
+   * The multiplier used for this feature.
+   */
   public void setFeatureMultiplier(Double featureMultiplier) {
     this.featureMultiplier = featureMultiplier;
   }
@@ -72,6 +90,12 @@ public class BillableEncodingFeatureMinutes {
     return billableMinutes;
   }
 
+  /**
+   * The billable minutes related to this feature.
+   *
+   * @param billableMinutes
+   * The billable minutes related to this feature.
+   */
   public void setBillableMinutes(Double billableMinutes) {
     this.billableMinutes = billableMinutes;
   }

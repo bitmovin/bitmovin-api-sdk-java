@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class ResultWrapper<T> {
   @JsonProperty("result")
-  private T result = null;
+  private T result;
 
   /**
    * Get result

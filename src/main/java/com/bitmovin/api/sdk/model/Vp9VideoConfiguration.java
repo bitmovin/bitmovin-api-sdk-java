@@ -24,13 +24,16 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class Vp9VideoConfiguration extends VideoConfiguration {
   @JsonProperty("presetConfiguration")
-  private PresetConfiguration presetConfiguration = null;
+  private PresetConfiguration presetConfiguration;
 
   @JsonProperty("crf")
   private Integer crf;
 
   @JsonProperty("lagInFrames")
   private Integer lagInFrames;
+
+  @JsonProperty("errorResiliencyEnabled")
+  private Boolean errorResiliencyEnabled;
 
   @JsonProperty("tileColumns")
   private Integer tileColumns;
@@ -56,8 +59,29 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
   @JsonProperty("rateOvershootPct")
   private Integer rateOvershootPct;
 
+  @JsonProperty("clientBufferSize")
+  private Long clientBufferSize;
+
+  @JsonProperty("clientInitialBufferSize")
+  private Long clientInitialBufferSize;
+
+  @JsonProperty("biasPct")
+  private Integer biasPct;
+
   @JsonProperty("noiseSensitivity")
   private Boolean noiseSensitivity;
+
+  @JsonProperty("cpuUsed")
+  private Integer cpuUsed;
+
+  @JsonProperty("automaticAltRefFramesEnabled")
+  private Boolean automaticAltRefFramesEnabled;
+
+  @JsonProperty("targetLevel")
+  private Integer targetLevel;
+
+  @JsonProperty("rowMultiThreadingEnabled")
+  private Boolean rowMultiThreadingEnabled;
 
   @JsonProperty("sharpness")
   private Integer sharpness;
@@ -75,7 +99,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
   private Double maxKeyframeInterval;
 
   @JsonProperty("quality")
-  private Vp9Quality quality = null;
+  private Vp9Quality quality;
 
   @JsonProperty("lossless")
   private Boolean lossless;
@@ -84,7 +108,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
   private Integer staticThresh;
 
   @JsonProperty("aqMode")
-  private Vp9AqMode aqMode = null;
+  private Vp9AqMode aqMode;
 
   @JsonProperty("arnrMaxFrames")
   private Integer arnrMaxFrames;
@@ -93,7 +117,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
   private Integer arnrStrength;
 
   @JsonProperty("arnrType")
-  private Vp9ArnrType arnrType = null;
+  private Vp9ArnrType arnrType;
 
 
   /**
@@ -104,6 +128,12 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return presetConfiguration;
   }
 
+  /**
+   * Use a set of well defined configurations preset to support certain use cases. Can be overwritten with more specific values.
+   *
+   * @param presetConfiguration
+   * Use a set of well defined configurations preset to support certain use cases. Can be overwritten with more specific values.
+   */
   public void setPresetConfiguration(PresetConfiguration presetConfiguration) {
     this.presetConfiguration = presetConfiguration;
   }
@@ -119,6 +149,16 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return crf;
   }
 
+  /**
+   * Sets the constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
+   * minimum: 0
+   * maximum: 63
+   *
+   * @param crf
+   * Sets the constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
+   * minimum: 0
+   * maximum: 63
+   */
   public void setCrf(Integer crf) {
     this.crf = crf;
   }
@@ -134,8 +174,37 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return lagInFrames;
   }
 
+  /**
+   * Number of frames to look ahead for alternate reference frame selection.
+   * minimum: 0
+   * maximum: 25
+   *
+   * @param lagInFrames
+   * Number of frames to look ahead for alternate reference frame selection.
+   * minimum: 0
+   * maximum: 25
+   */
   public void setLagInFrames(Integer lagInFrames) {
     this.lagInFrames = lagInFrames;
+  }
+
+
+  /**
+   * Enables error resiliency feature
+   * @return errorResiliencyEnabled
+   */
+  public Boolean getErrorResiliencyEnabled() {
+    return errorResiliencyEnabled;
+  }
+
+  /**
+   * Enables error resiliency feature
+   *
+   * @param errorResiliencyEnabled
+   * Enables error resiliency feature
+   */
+  public void setErrorResiliencyEnabled(Boolean errorResiliencyEnabled) {
+    this.errorResiliencyEnabled = errorResiliencyEnabled;
   }
 
 
@@ -149,6 +218,16 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return tileColumns;
   }
 
+  /**
+   * Number of tile columns to use, log2.
+   * minimum: 0
+   * maximum: 6
+   *
+   * @param tileColumns
+   * Number of tile columns to use, log2.
+   * minimum: 0
+   * maximum: 6
+   */
   public void setTileColumns(Integer tileColumns) {
     this.tileColumns = tileColumns;
   }
@@ -164,6 +243,16 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return tileRows;
   }
 
+  /**
+   * Number of tile rows to use, log2.
+   * minimum: 0
+   * maximum: 2
+   *
+   * @param tileRows
+   * Number of tile rows to use, log2.
+   * minimum: 0
+   * maximum: 2
+   */
   public void setTileRows(Integer tileRows) {
     this.tileRows = tileRows;
   }
@@ -177,6 +266,12 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return frameParallel;
   }
 
+  /**
+   * Enable frame parallel decodability features
+   *
+   * @param frameParallel
+   * Enable frame parallel decodability features
+   */
   public void setFrameParallel(Boolean frameParallel) {
     this.frameParallel = frameParallel;
   }
@@ -190,6 +285,12 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return maxIntraRate;
   }
 
+  /**
+   * Maximum I-frame bitrate (percentage) 0&#x3D;unlimited
+   *
+   * @param maxIntraRate
+   * Maximum I-frame bitrate (percentage) 0&#x3D;unlimited
+   */
   public void setMaxIntraRate(Long maxIntraRate) {
     this.maxIntraRate = maxIntraRate;
   }
@@ -205,6 +306,16 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return qpMin;
   }
 
+  /**
+   * Sets the minimum of quantization factor.
+   * minimum: 0
+   * maximum: 63
+   *
+   * @param qpMin
+   * Sets the minimum of quantization factor.
+   * minimum: 0
+   * maximum: 63
+   */
   public void setQpMin(Integer qpMin) {
     this.qpMin = qpMin;
   }
@@ -220,6 +331,16 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return qpMax;
   }
 
+  /**
+   * Sets the maximum of quantization factor.
+   * minimum: 0
+   * maximum: 63
+   *
+   * @param qpMax
+   * Sets the maximum of quantization factor.
+   * minimum: 0
+   * maximum: 63
+   */
   public void setQpMax(Integer qpMax) {
     this.qpMax = qpMax;
   }
@@ -235,6 +356,16 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return rateUndershootPct;
   }
 
+  /**
+   * Datarate undershoot (min) target (percentage).
+   * minimum: 0
+   * maximum: 100
+   *
+   * @param rateUndershootPct
+   * Datarate undershoot (min) target (percentage).
+   * minimum: 0
+   * maximum: 100
+   */
   public void setRateUndershootPct(Integer rateUndershootPct) {
     this.rateUndershootPct = rateUndershootPct;
   }
@@ -250,8 +381,87 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return rateOvershootPct;
   }
 
+  /**
+   * Datarate overshoot (max) target (percentage).
+   * minimum: 0
+   * maximum: 100
+   *
+   * @param rateOvershootPct
+   * Datarate overshoot (max) target (percentage).
+   * minimum: 0
+   * maximum: 100
+   */
   public void setRateOvershootPct(Integer rateOvershootPct) {
     this.rateOvershootPct = rateOvershootPct;
+  }
+
+
+  /**
+   * Client buffer size (ms)
+   * minimum: 0
+   * @return clientBufferSize
+   */
+  public Long getClientBufferSize() {
+    return clientBufferSize;
+  }
+
+  /**
+   * Client buffer size (ms)
+   * minimum: 0
+   *
+   * @param clientBufferSize
+   * Client buffer size (ms)
+   * minimum: 0
+   */
+  public void setClientBufferSize(Long clientBufferSize) {
+    this.clientBufferSize = clientBufferSize;
+  }
+
+
+  /**
+   * Client initial buffer size (ms)
+   * minimum: 0
+   * @return clientInitialBufferSize
+   */
+  public Long getClientInitialBufferSize() {
+    return clientInitialBufferSize;
+  }
+
+  /**
+   * Client initial buffer size (ms)
+   * minimum: 0
+   *
+   * @param clientInitialBufferSize
+   * Client initial buffer size (ms)
+   * minimum: 0
+   */
+  public void setClientInitialBufferSize(Long clientInitialBufferSize) {
+    this.clientInitialBufferSize = clientInitialBufferSize;
+  }
+
+
+  /**
+   * CBR/VBR bias (0&#x3D;CBR, 100&#x3D;VBR)
+   * minimum: 0
+   * maximum: 100
+   * @return biasPct
+   */
+  public Integer getBiasPct() {
+    return biasPct;
+  }
+
+  /**
+   * CBR/VBR bias (0&#x3D;CBR, 100&#x3D;VBR)
+   * minimum: 0
+   * maximum: 100
+   *
+   * @param biasPct
+   * CBR/VBR bias (0&#x3D;CBR, 100&#x3D;VBR)
+   * minimum: 0
+   * maximum: 100
+   */
+  public void setBiasPct(Integer biasPct) {
+    this.biasPct = biasPct;
   }
 
 
@@ -263,8 +473,102 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return noiseSensitivity;
   }
 
+  /**
+   * Enable noise sensitivity on Y channel
+   *
+   * @param noiseSensitivity
+   * Enable noise sensitivity on Y channel
+   */
   public void setNoiseSensitivity(Boolean noiseSensitivity) {
     this.noiseSensitivity = noiseSensitivity;
+  }
+
+
+  /**
+   * Controls the tradeoff between compression efficiency and encoding speed. Higher values indicate a faster encoding.
+   * minimum: 1
+   * maximum: 8
+   * @return cpuUsed
+   */
+  public Integer getCpuUsed() {
+    return cpuUsed;
+  }
+
+  /**
+   * Controls the tradeoff between compression efficiency and encoding speed. Higher values indicate a faster encoding.
+   * minimum: 1
+   * maximum: 8
+   *
+   * @param cpuUsed
+   * Controls the tradeoff between compression efficiency and encoding speed. Higher values indicate a faster encoding.
+   * minimum: 1
+   * maximum: 8
+   */
+  public void setCpuUsed(Integer cpuUsed) {
+    this.cpuUsed = cpuUsed;
+  }
+
+
+  /**
+   * Enable automatic alternate reference frames (2pass only)
+   * @return automaticAltRefFramesEnabled
+   */
+  public Boolean getAutomaticAltRefFramesEnabled() {
+    return automaticAltRefFramesEnabled;
+  }
+
+  /**
+   * Enable automatic alternate reference frames (2pass only)
+   *
+   * @param automaticAltRefFramesEnabled
+   * Enable automatic alternate reference frames (2pass only)
+   */
+  public void setAutomaticAltRefFramesEnabled(Boolean automaticAltRefFramesEnabled) {
+    this.automaticAltRefFramesEnabled = automaticAltRefFramesEnabled;
+  }
+
+
+  /**
+   * Target level (255: off, 0: only keep level stats; 10: level 1.0; 11: level 1.1; ... 62: level 6.2)
+   * minimum: 0
+   * maximum: 255
+   * @return targetLevel
+   */
+  public Integer getTargetLevel() {
+    return targetLevel;
+  }
+
+  /**
+   * Target level (255: off, 0: only keep level stats; 10: level 1.0; 11: level 1.1; ... 62: level 6.2)
+   * minimum: 0
+   * maximum: 255
+   *
+   * @param targetLevel
+   * Target level (255: off, 0: only keep level stats; 10: level 1.0; 11: level 1.1; ... 62: level 6.2)
+   * minimum: 0
+   * maximum: 255
+   */
+  public void setTargetLevel(Integer targetLevel) {
+    this.targetLevel = targetLevel;
+  }
+
+
+  /**
+   * Enable row based non-deterministic multi-threading
+   * @return rowMultiThreadingEnabled
+   */
+  public Boolean getRowMultiThreadingEnabled() {
+    return rowMultiThreadingEnabled;
+  }
+
+  /**
+   * Enable row based non-deterministic multi-threading
+   *
+   * @param rowMultiThreadingEnabled
+   * Enable row based non-deterministic multi-threading
+   */
+  public void setRowMultiThreadingEnabled(Boolean rowMultiThreadingEnabled) {
+    this.rowMultiThreadingEnabled = rowMultiThreadingEnabled;
   }
 
 
@@ -278,6 +582,16 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return sharpness;
   }
 
+  /**
+   * Loop filter sharpness.
+   * minimum: 0
+   * maximum: 7
+   *
+   * @param sharpness
+   * Loop filter sharpness.
+   * minimum: 0
+   * maximum: 7
+   */
   public void setSharpness(Integer sharpness) {
     this.sharpness = sharpness;
   }
@@ -291,6 +605,12 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return minGop;
   }
 
+  /**
+   * Minimum GOP length, the minimum distance between I-frames.
+   *
+   * @param minGop
+   * Minimum GOP length, the minimum distance between I-frames.
+   */
   public void setMinGop(Integer minGop) {
     this.minGop = minGop;
   }
@@ -304,6 +624,12 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return maxGop;
   }
 
+  /**
+   * Maximum GOP length, the maximum distance between I-frames
+   *
+   * @param maxGop
+   * Maximum GOP length, the maximum distance between I-frames
+   */
   public void setMaxGop(Integer maxGop) {
     this.maxGop = maxGop;
   }
@@ -317,6 +643,12 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return minKeyframeInterval;
   }
 
+  /**
+   * Minimum interval in seconds between key frames
+   *
+   * @param minKeyframeInterval
+   * Minimum interval in seconds between key frames
+   */
   public void setMinKeyframeInterval(Double minKeyframeInterval) {
     this.minKeyframeInterval = minKeyframeInterval;
   }
@@ -330,6 +662,12 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return maxKeyframeInterval;
   }
 
+  /**
+   * Maximum interval in seconds between key frames
+   *
+   * @param maxKeyframeInterval
+   * Maximum interval in seconds between key frames
+   */
   public void setMaxKeyframeInterval(Double maxKeyframeInterval) {
     this.maxKeyframeInterval = maxKeyframeInterval;
   }
@@ -343,6 +681,11 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return quality;
   }
 
+  /**
+   * Set quality
+   *
+   * @param quality
+   */
   public void setQuality(Vp9Quality quality) {
     this.quality = quality;
   }
@@ -356,6 +699,12 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return lossless;
   }
 
+  /**
+   * Lossless mode
+   *
+   * @param lossless
+   * Lossless mode
+   */
   public void setLossless(Boolean lossless) {
     this.lossless = lossless;
   }
@@ -370,6 +719,14 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return staticThresh;
   }
 
+  /**
+   * A change threshold on blocks below which they will be skipped by the encoder.
+   * minimum: 0
+   *
+   * @param staticThresh
+   * A change threshold on blocks below which they will be skipped by the encoder.
+   * minimum: 0
+   */
   public void setStaticThresh(Integer staticThresh) {
     this.staticThresh = staticThresh;
   }
@@ -383,6 +740,11 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return aqMode;
   }
 
+  /**
+   * Set aqMode
+   *
+   * @param aqMode
+   */
   public void setAqMode(Vp9AqMode aqMode) {
     this.aqMode = aqMode;
   }
@@ -398,6 +760,16 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return arnrMaxFrames;
   }
 
+  /**
+   * altref noise reduction max frame count.
+   * minimum: 0
+   * maximum: 15
+   *
+   * @param arnrMaxFrames
+   * altref noise reduction max frame count.
+   * minimum: 0
+   * maximum: 15
+   */
   public void setArnrMaxFrames(Integer arnrMaxFrames) {
     this.arnrMaxFrames = arnrMaxFrames;
   }
@@ -413,6 +785,16 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return arnrStrength;
   }
 
+  /**
+   * altref noise reduction filter strength.
+   * minimum: 0
+   * maximum: 6
+   *
+   * @param arnrStrength
+   * altref noise reduction filter strength.
+   * minimum: 0
+   * maximum: 6
+   */
   public void setArnrStrength(Integer arnrStrength) {
     this.arnrStrength = arnrStrength;
   }
@@ -426,6 +808,11 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return arnrType;
   }
 
+  /**
+   * Set arnrType
+   *
+   * @param arnrType
+   */
   public void setArnrType(Vp9ArnrType arnrType) {
     this.arnrType = arnrType;
   }
@@ -443,6 +830,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return Objects.equals(this.presetConfiguration, vp9VideoConfiguration.presetConfiguration) &&
         Objects.equals(this.crf, vp9VideoConfiguration.crf) &&
         Objects.equals(this.lagInFrames, vp9VideoConfiguration.lagInFrames) &&
+        Objects.equals(this.errorResiliencyEnabled, vp9VideoConfiguration.errorResiliencyEnabled) &&
         Objects.equals(this.tileColumns, vp9VideoConfiguration.tileColumns) &&
         Objects.equals(this.tileRows, vp9VideoConfiguration.tileRows) &&
         Objects.equals(this.frameParallel, vp9VideoConfiguration.frameParallel) &&
@@ -451,7 +839,14 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
         Objects.equals(this.qpMax, vp9VideoConfiguration.qpMax) &&
         Objects.equals(this.rateUndershootPct, vp9VideoConfiguration.rateUndershootPct) &&
         Objects.equals(this.rateOvershootPct, vp9VideoConfiguration.rateOvershootPct) &&
+        Objects.equals(this.clientBufferSize, vp9VideoConfiguration.clientBufferSize) &&
+        Objects.equals(this.clientInitialBufferSize, vp9VideoConfiguration.clientInitialBufferSize) &&
+        Objects.equals(this.biasPct, vp9VideoConfiguration.biasPct) &&
         Objects.equals(this.noiseSensitivity, vp9VideoConfiguration.noiseSensitivity) &&
+        Objects.equals(this.cpuUsed, vp9VideoConfiguration.cpuUsed) &&
+        Objects.equals(this.automaticAltRefFramesEnabled, vp9VideoConfiguration.automaticAltRefFramesEnabled) &&
+        Objects.equals(this.targetLevel, vp9VideoConfiguration.targetLevel) &&
+        Objects.equals(this.rowMultiThreadingEnabled, vp9VideoConfiguration.rowMultiThreadingEnabled) &&
         Objects.equals(this.sharpness, vp9VideoConfiguration.sharpness) &&
         Objects.equals(this.minGop, vp9VideoConfiguration.minGop) &&
         Objects.equals(this.maxGop, vp9VideoConfiguration.maxGop) &&
@@ -469,7 +864,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
 
   @Override
   public int hashCode() {
-    return Objects.hash(presetConfiguration, crf, lagInFrames, tileColumns, tileRows, frameParallel, maxIntraRate, qpMin, qpMax, rateUndershootPct, rateOvershootPct, noiseSensitivity, sharpness, minGop, maxGop, minKeyframeInterval, maxKeyframeInterval, quality, lossless, staticThresh, aqMode, arnrMaxFrames, arnrStrength, arnrType, super.hashCode());
+    return Objects.hash(presetConfiguration, crf, lagInFrames, errorResiliencyEnabled, tileColumns, tileRows, frameParallel, maxIntraRate, qpMin, qpMax, rateUndershootPct, rateOvershootPct, clientBufferSize, clientInitialBufferSize, biasPct, noiseSensitivity, cpuUsed, automaticAltRefFramesEnabled, targetLevel, rowMultiThreadingEnabled, sharpness, minGop, maxGop, minKeyframeInterval, maxKeyframeInterval, quality, lossless, staticThresh, aqMode, arnrMaxFrames, arnrStrength, arnrType, super.hashCode());
   }
 
 
@@ -481,6 +876,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     sb.append("    presetConfiguration: ").append(toIndentedString(presetConfiguration)).append("\n");
     sb.append("    crf: ").append(toIndentedString(crf)).append("\n");
     sb.append("    lagInFrames: ").append(toIndentedString(lagInFrames)).append("\n");
+    sb.append("    errorResiliencyEnabled: ").append(toIndentedString(errorResiliencyEnabled)).append("\n");
     sb.append("    tileColumns: ").append(toIndentedString(tileColumns)).append("\n");
     sb.append("    tileRows: ").append(toIndentedString(tileRows)).append("\n");
     sb.append("    frameParallel: ").append(toIndentedString(frameParallel)).append("\n");
@@ -489,7 +885,14 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     sb.append("    qpMax: ").append(toIndentedString(qpMax)).append("\n");
     sb.append("    rateUndershootPct: ").append(toIndentedString(rateUndershootPct)).append("\n");
     sb.append("    rateOvershootPct: ").append(toIndentedString(rateOvershootPct)).append("\n");
+    sb.append("    clientBufferSize: ").append(toIndentedString(clientBufferSize)).append("\n");
+    sb.append("    clientInitialBufferSize: ").append(toIndentedString(clientInitialBufferSize)).append("\n");
+    sb.append("    biasPct: ").append(toIndentedString(biasPct)).append("\n");
     sb.append("    noiseSensitivity: ").append(toIndentedString(noiseSensitivity)).append("\n");
+    sb.append("    cpuUsed: ").append(toIndentedString(cpuUsed)).append("\n");
+    sb.append("    automaticAltRefFramesEnabled: ").append(toIndentedString(automaticAltRefFramesEnabled)).append("\n");
+    sb.append("    targetLevel: ").append(toIndentedString(targetLevel)).append("\n");
+    sb.append("    rowMultiThreadingEnabled: ").append(toIndentedString(rowMultiThreadingEnabled)).append("\n");
     sb.append("    sharpness: ").append(toIndentedString(sharpness)).append("\n");
     sb.append("    minGop: ").append(toIndentedString(minGop)).append("\n");
     sb.append("    maxGop: ").append(toIndentedString(maxGop)).append("\n");

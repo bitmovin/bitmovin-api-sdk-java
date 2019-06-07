@@ -44,7 +44,7 @@ public class LocalApi {
     /**
      * Create Local Input
      * 
-     * @param localInput The LocalInput to be created. (optional)
+     * @param localInput The LocalInput to be created. (required)
      * @return LocalInput
      * @throws BitmovinException if fails to make API call
      */

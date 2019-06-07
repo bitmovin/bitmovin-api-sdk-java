@@ -27,6 +27,11 @@ public class AnalyticsColumnLabel {
     return key;
   }
 
+  /**
+   * Set key
+   *
+   * @param key
+   */
   public void setKey(String key) {
     this.key = key;
   }
@@ -40,6 +45,11 @@ public class AnalyticsColumnLabel {
     return label;
   }
 
+  /**
+   * Set label
+   *
+   * @param label
+   */
   public void setLabel(String label) {
     this.label = label;
   }
