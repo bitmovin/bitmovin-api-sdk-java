@@ -4,16 +4,22 @@ import com.bitmovin.api.sdk.model.Link;
 import com.bitmovin.api.sdk.model.Message;
 import com.bitmovin.api.sdk.model.ResponseError;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class BitmovinException extends Exception {
-    private List<Message> details;
+public class BitmovinException extends RuntimeException {
+
+    private String shortmessage;
     private String developerMessage;
+
     private int errorCode;
     private int httpStatusCode;
-    private List<Link> links;
-    private String rawJson;
+
     private String requestId;
+
+    private String rawJsonResponse;
+    private List<Link> links = new ArrayList<>();
+    private List<Message> details = new ArrayList<>();
 
     public BitmovinException() {
     }
@@ -22,22 +28,22 @@ public class BitmovinException extends Exception {
         super(message);
     }
 
-    public BitmovinException(String message, int httpStatusCode, String rawJson) {
+    public BitmovinException(String message, int httpStatusCode, String rawJsonResponse) {
         super(message);
 
         this.httpStatusCode = httpStatusCode;
-        this.rawJson = rawJson;
+        this.rawJsonResponse = rawJsonResponse;
     }
 
-    public BitmovinException(String message, int httpStatusCode, String rawJson, ResponseError responseError) {
-        super(message);
+    public BitmovinException(String message, int httpStatusCode, String rawJsonResponse, ResponseError responseError) {
 
-        this.httpStatusCode = httpStatusCode;
-        this.rawJson = rawJson;
+        this(message, httpStatusCode, rawJsonResponse);
+
         this.requestId = responseError.getRequestId();
 
         if (responseError.getData() != null) {
             this.details = responseError.getData().getDetails();
+            this.shortmessage = responseError.getData().getMessage();
             this.developerMessage = responseError.getData().getDeveloperMessage();
             this.errorCode = responseError.getData().getCode();
             this.links = responseError.getData().getLinks();
@@ -65,10 +71,14 @@ public class BitmovinException extends Exception {
     }
 
     public String getRawJson() {
-        return rawJson;
+        return rawJsonResponse;
     }
 
     public String getRequestId() {
         return requestId;
+    }
+
+    public String getShortmessage() {
+        return shortmessage;
     }
 }

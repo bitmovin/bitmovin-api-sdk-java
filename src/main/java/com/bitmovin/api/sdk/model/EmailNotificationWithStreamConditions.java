@@ -4,7 +4,6 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AbstractCondition;
 import com.bitmovin.api.sdk.model.EmailNotification;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -18,23 +17,14 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class EmailNotificationWithStreamConditions extends EmailNotification {
   @JsonProperty("conditions")
-  @JsonInclude(JsonInclude.Include.NON_EMPTY)
-  private List<AbstractCondition> conditions = new ArrayList<AbstractCondition>();
+  private AbstractCondition conditions;
 
-
-  public EmailNotificationWithStreamConditions addConditionsItem(AbstractCondition conditionsItem) {
-    if (this.conditions == null) {
-      this.conditions = new ArrayList<>();
-    }
-    this.conditions.add(conditionsItem);
-    return this;
-  }
 
   /**
    * Get conditions
    * @return conditions
    */
-  public List<AbstractCondition> getConditions() {
+  public AbstractCondition getConditions() {
     return conditions;
   }
 
@@ -43,7 +33,7 @@ public class EmailNotificationWithStreamConditions extends EmailNotification {
    *
    * @param conditions
    */
-  public void setConditions(List<AbstractCondition> conditions) {
+  public void setConditions(AbstractCondition conditions) {
     this.conditions = conditions;
   }
 

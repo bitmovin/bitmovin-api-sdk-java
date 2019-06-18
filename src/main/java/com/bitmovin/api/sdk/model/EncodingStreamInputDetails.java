@@ -7,7 +7,9 @@ import com.bitmovin.api.sdk.model.MediaStream;
 import com.bitmovin.api.sdk.model.SubtitleStream;
 import com.bitmovin.api.sdk.model.VideoStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -35,7 +37,7 @@ public class EncodingStreamInputDetails {
 
   @JsonProperty("tags")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
-  private List<String> tags = new ArrayList<String>();
+  private Map<String, Object> tags = new HashMap<String, Object>();
 
   @JsonProperty("videoStreams")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -94,11 +96,11 @@ public class EncodingStreamInputDetails {
   }
 
 
-  public EncodingStreamInputDetails addTagsItem(String tagsItem) {
+  public EncodingStreamInputDetails putTagsItem(String key, Object tagsItem) {
     if (this.tags == null) {
-      this.tags = new ArrayList<>();
+      this.tags = new HashMap<String, Object>();
     }
-    this.tags.add(tagsItem);
+    this.tags.put(key, tagsItem);
     return this;
   }
 
@@ -106,7 +108,7 @@ public class EncodingStreamInputDetails {
    * Additional metadata saved in the input file
    * @return tags
    */
-  public List<String> getTags() {
+  public Map<String, Object> getTags() {
     return tags;
   }
 
@@ -116,7 +118,7 @@ public class EncodingStreamInputDetails {
    * @param tags
    * Additional metadata saved in the input file
    */
-  public void setTags(List<String> tags) {
+  public void setTags(Map<String, Object> tags) {
     this.tags = tags;
   }
 

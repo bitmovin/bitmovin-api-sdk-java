@@ -17,7 +17,7 @@ public class AudioStream extends MediaStream {
   private Integer sampleRate;
 
   @JsonProperty("bitrate")
-  private Long bitrate;
+  private String bitrate;
 
   @JsonProperty("rate")
   private Long rate;
@@ -55,7 +55,7 @@ public class AudioStream extends MediaStream {
    * Bitrate in bps
    * @return bitrate
    */
-  public Long getBitrate() {
+  public String getBitrate() {
     return bitrate;
   }
 
@@ -65,7 +65,7 @@ public class AudioStream extends MediaStream {
    * @param bitrate
    * Bitrate in bps
    */
-  public void setBitrate(Long bitrate) {
+  public void setBitrate(String bitrate) {
     this.bitrate = bitrate;
   }
 

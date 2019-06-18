@@ -74,7 +74,7 @@ public class VideoStream extends MediaStream {
 
 
   /**
-   * Bitrate in bps
+   * Bitrate in bps (the same as bitrate, but represented as an integer value)
    * @return rate
    */
   public Long getRate() {
@@ -82,10 +82,10 @@ public class VideoStream extends MediaStream {
   }
 
   /**
-   * Bitrate in bps
+   * Bitrate in bps (the same as bitrate, but represented as an integer value)
    *
    * @param rate
-   * Bitrate in bps
+   * Bitrate in bps (the same as bitrate, but represented as an integer value)
    */
   public void setRate(Long rate) {
     this.rate = rate;
