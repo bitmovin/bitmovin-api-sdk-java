@@ -29,7 +29,7 @@ public class ManifestTypeResponse {
    * The type of the manifest
    *
    * @param type
-   * The type of the manifest
+   *        The type of the manifest
    */
   public void setType(ManifestType type) {
     this.type = type;
@@ -53,7 +53,6 @@ public class ManifestTypeResponse {
     return Objects.hash(type);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -74,6 +73,5 @@ public class ManifestTypeResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -33,7 +33,7 @@ public class Eac3AudioConfiguration extends AudioConfiguration {
    * Channel layout of the audio codec configuration
    *
    * @param channelLayout
-   * Channel layout of the audio codec configuration
+   *        Channel layout of the audio codec configuration
    */
   public void setChannelLayout(Ac3ChannelLayout channelLayout) {
     this.channelLayout = channelLayout;
@@ -58,7 +58,6 @@ public class Eac3AudioConfiguration extends AudioConfiguration {
     return Objects.hash(channelLayout, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -79,6 +78,5 @@ public class Eac3AudioConfiguration extends AudioConfiguration {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

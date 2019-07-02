@@ -38,9 +38,6 @@ public class Output extends BitmovinResource {
 
 
   public Output addAclItem(AclEntry aclItem) {
-    if (this.acl == null) {
-      this.acl = new ArrayList<>();
-    }
     this.acl.add(aclItem);
     return this;
   }
@@ -81,7 +78,6 @@ public class Output extends BitmovinResource {
     return Objects.hash(acl, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -102,6 +98,5 @@ public class Output extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

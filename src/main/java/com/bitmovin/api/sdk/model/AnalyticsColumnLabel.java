@@ -73,7 +73,6 @@ public class AnalyticsColumnLabel {
     return Objects.hash(key, label);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -95,6 +94,5 @@ public class AnalyticsColumnLabel {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

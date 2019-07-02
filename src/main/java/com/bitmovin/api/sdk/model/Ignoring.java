@@ -54,7 +54,6 @@ public class Ignoring {
     return Objects.hash(ignoredBy, ignoredByDescription);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -76,6 +75,5 @@ public class Ignoring {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

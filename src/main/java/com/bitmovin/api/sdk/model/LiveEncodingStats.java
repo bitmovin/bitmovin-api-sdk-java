@@ -48,9 +48,6 @@ public class LiveEncodingStats {
 
 
   public LiveEncodingStats addEventsItem(LiveEncodingStatsEvent eventsItem) {
-    if (this.events == null) {
-      this.events = new ArrayList<>();
-    }
     this.events.add(eventsItem);
     return this;
   }
@@ -67,7 +64,7 @@ public class LiveEncodingStats {
    * List of events
    *
    * @param events
-   * List of events
+   *        List of events
    */
   public void setEvents(List<LiveEncodingStatsEvent> events) {
     this.events = events;
@@ -75,9 +72,6 @@ public class LiveEncodingStats {
 
 
   public LiveEncodingStats addStatisticsItem(StreamInfos statisticsItem) {
-    if (this.statistics == null) {
-      this.statistics = new ArrayList<>();
-    }
     this.statistics.add(statisticsItem);
     return this;
   }
@@ -94,7 +88,7 @@ public class LiveEncodingStats {
    * List of statistics
    *
    * @param statistics
-   * List of statistics
+   *        List of statistics
    */
   public void setStatistics(List<StreamInfos> statistics) {
     this.statistics = statistics;
@@ -120,7 +114,6 @@ public class LiveEncodingStats {
     return Objects.hash(status, events, statistics);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -143,6 +136,5 @@ public class LiveEncodingStats {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

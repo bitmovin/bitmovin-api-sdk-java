@@ -39,7 +39,7 @@ public class AccountInformation extends BitmovinResource {
 
 
   /**
-   * Email address of the account.
+   * Email address of the account. (required)
    * @return email
    */
   public String getEmail() {
@@ -47,10 +47,10 @@ public class AccountInformation extends BitmovinResource {
   }
 
   /**
-   * Email address of the account.
+   * Email address of the account. (required)
    *
    * @param email
-   * Email address of the account.
+   *        Email address of the account. (required)
    */
   public void setEmail(String email) {
     this.email = email;
@@ -63,7 +63,7 @@ public class AccountInformation extends BitmovinResource {
   }
 
   /**
-   * ApiKeys associated with the account
+   * ApiKeys associated with the account (required)
    * @return apiKeys
    */
   public List<AccountApiKey> getApiKeys() {
@@ -71,10 +71,10 @@ public class AccountInformation extends BitmovinResource {
   }
 
   /**
-   * ApiKeys associated with the account
+   * ApiKeys associated with the account (required)
    *
    * @param apiKeys
-   * ApiKeys associated with the account
+   *        ApiKeys associated with the account (required)
    */
   public void setApiKeys(List<AccountApiKey> apiKeys) {
     this.apiKeys = apiKeys;
@@ -93,7 +93,7 @@ public class AccountInformation extends BitmovinResource {
    * First name of the tenant.
    *
    * @param firstName
-   * First name of the tenant.
+   *        First name of the tenant.
    */
   public void setFirstName(String firstName) {
     this.firstName = firstName;
@@ -112,7 +112,7 @@ public class AccountInformation extends BitmovinResource {
    * Last name of the tenant.
    *
    * @param lastName
-   * Last name of the tenant.
+   *        Last name of the tenant.
    */
   public void setLastName(String lastName) {
     this.lastName = lastName;
@@ -131,7 +131,7 @@ public class AccountInformation extends BitmovinResource {
    * Phone number of the tenant.
    *
    * @param phone
-   * Phone number of the tenant.
+   *        Phone number of the tenant.
    */
   public void setPhone(String phone) {
     this.phone = phone;
@@ -150,7 +150,7 @@ public class AccountInformation extends BitmovinResource {
    * Company name of the tenant.
    *
    * @param company
-   * Company name of the tenant.
+   *        Company name of the tenant.
    */
   public void setCompany(String company) {
     this.company = company;
@@ -180,7 +180,6 @@ public class AccountInformation extends BitmovinResource {
     return Objects.hash(email, apiKeys, firstName, lastName, phone, company, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -206,6 +205,5 @@ public class AccountInformation extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

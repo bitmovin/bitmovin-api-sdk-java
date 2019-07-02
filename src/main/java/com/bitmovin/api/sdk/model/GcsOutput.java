@@ -32,7 +32,7 @@ public class GcsOutput extends Output {
 
 
   /**
-   * GCS access key
+   * GCS access key (required)
    * @return accessKey
    */
   public String getAccessKey() {
@@ -40,10 +40,10 @@ public class GcsOutput extends Output {
   }
 
   /**
-   * GCS access key
+   * GCS access key (required)
    *
    * @param accessKey
-   * GCS access key
+   *        GCS access key (required)
    */
   public void setAccessKey(String accessKey) {
     this.accessKey = accessKey;
@@ -51,7 +51,7 @@ public class GcsOutput extends Output {
 
 
   /**
-   * GCS secret key
+   * GCS secret key (required)
    * @return secretKey
    */
   public String getSecretKey() {
@@ -59,10 +59,10 @@ public class GcsOutput extends Output {
   }
 
   /**
-   * GCS secret key
+   * GCS secret key (required)
    *
    * @param secretKey
-   * GCS secret key
+   *        GCS secret key (required)
    */
   public void setSecretKey(String secretKey) {
     this.secretKey = secretKey;
@@ -70,7 +70,7 @@ public class GcsOutput extends Output {
 
 
   /**
-   * Name of the bucket
+   * Name of the bucket (required)
    * @return bucketName
    */
   public String getBucketName() {
@@ -78,10 +78,10 @@ public class GcsOutput extends Output {
   }
 
   /**
-   * Name of the bucket
+   * Name of the bucket (required)
    *
    * @param bucketName
-   * Name of the bucket
+   *        Name of the bucket (required)
    */
   public void setBucketName(String bucketName) {
     this.bucketName = bucketName;
@@ -127,7 +127,6 @@ public class GcsOutput extends Output {
     return Objects.hash(accessKey, secretKey, bucketName, cloudRegion, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -151,6 +150,5 @@ public class GcsOutput extends Output {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

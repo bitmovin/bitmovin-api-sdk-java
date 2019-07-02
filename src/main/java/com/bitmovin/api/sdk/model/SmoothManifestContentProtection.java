@@ -27,7 +27,7 @@ public class SmoothManifestContentProtection extends BitmovinResource {
 
 
   /**
-   * Id of the encoding.
+   * Id of the encoding. (required)
    * @return encodingId
    */
   public String getEncodingId() {
@@ -35,10 +35,10 @@ public class SmoothManifestContentProtection extends BitmovinResource {
   }
 
   /**
-   * Id of the encoding.
+   * Id of the encoding. (required)
    *
    * @param encodingId
-   * Id of the encoding.
+   *        Id of the encoding. (required)
    */
   public void setEncodingId(String encodingId) {
     this.encodingId = encodingId;
@@ -46,7 +46,7 @@ public class SmoothManifestContentProtection extends BitmovinResource {
 
 
   /**
-   * Id of the muxing.
+   * Id of the muxing. (required)
    * @return muxingId
    */
   public String getMuxingId() {
@@ -54,10 +54,10 @@ public class SmoothManifestContentProtection extends BitmovinResource {
   }
 
   /**
-   * Id of the muxing.
+   * Id of the muxing. (required)
    *
    * @param muxingId
-   * Id of the muxing.
+   *        Id of the muxing. (required)
    */
   public void setMuxingId(String muxingId) {
     this.muxingId = muxingId;
@@ -65,7 +65,7 @@ public class SmoothManifestContentProtection extends BitmovinResource {
 
 
   /**
-   * Id of the drm.
+   * Id of the drm. (required)
    * @return drmId
    */
   public String getDrmId() {
@@ -73,10 +73,10 @@ public class SmoothManifestContentProtection extends BitmovinResource {
   }
 
   /**
-   * Id of the drm.
+   * Id of the drm. (required)
    *
    * @param drmId
-   * Id of the drm.
+   *        Id of the drm. (required)
    */
   public void setDrmId(String drmId) {
     this.drmId = drmId;
@@ -103,7 +103,6 @@ public class SmoothManifestContentProtection extends BitmovinResource {
     return Objects.hash(encodingId, muxingId, drmId, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -126,6 +125,5 @@ public class SmoothManifestContentProtection extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

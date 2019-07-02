@@ -31,7 +31,7 @@ public class Vp9PerTitleConfiguration extends PerTitleConfiguration {
    * Desired target quality of the highest representation expressed as CRF value
    *
    * @param targetQualityCrf
-   * Desired target quality of the highest representation expressed as CRF value
+   *        Desired target quality of the highest representation expressed as CRF value
    */
   public void setTargetQualityCrf(Double targetQualityCrf) {
     this.targetQualityCrf = targetQualityCrf;
@@ -56,7 +56,6 @@ public class Vp9PerTitleConfiguration extends PerTitleConfiguration {
     return Objects.hash(targetQualityCrf, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -77,6 +76,5 @@ public class Vp9PerTitleConfiguration extends PerTitleConfiguration {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

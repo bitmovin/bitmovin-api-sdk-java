@@ -20,7 +20,7 @@ public class Login {
 
 
   /**
-   * Email address of the account.
+   * Email address of the account. (required)
    * @return eMail
    */
   public String getEMail() {
@@ -28,10 +28,10 @@ public class Login {
   }
 
   /**
-   * Email address of the account.
+   * Email address of the account. (required)
    *
    * @param eMail
-   * Email address of the account.
+   *        Email address of the account. (required)
    */
   public void setEMail(String eMail) {
     this.eMail = eMail;
@@ -39,7 +39,7 @@ public class Login {
 
 
   /**
-   * Password of the account.
+   * Password of the account. (required)
    * @return password
    */
   public String getPassword() {
@@ -47,10 +47,10 @@ public class Login {
   }
 
   /**
-   * Password of the account.
+   * Password of the account. (required)
    *
    * @param password
-   * Password of the account.
+   *        Password of the account. (required)
    */
   public void setPassword(String password) {
     this.password = password;
@@ -75,7 +75,6 @@ public class Login {
     return Objects.hash(eMail, password);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -97,6 +96,5 @@ public class Login {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

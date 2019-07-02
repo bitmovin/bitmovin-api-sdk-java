@@ -20,7 +20,7 @@ public class XmlNamespace {
 
 
   /**
-   * Name of the XML Namespace reference
+   * Name of the XML Namespace reference (required)
    * @return prefix
    */
   public String getPrefix() {
@@ -28,10 +28,10 @@ public class XmlNamespace {
   }
 
   /**
-   * Name of the XML Namespace reference
+   * Name of the XML Namespace reference (required)
    *
    * @param prefix
-   * Name of the XML Namespace reference
+   *        Name of the XML Namespace reference (required)
    */
   public void setPrefix(String prefix) {
     this.prefix = prefix;
@@ -39,7 +39,7 @@ public class XmlNamespace {
 
 
   /**
-   * Source of the XML Namespace reference
+   * Source of the XML Namespace reference (required)
    * @return uri
    */
   public String getUri() {
@@ -47,10 +47,10 @@ public class XmlNamespace {
   }
 
   /**
-   * Source of the XML Namespace reference
+   * Source of the XML Namespace reference (required)
    *
    * @param uri
-   * Source of the XML Namespace reference
+   *        Source of the XML Namespace reference (required)
    */
   public void setUri(String uri) {
     this.uri = uri;
@@ -75,7 +75,6 @@ public class XmlNamespace {
     return Objects.hash(prefix, uri);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -97,6 +96,5 @@ public class XmlNamespace {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

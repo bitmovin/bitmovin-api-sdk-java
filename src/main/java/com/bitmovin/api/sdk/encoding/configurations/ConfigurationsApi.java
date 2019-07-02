@@ -19,11 +19,13 @@ import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.configurations.type.TypeApi;
 import com.bitmovin.api.sdk.encoding.configurations.video.VideoApi;
 import com.bitmovin.api.sdk.encoding.configurations.audio.AudioApi;
+import com.bitmovin.api.sdk.encoding.configurations.subtitles.SubtitlesApi;
 
 public class ConfigurationsApi {
     public final TypeApi type;
     public final VideoApi video;
     public final AudioApi audio;
+    public final SubtitlesApi subtitles;
 
     private final ConfigurationsApiClient apiClient;
 
@@ -38,6 +40,7 @@ public class ConfigurationsApi {
         this.type = new TypeApi(clientFactory);
         this.video = new VideoApi(clientFactory);
         this.audio = new AudioApi(clientFactory);
+        this.subtitles = new SubtitlesApi(clientFactory);
     }
 
     /**

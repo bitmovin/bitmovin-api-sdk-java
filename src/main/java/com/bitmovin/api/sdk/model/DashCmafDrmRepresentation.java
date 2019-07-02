@@ -20,7 +20,7 @@ public class DashCmafDrmRepresentation extends DashCmafRepresentation {
 
 
   /**
-   * DRM Id
+   * DRM Id (required)
    * @return drmId
    */
   public String getDrmId() {
@@ -28,10 +28,10 @@ public class DashCmafDrmRepresentation extends DashCmafRepresentation {
   }
 
   /**
-   * DRM Id
+   * DRM Id (required)
    *
    * @param drmId
-   * DRM Id
+   *        DRM Id (required)
    */
   public void setDrmId(String drmId) {
     this.drmId = drmId;
@@ -56,7 +56,6 @@ public class DashCmafDrmRepresentation extends DashCmafRepresentation {
     return Objects.hash(drmId, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -77,6 +76,5 @@ public class DashCmafDrmRepresentation extends DashCmafRepresentation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

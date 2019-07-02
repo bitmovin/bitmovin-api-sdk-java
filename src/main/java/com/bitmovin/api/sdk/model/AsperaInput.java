@@ -47,7 +47,7 @@ public class AsperaInput extends Input {
    * Minimal download bandwidth. Examples: 100k, 100m, 100g
    *
    * @param minBandwidth
-   * Minimal download bandwidth. Examples: 100k, 100m, 100g
+   *        Minimal download bandwidth. Examples: 100k, 100m, 100g
    */
   public void setMinBandwidth(String minBandwidth) {
     this.minBandwidth = minBandwidth;
@@ -66,7 +66,7 @@ public class AsperaInput extends Input {
    * Maximal download bandwidth. Examples: 100k, 100m, 100g
    *
    * @param maxBandwidth
-   * Maximal download bandwidth. Examples: 100k, 100m, 100g
+   *        Maximal download bandwidth. Examples: 100k, 100m, 100g
    */
   public void setMaxBandwidth(String maxBandwidth) {
     this.maxBandwidth = maxBandwidth;
@@ -74,7 +74,7 @@ public class AsperaInput extends Input {
 
 
   /**
-   * Host to use for Aspera transfers
+   * Host to use for Aspera transfers (required)
    * @return host
    */
   public String getHost() {
@@ -82,10 +82,10 @@ public class AsperaInput extends Input {
   }
 
   /**
-   * Host to use for Aspera transfers
+   * Host to use for Aspera transfers (required)
    *
    * @param host
-   * Host to use for Aspera transfers
+   *        Host to use for Aspera transfers (required)
    */
   public void setHost(String host) {
     this.host = host;
@@ -104,7 +104,7 @@ public class AsperaInput extends Input {
    * Username to log into Aspera host (either password and user must be set or token)
    *
    * @param username
-   * Username to log into Aspera host (either password and user must be set or token)
+   *        Username to log into Aspera host (either password and user must be set or token)
    */
   public void setUsername(String username) {
     this.username = username;
@@ -123,7 +123,7 @@ public class AsperaInput extends Input {
    * corresponding password (either password and user must be set or token)
    *
    * @param password
-   * corresponding password (either password and user must be set or token)
+   *        corresponding password (either password and user must be set or token)
    */
   public void setPassword(String password) {
     this.password = password;
@@ -142,7 +142,7 @@ public class AsperaInput extends Input {
    * Token used for authentication (either password and user must be set or token)
    *
    * @param token
-   * Token used for authentication (either password and user must be set or token)
+   *        Token used for authentication (either password and user must be set or token)
    */
   public void setToken(String token) {
     this.token = token;
@@ -172,7 +172,6 @@ public class AsperaInput extends Input {
     return Objects.hash(minBandwidth, maxBandwidth, host, username, password, token, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -198,6 +197,5 @@ public class AsperaInput extends Input {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

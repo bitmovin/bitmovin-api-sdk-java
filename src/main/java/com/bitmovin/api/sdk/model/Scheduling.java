@@ -38,7 +38,7 @@ public class Scheduling {
    * maximum: 100
    *
    * @param priority
-   * Specify the priority of this encoding (0 - 100). Higher numbers mean higher priority. Default is 50.
+   *        Specify the priority of this encoding (0 - 100). Higher numbers mean higher priority. Default is 50.
    * minimum: 0
    * maximum: 100
    */
@@ -48,9 +48,6 @@ public class Scheduling {
 
 
   public Scheduling addPrewarmedInstancePoolIdsItem(String prewarmedInstancePoolIdsItem) {
-    if (this.prewarmedInstancePoolIds == null) {
-      this.prewarmedInstancePoolIds = new ArrayList<>();
-    }
     this.prewarmedInstancePoolIds.add(prewarmedInstancePoolIdsItem);
     return this;
   }
@@ -67,7 +64,7 @@ public class Scheduling {
    * List of prewarmed Instance pools. If set, prewarmed instances from pools with these IDs will be used for the Encoding if available. The pool IDs will be tried in the order in which they are passed.
    *
    * @param prewarmedInstancePoolIds
-   * List of prewarmed Instance pools. If set, prewarmed instances from pools with these IDs will be used for the Encoding if available. The pool IDs will be tried in the order in which they are passed.
+   *        List of prewarmed Instance pools. If set, prewarmed instances from pools with these IDs will be used for the Encoding if available. The pool IDs will be tried in the order in which they are passed.
    */
   public void setPrewarmedInstancePoolIds(List<String> prewarmedInstancePoolIds) {
     this.prewarmedInstancePoolIds = prewarmedInstancePoolIds;
@@ -92,7 +89,6 @@ public class Scheduling {
     return Objects.hash(priority, prewarmedInstancePoolIds);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -114,6 +110,5 @@ public class Scheduling {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

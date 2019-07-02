@@ -32,7 +32,7 @@ public class AesEncryptionDrm extends Drm {
 
 
   /**
-   * 16 byte Encryption key, 32 hexadecimal characters
+   * 16 byte Encryption key, 32 hexadecimal characters (required)
    * @return key
    */
   public String getKey() {
@@ -40,10 +40,10 @@ public class AesEncryptionDrm extends Drm {
   }
 
   /**
-   * 16 byte Encryption key, 32 hexadecimal characters
+   * 16 byte Encryption key, 32 hexadecimal characters (required)
    *
    * @param key
-   * 16 byte Encryption key, 32 hexadecimal characters
+   *        16 byte Encryption key, 32 hexadecimal characters (required)
    */
   public void setKey(String key) {
     this.key = key;
@@ -62,7 +62,7 @@ public class AesEncryptionDrm extends Drm {
    * 16 byte initialization vector
    *
    * @param iv
-   * 16 byte initialization vector
+   *        16 byte initialization vector
    */
   public void setIv(String iv) {
     this.iv = iv;
@@ -81,7 +81,7 @@ public class AesEncryptionDrm extends Drm {
    * Path relative to the output for referencing in the manifest. If this value is not set the key file will be written automatically to the output folder.
    *
    * @param keyFileUri
-   * Path relative to the output for referencing in the manifest. If this value is not set the key file will be written automatically to the output folder.
+   *        Path relative to the output for referencing in the manifest. If this value is not set the key file will be written automatically to the output folder.
    */
   public void setKeyFileUri(String keyFileUri) {
     this.keyFileUri = keyFileUri;
@@ -127,7 +127,6 @@ public class AesEncryptionDrm extends Drm {
     return Objects.hash(key, iv, keyFileUri, method, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -151,6 +150,5 @@ public class AesEncryptionDrm extends Drm {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -24,7 +24,7 @@ public class Keyframe extends BitmovinResource {
 
 
   /**
-   * Time in seconds where the keyframe should be inserted
+   * Time in seconds where the keyframe should be inserted (required)
    * @return time
    */
   public Double getTime() {
@@ -32,10 +32,10 @@ public class Keyframe extends BitmovinResource {
   }
 
   /**
-   * Time in seconds where the keyframe should be inserted
+   * Time in seconds where the keyframe should be inserted (required)
    *
    * @param time
-   * Time in seconds where the keyframe should be inserted
+   *        Time in seconds where the keyframe should be inserted (required)
    */
   public void setTime(Double time) {
     this.time = time;
@@ -54,7 +54,7 @@ public class Keyframe extends BitmovinResource {
    * Instructs the encoder to cut the segment at this position
    *
    * @param segmentCut
-   * Instructs the encoder to cut the segment at this position
+   *        Instructs the encoder to cut the segment at this position
    */
   public void setSegmentCut(Boolean segmentCut) {
     this.segmentCut = segmentCut;
@@ -80,7 +80,6 @@ public class Keyframe extends BitmovinResource {
     return Objects.hash(time, segmentCut, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -102,6 +101,5 @@ public class Keyframe extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

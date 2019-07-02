@@ -48,7 +48,7 @@ public class PerTitleConfiguration {
    * The minimum bitrate that will be used by the Per-Title algorithm.
    *
    * @param minBitrate
-   * The minimum bitrate that will be used by the Per-Title algorithm.
+   *        The minimum bitrate that will be used by the Per-Title algorithm.
    */
   public void setMinBitrate(Integer minBitrate) {
     this.minBitrate = minBitrate;
@@ -67,7 +67,7 @@ public class PerTitleConfiguration {
    * The maximum bitrate that will be used by the Per-Title algorithm. It will not generate any rendition with a higher bitrate.
    *
    * @param maxBitrate
-   * The maximum bitrate that will be used by the Per-Title algorithm. It will not generate any rendition with a higher bitrate.
+   *        The maximum bitrate that will be used by the Per-Title algorithm. It will not generate any rendition with a higher bitrate.
    */
   public void setMaxBitrate(Integer maxBitrate) {
     this.maxBitrate = maxBitrate;
@@ -86,7 +86,7 @@ public class PerTitleConfiguration {
    * The minimum ratio between the bitrates of generated renditions, e.g. if the first bitrate is 240,000, a minimum ratio of 1.5 will require the next higher bitrate to be at least 360,000
    *
    * @param minBitrateStepSize
-   * The minimum ratio between the bitrates of generated renditions, e.g. if the first bitrate is 240,000, a minimum ratio of 1.5 will require the next higher bitrate to be at least 360,000
+   *        The minimum ratio between the bitrates of generated renditions, e.g. if the first bitrate is 240,000, a minimum ratio of 1.5 will require the next higher bitrate to be at least 360,000
    */
   public void setMinBitrateStepSize(Double minBitrateStepSize) {
     this.minBitrateStepSize = minBitrateStepSize;
@@ -105,7 +105,7 @@ public class PerTitleConfiguration {
    * The maximum ratio between the bitrates of neighbouring renditions, e.g., if the first bitrate is 240,000, a maximum ratio of 1.5 will require the next higher bitrate to be at most 360,000
    *
    * @param maxBitrateStepSize
-   * The maximum ratio between the bitrates of neighbouring renditions, e.g., if the first bitrate is 240,000, a maximum ratio of 1.5 will require the next higher bitrate to be at most 360,000
+   *        The maximum ratio between the bitrates of neighbouring renditions, e.g., if the first bitrate is 240,000, a maximum ratio of 1.5 will require the next higher bitrate to be at most 360,000
    */
   public void setMaxBitrateStepSize(Double maxBitrateStepSize) {
     this.maxBitrateStepSize = maxBitrateStepSize;
@@ -144,7 +144,7 @@ public class PerTitleConfiguration {
    * minimum: 0
    *
    * @param complexityFactor
-   * Will modify the assumed complexity for the Per-Title algorithm (&gt; 0.0). Values higher than 1 will increase complexity and thus select smaller resolutions for given bitrates. This will also result in a higher bitrate for the top rendition. Values lower than 1 will decrease assumed complexity and thus select higher resolutions for given bitrates and also decrease the bitrate of the top rendition
+   *        Will modify the assumed complexity for the Per-Title algorithm (&gt; 0.0). Values higher than 1 will increase complexity and thus select smaller resolutions for given bitrates. This will also result in a higher bitrate for the top rendition. Values lower than 1 will decrease assumed complexity and thus select higher resolutions for given bitrates and also decrease the bitrate of the top rendition
    * minimum: 0
    */
   public void setComplexityFactor(Double complexityFactor) {
@@ -164,7 +164,7 @@ public class PerTitleConfiguration {
    * Additional configuration for fixed resolution and bitrate templates
    *
    * @param fixedResolutionAndBitrateConfiguration
-   * Additional configuration for fixed resolution and bitrate templates
+   *        Additional configuration for fixed resolution and bitrate templates
    */
   public void setFixedResolutionAndBitrateConfiguration(PerTitleFixedResolutionAndBitrateConfiguration fixedResolutionAndBitrateConfiguration) {
     this.fixedResolutionAndBitrateConfiguration = fixedResolutionAndBitrateConfiguration;
@@ -194,7 +194,6 @@ public class PerTitleConfiguration {
     return Objects.hash(minBitrate, maxBitrate, minBitrateStepSize, maxBitrateStepSize, autoRepresentations, complexityFactor, fixedResolutionAndBitrateConfiguration);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -221,6 +220,5 @@ public class PerTitleConfiguration {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

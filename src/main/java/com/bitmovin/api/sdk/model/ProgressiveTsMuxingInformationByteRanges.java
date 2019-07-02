@@ -26,7 +26,7 @@ public class ProgressiveTsMuxingInformationByteRanges {
 
 
   /**
-   * Number of the segment (starting at 0)
+   * Number of the segment (starting at 0) (required)
    * @return segmentNumber
    */
   public Integer getSegmentNumber() {
@@ -34,10 +34,10 @@ public class ProgressiveTsMuxingInformationByteRanges {
   }
 
   /**
-   * Number of the segment (starting at 0)
+   * Number of the segment (starting at 0) (required)
    *
    * @param segmentNumber
-   * Number of the segment (starting at 0)
+   *        Number of the segment (starting at 0) (required)
    */
   public void setSegmentNumber(Integer segmentNumber) {
     this.segmentNumber = segmentNumber;
@@ -56,7 +56,7 @@ public class ProgressiveTsMuxingInformationByteRanges {
    * The position of the first byte of the segment
    *
    * @param startBytes
-   * The position of the first byte of the segment
+   *        The position of the first byte of the segment
    */
   public void setStartBytes(Long startBytes) {
     this.startBytes = startBytes;
@@ -75,7 +75,7 @@ public class ProgressiveTsMuxingInformationByteRanges {
    * The position of the last byte of the segment
    *
    * @param endBytes
-   * The position of the last byte of the segment
+   *        The position of the last byte of the segment
    */
   public void setEndBytes(Long endBytes) {
     this.endBytes = endBytes;
@@ -94,7 +94,7 @@ public class ProgressiveTsMuxingInformationByteRanges {
    * The duration of the segment in seconds
    *
    * @param duration
-   * The duration of the segment in seconds
+   *        The duration of the segment in seconds
    */
   public void setDuration(Double duration) {
     this.duration = duration;
@@ -121,7 +121,6 @@ public class ProgressiveTsMuxingInformationByteRanges {
     return Objects.hash(segmentNumber, startBytes, endBytes, duration);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -145,6 +144,5 @@ public class ProgressiveTsMuxingInformationByteRanges {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

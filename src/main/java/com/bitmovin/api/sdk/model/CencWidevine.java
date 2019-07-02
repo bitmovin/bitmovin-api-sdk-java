@@ -17,7 +17,7 @@ public class CencWidevine {
 
 
   /**
-   * Base64 encoded pssh payload
+   * Base64 encoded pssh payload (required)
    * @return pssh
    */
   public String getPssh() {
@@ -25,10 +25,10 @@ public class CencWidevine {
   }
 
   /**
-   * Base64 encoded pssh payload
+   * Base64 encoded pssh payload (required)
    *
    * @param pssh
-   * Base64 encoded pssh payload
+   *        Base64 encoded pssh payload (required)
    */
   public void setPssh(String pssh) {
     this.pssh = pssh;
@@ -52,7 +52,6 @@ public class CencWidevine {
     return Objects.hash(pssh);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -73,6 +72,5 @@ public class CencWidevine {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

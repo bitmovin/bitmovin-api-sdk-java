@@ -20,7 +20,7 @@ public class LiveEncoding {
 
 
   /**
-   * Stream key of the live encoder
+   * Stream key of the live encoder (required)
    * @return streamKey
    */
   public String getStreamKey() {
@@ -28,10 +28,10 @@ public class LiveEncoding {
   }
 
   /**
-   * Stream key of the live encoder
+   * Stream key of the live encoder (required)
    *
    * @param streamKey
-   * Stream key of the live encoder
+   *        Stream key of the live encoder (required)
    */
   public void setStreamKey(String streamKey) {
     this.streamKey = streamKey;
@@ -39,7 +39,7 @@ public class LiveEncoding {
 
 
   /**
-   * IP address of the live encoder
+   * IP address of the live encoder (required)
    * @return encoderIp
    */
   public String getEncoderIp() {
@@ -47,10 +47,10 @@ public class LiveEncoding {
   }
 
   /**
-   * IP address of the live encoder
+   * IP address of the live encoder (required)
    *
    * @param encoderIp
-   * IP address of the live encoder
+   *        IP address of the live encoder (required)
    */
   public void setEncoderIp(String encoderIp) {
     this.encoderIp = encoderIp;
@@ -75,7 +75,6 @@ public class LiveEncoding {
     return Objects.hash(streamKey, encoderIp);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -97,6 +96,5 @@ public class LiveEncoding {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

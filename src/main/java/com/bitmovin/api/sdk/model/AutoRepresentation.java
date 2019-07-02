@@ -28,7 +28,7 @@ public class AutoRepresentation {
    * This is the threshold if the settings of the lower or the upper representation (codec configuration) should be used, when representations are added automatically
    *
    * @param adoptConfigurationThreshold
-   * This is the threshold if the settings of the lower or the upper representation (codec configuration) should be used, when representations are added automatically
+   *        This is the threshold if the settings of the lower or the upper representation (codec configuration) should be used, when representations are added automatically
    */
   public void setAdoptConfigurationThreshold(Double adoptConfigurationThreshold) {
     this.adoptConfigurationThreshold = adoptConfigurationThreshold;
@@ -52,7 +52,6 @@ public class AutoRepresentation {
     return Objects.hash(adoptConfigurationThreshold);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -73,6 +72,5 @@ public class AutoRepresentation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

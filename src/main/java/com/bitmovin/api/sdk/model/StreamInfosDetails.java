@@ -70,7 +70,7 @@ public class StreamInfosDetails {
 
 
   /**
-   * The id of the stream
+   * The id of the stream (required)
    * @return id
    */
   public Long getId() {
@@ -78,10 +78,10 @@ public class StreamInfosDetails {
   }
 
   /**
-   * The id of the stream
+   * The id of the stream (required)
    *
    * @param id
-   * The id of the stream
+   *        The id of the stream (required)
    */
   public void setId(Long id) {
     this.id = id;
@@ -89,7 +89,7 @@ public class StreamInfosDetails {
 
 
   /**
-   * The media type of the stream
+   * The media type of the stream (required)
    * @return mediaType
    */
   public MediaType getMediaType() {
@@ -97,10 +97,10 @@ public class StreamInfosDetails {
   }
 
   /**
-   * The media type of the stream
+   * The media type of the stream (required)
    *
    * @param mediaType
-   * The media type of the stream
+   *        The media type of the stream (required)
    */
   public void setMediaType(MediaType mediaType) {
     this.mediaType = mediaType;
@@ -119,7 +119,7 @@ public class StreamInfosDetails {
    * The width of the stream, if it is a video stream
    *
    * @param width
-   * The width of the stream, if it is a video stream
+   *        The width of the stream, if it is a video stream
    */
   public void setWidth(Integer width) {
     this.width = width;
@@ -138,7 +138,7 @@ public class StreamInfosDetails {
    * The height of the stream, if it is a video stream
    *
    * @param height
-   * The height of the stream, if it is a video stream
+   *        The height of the stream, if it is a video stream
    */
   public void setHeight(Integer height) {
     this.height = height;
@@ -146,7 +146,7 @@ public class StreamInfosDetails {
 
 
   /**
-   * The rate (sample rate / fps) of the stream
+   * The rate (sample rate / fps) of the stream (required)
    * @return rate
    */
   public Long getRate() {
@@ -154,10 +154,10 @@ public class StreamInfosDetails {
   }
 
   /**
-   * The rate (sample rate / fps) of the stream
+   * The rate (sample rate / fps) of the stream (required)
    *
    * @param rate
-   * The rate (sample rate / fps) of the stream
+   *        The rate (sample rate / fps) of the stream (required)
    */
   public void setRate(Long rate) {
     this.rate = rate;
@@ -165,7 +165,7 @@ public class StreamInfosDetails {
 
 
   /**
-   * The codec of the input stream
+   * The codec of the input stream (required)
    * @return codec
    */
   public LiveEncodingCodec getCodec() {
@@ -173,10 +173,10 @@ public class StreamInfosDetails {
   }
 
   /**
-   * The codec of the input stream
+   * The codec of the input stream (required)
    *
    * @param codec
-   * The codec of the input stream
+   *        The codec of the input stream (required)
    */
   public void setCodec(LiveEncodingCodec codec) {
     this.codec = codec;
@@ -184,7 +184,7 @@ public class StreamInfosDetails {
 
 
   /**
-   * The minimum samples read per second within the last minute
+   * The minimum samples read per second within the last minute (required)
    * @return samplesReadPerSecondMin
    */
   public Double getSamplesReadPerSecondMin() {
@@ -192,10 +192,10 @@ public class StreamInfosDetails {
   }
 
   /**
-   * The minimum samples read per second within the last minute
+   * The minimum samples read per second within the last minute (required)
    *
    * @param samplesReadPerSecondMin
-   * The minimum samples read per second within the last minute
+   *        The minimum samples read per second within the last minute (required)
    */
   public void setSamplesReadPerSecondMin(Double samplesReadPerSecondMin) {
     this.samplesReadPerSecondMin = samplesReadPerSecondMin;
@@ -203,7 +203,7 @@ public class StreamInfosDetails {
 
 
   /**
-   * The maximum samples read per second within the last minute
+   * The maximum samples read per second within the last minute (required)
    * @return samplesReadPerSecondMax
    */
   public Double getSamplesReadPerSecondMax() {
@@ -211,10 +211,10 @@ public class StreamInfosDetails {
   }
 
   /**
-   * The maximum samples read per second within the last minute
+   * The maximum samples read per second within the last minute (required)
    *
    * @param samplesReadPerSecondMax
-   * The maximum samples read per second within the last minute
+   *        The maximum samples read per second within the last minute (required)
    */
   public void setSamplesReadPerSecondMax(Double samplesReadPerSecondMax) {
     this.samplesReadPerSecondMax = samplesReadPerSecondMax;
@@ -222,7 +222,7 @@ public class StreamInfosDetails {
 
 
   /**
-   * The average samples read per second within the last minute
+   * The average samples read per second within the last minute (required)
    * @return samplesReadPerSecondAvg
    */
   public Double getSamplesReadPerSecondAvg() {
@@ -230,10 +230,10 @@ public class StreamInfosDetails {
   }
 
   /**
-   * The average samples read per second within the last minute
+   * The average samples read per second within the last minute (required)
    *
    * @param samplesReadPerSecondAvg
-   * The average samples read per second within the last minute
+   *        The average samples read per second within the last minute (required)
    */
   public void setSamplesReadPerSecondAvg(Double samplesReadPerSecondAvg) {
     this.samplesReadPerSecondAvg = samplesReadPerSecondAvg;
@@ -241,7 +241,7 @@ public class StreamInfosDetails {
 
 
   /**
-   * The minimum amount of backup samples used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio.
+   * The minimum amount of backup samples used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio. (required)
    * @return samplesBackupPerSecondMin
    */
   public Double getSamplesBackupPerSecondMin() {
@@ -249,10 +249,10 @@ public class StreamInfosDetails {
   }
 
   /**
-   * The minimum amount of backup samples used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio.
+   * The minimum amount of backup samples used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio. (required)
    *
    * @param samplesBackupPerSecondMin
-   * The minimum amount of backup samples used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio.
+   *        The minimum amount of backup samples used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio. (required)
    */
   public void setSamplesBackupPerSecondMin(Double samplesBackupPerSecondMin) {
     this.samplesBackupPerSecondMin = samplesBackupPerSecondMin;
@@ -260,7 +260,7 @@ public class StreamInfosDetails {
 
 
   /**
-   * The maximum amount of backup samples used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio.
+   * The maximum amount of backup samples used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio. (required)
    * @return samplesBackupPerSecondMax
    */
   public Double getSamplesBackupPerSecondMax() {
@@ -268,10 +268,10 @@ public class StreamInfosDetails {
   }
 
   /**
-   * The maximum amount of backup samples used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio.
+   * The maximum amount of backup samples used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio. (required)
    *
    * @param samplesBackupPerSecondMax
-   * The maximum amount of backup samples used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio.
+   *        The maximum amount of backup samples used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio. (required)
    */
   public void setSamplesBackupPerSecondMax(Double samplesBackupPerSecondMax) {
     this.samplesBackupPerSecondMax = samplesBackupPerSecondMax;
@@ -279,7 +279,7 @@ public class StreamInfosDetails {
 
 
   /**
-   * The average amount of backup samples used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio.
+   * The average amount of backup samples used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio. (required)
    * @return samplesBackupPerSecondAvg
    */
   public Double getSamplesBackupPerSecondAvg() {
@@ -287,10 +287,10 @@ public class StreamInfosDetails {
   }
 
   /**
-   * The average amount of backup samples used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio.
+   * The average amount of backup samples used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio. (required)
    *
    * @param samplesBackupPerSecondAvg
-   * The average amount of backup samples used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio.
+   *        The average amount of backup samples used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio. (required)
    */
   public void setSamplesBackupPerSecondAvg(Double samplesBackupPerSecondAvg) {
     this.samplesBackupPerSecondAvg = samplesBackupPerSecondAvg;
@@ -298,7 +298,7 @@ public class StreamInfosDetails {
 
 
   /**
-   * The minimum bytes read per second within the last minute
+   * The minimum bytes read per second within the last minute (required)
    * @return bytesReadPerSecondMin
    */
   public Double getBytesReadPerSecondMin() {
@@ -306,10 +306,10 @@ public class StreamInfosDetails {
   }
 
   /**
-   * The minimum bytes read per second within the last minute
+   * The minimum bytes read per second within the last minute (required)
    *
    * @param bytesReadPerSecondMin
-   * The minimum bytes read per second within the last minute
+   *        The minimum bytes read per second within the last minute (required)
    */
   public void setBytesReadPerSecondMin(Double bytesReadPerSecondMin) {
     this.bytesReadPerSecondMin = bytesReadPerSecondMin;
@@ -317,7 +317,7 @@ public class StreamInfosDetails {
 
 
   /**
-   * The maximum bytes read per second within the last minute
+   * The maximum bytes read per second within the last minute (required)
    * @return bytesReadPerSecondMax
    */
   public Double getBytesReadPerSecondMax() {
@@ -325,10 +325,10 @@ public class StreamInfosDetails {
   }
 
   /**
-   * The maximum bytes read per second within the last minute
+   * The maximum bytes read per second within the last minute (required)
    *
    * @param bytesReadPerSecondMax
-   * The maximum bytes read per second within the last minute
+   *        The maximum bytes read per second within the last minute (required)
    */
   public void setBytesReadPerSecondMax(Double bytesReadPerSecondMax) {
     this.bytesReadPerSecondMax = bytesReadPerSecondMax;
@@ -336,7 +336,7 @@ public class StreamInfosDetails {
 
 
   /**
-   * The average bytes read per second within the last minute
+   * The average bytes read per second within the last minute (required)
    * @return bytesReadPerSecondAvg
    */
   public Double getBytesReadPerSecondAvg() {
@@ -344,10 +344,10 @@ public class StreamInfosDetails {
   }
 
   /**
-   * The average bytes read per second within the last minute
+   * The average bytes read per second within the last minute (required)
    *
    * @param bytesReadPerSecondAvg
-   * The average bytes read per second within the last minute
+   *        The average bytes read per second within the last minute (required)
    */
   public void setBytesReadPerSecondAvg(Double bytesReadPerSecondAvg) {
     this.bytesReadPerSecondAvg = bytesReadPerSecondAvg;
@@ -355,7 +355,7 @@ public class StreamInfosDetails {
 
 
   /**
-   * The minimum amount of backup bytes used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio.
+   * The minimum amount of backup bytes used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio. (required)
    * @return bytesBackupPerSecondMin
    */
   public Double getBytesBackupPerSecondMin() {
@@ -363,10 +363,10 @@ public class StreamInfosDetails {
   }
 
   /**
-   * The minimum amount of backup bytes used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio.
+   * The minimum amount of backup bytes used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio. (required)
    *
    * @param bytesBackupPerSecondMin
-   * The minimum amount of backup bytes used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio.
+   *        The minimum amount of backup bytes used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio. (required)
    */
   public void setBytesBackupPerSecondMin(Double bytesBackupPerSecondMin) {
     this.bytesBackupPerSecondMin = bytesBackupPerSecondMin;
@@ -374,7 +374,7 @@ public class StreamInfosDetails {
 
 
   /**
-   * The maximum amount of backup bytes used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio.
+   * The maximum amount of backup bytes used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio. (required)
    * @return bytesBackupPerSecondMax
    */
   public Double getBytesBackupPerSecondMax() {
@@ -382,10 +382,10 @@ public class StreamInfosDetails {
   }
 
   /**
-   * The maximum amount of backup bytes used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio.
+   * The maximum amount of backup bytes used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio. (required)
    *
    * @param bytesBackupPerSecondMax
-   * The maximum amount of backup bytes used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio.
+   *        The maximum amount of backup bytes used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio. (required)
    */
   public void setBytesBackupPerSecondMax(Double bytesBackupPerSecondMax) {
     this.bytesBackupPerSecondMax = bytesBackupPerSecondMax;
@@ -393,7 +393,7 @@ public class StreamInfosDetails {
 
 
   /**
-   * The average amount of backup bytes used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio.
+   * The average amount of backup bytes used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio. (required)
    * @return bytesBackupPerSecondAvg
    */
   public Double getBytesBackupPerSecondAvg() {
@@ -401,10 +401,10 @@ public class StreamInfosDetails {
   }
 
   /**
-   * The average amount of backup bytes used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio.
+   * The average amount of backup bytes used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio. (required)
    *
    * @param bytesBackupPerSecondAvg
-   * The average amount of backup bytes used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio.
+   *        The average amount of backup bytes used per second within the last minute. This will be written when no live stream is ingested. The last picture will be repeated with silent audio. (required)
    */
   public void setBytesBackupPerSecondAvg(Double bytesBackupPerSecondAvg) {
     this.bytesBackupPerSecondAvg = bytesBackupPerSecondAvg;
@@ -445,7 +445,6 @@ public class StreamInfosDetails {
     return Objects.hash(id, mediaType, width, height, rate, codec, samplesReadPerSecondMin, samplesReadPerSecondMax, samplesReadPerSecondAvg, samplesBackupPerSecondMin, samplesBackupPerSecondMax, samplesBackupPerSecondAvg, bytesReadPerSecondMin, bytesReadPerSecondMax, bytesReadPerSecondAvg, bytesBackupPerSecondMin, bytesBackupPerSecondMax, bytesBackupPerSecondAvg);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -483,6 +482,5 @@ public class StreamInfosDetails {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

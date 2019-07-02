@@ -49,7 +49,7 @@ public class Sprite extends BitmovinResource {
 
 
   /**
-   * Height of one thumbnail
+   * Height of one thumbnail (required)
    * @return height
    */
   public Integer getHeight() {
@@ -57,10 +57,10 @@ public class Sprite extends BitmovinResource {
   }
 
   /**
-   * Height of one thumbnail
+   * Height of one thumbnail (required)
    *
    * @param height
-   * Height of one thumbnail
+   *        Height of one thumbnail (required)
    */
   public void setHeight(Integer height) {
     this.height = height;
@@ -68,7 +68,7 @@ public class Sprite extends BitmovinResource {
 
 
   /**
-   * Width of one thumbnail
+   * Width of one thumbnail (required)
    * @return width
    */
   public Integer getWidth() {
@@ -76,10 +76,10 @@ public class Sprite extends BitmovinResource {
   }
 
   /**
-   * Width of one thumbnail
+   * Width of one thumbnail (required)
    *
    * @param width
-   * Width of one thumbnail
+   *        Width of one thumbnail (required)
    */
   public void setWidth(Integer width) {
     this.width = width;
@@ -116,7 +116,7 @@ public class Sprite extends BitmovinResource {
    * Distance in the given unit between a screenshot
    *
    * @param distance
-   * Distance in the given unit between a screenshot
+   *        Distance in the given unit between a screenshot
    */
   public void setDistance(Double distance) {
     this.distance = distance;
@@ -124,7 +124,7 @@ public class Sprite extends BitmovinResource {
 
 
   /**
-   * Name of the sprite image. File extension \&quot;.jpg\&quot; or \&quot;.png\&quot; is required.
+   * Name of the sprite image. File extension \&quot;.jpg\&quot; or \&quot;.png\&quot; is required. (required)
    * @return spriteName
    */
   public String getSpriteName() {
@@ -132,10 +132,10 @@ public class Sprite extends BitmovinResource {
   }
 
   /**
-   * Name of the sprite image. File extension \&quot;.jpg\&quot; or \&quot;.png\&quot; is required.
+   * Name of the sprite image. File extension \&quot;.jpg\&quot; or \&quot;.png\&quot; is required. (required)
    *
    * @param spriteName
-   * Name of the sprite image. File extension \&quot;.jpg\&quot; or \&quot;.png\&quot; is required.
+   *        Name of the sprite image. File extension \&quot;.jpg\&quot; or \&quot;.png\&quot; is required. (required)
    */
   public void setSpriteName(String spriteName) {
     this.spriteName = spriteName;
@@ -154,7 +154,7 @@ public class Sprite extends BitmovinResource {
    * Filename of the sprite image. If not set, spriteName will be used, but without an extension.
    *
    * @param filename
-   * Filename of the sprite image. If not set, spriteName will be used, but without an extension.
+   *        Filename of the sprite image. If not set, spriteName will be used, but without an extension.
    */
   public void setFilename(String filename) {
     this.filename = filename;
@@ -162,7 +162,7 @@ public class Sprite extends BitmovinResource {
 
 
   /**
-   * Filename of the vtt-file. The file-extension \&quot;.vtt\&quot; is required.
+   * Filename of the vtt-file. The file-extension \&quot;.vtt\&quot; is required. (required)
    * @return vttName
    */
   public String getVttName() {
@@ -170,10 +170,10 @@ public class Sprite extends BitmovinResource {
   }
 
   /**
-   * Filename of the vtt-file. The file-extension \&quot;.vtt\&quot; is required.
+   * Filename of the vtt-file. The file-extension \&quot;.vtt\&quot; is required. (required)
    *
    * @param vttName
-   * Filename of the vtt-file. The file-extension \&quot;.vtt\&quot; is required.
+   *        Filename of the vtt-file. The file-extension \&quot;.vtt\&quot; is required. (required)
    */
   public void setVttName(String vttName) {
     this.vttName = vttName;
@@ -181,9 +181,6 @@ public class Sprite extends BitmovinResource {
 
 
   public Sprite addOutputsItem(EncodingOutput outputsItem) {
-    if (this.outputs == null) {
-      this.outputs = new ArrayList<>();
-    }
     this.outputs.add(outputsItem);
     return this;
   }
@@ -218,7 +215,7 @@ public class Sprite extends BitmovinResource {
    * Number of images per file. If more images are generated than specified in this value, multiple sprites will be created. You can use the placeholder &#39;%number%&#39; in the spriteName to specify the naming policy.
    *
    * @param imagesPerFile
-   * Number of images per file. If more images are generated than specified in this value, multiple sprites will be created. You can use the placeholder &#39;%number%&#39; in the spriteName to specify the naming policy.
+   *        Number of images per file. If more images are generated than specified in this value, multiple sprites will be created. You can use the placeholder &#39;%number%&#39; in the spriteName to specify the naming policy.
    */
   public void setImagesPerFile(Integer imagesPerFile) {
     this.imagesPerFile = imagesPerFile;
@@ -251,7 +248,6 @@ public class Sprite extends BitmovinResource {
     return Objects.hash(height, width, unit, distance, spriteName, filename, vttName, outputs, imagesPerFile, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -280,6 +276,5 @@ public class Sprite extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

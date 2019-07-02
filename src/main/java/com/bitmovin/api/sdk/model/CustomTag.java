@@ -34,7 +34,7 @@ public class CustomTag extends BitmovinResource {
 
 
   /**
-   * The positioning mode that should be used when inserting the placement opportunity
+   * The positioning mode that should be used when inserting the placement opportunity (required)
    * @return positionMode
    */
   public PositionMode getPositionMode() {
@@ -42,10 +42,10 @@ public class CustomTag extends BitmovinResource {
   }
 
   /**
-   * The positioning mode that should be used when inserting the placement opportunity
+   * The positioning mode that should be used when inserting the placement opportunity (required)
    *
    * @param positionMode
-   * The positioning mode that should be used when inserting the placement opportunity
+   *        The positioning mode that should be used when inserting the placement opportunity (required)
    */
   public void setPositionMode(PositionMode positionMode) {
     this.positionMode = positionMode;
@@ -64,7 +64,7 @@ public class CustomTag extends BitmovinResource {
    * Id of keyframe where the custom tag should be inserted. Required, when KEYFRAME is selected as position mode.
    *
    * @param keyframeId
-   * Id of keyframe where the custom tag should be inserted. Required, when KEYFRAME is selected as position mode.
+   *        Id of keyframe where the custom tag should be inserted. Required, when KEYFRAME is selected as position mode.
    */
   public void setKeyframeId(String keyframeId) {
     this.keyframeId = keyframeId;
@@ -83,7 +83,7 @@ public class CustomTag extends BitmovinResource {
    * Time in seconds where the custom tag should be inserted. Required, when TIME is selected as position mode.
    *
    * @param time
-   * Time in seconds where the custom tag should be inserted. Required, when TIME is selected as position mode.
+   *        Time in seconds where the custom tag should be inserted. Required, when TIME is selected as position mode.
    */
   public void setTime(Double time) {
     this.time = time;
@@ -102,7 +102,7 @@ public class CustomTag extends BitmovinResource {
    * The custom tag will be inserted before the specified segment. Required, when SEGMENT is selected as position mode.
    *
    * @param segment
-   * The custom tag will be inserted before the specified segment. Required, when SEGMENT is selected as position mode.
+   *        The custom tag will be inserted before the specified segment. Required, when SEGMENT is selected as position mode.
    */
   public void setSegment(Long segment) {
     this.segment = segment;
@@ -110,7 +110,7 @@ public class CustomTag extends BitmovinResource {
 
 
   /**
-   * The data to be contained in the custom tag.
+   * The data to be contained in the custom tag. (required)
    * @return data
    */
   public String getData() {
@@ -118,10 +118,10 @@ public class CustomTag extends BitmovinResource {
   }
 
   /**
-   * The data to be contained in the custom tag.
+   * The data to be contained in the custom tag. (required)
    *
    * @param data
-   * The data to be contained in the custom tag.
+   *        The data to be contained in the custom tag. (required)
    */
   public void setData(String data) {
     this.data = data;
@@ -150,7 +150,6 @@ public class CustomTag extends BitmovinResource {
     return Objects.hash(positionMode, keyframeId, time, segment, data, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -175,6 +174,5 @@ public class CustomTag extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

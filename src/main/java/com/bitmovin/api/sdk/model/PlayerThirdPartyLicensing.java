@@ -27,7 +27,7 @@ public class PlayerThirdPartyLicensing {
 
 
   /**
-   * URL to your license check server
+   * URL to your license check server (required)
    * @return licenseCheckServer
    */
   public String getLicenseCheckServer() {
@@ -35,10 +35,10 @@ public class PlayerThirdPartyLicensing {
   }
 
   /**
-   * URL to your license check server
+   * URL to your license check server (required)
    *
    * @param licenseCheckServer
-   * URL to your license check server
+   *        URL to your license check server (required)
    */
   public void setLicenseCheckServer(String licenseCheckServer) {
     this.licenseCheckServer = licenseCheckServer;
@@ -46,7 +46,7 @@ public class PlayerThirdPartyLicensing {
 
 
   /**
-   * Timeout in ms
+   * Timeout in ms (required)
    * minimum: 100
    * maximum: 2000
    * @return licenseCheckTimeout
@@ -56,12 +56,12 @@ public class PlayerThirdPartyLicensing {
   }
 
   /**
-   * Timeout in ms
+   * Timeout in ms (required)
    * minimum: 100
    * maximum: 2000
    *
    * @param licenseCheckTimeout
-   * Timeout in ms
+   *        Timeout in ms (required)
    * minimum: 100
    * maximum: 2000
    */
@@ -71,7 +71,7 @@ public class PlayerThirdPartyLicensing {
 
 
   /**
-   * Specify if the Licensing Request should fail or not on Third Party Licensing Error
+   * Specify if the Licensing Request should fail or not on Third Party Licensing Error (required)
    * @return errorAction
    */
   public PlayerThirdPartyLicensingErrorAction getErrorAction() {
@@ -79,10 +79,10 @@ public class PlayerThirdPartyLicensing {
   }
 
   /**
-   * Specify if the Licensing Request should fail or not on Third Party Licensing Error
+   * Specify if the Licensing Request should fail or not on Third Party Licensing Error (required)
    *
    * @param errorAction
-   * Specify if the Licensing Request should fail or not on Third Party Licensing Error
+   *        Specify if the Licensing Request should fail or not on Third Party Licensing Error (required)
    */
   public void setErrorAction(PlayerThirdPartyLicensingErrorAction errorAction) {
     this.errorAction = errorAction;
@@ -90,7 +90,7 @@ public class PlayerThirdPartyLicensing {
 
 
   /**
-   * Specify if the Licensing Request should fail or not on Third Party Licensing timeout
+   * Specify if the Licensing Request should fail or not on Third Party Licensing timeout (required)
    * @return timeoutAction
    */
   public PlayerThirdPartyLicensingErrorAction getTimeoutAction() {
@@ -98,10 +98,10 @@ public class PlayerThirdPartyLicensing {
   }
 
   /**
-   * Specify if the Licensing Request should fail or not on Third Party Licensing timeout
+   * Specify if the Licensing Request should fail or not on Third Party Licensing timeout (required)
    *
    * @param timeoutAction
-   * Specify if the Licensing Request should fail or not on Third Party Licensing timeout
+   *        Specify if the Licensing Request should fail or not on Third Party Licensing timeout (required)
    */
   public void setTimeoutAction(PlayerThirdPartyLicensingErrorAction timeoutAction) {
     this.timeoutAction = timeoutAction;
@@ -128,7 +128,6 @@ public class PlayerThirdPartyLicensing {
     return Objects.hash(licenseCheckServer, licenseCheckTimeout, errorAction, timeoutAction);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -152,6 +151,5 @@ public class PlayerThirdPartyLicensing {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

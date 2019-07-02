@@ -63,7 +63,7 @@ public class SrtStatistics {
    * UUID of the statistic event
    *
    * @param id
-   * UUID of the statistic event
+   *        UUID of the statistic event
    */
   public void setId(String id) {
     this.id = id;
@@ -82,7 +82,7 @@ public class SrtStatistics {
    * Timestamp when the srt statistics event was created, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
    *
    * @param createdAt
-   * Timestamp when the srt statistics event was created, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   *        Timestamp when the srt statistics event was created, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
    */
   public void setCreatedAt(Date createdAt) {
     this.createdAt = createdAt;
@@ -101,7 +101,7 @@ public class SrtStatistics {
    * UUID of an encoding
    *
    * @param encodingId
-   * UUID of an encoding
+   *        UUID of an encoding
    */
   public void setEncodingId(String encodingId) {
     this.encodingId = encodingId;
@@ -120,7 +120,7 @@ public class SrtStatistics {
    * UUID of the SRT input used to capture this statistics
    *
    * @param srtInputId
-   * UUID of the SRT input used to capture this statistics
+   *        UUID of the SRT input used to capture this statistics
    */
   public void setSrtInputId(String srtInputId) {
     this.srtInputId = srtInputId;
@@ -139,7 +139,7 @@ public class SrtStatistics {
    * Whether the SRT input that generated this statistics was selected (i.e. actively used) at the time or not
    *
    * @param srtInputSelected
-   * Whether the SRT input that generated this statistics was selected (i.e. actively used) at the time or not
+   *        Whether the SRT input that generated this statistics was selected (i.e. actively used) at the time or not
    */
   public void setSrtInputSelected(Boolean srtInputSelected) {
     this.srtInputSelected = srtInputSelected;
@@ -158,7 +158,7 @@ public class SrtStatistics {
    * UUID of the associated organization
    *
    * @param orgId
-   * UUID of the associated organization
+   *        UUID of the associated organization
    */
   public void setOrgId(String orgId) {
     this.orgId = orgId;
@@ -177,7 +177,7 @@ public class SrtStatistics {
    * UUID of the associated api-user
    *
    * @param userId
-   * UUID of the associated api-user
+   *        UUID of the associated api-user
    */
   public void setUserId(String userId) {
     this.userId = userId;
@@ -283,7 +283,6 @@ public class SrtStatistics {
     return Objects.hash(id, createdAt, encodingId, srtInputId, srtInputSelected, orgId, userId, link, window, recv, send);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -314,6 +313,5 @@ public class SrtStatistics {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -21,7 +21,7 @@ public class CustomPlayerBuildDownload {
 
 
   /**
-   * The link to download the custom built player
+   * The link to download the custom built player (required)
    * @return downloadLink
    */
   public String getDownloadLink() {
@@ -29,10 +29,10 @@ public class CustomPlayerBuildDownload {
   }
 
   /**
-   * The link to download the custom built player
+   * The link to download the custom built player (required)
    *
    * @param downloadLink
-   * The link to download the custom built player
+   *        The link to download the custom built player (required)
    */
   public void setDownloadLink(String downloadLink) {
     this.downloadLink = downloadLink;
@@ -40,7 +40,7 @@ public class CustomPlayerBuildDownload {
 
 
   /**
-   * Until this date the download link is valid and can be downloaded.
+   * Until this date the download link is valid and can be downloaded. (required)
    * @return expiresAt
    */
   public Date getExpiresAt() {
@@ -48,10 +48,10 @@ public class CustomPlayerBuildDownload {
   }
 
   /**
-   * Until this date the download link is valid and can be downloaded.
+   * Until this date the download link is valid and can be downloaded. (required)
    *
    * @param expiresAt
-   * Until this date the download link is valid and can be downloaded.
+   *        Until this date the download link is valid and can be downloaded. (required)
    */
   public void setExpiresAt(Date expiresAt) {
     this.expiresAt = expiresAt;
@@ -76,7 +76,6 @@ public class CustomPlayerBuildDownload {
     return Objects.hash(downloadLink, expiresAt);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -98,6 +97,5 @@ public class CustomPlayerBuildDownload {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -25,7 +25,7 @@ public class VttMediaInfo extends BasicMediaInfo {
 
 
   /**
-   * The URL of the referenced VTT file
+   * The URL of the referenced VTT file (required)
    * @return vttUrl
    */
   public String getVttUrl() {
@@ -33,10 +33,10 @@ public class VttMediaInfo extends BasicMediaInfo {
   }
 
   /**
-   * The URL of the referenced VTT file
+   * The URL of the referenced VTT file (required)
    *
    * @param vttUrl
-   * The URL of the referenced VTT file
+   *        The URL of the referenced VTT file (required)
    */
   public void setVttUrl(String vttUrl) {
     this.vttUrl = vttUrl;
@@ -44,7 +44,7 @@ public class VttMediaInfo extends BasicMediaInfo {
 
 
   /**
-   * The URI of the Rendition
+   * The URI of the Rendition (required)
    * @return uri
    */
   public String getUri() {
@@ -52,10 +52,10 @@ public class VttMediaInfo extends BasicMediaInfo {
   }
 
   /**
-   * The URI of the Rendition
+   * The URI of the Rendition (required)
    *
    * @param uri
-   * The URI of the Rendition
+   *        The URI of the Rendition (required)
    */
   public void setUri(String uri) {
     this.uri = uri;
@@ -74,7 +74,7 @@ public class VttMediaInfo extends BasicMediaInfo {
    * A value of true indicates that the Rendition contains content which is considered essential to play.
    *
    * @param forced
-   * A value of true indicates that the Rendition contains content which is considered essential to play.
+   *        A value of true indicates that the Rendition contains content which is considered essential to play.
    */
   public void setForced(Boolean forced) {
     this.forced = forced;
@@ -101,7 +101,6 @@ public class VttMediaInfo extends BasicMediaInfo {
     return Objects.hash(vttUrl, uri, forced, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -124,6 +123,5 @@ public class VttMediaInfo extends BasicMediaInfo {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

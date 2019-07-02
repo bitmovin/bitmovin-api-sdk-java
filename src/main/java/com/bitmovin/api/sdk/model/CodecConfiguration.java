@@ -52,7 +52,6 @@ public class CodecConfiguration extends BitmovinResource {
     return Objects.hash(super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -72,6 +71,5 @@ public class CodecConfiguration extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

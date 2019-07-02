@@ -39,7 +39,7 @@ public class Message extends BitmovinResponse {
 
 
   /**
-   * Message type giving a hint on the importance of the message (log level)
+   * Message type giving a hint on the importance of the message (log level) (required)
    * @return type
    */
   public MessageType getType() {
@@ -47,10 +47,10 @@ public class Message extends BitmovinResponse {
   }
 
   /**
-   * Message type giving a hint on the importance of the message (log level)
+   * Message type giving a hint on the importance of the message (log level) (required)
    *
    * @param type
-   * Message type giving a hint on the importance of the message (log level)
+   *        Message type giving a hint on the importance of the message (log level) (required)
    */
   public void setType(MessageType type) {
     this.type = type;
@@ -58,7 +58,7 @@ public class Message extends BitmovinResponse {
 
 
   /**
-   * Message text
+   * Message text (required)
    * @return text
    */
   public String getText() {
@@ -66,10 +66,10 @@ public class Message extends BitmovinResponse {
   }
 
   /**
-   * Message text
+   * Message text (required)
    *
    * @param text
-   * Message text
+   *        Message text (required)
    */
   public void setText(String text) {
     this.text = text;
@@ -88,7 +88,7 @@ public class Message extends BitmovinResponse {
    * Name of the field to which the message is referring to
    *
    * @param field
-   * Name of the field to which the message is referring to
+   *        Name of the field to which the message is referring to
    */
   public void setField(String field) {
     this.field = field;
@@ -96,9 +96,6 @@ public class Message extends BitmovinResponse {
 
 
   public Message addLinksItem(Link linksItem) {
-    if (this.links == null) {
-      this.links = new ArrayList<>();
-    }
     this.links.add(linksItem);
     return this;
   }
@@ -115,7 +112,7 @@ public class Message extends BitmovinResponse {
    * collection of links to webpages containing further information on the topic
    *
    * @param links
-   * collection of links to webpages containing further information on the topic
+   *        collection of links to webpages containing further information on the topic
    */
   public void setLinks(List<Link> links) {
     this.links = links;
@@ -134,7 +131,7 @@ public class Message extends BitmovinResponse {
    * Service-specific information
    *
    * @param more
-   * Service-specific information
+   *        Service-specific information
    */
   public void setMore(Object more) {
     this.more = more;
@@ -153,7 +150,7 @@ public class Message extends BitmovinResponse {
    * Timestamp when the message occured
    *
    * @param date
-   * Timestamp when the message occured
+   *        Timestamp when the message occured
    */
   public void setDate(Date date) {
     this.date = date;
@@ -183,7 +180,6 @@ public class Message extends BitmovinResponse {
     return Objects.hash(type, text, field, links, more, date, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -209,6 +205,5 @@ public class Message extends BitmovinResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

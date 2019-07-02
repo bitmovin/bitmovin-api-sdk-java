@@ -22,7 +22,7 @@ public class StreamDvbSubSubtitle extends BitmovinResource {
 
 
   /**
-   * The input stream to extract the subtitle from
+   * The input stream to extract the subtitle from (required)
    * @return inputStream
    */
   public StreamInput getInputStream() {
@@ -30,10 +30,10 @@ public class StreamDvbSubSubtitle extends BitmovinResource {
   }
 
   /**
-   * The input stream to extract the subtitle from
+   * The input stream to extract the subtitle from (required)
    *
    * @param inputStream
-   * The input stream to extract the subtitle from
+   *        The input stream to extract the subtitle from (required)
    */
   public void setInputStream(StreamInput inputStream) {
     this.inputStream = inputStream;
@@ -58,7 +58,6 @@ public class StreamDvbSubSubtitle extends BitmovinResource {
     return Objects.hash(inputStream, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -79,6 +78,5 @@ public class StreamDvbSubSubtitle extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

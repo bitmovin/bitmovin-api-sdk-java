@@ -51,7 +51,7 @@ public class Notification extends BitmovinResponse {
    * Notify when condition resolves after it was met
    *
    * @param resolve
-   * Notify when condition resolves after it was met
+   *        Notify when condition resolves after it was met
    */
   public void setResolve(Boolean resolve) {
     this.resolve = resolve;
@@ -70,7 +70,7 @@ public class Notification extends BitmovinResponse {
    * Specific resource, e.g. encoding id
    *
    * @param resourceId
-   * Specific resource, e.g. encoding id
+   *        Specific resource, e.g. encoding id
    */
   public void setResourceId(String resourceId) {
     this.resourceId = resourceId;
@@ -89,7 +89,7 @@ public class Notification extends BitmovinResponse {
    * Last time the notification was triggered
    *
    * @param triggeredAt
-   * Last time the notification was triggered
+   *        Last time the notification was triggered
    */
   public void setTriggeredAt(Date triggeredAt) {
     this.triggeredAt = triggeredAt;
@@ -211,7 +211,6 @@ public class Notification extends BitmovinResponse {
     return Objects.hash(resolve, resourceId, triggeredAt, type, eventType, category, resourceType, muted, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -239,6 +238,5 @@ public class Notification extends BitmovinResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

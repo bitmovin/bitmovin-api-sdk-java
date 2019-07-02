@@ -29,7 +29,7 @@ public class FilterTypeResponse {
    * The type of the filter
    *
    * @param type
-   * The type of the filter
+   *        The type of the filter
    */
   public void setType(FilterType type) {
     this.type = type;
@@ -53,7 +53,6 @@ public class FilterTypeResponse {
     return Objects.hash(type);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -74,6 +73,5 @@ public class FilterTypeResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

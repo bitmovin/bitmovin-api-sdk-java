@@ -49,7 +49,6 @@ public class ProgressiveTsMuxingInformation extends ProgressiveMuxingInformation
     return Objects.hash(byteRanges, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -70,6 +69,5 @@ public class ProgressiveTsMuxingInformation extends ProgressiveMuxingInformation
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

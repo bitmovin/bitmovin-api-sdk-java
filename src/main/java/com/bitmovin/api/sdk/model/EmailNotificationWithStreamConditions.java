@@ -56,7 +56,6 @@ public class EmailNotificationWithStreamConditions extends EmailNotification {
     return Objects.hash(conditions, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -77,6 +76,5 @@ public class EmailNotificationWithStreamConditions extends EmailNotification {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

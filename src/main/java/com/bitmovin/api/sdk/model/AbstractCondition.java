@@ -36,7 +36,6 @@ public class AbstractCondition {
     return Objects.hash();
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -56,6 +55,5 @@ public class AbstractCondition {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

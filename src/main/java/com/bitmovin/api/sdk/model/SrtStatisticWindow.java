@@ -95,7 +95,6 @@ public class SrtStatisticWindow {
     return Objects.hash(congestion, flight, flow);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -118,6 +117,5 @@ public class SrtStatisticWindow {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

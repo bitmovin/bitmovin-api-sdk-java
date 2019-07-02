@@ -68,7 +68,7 @@ public class BitmovinApiClientFactoryImpl implements BitmovinApiClientFactory {
             .setSerializationInclusion(JsonInclude.Include.NON_NULL)
             .setDateFormat(dateFormat)
             .configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false)
-            .configure(SerializationFeature.INDENT_OUTPUT, true)
+            .configure(SerializationFeature.INDENT_OUTPUT, false)
             .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false)
             .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }

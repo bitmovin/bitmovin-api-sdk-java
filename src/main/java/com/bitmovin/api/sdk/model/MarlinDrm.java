@@ -25,7 +25,7 @@ public class MarlinDrm extends Drm {
 
 
   /**
-   * 16 byte key in hex (32 characters)
+   * 16 byte key in hex (32 characters) (required)
    * @return key
    */
   public String getKey() {
@@ -33,10 +33,10 @@ public class MarlinDrm extends Drm {
   }
 
   /**
-   * 16 byte key in hex (32 characters)
+   * 16 byte key in hex (32 characters) (required)
    *
    * @param key
-   * 16 byte key in hex (32 characters)
+   *        16 byte key in hex (32 characters) (required)
    */
   public void setKey(String key) {
     this.key = key;
@@ -44,7 +44,7 @@ public class MarlinDrm extends Drm {
 
 
   /**
-   * 16 byte key in hex (32 characters)
+   * 16 byte key in hex (32 characters) (required)
    * @return kid
    */
   public String getKid() {
@@ -52,10 +52,10 @@ public class MarlinDrm extends Drm {
   }
 
   /**
-   * 16 byte key in hex (32 characters)
+   * 16 byte key in hex (32 characters) (required)
    *
    * @param kid
-   * 16 byte key in hex (32 characters)
+   *        16 byte key in hex (32 characters) (required)
    */
   public void setKid(String kid) {
     this.kid = kid;
@@ -81,7 +81,6 @@ public class MarlinDrm extends Drm {
     return Objects.hash(key, kid, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -103,6 +102,5 @@ public class MarlinDrm extends Drm {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

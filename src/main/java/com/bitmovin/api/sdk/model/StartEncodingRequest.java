@@ -67,7 +67,7 @@ public class StartEncodingRequest {
    * Allows to encode only part of the input. Defines start (offset) and duration of the desired section.
    *
    * @param trimming
-   * Allows to encode only part of the input. Defines start (offset) and duration of the desired section.
+   *        Allows to encode only part of the input. Defines start (offset) and duration of the desired section.
    */
   public void setTrimming(Trimming trimming) {
     this.trimming = trimming;
@@ -86,7 +86,7 @@ public class StartEncodingRequest {
    * Set scheduling parameters of the encoding.
    *
    * @param scheduling
-   * Set scheduling parameters of the encoding.
+   *        Set scheduling parameters of the encoding.
    */
   public void setScheduling(Scheduling scheduling) {
     this.scheduling = scheduling;
@@ -105,7 +105,7 @@ public class StartEncodingRequest {
    * Set special tweaks for your encoding job.
    *
    * @param tweaks
-   * Set special tweaks for your encoding job.
+   *        Set special tweaks for your encoding job.
    */
   public void setTweaks(Tweaks tweaks) {
     this.tweaks = tweaks;
@@ -124,7 +124,7 @@ public class StartEncodingRequest {
    * Enable frame dropping/duplication to handle variable frames per seconds of video input streams
    *
    * @param handleVariableInputFps
-   * Enable frame dropping/duplication to handle variable frames per seconds of video input streams
+   *        Enable frame dropping/duplication to handle variable frames per seconds of video input streams
    */
   public void setHandleVariableInputFps(Boolean handleVariableInputFps) {
     this.handleVariableInputFps = handleVariableInputFps;
@@ -143,7 +143,7 @@ public class StartEncodingRequest {
    * The pass mode of the encoding
    *
    * @param encodingMode
-   * The pass mode of the encoding
+   *        The pass mode of the encoding
    */
   public void setEncodingMode(EncodingMode encodingMode) {
     this.encodingMode = encodingMode;
@@ -151,9 +151,6 @@ public class StartEncodingRequest {
 
 
   public StartEncodingRequest addPreviewDashManifestsItem(ManifestResource previewDashManifestsItem) {
-    if (this.previewDashManifests == null) {
-      this.previewDashManifests = new ArrayList<>();
-    }
     this.previewDashManifests.add(previewDashManifestsItem);
     return this;
   }
@@ -170,7 +167,7 @@ public class StartEncodingRequest {
    * List of preview DASH manifests to be created
    *
    * @param previewDashManifests
-   * List of preview DASH manifests to be created
+   *        List of preview DASH manifests to be created
    */
   public void setPreviewDashManifests(List<ManifestResource> previewDashManifests) {
     this.previewDashManifests = previewDashManifests;
@@ -178,9 +175,6 @@ public class StartEncodingRequest {
 
 
   public StartEncodingRequest addPreviewHlsManifestsItem(ManifestResource previewHlsManifestsItem) {
-    if (this.previewHlsManifests == null) {
-      this.previewHlsManifests = new ArrayList<>();
-    }
     this.previewHlsManifests.add(previewHlsManifestsItem);
     return this;
   }
@@ -197,7 +191,7 @@ public class StartEncodingRequest {
    * List of preview HLS manifests to be created
    *
    * @param previewHlsManifests
-   * List of preview HLS manifests to be created
+   *        List of preview HLS manifests to be created
    */
   public void setPreviewHlsManifests(List<ManifestResource> previewHlsManifests) {
     this.previewHlsManifests = previewHlsManifests;
@@ -205,9 +199,6 @@ public class StartEncodingRequest {
 
 
   public StartEncodingRequest addVodDashManifestsItem(ManifestResource vodDashManifestsItem) {
-    if (this.vodDashManifests == null) {
-      this.vodDashManifests = new ArrayList<>();
-    }
     this.vodDashManifests.add(vodDashManifestsItem);
     return this;
   }
@@ -224,7 +215,7 @@ public class StartEncodingRequest {
    * List of VoD DASH manifests to be created after encoding finished successfully
    *
    * @param vodDashManifests
-   * List of VoD DASH manifests to be created after encoding finished successfully
+   *        List of VoD DASH manifests to be created after encoding finished successfully
    */
   public void setVodDashManifests(List<ManifestResource> vodDashManifests) {
     this.vodDashManifests = vodDashManifests;
@@ -232,9 +223,6 @@ public class StartEncodingRequest {
 
 
   public StartEncodingRequest addVodHlsManifestsItem(ManifestResource vodHlsManifestsItem) {
-    if (this.vodHlsManifests == null) {
-      this.vodHlsManifests = new ArrayList<>();
-    }
     this.vodHlsManifests.add(vodHlsManifestsItem);
     return this;
   }
@@ -251,7 +239,7 @@ public class StartEncodingRequest {
    * List of VoD HLS manifests to be created after encoding finished successfully
    *
    * @param vodHlsManifests
-   * List of VoD HLS manifests to be created after encoding finished successfully
+   *        List of VoD HLS manifests to be created after encoding finished successfully
    */
   public void setVodHlsManifests(List<ManifestResource> vodHlsManifests) {
     this.vodHlsManifests = vodHlsManifests;
@@ -270,7 +258,7 @@ public class StartEncodingRequest {
    * Per-Title settings
    *
    * @param perTitle
-   * Per-Title settings
+   *        Per-Title settings
    */
   public void setPerTitle(PerTitle perTitle) {
     this.perTitle = perTitle;
@@ -303,7 +291,6 @@ public class StartEncodingRequest {
     return Objects.hash(trimming, scheduling, tweaks, handleVariableInputFps, encodingMode, previewDashManifests, previewHlsManifests, vodDashManifests, vodHlsManifests, perTitle);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -333,6 +320,5 @@ public class StartEncodingRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

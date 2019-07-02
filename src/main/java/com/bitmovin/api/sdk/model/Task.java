@@ -57,7 +57,7 @@ public class Task extends BitmovinResponse {
 
 
   /**
-   * Current status
+   * Current status (required)
    * @return status
    */
   public Status getStatus() {
@@ -65,10 +65,10 @@ public class Task extends BitmovinResponse {
   }
 
   /**
-   * Current status
+   * Current status (required)
    *
    * @param status
-   * Current status
+   *        Current status (required)
    */
   public void setStatus(Status status) {
     this.status = status;
@@ -87,7 +87,7 @@ public class Task extends BitmovinResponse {
    * Estimated ETA in seconds
    *
    * @param eta
-   * Estimated ETA in seconds
+   *        Estimated ETA in seconds
    */
   public void setEta(Double eta) {
     this.eta = eta;
@@ -106,7 +106,7 @@ public class Task extends BitmovinResponse {
    * Progress in percent
    *
    * @param progress
-   * Progress in percent
+   *        Progress in percent
    */
   public void setProgress(Integer progress) {
     this.progress = progress;
@@ -114,9 +114,6 @@ public class Task extends BitmovinResponse {
 
 
   public Task addSubtasksItem(Subtask subtasksItem) {
-    if (this.subtasks == null) {
-      this.subtasks = new ArrayList<>();
-    }
     this.subtasks.add(subtasksItem);
     return this;
   }
@@ -133,7 +130,7 @@ public class Task extends BitmovinResponse {
    * List of subtasks
    *
    * @param subtasks
-   * List of subtasks
+   *        List of subtasks
    */
   public void setSubtasks(List<Subtask> subtasks) {
     this.subtasks = subtasks;
@@ -141,9 +138,6 @@ public class Task extends BitmovinResponse {
 
 
   public Task addMessagesItem(Message messagesItem) {
-    if (this.messages == null) {
-      this.messages = new ArrayList<>();
-    }
     this.messages.add(messagesItem);
     return this;
   }
@@ -160,7 +154,7 @@ public class Task extends BitmovinResponse {
    * Task specific messages
    *
    * @param messages
-   * Task specific messages
+   *        Task specific messages
    */
   public void setMessages(List<Message> messages) {
     this.messages = messages;
@@ -179,7 +173,7 @@ public class Task extends BitmovinResponse {
    * Timestamp when the task was created, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
    *
    * @param createdAt
-   * Timestamp when the task was created, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   *        Timestamp when the task was created, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
    */
   public void setCreatedAt(Date createdAt) {
     this.createdAt = createdAt;
@@ -198,7 +192,7 @@ public class Task extends BitmovinResponse {
    * Timestamp when the task status changed to \&quot;QUEUED\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
    *
    * @param queuedAt
-   * Timestamp when the task status changed to \&quot;QUEUED\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   *        Timestamp when the task status changed to \&quot;QUEUED\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
    */
   public void setQueuedAt(Date queuedAt) {
     this.queuedAt = queuedAt;
@@ -217,7 +211,7 @@ public class Task extends BitmovinResponse {
    * Timestamp when the task status changed to to \&quot;RUNNING\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
    *
    * @param runningAt
-   * Timestamp when the task status changed to to \&quot;RUNNING\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   *        Timestamp when the task status changed to to \&quot;RUNNING\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
    */
   public void setRunningAt(Date runningAt) {
     this.runningAt = runningAt;
@@ -236,7 +230,7 @@ public class Task extends BitmovinResponse {
    * Timestamp when the task status changed to \&quot;FINISHED\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
    *
    * @param finishedAt
-   * Timestamp when the task status changed to \&quot;FINISHED\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   *        Timestamp when the task status changed to \&quot;FINISHED\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
    */
   public void setFinishedAt(Date finishedAt) {
     this.finishedAt = finishedAt;
@@ -255,7 +249,7 @@ public class Task extends BitmovinResponse {
    * Timestamp when the task status changed to \&quot;ERROR\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
    *
    * @param errorAt
-   * Timestamp when the task status changed to \&quot;ERROR\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   *        Timestamp when the task status changed to \&quot;ERROR\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
    */
   public void setErrorAt(Date errorAt) {
     this.errorAt = errorAt;
@@ -274,7 +268,7 @@ public class Task extends BitmovinResponse {
    * Additional optional error details
    *
    * @param error
-   * Additional optional error details
+   *        Additional optional error details
    */
   public void setError(ErrorDetails error) {
     this.error = error;
@@ -309,7 +303,6 @@ public class Task extends BitmovinResponse {
     return Objects.hash(status, eta, progress, subtasks, messages, createdAt, queuedAt, runningAt, finishedAt, errorAt, error, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -340,6 +333,5 @@ public class Task extends BitmovinResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

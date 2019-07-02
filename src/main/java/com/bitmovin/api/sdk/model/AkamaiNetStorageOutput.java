@@ -28,7 +28,7 @@ public class AkamaiNetStorageOutput extends Output {
 
 
   /**
-   * Host to use for Akamai NetStorage transfers
+   * Host to use for Akamai NetStorage transfers (required)
    * @return host
    */
   public String getHost() {
@@ -36,10 +36,10 @@ public class AkamaiNetStorageOutput extends Output {
   }
 
   /**
-   * Host to use for Akamai NetStorage transfers
+   * Host to use for Akamai NetStorage transfers (required)
    *
    * @param host
-   * Host to use for Akamai NetStorage transfers
+   *        Host to use for Akamai NetStorage transfers (required)
    */
   public void setHost(String host) {
     this.host = host;
@@ -47,7 +47,7 @@ public class AkamaiNetStorageOutput extends Output {
 
 
   /**
-   * Your Akamai NetStorage Username
+   * Your Akamai NetStorage Username (required)
    * @return username
    */
   public String getUsername() {
@@ -55,10 +55,10 @@ public class AkamaiNetStorageOutput extends Output {
   }
 
   /**
-   * Your Akamai NetStorage Username
+   * Your Akamai NetStorage Username (required)
    *
    * @param username
-   * Your Akamai NetStorage Username
+   *        Your Akamai NetStorage Username (required)
    */
   public void setUsername(String username) {
     this.username = username;
@@ -66,7 +66,7 @@ public class AkamaiNetStorageOutput extends Output {
 
 
   /**
-   * Your Akamai NetStorage password
+   * Your Akamai NetStorage password (required)
    * @return password
    */
   public String getPassword() {
@@ -74,10 +74,10 @@ public class AkamaiNetStorageOutput extends Output {
   }
 
   /**
-   * Your Akamai NetStorage password
+   * Your Akamai NetStorage password (required)
    *
    * @param password
-   * Your Akamai NetStorage password
+   *        Your Akamai NetStorage password (required)
    */
   public void setPassword(String password) {
     this.password = password;
@@ -104,7 +104,6 @@ public class AkamaiNetStorageOutput extends Output {
     return Objects.hash(host, username, password, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -127,6 +126,5 @@ public class AkamaiNetStorageOutput extends Output {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

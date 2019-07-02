@@ -60,7 +60,7 @@ public class AnalyticsFilter {
 
 
   /**
-   * The value to compare to the property specified by the name
+   * The value to compare to the property specified by the name (required)
    * @return value
    */
   public String getValue() {
@@ -68,10 +68,10 @@ public class AnalyticsFilter {
   }
 
   /**
-   * The value to compare to the property specified by the name
+   * The value to compare to the property specified by the name (required)
    *
    * @param value
-   * The value to compare to the property specified by the name
+   *        The value to compare to the property specified by the name (required)
    */
   public void setValue(String value) {
     this.value = value;
@@ -97,7 +97,6 @@ public class AnalyticsFilter {
     return Objects.hash(name, operator, value);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -120,6 +119,5 @@ public class AnalyticsFilter {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

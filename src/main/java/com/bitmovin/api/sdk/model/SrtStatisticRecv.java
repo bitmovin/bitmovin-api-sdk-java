@@ -227,7 +227,6 @@ public class SrtStatisticRecv {
     return Objects.hash(bytes, bytesDropped, bytesLost, mbitRate, packets, packetsBelated, packetsDropped, packetsLost, packetsRetransmitted);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -256,6 +255,5 @@ public class SrtStatisticRecv {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

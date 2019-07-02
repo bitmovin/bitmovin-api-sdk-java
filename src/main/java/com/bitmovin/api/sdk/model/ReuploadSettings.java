@@ -36,7 +36,7 @@ public class ReuploadSettings {
    * minimum: 30
    *
    * @param dashManifestInterval
-   * Interval in seconds to reupload the DASH manifest. Valid values are either &#x60;null&#x60; to never reupload the dash manifest or at least &#x60;30&#x60;.
+   *        Interval in seconds to reupload the DASH manifest. Valid values are either &#x60;null&#x60; to never reupload the dash manifest or at least &#x60;30&#x60;.
    * minimum: 30
    */
   public void setDashManifestInterval(Double dashManifestInterval) {
@@ -56,7 +56,7 @@ public class ReuploadSettings {
    * Interval in seconds to reupload the HLS master file. Valid values are either &#x60;0&#x60; to never reupload the hls manifest or at least &#x60;30&#x60;. This is currently not used, as the master file will always be uploaded when one of the playlist files has changed.
    *
    * @param hlsManifestInterval
-   * Interval in seconds to reupload the HLS master file. Valid values are either &#x60;0&#x60; to never reupload the hls manifest or at least &#x60;30&#x60;. This is currently not used, as the master file will always be uploaded when one of the playlist files has changed.
+   *        Interval in seconds to reupload the HLS master file. Valid values are either &#x60;0&#x60; to never reupload the hls manifest or at least &#x60;30&#x60;. This is currently not used, as the master file will always be uploaded when one of the playlist files has changed.
    */
   public void setHlsManifestInterval(Double hlsManifestInterval) {
     this.hlsManifestInterval = hlsManifestInterval;
@@ -77,7 +77,7 @@ public class ReuploadSettings {
    * minimum: 30
    *
    * @param muxingInitFileInterval
-   * The interval in seconds to reupload the init file for segmented muxings, e.g. fMP4, WebM. Valid values are either &#x60;null&#x60; to never reupload the init file for segmented muxings or at least &#x60;30&#x60;.
+   *        The interval in seconds to reupload the init file for segmented muxings, e.g. fMP4, WebM. Valid values are either &#x60;null&#x60; to never reupload the init file for segmented muxings or at least &#x60;30&#x60;.
    * minimum: 30
    */
   public void setMuxingInitFileInterval(Double muxingInitFileInterval) {
@@ -104,7 +104,6 @@ public class ReuploadSettings {
     return Objects.hash(dashManifestInterval, hlsManifestInterval, muxingInitFileInterval);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -127,6 +126,5 @@ public class ReuploadSettings {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

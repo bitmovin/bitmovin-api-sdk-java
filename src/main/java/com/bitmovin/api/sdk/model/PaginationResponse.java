@@ -125,9 +125,6 @@ public class PaginationResponse<T> {
 
 
   public PaginationResponse addItemsItem(T itemsItem) {
-    if (this.items == null) {
-      this.items = new ArrayList<>();
-    }
     this.items.add(itemsItem);
     return this;
   }
@@ -172,7 +169,6 @@ public class PaginationResponse<T> {
     return Objects.hash(totalCount, offset, limit, previous, next, items);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -198,6 +194,5 @@ public class PaginationResponse<T> {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -35,7 +35,7 @@ public class BackupSrtInputs {
    * When there is no input signal present for this number of seconds, the encoder will switch to the next input
    *
    * @param delayThreshold
-   * When there is no input signal present for this number of seconds, the encoder will switch to the next input
+   *        When there is no input signal present for this number of seconds, the encoder will switch to the next input
    */
   public void setDelayThreshold(Integer delayThreshold) {
     this.delayThreshold = delayThreshold;
@@ -83,7 +83,6 @@ public class BackupSrtInputs {
     return Objects.hash(delayThreshold, srtInputs);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -105,6 +104,5 @@ public class BackupSrtInputs {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

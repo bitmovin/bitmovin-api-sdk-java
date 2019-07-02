@@ -31,7 +31,7 @@ public class GcsInput extends Input {
 
 
   /**
-   * Name of the bucket
+   * Name of the bucket (required)
    * @return bucketName
    */
   public String getBucketName() {
@@ -39,10 +39,10 @@ public class GcsInput extends Input {
   }
 
   /**
-   * Name of the bucket
+   * Name of the bucket (required)
    *
    * @param bucketName
-   * Name of the bucket
+   *        Name of the bucket (required)
    */
   public void setBucketName(String bucketName) {
     this.bucketName = bucketName;
@@ -61,7 +61,7 @@ public class GcsInput extends Input {
    * The cloud region in which the bucket is located. Is used to determine the ideal location for your encodings automatically.
    *
    * @param cloudRegion
-   * The cloud region in which the bucket is located. Is used to determine the ideal location for your encodings automatically.
+   *        The cloud region in which the bucket is located. Is used to determine the ideal location for your encodings automatically.
    */
   public void setCloudRegion(GoogleCloudRegion cloudRegion) {
     this.cloudRegion = cloudRegion;
@@ -69,7 +69,7 @@ public class GcsInput extends Input {
 
 
   /**
-   * GCS access key
+   * GCS access key (required)
    * @return accessKey
    */
   public String getAccessKey() {
@@ -77,10 +77,10 @@ public class GcsInput extends Input {
   }
 
   /**
-   * GCS access key
+   * GCS access key (required)
    *
    * @param accessKey
-   * GCS access key
+   *        GCS access key (required)
    */
   public void setAccessKey(String accessKey) {
     this.accessKey = accessKey;
@@ -88,7 +88,7 @@ public class GcsInput extends Input {
 
 
   /**
-   * GCS secret key
+   * GCS secret key (required)
    * @return secretKey
    */
   public String getSecretKey() {
@@ -96,10 +96,10 @@ public class GcsInput extends Input {
   }
 
   /**
-   * GCS secret key
+   * GCS secret key (required)
    *
    * @param secretKey
-   * GCS secret key
+   *        GCS secret key (required)
    */
   public void setSecretKey(String secretKey) {
     this.secretKey = secretKey;
@@ -127,7 +127,6 @@ public class GcsInput extends Input {
     return Objects.hash(bucketName, cloudRegion, accessKey, secretKey, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -151,6 +150,5 @@ public class GcsInput extends Input {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

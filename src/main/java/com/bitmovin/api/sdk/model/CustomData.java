@@ -25,9 +25,6 @@ public class CustomData {
 
 
   public CustomData putCustomDataItem(String key, Object customDataItem) {
-    if (this.customData == null) {
-      this.customData = new HashMap<String, Object>();
-    }
     this.customData.put(key, customDataItem);
     return this;
   }
@@ -44,7 +41,7 @@ public class CustomData {
    * User-specific meta data. This can hold a custom JSON object.
    *
    * @param customData
-   * User-specific meta data. This can hold a custom JSON object.
+   *        User-specific meta data. This can hold a custom JSON object.
    */
   public void setCustomData(Map<String, Object> customData) {
     this.customData = customData;
@@ -63,7 +60,7 @@ public class CustomData {
    * Creation timestamp formatted in UTC: YYYY-MM-DDThh:mm:ssZ
    *
    * @param createdAt
-   * Creation timestamp formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   *        Creation timestamp formatted in UTC: YYYY-MM-DDThh:mm:ssZ
    */
   public void setCreatedAt(Date createdAt) {
     this.createdAt = createdAt;
@@ -88,7 +85,6 @@ public class CustomData {
     return Objects.hash(customData, createdAt);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -110,6 +106,5 @@ public class CustomData {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

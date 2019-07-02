@@ -11,12 +11,9 @@ public class BitmovinException extends RuntimeException {
 
     private String shortmessage;
     private String developerMessage;
-
     private int errorCode;
     private int httpStatusCode;
-
     private String requestId;
-
     private String rawJsonResponse;
     private List<Link> links = new ArrayList<>();
     private List<Message> details = new ArrayList<>();
@@ -35,18 +32,21 @@ public class BitmovinException extends RuntimeException {
         this.rawJsonResponse = rawJsonResponse;
     }
 
-    public BitmovinException(String message, int httpStatusCode, String rawJsonResponse, ResponseError responseError) {
+    public BitmovinException(String message, String shortmessage, int httpStatusCode, String rawJsonResponse, ResponseError responseError) {
 
         this(message, httpStatusCode, rawJsonResponse);
+        this.shortmessage = shortmessage;
 
-        this.requestId = responseError.getRequestId();
+        if(responseError != null)
+        {
+            this.requestId = responseError.getRequestId();
 
-        if (responseError.getData() != null) {
-            this.details = responseError.getData().getDetails();
-            this.shortmessage = responseError.getData().getMessage();
-            this.developerMessage = responseError.getData().getDeveloperMessage();
-            this.errorCode = responseError.getData().getCode();
-            this.links = responseError.getData().getLinks();
+            if (responseError.getData() != null) {
+                this.details = responseError.getData().getDetails();
+                this.developerMessage = responseError.getData().getDeveloperMessage();
+                this.errorCode = responseError.getData().getCode();
+                this.links = responseError.getData().getLinks();
+            }
         }
     }
 

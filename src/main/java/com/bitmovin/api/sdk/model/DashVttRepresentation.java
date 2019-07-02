@@ -21,7 +21,7 @@ public class DashVttRepresentation extends BitmovinResource {
 
 
   /**
-   * URL of the referenced VTT file
+   * URL of the referenced VTT file (required)
    * @return vttUrl
    */
   public String getVttUrl() {
@@ -29,10 +29,10 @@ public class DashVttRepresentation extends BitmovinResource {
   }
 
   /**
-   * URL of the referenced VTT file
+   * URL of the referenced VTT file (required)
    *
    * @param vttUrl
-   * URL of the referenced VTT file
+   *        URL of the referenced VTT file (required)
    */
   public void setVttUrl(String vttUrl) {
     this.vttUrl = vttUrl;
@@ -57,7 +57,6 @@ public class DashVttRepresentation extends BitmovinResource {
     return Objects.hash(vttUrl, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -78,6 +77,5 @@ public class DashVttRepresentation extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

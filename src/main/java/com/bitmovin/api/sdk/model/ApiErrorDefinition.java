@@ -34,7 +34,7 @@ public class ApiErrorDefinition {
    * The error code.
    *
    * @param code
-   * The error code.
+   *        The error code.
    */
   public void setCode(Long code) {
     this.code = code;
@@ -53,7 +53,7 @@ public class ApiErrorDefinition {
    * The error category.
    *
    * @param category
-   * The error category.
+   *        The error category.
    */
   public void setCategory(String category) {
     this.category = category;
@@ -72,7 +72,7 @@ public class ApiErrorDefinition {
    * The returned error description.
    *
    * @param description
-   * The returned error description.
+   *        The returned error description.
    */
   public void setDescription(String description) {
     this.description = description;
@@ -98,7 +98,6 @@ public class ApiErrorDefinition {
     return Objects.hash(code, category, description);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -121,6 +120,5 @@ public class ApiErrorDefinition {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

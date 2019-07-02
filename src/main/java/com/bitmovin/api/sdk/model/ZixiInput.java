@@ -210,7 +210,6 @@ public class ZixiInput extends Input {
     return Objects.hash(host, port, stream, password, latency, minBitrate, decryptionType, decryptionKey, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -238,6 +237,5 @@ public class ZixiInput extends Input {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

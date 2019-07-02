@@ -33,7 +33,7 @@ public class StatisticsPerMuxing {
 
 
   /**
-   * ID of the stream
+   * ID of the stream (required)
    * @return streamId
    */
   public String getStreamId() {
@@ -41,10 +41,10 @@ public class StatisticsPerMuxing {
   }
 
   /**
-   * ID of the stream
+   * ID of the stream (required)
    *
    * @param streamId
-   * ID of the stream
+   *        ID of the stream (required)
    */
   public void setStreamId(String streamId) {
     this.streamId = streamId;
@@ -52,7 +52,7 @@ public class StatisticsPerMuxing {
 
 
   /**
-   * ID of the muxing
+   * ID of the muxing (required)
    * @return muxingId
    */
   public String getMuxingId() {
@@ -60,10 +60,10 @@ public class StatisticsPerMuxing {
   }
 
   /**
-   * ID of the muxing
+   * ID of the muxing (required)
    *
    * @param muxingId
-   * ID of the muxing
+   *        ID of the muxing (required)
    */
   public void setMuxingId(String muxingId) {
     this.muxingId = muxingId;
@@ -71,7 +71,7 @@ public class StatisticsPerMuxing {
 
 
   /**
-   * Multiplier for the encoded minutes. Depends on muxing type.
+   * Multiplier for the encoded minutes. Depends on muxing type. (required)
    * @return multiplicator
    */
   public Double getMultiplicator() {
@@ -79,10 +79,10 @@ public class StatisticsPerMuxing {
   }
 
   /**
-   * Multiplier for the encoded minutes. Depends on muxing type.
+   * Multiplier for the encoded minutes. Depends on muxing type. (required)
    *
    * @param multiplicator
-   * Multiplier for the encoded minutes. Depends on muxing type.
+   *        Multiplier for the encoded minutes. Depends on muxing type. (required)
    */
   public void setMultiplicator(Double multiplicator) {
     this.multiplicator = multiplicator;
@@ -90,7 +90,7 @@ public class StatisticsPerMuxing {
 
 
   /**
-   * Encoded bytes.
+   * Encoded bytes. (required)
    * @return encodedBytes
    */
   public Long getEncodedBytes() {
@@ -98,10 +98,10 @@ public class StatisticsPerMuxing {
   }
 
   /**
-   * Encoded bytes.
+   * Encoded bytes. (required)
    *
    * @param encodedBytes
-   * Encoded bytes.
+   *        Encoded bytes. (required)
    */
   public void setEncodedBytes(Long encodedBytes) {
     this.encodedBytes = encodedBytes;
@@ -109,7 +109,7 @@ public class StatisticsPerMuxing {
 
 
   /**
-   * Resulting minutes you will be charged for.
+   * Resulting minutes you will be charged for. (required)
    * @return billableMinutes
    */
   public Double getBillableMinutes() {
@@ -117,10 +117,10 @@ public class StatisticsPerMuxing {
   }
 
   /**
-   * Resulting minutes you will be charged for.
+   * Resulting minutes you will be charged for. (required)
    *
    * @param billableMinutes
-   * Resulting minutes you will be charged for.
+   *        Resulting minutes you will be charged for. (required)
    */
   public void setBillableMinutes(Double billableMinutes) {
     this.billableMinutes = billableMinutes;
@@ -167,7 +167,6 @@ public class StatisticsPerMuxing {
     return Objects.hash(streamId, muxingId, multiplicator, encodedBytes, billableMinutes, muxingType);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -193,6 +192,5 @@ public class StatisticsPerMuxing {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -29,7 +29,7 @@ public class Tweaks {
    * Defines special audio video sync handling
    *
    * @param audioVideoSyncMode
-   * Defines special audio video sync handling
+   *        Defines special audio video sync handling
    */
   public void setAudioVideoSyncMode(AudioVideoSyncMode audioVideoSyncMode) {
     this.audioVideoSyncMode = audioVideoSyncMode;
@@ -53,7 +53,6 @@ public class Tweaks {
     return Objects.hash(audioVideoSyncMode);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -74,6 +73,5 @@ public class Tweaks {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

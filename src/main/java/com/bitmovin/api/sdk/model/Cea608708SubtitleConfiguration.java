@@ -28,7 +28,7 @@ public class Cea608708SubtitleConfiguration {
    * If enabled, CEA 608 an CEA 708 subtitles will be copied from the input video stream to the output video stream. Note: This does not work, if the output framerate is different than the input framerate (except doubling the framerate with deinterlacing per field)
    *
    * @param passthroughActivated
-   * If enabled, CEA 608 an CEA 708 subtitles will be copied from the input video stream to the output video stream. Note: This does not work, if the output framerate is different than the input framerate (except doubling the framerate with deinterlacing per field)
+   *        If enabled, CEA 608 an CEA 708 subtitles will be copied from the input video stream to the output video stream. Note: This does not work, if the output framerate is different than the input framerate (except doubling the framerate with deinterlacing per field)
    */
   public void setPassthroughActivated(Boolean passthroughActivated) {
     this.passthroughActivated = passthroughActivated;
@@ -52,7 +52,6 @@ public class Cea608708SubtitleConfiguration {
     return Objects.hash(passthroughActivated);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -73,6 +72,5 @@ public class Cea608708SubtitleConfiguration {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

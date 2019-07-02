@@ -27,7 +27,7 @@ public class EncodingOutput {
 
 
   /**
-   * Id of the corresponding output
+   * Id of the corresponding output (required)
    * @return outputId
    */
   public String getOutputId() {
@@ -35,10 +35,10 @@ public class EncodingOutput {
   }
 
   /**
-   * Id of the corresponding output
+   * Id of the corresponding output (required)
    *
    * @param outputId
-   * Id of the corresponding output
+   *        Id of the corresponding output (required)
    */
   public void setOutputId(String outputId) {
     this.outputId = outputId;
@@ -46,7 +46,7 @@ public class EncodingOutput {
 
 
   /**
-   * Subdirectory where to save the files to
+   * Subdirectory where to save the files to (required)
    * @return outputPath
    */
   public String getOutputPath() {
@@ -54,10 +54,10 @@ public class EncodingOutput {
   }
 
   /**
-   * Subdirectory where to save the files to
+   * Subdirectory where to save the files to (required)
    *
    * @param outputPath
-   * Subdirectory where to save the files to
+   *        Subdirectory where to save the files to (required)
    */
   public void setOutputPath(String outputPath) {
     this.outputPath = outputPath;
@@ -65,9 +65,6 @@ public class EncodingOutput {
 
 
   public EncodingOutput addAclItem(AclEntry aclItem) {
-    if (this.acl == null) {
-      this.acl = new ArrayList<>();
-    }
     this.acl.add(aclItem);
     return this;
   }
@@ -109,7 +106,6 @@ public class EncodingOutput {
     return Objects.hash(outputId, outputPath, acl);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -132,6 +128,5 @@ public class EncodingOutput {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

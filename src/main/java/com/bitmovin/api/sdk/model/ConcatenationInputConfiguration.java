@@ -34,7 +34,7 @@ public class ConcatenationInputConfiguration {
    * The id of the input stream that should be used for concatenation. Can be either an ingest input stream, or the result of a trimming input stream
    *
    * @param inputStreamId
-   * The id of the input stream that should be used for concatenation. Can be either an ingest input stream, or the result of a trimming input stream
+   *        The id of the input stream that should be used for concatenation. Can be either an ingest input stream, or the result of a trimming input stream
    */
   public void setInputStreamId(String inputStreamId) {
     this.inputStreamId = inputStreamId;
@@ -53,7 +53,7 @@ public class ConcatenationInputConfiguration {
    * Exactly one input stream of a concatenation must have this set to true, which will be used as reference for scaling, aspect ratio, FPS, sample rate, etc. 
    *
    * @param isMain
-   * Exactly one input stream of a concatenation must have this set to true, which will be used as reference for scaling, aspect ratio, FPS, sample rate, etc. 
+   *        Exactly one input stream of a concatenation must have this set to true, which will be used as reference for scaling, aspect ratio, FPS, sample rate, etc. 
    */
   public void setIsMain(Boolean isMain) {
     this.isMain = isMain;
@@ -72,7 +72,7 @@ public class ConcatenationInputConfiguration {
    * Position of the stream
    *
    * @param position
-   * Position of the stream
+   *        Position of the stream
    */
   public void setPosition(Integer position) {
     this.position = position;
@@ -98,7 +98,6 @@ public class ConcatenationInputConfiguration {
     return Objects.hash(inputStreamId, isMain, position);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -121,6 +120,5 @@ public class ConcatenationInputConfiguration {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

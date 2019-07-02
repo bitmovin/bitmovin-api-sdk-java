@@ -37,7 +37,7 @@ public class PerTitle {
    * Per-Title configuration for H264
    *
    * @param h264Configuration
-   * Per-Title configuration for H264
+   *        Per-Title configuration for H264
    */
   public void setH264Configuration(H264PerTitleConfiguration h264Configuration) {
     this.h264Configuration = h264Configuration;
@@ -56,7 +56,7 @@ public class PerTitle {
    * Per-Title configuration for H265
    *
    * @param h265Configuration
-   * Per-Title configuration for H265
+   *        Per-Title configuration for H265
    */
   public void setH265Configuration(H265PerTitleConfiguration h265Configuration) {
     this.h265Configuration = h265Configuration;
@@ -75,7 +75,7 @@ public class PerTitle {
    * Per-Title configuration for VP9
    *
    * @param vp9Configuration
-   * Per-Title configuration for VP9
+   *        Per-Title configuration for VP9
    */
   public void setVp9Configuration(Vp9PerTitleConfiguration vp9Configuration) {
     this.vp9Configuration = vp9Configuration;
@@ -101,7 +101,6 @@ public class PerTitle {
     return Objects.hash(h264Configuration, h265Configuration, vp9Configuration);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -124,6 +123,5 @@ public class PerTitle {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

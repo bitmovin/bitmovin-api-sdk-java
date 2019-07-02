@@ -19,7 +19,7 @@ public class StandardMediaInfo extends SegmentsMediaInfo {
 
 
   /**
-   * The URI of the Rendition
+   * The URI of the Rendition (required)
    * @return uri
    */
   public String getUri() {
@@ -27,10 +27,10 @@ public class StandardMediaInfo extends SegmentsMediaInfo {
   }
 
   /**
-   * The URI of the Rendition
+   * The URI of the Rendition (required)
    *
    * @param uri
-   * The URI of the Rendition
+   *        The URI of the Rendition (required)
    */
   public void setUri(String uri) {
     this.uri = uri;
@@ -55,7 +55,6 @@ public class StandardMediaInfo extends SegmentsMediaInfo {
     return Objects.hash(uri, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -76,6 +75,5 @@ public class StandardMediaInfo extends SegmentsMediaInfo {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

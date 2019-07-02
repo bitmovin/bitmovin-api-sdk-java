@@ -31,7 +31,7 @@ public class CencFairPlay {
    * Initialization vector as hexadecimal string
    *
    * @param iv
-   * Initialization vector as hexadecimal string
+   *        Initialization vector as hexadecimal string
    */
   public void setIv(String iv) {
     this.iv = iv;
@@ -50,7 +50,7 @@ public class CencFairPlay {
    * URL of the licensing server
    *
    * @param uri
-   * URL of the licensing server
+   *        URL of the licensing server
    */
   public void setUri(String uri) {
     this.uri = uri;
@@ -75,7 +75,6 @@ public class CencFairPlay {
     return Objects.hash(iv, uri);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -97,6 +96,5 @@ public class CencFairPlay {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

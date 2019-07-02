@@ -21,7 +21,7 @@ public class RotateFilter extends Filter {
 
 
   /**
-   * Rotation of the video in degrees. A positive value will rotate the video clockwise and a negative one counter clockwise.
+   * Rotation of the video in degrees. A positive value will rotate the video clockwise and a negative one counter clockwise. (required)
    * @return rotation
    */
   public Integer getRotation() {
@@ -29,10 +29,10 @@ public class RotateFilter extends Filter {
   }
 
   /**
-   * Rotation of the video in degrees. A positive value will rotate the video clockwise and a negative one counter clockwise.
+   * Rotation of the video in degrees. A positive value will rotate the video clockwise and a negative one counter clockwise. (required)
    *
    * @param rotation
-   * Rotation of the video in degrees. A positive value will rotate the video clockwise and a negative one counter clockwise.
+   *        Rotation of the video in degrees. A positive value will rotate the video clockwise and a negative one counter clockwise. (required)
    */
   public void setRotation(Integer rotation) {
     this.rotation = rotation;
@@ -57,7 +57,6 @@ public class RotateFilter extends Filter {
     return Objects.hash(rotation, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -78,6 +77,5 @@ public class RotateFilter extends Filter {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

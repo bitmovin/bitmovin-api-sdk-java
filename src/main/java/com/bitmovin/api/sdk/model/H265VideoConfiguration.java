@@ -333,7 +333,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Use a set of well defined configurations preset to support certain use cases. Can be overwritten with more specific values.
    *
    * @param presetConfiguration
-   * Use a set of well defined configurations preset to support certain use cases. Can be overwritten with more specific values.
+   *        Use a set of well defined configurations preset to support certain use cases. Can be overwritten with more specific values.
    */
   public void setPresetConfiguration(PresetConfiguration presetConfiguration) {
     this.presetConfiguration = presetConfiguration;
@@ -356,7 +356,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * maximum: 51
    *
    * @param crf
-   * Sets the constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
+   *        Sets the constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
    * minimum: 0
    * maximum: 51
    */
@@ -399,7 +399,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * maximum: 16
    *
    * @param bframes
-   * Sets the amount of b frames
+   *        Sets the amount of b frames
    * minimum: 0
    * maximum: 16
    */
@@ -424,7 +424,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * maximum: 16
    *
    * @param refFrames
-   * Sets the amount of reference frames
+   *        Sets the amount of reference frames
    * minimum: 0
    * maximum: 16
    */
@@ -449,7 +449,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * maximum: 51
    *
    * @param qp
-   * Sets the quantization factor
+   *        Sets the quantization factor
    * minimum: 0
    * maximum: 51
    */
@@ -470,7 +470,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Maximum Bitrate
    *
    * @param maxBitrate
-   * Maximum Bitrate
+   *        Maximum Bitrate
    */
   public void setMaxBitrate(Long maxBitrate) {
     this.maxBitrate = maxBitrate;
@@ -489,7 +489,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Minimum Bitrate
    *
    * @param minBitrate
-   * Minimum Bitrate
+   *        Minimum Bitrate
    */
   public void setMinBitrate(Long minBitrate) {
     this.minBitrate = minBitrate;
@@ -508,7 +508,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Specify the size of the VBV buffer (kbits)
    *
    * @param bufsize
-   * Specify the size of the VBV buffer (kbits)
+   *        Specify the size of the VBV buffer (kbits)
    */
   public void setBufsize(Long bufsize) {
     this.bufsize = bufsize;
@@ -527,7 +527,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Minimum GOP length, the minimum distance between I-frames
    *
    * @param minGop
-   * Minimum GOP length, the minimum distance between I-frames
+   *        Minimum GOP length, the minimum distance between I-frames
    */
   public void setMinGop(Integer minGop) {
     this.minGop = minGop;
@@ -546,7 +546,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Maximum GOP length, the maximum distance between I-frames
    *
    * @param maxGop
-   * Maximum GOP length, the maximum distance between I-frames
+   *        Maximum GOP length, the maximum distance between I-frames
    */
   public void setMaxGop(Integer maxGop) {
     this.maxGop = maxGop;
@@ -565,7 +565,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Enable open-gop, allows referencing frames from a previous gop
    *
    * @param openGop
-   * Enable open-gop, allows referencing frames from a previous gop
+   *        Enable open-gop, allows referencing frames from a previous gop
    */
   public void setOpenGop(Boolean openGop) {
     this.openGop = openGop;
@@ -584,7 +584,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Minimum interval in seconds between key frames
    *
    * @param minKeyframeInterval
-   * Minimum interval in seconds between key frames
+   *        Minimum interval in seconds between key frames
    */
   public void setMinKeyframeInterval(Double minKeyframeInterval) {
     this.minKeyframeInterval = minKeyframeInterval;
@@ -603,7 +603,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Maximum interval in seconds between key frames
    *
    * @param maxKeyframeInterval
-   * Maximum interval in seconds between key frames
+   *        Maximum interval in seconds between key frames
    */
   public void setMaxKeyframeInterval(Double maxKeyframeInterval) {
     this.maxKeyframeInterval = maxKeyframeInterval;
@@ -644,7 +644,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * maximum: 250
    *
    * @param rcLookahead
-   * Number of frames for slice-type decision lookahead
+   *        Number of frames for slice-type decision lookahead
    * minimum: 1
    * maximum: 250
    */
@@ -665,7 +665,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Set the level of effort in determining B frame placement
    *
    * @param bAdapt
-   * Set the level of effort in determining B frame placement
+   *        Set the level of effort in determining B frame placement
    */
   public void setBAdapt(BAdapt bAdapt) {
     this.bAdapt = bAdapt;
@@ -760,7 +760,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * maximum: 7
    *
    * @param subMe
-   * Set the amount of subpel refinement to perform.
+   *        Set the amount of subpel refinement to perform.
    * minimum: 0
    * maximum: 7
    */
@@ -785,7 +785,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * maximum: 32768
    *
    * @param motionSearchRange
-   * Set the Motion search range.
+   *        Set the Motion search range.
    * minimum: 0
    * maximum: 32768
    */
@@ -806,7 +806,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Enable weighted prediction in P slices
    *
    * @param weightPredictionOnPSlice
-   * Enable weighted prediction in P slices
+   *        Enable weighted prediction in P slices
    */
   public void setWeightPredictionOnPSlice(Boolean weightPredictionOnPSlice) {
     this.weightPredictionOnPSlice = weightPredictionOnPSlice;
@@ -825,7 +825,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Enable weighted prediction in B slices
    *
    * @param weightPredictionOnBSlice
-   * Enable weighted prediction in B slices
+   *        Enable weighted prediction in B slices
    */
   public void setWeightPredictionOnBSlice(Boolean weightPredictionOnBSlice) {
     this.weightPredictionOnBSlice = weightPredictionOnBSlice;
@@ -844,7 +844,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Toggle sample adaptive offset loop filter
    *
    * @param sao
-   * Toggle sample adaptive offset loop filter
+   *        Toggle sample adaptive offset loop filter
    */
   public void setSao(Boolean sao) {
     this.sao = sao;
@@ -863,7 +863,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Set the mastering display color volume SEI info (SMPTE ST 2086). For example &#x60;G(13250,34500)B(7500,3000)R(34000,16000)WP(15635,16450)L(10000000,1)&#x60; describes a P3D65 1000-nits monitor, where G(x&#x3D;0.265, y&#x3D;0.690), B(x&#x3D;0.150, y&#x3D;0.060), R(x&#x3D;0.680, y&#x3D;0.320), WP(x&#x3D;0.3127, y&#x3D;0.3290), L(max&#x3D;1000, min&#x3D;0.0001). Part of HDR-10 metadata.
    *
    * @param masterDisplay
-   * Set the mastering display color volume SEI info (SMPTE ST 2086). For example &#x60;G(13250,34500)B(7500,3000)R(34000,16000)WP(15635,16450)L(10000000,1)&#x60; describes a P3D65 1000-nits monitor, where G(x&#x3D;0.265, y&#x3D;0.690), B(x&#x3D;0.150, y&#x3D;0.060), R(x&#x3D;0.680, y&#x3D;0.320), WP(x&#x3D;0.3127, y&#x3D;0.3290), L(max&#x3D;1000, min&#x3D;0.0001). Part of HDR-10 metadata.
+   *        Set the mastering display color volume SEI info (SMPTE ST 2086). For example &#x60;G(13250,34500)B(7500,3000)R(34000,16000)WP(15635,16450)L(10000000,1)&#x60; describes a P3D65 1000-nits monitor, where G(x&#x3D;0.265, y&#x3D;0.690), B(x&#x3D;0.150, y&#x3D;0.060), R(x&#x3D;0.680, y&#x3D;0.320), WP(x&#x3D;0.3127, y&#x3D;0.3290), L(max&#x3D;1000, min&#x3D;0.0001). Part of HDR-10 metadata.
    */
   public void setMasterDisplay(String masterDisplay) {
     this.masterDisplay = masterDisplay;
@@ -882,7 +882,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Set the max content light level (MaxCLL). Use together with maxPictureAverageLightLevel (which will be 0 if not set). Part of HDR-10 metadata.
    *
    * @param maxContentLightLevel
-   * Set the max content light level (MaxCLL). Use together with maxPictureAverageLightLevel (which will be 0 if not set). Part of HDR-10 metadata.
+   *        Set the max content light level (MaxCLL). Use together with maxPictureAverageLightLevel (which will be 0 if not set). Part of HDR-10 metadata.
    */
   public void setMaxContentLightLevel(String maxContentLightLevel) {
     this.maxContentLightLevel = maxContentLightLevel;
@@ -901,7 +901,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Set the maximum picture average light level (MaxFALL). Use together with maxContentLightLevel (which will be 0 if not set). Part of HDR-10 metadata.
    *
    * @param maxAverageLightLevel
-   * Set the maximum picture average light level (MaxFALL). Use together with maxContentLightLevel (which will be 0 if not set). Part of HDR-10 metadata.
+   *        Set the maximum picture average light level (MaxFALL). Use together with maxContentLightLevel (which will be 0 if not set). Part of HDR-10 metadata.
    */
   public void setMaxAverageLightLevel(Integer maxAverageLightLevel) {
     this.maxAverageLightLevel = maxAverageLightLevel;
@@ -920,7 +920,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Force signaling of HDR parameters in SEI packets. Enabled automatically when masterDisplay or maxContentLightLevel/maxPictureAverageLightLevel are set. Useful when there is a desire to signal 0 values for maxContentLightLevel and maxPictureAverageLightLevel.
    *
    * @param hdr
-   * Force signaling of HDR parameters in SEI packets. Enabled automatically when masterDisplay or maxContentLightLevel/maxPictureAverageLightLevel are set. Useful when there is a desire to signal 0 values for maxContentLightLevel and maxPictureAverageLightLevel.
+   *        Force signaling of HDR parameters in SEI packets. Enabled automatically when masterDisplay or maxContentLightLevel/maxPictureAverageLightLevel are set. Useful when there is a desire to signal 0 values for maxContentLightLevel and maxPictureAverageLightLevel.
    */
   public void setHdr(Boolean hdr) {
     this.hdr = hdr;
@@ -941,7 +941,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * minimum: 0
    *
    * @param sceneCutThreshold
-   * Scene Change sensitivity. The higher the value, the more likely an I-Frame will be inserted. Set to 0 to disable it.
+   *        Scene Change sensitivity. The higher the value, the more likely an I-Frame will be inserted. Set to 0 to disable it.
    * minimum: 0
    */
   public void setSceneCutThreshold(Integer sceneCutThreshold) {
@@ -961,7 +961,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Controls the adaptive quantization algorithm
    *
    * @param adaptiveQuantizationMode
-   * Controls the adaptive quantization algorithm
+   *        Controls the adaptive quantization algorithm
    */
   public void setAdaptiveQuantizationMode(AdaptiveQuantMode adaptiveQuantizationMode) {
     this.adaptiveQuantizationMode = adaptiveQuantizationMode;
@@ -980,7 +980,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * By enabling this video stream will be signaled as HLG
    *
    * @param enableHlgSignaling
-   * By enabling this video stream will be signaled as HLG
+   *        By enabling this video stream will be signaled as HLG
    */
   public void setEnableHlgSignaling(Boolean enableHlgSignaling) {
     this.enableHlgSignaling = enableHlgSignaling;
@@ -999,7 +999,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Specifies the source format of the original analog video prior to digitizing and encoding
    *
    * @param videoFormat
-   * Specifies the source format of the original analog video prior to digitizing and encoding
+   *        Specifies the source format of the original analog video prior to digitizing and encoding
    */
   public void setVideoFormat(VideoFormat videoFormat) {
     this.videoFormat = videoFormat;
@@ -1022,7 +1022,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * maximum: 5
    *
    * @param psyRateDistortionOptimization
-   * Psycho-visual rate-distortion retains fine details like film grain at the expense of more blocking artifacts. Higher values make the video appear sharper and more detailed but with a higher risk of blocking artifacts. Needs to have subMe with RD_IP, RD_ALL, RD_REF_IP, RD_REF_ALL, QPRD or FULL_RD
+   *        Psycho-visual rate-distortion retains fine details like film grain at the expense of more blocking artifacts. Higher values make the video appear sharper and more detailed but with a higher risk of blocking artifacts. Needs to have subMe with RD_IP, RD_ALL, RD_REF_IP, RD_REF_ALL, QPRD or FULL_RD
    * minimum: 0
    * maximum: 5
    */
@@ -1047,7 +1047,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * maximum: 50
    *
    * @param psyRateDistortionOptimizedQuantization
-   * Strength of psycho-visual optimizations in quantization. Only has an effect in presets which use RDOQ (rd-levels 4 and 5). The value must be between 0 and 50, 1.0 is typical
+   *        Strength of psycho-visual optimizations in quantization. Only has an effect in presets which use RDOQ (rd-levels 4 and 5). The value must be between 0 and 50, 1.0 is typical
    * minimum: 0
    * maximum: 50
    */
@@ -1068,7 +1068,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Signal hypothetical reference decoder (HRD) information
    *
    * @param enableHrdSignaling
-   * Signal hypothetical reference decoder (HRD) information
+   *        Signal hypothetical reference decoder (HRD) information
    */
   public void setEnableHrdSignaling(Boolean enableHrdSignaling) {
     this.enableHrdSignaling = enableHrdSignaling;
@@ -1087,7 +1087,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Enables the use of lookahead’s lowres motion vector fields to determine the amount of reuse of each block to tune adaptive quantization factors.
    *
    * @param cutree
-   * Enables the use of lookahead’s lowres motion vector fields to determine the amount of reuse of each block to tune adaptive quantization factors.
+   *        Enables the use of lookahead’s lowres motion vector fields to determine the amount of reuse of each block to tune adaptive quantization factors.
    */
   public void setCutree(Boolean cutree) {
     this.cutree = cutree;
@@ -1106,7 +1106,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Minimum CU size (width and height). By using 16 or 32 the encoder will not analyze the cost of CUs below that minimum threshold, saving considerable amounts of compute with a predictable increase in bitrate. This setting has a large effect on performance on the faster presets.
    *
    * @param minCodingUnitSize
-   * Minimum CU size (width and height). By using 16 or 32 the encoder will not analyze the cost of CUs below that minimum threshold, saving considerable amounts of compute with a predictable increase in bitrate. This setting has a large effect on performance on the faster presets.
+   *        Minimum CU size (width and height). By using 16 or 32 the encoder will not analyze the cost of CUs below that minimum threshold, saving considerable amounts of compute with a predictable increase in bitrate. This setting has a large effect on performance on the faster presets.
    */
   public void setMinCodingUnitSize(MinCodingUnitSize minCodingUnitSize) {
     this.minCodingUnitSize = minCodingUnitSize;
@@ -1125,7 +1125,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Use multiple worker threads to measure the estimated cost of each frame within the lookahead. The higher this parameter, the less accurate the frame costs will be which will result in less accurate B-frame and scene-cut decisions. Valid range: 0 - 16
    *
    * @param lookaheadSlices
-   * Use multiple worker threads to measure the estimated cost of each frame within the lookahead. The higher this parameter, the less accurate the frame costs will be which will result in less accurate B-frame and scene-cut decisions. Valid range: 0 - 16
+   *        Use multiple worker threads to measure the estimated cost of each frame within the lookahead. The higher this parameter, the less accurate the frame costs will be which will result in less accurate B-frame and scene-cut decisions. Valid range: 0 - 16
    */
   public void setLookaheadSlices(Integer lookaheadSlices) {
     this.lookaheadSlices = lookaheadSlices;
@@ -1144,7 +1144,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * If enabled, limit references per depth, CU or both.
    *
    * @param limitReferences
-   * If enabled, limit references per depth, CU or both.
+   *        If enabled, limit references per depth, CU or both.
    */
   public void setLimitReferences(LimitReferences limitReferences) {
     this.limitReferences = limitReferences;
@@ -1163,7 +1163,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Enable analysis of rectangular motion partitions Nx2N and 2NxN.
    *
    * @param rectangularMotionPartitionsAnalysis
-   * Enable analysis of rectangular motion partitions Nx2N and 2NxN.
+   *        Enable analysis of rectangular motion partitions Nx2N and 2NxN.
    */
   public void setRectangularMotionPartitionsAnalysis(Boolean rectangularMotionPartitionsAnalysis) {
     this.rectangularMotionPartitionsAnalysis = rectangularMotionPartitionsAnalysis;
@@ -1182,7 +1182,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Enable analysis of asymmetric motion partitions.
    *
    * @param asymetricMotionPartitionsAnalysis
-   * Enable analysis of asymmetric motion partitions.
+   *        Enable analysis of asymmetric motion partitions.
    */
   public void setAsymetricMotionPartitionsAnalysis(Boolean asymetricMotionPartitionsAnalysis) {
     this.asymetricMotionPartitionsAnalysis = asymetricMotionPartitionsAnalysis;
@@ -1201,7 +1201,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * When enabled, will limit modes analyzed for each CU using cost metrics from the 4 sub-CUs. This can significantly improve performance when &#x60;rectangularMotionPartitionsAnalysis&#x60; and/or &#x60;asymetricMotionPartitionsAnalysis&#x60; are enabled at minimal compression efficiency loss.
    *
    * @param limitModes
-   * When enabled, will limit modes analyzed for each CU using cost metrics from the 4 sub-CUs. This can significantly improve performance when &#x60;rectangularMotionPartitionsAnalysis&#x60; and/or &#x60;asymetricMotionPartitionsAnalysis&#x60; are enabled at minimal compression efficiency loss.
+   *        When enabled, will limit modes analyzed for each CU using cost metrics from the 4 sub-CUs. This can significantly improve performance when &#x60;rectangularMotionPartitionsAnalysis&#x60; and/or &#x60;asymetricMotionPartitionsAnalysis&#x60; are enabled at minimal compression efficiency loss.
    */
   public void setLimitModes(Boolean limitModes) {
     this.limitModes = limitModes;
@@ -1220,7 +1220,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Maximum number of neighbor (spatial and temporal) candidate blocks that the encoder may consider for merging motion predictions. Valid range: 1 - 5
    *
    * @param maxMerge
-   * Maximum number of neighbor (spatial and temporal) candidate blocks that the encoder may consider for merging motion predictions. Valid range: 1 - 5
+   *        Maximum number of neighbor (spatial and temporal) candidate blocks that the encoder may consider for merging motion predictions. Valid range: 1 - 5
    */
   public void setMaxMerge(Integer maxMerge) {
     this.maxMerge = maxMerge;
@@ -1239,7 +1239,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Measure 2Nx2N merge candidates first; if no residual is found, additional modes at that depth are not analysed.
    *
    * @param earlySkip
-   * Measure 2Nx2N merge candidates first; if no residual is found, additional modes at that depth are not analysed.
+   *        Measure 2Nx2N merge candidates first; if no residual is found, additional modes at that depth are not analysed.
    */
   public void setEarlySkip(Boolean earlySkip) {
     this.earlySkip = earlySkip;
@@ -1258,7 +1258,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * If enabled exits early from CU depth recursion. When a skip CU is found, additional heuristics are used to decide whether to terminate recursion.
    *
    * @param recursionSkip
-   * If enabled exits early from CU depth recursion. When a skip CU is found, additional heuristics are used to decide whether to terminate recursion.
+   *        If enabled exits early from CU depth recursion. When a skip CU is found, additional heuristics are used to decide whether to terminate recursion.
    */
   public void setRecursionSkip(Boolean recursionSkip) {
     this.recursionSkip = recursionSkip;
@@ -1277,7 +1277,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Enable faster search method for angular intra predictions.
    *
    * @param fastSearchForAngularIntraPredictions
-   * Enable faster search method for angular intra predictions.
+   *        Enable faster search method for angular intra predictions.
    */
   public void setFastSearchForAngularIntraPredictions(Boolean fastSearchForAngularIntraPredictions) {
     this.fastSearchForAngularIntraPredictions = fastSearchForAngularIntraPredictions;
@@ -1296,7 +1296,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Enables the evaluation of intra modes in B slices.
    *
    * @param evaluationOfIntraModesInBSlices
-   * Enables the evaluation of intra modes in B slices.
+   *        Enables the evaluation of intra modes in B slices.
    */
   public void setEvaluationOfIntraModesInBSlices(Boolean evaluationOfIntraModesInBSlices) {
     this.evaluationOfIntraModesInBSlices = evaluationOfIntraModesInBSlices;
@@ -1315,7 +1315,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Hide sign bit of one coefficient per coding tree unit.
    *
    * @param signHide
-   * Hide sign bit of one coefficient per coding tree unit.
+   *        Hide sign bit of one coefficient per coding tree unit.
    */
   public void setSignHide(Boolean signHide) {
     this.signHide = signHide;
@@ -1334,7 +1334,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Level of rate-distortion optimization in mode decision. The lower the value the faster the encode, the higher the value higher the compression efficiency. Valid range: 0 - 4
    *
    * @param rateDistortionLevelForModeDecision
-   * Level of rate-distortion optimization in mode decision. The lower the value the faster the encode, the higher the value higher the compression efficiency. Valid range: 0 - 4
+   *        Level of rate-distortion optimization in mode decision. The lower the value the faster the encode, the higher the value higher the compression efficiency. Valid range: 0 - 4
    */
   public void setRateDistortionLevelForModeDecision(Integer rateDistortionLevelForModeDecision) {
     this.rateDistortionLevelForModeDecision = rateDistortionLevelForModeDecision;
@@ -1353,7 +1353,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Specify the amount of rate-distortion analysis to use within quantization.
    *
    * @param rateDistortionLevelForQuantization
-   * Specify the amount of rate-distortion analysis to use within quantization.
+   *        Specify the amount of rate-distortion analysis to use within quantization.
    */
   public void setRateDistortionLevelForQuantization(RateDistortionLevelForQuantization rateDistortionLevelForQuantization) {
     this.rateDistortionLevelForQuantization = rateDistortionLevelForQuantization;
@@ -1372,7 +1372,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Sets the minimum of quantization factor. Valid value range: 0 - 69
    *
    * @param qpMin
-   * Sets the minimum of quantization factor. Valid value range: 0 - 69
+   *        Sets the minimum of quantization factor. Valid value range: 0 - 69
    */
   public void setQpMin(Integer qpMin) {
     this.qpMin = qpMin;
@@ -1391,7 +1391,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Sets the maximum of quantization factor. Valid value range: 0 - 69
    *
    * @param qpMax
-   * Sets the maximum of quantization factor. Valid value range: 0 - 69
+   *        Sets the maximum of quantization factor. Valid value range: 0 - 69
    */
   public void setQpMax(Integer qpMax) {
     this.qpMax = qpMax;
@@ -1410,7 +1410,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * The encoder may begin encoding a row as soon as the row above it is at least two CTUs ahead in the encode process. Default is enabled.
    *
    * @param wavefrontParallelProcessing
-   * The encoder may begin encoding a row as soon as the row above it is at least two CTUs ahead in the encode process. Default is enabled.
+   *        The encoder may begin encoding a row as soon as the row above it is at least two CTUs ahead in the encode process. Default is enabled.
    */
   public void setWavefrontParallelProcessing(Boolean wavefrontParallelProcessing) {
     this.wavefrontParallelProcessing = wavefrontParallelProcessing;
@@ -1429,7 +1429,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Encode each incoming frame as multiple parallel slices that may be decoded independently. Default is 1.
    *
    * @param slices
-   * Encode each incoming frame as multiple parallel slices that may be decoded independently. Default is 1.
+   *        Encode each incoming frame as multiple parallel slices that may be decoded independently. Default is 1.
    */
   public void setSlices(Integer slices) {
     this.slices = slices;
@@ -1448,7 +1448,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Copy buffers of input picture in frame. Default is enabled.
    *
    * @param copyPicture
-   * Copy buffers of input picture in frame. Default is enabled.
+   *        Copy buffers of input picture in frame. Default is enabled.
    */
   public void setCopyPicture(Boolean copyPicture) {
     this.copyPicture = copyPicture;
@@ -1467,7 +1467,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * If high tier is disabled the encoder will attempt to encode only at the main tier. Default is enabled.
    *
    * @param levelHighTier
-   * If high tier is disabled the encoder will attempt to encode only at the main tier. Default is enabled.
+   *        If high tier is disabled the encoder will attempt to encode only at the main tier. Default is enabled.
    */
   public void setLevelHighTier(Boolean levelHighTier) {
     this.levelHighTier = levelHighTier;
@@ -1486,7 +1486,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Enable skipping split rate distortion analysis when sum of split CU RD cost larger than one split CU RD cost for intra CU. Default disabled.
    *
    * @param skipSplitRateDistortionAnalysis
-   * Enable skipping split rate distortion analysis when sum of split CU RD cost larger than one split CU RD cost for intra CU. Default disabled.
+   *        Enable skipping split rate distortion analysis when sum of split CU RD cost larger than one split CU RD cost for intra CU. Default disabled.
    */
   public void setSkipSplitRateDistortionAnalysis(Boolean skipSplitRateDistortionAnalysis) {
     this.skipSplitRateDistortionAnalysis = skipSplitRateDistortionAnalysis;
@@ -1505,7 +1505,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * If enabled, consider lossless mode in CU RDO decisions. Default is disabled.
    *
    * @param codingUnitLossless
-   * If enabled, consider lossless mode in CU RDO decisions. Default is disabled.
+   *        If enabled, consider lossless mode in CU RDO decisions. Default is disabled.
    */
   public void setCodingUnitLossless(Boolean codingUnitLossless) {
     this.codingUnitLossless = codingUnitLossless;
@@ -1524,7 +1524,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Enable evaluation of transform skip (bypass DCT but still use quantization) coding for 4x4 TU coded blocks. Default is NONE.
    *
    * @param transformSkip
-   * Enable evaluation of transform skip (bypass DCT but still use quantization) coding for 4x4 TU coded blocks. Default is NONE.
+   *        Enable evaluation of transform skip (bypass DCT but still use quantization) coding for 4x4 TU coded blocks. Default is NONE.
    */
   public void setTransformSkip(TransformSkipMode transformSkip) {
     this.transformSkip = transformSkip;
@@ -1543,7 +1543,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Enable QP based rate distortion refinement. Default is disabled.
    *
    * @param refineRateDistortionCost
-   * Enable QP based rate distortion refinement. Default is disabled.
+   *        Enable QP based rate distortion refinement. Default is disabled.
    */
   public void setRefineRateDistortionCost(Boolean refineRateDistortionCost) {
     this.refineRateDistortionCost = refineRateDistortionCost;
@@ -1562,7 +1562,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Enables early exit from transform unit depth recursion, for inter coded blocks. Default is DISABLED.
    *
    * @param limitTransformUnitDepthRecursion
-   * Enables early exit from transform unit depth recursion, for inter coded blocks. Default is DISABLED.
+   *        Enables early exit from transform unit depth recursion, for inter coded blocks. Default is DISABLED.
    */
   public void setLimitTransformUnitDepthRecursion(LimitTransformUnitDepthRecursionMode limitTransformUnitDepthRecursion) {
     this.limitTransformUnitDepthRecursion = limitTransformUnitDepthRecursion;
@@ -1585,7 +1585,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * maximum: 2000
    *
    * @param noiseReductionIntra
-   * An integer value, which denotes strength of noise reduction in intra CUs. Default 0.
+   *        An integer value, which denotes strength of noise reduction in intra CUs. Default 0.
    * minimum: 0
    * maximum: 2000
    */
@@ -1610,7 +1610,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * maximum: 2000
    *
    * @param noiseReductionInter
-   * An integer value, which denotes strength of noise reduction in inter CUs. Default 0.
+   *        An integer value, which denotes strength of noise reduction in inter CUs. Default 0.
    * minimum: 0
    * maximum: 2000
    */
@@ -1631,7 +1631,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Penalty for 32x32 intra transform units in non-I slices. Default DISABLED.
    *
    * @param rateDistortionPenalty
-   * Penalty for 32x32 intra transform units in non-I slices. Default DISABLED.
+   *        Penalty for 32x32 intra transform units in non-I slices. Default DISABLED.
    */
   public void setRateDistortionPenalty(RateDistortionPenaltyMode rateDistortionPenalty) {
     this.rateDistortionPenalty = rateDistortionPenalty;
@@ -1650,7 +1650,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Penalty for 32x32 intra transform units in non-I slices. Default DISABLED.
    *
    * @param maximumTransformUnitSize
-   * Penalty for 32x32 intra transform units in non-I slices. Default DISABLED.
+   *        Penalty for 32x32 intra transform units in non-I slices. Default DISABLED.
    */
   public void setMaximumTransformUnitSize(MaxTransformUnitSize maximumTransformUnitSize) {
     this.maximumTransformUnitSize = maximumTransformUnitSize;
@@ -1673,7 +1673,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * maximum: 4
    *
    * @param dynamicRateDistortionStrength
-   * Increases the RD level at points where quality drops due to VBV rate control enforcement. Default 0.
+   *        Increases the RD level at points where quality drops due to VBV rate control enforcement. Default 0.
    * minimum: 0
    * maximum: 4
    */
@@ -1694,7 +1694,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * It is used for mode selection during analysis of CTUs and can achieve significant gain in terms of objective quality metrics SSIM and PSNR. Default false.
    *
    * @param ssimRateDistortionOptimization
-   * It is used for mode selection during analysis of CTUs and can achieve significant gain in terms of objective quality metrics SSIM and PSNR. Default false.
+   *        It is used for mode selection during analysis of CTUs and can achieve significant gain in terms of objective quality metrics SSIM and PSNR. Default false.
    */
   public void setSsimRateDistortionOptimization(Boolean ssimRateDistortionOptimization) {
     this.ssimRateDistortionOptimization = ssimRateDistortionOptimization;
@@ -1713,7 +1713,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Enable temporal motion vector predictors in P and B slices. Default true.
    *
    * @param temporalMotionVectorPredictors
-   * Enable temporal motion vector predictors in P and B slices. Default true.
+   *        Enable temporal motion vector predictors in P and B slices. Default true.
    */
   public void setTemporalMotionVectorPredictors(Boolean temporalMotionVectorPredictors) {
     this.temporalMotionVectorPredictors = temporalMotionVectorPredictors;
@@ -1732,7 +1732,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Enable motion estimation with source frame pixels, in this mode, motion estimation can be computed independently. Default false.
    *
    * @param analyzeSourceFramePixels
-   * Enable motion estimation with source frame pixels, in this mode, motion estimation can be computed independently. Default false.
+   *        Enable motion estimation with source frame pixels, in this mode, motion estimation can be computed independently. Default false.
    */
   public void setAnalyzeSourceFramePixels(Boolean analyzeSourceFramePixels) {
     this.analyzeSourceFramePixels = analyzeSourceFramePixels;
@@ -1751,7 +1751,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Enable strong intra smoothing for 32x32 intra blocks. Default true.
    *
    * @param strongIntraSmoothing
-   * Enable strong intra smoothing for 32x32 intra blocks. Default true.
+   *        Enable strong intra smoothing for 32x32 intra blocks. Default true.
    */
   public void setStrongIntraSmoothing(Boolean strongIntraSmoothing) {
     this.strongIntraSmoothing = strongIntraSmoothing;
@@ -1770,7 +1770,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * When generating intra predictions for blocks in inter slices, only intra-coded reference pixels are used. Default false.
    *
    * @param constrainedIntraPrediction
-   * When generating intra predictions for blocks in inter slices, only intra-coded reference pixels are used. Default false.
+   *        When generating intra predictions for blocks in inter slices, only intra-coded reference pixels are used. Default false.
    */
   public void setConstrainedIntraPrediction(Boolean constrainedIntraPrediction) {
     this.constrainedIntraPrediction = constrainedIntraPrediction;
@@ -1793,7 +1793,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * maximum: 100
    *
    * @param scenecutBias
-   * This value represents the percentage difference between the inter cost and intra cost of a frame used in scenecut detection. Default 5.0.
+   *        This value represents the percentage difference between the inter cost and intra cost of a frame used in scenecut detection. Default 5.0.
    * minimum: 0
    * maximum: 100
    */
@@ -1814,7 +1814,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Number of RADL pictures allowed infront of IDR. Requires fixed keyframe interval. Valid values 0 - &#x60;bframes&#x60;. Default 0.
    *
    * @param allowedRADLBeforeIDR
-   * Number of RADL pictures allowed infront of IDR. Requires fixed keyframe interval. Valid values 0 - &#x60;bframes&#x60;. Default 0.
+   *        Number of RADL pictures allowed infront of IDR. Requires fixed keyframe interval. Valid values 0 - &#x60;bframes&#x60;. Default 0.
    */
   public void setAllowedRADLBeforeIDR(Integer allowedRADLBeforeIDR) {
     this.allowedRADLBeforeIDR = allowedRADLBeforeIDR;
@@ -1833,7 +1833,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Number of frames for GOP boundary decision lookahead. Valid values 0 - &#x60;rcLookahead&#x60;. Default 0
    *
    * @param gopLookahead
-   * Number of frames for GOP boundary decision lookahead. Valid values 0 - &#x60;rcLookahead&#x60;. Default 0
+   *        Number of frames for GOP boundary decision lookahead. Valid values 0 - &#x60;rcLookahead&#x60;. Default 0
    */
   public void setGopLookahead(Integer gopLookahead) {
     this.gopLookahead = gopLookahead;
@@ -1856,7 +1856,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * maximum: 100
    *
    * @param bframeBias
-   * Bias towards B frames in slicetype decision. The higher the bias the more likely the encoder is to use B frames. Default 0
+   *        Bias towards B frames in slicetype decision. The higher the bias the more likely the encoder is to use B frames. Default 0
    * minimum: -90
    * maximum: 100
    */
@@ -1877,7 +1877,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Force the encoder to flush frames. Default is DISABLED.
    *
    * @param forceFlush
-   * Force the encoder to flush frames. Default is DISABLED.
+   *        Force the encoder to flush frames. Default is DISABLED.
    */
   public void setForceFlush(ForceFlushMode forceFlush) {
     this.forceFlush = forceFlush;
@@ -1900,7 +1900,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * maximum: 3
    *
    * @param adaptiveQuantizationStrength
-   * Adjust the strength of the adaptive quantization offsets. Default 1.0.
+   *        Adjust the strength of the adaptive quantization offsets. Default 1.0.
    * minimum: 0
    * maximum: 3
    */
@@ -1921,7 +1921,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Adjust the AQ offsets based on the relative motion of each block with respect to the motion of the frame. Default false.
    *
    * @param adaptiveQuantizationMotion
-   * Adjust the AQ offsets based on the relative motion of each block with respect to the motion of the frame. Default false.
+   *        Adjust the AQ offsets based on the relative motion of each block with respect to the motion of the frame. Default false.
    */
   public void setAdaptiveQuantizationMotion(Boolean adaptiveQuantizationMotion) {
     this.adaptiveQuantizationMotion = adaptiveQuantizationMotion;
@@ -1940,7 +1940,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Enable adaptive quantization for sub-CTUs. This parameter specifies the minimum CU size at which QP can be adjusted. Default is same as &#x60;maxCTUSize&#x60;.
    *
    * @param quantizationGroupSize
-   * Enable adaptive quantization for sub-CTUs. This parameter specifies the minimum CU size at which QP can be adjusted. Default is same as &#x60;maxCTUSize&#x60;.
+   *        Enable adaptive quantization for sub-CTUs. This parameter specifies the minimum CU size at which QP can be adjusted. Default is same as &#x60;maxCTUSize&#x60;.
    */
   public void setQuantizationGroupSize(QuantizationGroupSize quantizationGroupSize) {
     this.quantizationGroupSize = quantizationGroupSize;
@@ -1959,7 +1959,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Enables stricter conditions to control bitrate deviance from the target bitrate in ABR mode. Bit rate adherence is prioritised over quality. Default false.
    *
    * @param strictCbr
-   * Enables stricter conditions to control bitrate deviance from the target bitrate in ABR mode. Bit rate adherence is prioritised over quality. Default false.
+   *        Enables stricter conditions to control bitrate deviance from the target bitrate in ABR mode. Bit rate adherence is prioritised over quality. Default false.
    */
   public void setStrictCbr(Boolean strictCbr) {
     this.strictCbr = strictCbr;
@@ -1982,7 +1982,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * maximum: 12
    *
    * @param qpOffsetChromaCb
-   * Offset of Cb chroma QP from the luma QP selected by rate control. This is a general way to spend more or less bits on the chroma channel. Default 0
+   *        Offset of Cb chroma QP from the luma QP selected by rate control. This is a general way to spend more or less bits on the chroma channel. Default 0
    * minimum: -12
    * maximum: 12
    */
@@ -2007,7 +2007,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * maximum: 12
    *
    * @param qpOffsetChromaCr
-   * Offset of Cr chroma QP from the luma QP selected by rate control. This is a general way to spend more or less bits on the chroma channel. Default 0
+   *        Offset of Cr chroma QP from the luma QP selected by rate control. This is a general way to spend more or less bits on the chroma channel. Default 0
    * minimum: -12
    * maximum: 12
    */
@@ -2028,7 +2028,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * QP ratio factor between I and P slices. This ratio is used in all of the rate control modes. Default 1.4
    *
    * @param ipRatio
-   * QP ratio factor between I and P slices. This ratio is used in all of the rate control modes. Default 1.4
+   *        QP ratio factor between I and P slices. This ratio is used in all of the rate control modes. Default 1.4
    */
   public void setIpRatio(Double ipRatio) {
     this.ipRatio = ipRatio;
@@ -2047,7 +2047,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * QP ratio factor between P and B slices. This ratio is used in all of the rate control modes. Default 1.3
    *
    * @param pbRatio
-   * QP ratio factor between P and B slices. This ratio is used in all of the rate control modes. Default 1.3
+   *        QP ratio factor between P and B slices. This ratio is used in all of the rate control modes. Default 1.3
    */
   public void setPbRatio(Double pbRatio) {
     this.pbRatio = pbRatio;
@@ -2070,7 +2070,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * maximum: 1
    *
    * @param quantizerCurveCompressionFactor
-   * Sets the quantizer curve compression factor. It weights the frame quantizer based on the complexity of residual (measured by lookahead). Default 0.6
+   *        Sets the quantizer curve compression factor. It weights the frame quantizer based on the complexity of residual (measured by lookahead). Default 0.6
    * minimum: 0.5
    * maximum: 1
    */
@@ -2091,7 +2091,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * The maximum single adjustment in QP allowed to rate control. Default 4
    *
    * @param qpStep
-   * The maximum single adjustment in QP allowed to rate control. Default 4
+   *        The maximum single adjustment in QP allowed to rate control. Default 4
    */
   public void setQpStep(Integer qpStep) {
     this.qpStep = qpStep;
@@ -2110,7 +2110,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Enables a specialised ratecontrol algorithm for film grain content. Default false.
    *
    * @param grainOptimizedRateControl
-   * Enables a specialised ratecontrol algorithm for film grain content. Default false.
+   *        Enables a specialised ratecontrol algorithm for film grain content. Default false.
    */
   public void setGrainOptimizedRateControl(Boolean grainOptimizedRateControl) {
     this.grainOptimizedRateControl = grainOptimizedRateControl;
@@ -2129,7 +2129,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Temporally blur quants. Default 0.5
    *
    * @param blurQuants
-   * Temporally blur quants. Default 0.5
+   *        Temporally blur quants. Default 0.5
    */
   public void setBlurQuants(Double blurQuants) {
     this.blurQuants = blurQuants;
@@ -2148,7 +2148,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Temporally blur complexity. Default 20.0
    *
    * @param blurComplexity
-   * Temporally blur complexity. Default 20.0
+   *        Temporally blur complexity. Default 20.0
    */
   public void setBlurComplexity(Double blurComplexity) {
     this.blurComplexity = blurComplexity;
@@ -2167,7 +2167,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Specify how to handle depencency between SAO and deblocking filter. When enabled, non-deblocked pixels are used for SAO analysis. When disabled, SAO analysis skips the right/bottom boundary areas. Default false.
    *
    * @param saoNonDeblock
-   * Specify how to handle depencency between SAO and deblocking filter. When enabled, non-deblocked pixels are used for SAO analysis. When disabled, SAO analysis skips the right/bottom boundary areas. Default false.
+   *        Specify how to handle depencency between SAO and deblocking filter. When enabled, non-deblocked pixels are used for SAO analysis. When disabled, SAO analysis skips the right/bottom boundary areas. Default false.
    */
   public void setSaoNonDeblock(Boolean saoNonDeblock) {
     this.saoNonDeblock = saoNonDeblock;
@@ -2186,7 +2186,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Limit SAO filter computation by early terminating SAO process based on inter prediction mode, CTU spatial-domain correlations, and relations between luma and chroma. Default false.
    *
    * @param limitSao
-   * Limit SAO filter computation by early terminating SAO process based on inter prediction mode, CTU spatial-domain correlations, and relations between luma and chroma. Default false.
+   *        Limit SAO filter computation by early terminating SAO process based on inter prediction mode, CTU spatial-domain correlations, and relations between luma and chroma. Default false.
    */
   public void setLimitSao(Boolean limitSao) {
     this.limitSao = limitSao;
@@ -2205,7 +2205,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Will use low-pass subband dct approximation instead of the standard dct for 16x16 and 32x32 blocks. Default false.
    *
    * @param lowpassDct
-   * Will use low-pass subband dct approximation instead of the standard dct for 16x16 and 32x32 blocks. Default false.
+   *        Will use low-pass subband dct approximation instead of the standard dct for 16x16 and 32x32 blocks. Default false.
    */
   public void setLowpassDct(Boolean lowpassDct) {
     this.lowpassDct = lowpassDct;
@@ -2323,7 +2323,6 @@ public class H265VideoConfiguration extends VideoConfiguration {
     return Objects.hash(presetConfiguration, crf, profile, bframes, refFrames, qp, maxBitrate, minBitrate, bufsize, minGop, maxGop, openGop, minKeyframeInterval, maxKeyframeInterval, level, rcLookahead, bAdapt, maxCTUSize, tuIntraDepth, tuInterDepth, motionSearch, subMe, motionSearchRange, weightPredictionOnPSlice, weightPredictionOnBSlice, sao, masterDisplay, maxContentLightLevel, maxAverageLightLevel, hdr, sceneCutThreshold, adaptiveQuantizationMode, enableHlgSignaling, videoFormat, psyRateDistortionOptimization, psyRateDistortionOptimizedQuantization, enableHrdSignaling, cutree, minCodingUnitSize, lookaheadSlices, limitReferences, rectangularMotionPartitionsAnalysis, asymetricMotionPartitionsAnalysis, limitModes, maxMerge, earlySkip, recursionSkip, fastSearchForAngularIntraPredictions, evaluationOfIntraModesInBSlices, signHide, rateDistortionLevelForModeDecision, rateDistortionLevelForQuantization, qpMin, qpMax, wavefrontParallelProcessing, slices, copyPicture, levelHighTier, skipSplitRateDistortionAnalysis, codingUnitLossless, transformSkip, refineRateDistortionCost, limitTransformUnitDepthRecursion, noiseReductionIntra, noiseReductionInter, rateDistortionPenalty, maximumTransformUnitSize, dynamicRateDistortionStrength, ssimRateDistortionOptimization, temporalMotionVectorPredictors, analyzeSourceFramePixels, strongIntraSmoothing, constrainedIntraPrediction, scenecutBias, allowedRADLBeforeIDR, gopLookahead, bframeBias, forceFlush, adaptiveQuantizationStrength, adaptiveQuantizationMotion, quantizationGroupSize, strictCbr, qpOffsetChromaCb, qpOffsetChromaCr, ipRatio, pbRatio, quantizerCurveCompressionFactor, qpStep, grainOptimizedRateControl, blurQuants, blurComplexity, saoNonDeblock, limitSao, lowpassDct, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -2437,6 +2436,5 @@ public class H265VideoConfiguration extends VideoConfiguration {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -44,7 +44,7 @@ public class PlayerLicense extends BitmovinResponse {
 
 
   /**
-   * Name of the resource
+   * Name of the resource (required)
    * @return name
    */
   public String getName() {
@@ -52,17 +52,17 @@ public class PlayerLicense extends BitmovinResponse {
   }
 
   /**
-   * Name of the resource
+   * Name of the resource (required)
    *
    * @param name
-   * Name of the resource
+   *        Name of the resource (required)
    */
   public void setName(String name) {
     this.name = name;
   }
 
   /**
-   * Creation timestamp formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Creation timestamp formatted in UTC: YYYY-MM-DDThh:mm:ssZ (required)
    * @return createdAt
    */
   public Date getCreatedAt() {
@@ -70,7 +70,7 @@ public class PlayerLicense extends BitmovinResponse {
   }
 
   /**
-   * License Key
+   * License Key (required)
    * @return licenseKey
    */
   public String getLicenseKey() {
@@ -78,7 +78,7 @@ public class PlayerLicense extends BitmovinResponse {
   }
 
   /**
-   * Number of impressions recorded
+   * Number of impressions recorded (required)
    * @return impressions
    */
   public Integer getImpressions() {
@@ -86,7 +86,7 @@ public class PlayerLicense extends BitmovinResponse {
   }
 
   /**
-   * Maximum number of impressions
+   * Maximum number of impressions (required)
    * @return maxImpressions
    */
   public Integer getMaxImpressions() {
@@ -94,7 +94,7 @@ public class PlayerLicense extends BitmovinResponse {
   }
 
   /**
-   * Flag if third party licensing is enabled
+   * Flag if third party licensing is enabled (required)
    * @return thirdPartyLicensingEnabled
    */
   public Boolean getThirdPartyLicensingEnabled() {
@@ -102,7 +102,7 @@ public class PlayerLicense extends BitmovinResponse {
   }
 
   /**
-   * Whitelisted domains
+   * Whitelisted domains (required)
    * @return domains
    */
   public List<Domain> getDomains() {
@@ -143,7 +143,6 @@ public class PlayerLicense extends BitmovinResponse {
     return Objects.hash(name, createdAt, licenseKey, impressions, maxImpressions, thirdPartyLicensingEnabled, domains, analyticsKey, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -171,6 +170,5 @@ public class PlayerLicense extends BitmovinResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

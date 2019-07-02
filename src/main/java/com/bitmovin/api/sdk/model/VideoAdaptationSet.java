@@ -34,7 +34,6 @@ public class VideoAdaptationSet extends AdaptationSet {
     return Objects.hash(super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -54,6 +53,5 @@ public class VideoAdaptationSet extends AdaptationSet {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -17,7 +17,7 @@ public class ManifestResource {
 
 
   /**
-   * Id of the manifest resource
+   * Id of the manifest resource (required)
    * @return manifestId
    */
   public String getManifestId() {
@@ -25,10 +25,10 @@ public class ManifestResource {
   }
 
   /**
-   * Id of the manifest resource
+   * Id of the manifest resource (required)
    *
    * @param manifestId
-   * Id of the manifest resource
+   *        Id of the manifest resource (required)
    */
   public void setManifestId(String manifestId) {
     this.manifestId = manifestId;
@@ -52,7 +52,6 @@ public class ManifestResource {
     return Objects.hash(manifestId);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -73,6 +72,5 @@ public class ManifestResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

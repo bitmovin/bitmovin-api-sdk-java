@@ -49,7 +49,7 @@ public class PlayReadyDrm extends Drm {
    * 16 byte encryption key, 32 hexadecimal characters. Either key or keySeed is required
    *
    * @param key
-   * 16 byte encryption key, 32 hexadecimal characters. Either key or keySeed is required
+   *        16 byte encryption key, 32 hexadecimal characters. Either key or keySeed is required
    */
   public void setKey(String key) {
     this.key = key;
@@ -68,7 +68,7 @@ public class PlayReadyDrm extends Drm {
    * Key seed to generate key. Either key or keySeed is required
    *
    * @param keySeed
-   * Key seed to generate key. Either key or keySeed is required
+   *        Key seed to generate key. Either key or keySeed is required
    */
   public void setKeySeed(String keySeed) {
     this.keySeed = keySeed;
@@ -87,7 +87,7 @@ public class PlayReadyDrm extends Drm {
    * URL of the license server
    *
    * @param laUrl
-   * URL of the license server
+   *        URL of the license server
    */
   public void setLaUrl(String laUrl) {
     this.laUrl = laUrl;
@@ -106,7 +106,7 @@ public class PlayReadyDrm extends Drm {
    * Base64 encoded pssh payload
    *
    * @param pssh
-   * Base64 encoded pssh payload
+   *        Base64 encoded pssh payload
    */
   public void setPssh(String pssh) {
     this.pssh = pssh;
@@ -143,7 +143,7 @@ public class PlayReadyDrm extends Drm {
    * Key identifier
    *
    * @param kid
-   * Key identifier
+   *        Key identifier
    */
   public void setKid(String kid) {
     this.kid = kid;
@@ -173,7 +173,6 @@ public class PlayReadyDrm extends Drm {
     return Objects.hash(key, keySeed, laUrl, pssh, method, kid, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -199,6 +198,5 @@ public class PlayReadyDrm extends Drm {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

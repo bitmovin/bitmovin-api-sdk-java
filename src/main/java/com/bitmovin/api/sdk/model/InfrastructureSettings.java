@@ -32,7 +32,7 @@ public class InfrastructureSettings {
    * Id of a custom infrastructure, e.g., Kubernetes Cluster
    *
    * @param infrastructureId
-   * Id of a custom infrastructure, e.g., Kubernetes Cluster
+   *        Id of a custom infrastructure, e.g., Kubernetes Cluster
    */
   public void setInfrastructureId(String infrastructureId) {
     this.infrastructureId = infrastructureId;
@@ -75,7 +75,6 @@ public class InfrastructureSettings {
     return Objects.hash(infrastructureId, cloudRegion);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -97,6 +96,5 @@ public class InfrastructureSettings {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

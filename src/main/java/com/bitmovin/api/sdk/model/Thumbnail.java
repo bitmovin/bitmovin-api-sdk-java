@@ -41,7 +41,7 @@ public class Thumbnail extends BitmovinResource {
 
 
   /**
-   * Height of the thumbnail.
+   * Height of the thumbnail. (required)
    * @return height
    */
   public Integer getHeight() {
@@ -49,10 +49,10 @@ public class Thumbnail extends BitmovinResource {
   }
 
   /**
-   * Height of the thumbnail.
+   * Height of the thumbnail. (required)
    *
    * @param height
-   * Height of the thumbnail.
+   *        Height of the thumbnail. (required)
    */
   public void setHeight(Integer height) {
     this.height = height;
@@ -71,7 +71,7 @@ public class Thumbnail extends BitmovinResource {
    *  Pattern which describes the thumbnail filenames. For example with thumbnail-%number%.png as pattern and 3 positions: thumbnail-3_0.png, thumbnail-5_0.png and thumbnail-25_5.png. (The number represents the position in the source video in seconds, in the previous example the first filename represents the thumbnail at 3s, the second one at 5s and the third one at 25.5s).
    *
    * @param pattern
-   *  Pattern which describes the thumbnail filenames. For example with thumbnail-%number%.png as pattern and 3 positions: thumbnail-3_0.png, thumbnail-5_0.png and thumbnail-25_5.png. (The number represents the position in the source video in seconds, in the previous example the first filename represents the thumbnail at 3s, the second one at 5s and the third one at 25.5s).
+   *         Pattern which describes the thumbnail filenames. For example with thumbnail-%number%.png as pattern and 3 positions: thumbnail-3_0.png, thumbnail-5_0.png and thumbnail-25_5.png. (The number represents the position in the source video in seconds, in the previous example the first filename represents the thumbnail at 3s, the second one at 5s and the third one at 25.5s).
    */
   public void setPattern(String pattern) {
     this.pattern = pattern;
@@ -90,7 +90,7 @@ public class Thumbnail extends BitmovinResource {
    * The interval in which to create thumbnails. In seconds (E.g. a value of 4 means create a thumbnail every 4 seconds). Mutually exclusive with positions/unit. Has to be equal to or greater than 1.
    *
    * @param interval
-   * The interval in which to create thumbnails. In seconds (E.g. a value of 4 means create a thumbnail every 4 seconds). Mutually exclusive with positions/unit. Has to be equal to or greater than 1.
+   *        The interval in which to create thumbnails. In seconds (E.g. a value of 4 means create a thumbnail every 4 seconds). Mutually exclusive with positions/unit. Has to be equal to or greater than 1.
    */
   public void setInterval(Double interval) {
     this.interval = interval;
@@ -98,9 +98,6 @@ public class Thumbnail extends BitmovinResource {
 
 
   public Thumbnail addPositionsItem(Double positionsItem) {
-    if (this.positions == null) {
-      this.positions = new ArrayList<>();
-    }
     this.positions.add(positionsItem);
     return this;
   }
@@ -117,7 +114,7 @@ public class Thumbnail extends BitmovinResource {
    * Position in the unit where the thumbnail should be created from. Mutually exclusive with interval.
    *
    * @param positions
-   * Position in the unit where the thumbnail should be created from. Mutually exclusive with interval.
+   *        Position in the unit where the thumbnail should be created from. Mutually exclusive with interval.
    */
   public void setPositions(List<Double> positions) {
     this.positions = positions;
@@ -125,9 +122,6 @@ public class Thumbnail extends BitmovinResource {
 
 
   public Thumbnail addOutputsItem(EncodingOutput outputsItem) {
-    if (this.outputs == null) {
-      this.outputs = new ArrayList<>();
-    }
     this.outputs.add(outputsItem);
     return this;
   }
@@ -162,7 +156,7 @@ public class Thumbnail extends BitmovinResource {
    * Unit of the values in the positions array.
    *
    * @param unit
-   * Unit of the values in the positions array.
+   *        Unit of the values in the positions array.
    */
   public void setUnit(ThumbnailUnit unit) {
     this.unit = unit;
@@ -192,7 +186,6 @@ public class Thumbnail extends BitmovinResource {
     return Objects.hash(height, pattern, interval, positions, outputs, unit, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -218,6 +211,5 @@ public class Thumbnail extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

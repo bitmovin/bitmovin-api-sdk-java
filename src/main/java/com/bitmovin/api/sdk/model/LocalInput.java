@@ -21,7 +21,7 @@ public class LocalInput extends Input {
 
 
   /**
-   * Path to your local storage
+   * Path to your local storage (required)
    * @return path
    */
   public String getPath() {
@@ -29,10 +29,10 @@ public class LocalInput extends Input {
   }
 
   /**
-   * Path to your local storage
+   * Path to your local storage (required)
    *
    * @param path
-   * Path to your local storage
+   *        Path to your local storage (required)
    */
   public void setPath(String path) {
     this.path = path;
@@ -57,7 +57,6 @@ public class LocalInput extends Input {
     return Objects.hash(path, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -78,6 +77,5 @@ public class LocalInput extends Input {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

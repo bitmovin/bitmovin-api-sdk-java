@@ -32,7 +32,6 @@ public class DashFmp4Representation extends DashSegmentedRepresentation {
     return Objects.hash(super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -52,6 +51,5 @@ public class DashFmp4Representation extends DashSegmentedRepresentation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

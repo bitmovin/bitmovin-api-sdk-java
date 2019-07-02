@@ -21,9 +21,6 @@ public class AbstractConjunction extends AbstractCondition {
 
 
   public AbstractConjunction addConditionsItem(AbstractCondition conditionsItem) {
-    if (this.conditions == null) {
-      this.conditions = new ArrayList<>();
-    }
     this.conditions.add(conditionsItem);
     return this;
   }
@@ -40,7 +37,7 @@ public class AbstractConjunction extends AbstractCondition {
    * Array to perform the AND/OR evaluation on
    *
    * @param conditions
-   * Array to perform the AND/OR evaluation on
+   *        Array to perform the AND/OR evaluation on
    */
   public void setConditions(List<AbstractCondition> conditions) {
     this.conditions = conditions;
@@ -65,7 +62,6 @@ public class AbstractConjunction extends AbstractCondition {
     return Objects.hash(conditions, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -86,6 +82,5 @@ public class AbstractConjunction extends AbstractCondition {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

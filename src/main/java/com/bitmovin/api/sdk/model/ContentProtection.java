@@ -18,7 +18,7 @@ public class ContentProtection extends DashRepresentation {
 
 
   /**
-   * DRM Id
+   * DRM Id (required)
    * @return drmId
    */
   public String getDrmId() {
@@ -26,10 +26,10 @@ public class ContentProtection extends DashRepresentation {
   }
 
   /**
-   * DRM Id
+   * DRM Id (required)
    *
    * @param drmId
-   * DRM Id
+   *        DRM Id (required)
    */
   public void setDrmId(String drmId) {
     this.drmId = drmId;
@@ -54,7 +54,6 @@ public class ContentProtection extends DashRepresentation {
     return Objects.hash(drmId, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -75,6 +74,5 @@ public class ContentProtection extends DashRepresentation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

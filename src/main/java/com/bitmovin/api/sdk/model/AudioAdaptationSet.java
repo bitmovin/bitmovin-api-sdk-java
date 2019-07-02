@@ -22,7 +22,7 @@ public class AudioAdaptationSet extends AdaptationSet {
 
 
   /**
-   * ISO 639-1 (Alpha-2) code identifying the language of the audio adaptation set
+   * ISO 639-1 (Alpha-2) code identifying the language of the audio adaptation set (required)
    * @return lang
    */
   public String getLang() {
@@ -30,10 +30,10 @@ public class AudioAdaptationSet extends AdaptationSet {
   }
 
   /**
-   * ISO 639-1 (Alpha-2) code identifying the language of the audio adaptation set
+   * ISO 639-1 (Alpha-2) code identifying the language of the audio adaptation set (required)
    *
    * @param lang
-   * ISO 639-1 (Alpha-2) code identifying the language of the audio adaptation set
+   *        ISO 639-1 (Alpha-2) code identifying the language of the audio adaptation set (required)
    */
   public void setLang(String lang) {
     this.lang = lang;
@@ -58,7 +58,6 @@ public class AudioAdaptationSet extends AdaptationSet {
     return Objects.hash(lang, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -79,6 +78,5 @@ public class AudioAdaptationSet extends AdaptationSet {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

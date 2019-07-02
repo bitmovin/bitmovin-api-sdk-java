@@ -33,7 +33,12 @@ public enum StreamSelectionMode {
   /**
    * Use the stream specified by position but count only audio streams
    */
-  AUDIO_RELATIVE("AUDIO_RELATIVE");
+  AUDIO_RELATIVE("AUDIO_RELATIVE"),
+  
+  /**
+   * Use the stream specified by position but count only subtitle streams
+   */
+  SUBTITLE_RELATIVE("SUBTITLE_RELATIVE");
 
   private String value;
 

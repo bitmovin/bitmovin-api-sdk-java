@@ -132,7 +132,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * Use a set of well defined configurations preset to support certain use cases. Can be overwritten with more specific values.
    *
    * @param presetConfiguration
-   * Use a set of well defined configurations preset to support certain use cases. Can be overwritten with more specific values.
+   *        Use a set of well defined configurations preset to support certain use cases. Can be overwritten with more specific values.
    */
   public void setPresetConfiguration(PresetConfiguration presetConfiguration) {
     this.presetConfiguration = presetConfiguration;
@@ -155,7 +155,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * maximum: 63
    *
    * @param crf
-   * Sets the constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
+   *        Sets the constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
    * minimum: 0
    * maximum: 63
    */
@@ -180,7 +180,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * maximum: 25
    *
    * @param lagInFrames
-   * Number of frames to look ahead for alternate reference frame selection.
+   *        Number of frames to look ahead for alternate reference frame selection.
    * minimum: 0
    * maximum: 25
    */
@@ -201,7 +201,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * Enables error resiliency feature
    *
    * @param errorResiliencyEnabled
-   * Enables error resiliency feature
+   *        Enables error resiliency feature
    */
   public void setErrorResiliencyEnabled(Boolean errorResiliencyEnabled) {
     this.errorResiliencyEnabled = errorResiliencyEnabled;
@@ -224,7 +224,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * maximum: 6
    *
    * @param tileColumns
-   * Number of tile columns to use, log2.
+   *        Number of tile columns to use, log2.
    * minimum: 0
    * maximum: 6
    */
@@ -249,7 +249,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * maximum: 2
    *
    * @param tileRows
-   * Number of tile rows to use, log2.
+   *        Number of tile rows to use, log2.
    * minimum: 0
    * maximum: 2
    */
@@ -270,7 +270,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * Enable frame parallel decodability features
    *
    * @param frameParallel
-   * Enable frame parallel decodability features
+   *        Enable frame parallel decodability features
    */
   public void setFrameParallel(Boolean frameParallel) {
     this.frameParallel = frameParallel;
@@ -289,7 +289,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * Maximum I-frame bitrate (percentage) 0&#x3D;unlimited
    *
    * @param maxIntraRate
-   * Maximum I-frame bitrate (percentage) 0&#x3D;unlimited
+   *        Maximum I-frame bitrate (percentage) 0&#x3D;unlimited
    */
   public void setMaxIntraRate(Long maxIntraRate) {
     this.maxIntraRate = maxIntraRate;
@@ -312,7 +312,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * maximum: 63
    *
    * @param qpMin
-   * Sets the minimum of quantization factor.
+   *        Sets the minimum of quantization factor.
    * minimum: 0
    * maximum: 63
    */
@@ -337,7 +337,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * maximum: 63
    *
    * @param qpMax
-   * Sets the maximum of quantization factor.
+   *        Sets the maximum of quantization factor.
    * minimum: 0
    * maximum: 63
    */
@@ -362,7 +362,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * maximum: 100
    *
    * @param rateUndershootPct
-   * Datarate undershoot (min) target (percentage).
+   *        Datarate undershoot (min) target (percentage).
    * minimum: 0
    * maximum: 100
    */
@@ -387,7 +387,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * maximum: 100
    *
    * @param rateOvershootPct
-   * Datarate overshoot (max) target (percentage).
+   *        Datarate overshoot (max) target (percentage).
    * minimum: 0
    * maximum: 100
    */
@@ -410,7 +410,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * minimum: 0
    *
    * @param clientBufferSize
-   * Client buffer size (ms)
+   *        Client buffer size (ms)
    * minimum: 0
    */
   public void setClientBufferSize(Long clientBufferSize) {
@@ -432,7 +432,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * minimum: 0
    *
    * @param clientInitialBufferSize
-   * Client initial buffer size (ms)
+   *        Client initial buffer size (ms)
    * minimum: 0
    */
   public void setClientInitialBufferSize(Long clientInitialBufferSize) {
@@ -456,7 +456,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * maximum: 100
    *
    * @param biasPct
-   * CBR/VBR bias (0&#x3D;CBR, 100&#x3D;VBR)
+   *        CBR/VBR bias (0&#x3D;CBR, 100&#x3D;VBR)
    * minimum: 0
    * maximum: 100
    */
@@ -477,7 +477,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * Enable noise sensitivity on Y channel
    *
    * @param noiseSensitivity
-   * Enable noise sensitivity on Y channel
+   *        Enable noise sensitivity on Y channel
    */
   public void setNoiseSensitivity(Boolean noiseSensitivity) {
     this.noiseSensitivity = noiseSensitivity;
@@ -500,7 +500,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * maximum: 8
    *
    * @param cpuUsed
-   * Controls the tradeoff between compression efficiency and encoding speed. Higher values indicate a faster encoding.
+   *        Controls the tradeoff between compression efficiency and encoding speed. Higher values indicate a faster encoding.
    * minimum: 1
    * maximum: 8
    */
@@ -521,7 +521,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * Enable automatic alternate reference frames (2pass only)
    *
    * @param automaticAltRefFramesEnabled
-   * Enable automatic alternate reference frames (2pass only)
+   *        Enable automatic alternate reference frames (2pass only)
    */
   public void setAutomaticAltRefFramesEnabled(Boolean automaticAltRefFramesEnabled) {
     this.automaticAltRefFramesEnabled = automaticAltRefFramesEnabled;
@@ -544,7 +544,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * maximum: 255
    *
    * @param targetLevel
-   * Target level (255: off, 0: only keep level stats; 10: level 1.0; 11: level 1.1; ... 62: level 6.2)
+   *        Target level (255: off, 0: only keep level stats; 10: level 1.0; 11: level 1.1; ... 62: level 6.2)
    * minimum: 0
    * maximum: 255
    */
@@ -565,7 +565,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * Enable row based non-deterministic multi-threading
    *
    * @param rowMultiThreadingEnabled
-   * Enable row based non-deterministic multi-threading
+   *        Enable row based non-deterministic multi-threading
    */
   public void setRowMultiThreadingEnabled(Boolean rowMultiThreadingEnabled) {
     this.rowMultiThreadingEnabled = rowMultiThreadingEnabled;
@@ -588,7 +588,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * maximum: 7
    *
    * @param sharpness
-   * Loop filter sharpness.
+   *        Loop filter sharpness.
    * minimum: 0
    * maximum: 7
    */
@@ -609,7 +609,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * Minimum GOP length, the minimum distance between I-frames.
    *
    * @param minGop
-   * Minimum GOP length, the minimum distance between I-frames.
+   *        Minimum GOP length, the minimum distance between I-frames.
    */
   public void setMinGop(Integer minGop) {
     this.minGop = minGop;
@@ -628,7 +628,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * Maximum GOP length, the maximum distance between I-frames
    *
    * @param maxGop
-   * Maximum GOP length, the maximum distance between I-frames
+   *        Maximum GOP length, the maximum distance between I-frames
    */
   public void setMaxGop(Integer maxGop) {
     this.maxGop = maxGop;
@@ -647,7 +647,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * Minimum interval in seconds between key frames
    *
    * @param minKeyframeInterval
-   * Minimum interval in seconds between key frames
+   *        Minimum interval in seconds between key frames
    */
   public void setMinKeyframeInterval(Double minKeyframeInterval) {
     this.minKeyframeInterval = minKeyframeInterval;
@@ -666,7 +666,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * Maximum interval in seconds between key frames
    *
    * @param maxKeyframeInterval
-   * Maximum interval in seconds between key frames
+   *        Maximum interval in seconds between key frames
    */
   public void setMaxKeyframeInterval(Double maxKeyframeInterval) {
     this.maxKeyframeInterval = maxKeyframeInterval;
@@ -703,7 +703,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * Lossless mode
    *
    * @param lossless
-   * Lossless mode
+   *        Lossless mode
    */
   public void setLossless(Boolean lossless) {
     this.lossless = lossless;
@@ -724,7 +724,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * minimum: 0
    *
    * @param staticThresh
-   * A change threshold on blocks below which they will be skipped by the encoder.
+   *        A change threshold on blocks below which they will be skipped by the encoder.
    * minimum: 0
    */
   public void setStaticThresh(Integer staticThresh) {
@@ -766,7 +766,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * maximum: 15
    *
    * @param arnrMaxFrames
-   * altref noise reduction max frame count.
+   *        altref noise reduction max frame count.
    * minimum: 0
    * maximum: 15
    */
@@ -791,7 +791,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    * maximum: 6
    *
    * @param arnrStrength
-   * altref noise reduction filter strength.
+   *        altref noise reduction filter strength.
    * minimum: 0
    * maximum: 6
    */
@@ -867,7 +867,6 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     return Objects.hash(presetConfiguration, crf, lagInFrames, errorResiliencyEnabled, tileColumns, tileRows, frameParallel, maxIntraRate, qpMin, qpMax, rateUndershootPct, rateOvershootPct, clientBufferSize, clientInitialBufferSize, biasPct, noiseSensitivity, cpuUsed, automaticAltRefFramesEnabled, targetLevel, rowMultiThreadingEnabled, sharpness, minGop, maxGop, minKeyframeInterval, maxKeyframeInterval, quality, lossless, staticThresh, aqMode, arnrMaxFrames, arnrStrength, arnrType, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -919,6 +918,5 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

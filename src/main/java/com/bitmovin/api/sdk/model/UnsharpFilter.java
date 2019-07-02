@@ -47,7 +47,7 @@ public class UnsharpFilter extends Filter {
    * Must be an odd integer between 3 and 23
    *
    * @param lumaMatrixHorizontalSize
-   * Must be an odd integer between 3 and 23
+   *        Must be an odd integer between 3 and 23
    */
   public void setLumaMatrixHorizontalSize(Integer lumaMatrixHorizontalSize) {
     this.lumaMatrixHorizontalSize = lumaMatrixHorizontalSize;
@@ -66,7 +66,7 @@ public class UnsharpFilter extends Filter {
    * Must be an odd integer between 3 and 23
    *
    * @param lumaMatrixVerticalSize
-   * Must be an odd integer between 3 and 23
+   *        Must be an odd integer between 3 and 23
    */
   public void setLumaMatrixVerticalSize(Integer lumaMatrixVerticalSize) {
     this.lumaMatrixVerticalSize = lumaMatrixVerticalSize;
@@ -85,7 +85,7 @@ public class UnsharpFilter extends Filter {
    * Negative value: blur, positive value: sharpen, floating point number, valid value range: -1.5 - 1.5
    *
    * @param lumaEffectStrength
-   * Negative value: blur, positive value: sharpen, floating point number, valid value range: -1.5 - 1.5
+   *        Negative value: blur, positive value: sharpen, floating point number, valid value range: -1.5 - 1.5
    */
   public void setLumaEffectStrength(Double lumaEffectStrength) {
     this.lumaEffectStrength = lumaEffectStrength;
@@ -104,7 +104,7 @@ public class UnsharpFilter extends Filter {
    * Must be an odd integer between 3 and 23
    *
    * @param chromaMatrixHorizontalSize
-   * Must be an odd integer between 3 and 23
+   *        Must be an odd integer between 3 and 23
    */
   public void setChromaMatrixHorizontalSize(Integer chromaMatrixHorizontalSize) {
     this.chromaMatrixHorizontalSize = chromaMatrixHorizontalSize;
@@ -123,7 +123,7 @@ public class UnsharpFilter extends Filter {
    * Must be an odd integer between 3 and 23
    *
    * @param chromaMatrixVerticalSize
-   * Must be an odd integer between 3 and 23
+   *        Must be an odd integer between 3 and 23
    */
   public void setChromaMatrixVerticalSize(Integer chromaMatrixVerticalSize) {
     this.chromaMatrixVerticalSize = chromaMatrixVerticalSize;
@@ -142,7 +142,7 @@ public class UnsharpFilter extends Filter {
    * Negative value: blur, positive value: sharpen, floating point number, valid value range: -1.5 - 1.5
    *
    * @param chromaEffectStrength
-   * Negative value: blur, positive value: sharpen, floating point number, valid value range: -1.5 - 1.5
+   *        Negative value: blur, positive value: sharpen, floating point number, valid value range: -1.5 - 1.5
    */
   public void setChromaEffectStrength(Double chromaEffectStrength) {
     this.chromaEffectStrength = chromaEffectStrength;
@@ -172,7 +172,6 @@ public class UnsharpFilter extends Filter {
     return Objects.hash(lumaMatrixHorizontalSize, lumaMatrixVerticalSize, lumaEffectStrength, chromaMatrixHorizontalSize, chromaMatrixVerticalSize, chromaEffectStrength, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -198,6 +197,5 @@ public class UnsharpFilter extends Filter {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

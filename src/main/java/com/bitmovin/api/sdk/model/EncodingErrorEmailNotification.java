@@ -32,7 +32,6 @@ public class EncodingErrorEmailNotification extends EmailNotification {
     return Objects.hash(super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -52,6 +51,5 @@ public class EncodingErrorEmailNotification extends EmailNotification {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

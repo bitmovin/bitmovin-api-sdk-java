@@ -17,7 +17,7 @@ public class WebVttSidecarFileSegmentation {
 
 
   /**
-   * The length of the WebVTT fragments in seconds
+   * The length of the WebVTT fragments in seconds (required)
    * @return segmentLength
    */
   public Double getSegmentLength() {
@@ -25,10 +25,10 @@ public class WebVttSidecarFileSegmentation {
   }
 
   /**
-   * The length of the WebVTT fragments in seconds
+   * The length of the WebVTT fragments in seconds (required)
    *
    * @param segmentLength
-   * The length of the WebVTT fragments in seconds
+   *        The length of the WebVTT fragments in seconds (required)
    */
   public void setSegmentLength(Double segmentLength) {
     this.segmentLength = segmentLength;
@@ -52,7 +52,6 @@ public class WebVttSidecarFileSegmentation {
     return Objects.hash(segmentLength);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -73,6 +72,5 @@ public class WebVttSidecarFileSegmentation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

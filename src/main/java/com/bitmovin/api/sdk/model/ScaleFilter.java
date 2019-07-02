@@ -45,7 +45,7 @@ public class ScaleFilter extends Filter {
    * The width of the output frame in pixel. If not set: codec configuration width will be used.
    *
    * @param width
-   * The width of the output frame in pixel. If not set: codec configuration width will be used.
+   *        The width of the output frame in pixel. If not set: codec configuration width will be used.
    */
   public void setWidth(Integer width) {
     this.width = width;
@@ -64,7 +64,7 @@ public class ScaleFilter extends Filter {
    * The height of the output frame in pixel. If not set: codec configuration height will be used.
    *
    * @param height
-   * The height of the output frame in pixel. If not set: codec configuration height will be used.
+   *        The height of the output frame in pixel. If not set: codec configuration height will be used.
    */
   public void setHeight(Integer height) {
     this.height = height;
@@ -101,7 +101,7 @@ public class ScaleFilter extends Filter {
    * The numerator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioDenominator is set.
    *
    * @param sampleAspectRatioNumerator
-   * The numerator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioDenominator is set.
+   *        The numerator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioDenominator is set.
    */
   public void setSampleAspectRatioNumerator(Integer sampleAspectRatioNumerator) {
     this.sampleAspectRatioNumerator = sampleAspectRatioNumerator;
@@ -120,7 +120,7 @@ public class ScaleFilter extends Filter {
    * The denominator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioNumerator is set.
    *
    * @param sampleAspectRatioDenominator
-   * The denominator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioNumerator is set.
+   *        The denominator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioNumerator is set.
    */
   public void setSampleAspectRatioDenominator(Integer sampleAspectRatioDenominator) {
     this.sampleAspectRatioDenominator = sampleAspectRatioDenominator;
@@ -149,7 +149,6 @@ public class ScaleFilter extends Filter {
     return Objects.hash(width, height, scalingAlgorithm, sampleAspectRatioNumerator, sampleAspectRatioDenominator, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -174,6 +173,5 @@ public class ScaleFilter extends Filter {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

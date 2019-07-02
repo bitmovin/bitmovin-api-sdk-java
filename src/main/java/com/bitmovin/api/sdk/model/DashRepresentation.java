@@ -21,7 +21,7 @@ public class DashRepresentation extends BitmovinResponse {
 
 
   /**
-   * UUID of an encoding
+   * UUID of an encoding (required)
    * @return encodingId
    */
   public String getEncodingId() {
@@ -29,10 +29,10 @@ public class DashRepresentation extends BitmovinResponse {
   }
 
   /**
-   * UUID of an encoding
+   * UUID of an encoding (required)
    *
    * @param encodingId
-   * UUID of an encoding
+   *        UUID of an encoding (required)
    */
   public void setEncodingId(String encodingId) {
     this.encodingId = encodingId;
@@ -40,7 +40,7 @@ public class DashRepresentation extends BitmovinResponse {
 
 
   /**
-   * UUID of a muxing
+   * UUID of a muxing (required)
    * @return muxingId
    */
   public String getMuxingId() {
@@ -48,10 +48,10 @@ public class DashRepresentation extends BitmovinResponse {
   }
 
   /**
-   * UUID of a muxing
+   * UUID of a muxing (required)
    *
    * @param muxingId
-   * UUID of a muxing
+   *        UUID of a muxing (required)
    */
   public void setMuxingId(String muxingId) {
     this.muxingId = muxingId;
@@ -77,7 +77,6 @@ public class DashRepresentation extends BitmovinResponse {
     return Objects.hash(encodingId, muxingId, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -99,6 +98,5 @@ public class DashRepresentation extends BitmovinResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

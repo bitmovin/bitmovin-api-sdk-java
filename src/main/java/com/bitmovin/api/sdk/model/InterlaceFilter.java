@@ -80,7 +80,6 @@ public class InterlaceFilter extends Filter {
     return Objects.hash(mode, verticalLowPassFilteringMode, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -102,6 +101,5 @@ public class InterlaceFilter extends Filter {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

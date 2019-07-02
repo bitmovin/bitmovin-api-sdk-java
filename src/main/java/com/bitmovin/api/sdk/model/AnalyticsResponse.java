@@ -28,9 +28,6 @@ public class AnalyticsResponse {
 
 
   public AnalyticsResponse addRowsItem(Object rowsItem) {
-    if (this.rows == null) {
-      this.rows = new ArrayList<>();
-    }
     this.rows.add(rowsItem);
     return this;
   }
@@ -65,7 +62,7 @@ public class AnalyticsResponse {
    * Number of rows returned
    *
    * @param rowCount
-   * Number of rows returned
+   *        Number of rows returned
    */
   public void setRowCount(Long rowCount) {
     this.rowCount = rowCount;
@@ -73,9 +70,6 @@ public class AnalyticsResponse {
 
 
   public AnalyticsResponse addColumnLabelsItem(AnalyticsColumnLabel columnLabelsItem) {
-    if (this.columnLabels == null) {
-      this.columnLabels = new ArrayList<>();
-    }
     this.columnLabels.add(columnLabelsItem);
     return this;
   }
@@ -117,7 +111,6 @@ public class AnalyticsResponse {
     return Objects.hash(rows, rowCount, columnLabels);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -140,6 +133,5 @@ public class AnalyticsResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

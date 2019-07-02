@@ -25,7 +25,7 @@ public class StreamInfos {
 
 
   /**
-   * Timestamp of the event formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Timestamp of the event formatted in UTC: YYYY-MM-DDThh:mm:ssZ (required)
    * @return time
    */
   public Date getTime() {
@@ -33,10 +33,10 @@ public class StreamInfos {
   }
 
   /**
-   * Timestamp of the event formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Timestamp of the event formatted in UTC: YYYY-MM-DDThh:mm:ssZ (required)
    *
    * @param time
-   * Timestamp of the event formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   *        Timestamp of the event formatted in UTC: YYYY-MM-DDThh:mm:ssZ (required)
    */
   public void setTime(Date time) {
     this.time = time;
@@ -44,9 +44,6 @@ public class StreamInfos {
 
 
   public StreamInfos addStreamInfosItem(StreamInfosDetails streamInfosItem) {
-    if (this.streamInfos == null) {
-      this.streamInfos = new ArrayList<>();
-    }
     this.streamInfos.add(streamInfosItem);
     return this;
   }
@@ -63,7 +60,7 @@ public class StreamInfos {
    * Details about billable minutes for each resolution category
    *
    * @param streamInfos
-   * Details about billable minutes for each resolution category
+   *        Details about billable minutes for each resolution category
    */
   public void setStreamInfos(List<StreamInfosDetails> streamInfos) {
     this.streamInfos = streamInfos;
@@ -88,7 +85,6 @@ public class StreamInfos {
     return Objects.hash(time, streamInfos);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -110,6 +106,5 @@ public class StreamInfos {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

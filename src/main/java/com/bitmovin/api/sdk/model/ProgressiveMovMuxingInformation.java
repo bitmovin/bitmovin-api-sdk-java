@@ -33,7 +33,6 @@ public class ProgressiveMovMuxingInformation extends ProgressiveMuxingInformatio
     return Objects.hash(super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -53,6 +52,5 @@ public class ProgressiveMovMuxingInformation extends ProgressiveMuxingInformatio
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

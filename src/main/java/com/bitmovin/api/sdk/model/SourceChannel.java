@@ -35,7 +35,7 @@ public class SourceChannel {
    * Gain for this source channel. Default is 1.0.
    *
    * @param gain
-   * Gain for this source channel. Default is 1.0.
+   *        Gain for this source channel. Default is 1.0.
    */
   public void setGain(Double gain) {
     this.gain = gain;
@@ -72,7 +72,7 @@ public class SourceChannel {
    * Number of this source channel. If type is &#39;CHANNEL_NUMBER&#39;, this must be set.
    *
    * @param channelNumber
-   * Number of this source channel. If type is &#39;CHANNEL_NUMBER&#39;, this must be set.
+   *        Number of this source channel. If type is &#39;CHANNEL_NUMBER&#39;, this must be set.
    */
   public void setChannelNumber(Integer channelNumber) {
     this.channelNumber = channelNumber;
@@ -98,7 +98,6 @@ public class SourceChannel {
     return Objects.hash(gain, type, channelNumber);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -121,6 +120,5 @@ public class SourceChannel {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

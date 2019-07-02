@@ -4,9 +4,7 @@ import com.bitmovin.api.sdk.model.Link;
 import com.bitmovin.api.sdk.model.Message;
 import com.bitmovin.api.sdk.model.ResponseError;
 import com.bitmovin.api.sdk.model.ResponseErrorData;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import feign.FeignException;
 import feign.Request;
 import feign.Response;
 import feign.codec.ErrorDecoder;
@@ -14,6 +12,7 @@ import feign.codec.ErrorDecoder;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.nio.charset.StandardCharsets;
 
 public class BitmovinErrorDecoder implements ErrorDecoder {
     private final ObjectMapper mapper;
@@ -25,98 +24,110 @@ public class BitmovinErrorDecoder implements ErrorDecoder {
     public Exception decode(String methodKey, Response response) {
 
         try {
-
             String requestJsonBody = null;
-            String responseJsonBody;
-            ResponseError responseError;
-
-            if (response.body() == null || this.isNoContent(response.body())) {
-                return new BitmovinException(response.reason(), response.status(), response.toString());
-            }
-
-            Reader reader = new BufferedReader(response.body().asReader());
-            JsonNode responseJsonNode = this.mapper.readValue(reader, JsonNode.class);
-            responseJsonBody = responseJsonNode.toString();
-
-            responseError = this.mapper.readValue(responseJsonBody, ResponseError.class);
-
-            if (responseError == null || responseError.getData() == null) {
-                return new BitmovinException("Could not deserialize error data", response.status(), responseJsonBody);
-            }
-
             if (response.request() != null && response.request().body() != null) {
-                JsonNode requestJsonNode = this.mapper.readValue(response.request().body(), JsonNode.class);
-                requestJsonBody = requestJsonNode.toString();
+                requestJsonBody = new String(response.request().body(), StandardCharsets.UTF_8);
             }
 
-            String errorMessage = this.buildErrorMessage(responseError, response.request(), requestJsonBody, response, responseJsonBody);
-            return new BitmovinException(errorMessage, response.status(), responseJsonBody, responseError);
+            String responseJsonBody = null;
+            if (response.body() != null && !this.isNoContent(response.body())) {
+                responseJsonBody = response.body().toString();
+            }
 
+            ResponseError responseError = null;
+            try {
+                responseError = this.mapper.readValue(responseJsonBody, ResponseError.class);
+            } catch (Exception ex) {
+                // do nothing, the response probably was not in the expected ResponseError format
+            }
+
+            String shortMessage = getShortMessage(response, responseError);
+            String errorMessage = this.buildErrorMessage(responseError, shortMessage, response.request(), requestJsonBody, response, responseJsonBody);
+
+            return new BitmovinException(errorMessage, shortMessage, response.status(), responseJsonBody, responseError);
         } catch (IOException e) {
             return e;
         }
     }
 
-    private String buildErrorMessage(ResponseError responseError, Request request, String requestJsonBody, Response response, String responseJsonBody) {
+    private String buildErrorMessage(ResponseError responseError, String shortMessage, Request request, String requestJsonBody, Response response, String responseJsonBody) {
 
-        StringBuilder errorMessage = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
+        appendLine(stringBuilder, shortMessage);
 
-        errorMessage.append(String.format("%s\n", responseError.getData().getMessage()));
-        errorMessage.append(String.format("developerMessage: %s\n", responseError.getData().getDeveloperMessage()));
-        errorMessage.append(String.format("errorCode: %s\n", responseError.getData().getCode()));
+        if (responseError != null) {
+            ResponseErrorData data = responseError.getData();
 
-        if(responseError.getData().getDetails().size() > 0) {
-            errorMessage.append("details:\n");
-            for (Message detail : responseError.getData().getDetails()) {
-                errorMessage.append(this.buildErrorDetailMessage(detail));
+            if (data != null) {
+                appendLine(stringBuilder, String.format("developerMessage: %s", data.getDeveloperMessage()));
+                appendLine(stringBuilder, String.format("errorCode: %s", data.getCode()));
+
+                if (data.getDetails().size() > 0) {
+                    appendLine(stringBuilder, "details:");
+                    for (Message detail : data.getDetails()) {
+                        appendErrorDetailMessage(stringBuilder, detail);
+                    }
+                }
+
+                if (data.getLinks().size() > 0) {
+                    appendLine(stringBuilder, "links:");
+                    for (Link link : data.getLinks()) {
+                        appendLine(stringBuilder, String.format("  %s: %s", link.getTitle(), link.getHref()));
+                    }
+                }
             }
         }
 
-        if(responseError.getData().getLinks().size() > 0) {
-            errorMessage.append("links:\n");
-            for (Link link : responseError.getData().getLinks()) {
-                errorMessage.append(String.format("  %s: %s\n", link.getTitle(), link.getHref()));
-            }
-        }
+        appendRequestMessage(stringBuilder, request, requestJsonBody);
+        appendResponseMessage(stringBuilder, response, responseJsonBody);
 
-        errorMessage.append(this.buildRequestMessage(request, requestJsonBody));
-
-        errorMessage.append(this.buildResponseMessage(response, responseJsonBody));
-
-        return errorMessage.toString();
+        return stringBuilder.toString().trim();
     }
 
-    private String buildErrorDetailMessage(Message detail) {
-        StringBuilder errorDetailMessage = new StringBuilder();
-        errorDetailMessage.append(String.format("  - id: %s\n", detail.getId()));
-        errorDetailMessage.append(String.format("    date: %s\n", detail.getDate()));
-        errorDetailMessage.append(String.format("    type: %s\n", detail.getType()));
-        errorDetailMessage.append(String.format("    text: %s\n", detail.getText()));
+    private String getShortMessage(Response response, ResponseError responseError) {
+        String shortMessage = "Request failed: " + response.reason();
 
-        if(detail.getField() != null) {
-            errorDetailMessage.append(String.format("    field: %s\n", detail.getField()));
+        if (responseError != null &&
+                responseError.getData() != null &&
+                responseError.getData().getMessage() != null &&
+                !responseError.getData().getMessage().isEmpty()) {
+            shortMessage = responseError.getData().getMessage();
         }
-
-        return errorDetailMessage.toString();
+        return shortMessage;
     }
 
-    private String buildRequestMessage(Request request, String requestJsonBody) {
-        StringBuilder requestMessage = new StringBuilder("request:\n");
-        requestMessage.append(String.format("  method: %s\n", request.method()));
-        requestMessage.append(String.format("  url: %s\n", request.url()));
+    private void appendErrorDetailMessage(StringBuilder stringBuilder, Message detail) {
+        appendLine(stringBuilder, String.format("  - id: %s", detail.getId()));
+        appendLine(stringBuilder, String.format("    date: %s", detail.getDate()));
+        appendLine(stringBuilder, String.format("    type: %s", detail.getType()));
+        appendLine(stringBuilder, String.format("    text: %s", detail.getText()));
 
-        if(requestJsonBody != null) {
-            requestMessage.append(String.format("  body: %s\n", requestJsonBody));
+        if (detail.getField() != null) {
+            appendLine(stringBuilder, String.format("    field: %s", detail.getField()));
         }
-        return requestMessage.toString();
     }
 
-    private String buildResponseMessage(Response response, String responseJsonBody) {
-        StringBuilder responseMessage = new StringBuilder("response:\n");
-        responseMessage.append(String.format("  httpStatusCode: %s\n", response.status()));
-        responseMessage.append(String.format("  body: %s", responseJsonBody));
+    private void appendRequestMessage(StringBuilder stringBuilder, Request request, String requestJsonBody) {
+        appendLine(stringBuilder, "request:");
+        appendLine(stringBuilder, String.format("  method: %s", request.method()));
+        appendLine(stringBuilder, String.format("  url: %s", request.url()));
 
-        return responseMessage.toString();
+        if (requestJsonBody != null && !requestJsonBody.isEmpty()) {
+            appendLine(stringBuilder, String.format("  body: %s", requestJsonBody));
+        }
+    }
+
+    private void appendResponseMessage(StringBuilder stringBuilder, Response response, String responseJsonBody) {
+        appendLine(stringBuilder, "response:");
+        appendLine(stringBuilder, String.format("  httpStatusCode: %s", response.status()));
+        if (responseJsonBody != null && !responseJsonBody.isEmpty()) {
+            appendLine(stringBuilder, String.format("  body: %s", responseJsonBody));
+        }
+    }
+
+    private void appendLine(StringBuilder errorMessage, String message) {
+        errorMessage.append(message);
+        errorMessage.append(System.lineSeparator());
     }
 
     private boolean isNoContent(Response.Body body) throws IOException {

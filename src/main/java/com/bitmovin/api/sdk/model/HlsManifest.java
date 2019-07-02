@@ -30,7 +30,7 @@ public class HlsManifest extends Manifest {
 
 
   /**
-   * The filename of your manifest
+   * The filename of your manifest (required)
    * @return manifestName
    */
   public String getManifestName() {
@@ -38,10 +38,10 @@ public class HlsManifest extends Manifest {
   }
 
   /**
-   * The filename of your manifest
+   * The filename of your manifest (required)
    *
    * @param manifestName
-   * The filename of your manifest
+   *        The filename of your manifest (required)
    */
   public void setManifestName(String manifestName) {
     this.manifestName = manifestName;
@@ -60,7 +60,7 @@ public class HlsManifest extends Manifest {
    * If this is set, the EXT-X-VERSION tags of the Media Playlists are set to the provided version
    *
    * @param hlsMediaPlaylistVersion
-   * If this is set, the EXT-X-VERSION tags of the Media Playlists are set to the provided version
+   *        If this is set, the EXT-X-VERSION tags of the Media Playlists are set to the provided version
    */
   public void setHlsMediaPlaylistVersion(HlsVersion hlsMediaPlaylistVersion) {
     this.hlsMediaPlaylistVersion = hlsMediaPlaylistVersion;
@@ -79,7 +79,7 @@ public class HlsManifest extends Manifest {
    * If this is set, the EXT-X-VERSION tag of the Master Playlist is set to the provided version
    *
    * @param hlsMasterPlaylistVersion
-   * If this is set, the EXT-X-VERSION tag of the Master Playlist is set to the provided version
+   *        If this is set, the EXT-X-VERSION tag of the Master Playlist is set to the provided version
    */
   public void setHlsMasterPlaylistVersion(HlsVersion hlsMasterPlaylistVersion) {
     this.hlsMasterPlaylistVersion = hlsMasterPlaylistVersion;
@@ -106,7 +106,6 @@ public class HlsManifest extends Manifest {
     return Objects.hash(manifestName, hlsMediaPlaylistVersion, hlsMasterPlaylistVersion, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -129,6 +128,5 @@ public class HlsManifest extends Manifest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

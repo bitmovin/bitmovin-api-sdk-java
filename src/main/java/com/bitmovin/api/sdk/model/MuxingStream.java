@@ -51,7 +51,6 @@ public class MuxingStream {
     return Objects.hash(streamId);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -72,6 +71,5 @@ public class MuxingStream {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

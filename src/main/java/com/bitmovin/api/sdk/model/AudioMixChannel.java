@@ -24,7 +24,7 @@ public class AudioMixChannel {
 
 
   /**
-   * Channel number of this mix (starting with 0)
+   * Channel number of this mix (starting with 0) (required)
    * @return channelNumber
    */
   public Integer getChannelNumber() {
@@ -32,10 +32,10 @@ public class AudioMixChannel {
   }
 
   /**
-   * Channel number of this mix (starting with 0)
+   * Channel number of this mix (starting with 0) (required)
    *
    * @param channelNumber
-   * Channel number of this mix (starting with 0)
+   *        Channel number of this mix (starting with 0) (required)
    */
   public void setChannelNumber(Integer channelNumber) {
     this.channelNumber = channelNumber;
@@ -48,7 +48,7 @@ public class AudioMixChannel {
   }
 
   /**
-   * List of source channels to be mixed
+   * List of source channels to be mixed (required)
    * @return sourceChannels
    */
   public List<SourceChannel> getSourceChannels() {
@@ -56,10 +56,10 @@ public class AudioMixChannel {
   }
 
   /**
-   * List of source channels to be mixed
+   * List of source channels to be mixed (required)
    *
    * @param sourceChannels
-   * List of source channels to be mixed
+   *        List of source channels to be mixed (required)
    */
   public void setSourceChannels(List<SourceChannel> sourceChannels) {
     this.sourceChannels = sourceChannels;
@@ -84,7 +84,6 @@ public class AudioMixChannel {
     return Objects.hash(channelNumber, sourceChannels);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -106,6 +105,5 @@ public class AudioMixChannel {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

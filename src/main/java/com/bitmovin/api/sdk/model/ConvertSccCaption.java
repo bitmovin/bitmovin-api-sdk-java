@@ -39,7 +39,7 @@ public class ConvertSccCaption extends BitmovinResource {
 
 
   /**
-   * The input location to get the scc file from
+   * The input location to get the scc file from (required)
    * @return input
    */
   public InputPath getInput() {
@@ -47,10 +47,10 @@ public class ConvertSccCaption extends BitmovinResource {
   }
 
   /**
-   * The input location to get the scc file from
+   * The input location to get the scc file from (required)
    *
    * @param input
-   * The input location to get the scc file from
+   *        The input location to get the scc file from (required)
    */
   public void setInput(InputPath input) {
     this.input = input;
@@ -81,7 +81,7 @@ public class ConvertSccCaption extends BitmovinResource {
 
 
   /**
-   * Name of the captions file
+   * Name of the captions file (required)
    * @return fileName
    */
   public String getFileName() {
@@ -89,10 +89,10 @@ public class ConvertSccCaption extends BitmovinResource {
   }
 
   /**
-   * Name of the captions file
+   * Name of the captions file (required)
    *
    * @param fileName
-   * Name of the captions file
+   *        Name of the captions file (required)
    */
   public void setFileName(String fileName) {
     this.fileName = fileName;
@@ -129,7 +129,7 @@ public class ConvertSccCaption extends BitmovinResource {
    * Optional settings when converting SCC to WebVTT
    *
    * @param webVttSettings
-   * Optional settings when converting SCC to WebVTT
+   *        Optional settings when converting SCC to WebVTT
    */
   public void setWebVttSettings(ConvertSccCaptionWebVttSettings webVttSettings) {
     this.webVttSettings = webVttSettings;
@@ -158,7 +158,6 @@ public class ConvertSccCaption extends BitmovinResource {
     return Objects.hash(input, outputs, fileName, outputFormat, webVttSettings, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -183,6 +182,5 @@ public class ConvertSccCaption extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

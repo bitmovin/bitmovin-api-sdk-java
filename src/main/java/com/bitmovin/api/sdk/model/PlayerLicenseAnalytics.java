@@ -17,7 +17,7 @@ public class PlayerLicenseAnalytics {
 
 
   /**
-   * Analytics License Key
+   * Analytics License Key (required)
    * @return analyticsKey
    */
   public String getAnalyticsKey() {
@@ -25,10 +25,10 @@ public class PlayerLicenseAnalytics {
   }
 
   /**
-   * Analytics License Key
+   * Analytics License Key (required)
    *
    * @param analyticsKey
-   * Analytics License Key
+   *        Analytics License Key (required)
    */
   public void setAnalyticsKey(String analyticsKey) {
     this.analyticsKey = analyticsKey;
@@ -52,7 +52,6 @@ public class PlayerLicenseAnalytics {
     return Objects.hash(analyticsKey);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -73,6 +72,5 @@ public class PlayerLicenseAnalytics {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

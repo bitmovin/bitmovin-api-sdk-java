@@ -183,7 +183,6 @@ public class SrtStatisticSend {
     return Objects.hash(bytes, bytesDropped, mbitRate, packets, packetsDropped, packetsLost, packetsRetransmitted);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -210,6 +209,5 @@ public class SrtStatisticSend {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

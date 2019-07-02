@@ -41,7 +41,7 @@ public class StartLiveEncodingRequest {
 
 
   /**
-   * Key for the stream. (a-zA-Z, 3-20 characters)
+   * Key for the stream. (a-zA-Z, 3-20 characters) (required)
    * @return streamKey
    */
   public String getStreamKey() {
@@ -49,10 +49,10 @@ public class StartLiveEncodingRequest {
   }
 
   /**
-   * Key for the stream. (a-zA-Z, 3-20 characters)
+   * Key for the stream. (a-zA-Z, 3-20 characters) (required)
    *
    * @param streamKey
-   * Key for the stream. (a-zA-Z, 3-20 characters)
+   *        Key for the stream. (a-zA-Z, 3-20 characters) (required)
    */
   public void setStreamKey(String streamKey) {
     this.streamKey = streamKey;
@@ -60,9 +60,6 @@ public class StartLiveEncodingRequest {
 
 
   public StartLiveEncodingRequest addHlsManifestsItem(LiveHlsManifest hlsManifestsItem) {
-    if (this.hlsManifests == null) {
-      this.hlsManifests = new ArrayList<>();
-    }
     this.hlsManifests.add(hlsManifestsItem);
     return this;
   }
@@ -79,7 +76,7 @@ public class StartLiveEncodingRequest {
    * List of Hls manifests to use for this live encoding
    *
    * @param hlsManifests
-   * List of Hls manifests to use for this live encoding
+   *        List of Hls manifests to use for this live encoding
    */
   public void setHlsManifests(List<LiveHlsManifest> hlsManifests) {
     this.hlsManifests = hlsManifests;
@@ -87,9 +84,6 @@ public class StartLiveEncodingRequest {
 
 
   public StartLiveEncodingRequest addDashManifestsItem(LiveDashManifest dashManifestsItem) {
-    if (this.dashManifests == null) {
-      this.dashManifests = new ArrayList<>();
-    }
     this.dashManifests.add(dashManifestsItem);
     return this;
   }
@@ -106,7 +100,7 @@ public class StartLiveEncodingRequest {
    * List of Dash manifests to use for this live encoding
    *
    * @param dashManifests
-   * List of Dash manifests to use for this live encoding
+   *        List of Dash manifests to use for this live encoding
    */
   public void setDashManifests(List<LiveDashManifest> dashManifests) {
     this.dashManifests = dashManifests;
@@ -125,7 +119,7 @@ public class StartLiveEncodingRequest {
    * The pass mode of the encoding
    *
    * @param liveEncodingMode
-   * The pass mode of the encoding
+   *        The pass mode of the encoding
    */
   public void setLiveEncodingMode(EncodingMode liveEncodingMode) {
     this.liveEncodingMode = liveEncodingMode;
@@ -144,7 +138,7 @@ public class StartLiveEncodingRequest {
    * Reupload specific files during a live encoding. This can be helpful if an automatic life cycle policy is enabled on the output storage
    *
    * @param reuploadSettings
-   * Reupload specific files during a live encoding. This can be helpful if an automatic life cycle policy is enabled on the output storage
+   *        Reupload specific files during a live encoding. This can be helpful if an automatic life cycle policy is enabled on the output storage
    */
   public void setReuploadSettings(ReuploadSettings reuploadSettings) {
     this.reuploadSettings = reuploadSettings;
@@ -163,7 +157,7 @@ public class StartLiveEncodingRequest {
    * Configuration for auto restarting the live encoding
    *
    * @param autoRestartConfiguration
-   * Configuration for auto restarting the live encoding
+   *        Configuration for auto restarting the live encoding
    */
   public void setAutoRestartConfiguration(AutoRestartConfiguration autoRestartConfiguration) {
     this.autoRestartConfiguration = autoRestartConfiguration;
@@ -192,7 +186,6 @@ public class StartLiveEncodingRequest {
     return Objects.hash(streamKey, hlsManifests, dashManifests, liveEncodingMode, reuploadSettings, autoRestartConfiguration);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -218,6 +211,5 @@ public class StartLiveEncodingRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -28,7 +28,7 @@ public class AudioMixFilter extends Filter {
 
 
   /**
-   * Channel layout of the audio codec configuration
+   * Channel layout of the audio codec configuration (required)
    * @return channelLayout
    */
   public AudioMixChannelLayout getChannelLayout() {
@@ -36,10 +36,10 @@ public class AudioMixFilter extends Filter {
   }
 
   /**
-   * Channel layout of the audio codec configuration
+   * Channel layout of the audio codec configuration (required)
    *
    * @param channelLayout
-   * Channel layout of the audio codec configuration
+   *        Channel layout of the audio codec configuration (required)
    */
   public void setChannelLayout(AudioMixChannelLayout channelLayout) {
     this.channelLayout = channelLayout;
@@ -52,7 +52,7 @@ public class AudioMixFilter extends Filter {
   }
 
   /**
-   * List of mixed channels that matches the channel layout
+   * List of mixed channels that matches the channel layout (required)
    * @return audioMixChannels
    */
   public List<AudioMixChannel> getAudioMixChannels() {
@@ -60,10 +60,10 @@ public class AudioMixFilter extends Filter {
   }
 
   /**
-   * List of mixed channels that matches the channel layout
+   * List of mixed channels that matches the channel layout (required)
    *
    * @param audioMixChannels
-   * List of mixed channels that matches the channel layout
+   *        List of mixed channels that matches the channel layout (required)
    */
   public void setAudioMixChannels(List<AudioMixChannel> audioMixChannels) {
     this.audioMixChannels = audioMixChannels;
@@ -89,7 +89,6 @@ public class AudioMixFilter extends Filter {
     return Objects.hash(channelLayout, audioMixChannels, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -111,6 +110,5 @@ public class AudioMixFilter extends Filter {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

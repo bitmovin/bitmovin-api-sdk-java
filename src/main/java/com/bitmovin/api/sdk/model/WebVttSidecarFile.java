@@ -59,7 +59,6 @@ public class WebVttSidecarFile extends SidecarFile {
     return Objects.hash(segmentation, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -80,6 +79,5 @@ public class WebVttSidecarFile extends SidecarFile {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

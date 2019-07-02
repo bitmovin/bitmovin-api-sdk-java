@@ -47,7 +47,7 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
 
 
   /**
-   * Analytics license key
+   * Analytics license key (required)
    * @return licenseKey
    */
   public String getLicenseKey() {
@@ -55,10 +55,10 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
   }
 
   /**
-   * Analytics license key
+   * Analytics license key (required)
    *
    * @param licenseKey
-   * Analytics license key
+   *        Analytics license key (required)
    */
   public void setLicenseKey(String licenseKey) {
     this.licenseKey = licenseKey;
@@ -66,9 +66,6 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
 
 
   public AnalyticsQueryRequest addFiltersItem(AnalyticsFilter filtersItem) {
-    if (this.filters == null) {
-      this.filters = new ArrayList<>();
-    }
     this.filters.add(filtersItem);
     return this;
   }
@@ -92,9 +89,6 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
 
 
   public AnalyticsQueryRequest addOrderByItem(AnalyticsOrderByEntry orderByItem) {
-    if (this.orderBy == null) {
-      this.orderBy = new ArrayList<>();
-    }
     this.orderBy.add(orderByItem);
     return this;
   }
@@ -154,9 +148,6 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
 
 
   public AnalyticsQueryRequest addGroupByItem(String groupByItem) {
-    if (this.groupBy == null) {
-      this.groupBy = new ArrayList<>();
-    }
     this.groupBy.add(groupByItem);
     return this;
   }
@@ -191,7 +182,7 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
    * Maximum number of rows returned (max. 200)
    *
    * @param limit
-   * Maximum number of rows returned (max. 200)
+   *        Maximum number of rows returned (max. 200)
    */
   public void setLimit(Long limit) {
     this.limit = limit;
@@ -210,7 +201,7 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
    * Offset of data
    *
    * @param offset
-   * Offset of data
+   *        Offset of data
    */
   public void setOffset(Long offset) {
     this.offset = offset;
@@ -242,7 +233,6 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
     return Objects.hash(licenseKey, filters, orderBy, dimension, interval, groupBy, limit, offset, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -270,6 +260,5 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

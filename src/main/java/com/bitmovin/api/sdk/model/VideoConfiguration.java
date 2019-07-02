@@ -59,7 +59,7 @@ public class VideoConfiguration extends CodecConfiguration {
    * Width of the encoded video in pixels
    *
    * @param width
-   * Width of the encoded video in pixels
+   *        Width of the encoded video in pixels
    */
   public void setWidth(Integer width) {
     this.width = width;
@@ -78,7 +78,7 @@ public class VideoConfiguration extends CodecConfiguration {
    * Height of the encoded video in pixels
    *
    * @param height
-   * Height of the encoded video in pixels
+   *        Height of the encoded video in pixels
    */
   public void setHeight(Integer height) {
     this.height = height;
@@ -97,7 +97,7 @@ public class VideoConfiguration extends CodecConfiguration {
    * Target bitrate for the encoded video in bps. Either bitrate or crf is required.
    *
    * @param bitrate
-   * Target bitrate for the encoded video in bps. Either bitrate or crf is required.
+   *        Target bitrate for the encoded video in bps. Either bitrate or crf is required.
    */
   public void setBitrate(Long bitrate) {
     this.bitrate = bitrate;
@@ -116,7 +116,7 @@ public class VideoConfiguration extends CodecConfiguration {
    * Target frame rate of the encoded video. Must be set for live encodings
    *
    * @param rate
-   * Target frame rate of the encoded video. Must be set for live encodings
+   *        Target frame rate of the encoded video. Must be set for live encodings
    */
   public void setRate(Double rate) {
     this.rate = rate;
@@ -171,7 +171,7 @@ public class VideoConfiguration extends CodecConfiguration {
    * The numerator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioDenominator is set.
    *
    * @param sampleAspectRatioNumerator
-   * The numerator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioDenominator is set.
+   *        The numerator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioDenominator is set.
    */
   public void setSampleAspectRatioNumerator(Integer sampleAspectRatioNumerator) {
     this.sampleAspectRatioNumerator = sampleAspectRatioNumerator;
@@ -190,7 +190,7 @@ public class VideoConfiguration extends CodecConfiguration {
    * The denominator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioNumerator is set.
    *
    * @param sampleAspectRatioDenominator
-   * The denominator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioNumerator is set.
+   *        The denominator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioNumerator is set.
    */
   public void setSampleAspectRatioDenominator(Integer sampleAspectRatioDenominator) {
     this.sampleAspectRatioDenominator = sampleAspectRatioDenominator;
@@ -209,7 +209,7 @@ public class VideoConfiguration extends CodecConfiguration {
    * The mode of the encoding
    *
    * @param encodingMode
-   * The mode of the encoding
+   *        The mode of the encoding
    */
   public void setEncodingMode(EncodingMode encodingMode) {
     this.encodingMode = encodingMode;
@@ -242,7 +242,6 @@ public class VideoConfiguration extends CodecConfiguration {
     return Objects.hash(width, height, bitrate, rate, pixelFormat, colorConfig, sampleAspectRatioNumerator, sampleAspectRatioDenominator, encodingMode, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -271,6 +270,5 @@ public class VideoConfiguration extends CodecConfiguration {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

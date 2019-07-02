@@ -18,7 +18,7 @@ public class DashMp4DrmRepresentation extends DashMp4Representation {
 
 
   /**
-   * DRM Id
+   * DRM Id (required)
    * @return drmId
    */
   public String getDrmId() {
@@ -26,10 +26,10 @@ public class DashMp4DrmRepresentation extends DashMp4Representation {
   }
 
   /**
-   * DRM Id
+   * DRM Id (required)
    *
    * @param drmId
-   * DRM Id
+   *        DRM Id (required)
    */
   public void setDrmId(String drmId) {
     this.drmId = drmId;
@@ -54,7 +54,6 @@ public class DashMp4DrmRepresentation extends DashMp4Representation {
     return Objects.hash(drmId, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -75,6 +74,5 @@ public class DashMp4DrmRepresentation extends DashMp4Representation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

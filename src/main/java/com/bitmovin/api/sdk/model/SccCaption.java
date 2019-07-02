@@ -22,7 +22,7 @@ public class SccCaption extends BitmovinResource {
 
 
   /**
-   * The input location to get the scc file from
+   * The input location to get the scc file from (required)
    * @return input
    */
   public InputPath getInput() {
@@ -30,10 +30,10 @@ public class SccCaption extends BitmovinResource {
   }
 
   /**
-   * The input location to get the scc file from
+   * The input location to get the scc file from (required)
    *
    * @param input
-   * The input location to get the scc file from
+   *        The input location to get the scc file from (required)
    */
   public void setInput(InputPath input) {
     this.input = input;
@@ -58,7 +58,6 @@ public class SccCaption extends BitmovinResource {
     return Objects.hash(input, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -79,6 +78,5 @@ public class SccCaption extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

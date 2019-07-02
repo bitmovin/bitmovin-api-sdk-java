@@ -28,7 +28,7 @@ public class RescheduleEncodingRequest {
    * Id of a custom infrastructure, e.g., Kubernetes Cluster
    *
    * @param infrastructureId
-   * Id of a custom infrastructure, e.g., Kubernetes Cluster
+   *        Id of a custom infrastructure, e.g., Kubernetes Cluster
    */
   public void setInfrastructureId(String infrastructureId) {
     this.infrastructureId = infrastructureId;
@@ -52,7 +52,6 @@ public class RescheduleEncodingRequest {
     return Objects.hash(infrastructureId);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -73,6 +72,5 @@ public class RescheduleEncodingRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -28,7 +28,7 @@ public class AzureOutput extends Output {
 
 
   /**
-   * Azure Account Name
+   * Azure Account Name (required)
    * @return accountName
    */
   public String getAccountName() {
@@ -36,10 +36,10 @@ public class AzureOutput extends Output {
   }
 
   /**
-   * Azure Account Name
+   * Azure Account Name (required)
    *
    * @param accountName
-   * Azure Account Name
+   *        Azure Account Name (required)
    */
   public void setAccountName(String accountName) {
     this.accountName = accountName;
@@ -47,7 +47,7 @@ public class AzureOutput extends Output {
 
 
   /**
-   * Azure Account Key
+   * Azure Account Key (required)
    * @return accountKey
    */
   public String getAccountKey() {
@@ -55,10 +55,10 @@ public class AzureOutput extends Output {
   }
 
   /**
-   * Azure Account Key
+   * Azure Account Key (required)
    *
    * @param accountKey
-   * Azure Account Key
+   *        Azure Account Key (required)
    */
   public void setAccountKey(String accountKey) {
     this.accountKey = accountKey;
@@ -66,7 +66,7 @@ public class AzureOutput extends Output {
 
 
   /**
-   * Name of the bucket
+   * Name of the bucket (required)
    * @return container
    */
   public String getContainer() {
@@ -74,10 +74,10 @@ public class AzureOutput extends Output {
   }
 
   /**
-   * Name of the bucket
+   * Name of the bucket (required)
    *
    * @param container
-   * Name of the bucket
+   *        Name of the bucket (required)
    */
   public void setContainer(String container) {
     this.container = container;
@@ -104,7 +104,6 @@ public class AzureOutput extends Output {
     return Objects.hash(accountName, accountKey, container, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -127,6 +126,5 @@ public class AzureOutput extends Output {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

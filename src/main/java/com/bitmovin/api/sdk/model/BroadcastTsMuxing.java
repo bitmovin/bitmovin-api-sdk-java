@@ -47,7 +47,7 @@ public class BroadcastTsMuxing extends Muxing {
    * Length of the segments in seconds.
    *
    * @param segmentLength
-   * Length of the segments in seconds.
+   *        Length of the segments in seconds.
    */
   public void setSegmentLength(Double segmentLength) {
     this.segmentLength = segmentLength;
@@ -66,7 +66,7 @@ public class BroadcastTsMuxing extends Muxing {
    * Name of the new Video
    *
    * @param filename
-   * Name of the new Video
+   *        Name of the new Video
    */
   public void setFilename(String filename) {
     this.filename = filename;
@@ -103,7 +103,7 @@ public class BroadcastTsMuxing extends Muxing {
    * Modifies the internal chunk length used for chunked encoding
    *
    * @param internalChunkLength
-   * Modifies the internal chunk length used for chunked encoding
+   *        Modifies the internal chunk length used for chunked encoding
    */
   public void setInternalChunkLength(InternalChunkLength internalChunkLength) {
     this.internalChunkLength = internalChunkLength;
@@ -131,7 +131,6 @@ public class BroadcastTsMuxing extends Muxing {
     return Objects.hash(segmentLength, filename, _configuration, internalChunkLength, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -155,6 +154,5 @@ public class BroadcastTsMuxing extends Muxing {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -20,7 +20,7 @@ public class UtcTiming {
 
 
   /**
-   * The server to get the time from
+   * The server to get the time from (required)
    * @return value
    */
   public String getValue() {
@@ -28,10 +28,10 @@ public class UtcTiming {
   }
 
   /**
-   * The server to get the time from
+   * The server to get the time from (required)
    *
    * @param value
-   * The server to get the time from
+   *        The server to get the time from (required)
    */
   public void setValue(String value) {
     this.value = value;
@@ -39,7 +39,7 @@ public class UtcTiming {
 
 
   /**
-   * The scheme id to use. Please refer to the DASH standard.
+   * The scheme id to use. Please refer to the DASH standard. (required)
    * @return schemeIdUri
    */
   public String getSchemeIdUri() {
@@ -47,10 +47,10 @@ public class UtcTiming {
   }
 
   /**
-   * The scheme id to use. Please refer to the DASH standard.
+   * The scheme id to use. Please refer to the DASH standard. (required)
    *
    * @param schemeIdUri
-   * The scheme id to use. Please refer to the DASH standard.
+   *        The scheme id to use. Please refer to the DASH standard. (required)
    */
   public void setSchemeIdUri(String schemeIdUri) {
     this.schemeIdUri = schemeIdUri;
@@ -75,7 +75,6 @@ public class UtcTiming {
     return Objects.hash(value, schemeIdUri);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -97,6 +96,5 @@ public class UtcTiming {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

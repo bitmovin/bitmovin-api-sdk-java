@@ -41,7 +41,7 @@ public class StreamInput {
    * Id of input
    *
    * @param inputId
-   * Id of input
+   *        Id of input
    */
   public void setInputId(String inputId) {
     this.inputId = inputId;
@@ -60,7 +60,7 @@ public class StreamInput {
    * Path to media file
    *
    * @param inputPath
-   * Path to media file
+   *        Path to media file
    */
   public void setInputPath(String inputPath) {
     this.inputPath = inputPath;
@@ -79,7 +79,7 @@ public class StreamInput {
    * Specifies the algorithm how the stream in the input file will be selected
    *
    * @param selectionMode
-   * Specifies the algorithm how the stream in the input file will be selected
+   *        Specifies the algorithm how the stream in the input file will be selected
    */
   public void setSelectionMode(StreamSelectionMode selectionMode) {
     this.selectionMode = selectionMode;
@@ -98,7 +98,7 @@ public class StreamInput {
    * Position of the stream
    *
    * @param position
-   * Position of the stream
+   *        Position of the stream
    */
   public void setPosition(Integer position) {
     this.position = position;
@@ -117,7 +117,7 @@ public class StreamInput {
    * Set this property instead of all others to reference an ingest, trimming or concatenation input stream
    *
    * @param inputStreamId
-   * Set this property instead of all others to reference an ingest, trimming or concatenation input stream
+   *        Set this property instead of all others to reference an ingest, trimming or concatenation input stream
    */
   public void setInputStreamId(String inputStreamId) {
     this.inputStreamId = inputStreamId;
@@ -145,7 +145,6 @@ public class StreamInput {
     return Objects.hash(inputId, inputPath, selectionMode, position, inputStreamId);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -170,6 +169,5 @@ public class StreamInput {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

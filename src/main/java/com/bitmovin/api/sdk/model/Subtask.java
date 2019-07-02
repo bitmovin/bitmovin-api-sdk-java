@@ -54,7 +54,7 @@ public class Subtask extends BitmovinResponse {
 
 
   /**
-   * Current status
+   * Current status (required)
    * @return status
    */
   public Status getStatus() {
@@ -62,10 +62,10 @@ public class Subtask extends BitmovinResponse {
   }
 
   /**
-   * Current status
+   * Current status (required)
    *
    * @param status
-   * Current status
+   *        Current status (required)
    */
   public void setStatus(Status status) {
     this.status = status;
@@ -84,7 +84,7 @@ public class Subtask extends BitmovinResponse {
    * Progress in percent
    *
    * @param progress
-   * Progress in percent
+   *        Progress in percent
    */
   public void setProgress(Integer progress) {
     this.progress = progress;
@@ -92,7 +92,7 @@ public class Subtask extends BitmovinResponse {
 
 
   /**
-   * Name of the subtask
+   * Name of the subtask (required)
    * @return name
    */
   public String getName() {
@@ -100,10 +100,10 @@ public class Subtask extends BitmovinResponse {
   }
 
   /**
-   * Name of the subtask
+   * Name of the subtask (required)
    *
    * @param name
-   * Name of the subtask
+   *        Name of the subtask (required)
    */
   public void setName(String name) {
     this.name = name;
@@ -111,9 +111,6 @@ public class Subtask extends BitmovinResponse {
 
 
   public Subtask addMessagesItem(Message messagesItem) {
-    if (this.messages == null) {
-      this.messages = new ArrayList<>();
-    }
     this.messages.add(messagesItem);
     return this;
   }
@@ -130,7 +127,7 @@ public class Subtask extends BitmovinResponse {
    * Task specific messages
    *
    * @param messages
-   * Task specific messages
+   *        Task specific messages
    */
   public void setMessages(List<Message> messages) {
     this.messages = messages;
@@ -149,7 +146,7 @@ public class Subtask extends BitmovinResponse {
    * Timestamp when the subtask was created, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
    *
    * @param createdAt
-   * Timestamp when the subtask was created, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   *        Timestamp when the subtask was created, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
    */
   public void setCreatedAt(Date createdAt) {
     this.createdAt = createdAt;
@@ -168,7 +165,7 @@ public class Subtask extends BitmovinResponse {
    * Timestamp when the subtask was last updated, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
    *
    * @param updatedAt
-   * Timestamp when the subtask was last updated, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   *        Timestamp when the subtask was last updated, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
    */
   public void setUpdatedAt(Date updatedAt) {
     this.updatedAt = updatedAt;
@@ -187,7 +184,7 @@ public class Subtask extends BitmovinResponse {
    * Timestamp when the subtask was started, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
    *
    * @param startedAt
-   * Timestamp when the subtask was started, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   *        Timestamp when the subtask was started, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
    */
   public void setStartedAt(Date startedAt) {
     this.startedAt = startedAt;
@@ -206,7 +203,7 @@ public class Subtask extends BitmovinResponse {
    * Timestamp when the subtask status changed to &#39;QUEUED&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
    *
    * @param queuedAt
-   * Timestamp when the subtask status changed to &#39;QUEUED&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   *        Timestamp when the subtask status changed to &#39;QUEUED&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
    */
   public void setQueuedAt(Date queuedAt) {
     this.queuedAt = queuedAt;
@@ -225,7 +222,7 @@ public class Subtask extends BitmovinResponse {
    * Timestamp when the subtask status changed to to &#39;RUNNING&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
    *
    * @param runningAt
-   * Timestamp when the subtask status changed to to &#39;RUNNING&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   *        Timestamp when the subtask status changed to to &#39;RUNNING&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
    */
   public void setRunningAt(Date runningAt) {
     this.runningAt = runningAt;
@@ -244,7 +241,7 @@ public class Subtask extends BitmovinResponse {
    * Timestamp when the subtask status changed to &#39;FINISHED&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
    *
    * @param finishedAt
-   * Timestamp when the subtask status changed to &#39;FINISHED&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   *        Timestamp when the subtask status changed to &#39;FINISHED&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
    */
   public void setFinishedAt(Date finishedAt) {
     this.finishedAt = finishedAt;
@@ -263,7 +260,7 @@ public class Subtask extends BitmovinResponse {
    * Timestamp when the subtask status changed to &#39;ERROR&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
    *
    * @param errorAt
-   * Timestamp when the subtask status changed to &#39;ERROR&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   *        Timestamp when the subtask status changed to &#39;ERROR&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
    */
   public void setErrorAt(Date errorAt) {
     this.errorAt = errorAt;
@@ -298,7 +295,6 @@ public class Subtask extends BitmovinResponse {
     return Objects.hash(status, progress, name, messages, createdAt, updatedAt, startedAt, queuedAt, runningAt, finishedAt, errorAt, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -329,6 +325,5 @@ public class Subtask extends BitmovinResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

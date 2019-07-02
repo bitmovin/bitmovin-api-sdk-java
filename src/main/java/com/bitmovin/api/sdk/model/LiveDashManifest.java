@@ -23,7 +23,7 @@ public class LiveDashManifest {
 
 
   /**
-   * Dash manifest ids
+   * Dash manifest ids (required)
    * @return manifestId
    */
   public String getManifestId() {
@@ -31,10 +31,10 @@ public class LiveDashManifest {
   }
 
   /**
-   * Dash manifest ids
+   * Dash manifest ids (required)
    *
    * @param manifestId
-   * Dash manifest ids
+   *        Dash manifest ids (required)
    */
   public void setManifestId(String manifestId) {
     this.manifestId = manifestId;
@@ -53,7 +53,7 @@ public class LiveDashManifest {
    * Timeshift in seconds
    *
    * @param timeshift
-   * Timeshift in seconds
+   *        Timeshift in seconds
    */
   public void setTimeshift(Double timeshift) {
     this.timeshift = timeshift;
@@ -72,7 +72,7 @@ public class LiveDashManifest {
    * Live edge offset in seconds
    *
    * @param liveEdgeOffset
-   * Live edge offset in seconds
+   *        Live edge offset in seconds
    */
   public void setLiveEdgeOffset(Double liveEdgeOffset) {
     this.liveEdgeOffset = liveEdgeOffset;
@@ -98,7 +98,6 @@ public class LiveDashManifest {
     return Objects.hash(manifestId, timeshift, liveEdgeOffset);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -121,6 +120,5 @@ public class LiveDashManifest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

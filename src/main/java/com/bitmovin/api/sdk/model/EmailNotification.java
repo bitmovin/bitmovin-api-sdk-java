@@ -62,7 +62,6 @@ public class EmailNotification extends Notification {
     return Objects.hash(emails, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -83,6 +82,5 @@ public class EmailNotification extends Notification {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -17,7 +17,7 @@ public class PlayerChannel extends BitmovinResponse {
   private String name;
 
   /**
-   * Name of the resource
+   * Name of the resource (required)
    * @return name
    */
   public String getName() {
@@ -43,7 +43,6 @@ public class PlayerChannel extends BitmovinResponse {
     return Objects.hash(name, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -64,6 +63,5 @@ public class PlayerChannel extends BitmovinResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -47,7 +47,7 @@ public class DailyStatistics {
 
 
   /**
-   * Date for the shown data. Format: yyyy-MM-dd
+   * Date for the shown data. Format: yyyy-MM-dd (required)
    * @return date
    */
   public Date getDate() {
@@ -55,10 +55,10 @@ public class DailyStatistics {
   }
 
   /**
-   * Date for the shown data. Format: yyyy-MM-dd
+   * Date for the shown data. Format: yyyy-MM-dd (required)
    *
    * @param date
-   * Date for the shown data. Format: yyyy-MM-dd
+   *        Date for the shown data. Format: yyyy-MM-dd (required)
    */
   public void setDate(Date date) {
     this.date = date;
@@ -66,7 +66,7 @@ public class DailyStatistics {
 
 
   /**
-   * Bytes encoded.
+   * Bytes encoded. (required)
    * @return bytesEncoded
    */
   public Long getBytesEncoded() {
@@ -74,10 +74,10 @@ public class DailyStatistics {
   }
 
   /**
-   * Bytes encoded.
+   * Bytes encoded. (required)
    *
    * @param bytesEncoded
-   * Bytes encoded.
+   *        Bytes encoded. (required)
    */
   public void setBytesEncoded(Long bytesEncoded) {
     this.bytesEncoded = bytesEncoded;
@@ -85,7 +85,7 @@ public class DailyStatistics {
 
 
   /**
-   * Time in seconds encoded for this day.
+   * Time in seconds encoded for this day. (required)
    * @return timeEncoded
    */
   public Long getTimeEncoded() {
@@ -93,10 +93,10 @@ public class DailyStatistics {
   }
 
   /**
-   * Time in seconds encoded for this day.
+   * Time in seconds encoded for this day. (required)
    *
    * @param timeEncoded
-   * Time in seconds encoded for this day.
+   *        Time in seconds encoded for this day. (required)
    */
   public void setTimeEncoded(Long timeEncoded) {
     this.timeEncoded = timeEncoded;
@@ -115,7 +115,7 @@ public class DailyStatistics {
    * The billable minutes.
    *
    * @param billableMinutes
-   * The billable minutes.
+   *        The billable minutes.
    */
   public void setBillableMinutes(Double billableMinutes) {
     this.billableMinutes = billableMinutes;
@@ -134,7 +134,7 @@ public class DailyStatistics {
    * Label identifier.
    *
    * @param label
-   * Label identifier.
+   *        Label identifier.
    */
   public void setLabel(String label) {
     this.label = label;
@@ -161,7 +161,7 @@ public class DailyStatistics {
    * Billable minutes for muxings.
    *
    * @param billableTransmuxingMinutes
-   * Billable minutes for muxings.
+   *        Billable minutes for muxings.
    */
   public void setBillableTransmuxingMinutes(Double billableTransmuxingMinutes) {
     this.billableTransmuxingMinutes = billableTransmuxingMinutes;
@@ -200,7 +200,6 @@ public class DailyStatistics {
     return Objects.hash(date, bytesEncoded, timeEncoded, billableMinutes, label, billableEncodingMinutes, billableTransmuxingMinutes, billableFeatureMinutes);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -228,6 +227,5 @@ public class DailyStatistics {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -31,7 +31,10 @@ public enum InputStreamType {
   TRIMMING_H264_PICTURE_TIMING("TRIMMING_H264_PICTURE_TIMING"),
   
   
-  AUDIO_MIX("AUDIO_MIX");
+  AUDIO_MIX("AUDIO_MIX"),
+  
+  
+  FILE("FILE");
 
   private String value;
 

@@ -95,7 +95,6 @@ public class SrtStatisticLink {
     return Objects.hash(bandwidth, maxBandwidth, rtt);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -118,6 +117,5 @@ public class SrtStatisticLink {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

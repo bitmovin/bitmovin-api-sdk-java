@@ -39,7 +39,7 @@ public class BasicMediaInfo extends BitmovinResponse {
 
 
   /**
-   * The value is a quoted-string which specifies the group to which the Rendition belongs.
+   * The value is a quoted-string which specifies the group to which the Rendition belongs. (required)
    * @return groupId
    */
   public String getGroupId() {
@@ -47,10 +47,10 @@ public class BasicMediaInfo extends BitmovinResponse {
   }
 
   /**
-   * The value is a quoted-string which specifies the group to which the Rendition belongs.
+   * The value is a quoted-string which specifies the group to which the Rendition belongs. (required)
    *
    * @param groupId
-   * The value is a quoted-string which specifies the group to which the Rendition belongs.
+   *        The value is a quoted-string which specifies the group to which the Rendition belongs. (required)
    */
   public void setGroupId(String groupId) {
     this.groupId = groupId;
@@ -69,7 +69,7 @@ public class BasicMediaInfo extends BitmovinResponse {
    * Primary language in the rendition.
    *
    * @param language
-   * Primary language in the rendition.
+   *        Primary language in the rendition.
    */
   public void setLanguage(String language) {
     this.language = language;
@@ -88,7 +88,7 @@ public class BasicMediaInfo extends BitmovinResponse {
    * Identifies a language that is associated with the Rendition.
    *
    * @param assocLanguage
-   * Identifies a language that is associated with the Rendition.
+   *        Identifies a language that is associated with the Rendition.
    */
   public void setAssocLanguage(String assocLanguage) {
     this.assocLanguage = assocLanguage;
@@ -96,7 +96,7 @@ public class BasicMediaInfo extends BitmovinResponse {
 
 
   /**
-   * Human readable description of the rendition.
+   * Human readable description of the rendition. (required)
    * @return name
    */
   public String getName() {
@@ -104,10 +104,10 @@ public class BasicMediaInfo extends BitmovinResponse {
   }
 
   /**
-   * Human readable description of the rendition.
+   * Human readable description of the rendition. (required)
    *
    * @param name
-   * Human readable description of the rendition.
+   *        Human readable description of the rendition. (required)
    */
   public void setName(String name) {
     this.name = name;
@@ -126,7 +126,7 @@ public class BasicMediaInfo extends BitmovinResponse {
    * If set to true, the client SHOULD play this Rendition of the content in the absence of information from the user.
    *
    * @param isDefault
-   * If set to true, the client SHOULD play this Rendition of the content in the absence of information from the user.
+   *        If set to true, the client SHOULD play this Rendition of the content in the absence of information from the user.
    */
   public void setIsDefault(Boolean isDefault) {
     this.isDefault = isDefault;
@@ -145,7 +145,7 @@ public class BasicMediaInfo extends BitmovinResponse {
    * If set to true, the client MAY choose to play this Rendition in the absence of explicit user preference.
    *
    * @param autoselect
-   * If set to true, the client MAY choose to play this Rendition in the absence of explicit user preference.
+   *        If set to true, the client MAY choose to play this Rendition in the absence of explicit user preference.
    */
   public void setAutoselect(Boolean autoselect) {
     this.autoselect = autoselect;
@@ -153,9 +153,6 @@ public class BasicMediaInfo extends BitmovinResponse {
 
 
   public BasicMediaInfo addCharacteristicsItem(String characteristicsItem) {
-    if (this.characteristics == null) {
-      this.characteristics = new ArrayList<>();
-    }
     this.characteristics.add(characteristicsItem);
     return this;
   }
@@ -172,7 +169,7 @@ public class BasicMediaInfo extends BitmovinResponse {
    * Contains Uniform Type Identifiers
    *
    * @param characteristics
-   * Contains Uniform Type Identifiers
+   *        Contains Uniform Type Identifiers
    */
   public void setCharacteristics(List<String> characteristics) {
     this.characteristics = characteristics;
@@ -203,7 +200,6 @@ public class BasicMediaInfo extends BitmovinResponse {
     return Objects.hash(groupId, language, assocLanguage, name, isDefault, autoselect, characteristics, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -230,6 +226,5 @@ public class BasicMediaInfo extends BitmovinResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

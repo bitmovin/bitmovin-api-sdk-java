@@ -39,7 +39,7 @@ public class ObjectDetectionResult extends BitmovinResponse {
    * Name of the object that has been detected (in English)
    *
    * @param detectedObject
-   * Name of the object that has been detected (in English)
+   *        Name of the object that has been detected (in English)
    */
   public void setDetectedObject(String detectedObject) {
     this.detectedObject = detectedObject;
@@ -58,7 +58,7 @@ public class ObjectDetectionResult extends BitmovinResponse {
    * Time in seconds where the object was detected in the video
    *
    * @param timestamp
-   * Time in seconds where the object was detected in the video
+   *        Time in seconds where the object was detected in the video
    */
   public void setTimestamp(Double timestamp) {
     this.timestamp = timestamp;
@@ -77,7 +77,7 @@ public class ObjectDetectionResult extends BitmovinResponse {
    * A number between 0 and 1 indicating the confidence of the detection
    *
    * @param score
-   * A number between 0 and 1 indicating the confidence of the detection
+   *        A number between 0 and 1 indicating the confidence of the detection
    */
   public void setScore(Double score) {
     this.score = score;
@@ -96,7 +96,7 @@ public class ObjectDetectionResult extends BitmovinResponse {
    * A box indicating the position and size of the detected object within the frame
    *
    * @param boundingBox
-   * A box indicating the position and size of the detected object within the frame
+   *        A box indicating the position and size of the detected object within the frame
    */
   public void setBoundingBox(ObjectDetectionBoundingBox boundingBox) {
     this.boundingBox = boundingBox;
@@ -124,7 +124,6 @@ public class ObjectDetectionResult extends BitmovinResponse {
     return Objects.hash(detectedObject, timestamp, score, boundingBox, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -148,6 +147,5 @@ public class ObjectDetectionResult extends BitmovinResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -31,7 +31,7 @@ public class AnalyticsQueryTimeframe {
    * Start of timeframe which is queried
    *
    * @param start
-   * Start of timeframe which is queried
+   *        Start of timeframe which is queried
    */
   public void setStart(String start) {
     this.start = start;
@@ -50,7 +50,7 @@ public class AnalyticsQueryTimeframe {
    * End of timeframe which is queried
    *
    * @param end
-   * End of timeframe which is queried
+   *        End of timeframe which is queried
    */
   public void setEnd(String end) {
     this.end = end;
@@ -75,7 +75,6 @@ public class AnalyticsQueryTimeframe {
     return Objects.hash(start, end);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -97,6 +96,5 @@ public class AnalyticsQueryTimeframe {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

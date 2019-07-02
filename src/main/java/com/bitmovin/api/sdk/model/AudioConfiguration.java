@@ -24,7 +24,7 @@ public class AudioConfiguration extends CodecConfiguration {
 
 
   /**
-   * Target bitrate for the encoded audio in bps
+   * Target bitrate for the encoded audio in bps (required)
    * @return bitrate
    */
   public Long getBitrate() {
@@ -32,10 +32,10 @@ public class AudioConfiguration extends CodecConfiguration {
   }
 
   /**
-   * Target bitrate for the encoded audio in bps
+   * Target bitrate for the encoded audio in bps (required)
    *
    * @param bitrate
-   * Target bitrate for the encoded audio in bps
+   *        Target bitrate for the encoded audio in bps (required)
    */
   public void setBitrate(Long bitrate) {
     this.bitrate = bitrate;
@@ -54,7 +54,7 @@ public class AudioConfiguration extends CodecConfiguration {
    * Audio sampling rate Hz
    *
    * @param rate
-   * Audio sampling rate Hz
+   *        Audio sampling rate Hz
    */
   public void setRate(Double rate) {
     this.rate = rate;
@@ -80,7 +80,6 @@ public class AudioConfiguration extends CodecConfiguration {
     return Objects.hash(bitrate, rate, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -102,6 +101,5 @@ public class AudioConfiguration extends CodecConfiguration {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

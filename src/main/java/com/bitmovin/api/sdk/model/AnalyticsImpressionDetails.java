@@ -242,7 +242,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Is an ad playing. 0 indicates no, 1 indicates yes
    *
    * @param ad
-   * Is an ad playing. 0 indicates no, 1 indicates yes
+   *        Is an ad playing. 0 indicates no, 1 indicates yes
    */
   public void setAd(Long ad) {
     this.ad = ad;
@@ -261,7 +261,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Collector version
    *
    * @param analyticsVersion
-   * Collector version
+   *        Collector version
    */
   public void setAnalyticsVersion(String analyticsVersion) {
     this.analyticsVersion = analyticsVersion;
@@ -280,7 +280,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Autonomous System Number inferred from the IP address
    *
    * @param asn
-   * Autonomous System Number inferred from the IP address
+   *        Autonomous System Number inferred from the IP address
    */
   public void setAsn(Long asn) {
     this.asn = asn;
@@ -299,7 +299,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Audio Bitrate
    *
    * @param audioBitrate
-   * Audio Bitrate
+   *        Audio Bitrate
    */
   public void setAudioBitrate(Long audioBitrate) {
     this.audioBitrate = audioBitrate;
@@ -318,7 +318,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Autoplay enabled
    *
    * @param autoplay
-   * Autoplay enabled
+   *        Autoplay enabled
    */
   public void setAutoplay(Boolean autoplay) {
     this.autoplay = autoplay;
@@ -337,7 +337,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Browser name
    *
    * @param browser
-   * Browser name
+   *        Browser name
    */
   public void setBrowser(String browser) {
     this.browser = browser;
@@ -356,7 +356,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Browser version major
    *
    * @param browserVersionMajor
-   * Browser version major
+   *        Browser version major
    */
   public void setBrowserVersionMajor(String browserVersionMajor) {
     this.browserVersionMajor = browserVersionMajor;
@@ -375,7 +375,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Browser version minor
    *
    * @param browserVersionMinor
-   * Browser version minor
+   *        Browser version minor
    */
   public void setBrowserVersionMinor(String browserVersionMinor) {
     this.browserVersionMinor = browserVersionMinor;
@@ -394,7 +394,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Millisecond the player buffered
    *
    * @param buffered
-   * Millisecond the player buffered
+   *        Millisecond the player buffered
    */
   public void setBuffered(Long buffered) {
     this.buffered = buffered;
@@ -413,7 +413,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * CDN Provider
    *
    * @param cdnProvider
-   * CDN Provider
+   *        CDN Provider
    */
   public void setCdnProvider(String cdnProvider) {
     this.cdnProvider = cdnProvider;
@@ -432,7 +432,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * City
    *
    * @param city
-   * City
+   *        City
    */
   public void setCity(String city) {
     this.city = city;
@@ -451,7 +451,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Current time of the client
    *
    * @param clientTime
-   * Current time of the client
+   *        Current time of the client
    */
   public void setClientTime(Long clientTime) {
     this.clientTime = clientTime;
@@ -470,7 +470,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Country
    *
    * @param country
-   * Country
+   *        Country
    */
   public void setCountry(String country) {
     this.country = country;
@@ -489,7 +489,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Custom user ID
    *
    * @param customUserId
-   * Custom user ID
+   *        Custom user ID
    */
   public void setCustomUserId(String customUserId) {
     this.customUserId = customUserId;
@@ -508,7 +508,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Free form data set via the customData1 field in the analytics collector configuration
    *
    * @param customData1
-   * Free form data set via the customData1 field in the analytics collector configuration
+   *        Free form data set via the customData1 field in the analytics collector configuration
    */
   public void setCustomData1(String customData1) {
     this.customData1 = customData1;
@@ -527,7 +527,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Free form data set via the customData2 field in the analytics collector configuration
    *
    * @param customData2
-   * Free form data set via the customData2 field in the analytics collector configuration
+   *        Free form data set via the customData2 field in the analytics collector configuration
    */
   public void setCustomData2(String customData2) {
     this.customData2 = customData2;
@@ -546,7 +546,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Free form data set via the customData3 field in the analytics collector configuration
    *
    * @param customData3
-   * Free form data set via the customData3 field in the analytics collector configuration
+   *        Free form data set via the customData3 field in the analytics collector configuration
    */
   public void setCustomData3(String customData3) {
     this.customData3 = customData3;
@@ -565,7 +565,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Free form data set via the customData4 field in the analytics collector configuration
    *
    * @param customData4
-   * Free form data set via the customData4 field in the analytics collector configuration
+   *        Free form data set via the customData4 field in the analytics collector configuration
    */
   public void setCustomData4(String customData4) {
     this.customData4 = customData4;
@@ -584,7 +584,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Free form data set via the customData5 field in the analytics collector configuration
    *
    * @param customData5
-   * Free form data set via the customData5 field in the analytics collector configuration
+   *        Free form data set via the customData5 field in the analytics collector configuration
    */
   public void setCustomData5(String customData5) {
     this.customData5 = customData5;
@@ -603,7 +603,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Type of the device detected via User Agent
    *
    * @param deviceType
-   * Type of the device detected via User Agent
+   *        Type of the device detected via User Agent
    */
   public void setDeviceType(String deviceType) {
     this.deviceType = deviceType;
@@ -622,7 +622,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Domain the player was loaded on (.www is stripped away)
    *
    * @param domain
-   * Domain the player was loaded on (.www is stripped away)
+   *        Domain the player was loaded on (.www is stripped away)
    */
   public void setDomain(String domain) {
     this.domain = domain;
@@ -641,7 +641,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Time in milliseconds it took the DRM server to respond
    *
    * @param drmLoadTime
-   * Time in milliseconds it took the DRM server to respond
+   *        Time in milliseconds it took the DRM server to respond
    */
   public void setDrmLoadTime(Long drmLoadTime) {
     this.drmLoadTime = drmLoadTime;
@@ -660,7 +660,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * DRM system used for this impression
    *
    * @param drmType
-   * DRM system used for this impression
+   *        DRM system used for this impression
    */
   public void setDrmType(String drmType) {
     this.drmType = drmType;
@@ -679,7 +679,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Dropped frames during playback
    *
    * @param droppedFrames
-   * Dropped frames during playback
+   *        Dropped frames during playback
    */
   public void setDroppedFrames(Long droppedFrames) {
     this.droppedFrames = droppedFrames;
@@ -698,7 +698,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Duration of the sample in milliseconds
    *
    * @param duration
-   * Duration of the sample in milliseconds
+   *        Duration of the sample in milliseconds
    */
   public void setDuration(Long duration) {
     this.duration = duration;
@@ -717,7 +717,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Error code
    *
    * @param errorCode
-   * Error code
+   *        Error code
    */
   public void setErrorCode(Integer errorCode) {
     this.errorCode = errorCode;
@@ -736,7 +736,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Error message
    *
    * @param errorMessage
-   * Error message
+   *        Error message
    */
   public void setErrorMessage(String errorMessage) {
     this.errorMessage = errorMessage;
@@ -755,7 +755,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * A/B test experiment name
    *
    * @param experimentName
-   * A/B test experiment name
+   *        A/B test experiment name
    */
   public void setExperimentName(String experimentName) {
     this.experimentName = experimentName;
@@ -763,7 +763,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
 
 
   /**
-   * Random UUID that is used to identify a sessions
+   * Random UUID that is used to identify a sessions (required)
    * @return impressionId
    */
   public String getImpressionId() {
@@ -771,10 +771,10 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
   }
 
   /**
-   * Random UUID that is used to identify a sessions
+   * Random UUID that is used to identify a sessions (required)
    *
    * @param impressionId
-   * Random UUID that is used to identify a sessions
+   *        Random UUID that is used to identify a sessions (required)
    */
   public void setImpressionId(String impressionId) {
     this.impressionId = impressionId;
@@ -793,7 +793,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * IP Address of the client
    *
    * @param ipAddress
-   * IP Address of the client
+   *        IP Address of the client
    */
   public void setIpAddress(String ipAddress) {
     this.ipAddress = ipAddress;
@@ -812,7 +812,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Is chromecast active
    *
    * @param isCasting
-   * Is chromecast active
+   *        Is chromecast active
    */
   public void setIsCasting(Boolean isCasting) {
     this.isCasting = isCasting;
@@ -831,7 +831,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Is the stream live or VoD
    *
    * @param isLive
-   * Is the stream live or VoD
+   *        Is the stream live or VoD
    */
   public void setIsLive(Boolean isLive) {
     this.isLive = isLive;
@@ -850,7 +850,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Is the player muted
    *
    * @param isMuted
-   * Is the player muted
+   *        Is the player muted
    */
   public void setIsMuted(Boolean isMuted) {
     this.isMuted = isMuted;
@@ -869,7 +869,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * The users Internet Service Provider inferred via the IP address
    *
    * @param isp
-   * The users Internet Service Provider inferred via the IP address
+   *        The users Internet Service Provider inferred via the IP address
    */
   public void setIsp(String isp) {
     this.isp = isp;
@@ -888,7 +888,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Language set in the browser
    *
    * @param language
-   * Language set in the browser
+   *        Language set in the browser
    */
   public void setLanguage(String language) {
     this.language = language;
@@ -907,7 +907,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Analytics license key
    *
    * @param licenseKey
-   * Analytics license key
+   *        Analytics license key
    */
   public void setLicenseKey(String licenseKey) {
     this.licenseKey = licenseKey;
@@ -926,7 +926,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Operating system
    *
    * @param operatingSystem
-   * Operating system
+   *        Operating system
    */
   public void setOperatingSystem(String operatingSystem) {
     this.operatingSystem = operatingSystem;
@@ -945,7 +945,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Operating system version major
    *
    * @param operatingSystemVersionMajor
-   * Operating system version major
+   *        Operating system version major
    */
   public void setOperatingSystemVersionMajor(String operatingSystemVersionMajor) {
     this.operatingSystemVersionMajor = operatingSystemVersionMajor;
@@ -964,7 +964,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Operating system version minor
    *
    * @param operatingSystemVersionMinor
-   * Operating system version minor
+   *        Operating system version minor
    */
   public void setOperatingSystemVersionMinor(String operatingSystemVersionMinor) {
     this.operatingSystemVersionMinor = operatingSystemVersionMinor;
@@ -983,7 +983,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Time in milliseconds the page took to load
    *
    * @param pageLoadTime
-   * Time in milliseconds the page took to load
+   *        Time in milliseconds the page took to load
    */
   public void setPageLoadTime(Integer pageLoadTime) {
     this.pageLoadTime = pageLoadTime;
@@ -1002,7 +1002,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Player load type. 1 &#x3D; Foreground, 2 &#x3D; Background
    *
    * @param pageLoadType
-   * Player load type. 1 &#x3D; Foreground, 2 &#x3D; Background
+   *        Player load type. 1 &#x3D; Foreground, 2 &#x3D; Background
    */
   public void setPageLoadType(Integer pageLoadType) {
     this.pageLoadType = pageLoadType;
@@ -1021,7 +1021,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * path on the website
    *
    * @param path
-   * path on the website
+   *        path on the website
    */
   public void setPath(String path) {
     this.path = path;
@@ -1040,7 +1040,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Milliseconds the player was paused
    *
    * @param paused
-   * Milliseconds the player was paused
+   *        Milliseconds the player was paused
    */
   public void setPaused(Long paused) {
     this.paused = paused;
@@ -1059,7 +1059,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Platform the player is running on (web, android, ios)
    *
    * @param platform
-   * Platform the player is running on (web, android, ios)
+   *        Platform the player is running on (web, android, ios)
    */
   public void setPlatform(String platform) {
     this.platform = platform;
@@ -1078,7 +1078,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Milliseconds the player played
    *
    * @param played
-   * Milliseconds the player played
+   *        Milliseconds the player played
    */
   public void setPlayed(Long played) {
     this.played = played;
@@ -1097,7 +1097,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Video player being used for this session
    *
    * @param player
-   * Video player being used for this session
+   *        Video player being used for this session
    */
   public void setPlayer(String player) {
     this.player = player;
@@ -1116,7 +1116,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Player license key
    *
    * @param playerKey
-   * Player license key
+   *        Player license key
    */
   public void setPlayerKey(String playerKey) {
     this.playerKey = playerKey;
@@ -1135,7 +1135,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Time in milliseconds the player took to start up
    *
    * @param playerStartuptime
-   * Time in milliseconds the player took to start up
+   *        Time in milliseconds the player took to start up
    */
   public void setPlayerStartuptime(Integer playerStartuptime) {
     this.playerStartuptime = playerStartuptime;
@@ -1154,7 +1154,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * HTML or native playback
    *
    * @param playerTech
-   * HTML or native playback
+   *        HTML or native playback
    */
   public void setPlayerTech(String playerTech) {
     this.playerTech = playerTech;
@@ -1173,7 +1173,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Player software version
    *
    * @param playerVersion
-   * Player software version
+   *        Player software version
    */
   public void setPlayerVersion(String playerVersion) {
     this.playerVersion = playerVersion;
@@ -1192,7 +1192,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Geographic region (ISO 3166-2 code)
    *
    * @param region
-   * Geographic region (ISO 3166-2 code)
+   *        Geographic region (ISO 3166-2 code)
    */
   public void setRegion(String region) {
     this.region = region;
@@ -1211,7 +1211,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Screen as reported by the browser
    *
    * @param screenHeight
-   * Screen as reported by the browser
+   *        Screen as reported by the browser
    */
   public void setScreenHeight(Integer screenHeight) {
     this.screenHeight = screenHeight;
@@ -1230,7 +1230,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Screen as reported by the browser
    *
    * @param screenWidth
-   * Screen as reported by the browser
+   *        Screen as reported by the browser
    */
   public void setScreenWidth(Integer screenWidth) {
     this.screenWidth = screenWidth;
@@ -1249,7 +1249,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Milliseconds it took the player to seek
    *
    * @param seeked
-   * Milliseconds it took the player to seek
+   *        Milliseconds it took the player to seek
    */
   public void setSeeked(Long seeked) {
     this.seeked = seeked;
@@ -1268,7 +1268,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Sequence number of the sample in which it occured in the session
    *
    * @param sequenceNumber
-   * Sequence number of the sample in which it occured in the session
+   *        Sequence number of the sample in which it occured in the session
    */
   public void setSequenceNumber(Long sequenceNumber) {
     this.sequenceNumber = sequenceNumber;
@@ -1287,7 +1287,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Video size (FULLSCREEN or WINDOW)
    *
    * @param size
-   * Video size (FULLSCREEN or WINDOW)
+   *        Video size (FULLSCREEN or WINDOW)
    */
   public void setSize(String size) {
     this.size = size;
@@ -1306,7 +1306,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Combination of player- and videoStartuptime
    *
    * @param startupTime
-   * Combination of player- and videoStartuptime
+   *        Combination of player- and videoStartuptime
    */
   public void setStartupTime(Integer startupTime) {
     this.startupTime = startupTime;
@@ -1325,7 +1325,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Internal state of the analytics state machine
    *
    * @param state
-   * Internal state of the analytics state machine
+   *        Internal state of the analytics state machine
    */
   public void setState(String state) {
     this.state = state;
@@ -1344,7 +1344,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Format of the stream (HLS, DASH, Progressive MP4)
    *
    * @param streamFormat
-   * Format of the stream (HLS, DASH, Progressive MP4)
+   *        Format of the stream (HLS, DASH, Progressive MP4)
    */
   public void setStreamFormat(String streamFormat) {
     this.streamFormat = streamFormat;
@@ -1363,7 +1363,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Current time in milliseconds
    *
    * @param time
-   * Current time in milliseconds
+   *        Current time in milliseconds
    */
   public void setTime(Long time) {
     this.time = time;
@@ -1382,7 +1382,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * ID that is persisted across sessions to identify a browser
    *
    * @param userId
-   * ID that is persisted across sessions to identify a browser
+   *        ID that is persisted across sessions to identify a browser
    */
   public void setUserId(String userId) {
     this.userId = userId;
@@ -1401,7 +1401,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Bitrate of the played back video rendition
    *
    * @param videoBitrate
-   * Bitrate of the played back video rendition
+   *        Bitrate of the played back video rendition
    */
   public void setVideoBitrate(Long videoBitrate) {
     this.videoBitrate = videoBitrate;
@@ -1420,7 +1420,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Length of the video in milliseconds
    *
    * @param videoDuration
-   * Length of the video in milliseconds
+   *        Length of the video in milliseconds
    */
   public void setVideoDuration(Long videoDuration) {
     this.videoDuration = videoDuration;
@@ -1439,7 +1439,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * ID of the video as configured via the analytics config
    *
    * @param videoId
-   * ID of the video as configured via the analytics config
+   *        ID of the video as configured via the analytics config
    */
   public void setVideoId(String videoId) {
     this.videoId = videoId;
@@ -1458,7 +1458,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Free form human readable video title as configured in the analytics config
    *
    * @param videoTitle
-   * Free form human readable video title as configured in the analytics config
+   *        Free form human readable video title as configured in the analytics config
    */
   public void setVideoTitle(String videoTitle) {
     this.videoTitle = videoTitle;
@@ -1477,7 +1477,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Resolution of the played back Video Rendition
    *
    * @param videoPlaybackHeight
-   * Resolution of the played back Video Rendition
+   *        Resolution of the played back Video Rendition
    */
   public void setVideoPlaybackHeight(Integer videoPlaybackHeight) {
     this.videoPlaybackHeight = videoPlaybackHeight;
@@ -1496,7 +1496,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Resolution of the played back Video Rendition
    *
    * @param videoPlaybackWidth
-   * Resolution of the played back Video Rendition
+   *        Resolution of the played back Video Rendition
    */
   public void setVideoPlaybackWidth(Integer videoPlaybackWidth) {
     this.videoPlaybackWidth = videoPlaybackWidth;
@@ -1515,7 +1515,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Time in milliseconds it took to start video playback
    *
    * @param videoStartupTime
-   * Time in milliseconds it took to start video playback
+   *        Time in milliseconds it took to start video playback
    */
   public void setVideoStartupTime(Long videoStartupTime) {
     this.videoStartupTime = videoStartupTime;
@@ -1534,7 +1534,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * End time of the sample in the video (milliseconds)
    *
    * @param videotimeEnd
-   * End time of the sample in the video (milliseconds)
+   *        End time of the sample in the video (milliseconds)
    */
   public void setVideotimeEnd(Long videotimeEnd) {
     this.videotimeEnd = videotimeEnd;
@@ -1553,7 +1553,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Start time of the sample in the video (milliseconds)
    *
    * @param videotimeStart
-   * Start time of the sample in the video (milliseconds)
+   *        Start time of the sample in the video (milliseconds)
    */
   public void setVideotimeStart(Long videotimeStart) {
     this.videotimeStart = videotimeStart;
@@ -1572,7 +1572,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Height of the video player on the page
    *
    * @param videoWindowHeight
-   * Height of the video player on the page
+   *        Height of the video player on the page
    */
   public void setVideoWindowHeight(Integer videoWindowHeight) {
     this.videoWindowHeight = videoWindowHeight;
@@ -1591,7 +1591,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    * Width of the video player on the page
    *
    * @param videoWindowWidth
-   * Width of the video player on the page
+   *        Width of the video player on the page
    */
   public void setVideoWindowWidth(Integer videoWindowWidth) {
     this.videoWindowWidth = videoWindowWidth;
@@ -1687,7 +1687,6 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
     return Objects.hash(ad, analyticsVersion, asn, audioBitrate, autoplay, browser, browserVersionMajor, browserVersionMinor, buffered, cdnProvider, city, clientTime, country, customUserId, customData1, customData2, customData3, customData4, customData5, deviceType, domain, drmLoadTime, drmType, droppedFrames, duration, errorCode, errorMessage, experimentName, impressionId, ipAddress, isCasting, isLive, isMuted, isp, language, licenseKey, operatingSystem, operatingSystemVersionMajor, operatingSystemVersionMinor, pageLoadTime, pageLoadType, path, paused, platform, played, player, playerKey, playerStartuptime, playerTech, playerVersion, region, screenHeight, screenWidth, seeked, sequenceNumber, size, startupTime, state, streamFormat, time, userId, videoBitrate, videoDuration, videoId, videoTitle, videoPlaybackHeight, videoPlaybackWidth, videoStartupTime, videotimeEnd, videotimeStart, videoWindowHeight, videoWindowWidth, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -1779,6 +1778,5 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

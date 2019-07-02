@@ -32,7 +32,7 @@ public class AnalyticsLicense extends BitmovinResponse {
    * Name of the Analytics License
    *
    * @param name
-   * Name of the Analytics License
+   *        Name of the Analytics License
    */
   public void setName(String name) {
     this.name = name;
@@ -40,7 +40,7 @@ public class AnalyticsLicense extends BitmovinResponse {
 
 
   /**
-   * License Key
+   * License Key (required)
    * @return licenseKey
    */
   public String getLicenseKey() {
@@ -48,10 +48,10 @@ public class AnalyticsLicense extends BitmovinResponse {
   }
 
   /**
-   * License Key
+   * License Key (required)
    *
    * @param licenseKey
-   * License Key
+   *        License Key (required)
    */
   public void setLicenseKey(String licenseKey) {
     this.licenseKey = licenseKey;
@@ -77,7 +77,6 @@ public class AnalyticsLicense extends BitmovinResponse {
     return Objects.hash(name, licenseKey, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -99,6 +98,5 @@ public class AnalyticsLicense extends BitmovinResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

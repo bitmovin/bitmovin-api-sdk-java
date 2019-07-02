@@ -25,7 +25,7 @@ public class PlaintextId3Tag extends Id3Tag {
 
 
   /**
-   * Plain Text Data
+   * Plain Text Data (required)
    * @return text
    */
   public String getText() {
@@ -33,10 +33,10 @@ public class PlaintextId3Tag extends Id3Tag {
   }
 
   /**
-   * Plain Text Data
+   * Plain Text Data (required)
    *
    * @param text
-   * Plain Text Data
+   *        Plain Text Data (required)
    */
   public void setText(String text) {
     this.text = text;
@@ -44,7 +44,7 @@ public class PlaintextId3Tag extends Id3Tag {
 
 
   /**
-   * 4 character long Frame ID
+   * 4 character long Frame ID (required)
    * @return frameId
    */
   public String getFrameId() {
@@ -52,10 +52,10 @@ public class PlaintextId3Tag extends Id3Tag {
   }
 
   /**
-   * 4 character long Frame ID
+   * 4 character long Frame ID (required)
    *
    * @param frameId
-   * 4 character long Frame ID
+   *        4 character long Frame ID (required)
    */
   public void setFrameId(String frameId) {
     this.frameId = frameId;
@@ -81,7 +81,6 @@ public class PlaintextId3Tag extends Id3Tag {
     return Objects.hash(text, frameId, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -103,6 +102,5 @@ public class PlaintextId3Tag extends Id3Tag {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -28,7 +28,7 @@ public class TimeCode {
    * Specify start timecode for writing.
    *
    * @param timeCodeStart
-   * Specify start timecode for writing.
+   *        Specify start timecode for writing.
    */
   public void setTimeCodeStart(String timeCodeStart) {
     this.timeCodeStart = timeCodeStart;
@@ -52,7 +52,6 @@ public class TimeCode {
     return Objects.hash(timeCodeStart);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -73,6 +72,5 @@ public class TimeCode {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

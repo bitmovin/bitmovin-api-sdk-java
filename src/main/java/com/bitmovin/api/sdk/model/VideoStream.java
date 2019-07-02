@@ -47,7 +47,7 @@ public class VideoStream extends MediaStream {
    * Frame rate of the video
    *
    * @param fps
-   * Frame rate of the video
+   *        Frame rate of the video
    */
   public void setFps(String fps) {
     this.fps = fps;
@@ -66,7 +66,7 @@ public class VideoStream extends MediaStream {
    * Bitrate in bps
    *
    * @param bitrate
-   * Bitrate in bps
+   *        Bitrate in bps
    */
   public void setBitrate(String bitrate) {
     this.bitrate = bitrate;
@@ -85,7 +85,7 @@ public class VideoStream extends MediaStream {
    * Bitrate in bps (the same as bitrate, but represented as an integer value)
    *
    * @param rate
-   * Bitrate in bps (the same as bitrate, but represented as an integer value)
+   *        Bitrate in bps (the same as bitrate, but represented as an integer value)
    */
   public void setRate(Long rate) {
     this.rate = rate;
@@ -93,7 +93,7 @@ public class VideoStream extends MediaStream {
 
 
   /**
-   * Width of the video
+   * Width of the video (required)
    * @return width
    */
   public Integer getWidth() {
@@ -101,10 +101,10 @@ public class VideoStream extends MediaStream {
   }
 
   /**
-   * Width of the video
+   * Width of the video (required)
    *
    * @param width
-   * Width of the video
+   *        Width of the video (required)
    */
   public void setWidth(Integer width) {
     this.width = width;
@@ -112,7 +112,7 @@ public class VideoStream extends MediaStream {
 
 
   /**
-   * Height of the video
+   * Height of the video (required)
    * @return height
    */
   public Integer getHeight() {
@@ -120,10 +120,10 @@ public class VideoStream extends MediaStream {
   }
 
   /**
-   * Height of the video
+   * Height of the video (required)
    *
    * @param height
-   * Height of the video
+   *        Height of the video (required)
    */
   public void setHeight(Integer height) {
     this.height = height;
@@ -142,7 +142,7 @@ public class VideoStream extends MediaStream {
    * Pixel aspect ratio of the video. Default is 1.0
    *
    * @param par
-   * Pixel aspect ratio of the video. Default is 1.0
+   *        Pixel aspect ratio of the video. Default is 1.0
    */
   public void setPar(Double par) {
     this.par = par;
@@ -161,7 +161,7 @@ public class VideoStream extends MediaStream {
    * Rotation of the video for mobile devices. Default is 0.
    *
    * @param rotation
-   * Rotation of the video for mobile devices. Default is 0.
+   *        Rotation of the video for mobile devices. Default is 0.
    */
   public void setRotation(Integer rotation) {
     this.rotation = rotation;
@@ -192,7 +192,6 @@ public class VideoStream extends MediaStream {
     return Objects.hash(fps, bitrate, rate, width, height, par, rotation, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -219,6 +218,5 @@ public class VideoStream extends MediaStream {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

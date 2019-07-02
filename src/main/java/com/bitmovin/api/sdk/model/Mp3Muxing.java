@@ -25,7 +25,7 @@ public class Mp3Muxing extends Muxing {
 
 
   /**
-   * Name of the new file
+   * Name of the new file (required)
    * @return filename
    */
   public String getFilename() {
@@ -33,10 +33,10 @@ public class Mp3Muxing extends Muxing {
   }
 
   /**
-   * Name of the new file
+   * Name of the new file (required)
    *
    * @param filename
-   * Name of the new file
+   *        Name of the new file (required)
    */
   public void setFilename(String filename) {
     this.filename = filename;
@@ -61,7 +61,6 @@ public class Mp3Muxing extends Muxing {
     return Objects.hash(filename, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -82,6 +81,5 @@ public class Mp3Muxing extends Muxing {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

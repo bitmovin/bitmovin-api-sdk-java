@@ -24,7 +24,7 @@ public class ResponseError {
   private ResponseErrorData data;
 
   /**
-   * Unique correlation id
+   * Unique correlation id (required)
    * @return requestId
    */
   public String getRequestId() {
@@ -32,7 +32,7 @@ public class ResponseError {
   }
 
   /**
-   * Response status information
+   * Response status information (required)
    * @return status
    */
   public ResponseStatus getStatus() {
@@ -40,7 +40,7 @@ public class ResponseError {
   }
 
   /**
-   * Response information
+   * Response information (required)
    * @return data
    */
   public ResponseErrorData getData() {
@@ -67,7 +67,6 @@ public class ResponseError {
     return Objects.hash(requestId, status, data);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -90,6 +89,5 @@ public class ResponseError {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

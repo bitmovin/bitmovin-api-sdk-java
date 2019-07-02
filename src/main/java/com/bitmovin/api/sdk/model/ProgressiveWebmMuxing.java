@@ -40,7 +40,7 @@ public class ProgressiveWebmMuxing extends Muxing {
    * Name of the new Video
    *
    * @param filename
-   * Name of the new Video
+   *        Name of the new Video
    */
   public void setFilename(String filename) {
     this.filename = filename;
@@ -59,7 +59,7 @@ public class ProgressiveWebmMuxing extends Muxing {
    * Modifies the internal chunk length used for chunked encoding
    *
    * @param internalChunkLength
-   * Modifies the internal chunk length used for chunked encoding
+   *        Modifies the internal chunk length used for chunked encoding
    */
   public void setInternalChunkLength(InternalChunkLength internalChunkLength) {
     this.internalChunkLength = internalChunkLength;
@@ -85,7 +85,6 @@ public class ProgressiveWebmMuxing extends Muxing {
     return Objects.hash(filename, internalChunkLength, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -107,6 +106,5 @@ public class ProgressiveWebmMuxing extends Muxing {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

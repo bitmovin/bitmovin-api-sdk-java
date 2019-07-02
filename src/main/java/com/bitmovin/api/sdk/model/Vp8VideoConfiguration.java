@@ -96,7 +96,7 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    * maximum: 63
    *
    * @param crf
-   * Sets the constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
+   *        Sets the constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
    * minimum: 0
    * maximum: 63
    */
@@ -121,7 +121,7 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    * maximum: 25
    *
    * @param lagInFrames
-   * Number of frames to look ahead for alternate reference frame selection.
+   *        Number of frames to look ahead for alternate reference frame selection.
    * minimum: 0
    * maximum: 25
    */
@@ -142,7 +142,7 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    * Maximum I-frame bitrate (percentage) 0&#x3D;unlimited
    *
    * @param maxIntraRate
-   * Maximum I-frame bitrate (percentage) 0&#x3D;unlimited
+   *        Maximum I-frame bitrate (percentage) 0&#x3D;unlimited
    */
   public void setMaxIntraRate(Long maxIntraRate) {
     this.maxIntraRate = maxIntraRate;
@@ -165,7 +165,7 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    * maximum: 63
    *
    * @param qpMin
-   * Sets the minimum of quantization factor.
+   *        Sets the minimum of quantization factor.
    * minimum: 0
    * maximum: 63
    */
@@ -190,7 +190,7 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    * maximum: 63
    *
    * @param qpMax
-   * Sets the maximum of quantization factor.
+   *        Sets the maximum of quantization factor.
    * minimum: 0
    * maximum: 63
    */
@@ -215,7 +215,7 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    * maximum: 100
    *
    * @param rateUndershootPct
-   * Datarate undershoot (min) target (percentage).
+   *        Datarate undershoot (min) target (percentage).
    * minimum: 0
    * maximum: 100
    */
@@ -240,7 +240,7 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    * maximum: 100
    *
    * @param rateOvershootPct
-   * Datarate overshoot (max) target (percentage).
+   *        Datarate overshoot (max) target (percentage).
    * minimum: 0
    * maximum: 100
    */
@@ -291,7 +291,7 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    * maximum: 7
    *
    * @param sharpness
-   * Loop filter sharpness.
+   *        Loop filter sharpness.
    * minimum: 0
    * maximum: 7
    */
@@ -312,7 +312,7 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    * Minimum GOP length, the minimum distance between I-frames.
    *
    * @param minGop
-   * Minimum GOP length, the minimum distance between I-frames.
+   *        Minimum GOP length, the minimum distance between I-frames.
    */
   public void setMinGop(Integer minGop) {
     this.minGop = minGop;
@@ -331,7 +331,7 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    * Maximum GOP length, the maximum distance between I-frames
    *
    * @param maxGop
-   * Maximum GOP length, the maximum distance between I-frames
+   *        Maximum GOP length, the maximum distance between I-frames
    */
   public void setMaxGop(Integer maxGop) {
     this.maxGop = maxGop;
@@ -350,7 +350,7 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    * Minimum interval in seconds between key frames
    *
    * @param minKeyframeInterval
-   * Minimum interval in seconds between key frames
+   *        Minimum interval in seconds between key frames
    */
   public void setMinKeyframeInterval(Double minKeyframeInterval) {
     this.minKeyframeInterval = minKeyframeInterval;
@@ -369,7 +369,7 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    * Maximum interval in seconds between key frames
    *
    * @param maxKeyframeInterval
-   * Maximum interval in seconds between key frames
+   *        Maximum interval in seconds between key frames
    */
   public void setMaxKeyframeInterval(Double maxKeyframeInterval) {
     this.maxKeyframeInterval = maxKeyframeInterval;
@@ -408,7 +408,7 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    * minimum: 0
    *
    * @param staticThresh
-   * A change threshold on blocks below which they will be skipped by the encoder.
+   *        A change threshold on blocks below which they will be skipped by the encoder.
    * minimum: 0
    */
   public void setStaticThresh(Integer staticThresh) {
@@ -432,7 +432,7 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    * maximum: 15
    *
    * @param arnrMaxFrames
-   * altref noise reduction max frame count.
+   *        altref noise reduction max frame count.
    * minimum: 0
    * maximum: 15
    */
@@ -457,7 +457,7 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    * maximum: 6
    *
    * @param arnrStrength
-   * altref noise reduction filter strength.
+   *        altref noise reduction filter strength.
    * minimum: 0
    * maximum: 6
    */
@@ -520,7 +520,6 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
     return Objects.hash(crf, lagInFrames, maxIntraRate, qpMin, qpMax, rateUndershootPct, rateOvershootPct, cpuUsed, noiseSensitivity, sharpness, minGop, maxGop, minKeyframeInterval, maxKeyframeInterval, quality, staticThresh, arnrMaxFrames, arnrStrength, arnrType, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -559,6 +558,5 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

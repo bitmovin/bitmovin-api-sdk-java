@@ -197,7 +197,6 @@ public class MuxingInformationVideoTrack {
     return Objects.hash(index, codec, codecIso, bitRate, rate, pixelFormat, frameMode, frameWidth, frameHeight, frameRate, startTime, duration, numberOfFrames, aspectRatio);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -231,6 +230,5 @@ public class MuxingInformationVideoTrack {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

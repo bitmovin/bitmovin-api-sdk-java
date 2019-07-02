@@ -119,7 +119,6 @@ public class ProgressiveMuxingInformation {
     return Objects.hash(mimeType, fileSize, containerFormat, containerBitrate, duration, videoTracks, audioTracks);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -146,6 +145,5 @@ public class ProgressiveMuxingInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

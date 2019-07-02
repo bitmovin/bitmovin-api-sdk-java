@@ -20,7 +20,7 @@ public class CustomAttribute {
 
 
   /**
-   * unique string identifier for the custom attribute
+   * unique string identifier for the custom attribute (required)
    * @return key
    */
   public String getKey() {
@@ -28,10 +28,10 @@ public class CustomAttribute {
   }
 
   /**
-   * unique string identifier for the custom attribute
+   * unique string identifier for the custom attribute (required)
    *
    * @param key
-   * unique string identifier for the custom attribute
+   *        unique string identifier for the custom attribute (required)
    */
   public void setKey(String key) {
     this.key = key;
@@ -50,7 +50,7 @@ public class CustomAttribute {
    * value of the custom attribute
    *
    * @param value
-   * value of the custom attribute
+   *        value of the custom attribute
    */
   public void setValue(String value) {
     this.value = value;
@@ -75,7 +75,6 @@ public class CustomAttribute {
     return Objects.hash(key, value);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -97,6 +96,5 @@ public class CustomAttribute {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

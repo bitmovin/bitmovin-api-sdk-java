@@ -22,7 +22,7 @@ public class EncodingStatisticsVod extends EncodingStatistics {
 
 
   /**
-   * Time in seconds encoded for this encoding.
+   * Time in seconds encoded for this encoding. (required)
    * @return timeEnqueued
    */
   public Long getTimeEnqueued() {
@@ -30,10 +30,10 @@ public class EncodingStatisticsVod extends EncodingStatistics {
   }
 
   /**
-   * Time in seconds encoded for this encoding.
+   * Time in seconds encoded for this encoding. (required)
    *
    * @param timeEnqueued
-   * Time in seconds encoded for this encoding.
+   *        Time in seconds encoded for this encoding. (required)
    */
   public void setTimeEnqueued(Long timeEnqueued) {
     this.timeEnqueued = timeEnqueued;
@@ -41,7 +41,7 @@ public class EncodingStatisticsVod extends EncodingStatistics {
 
 
   /**
-   * The realtime factor.
+   * The realtime factor. (required)
    * @return realTimeFactor
    */
   public Double getRealTimeFactor() {
@@ -49,10 +49,10 @@ public class EncodingStatisticsVod extends EncodingStatistics {
   }
 
   /**
-   * The realtime factor.
+   * The realtime factor. (required)
    *
    * @param realTimeFactor
-   * The realtime factor.
+   *        The realtime factor. (required)
    */
   public void setRealTimeFactor(Double realTimeFactor) {
     this.realTimeFactor = realTimeFactor;
@@ -78,7 +78,6 @@ public class EncodingStatisticsVod extends EncodingStatistics {
     return Objects.hash(timeEnqueued, realTimeFactor, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -100,6 +99,5 @@ public class EncodingStatisticsVod extends EncodingStatistics {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -36,9 +36,6 @@ public class Drm extends BitmovinResource {
 
 
   public Drm addOutputsItem(EncodingOutput outputsItem) {
-    if (this.outputs == null) {
-      this.outputs = new ArrayList<>();
-    }
     this.outputs.add(outputsItem);
     return this;
   }
@@ -79,7 +76,6 @@ public class Drm extends BitmovinResource {
     return Objects.hash(outputs, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -100,6 +96,5 @@ public class Drm extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

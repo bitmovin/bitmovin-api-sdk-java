@@ -41,7 +41,6 @@ public class ResultWrapper<T> {
     return Objects.hash(result);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -62,6 +61,5 @@ public class ResultWrapper<T> {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

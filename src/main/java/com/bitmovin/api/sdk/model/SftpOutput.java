@@ -41,7 +41,7 @@ public class SftpOutput extends Output {
 
 
   /**
-   * Host Url or IP of the SFTP server
+   * Host Url or IP of the SFTP server (required)
    * @return host
    */
   public String getHost() {
@@ -49,10 +49,10 @@ public class SftpOutput extends Output {
   }
 
   /**
-   * Host Url or IP of the SFTP server
+   * Host Url or IP of the SFTP server (required)
    *
    * @param host
-   * Host Url or IP of the SFTP server
+   *        Host Url or IP of the SFTP server (required)
    */
   public void setHost(String host) {
     this.host = host;
@@ -71,7 +71,7 @@ public class SftpOutput extends Output {
    * Port to use, standard for SFTP: 22
    *
    * @param port
-   * Port to use, standard for SFTP: 22
+   *        Port to use, standard for SFTP: 22
    */
   public void setPort(Integer port) {
     this.port = port;
@@ -90,7 +90,7 @@ public class SftpOutput extends Output {
    * Use passive mode. Default is true.
    *
    * @param passive
-   * Use passive mode. Default is true.
+   *        Use passive mode. Default is true.
    */
   public void setPassive(Boolean passive) {
     this.passive = passive;
@@ -109,7 +109,7 @@ public class SftpOutput extends Output {
    * Your SFTP Username
    *
    * @param username
-   * Your SFTP Username
+   *        Your SFTP Username
    */
   public void setUsername(String username) {
     this.username = username;
@@ -128,7 +128,7 @@ public class SftpOutput extends Output {
    * Your SFTP password
    *
    * @param password
-   * Your SFTP password
+   *        Your SFTP password
    */
   public void setPassword(String password) {
     this.password = password;
@@ -147,7 +147,7 @@ public class SftpOutput extends Output {
    * Controls which transfer version should be used
    *
    * @param transferVersion
-   * Controls which transfer version should be used
+   *        Controls which transfer version should be used
    */
   public void setTransferVersion(TransferVersion transferVersion) {
     this.transferVersion = transferVersion;
@@ -166,7 +166,7 @@ public class SftpOutput extends Output {
    * Restrict maximum concurrent connections. Requires at least version 1.1.0.
    *
    * @param maxConcurrentConnections
-   * Restrict maximum concurrent connections. Requires at least version 1.1.0.
+   *        Restrict maximum concurrent connections. Requires at least version 1.1.0.
    */
   public void setMaxConcurrentConnections(Integer maxConcurrentConnections) {
     this.maxConcurrentConnections = maxConcurrentConnections;
@@ -197,7 +197,6 @@ public class SftpOutput extends Output {
     return Objects.hash(host, port, passive, username, password, transferVersion, maxConcurrentConnections, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -224,6 +223,5 @@ public class SftpOutput extends Output {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

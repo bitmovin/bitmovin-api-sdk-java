@@ -32,6 +32,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
   @JsonSubTypes.Type(value = ProgressiveMovMuxing.class, name = "PROGRESSIVE_MOV"),
   @JsonSubTypes.Type(value = ProgressiveTsMuxing.class, name = "PROGRESSIVE_TS"),
   @JsonSubTypes.Type(value = BroadcastTsMuxing.class, name = "BROADCAST_TS"),
+  @JsonSubTypes.Type(value = ChunkedTextMuxing.class, name = "CHUNKED_TEXT"),
+  @JsonSubTypes.Type(value = TextMuxing.class, name = "TEXT"),
 })
 
 public class Muxing extends BitmovinResource {
@@ -84,9 +86,6 @@ public class Muxing extends BitmovinResource {
 
 
   public Muxing addOutputsItem(EncodingOutput outputsItem) {
-    if (this.outputs == null) {
-      this.outputs = new ArrayList<>();
-    }
     this.outputs.add(outputsItem);
     return this;
   }
@@ -153,7 +152,7 @@ public class Muxing extends BitmovinResource {
    * Specifies how to handle streams that don&#39;t fulfill stream conditions
    *
    * @param streamConditionsMode
-   * Specifies how to handle streams that don&#39;t fulfill stream conditions
+   *        Specifies how to handle streams that don&#39;t fulfill stream conditions
    */
   public void setStreamConditionsMode(StreamConditionsMode streamConditionsMode) {
     this.streamConditionsMode = streamConditionsMode;
@@ -184,7 +183,6 @@ public class Muxing extends BitmovinResource {
     return Objects.hash(streams, outputs, avgBitrate, minBitrate, maxBitrate, ignoredBy, streamConditionsMode, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -211,6 +209,5 @@ public class Muxing extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

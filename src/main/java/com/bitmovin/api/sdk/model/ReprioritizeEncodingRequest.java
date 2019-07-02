@@ -17,7 +17,7 @@ public class ReprioritizeEncodingRequest {
 
 
   /**
-   * Priority of the Encoding
+   * Priority of the Encoding (required)
    * minimum: 0
    * maximum: 100
    * @return priority
@@ -27,12 +27,12 @@ public class ReprioritizeEncodingRequest {
   }
 
   /**
-   * Priority of the Encoding
+   * Priority of the Encoding (required)
    * minimum: 0
    * maximum: 100
    *
    * @param priority
-   * Priority of the Encoding
+   *        Priority of the Encoding (required)
    * minimum: 0
    * maximum: 100
    */
@@ -58,7 +58,6 @@ public class ReprioritizeEncodingRequest {
     return Objects.hash(priority);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -79,6 +78,5 @@ public class ReprioritizeEncodingRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

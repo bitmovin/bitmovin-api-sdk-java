@@ -34,7 +34,7 @@ public class SidecarFile extends BitmovinResource {
 
 
   /**
-   * Id of input
+   * Id of input (required)
    * @return inputId
    */
   public String getInputId() {
@@ -42,10 +42,10 @@ public class SidecarFile extends BitmovinResource {
   }
 
   /**
-   * Id of input
+   * Id of input (required)
    *
    * @param inputId
-   * Id of input
+   *        Id of input (required)
    */
   public void setInputId(String inputId) {
     this.inputId = inputId;
@@ -53,7 +53,7 @@ public class SidecarFile extends BitmovinResource {
 
 
   /**
-   * Path to sidecar file
+   * Path to sidecar file (required)
    * @return inputPath
    */
   public String getInputPath() {
@@ -61,10 +61,10 @@ public class SidecarFile extends BitmovinResource {
   }
 
   /**
-   * Path to sidecar file
+   * Path to sidecar file (required)
    *
    * @param inputPath
-   * Path to sidecar file
+   *        Path to sidecar file (required)
    */
   public void setInputPath(String inputPath) {
     this.inputPath = inputPath;
@@ -72,9 +72,6 @@ public class SidecarFile extends BitmovinResource {
 
 
   public SidecarFile addOutputsItem(EncodingOutput outputsItem) {
-    if (this.outputs == null) {
-      this.outputs = new ArrayList<>();
-    }
     this.outputs.add(outputsItem);
     return this;
   }
@@ -136,7 +133,6 @@ public class SidecarFile extends BitmovinResource {
     return Objects.hash(inputId, inputPath, outputs, errorMode, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -160,6 +156,5 @@ public class SidecarFile extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

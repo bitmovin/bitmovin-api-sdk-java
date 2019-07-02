@@ -35,7 +35,7 @@ public class MediaStream extends BitmovinResponse {
    * Position starts from 0 and indicates the position of the stream in the media. 0 means that this is the first stream found in the media
    *
    * @param position
-   * Position starts from 0 and indicates the position of the stream in the media. 0 means that this is the first stream found in the media
+   *        Position starts from 0 and indicates the position of the stream in the media. 0 means that this is the first stream found in the media
    */
   public void setPosition(Integer position) {
     this.position = position;
@@ -54,7 +54,7 @@ public class MediaStream extends BitmovinResponse {
    * Duration of the stream in seconds
    *
    * @param duration
-   * Duration of the stream in seconds
+   *        Duration of the stream in seconds
    */
   public void setDuration(Long duration) {
     this.duration = duration;
@@ -73,7 +73,7 @@ public class MediaStream extends BitmovinResponse {
    * Codec of the stream
    *
    * @param codec
-   * Codec of the stream
+   *        Codec of the stream
    */
   public void setCodec(String codec) {
     this.codec = codec;
@@ -100,7 +100,6 @@ public class MediaStream extends BitmovinResponse {
     return Objects.hash(position, duration, codec, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -123,6 +122,5 @@ public class MediaStream extends BitmovinResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

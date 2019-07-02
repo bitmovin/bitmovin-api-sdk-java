@@ -28,7 +28,7 @@ public class StreamMetadata {
    * Language of the media contained in the stream. If the value is not set, then no metadata tag is set for the media stream.
    *
    * @param language
-   * Language of the media contained in the stream. If the value is not set, then no metadata tag is set for the media stream.
+   *        Language of the media contained in the stream. If the value is not set, then no metadata tag is set for the media stream.
    */
   public void setLanguage(String language) {
     this.language = language;
@@ -52,7 +52,6 @@ public class StreamMetadata {
     return Objects.hash(language);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -73,6 +72,5 @@ public class StreamMetadata {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

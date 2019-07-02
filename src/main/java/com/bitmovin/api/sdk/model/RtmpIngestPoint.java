@@ -20,7 +20,7 @@ public class RtmpIngestPoint {
 
 
   /**
-   * The name of the application where the ingest is streamed to. This has to be unique for each ingest point
+   * The name of the application where the ingest is streamed to. This has to be unique for each ingest point (required)
    * @return applicationName
    */
   public String getApplicationName() {
@@ -28,10 +28,10 @@ public class RtmpIngestPoint {
   }
 
   /**
-   * The name of the application where the ingest is streamed to. This has to be unique for each ingest point
+   * The name of the application where the ingest is streamed to. This has to be unique for each ingest point (required)
    *
    * @param applicationName
-   * The name of the application where the ingest is streamed to. This has to be unique for each ingest point
+   *        The name of the application where the ingest is streamed to. This has to be unique for each ingest point (required)
    */
   public void setApplicationName(String applicationName) {
     this.applicationName = applicationName;
@@ -39,7 +39,7 @@ public class RtmpIngestPoint {
 
 
   /**
-   * The stream key for the backup input
+   * The stream key for the backup input (required)
    * @return streamKey
    */
   public String getStreamKey() {
@@ -47,10 +47,10 @@ public class RtmpIngestPoint {
   }
 
   /**
-   * The stream key for the backup input
+   * The stream key for the backup input (required)
    *
    * @param streamKey
-   * The stream key for the backup input
+   *        The stream key for the backup input (required)
    */
   public void setStreamKey(String streamKey) {
     this.streamKey = streamKey;
@@ -75,7 +75,6 @@ public class RtmpIngestPoint {
     return Objects.hash(applicationName, streamKey);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -97,6 +96,5 @@ public class RtmpIngestPoint {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

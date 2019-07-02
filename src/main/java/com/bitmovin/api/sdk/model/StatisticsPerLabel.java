@@ -36,7 +36,7 @@ public class StatisticsPerLabel extends Statistics {
 
 
   /**
-   * An optional error message, when the event is in error state (occurs at event: ERROR)
+   * An optional error message, when the event is in error state (occurs at event: ERROR) (required)
    * @return label
    */
   public String getLabel() {
@@ -44,10 +44,10 @@ public class StatisticsPerLabel extends Statistics {
   }
 
   /**
-   * An optional error message, when the event is in error state (occurs at event: ERROR)
+   * An optional error message, when the event is in error state (occurs at event: ERROR) (required)
    *
    * @param label
-   * An optional error message, when the event is in error state (occurs at event: ERROR)
+   *        An optional error message, when the event is in error state (occurs at event: ERROR) (required)
    */
   public void setLabel(String label) {
     this.label = label;
@@ -66,7 +66,7 @@ public class StatisticsPerLabel extends Statistics {
    * The billable minutes.
    *
    * @param billableMinutes
-   * The billable minutes.
+   *        The billable minutes.
    */
   public void setBillableMinutes(Double billableMinutes) {
     this.billableMinutes = billableMinutes;
@@ -93,7 +93,7 @@ public class StatisticsPerLabel extends Statistics {
    * Billable minutes for muxings.
    *
    * @param billableTransmuxingMinutes
-   * Billable minutes for muxings.
+   *        Billable minutes for muxings.
    */
   public void setBillableTransmuxingMinutes(Double billableTransmuxingMinutes) {
     this.billableTransmuxingMinutes = billableTransmuxingMinutes;
@@ -130,7 +130,6 @@ public class StatisticsPerLabel extends Statistics {
     return Objects.hash(label, billableMinutes, billableEncodingMinutes, billableTransmuxingMinutes, billableFeatureMinutes, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -155,6 +154,5 @@ public class StatisticsPerLabel extends Statistics {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

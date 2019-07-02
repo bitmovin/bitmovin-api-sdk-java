@@ -22,7 +22,7 @@ public class RawId3Tag extends Id3Tag {
 
 
   /**
-   * Base64 Encoded Data
+   * Base64 Encoded Data (required)
    * @return bytes
    */
   public String getBytes() {
@@ -30,10 +30,10 @@ public class RawId3Tag extends Id3Tag {
   }
 
   /**
-   * Base64 Encoded Data
+   * Base64 Encoded Data (required)
    *
    * @param bytes
-   * Base64 Encoded Data
+   *        Base64 Encoded Data (required)
    */
   public void setBytes(String bytes) {
     this.bytes = bytes;
@@ -58,7 +58,6 @@ public class RawId3Tag extends Id3Tag {
     return Objects.hash(bytes, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -79,6 +78,5 @@ public class RawId3Tag extends Id3Tag {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

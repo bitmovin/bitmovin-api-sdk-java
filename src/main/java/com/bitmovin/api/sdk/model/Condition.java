@@ -25,7 +25,7 @@ public class Condition extends AbstractCondition {
 
 
   /**
-   * The attribute that should be used for the evaluation. Valid values include, depending on the context: - HEIGHT - WIDTH - BITRATE - FPS - ASPECTRATIO - INPUTSTREAM - LANGUAGE - CHANNELFORMAT - CHANNELLAYOUT - STREAMCOUNT - AUDIOSTREAMCOUNT - VIDEOSTREAMCOUNT - DURATION - CONNECTION_STATUS - CONNECTION_STATUS_JUST_CHANGED 
+   * The attribute that should be used for the evaluation. Valid values include, depending on the context: - HEIGHT - WIDTH - BITRATE - FPS - ASPECTRATIO - INPUTSTREAM - LANGUAGE - CHANNELFORMAT - CHANNELLAYOUT - STREAMCOUNT - AUDIOSTREAMCOUNT - VIDEOSTREAMCOUNT - DURATION - CONNECTION_STATUS - CONNECTION_STATUS_JUST_CHANGED (required)
    * @return attribute
    */
   public String getAttribute() {
@@ -33,10 +33,10 @@ public class Condition extends AbstractCondition {
   }
 
   /**
-   * The attribute that should be used for the evaluation. Valid values include, depending on the context: - HEIGHT - WIDTH - BITRATE - FPS - ASPECTRATIO - INPUTSTREAM - LANGUAGE - CHANNELFORMAT - CHANNELLAYOUT - STREAMCOUNT - AUDIOSTREAMCOUNT - VIDEOSTREAMCOUNT - DURATION - CONNECTION_STATUS - CONNECTION_STATUS_JUST_CHANGED 
+   * The attribute that should be used for the evaluation. Valid values include, depending on the context: - HEIGHT - WIDTH - BITRATE - FPS - ASPECTRATIO - INPUTSTREAM - LANGUAGE - CHANNELFORMAT - CHANNELLAYOUT - STREAMCOUNT - AUDIOSTREAMCOUNT - VIDEOSTREAMCOUNT - DURATION - CONNECTION_STATUS - CONNECTION_STATUS_JUST_CHANGED (required)
    *
    * @param attribute
-   * The attribute that should be used for the evaluation. Valid values include, depending on the context: - HEIGHT - WIDTH - BITRATE - FPS - ASPECTRATIO - INPUTSTREAM - LANGUAGE - CHANNELFORMAT - CHANNELLAYOUT - STREAMCOUNT - AUDIOSTREAMCOUNT - VIDEOSTREAMCOUNT - DURATION - CONNECTION_STATUS - CONNECTION_STATUS_JUST_CHANGED 
+   *        The attribute that should be used for the evaluation. Valid values include, depending on the context: - HEIGHT - WIDTH - BITRATE - FPS - ASPECTRATIO - INPUTSTREAM - LANGUAGE - CHANNELFORMAT - CHANNELLAYOUT - STREAMCOUNT - AUDIOSTREAMCOUNT - VIDEOSTREAMCOUNT - DURATION - CONNECTION_STATUS - CONNECTION_STATUS_JUST_CHANGED (required)
    */
   public void setAttribute(String attribute) {
     this.attribute = attribute;
@@ -44,7 +44,7 @@ public class Condition extends AbstractCondition {
 
 
   /**
-   * The operator that should be used for the evaluation
+   * The operator that should be used for the evaluation (required)
    * @return operator
    */
   public ConditionOperator getOperator() {
@@ -52,10 +52,10 @@ public class Condition extends AbstractCondition {
   }
 
   /**
-   * The operator that should be used for the evaluation
+   * The operator that should be used for the evaluation (required)
    *
    * @param operator
-   * The operator that should be used for the evaluation
+   *        The operator that should be used for the evaluation (required)
    */
   public void setOperator(ConditionOperator operator) {
     this.operator = operator;
@@ -63,7 +63,7 @@ public class Condition extends AbstractCondition {
 
 
   /**
-   * The value that should be used for comparison
+   * The value that should be used for comparison (required)
    * @return value
    */
   public String getValue() {
@@ -71,10 +71,10 @@ public class Condition extends AbstractCondition {
   }
 
   /**
-   * The value that should be used for comparison
+   * The value that should be used for comparison (required)
    *
    * @param value
-   * The value that should be used for comparison
+   *        The value that should be used for comparison (required)
    */
   public void setValue(String value) {
     this.value = value;
@@ -101,7 +101,6 @@ public class Condition extends AbstractCondition {
     return Objects.hash(attribute, operator, value, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -124,6 +123,5 @@ public class Condition extends AbstractCondition {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

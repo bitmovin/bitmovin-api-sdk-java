@@ -41,7 +41,7 @@ public class GenericS3Output extends Output {
 
 
   /**
-   * Your generic S3 access key
+   * Your generic S3 access key (required)
    * @return accessKey
    */
   public String getAccessKey() {
@@ -49,10 +49,10 @@ public class GenericS3Output extends Output {
   }
 
   /**
-   * Your generic S3 access key
+   * Your generic S3 access key (required)
    *
    * @param accessKey
-   * Your generic S3 access key
+   *        Your generic S3 access key (required)
    */
   public void setAccessKey(String accessKey) {
     this.accessKey = accessKey;
@@ -60,7 +60,7 @@ public class GenericS3Output extends Output {
 
 
   /**
-   * Your generic S3 secret key
+   * Your generic S3 secret key (required)
    * @return secretKey
    */
   public String getSecretKey() {
@@ -68,10 +68,10 @@ public class GenericS3Output extends Output {
   }
 
   /**
-   * Your generic S3 secret key
+   * Your generic S3 secret key (required)
    *
    * @param secretKey
-   * Your generic S3 secret key
+   *        Your generic S3 secret key (required)
    */
   public void setSecretKey(String secretKey) {
     this.secretKey = secretKey;
@@ -79,7 +79,7 @@ public class GenericS3Output extends Output {
 
 
   /**
-   * Name of the bucket
+   * Name of the bucket (required)
    * @return bucketName
    */
   public String getBucketName() {
@@ -87,10 +87,10 @@ public class GenericS3Output extends Output {
   }
 
   /**
-   * Name of the bucket
+   * Name of the bucket (required)
    *
    * @param bucketName
-   * Name of the bucket
+   *        Name of the bucket (required)
    */
   public void setBucketName(String bucketName) {
     this.bucketName = bucketName;
@@ -98,7 +98,7 @@ public class GenericS3Output extends Output {
 
 
   /**
-   * The Generic S3 server hostname (or IP address)
+   * The Generic S3 server hostname (or IP address) (required)
    * @return host
    */
   public String getHost() {
@@ -106,10 +106,10 @@ public class GenericS3Output extends Output {
   }
 
   /**
-   * The Generic S3 server hostname (or IP address)
+   * The Generic S3 server hostname (or IP address) (required)
    *
    * @param host
-   * The Generic S3 server hostname (or IP address)
+   *        The Generic S3 server hostname (or IP address) (required)
    */
   public void setHost(String host) {
     this.host = host;
@@ -128,7 +128,7 @@ public class GenericS3Output extends Output {
    * The port on which the Generic S3 server is running on (if not provided 8000 will be used)
    *
    * @param port
-   * The port on which the Generic S3 server is running on (if not provided 8000 will be used)
+   *        The port on which the Generic S3 server is running on (if not provided 8000 will be used)
    */
   public void setPort(Integer port) {
     this.port = port;
@@ -147,7 +147,7 @@ public class GenericS3Output extends Output {
    * Controls whether SSL is used or not
    *
    * @param ssl
-   * Controls whether SSL is used or not
+   *        Controls whether SSL is used or not
    */
   public void setSsl(Boolean ssl) {
     this.ssl = ssl;
@@ -166,7 +166,7 @@ public class GenericS3Output extends Output {
    * Specifies the method used for authentication
    *
    * @param signatureVersion
-   * Specifies the method used for authentication
+   *        Specifies the method used for authentication
    */
   public void setSignatureVersion(S3SignatureVersion signatureVersion) {
     this.signatureVersion = signatureVersion;
@@ -197,7 +197,6 @@ public class GenericS3Output extends Output {
     return Objects.hash(accessKey, secretKey, bucketName, host, port, ssl, signatureVersion, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -224,6 +223,5 @@ public class GenericS3Output extends Output {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

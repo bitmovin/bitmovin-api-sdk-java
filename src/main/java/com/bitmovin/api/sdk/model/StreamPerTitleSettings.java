@@ -29,7 +29,7 @@ public class StreamPerTitleSettings {
    * Settings for PER_TITLE_TEMPLATE_FIXED_RESOLUTION_AND_BITRATE mode
    *
    * @param fixedResolutionAndBitrateSettings
-   * Settings for PER_TITLE_TEMPLATE_FIXED_RESOLUTION_AND_BITRATE mode
+   *        Settings for PER_TITLE_TEMPLATE_FIXED_RESOLUTION_AND_BITRATE mode
    */
   public void setFixedResolutionAndBitrateSettings(StreamPerTitleFixedResolutionAndBitrateSettings fixedResolutionAndBitrateSettings) {
     this.fixedResolutionAndBitrateSettings = fixedResolutionAndBitrateSettings;
@@ -53,7 +53,6 @@ public class StreamPerTitleSettings {
     return Objects.hash(fixedResolutionAndBitrateSettings);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -74,6 +73,5 @@ public class StreamPerTitleSettings {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

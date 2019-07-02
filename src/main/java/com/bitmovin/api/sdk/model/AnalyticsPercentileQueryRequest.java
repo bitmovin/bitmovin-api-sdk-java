@@ -33,7 +33,7 @@ public class AnalyticsPercentileQueryRequest extends AnalyticsQueryRequest {
    * The percentage (0-99) used for percentile queries.
    *
    * @param percentile
-   * The percentage (0-99) used for percentile queries.
+   *        The percentage (0-99) used for percentile queries.
    */
   public void setPercentile(Long percentile) {
     this.percentile = percentile;
@@ -58,7 +58,6 @@ public class AnalyticsPercentileQueryRequest extends AnalyticsQueryRequest {
     return Objects.hash(percentile, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -79,6 +78,5 @@ public class AnalyticsPercentileQueryRequest extends AnalyticsQueryRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -66,7 +66,7 @@ public class Encoding extends BitmovinResource {
    * Version of the encoder
    *
    * @param encoderVersion
-   * Version of the encoder
+   *        Version of the encoder
    */
   public void setEncoderVersion(String encoderVersion) {
     this.encoderVersion = encoderVersion;
@@ -85,7 +85,7 @@ public class Encoding extends BitmovinResource {
    * Define an external infrastructure to run the encoding on. Note If you set this value, the &#x60;cloudRegion&#x60; must be &#39;EXTERNAL&#39;.
    *
    * @param infrastructureId
-   * Define an external infrastructure to run the encoding on. Note If you set this value, the &#x60;cloudRegion&#x60; must be &#39;EXTERNAL&#39;.
+   *        Define an external infrastructure to run the encoding on. Note If you set this value, the &#x60;cloudRegion&#x60; must be &#39;EXTERNAL&#39;.
    */
   public void setInfrastructureId(String infrastructureId) {
     this.infrastructureId = infrastructureId;
@@ -111,9 +111,6 @@ public class Encoding extends BitmovinResource {
 
 
   public Encoding addLabelsItem(String labelsItem) {
-    if (this.labels == null) {
-      this.labels = new ArrayList<>();
-    }
     this.labels.add(labelsItem);
     return this;
   }
@@ -130,7 +127,7 @@ public class Encoding extends BitmovinResource {
    * You may pass a list of groups associated with this encoding. This will enable you to group results in the statistics resource
    *
    * @param labels
-   * You may pass a list of groups associated with this encoding. This will enable you to group results in the statistics resource
+   *        You may pass a list of groups associated with this encoding. This will enable you to group results in the statistics resource
    */
   public void setLabels(List<String> labels) {
     this.labels = labels;
@@ -159,7 +156,6 @@ public class Encoding extends BitmovinResource {
     return Objects.hash(cloudRegion, encoderVersion, infrastructureId, infrastructure, labels, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -184,6 +180,5 @@ public class Encoding extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

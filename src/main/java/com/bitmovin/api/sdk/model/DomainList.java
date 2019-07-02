@@ -21,9 +21,6 @@ public class DomainList {
 
 
   public DomainList addDomainsItem(Domain domainsItem) {
-    if (this.domains == null) {
-      this.domains = new ArrayList<>();
-    }
     this.domains.add(domainsItem);
     return this;
   }
@@ -63,7 +60,6 @@ public class DomainList {
     return Objects.hash(domains);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -84,6 +80,5 @@ public class DomainList {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

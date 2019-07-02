@@ -42,7 +42,7 @@ public class StatisticsPerStream {
   private Long height;
 
   @JsonProperty("rate")
-  private Long rate;
+  private Double rate;
 
   @JsonProperty("bitrate")
   private Long bitrate;
@@ -73,7 +73,7 @@ public class StatisticsPerStream {
 
 
   /**
-   * ID of the stream
+   * ID of the stream (required)
    * @return streamId
    */
   public String getStreamId() {
@@ -81,10 +81,10 @@ public class StatisticsPerStream {
   }
 
   /**
-   * ID of the stream
+   * ID of the stream (required)
    *
    * @param streamId
-   * ID of the stream
+   *        ID of the stream (required)
    */
   public void setStreamId(String streamId) {
     this.streamId = streamId;
@@ -92,7 +92,7 @@ public class StatisticsPerStream {
 
 
   /**
-   * ID of the condec configuration
+   * ID of the condec configuration (required)
    * @return codecConfigId
    */
   public String getCodecConfigId() {
@@ -100,10 +100,10 @@ public class StatisticsPerStream {
   }
 
   /**
-   * ID of the condec configuration
+   * ID of the condec configuration (required)
    *
    * @param codecConfigId
-   * ID of the condec configuration
+   *        ID of the condec configuration (required)
    */
   public void setCodecConfigId(String codecConfigId) {
     this.codecConfigId = codecConfigId;
@@ -111,7 +111,7 @@ public class StatisticsPerStream {
 
 
   /**
-   * Multiplier for the encoded minutes. Depends on muxing type.
+   * Multiplier for the encoded minutes. Depends on muxing type. (required)
    * @return multiplicator
    */
   public Double getMultiplicator() {
@@ -119,10 +119,10 @@ public class StatisticsPerStream {
   }
 
   /**
-   * Multiplier for the encoded minutes. Depends on muxing type.
+   * Multiplier for the encoded minutes. Depends on muxing type. (required)
    *
    * @param multiplicator
-   * Multiplier for the encoded minutes. Depends on muxing type.
+   *        Multiplier for the encoded minutes. Depends on muxing type. (required)
    */
   public void setMultiplicator(Double multiplicator) {
     this.multiplicator = multiplicator;
@@ -130,7 +130,7 @@ public class StatisticsPerStream {
 
 
   /**
-   * Encoded bytes.
+   * Encoded bytes. (required)
    * @return encodedBytes
    */
   public Long getEncodedBytes() {
@@ -138,10 +138,10 @@ public class StatisticsPerStream {
   }
 
   /**
-   * Encoded bytes.
+   * Encoded bytes. (required)
    *
    * @param encodedBytes
-   * Encoded bytes.
+   *        Encoded bytes. (required)
    */
   public void setEncodedBytes(Long encodedBytes) {
     this.encodedBytes = encodedBytes;
@@ -149,7 +149,7 @@ public class StatisticsPerStream {
 
 
   /**
-   * Length of the stream.
+   * Length of the stream. (required)
    * @return encodedSeconds
    */
   public Double getEncodedSeconds() {
@@ -157,10 +157,10 @@ public class StatisticsPerStream {
   }
 
   /**
-   * Length of the stream.
+   * Length of the stream. (required)
    *
    * @param encodedSeconds
-   * Length of the stream.
+   *        Length of the stream. (required)
    */
   public void setEncodedSeconds(Double encodedSeconds) {
     this.encodedSeconds = encodedSeconds;
@@ -168,7 +168,7 @@ public class StatisticsPerStream {
 
 
   /**
-   * Minutes you will be charged for (billableMinutes &#x3D; encodedSeconds * multiplicator)
+   * Minutes you will be charged for (billableMinutes &#x3D; encodedSeconds * multiplicator) (required)
    * @return billableMinutes
    */
   public Double getBillableMinutes() {
@@ -176,10 +176,10 @@ public class StatisticsPerStream {
   }
 
   /**
-   * Minutes you will be charged for (billableMinutes &#x3D; encodedSeconds * multiplicator)
+   * Minutes you will be charged for (billableMinutes &#x3D; encodedSeconds * multiplicator) (required)
    *
    * @param billableMinutes
-   * Minutes you will be charged for (billableMinutes &#x3D; encodedSeconds * multiplicator)
+   *        Minutes you will be charged for (billableMinutes &#x3D; encodedSeconds * multiplicator) (required)
    */
   public void setBillableMinutes(Double billableMinutes) {
     this.billableMinutes = billableMinutes;
@@ -198,7 +198,7 @@ public class StatisticsPerStream {
    * Video width, only if video stream
    *
    * @param width
-   * Video width, only if video stream
+   *        Video width, only if video stream
    */
   public void setWidth(Long width) {
     this.width = width;
@@ -217,7 +217,7 @@ public class StatisticsPerStream {
    * Video height, only if video stream
    *
    * @param height
-   * Video height, only if video stream
+   *        Video height, only if video stream
    */
   public void setHeight(Long height) {
     this.height = height;
@@ -225,26 +225,26 @@ public class StatisticsPerStream {
 
 
   /**
-   * If it&#39; a video stream this value is the FPS, for audio it&#39;s the sample rate.
+   * If it&#39; a video stream this value is the FPS, for audio it&#39;s the sample rate. (required)
    * @return rate
    */
-  public Long getRate() {
+  public Double getRate() {
     return rate;
   }
 
   /**
-   * If it&#39; a video stream this value is the FPS, for audio it&#39;s the sample rate.
+   * If it&#39; a video stream this value is the FPS, for audio it&#39;s the sample rate. (required)
    *
    * @param rate
-   * If it&#39; a video stream this value is the FPS, for audio it&#39;s the sample rate.
+   *        If it&#39; a video stream this value is the FPS, for audio it&#39;s the sample rate. (required)
    */
-  public void setRate(Long rate) {
+  public void setRate(Double rate) {
     this.rate = rate;
   }
 
 
   /**
-   * Bitrate of the stream
+   * Bitrate of the stream (required)
    * @return bitrate
    */
   public Long getBitrate() {
@@ -252,10 +252,10 @@ public class StatisticsPerStream {
   }
 
   /**
-   * Bitrate of the stream
+   * Bitrate of the stream (required)
    *
    * @param bitrate
-   * Bitrate of the stream
+   *        Bitrate of the stream (required)
    */
   public void setBitrate(Long bitrate) {
     this.bitrate = bitrate;
@@ -328,7 +328,7 @@ public class StatisticsPerStream {
    * The output minutes multiplicator for the given encodingMode
    *
    * @param encodingModeMultiplicator
-   * The output minutes multiplicator for the given encodingMode
+   *        The output minutes multiplicator for the given encodingMode
    */
   public void setEncodingModeMultiplicator(Double encodingModeMultiplicator) {
     this.encodingModeMultiplicator = encodingModeMultiplicator;
@@ -365,7 +365,7 @@ public class StatisticsPerStream {
    * The output minutes multiplicator for per-title
    *
    * @param perTitleMultiplicator
-   * The output minutes multiplicator for per-title
+   *        The output minutes multiplicator for per-title
    */
   public void setPerTitleMultiplicator(Double perTitleMultiplicator) {
     this.perTitleMultiplicator = perTitleMultiplicator;
@@ -402,7 +402,7 @@ public class StatisticsPerStream {
    * The output minutes multiplicator for psnr streams
    *
    * @param psnrMultiplicator
-   * The output minutes multiplicator for psnr streams
+   *        The output minutes multiplicator for psnr streams
    */
   public void setPsnrMultiplicator(Double psnrMultiplicator) {
     this.psnrMultiplicator = psnrMultiplicator;
@@ -443,7 +443,6 @@ public class StatisticsPerStream {
     return Objects.hash(streamId, codecConfigId, multiplicator, encodedBytes, encodedSeconds, billableMinutes, width, height, rate, bitrate, codec, resolution, encodingMode, encodingModeMultiplicator, perTitleResultStream, perTitleMultiplicator, psnrMode, psnrMultiplicator);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -481,6 +480,5 @@ public class StatisticsPerStream {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -24,7 +24,7 @@ public class UdpMulticastInput extends Input {
 
 
   /**
-   * Host name or IP address to use
+   * Host name or IP address to use (required)
    * @return host
    */
   public String getHost() {
@@ -32,10 +32,10 @@ public class UdpMulticastInput extends Input {
   }
 
   /**
-   * Host name or IP address to use
+   * Host name or IP address to use (required)
    *
    * @param host
-   * Host name or IP address to use
+   *        Host name or IP address to use (required)
    */
   public void setHost(String host) {
     this.host = host;
@@ -43,7 +43,7 @@ public class UdpMulticastInput extends Input {
 
 
   /**
-   * Port to use
+   * Port to use (required)
    * @return port
    */
   public Integer getPort() {
@@ -51,10 +51,10 @@ public class UdpMulticastInput extends Input {
   }
 
   /**
-   * Port to use
+   * Port to use (required)
    *
    * @param port
-   * Port to use
+   *        Port to use (required)
    */
   public void setPort(Integer port) {
     this.port = port;
@@ -80,7 +80,6 @@ public class UdpMulticastInput extends Input {
     return Objects.hash(host, port, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -102,6 +101,5 @@ public class UdpMulticastInput extends Input {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

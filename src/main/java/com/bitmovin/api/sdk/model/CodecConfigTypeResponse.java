@@ -29,7 +29,7 @@ public class CodecConfigTypeResponse {
    * The type of the codec config
    *
    * @param type
-   * The type of the codec config
+   *        The type of the codec config
    */
   public void setType(CodecConfigType type) {
     this.type = type;
@@ -53,7 +53,6 @@ public class CodecConfigTypeResponse {
     return Objects.hash(type);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -74,6 +73,5 @@ public class CodecConfigTypeResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

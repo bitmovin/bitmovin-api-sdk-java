@@ -28,7 +28,7 @@ public class FairPlayDrm extends Drm {
 
 
   /**
-   * 16 byte Encryption key, 32 hexadecimal characters
+   * 16 byte Encryption key, 32 hexadecimal characters (required)
    * @return key
    */
   public String getKey() {
@@ -36,10 +36,10 @@ public class FairPlayDrm extends Drm {
   }
 
   /**
-   * 16 byte Encryption key, 32 hexadecimal characters
+   * 16 byte Encryption key, 32 hexadecimal characters (required)
    *
    * @param key
-   * 16 byte Encryption key, 32 hexadecimal characters
+   *        16 byte Encryption key, 32 hexadecimal characters (required)
    */
   public void setKey(String key) {
     this.key = key;
@@ -47,7 +47,7 @@ public class FairPlayDrm extends Drm {
 
 
   /**
-   * 16 byte initialization vector
+   * 16 byte initialization vector (required)
    * @return iv
    */
   public String getIv() {
@@ -55,10 +55,10 @@ public class FairPlayDrm extends Drm {
   }
 
   /**
-   * 16 byte initialization vector
+   * 16 byte initialization vector (required)
    *
    * @param iv
-   * 16 byte initialization vector
+   *        16 byte initialization vector (required)
    */
   public void setIv(String iv) {
     this.iv = iv;
@@ -77,7 +77,7 @@ public class FairPlayDrm extends Drm {
    * Url of the licensing server
    *
    * @param uri
-   * Url of the licensing server
+   *        Url of the licensing server
    */
   public void setUri(String uri) {
     this.uri = uri;
@@ -104,7 +104,6 @@ public class FairPlayDrm extends Drm {
     return Objects.hash(key, iv, uri, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -127,6 +126,5 @@ public class FairPlayDrm extends Drm {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

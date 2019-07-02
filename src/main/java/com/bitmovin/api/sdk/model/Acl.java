@@ -31,7 +31,7 @@ public class Acl extends BitmovinResource {
 
 
   /**
-   * Resource to define the permission for.
+   * Resource to define the permission for. (required)
    * @return resource
    */
   public String getResource() {
@@ -39,10 +39,10 @@ public class Acl extends BitmovinResource {
   }
 
   /**
-   * Resource to define the permission for.
+   * Resource to define the permission for. (required)
    *
    * @param resource
-   * Resource to define the permission for.
+   *        Resource to define the permission for. (required)
    */
   public void setResource(String resource) {
     this.resource = resource;
@@ -73,7 +73,7 @@ public class Acl extends BitmovinResource {
   }
 
   /**
-   * Permissions to assign.
+   * Permissions to assign. (required)
    * @return permissions
    */
   public List<Permission> getPermissions() {
@@ -81,10 +81,10 @@ public class Acl extends BitmovinResource {
   }
 
   /**
-   * Permissions to assign.
+   * Permissions to assign. (required)
    *
    * @param permissions
-   * Permissions to assign.
+   *        Permissions to assign. (required)
    */
   public void setPermissions(List<Permission> permissions) {
     this.permissions = permissions;
@@ -111,7 +111,6 @@ public class Acl extends BitmovinResource {
     return Objects.hash(resource, policy, permissions, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -134,6 +133,5 @@ public class Acl extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

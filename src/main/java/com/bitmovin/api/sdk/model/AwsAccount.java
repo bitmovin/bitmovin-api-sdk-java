@@ -27,7 +27,7 @@ public class AwsAccount extends BitmovinResource {
 
 
   /**
-   * Amazon access key
+   * Amazon access key (required)
    * @return accessKey
    */
   public String getAccessKey() {
@@ -35,10 +35,10 @@ public class AwsAccount extends BitmovinResource {
   }
 
   /**
-   * Amazon access key
+   * Amazon access key (required)
    *
    * @param accessKey
-   * Amazon access key
+   *        Amazon access key (required)
    */
   public void setAccessKey(String accessKey) {
     this.accessKey = accessKey;
@@ -46,7 +46,7 @@ public class AwsAccount extends BitmovinResource {
 
 
   /**
-   * Amazon secret key
+   * Amazon secret key (required)
    * @return secretKey
    */
   public String getSecretKey() {
@@ -54,10 +54,10 @@ public class AwsAccount extends BitmovinResource {
   }
 
   /**
-   * Amazon secret key
+   * Amazon secret key (required)
    *
    * @param secretKey
-   * Amazon secret key
+   *        Amazon secret key (required)
    */
   public void setSecretKey(String secretKey) {
     this.secretKey = secretKey;
@@ -65,7 +65,7 @@ public class AwsAccount extends BitmovinResource {
 
 
   /**
-   * Amazon account number (12 digits as per AWS spec)
+   * Amazon account number (12 digits as per AWS spec) (required)
    * @return accountNumber
    */
   public String getAccountNumber() {
@@ -73,10 +73,10 @@ public class AwsAccount extends BitmovinResource {
   }
 
   /**
-   * Amazon account number (12 digits as per AWS spec)
+   * Amazon account number (12 digits as per AWS spec) (required)
    *
    * @param accountNumber
-   * Amazon account number (12 digits as per AWS spec)
+   *        Amazon account number (12 digits as per AWS spec) (required)
    */
   public void setAccountNumber(String accountNumber) {
     this.accountNumber = accountNumber;
@@ -103,7 +103,6 @@ public class AwsAccount extends BitmovinResource {
     return Objects.hash(accessKey, secretKey, accountNumber, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -126,6 +125,5 @@ public class AwsAccount extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

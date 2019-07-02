@@ -20,7 +20,7 @@ public class KubernetesClusterConfiguration {
 
 
   /**
-   * Number of parallel scheduled encodings on the Kubernetes cluster
+   * Number of parallel scheduled encodings on the Kubernetes cluster (required)
    * @return parallelEncodings
    */
   public Integer getParallelEncodings() {
@@ -28,10 +28,10 @@ public class KubernetesClusterConfiguration {
   }
 
   /**
-   * Number of parallel scheduled encodings on the Kubernetes cluster
+   * Number of parallel scheduled encodings on the Kubernetes cluster (required)
    *
    * @param parallelEncodings
-   * Number of parallel scheduled encodings on the Kubernetes cluster
+   *        Number of parallel scheduled encodings on the Kubernetes cluster (required)
    */
   public void setParallelEncodings(Integer parallelEncodings) {
     this.parallelEncodings = parallelEncodings;
@@ -39,7 +39,7 @@ public class KubernetesClusterConfiguration {
 
 
   /**
-   * Number of worker nodes used for each encoding on the Kubernetes cluster
+   * Number of worker nodes used for each encoding on the Kubernetes cluster (required)
    * @return workersPerEncoding
    */
   public Integer getWorkersPerEncoding() {
@@ -47,10 +47,10 @@ public class KubernetesClusterConfiguration {
   }
 
   /**
-   * Number of worker nodes used for each encoding on the Kubernetes cluster
+   * Number of worker nodes used for each encoding on the Kubernetes cluster (required)
    *
    * @param workersPerEncoding
-   * Number of worker nodes used for each encoding on the Kubernetes cluster
+   *        Number of worker nodes used for each encoding on the Kubernetes cluster (required)
    */
   public void setWorkersPerEncoding(Integer workersPerEncoding) {
     this.workersPerEncoding = workersPerEncoding;
@@ -75,7 +75,6 @@ public class KubernetesClusterConfiguration {
     return Objects.hash(parallelEncodings, workersPerEncoding);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -97,6 +96,5 @@ public class KubernetesClusterConfiguration {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

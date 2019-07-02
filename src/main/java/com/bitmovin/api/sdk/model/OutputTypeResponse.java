@@ -29,7 +29,7 @@ public class OutputTypeResponse {
    * The type of the output
    *
    * @param type
-   * The type of the output
+   *        The type of the output
    */
   public void setType(OutputType type) {
     this.type = type;
@@ -53,7 +53,6 @@ public class OutputTypeResponse {
     return Objects.hash(type);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -74,6 +73,5 @@ public class OutputTypeResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -21,7 +21,7 @@ public class WebhookEncryption {
 
 
   /**
-   * The encryption algorithm used for the webhook
+   * The encryption algorithm used for the webhook (required)
    * @return type
    */
   public EncryptionType getType() {
@@ -29,10 +29,10 @@ public class WebhookEncryption {
   }
 
   /**
-   * The encryption algorithm used for the webhook
+   * The encryption algorithm used for the webhook (required)
    *
    * @param type
-   * The encryption algorithm used for the webhook
+   *        The encryption algorithm used for the webhook (required)
    */
   public void setType(EncryptionType type) {
     this.type = type;
@@ -40,7 +40,7 @@ public class WebhookEncryption {
 
 
   /**
-   * The key of the encryption
+   * The key of the encryption (required)
    * @return key
    */
   public String getKey() {
@@ -48,10 +48,10 @@ public class WebhookEncryption {
   }
 
   /**
-   * The key of the encryption
+   * The key of the encryption (required)
    *
    * @param key
-   * The key of the encryption
+   *        The key of the encryption (required)
    */
   public void setKey(String key) {
     this.key = key;
@@ -76,7 +76,6 @@ public class WebhookEncryption {
     return Objects.hash(type, key);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -98,6 +97,5 @@ public class WebhookEncryption {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

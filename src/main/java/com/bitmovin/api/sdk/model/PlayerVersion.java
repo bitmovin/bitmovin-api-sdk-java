@@ -27,7 +27,7 @@ public class PlayerVersion extends BitmovinResponse {
   private Date createdAt;
 
   /**
-   * Version of the Player
+   * Version of the Player (required)
    * @return version
    */
   public String getVersion() {
@@ -35,7 +35,7 @@ public class PlayerVersion extends BitmovinResponse {
   }
 
   /**
-   * URL of the specified player
+   * URL of the specified player (required)
    * @return cdnUrl
    */
   public String getCdnUrl() {
@@ -43,7 +43,7 @@ public class PlayerVersion extends BitmovinResponse {
   }
 
   /**
-   * Download URL of the specified player package
+   * Download URL of the specified player package (required)
    * @return downloadUrl
    */
   public String getDownloadUrl() {
@@ -51,7 +51,7 @@ public class PlayerVersion extends BitmovinResponse {
   }
 
   /**
-   * Creation timestamp formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Creation timestamp formatted in UTC: YYYY-MM-DDThh:mm:ssZ (required)
    * @return createdAt
    */
   public Date getCreatedAt() {
@@ -80,7 +80,6 @@ public class PlayerVersion extends BitmovinResponse {
     return Objects.hash(version, cdnUrl, downloadUrl, createdAt, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -104,6 +103,5 @@ public class PlayerVersion extends BitmovinResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

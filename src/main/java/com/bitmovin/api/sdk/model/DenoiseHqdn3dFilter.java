@@ -41,7 +41,7 @@ public class DenoiseHqdn3dFilter extends Filter {
    * A non-negative floating point number which specifies spatial luma strength. It defaults to 4.0.
    *
    * @param lumaSpatial
-   * A non-negative floating point number which specifies spatial luma strength. It defaults to 4.0.
+   *        A non-negative floating point number which specifies spatial luma strength. It defaults to 4.0.
    */
   public void setLumaSpatial(Double lumaSpatial) {
     this.lumaSpatial = lumaSpatial;
@@ -60,7 +60,7 @@ public class DenoiseHqdn3dFilter extends Filter {
    * A non-negative floating point number which specifies spatial chroma strength. It defaults to 3.0*luma_spatial/4.0.
    *
    * @param chromaSpatial
-   * A non-negative floating point number which specifies spatial chroma strength. It defaults to 3.0*luma_spatial/4.0.
+   *        A non-negative floating point number which specifies spatial chroma strength. It defaults to 3.0*luma_spatial/4.0.
    */
   public void setChromaSpatial(Double chromaSpatial) {
     this.chromaSpatial = chromaSpatial;
@@ -79,7 +79,7 @@ public class DenoiseHqdn3dFilter extends Filter {
    * A floating point number which specifies luma temporal strength. It defaults to 6.0*luma_spatial/4.0.
    *
    * @param lumaTmp
-   * A floating point number which specifies luma temporal strength. It defaults to 6.0*luma_spatial/4.0.
+   *        A floating point number which specifies luma temporal strength. It defaults to 6.0*luma_spatial/4.0.
    */
   public void setLumaTmp(Double lumaTmp) {
     this.lumaTmp = lumaTmp;
@@ -98,7 +98,7 @@ public class DenoiseHqdn3dFilter extends Filter {
    * A floating point number which specifies chroma temporal strength. It defaults to luma_tmp*chroma_spatial/luma_spatial.
    *
    * @param chromaTmp
-   * A floating point number which specifies chroma temporal strength. It defaults to luma_tmp*chroma_spatial/luma_spatial.
+   *        A floating point number which specifies chroma temporal strength. It defaults to luma_tmp*chroma_spatial/luma_spatial.
    */
   public void setChromaTmp(Double chromaTmp) {
     this.chromaTmp = chromaTmp;
@@ -126,7 +126,6 @@ public class DenoiseHqdn3dFilter extends Filter {
     return Objects.hash(lumaSpatial, chromaSpatial, lumaTmp, chromaTmp, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -150,6 +149,5 @@ public class DenoiseHqdn3dFilter extends Filter {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

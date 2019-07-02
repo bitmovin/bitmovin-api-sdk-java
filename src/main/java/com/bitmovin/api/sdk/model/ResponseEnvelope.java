@@ -27,7 +27,7 @@ public class ResponseEnvelope<T> {
   private Object more;
 
   /**
-   * Unique correlation id
+   * Unique correlation id (required)
    * @return requestId
    */
   public String getRequestId() {
@@ -35,7 +35,7 @@ public class ResponseEnvelope<T> {
   }
 
   /**
-   * Response status information
+   * Response status information (required)
    * @return status
    */
   public ResponseStatus getStatus() {
@@ -43,7 +43,7 @@ public class ResponseEnvelope<T> {
   }
 
   /**
-   * Response information
+   * Response information (required)
    * @return data
    */
   public ResultWrapper<T> getData() {
@@ -63,7 +63,7 @@ public class ResponseEnvelope<T> {
    * Additional endpoint specific information
    *
    * @param more
-   * Additional endpoint specific information
+   *        Additional endpoint specific information
    */
   public void setMore(Object more) {
     this.more = more;
@@ -90,7 +90,6 @@ public class ResponseEnvelope<T> {
     return Objects.hash(requestId, status, data, more);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -114,6 +113,5 @@ public class ResponseEnvelope<T> {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

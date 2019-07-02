@@ -39,7 +39,7 @@ public class AudioMixInputStream extends InputStream {
    * Channel layout of the audio mix input stream
    *
    * @param channelLayout
-   * Channel layout of the audio mix input stream
+   *        Channel layout of the audio mix input stream
    */
   public void setChannelLayout(AudioMixInputChannelLayout channelLayout) {
     this.channelLayout = channelLayout;
@@ -47,9 +47,6 @@ public class AudioMixInputStream extends InputStream {
 
 
   public AudioMixInputStream addAudioMixChannelsItem(AudioMixInputStreamChannel audioMixChannelsItem) {
-    if (this.audioMixChannels == null) {
-      this.audioMixChannels = new ArrayList<>();
-    }
     this.audioMixChannels.add(audioMixChannelsItem);
     return this;
   }
@@ -91,7 +88,6 @@ public class AudioMixInputStream extends InputStream {
     return Objects.hash(channelLayout, audioMixChannels, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -113,6 +109,5 @@ public class AudioMixInputStream extends InputStream {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

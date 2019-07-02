@@ -144,7 +144,6 @@ public class BillableEncodingMinutes {
     return Objects.hash(encodingMode, codec, perTitleResultStream, psnrMode, billableMinutes);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -169,6 +168,5 @@ public class BillableEncodingMinutes {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -38,7 +38,7 @@ public class RedundantRtmpInput extends Input {
    * When there is no input signal present and this threshold in seconds is reached it will switch to another ingest point
    *
    * @param delayThreshold
-   * When there is no input signal present and this threshold in seconds is reached it will switch to another ingest point
+   *        When there is no input signal present and this threshold in seconds is reached it will switch to another ingest point
    */
   public void setDelayThreshold(Integer delayThreshold) {
     this.delayThreshold = delayThreshold;
@@ -87,7 +87,6 @@ public class RedundantRtmpInput extends Input {
     return Objects.hash(delayThreshold, ingestPoints, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -109,6 +108,5 @@ public class RedundantRtmpInput extends Input {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

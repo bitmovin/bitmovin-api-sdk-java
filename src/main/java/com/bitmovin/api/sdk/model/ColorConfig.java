@@ -68,7 +68,7 @@ public class ColorConfig {
    * Copy the chroma location setting from the input source
    *
    * @param copyChromaLocationFlag
-   * Copy the chroma location setting from the input source
+   *        Copy the chroma location setting from the input source
    */
   public void setCopyChromaLocationFlag(Boolean copyChromaLocationFlag) {
     this.copyChromaLocationFlag = copyChromaLocationFlag;
@@ -87,7 +87,7 @@ public class ColorConfig {
    * Copy the color space setting from the input source
    *
    * @param copyColorSpaceFlag
-   * Copy the color space setting from the input source
+   *        Copy the color space setting from the input source
    */
   public void setCopyColorSpaceFlag(Boolean copyColorSpaceFlag) {
     this.copyColorSpaceFlag = copyColorSpaceFlag;
@@ -106,7 +106,7 @@ public class ColorConfig {
    * Copy the color primaries setting from the input source
    *
    * @param copyColorPrimariesFlag
-   * Copy the color primaries setting from the input source
+   *        Copy the color primaries setting from the input source
    */
   public void setCopyColorPrimariesFlag(Boolean copyColorPrimariesFlag) {
     this.copyColorPrimariesFlag = copyColorPrimariesFlag;
@@ -125,7 +125,7 @@ public class ColorConfig {
    * Copy the color range setting from the input source
    *
    * @param copyColorRangeFlag
-   * Copy the color range setting from the input source
+   *        Copy the color range setting from the input source
    */
   public void setCopyColorRangeFlag(Boolean copyColorRangeFlag) {
     this.copyColorRangeFlag = copyColorRangeFlag;
@@ -144,7 +144,7 @@ public class ColorConfig {
    * Copy the color transfer setting from the input source
    *
    * @param copyColorTransferFlag
-   * Copy the color transfer setting from the input source
+   *        Copy the color transfer setting from the input source
    */
   public void setCopyColorTransferFlag(Boolean copyColorTransferFlag) {
     this.copyColorTransferFlag = copyColorTransferFlag;
@@ -163,7 +163,7 @@ public class ColorConfig {
    * The chroma location to be applied
    *
    * @param chromaLocation
-   * The chroma location to be applied
+   *        The chroma location to be applied
    */
   public void setChromaLocation(ChromaLocation chromaLocation) {
     this.chromaLocation = chromaLocation;
@@ -182,7 +182,7 @@ public class ColorConfig {
    * The color space to be applied
    *
    * @param colorSpace
-   * The color space to be applied
+   *        The color space to be applied
    */
   public void setColorSpace(ColorSpace colorSpace) {
     this.colorSpace = colorSpace;
@@ -201,7 +201,7 @@ public class ColorConfig {
    * The color primaries to be applied
    *
    * @param colorPrimaries
-   * The color primaries to be applied
+   *        The color primaries to be applied
    */
   public void setColorPrimaries(ColorPrimaries colorPrimaries) {
     this.colorPrimaries = colorPrimaries;
@@ -220,7 +220,7 @@ public class ColorConfig {
    * The color range to be applied
    *
    * @param colorRange
-   * The color range to be applied
+   *        The color range to be applied
    */
   public void setColorRange(ColorRange colorRange) {
     this.colorRange = colorRange;
@@ -239,7 +239,7 @@ public class ColorConfig {
    * The color transfer to be applied
    *
    * @param colorTransfer
-   * The color transfer to be applied
+   *        The color transfer to be applied
    */
   public void setColorTransfer(ColorTransfer colorTransfer) {
     this.colorTransfer = colorTransfer;
@@ -258,7 +258,7 @@ public class ColorConfig {
    * Override the color space detected in the input file. If not set the input color space will be automatically detected if possible.
    *
    * @param inputColorSpace
-   * Override the color space detected in the input file. If not set the input color space will be automatically detected if possible.
+   *        Override the color space detected in the input file. If not set the input color space will be automatically detected if possible.
    */
   public void setInputColorSpace(InputColorSpace inputColorSpace) {
     this.inputColorSpace = inputColorSpace;
@@ -277,7 +277,7 @@ public class ColorConfig {
    * Override the color range detected in the input file. If not set the input color range will be automatically detected if possible.
    *
    * @param inputColorRange
-   * Override the color range detected in the input file. If not set the input color range will be automatically detected if possible.
+   *        Override the color range detected in the input file. If not set the input color range will be automatically detected if possible.
    */
   public void setInputColorRange(InputColorRange inputColorRange) {
     this.inputColorRange = inputColorRange;
@@ -312,7 +312,6 @@ public class ColorConfig {
     return Objects.hash(copyChromaLocationFlag, copyColorSpaceFlag, copyColorPrimariesFlag, copyColorRangeFlag, copyColorTransferFlag, chromaLocation, colorSpace, colorPrimaries, colorRange, colorTransfer, inputColorSpace, inputColorRange);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -344,6 +343,5 @@ public class ColorConfig {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

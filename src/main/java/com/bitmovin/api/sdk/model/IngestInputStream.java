@@ -42,7 +42,7 @@ public class IngestInputStream extends InputStream {
    * Id of input
    *
    * @param inputId
-   * Id of input
+   *        Id of input
    */
   public void setInputId(String inputId) {
     this.inputId = inputId;
@@ -61,7 +61,7 @@ public class IngestInputStream extends InputStream {
    * Path to media file
    *
    * @param inputPath
-   * Path to media file
+   *        Path to media file
    */
   public void setInputPath(String inputPath) {
     this.inputPath = inputPath;
@@ -80,7 +80,7 @@ public class IngestInputStream extends InputStream {
    * Specifies the algorithm how the stream in the input file will be selected
    *
    * @param selectionMode
-   * Specifies the algorithm how the stream in the input file will be selected
+   *        Specifies the algorithm how the stream in the input file will be selected
    */
   public void setSelectionMode(StreamSelectionMode selectionMode) {
     this.selectionMode = selectionMode;
@@ -99,7 +99,7 @@ public class IngestInputStream extends InputStream {
    * Position of the stream
    *
    * @param position
-   * Position of the stream
+   *        Position of the stream
    */
   public void setPosition(Integer position) {
     this.position = position;
@@ -127,7 +127,6 @@ public class IngestInputStream extends InputStream {
     return Objects.hash(inputId, inputPath, selectionMode, position, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -151,6 +150,5 @@ public class IngestInputStream extends InputStream {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

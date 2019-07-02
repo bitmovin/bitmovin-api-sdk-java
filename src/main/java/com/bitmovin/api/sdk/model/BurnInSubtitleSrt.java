@@ -26,7 +26,7 @@ public class BurnInSubtitleSrt extends BitmovinResource {
 
 
   /**
-   * Character encoding of the SRT file
+   * Character encoding of the SRT file (required)
    * @return characterEncoding
    */
   public CaptionCharacterEncoding getCharacterEncoding() {
@@ -34,10 +34,10 @@ public class BurnInSubtitleSrt extends BitmovinResource {
   }
 
   /**
-   * Character encoding of the SRT file
+   * Character encoding of the SRT file (required)
    *
    * @param characterEncoding
-   * Character encoding of the SRT file
+   *        Character encoding of the SRT file (required)
    */
   public void setCharacterEncoding(CaptionCharacterEncoding characterEncoding) {
     this.characterEncoding = characterEncoding;
@@ -45,7 +45,7 @@ public class BurnInSubtitleSrt extends BitmovinResource {
 
 
   /**
-   * The input location to get the SRT file from
+   * The input location to get the SRT file from (required)
    * @return input
    */
   public InputPath getInput() {
@@ -53,10 +53,10 @@ public class BurnInSubtitleSrt extends BitmovinResource {
   }
 
   /**
-   * The input location to get the SRT file from
+   * The input location to get the SRT file from (required)
    *
    * @param input
-   * The input location to get the SRT file from
+   *        The input location to get the SRT file from (required)
    */
   public void setInput(InputPath input) {
     this.input = input;
@@ -82,7 +82,6 @@ public class BurnInSubtitleSrt extends BitmovinResource {
     return Objects.hash(characterEncoding, input, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -104,6 +103,5 @@ public class BurnInSubtitleSrt extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

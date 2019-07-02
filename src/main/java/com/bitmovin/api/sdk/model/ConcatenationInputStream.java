@@ -24,9 +24,6 @@ public class ConcatenationInputStream extends InputStream {
 
 
   public ConcatenationInputStream addConcatenationItem(ConcatenationInputConfiguration concatenationItem) {
-    if (this.concatenation == null) {
-      this.concatenation = new ArrayList<>();
-    }
     this.concatenation.add(concatenationItem);
     return this;
   }
@@ -43,7 +40,7 @@ public class ConcatenationInputStream extends InputStream {
    * Concatenation configuration for the output of this stream
    *
    * @param concatenation
-   * Concatenation configuration for the output of this stream
+   *        Concatenation configuration for the output of this stream
    */
   public void setConcatenation(List<ConcatenationInputConfiguration> concatenation) {
     this.concatenation = concatenation;
@@ -68,7 +65,6 @@ public class ConcatenationInputStream extends InputStream {
     return Objects.hash(concatenation, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -89,6 +85,5 @@ public class ConcatenationInputStream extends InputStream {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

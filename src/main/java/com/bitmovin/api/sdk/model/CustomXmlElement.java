@@ -18,7 +18,7 @@ public class CustomXmlElement extends BitmovinResponse {
 
 
   /**
-   * String representation of the XML element
+   * String representation of the XML element (required)
    * @return data
    */
   public String getData() {
@@ -26,10 +26,10 @@ public class CustomXmlElement extends BitmovinResponse {
   }
 
   /**
-   * String representation of the XML element
+   * String representation of the XML element (required)
    *
    * @param data
-   * String representation of the XML element
+   *        String representation of the XML element (required)
    */
   public void setData(String data) {
     this.data = data;
@@ -54,7 +54,6 @@ public class CustomXmlElement extends BitmovinResponse {
     return Objects.hash(data, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -75,6 +74,5 @@ public class CustomXmlElement extends BitmovinResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

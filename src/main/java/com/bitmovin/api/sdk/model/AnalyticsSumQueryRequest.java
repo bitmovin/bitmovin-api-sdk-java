@@ -34,7 +34,6 @@ public class AnalyticsSumQueryRequest extends AnalyticsQueryRequest {
     return Objects.hash(super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -54,6 +53,5 @@ public class AnalyticsSumQueryRequest extends AnalyticsQueryRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

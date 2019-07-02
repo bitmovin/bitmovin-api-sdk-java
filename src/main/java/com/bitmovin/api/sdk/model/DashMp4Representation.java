@@ -18,7 +18,7 @@ public class DashMp4Representation extends DashRepresentation {
 
 
   /**
-   * Path to the MP4 file
+   * Path to the MP4 file (required)
    * @return filePath
    */
   public String getFilePath() {
@@ -26,10 +26,10 @@ public class DashMp4Representation extends DashRepresentation {
   }
 
   /**
-   * Path to the MP4 file
+   * Path to the MP4 file (required)
    *
    * @param filePath
-   * Path to the MP4 file
+   *        Path to the MP4 file (required)
    */
   public void setFilePath(String filePath) {
     this.filePath = filePath;
@@ -54,7 +54,6 @@ public class DashMp4Representation extends DashRepresentation {
     return Objects.hash(filePath, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -75,6 +74,5 @@ public class DashMp4Representation extends DashRepresentation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

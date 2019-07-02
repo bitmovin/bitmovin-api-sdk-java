@@ -74,7 +74,6 @@ public class AclEntry {
     return Objects.hash(scope, permission);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -96,6 +95,5 @@ public class AclEntry {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

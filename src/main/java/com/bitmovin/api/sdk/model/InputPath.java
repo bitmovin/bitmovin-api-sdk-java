@@ -20,7 +20,7 @@ public class InputPath {
 
 
   /**
-   * Id of input
+   * Id of input (required)
    * @return inputId
    */
   public String getInputId() {
@@ -28,10 +28,10 @@ public class InputPath {
   }
 
   /**
-   * Id of input
+   * Id of input (required)
    *
    * @param inputId
-   * Id of input
+   *        Id of input (required)
    */
   public void setInputId(String inputId) {
     this.inputId = inputId;
@@ -39,7 +39,7 @@ public class InputPath {
 
 
   /**
-   * Path to media file
+   * Path to media file (required)
    * @return inputPath
    */
   public String getInputPath() {
@@ -47,10 +47,10 @@ public class InputPath {
   }
 
   /**
-   * Path to media file
+   * Path to media file (required)
    *
    * @param inputPath
-   * Path to media file
+   *        Path to media file (required)
    */
   public void setInputPath(String inputPath) {
     this.inputPath = inputPath;
@@ -75,7 +75,6 @@ public class InputPath {
     return Objects.hash(inputId, inputPath);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -97,6 +96,5 @@ public class InputPath {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

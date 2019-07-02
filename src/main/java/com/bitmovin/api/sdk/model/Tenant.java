@@ -21,7 +21,7 @@ public class Tenant extends BitmovinResource {
 
 
   /**
-   * Email address of the tenant.
+   * Email address of the tenant. (required)
    * @return eMail
    */
   public String getEMail() {
@@ -29,10 +29,10 @@ public class Tenant extends BitmovinResource {
   }
 
   /**
-   * Email address of the tenant.
+   * Email address of the tenant. (required)
    *
    * @param eMail
-   * Email address of the tenant.
+   *        Email address of the tenant. (required)
    */
   public void setEMail(String eMail) {
     this.eMail = eMail;
@@ -57,7 +57,6 @@ public class Tenant extends BitmovinResource {
     return Objects.hash(eMail, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -78,6 +77,5 @@ public class Tenant extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

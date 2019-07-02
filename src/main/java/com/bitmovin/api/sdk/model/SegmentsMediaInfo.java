@@ -37,7 +37,7 @@ public class SegmentsMediaInfo extends BasicMediaInfo {
 
 
   /**
-   * Path to segments.
+   * Path to segments. (required)
    * @return segmentPath
    */
   public String getSegmentPath() {
@@ -45,10 +45,10 @@ public class SegmentsMediaInfo extends BasicMediaInfo {
   }
 
   /**
-   * Path to segments.
+   * Path to segments. (required)
    *
    * @param segmentPath
-   * Path to segments.
+   *        Path to segments. (required)
    */
   public void setSegmentPath(String segmentPath) {
     this.segmentPath = segmentPath;
@@ -56,7 +56,7 @@ public class SegmentsMediaInfo extends BasicMediaInfo {
 
 
   /**
-   * Id of the encoding.
+   * Id of the encoding. (required)
    * @return encodingId
    */
   public String getEncodingId() {
@@ -64,10 +64,10 @@ public class SegmentsMediaInfo extends BasicMediaInfo {
   }
 
   /**
-   * Id of the encoding.
+   * Id of the encoding. (required)
    *
    * @param encodingId
-   * Id of the encoding.
+   *        Id of the encoding. (required)
    */
   public void setEncodingId(String encodingId) {
     this.encodingId = encodingId;
@@ -75,7 +75,7 @@ public class SegmentsMediaInfo extends BasicMediaInfo {
 
 
   /**
-   * Id of the stream.
+   * Id of the stream. (required)
    * @return streamId
    */
   public String getStreamId() {
@@ -83,10 +83,10 @@ public class SegmentsMediaInfo extends BasicMediaInfo {
   }
 
   /**
-   * Id of the stream.
+   * Id of the stream. (required)
    *
    * @param streamId
-   * Id of the stream.
+   *        Id of the stream. (required)
    */
   public void setStreamId(String streamId) {
     this.streamId = streamId;
@@ -94,7 +94,7 @@ public class SegmentsMediaInfo extends BasicMediaInfo {
 
 
   /**
-   * Id of the muxing.
+   * Id of the muxing. (required)
    * @return muxingId
    */
   public String getMuxingId() {
@@ -102,10 +102,10 @@ public class SegmentsMediaInfo extends BasicMediaInfo {
   }
 
   /**
-   * Id of the muxing.
+   * Id of the muxing. (required)
    *
    * @param muxingId
-   * Id of the muxing.
+   *        Id of the muxing. (required)
    */
   public void setMuxingId(String muxingId) {
     this.muxingId = muxingId;
@@ -124,7 +124,7 @@ public class SegmentsMediaInfo extends BasicMediaInfo {
    * Id of the DRM.
    *
    * @param drmId
-   * Id of the DRM.
+   *        Id of the DRM.
    */
   public void setDrmId(String drmId) {
     this.drmId = drmId;
@@ -143,7 +143,7 @@ public class SegmentsMediaInfo extends BasicMediaInfo {
    * Number of the first segment. Default is 0.
    *
    * @param startSegmentNumber
-   * Number of the first segment. Default is 0.
+   *        Number of the first segment. Default is 0.
    */
   public void setStartSegmentNumber(Long startSegmentNumber) {
     this.startSegmentNumber = startSegmentNumber;
@@ -162,7 +162,7 @@ public class SegmentsMediaInfo extends BasicMediaInfo {
    * Number of the last segment. Default is the last one that was encoded.
    *
    * @param endSegmentNumber
-   * Number of the last segment. Default is the last one that was encoded.
+   *        Number of the last segment. Default is the last one that was encoded.
    */
   public void setEndSegmentNumber(Long endSegmentNumber) {
     this.endSegmentNumber = endSegmentNumber;
@@ -193,7 +193,6 @@ public class SegmentsMediaInfo extends BasicMediaInfo {
     return Objects.hash(segmentPath, encodingId, streamId, muxingId, drmId, startSegmentNumber, endSegmentNumber, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -220,6 +219,5 @@ public class SegmentsMediaInfo extends BasicMediaInfo {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

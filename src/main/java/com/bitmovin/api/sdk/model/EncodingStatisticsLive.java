@@ -31,7 +31,6 @@ public class EncodingStatisticsLive extends EncodingStatistics {
     return Objects.hash(super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -51,6 +50,5 @@ public class EncodingStatisticsLive extends EncodingStatistics {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

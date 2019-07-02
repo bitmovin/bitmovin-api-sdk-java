@@ -40,7 +40,7 @@ public class EnhancedWatermarkFilter extends Filter {
 
 
   /**
-   * URL of the file to be used as watermark image. Supported image formats: PNG, JPEG, BMP, GIF
+   * URL of the file to be used as watermark image. Supported image formats: PNG, JPEG, BMP, GIF (required)
    * @return image
    */
   public String getImage() {
@@ -48,10 +48,10 @@ public class EnhancedWatermarkFilter extends Filter {
   }
 
   /**
-   * URL of the file to be used as watermark image. Supported image formats: PNG, JPEG, BMP, GIF
+   * URL of the file to be used as watermark image. Supported image formats: PNG, JPEG, BMP, GIF (required)
    *
    * @param image
-   * URL of the file to be used as watermark image. Supported image formats: PNG, JPEG, BMP, GIF
+   *        URL of the file to be used as watermark image. Supported image formats: PNG, JPEG, BMP, GIF (required)
    */
   public void setImage(String image) {
     this.image = image;
@@ -70,7 +70,7 @@ public class EnhancedWatermarkFilter extends Filter {
    * Distance from the left edge of the input video to the left edge of the watermark image. May not be set if &#39;right&#39; is set.
    *
    * @param left
-   * Distance from the left edge of the input video to the left edge of the watermark image. May not be set if &#39;right&#39; is set.
+   *        Distance from the left edge of the input video to the left edge of the watermark image. May not be set if &#39;right&#39; is set.
    */
   public void setLeft(Double left) {
     this.left = left;
@@ -89,7 +89,7 @@ public class EnhancedWatermarkFilter extends Filter {
    * Distance from the right edge of the input video to the right edge of the watermark image . May not be set if &#39;left&#39; is set.
    *
    * @param right
-   * Distance from the right edge of the input video to the right edge of the watermark image . May not be set if &#39;left&#39; is set.
+   *        Distance from the right edge of the input video to the right edge of the watermark image . May not be set if &#39;left&#39; is set.
    */
   public void setRight(Double right) {
     this.right = right;
@@ -108,7 +108,7 @@ public class EnhancedWatermarkFilter extends Filter {
    * Distance from the top edge of the input video to the top edge of the watermark image. May not be set if &#39;bottom&#39; is set.
    *
    * @param top
-   * Distance from the top edge of the input video to the top edge of the watermark image. May not be set if &#39;bottom&#39; is set.
+   *        Distance from the top edge of the input video to the top edge of the watermark image. May not be set if &#39;bottom&#39; is set.
    */
   public void setTop(Double top) {
     this.top = top;
@@ -127,7 +127,7 @@ public class EnhancedWatermarkFilter extends Filter {
    * Distance from the bottom edge of the input video to the bottom edge of the watermark image. May not be set if &#39;top&#39; is set.
    *
    * @param bottom
-   * Distance from the bottom edge of the input video to the bottom edge of the watermark image. May not be set if &#39;top&#39; is set.
+   *        Distance from the bottom edge of the input video to the bottom edge of the watermark image. May not be set if &#39;top&#39; is set.
    */
   public void setBottom(Double bottom) {
     this.bottom = bottom;
@@ -164,7 +164,7 @@ public class EnhancedWatermarkFilter extends Filter {
    * Opacity to apply on the watermark image. Valid values are from 0.0 (completely transparent) to 1.0 (not transparent at all)
    *
    * @param opacity
-   * Opacity to apply on the watermark image. Valid values are from 0.0 (completely transparent) to 1.0 (not transparent at all)
+   *        Opacity to apply on the watermark image. Valid values are from 0.0 (completely transparent) to 1.0 (not transparent at all)
    */
   public void setOpacity(Double opacity) {
     this.opacity = opacity;
@@ -195,7 +195,6 @@ public class EnhancedWatermarkFilter extends Filter {
     return Objects.hash(image, left, right, top, bottom, unit, opacity, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -222,6 +221,5 @@ public class EnhancedWatermarkFilter extends Filter {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -36,7 +36,7 @@ public class FtpInput extends Input {
 
 
   /**
-   * Host URL or IP of the FTP server
+   * Host URL or IP of the FTP server (required)
    * @return host
    */
   public String getHost() {
@@ -44,10 +44,10 @@ public class FtpInput extends Input {
   }
 
   /**
-   * Host URL or IP of the FTP server
+   * Host URL or IP of the FTP server (required)
    *
    * @param host
-   * Host URL or IP of the FTP server
+   *        Host URL or IP of the FTP server (required)
    */
   public void setHost(String host) {
     this.host = host;
@@ -66,7 +66,7 @@ public class FtpInput extends Input {
    * Port to use, standard for FTP: 21
    *
    * @param port
-   * Port to use, standard for FTP: 21
+   *        Port to use, standard for FTP: 21
    */
   public void setPort(Integer port) {
     this.port = port;
@@ -85,7 +85,7 @@ public class FtpInput extends Input {
    * Use passive mode. Default is true.
    *
    * @param passive
-   * Use passive mode. Default is true.
+   *        Use passive mode. Default is true.
    */
   public void setPassive(Boolean passive) {
     this.passive = passive;
@@ -104,7 +104,7 @@ public class FtpInput extends Input {
    * Your FTP Username
    *
    * @param username
-   * Your FTP Username
+   *        Your FTP Username
    */
   public void setUsername(String username) {
     this.username = username;
@@ -123,7 +123,7 @@ public class FtpInput extends Input {
    * Your FTP password
    *
    * @param password
-   * Your FTP password
+   *        Your FTP password
    */
   public void setPassword(String password) {
     this.password = password;
@@ -142,7 +142,7 @@ public class FtpInput extends Input {
    * Ensure that connections originate from the declared ftp host. Default is true.
    *
    * @param remoteVerificationEnabled
-   * Ensure that connections originate from the declared ftp host. Default is true.
+   *        Ensure that connections originate from the declared ftp host. Default is true.
    */
   public void setRemoteVerificationEnabled(Boolean remoteVerificationEnabled) {
     this.remoteVerificationEnabled = remoteVerificationEnabled;
@@ -172,7 +172,6 @@ public class FtpInput extends Input {
     return Objects.hash(host, port, passive, username, password, remoteVerificationEnabled, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -198,6 +197,5 @@ public class FtpInput extends Input {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -31,7 +31,7 @@ public class CustomPlayerBuildStatus {
 
 
   /**
-   * Status of the player build
+   * Status of the player build (required)
    * @return status
    */
   public Status getStatus() {
@@ -39,10 +39,10 @@ public class CustomPlayerBuildStatus {
   }
 
   /**
-   * Status of the player build
+   * Status of the player build (required)
    *
    * @param status
-   * Status of the player build
+   *        Status of the player build (required)
    */
   public void setStatus(Status status) {
     this.status = status;
@@ -61,7 +61,7 @@ public class CustomPlayerBuildStatus {
    * The estimated time span of the custom player build in seconds.
    *
    * @param eta
-   * The estimated time span of the custom player build in seconds.
+   *        The estimated time span of the custom player build in seconds.
    */
   public void setEta(Integer eta) {
     this.eta = eta;
@@ -69,7 +69,7 @@ public class CustomPlayerBuildStatus {
 
 
   /**
-   * The actual progress of the custom player build.
+   * The actual progress of the custom player build. (required)
    * @return progress
    */
   public Integer getProgress() {
@@ -77,10 +77,10 @@ public class CustomPlayerBuildStatus {
   }
 
   /**
-   * The actual progress of the custom player build.
+   * The actual progress of the custom player build. (required)
    *
    * @param progress
-   * The actual progress of the custom player build.
+   *        The actual progress of the custom player build. (required)
    */
   public void setProgress(Integer progress) {
     this.progress = progress;
@@ -144,7 +144,6 @@ public class CustomPlayerBuildStatus {
     return Objects.hash(status, eta, progress, messages, subtasks);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -169,6 +168,5 @@ public class CustomPlayerBuildStatus {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -32,7 +32,7 @@ public class SubtitleStream extends MediaStream {
    * Language of the stream
    *
    * @param language
-   * Language of the stream
+   *        Language of the stream
    */
   public void setLanguage(String language) {
     this.language = language;
@@ -51,7 +51,7 @@ public class SubtitleStream extends MediaStream {
    * Hearing impaired support
    *
    * @param hearingImpaired
-   * Hearing impaired support
+   *        Hearing impaired support
    */
   public void setHearingImpaired(Boolean hearingImpaired) {
     this.hearingImpaired = hearingImpaired;
@@ -77,7 +77,6 @@ public class SubtitleStream extends MediaStream {
     return Objects.hash(language, hearingImpaired, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -99,6 +98,5 @@ public class SubtitleStream extends MediaStream {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

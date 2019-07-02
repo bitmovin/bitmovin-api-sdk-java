@@ -66,7 +66,7 @@ public class AudioMixApi {
      * Audio mix input stream details
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param inputStreamId Id of the concatenation input stream. (required)
+     * @param inputStreamId Id of the audio mix input stream. (required)
      * @return AudioMixInputStream
      * @throws BitmovinException if fails to make API call
      */

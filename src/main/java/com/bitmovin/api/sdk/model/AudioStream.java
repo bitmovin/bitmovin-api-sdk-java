@@ -44,7 +44,7 @@ public class AudioStream extends MediaStream {
    * Audio sampling rate in Hz
    *
    * @param sampleRate
-   * Audio sampling rate in Hz
+   *        Audio sampling rate in Hz
    */
   public void setSampleRate(Integer sampleRate) {
     this.sampleRate = sampleRate;
@@ -63,7 +63,7 @@ public class AudioStream extends MediaStream {
    * Bitrate in bps
    *
    * @param bitrate
-   * Bitrate in bps
+   *        Bitrate in bps
    */
   public void setBitrate(String bitrate) {
     this.bitrate = bitrate;
@@ -82,7 +82,7 @@ public class AudioStream extends MediaStream {
    * Bitrate in bps
    *
    * @param rate
-   * Bitrate in bps
+   *        Bitrate in bps
    */
   public void setRate(Long rate) {
     this.rate = rate;
@@ -101,7 +101,7 @@ public class AudioStream extends MediaStream {
    * Audio channel format
    *
    * @param channelFormat
-   * Audio channel format
+   *        Audio channel format
    */
   public void setChannelFormat(String channelFormat) {
     this.channelFormat = channelFormat;
@@ -120,7 +120,7 @@ public class AudioStream extends MediaStream {
    * Language of the stream
    *
    * @param language
-   * Language of the stream
+   *        Language of the stream
    */
   public void setLanguage(String language) {
     this.language = language;
@@ -139,7 +139,7 @@ public class AudioStream extends MediaStream {
    * Hearing impaired support
    *
    * @param hearingImpaired
-   * Hearing impaired support
+   *        Hearing impaired support
    */
   public void setHearingImpaired(Boolean hearingImpaired) {
     this.hearingImpaired = hearingImpaired;
@@ -169,7 +169,6 @@ public class AudioStream extends MediaStream {
     return Objects.hash(sampleRate, bitrate, rate, channelFormat, language, hearingImpaired, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -195,6 +194,5 @@ public class AudioStream extends MediaStream {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

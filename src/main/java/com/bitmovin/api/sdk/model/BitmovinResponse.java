@@ -16,7 +16,7 @@ public class BitmovinResponse {
   private String id;
 
   /**
-   * Id of the resource
+   * Id of the resource (required)
    * @return id
    */
   public String getId() {
@@ -41,7 +41,6 @@ public class BitmovinResponse {
     return Objects.hash(id);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -62,6 +61,5 @@ public class BitmovinResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

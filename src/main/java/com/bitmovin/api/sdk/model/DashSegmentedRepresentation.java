@@ -74,7 +74,7 @@ public class DashSegmentedRepresentation extends DashRepresentation {
 
 
   /**
-   * Path to segments. Will be used as the representation id if the type is set to TEMPLATE_ADAPTATION_SET
+   * Path to segments. Will be used as the representation id if the type is set to TEMPLATE_ADAPTATION_SET (required)
    * @return segmentPath
    */
   public String getSegmentPath() {
@@ -82,10 +82,10 @@ public class DashSegmentedRepresentation extends DashRepresentation {
   }
 
   /**
-   * Path to segments. Will be used as the representation id if the type is set to TEMPLATE_ADAPTATION_SET
+   * Path to segments. Will be used as the representation id if the type is set to TEMPLATE_ADAPTATION_SET (required)
    *
    * @param segmentPath
-   * Path to segments. Will be used as the representation id if the type is set to TEMPLATE_ADAPTATION_SET
+   *        Path to segments. Will be used as the representation id if the type is set to TEMPLATE_ADAPTATION_SET (required)
    */
   public void setSegmentPath(String segmentPath) {
     this.segmentPath = segmentPath;
@@ -104,7 +104,7 @@ public class DashSegmentedRepresentation extends DashRepresentation {
    * Number of the first segment
    *
    * @param startSegmentNumber
-   * Number of the first segment
+   *        Number of the first segment
    */
   public void setStartSegmentNumber(Long startSegmentNumber) {
     this.startSegmentNumber = startSegmentNumber;
@@ -123,7 +123,7 @@ public class DashSegmentedRepresentation extends DashRepresentation {
    * Number of the last segment. Default is the last one that was encoded
    *
    * @param endSegmentNumber
-   * Number of the last segment. Default is the last one that was encoded
+   *        Number of the last segment. Default is the last one that was encoded
    */
   public void setEndSegmentNumber(Long endSegmentNumber) {
     this.endSegmentNumber = endSegmentNumber;
@@ -142,7 +142,7 @@ public class DashSegmentedRepresentation extends DashRepresentation {
    * Id of the Keyframe to start with
    *
    * @param startKeyframeId
-   * Id of the Keyframe to start with
+   *        Id of the Keyframe to start with
    */
   public void setStartKeyframeId(String startKeyframeId) {
     this.startKeyframeId = startKeyframeId;
@@ -161,7 +161,7 @@ public class DashSegmentedRepresentation extends DashRepresentation {
    * Id of the Keyframe to end with
    *
    * @param endKeyframeId
-   * Id of the Keyframe to end with
+   *        Id of the Keyframe to end with
    */
   public void setEndKeyframeId(String endKeyframeId) {
     this.endKeyframeId = endKeyframeId;
@@ -192,7 +192,6 @@ public class DashSegmentedRepresentation extends DashRepresentation {
     return Objects.hash(type, mode, segmentPath, startSegmentNumber, endSegmentNumber, startKeyframeId, endKeyframeId, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -219,6 +218,5 @@ public class DashSegmentedRepresentation extends DashRepresentation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -46,7 +46,7 @@ public class BitmovinResource extends BitmovinResponse {
    * Name of the resource. Can be freely chosen by the user.
    *
    * @param name
-   * Name of the resource. Can be freely chosen by the user.
+   *        Name of the resource. Can be freely chosen by the user.
    */
   public void setName(String name) {
     this.name = name;
@@ -65,7 +65,7 @@ public class BitmovinResource extends BitmovinResponse {
    * Description of the resource. Can be freely chosen by the user.
    *
    * @param description
-   * Description of the resource. Can be freely chosen by the user.
+   *        Description of the resource. Can be freely chosen by the user.
    */
   public void setDescription(String description) {
     this.description = description;
@@ -89,9 +89,6 @@ public class BitmovinResource extends BitmovinResponse {
 
 
   public BitmovinResource putCustomDataItem(String key, Object customDataItem) {
-    if (this.customData == null) {
-      this.customData = new HashMap<String, Object>();
-    }
     this.customData.put(key, customDataItem);
     return this;
   }
@@ -108,7 +105,7 @@ public class BitmovinResource extends BitmovinResponse {
    * User-specific meta data. This can hold anything.
    *
    * @param customData
-   * User-specific meta data. This can hold anything.
+   *        User-specific meta data. This can hold anything.
    */
   public void setCustomData(Map<String, Object> customData) {
     this.customData = customData;
@@ -137,7 +134,6 @@ public class BitmovinResource extends BitmovinResponse {
     return Objects.hash(name, description, createdAt, modifiedAt, customData, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -162,6 +158,5 @@ public class BitmovinResource extends BitmovinResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

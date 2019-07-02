@@ -22,7 +22,7 @@ public class LiveEncodingStatsEvent {
 
 
   /**
-   * Timestamp of the event formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Timestamp of the event formatted in UTC: YYYY-MM-DDThh:mm:ssZ (required)
    * @return time
    */
   public Date getTime() {
@@ -30,10 +30,10 @@ public class LiveEncodingStatsEvent {
   }
 
   /**
-   * Timestamp of the event formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Timestamp of the event formatted in UTC: YYYY-MM-DDThh:mm:ssZ (required)
    *
    * @param time
-   * Timestamp of the event formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   *        Timestamp of the event formatted in UTC: YYYY-MM-DDThh:mm:ssZ (required)
    */
   public void setTime(Date time) {
     this.time = time;
@@ -76,7 +76,6 @@ public class LiveEncodingStatsEvent {
     return Objects.hash(time, details);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -98,6 +97,5 @@ public class LiveEncodingStatsEvent {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

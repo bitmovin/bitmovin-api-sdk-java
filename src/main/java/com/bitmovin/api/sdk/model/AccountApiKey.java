@@ -21,7 +21,7 @@ public class AccountApiKey extends BitmovinResource {
 
 
   /**
-   * Key value for authentication with the Bitmovin API
+   * Key value for authentication with the Bitmovin API (required)
    * @return value
    */
   public String getValue() {
@@ -29,10 +29,10 @@ public class AccountApiKey extends BitmovinResource {
   }
 
   /**
-   * Key value for authentication with the Bitmovin API
+   * Key value for authentication with the Bitmovin API (required)
    *
    * @param value
-   * Key value for authentication with the Bitmovin API
+   *        Key value for authentication with the Bitmovin API (required)
    */
   public void setValue(String value) {
     this.value = value;
@@ -57,7 +57,6 @@ public class AccountApiKey extends BitmovinResource {
     return Objects.hash(value, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -78,6 +77,5 @@ public class AccountApiKey extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

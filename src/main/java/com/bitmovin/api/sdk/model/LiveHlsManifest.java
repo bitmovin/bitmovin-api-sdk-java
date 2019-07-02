@@ -26,7 +26,7 @@ public class LiveHlsManifest {
 
 
   /**
-   * Hls manifest ids
+   * Hls manifest ids (required)
    * @return manifestId
    */
   public String getManifestId() {
@@ -34,10 +34,10 @@ public class LiveHlsManifest {
   }
 
   /**
-   * Hls manifest ids
+   * Hls manifest ids (required)
    *
    * @param manifestId
-   * Hls manifest ids
+   *        Hls manifest ids (required)
    */
   public void setManifestId(String manifestId) {
     this.manifestId = manifestId;
@@ -56,7 +56,7 @@ public class LiveHlsManifest {
    * Timeshift in seconds
    *
    * @param timeshift
-   * Timeshift in seconds
+   *        Timeshift in seconds
    */
   public void setTimeshift(Double timeshift) {
     this.timeshift = timeshift;
@@ -75,7 +75,7 @@ public class LiveHlsManifest {
    * Live edge offset in seconds
    *
    * @param liveEdgeOffset
-   * Live edge offset in seconds
+   *        Live edge offset in seconds
    */
   public void setLiveEdgeOffset(Double liveEdgeOffset) {
     this.liveEdgeOffset = liveEdgeOffset;
@@ -94,7 +94,7 @@ public class LiveHlsManifest {
    * Specifies if the EXT-X-PROGRAM-DATETIME tag will be included
    *
    * @param insertProgramDateTime
-   * Specifies if the EXT-X-PROGRAM-DATETIME tag will be included
+   *        Specifies if the EXT-X-PROGRAM-DATETIME tag will be included
    */
   public void setInsertProgramDateTime(Boolean insertProgramDateTime) {
     this.insertProgramDateTime = insertProgramDateTime;
@@ -121,7 +121,6 @@ public class LiveHlsManifest {
     return Objects.hash(manifestId, timeshift, liveEdgeOffset, insertProgramDateTime);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -145,6 +144,5 @@ public class LiveHlsManifest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

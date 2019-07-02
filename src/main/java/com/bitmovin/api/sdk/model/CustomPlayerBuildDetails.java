@@ -26,7 +26,7 @@ public class CustomPlayerBuildDetails extends BitmovinResource {
 
 
   /**
-   * The player version that should be used for the custom player build. If not set the &#39;latest&#39; version is used. 
+   * The player version that should be used for the custom player build. If not set the &#39;latest&#39; version is used. (required)
    * @return playerVersion
    */
   public String getPlayerVersion() {
@@ -34,10 +34,10 @@ public class CustomPlayerBuildDetails extends BitmovinResource {
   }
 
   /**
-   * The player version that should be used for the custom player build. If not set the &#39;latest&#39; version is used. 
+   * The player version that should be used for the custom player build. If not set the &#39;latest&#39; version is used. (required)
    *
    * @param playerVersion
-   * The player version that should be used for the custom player build. If not set the &#39;latest&#39; version is used. 
+   *        The player version that should be used for the custom player build. If not set the &#39;latest&#39; version is used. (required)
    */
   public void setPlayerVersion(String playerVersion) {
     this.playerVersion = playerVersion;
@@ -50,7 +50,7 @@ public class CustomPlayerBuildDetails extends BitmovinResource {
   }
 
   /**
-   * The domains that the player is locked to. If not set the player will only work with &#39;localhost&#39;. Not more than 49 additional domains can be added. 
+   * The domains that the player is locked to. If not set the player will only work with &#39;localhost&#39;. Not more than 49 additional domains can be added. (required)
    * @return domains
    */
   public List<String> getDomains() {
@@ -58,10 +58,10 @@ public class CustomPlayerBuildDetails extends BitmovinResource {
   }
 
   /**
-   * The domains that the player is locked to. If not set the player will only work with &#39;localhost&#39;. Not more than 49 additional domains can be added. 
+   * The domains that the player is locked to. If not set the player will only work with &#39;localhost&#39;. Not more than 49 additional domains can be added. (required)
    *
    * @param domains
-   * The domains that the player is locked to. If not set the player will only work with &#39;localhost&#39;. Not more than 49 additional domains can be added. 
+   *        The domains that the player is locked to. If not set the player will only work with &#39;localhost&#39;. Not more than 49 additional domains can be added. (required)
    */
   public void setDomains(List<String> domains) {
     this.domains = domains;
@@ -87,7 +87,6 @@ public class CustomPlayerBuildDetails extends BitmovinResource {
     return Objects.hash(playerVersion, domains, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -109,6 +108,5 @@ public class CustomPlayerBuildDetails extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -46,7 +46,7 @@ public class ProgressiveTsMuxing extends Muxing {
    * Length of the segments in seconds
    *
    * @param segmentLength
-   * Length of the segments in seconds
+   *        Length of the segments in seconds
    */
   public void setSegmentLength(Double segmentLength) {
     this.segmentLength = segmentLength;
@@ -65,7 +65,7 @@ public class ProgressiveTsMuxing extends Muxing {
    * Name of the new Video
    *
    * @param filename
-   * Name of the new Video
+   *        Name of the new Video
    */
   public void setFilename(String filename) {
     this.filename = filename;
@@ -84,7 +84,7 @@ public class ProgressiveTsMuxing extends Muxing {
    * Offset of MPEG-TS timestamps in seconds. E.g., first packet will start with PTS 900,000 for a 10 seconds offset (90,000 MPEG-TS timescale).
    *
    * @param startOffset
-   * Offset of MPEG-TS timestamps in seconds. E.g., first packet will start with PTS 900,000 for a 10 seconds offset (90,000 MPEG-TS timescale).
+   *        Offset of MPEG-TS timestamps in seconds. E.g., first packet will start with PTS 900,000 for a 10 seconds offset (90,000 MPEG-TS timescale).
    */
   public void setStartOffset(Double startOffset) {
     this.startOffset = startOffset;
@@ -103,7 +103,7 @@ public class ProgressiveTsMuxing extends Muxing {
    * Modifies the internal chunk length used for chunked encoding
    *
    * @param internalChunkLength
-   * Modifies the internal chunk length used for chunked encoding
+   *        Modifies the internal chunk length used for chunked encoding
    */
   public void setInternalChunkLength(InternalChunkLength internalChunkLength) {
     this.internalChunkLength = internalChunkLength;
@@ -131,7 +131,6 @@ public class ProgressiveTsMuxing extends Muxing {
     return Objects.hash(segmentLength, filename, startOffset, internalChunkLength, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -155,6 +154,5 @@ public class ProgressiveTsMuxing extends Muxing {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

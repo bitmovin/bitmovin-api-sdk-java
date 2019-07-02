@@ -45,7 +45,7 @@ public class MjpegVideoConfiguration extends CodecConfiguration {
    * Width of the encoded video
    *
    * @param width
-   * Width of the encoded video
+   *        Width of the encoded video
    */
   public void setWidth(Integer width) {
     this.width = width;
@@ -64,7 +64,7 @@ public class MjpegVideoConfiguration extends CodecConfiguration {
    * Height of the encoded video
    *
    * @param height
-   * Height of the encoded video
+   *        Height of the encoded video
    */
   public void setHeight(Integer height) {
     this.height = height;
@@ -72,7 +72,7 @@ public class MjpegVideoConfiguration extends CodecConfiguration {
 
 
   /**
-   * Target frame rate of the encoded video!
+   * Target frame rate of the encoded video! (required)
    * @return rate
    */
   public Double getRate() {
@@ -80,10 +80,10 @@ public class MjpegVideoConfiguration extends CodecConfiguration {
   }
 
   /**
-   * Target frame rate of the encoded video!
+   * Target frame rate of the encoded video! (required)
    *
    * @param rate
-   * Target frame rate of the encoded video!
+   *        Target frame rate of the encoded video! (required)
    */
   public void setRate(Double rate) {
     this.rate = rate;
@@ -91,7 +91,7 @@ public class MjpegVideoConfiguration extends CodecConfiguration {
 
 
   /**
-   * The quality scale parameter
+   * The quality scale parameter (required)
    * @return qScale
    */
   public Integer getQScale() {
@@ -99,10 +99,10 @@ public class MjpegVideoConfiguration extends CodecConfiguration {
   }
 
   /**
-   * The quality scale parameter
+   * The quality scale parameter (required)
    *
    * @param qScale
-   * The quality scale parameter
+   *        The quality scale parameter (required)
    */
   public void setQScale(Integer qScale) {
     this.qScale = qScale;
@@ -149,7 +149,6 @@ public class MjpegVideoConfiguration extends CodecConfiguration {
     return Objects.hash(width, height, rate, qScale, pixelFormat, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -174,6 +173,5 @@ public class MjpegVideoConfiguration extends CodecConfiguration {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -74,7 +74,7 @@ public class EncodingStats {
    * Date, format. yyyy-MM-dd
    *
    * @param date
-   * Date, format. yyyy-MM-dd
+   *        Date, format. yyyy-MM-dd
    */
   public void setDate(Date date) {
     this.date = date;
@@ -82,7 +82,7 @@ public class EncodingStats {
 
 
   /**
-   * The id of the encoding
+   * The id of the encoding (required)
    * @return encodingId
    */
   public String getEncodingId() {
@@ -90,10 +90,10 @@ public class EncodingStats {
   }
 
   /**
-   * The id of the encoding
+   * The id of the encoding (required)
    *
    * @param encodingId
-   * The id of the encoding
+   *        The id of the encoding (required)
    */
   public void setEncodingId(String encodingId) {
     this.encodingId = encodingId;
@@ -112,7 +112,7 @@ public class EncodingStats {
    * Total bytes encoded
    *
    * @param bytesEncoded
-   * Total bytes encoded
+   *        Total bytes encoded
    */
   public void setBytesEncoded(Long bytesEncoded) {
     this.bytesEncoded = bytesEncoded;
@@ -131,7 +131,7 @@ public class EncodingStats {
    * Total time encoded
    *
    * @param timeEncoded
-   * Total time encoded
+   *        Total time encoded
    */
   public void setTimeEncoded(Long timeEncoded) {
     this.timeEncoded = timeEncoded;
@@ -150,7 +150,7 @@ public class EncodingStats {
    * Downloaded size of the input file
    *
    * @param downloadedSize
-   * Downloaded size of the input file
+   *        Downloaded size of the input file
    */
   public void setDownloadedSize(Long downloadedSize) {
     this.downloadedSize = downloadedSize;
@@ -169,7 +169,7 @@ public class EncodingStats {
    * Billable minutes
    *
    * @param billableMinutes
-   * Billable minutes
+   *        Billable minutes
    */
   public void setBillableMinutes(Double billableMinutes) {
     this.billableMinutes = billableMinutes;
@@ -177,9 +177,6 @@ public class EncodingStats {
 
 
   public EncodingStats addBillableEncodingMinutesItem(BillableEncodingMinutes billableEncodingMinutesItem) {
-    if (this.billableEncodingMinutes == null) {
-      this.billableEncodingMinutes = new ArrayList<>();
-    }
     this.billableEncodingMinutes.add(billableEncodingMinutesItem);
     return this;
   }
@@ -196,7 +193,7 @@ public class EncodingStats {
    * Detailed statistics per stream
    *
    * @param billableEncodingMinutes
-   * Detailed statistics per stream
+   *        Detailed statistics per stream
    */
   public void setBillableEncodingMinutes(List<BillableEncodingMinutes> billableEncodingMinutes) {
     this.billableEncodingMinutes = billableEncodingMinutes;
@@ -204,7 +201,7 @@ public class EncodingStats {
 
 
   /**
-   * Billable transmuxing minutes
+   * Billable transmuxing minutes (required)
    * @return billableTransmuxingMinutes
    */
   public Double getBillableTransmuxingMinutes() {
@@ -212,10 +209,10 @@ public class EncodingStats {
   }
 
   /**
-   * Billable transmuxing minutes
+   * Billable transmuxing minutes (required)
    *
    * @param billableTransmuxingMinutes
-   * Billable transmuxing minutes
+   *        Billable transmuxing minutes (required)
    */
   public void setBillableTransmuxingMinutes(Double billableTransmuxingMinutes) {
     this.billableTransmuxingMinutes = billableTransmuxingMinutes;
@@ -234,7 +231,7 @@ public class EncodingStats {
    * Billable feature minutes
    *
    * @param billableFeatureMinutes
-   * Billable feature minutes
+   *        Billable feature minutes
    */
   public void setBillableFeatureMinutes(Double billableFeatureMinutes) {
     this.billableFeatureMinutes = billableFeatureMinutes;
@@ -247,7 +244,7 @@ public class EncodingStats {
   }
 
   /**
-   * Detailed statistics per stream
+   * Detailed statistics per stream (required)
    * @return streams
    */
   public List<StatisticsPerStream> getStreams() {
@@ -255,10 +252,10 @@ public class EncodingStats {
   }
 
   /**
-   * Detailed statistics per stream
+   * Detailed statistics per stream (required)
    *
    * @param streams
-   * Detailed statistics per stream
+   *        Detailed statistics per stream (required)
    */
   public void setStreams(List<StatisticsPerStream> streams) {
     this.streams = streams;
@@ -271,7 +268,7 @@ public class EncodingStats {
   }
 
   /**
-   * Detailed statistics per muxing
+   * Detailed statistics per muxing (required)
    * @return muxings
    */
   public List<StatisticsPerMuxing> getMuxings() {
@@ -279,10 +276,10 @@ public class EncodingStats {
   }
 
   /**
-   * Detailed statistics per muxing
+   * Detailed statistics per muxing (required)
    *
    * @param muxings
-   * Detailed statistics per muxing
+   *        Detailed statistics per muxing (required)
    */
   public void setMuxings(List<StatisticsPerMuxing> muxings) {
     this.muxings = muxings;
@@ -290,9 +287,6 @@ public class EncodingStats {
 
 
   public EncodingStats addFeaturesItem(BillableEncodingFeatureMinutes featuresItem) {
-    if (this.features == null) {
-      this.features = new ArrayList<>();
-    }
     this.features.add(featuresItem);
     return this;
   }
@@ -309,7 +303,7 @@ public class EncodingStats {
    * Detailed statistics per feature
    *
    * @param features
-   * Detailed statistics per feature
+   *        Detailed statistics per feature
    */
   public void setFeatures(List<BillableEncodingFeatureMinutes> features) {
     this.features = features;
@@ -344,7 +338,6 @@ public class EncodingStats {
     return Objects.hash(date, encodingId, bytesEncoded, timeEncoded, downloadedSize, billableMinutes, billableEncodingMinutes, billableTransmuxingMinutes, billableFeatureMinutes, streams, muxings, features);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -376,6 +369,5 @@ public class EncodingStats {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

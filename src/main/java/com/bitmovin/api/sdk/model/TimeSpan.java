@@ -20,7 +20,7 @@ public class TimeSpan {
 
 
   /**
-   * Start offset of the time frame in milliseconds
+   * Start offset of the time frame in milliseconds (required)
    * @return from
    */
   public Long getFrom() {
@@ -28,10 +28,10 @@ public class TimeSpan {
   }
 
   /**
-   * Start offset of the time frame in milliseconds
+   * Start offset of the time frame in milliseconds (required)
    *
    * @param from
-   * Start offset of the time frame in milliseconds
+   *        Start offset of the time frame in milliseconds (required)
    */
   public void setFrom(Long from) {
     this.from = from;
@@ -39,7 +39,7 @@ public class TimeSpan {
 
 
   /**
-   * End offset of the time frame in milliseconds
+   * End offset of the time frame in milliseconds (required)
    * @return to
    */
   public Long getTo() {
@@ -47,10 +47,10 @@ public class TimeSpan {
   }
 
   /**
-   * End offset of the time frame in milliseconds
+   * End offset of the time frame in milliseconds (required)
    *
    * @param to
-   * End offset of the time frame in milliseconds
+   *        End offset of the time frame in milliseconds (required)
    */
   public void setTo(Long to) {
     this.to = to;
@@ -75,7 +75,6 @@ public class TimeSpan {
     return Objects.hash(from, to);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -97,6 +96,5 @@ public class TimeSpan {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

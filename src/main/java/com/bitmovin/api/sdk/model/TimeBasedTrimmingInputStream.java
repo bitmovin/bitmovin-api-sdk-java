@@ -38,7 +38,7 @@ public class TimeBasedTrimmingInputStream extends InputStream {
    * The id of the ingest input stream that should be trimmed
    *
    * @param inputStreamId
-   * The id of the ingest input stream that should be trimmed
+   *        The id of the ingest input stream that should be trimmed
    */
   public void setInputStreamId(String inputStreamId) {
     this.inputStreamId = inputStreamId;
@@ -59,7 +59,7 @@ public class TimeBasedTrimmingInputStream extends InputStream {
    * minimum: 0
    *
    * @param offset
-   * Defines the offset in seconds at which the encoding should start, beginning at 0. The frame indicated by this value will be included in the encoding
+   *        Defines the offset in seconds at which the encoding should start, beginning at 0. The frame indicated by this value will be included in the encoding
    * minimum: 0
    */
   public void setOffset(Double offset) {
@@ -81,7 +81,7 @@ public class TimeBasedTrimmingInputStream extends InputStream {
    * minimum: 0
    *
    * @param duration
-   * Defines how many seconds of the input will be encoded
+   *        Defines how many seconds of the input will be encoded
    * minimum: 0
    */
   public void setDuration(Double duration) {
@@ -109,7 +109,6 @@ public class TimeBasedTrimmingInputStream extends InputStream {
     return Objects.hash(inputStreamId, offset, duration, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -132,6 +131,5 @@ public class TimeBasedTrimmingInputStream extends InputStream {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

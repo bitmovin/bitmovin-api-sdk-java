@@ -24,7 +24,7 @@ public class EncodingStatistics {
 
 
   /**
-   * Date, format. yyyy-MM-dd
+   * Date, format. yyyy-MM-dd (required)
    * @return date
    */
   public Date getDate() {
@@ -32,10 +32,10 @@ public class EncodingStatistics {
   }
 
   /**
-   * Date, format. yyyy-MM-dd
+   * Date, format. yyyy-MM-dd (required)
    *
    * @param date
-   * Date, format. yyyy-MM-dd
+   *        Date, format. yyyy-MM-dd (required)
    */
   public void setDate(Date date) {
     this.date = date;
@@ -43,7 +43,7 @@ public class EncodingStatistics {
 
 
   /**
-   * Bytes encoded for this encoding.
+   * Bytes encoded for this encoding. (required)
    * @return bytesEncoded
    */
   public Long getBytesEncoded() {
@@ -51,10 +51,10 @@ public class EncodingStatistics {
   }
 
   /**
-   * Bytes encoded for this encoding.
+   * Bytes encoded for this encoding. (required)
    *
    * @param bytesEncoded
-   * Bytes encoded for this encoding.
+   *        Bytes encoded for this encoding. (required)
    */
   public void setBytesEncoded(Long bytesEncoded) {
     this.bytesEncoded = bytesEncoded;
@@ -62,7 +62,7 @@ public class EncodingStatistics {
 
 
   /**
-   * Time in seconds encoded for this encoding.
+   * Time in seconds encoded for this encoding. (required)
    * @return timeEncoded
    */
   public Long getTimeEncoded() {
@@ -70,10 +70,10 @@ public class EncodingStatistics {
   }
 
   /**
-   * Time in seconds encoded for this encoding.
+   * Time in seconds encoded for this encoding. (required)
    *
    * @param timeEncoded
-   * Time in seconds encoded for this encoding.
+   *        Time in seconds encoded for this encoding. (required)
    */
   public void setTimeEncoded(Long timeEncoded) {
     this.timeEncoded = timeEncoded;
@@ -99,7 +99,6 @@ public class EncodingStatistics {
     return Objects.hash(date, bytesEncoded, timeEncoded);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -122,6 +121,5 @@ public class EncodingStatistics {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

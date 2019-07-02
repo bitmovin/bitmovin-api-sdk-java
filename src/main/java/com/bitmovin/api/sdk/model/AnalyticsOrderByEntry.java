@@ -74,7 +74,6 @@ public class AnalyticsOrderByEntry {
     return Objects.hash(name, order);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -96,6 +95,5 @@ public class AnalyticsOrderByEntry {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

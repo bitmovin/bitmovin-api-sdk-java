@@ -41,7 +41,7 @@ public class EmailNotificationWithStreamConditionsRequest {
    * Notify when condition resolves after it was met
    *
    * @param resolve
-   * Notify when condition resolves after it was met
+   *        Notify when condition resolves after it was met
    */
   public void setResolve(Boolean resolve) {
     this.resolve = resolve;
@@ -127,7 +127,6 @@ public class EmailNotificationWithStreamConditionsRequest {
     return Objects.hash(resolve, emails, muted, conditions);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -151,6 +150,5 @@ public class EmailNotificationWithStreamConditionsRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

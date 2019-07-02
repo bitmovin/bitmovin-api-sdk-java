@@ -28,7 +28,7 @@ public class WidevineDrm extends Drm {
 
 
   /**
-   * 16 byte Encryption key, 32 hexadecimal characters
+   * 16 byte Encryption key, 32 hexadecimal characters (required)
    * @return key
    */
   public String getKey() {
@@ -36,10 +36,10 @@ public class WidevineDrm extends Drm {
   }
 
   /**
-   * 16 byte Encryption key, 32 hexadecimal characters
+   * 16 byte Encryption key, 32 hexadecimal characters (required)
    *
    * @param key
-   * 16 byte Encryption key, 32 hexadecimal characters
+   *        16 byte Encryption key, 32 hexadecimal characters (required)
    */
   public void setKey(String key) {
     this.key = key;
@@ -47,7 +47,7 @@ public class WidevineDrm extends Drm {
 
 
   /**
-   * 16 byte Key id, 32 hexadecimal characters
+   * 16 byte Key id, 32 hexadecimal characters (required)
    * @return kid
    */
   public String getKid() {
@@ -55,10 +55,10 @@ public class WidevineDrm extends Drm {
   }
 
   /**
-   * 16 byte Key id, 32 hexadecimal characters
+   * 16 byte Key id, 32 hexadecimal characters (required)
    *
    * @param kid
-   * 16 byte Key id, 32 hexadecimal characters
+   *        16 byte Key id, 32 hexadecimal characters (required)
    */
   public void setKid(String kid) {
     this.kid = kid;
@@ -66,7 +66,7 @@ public class WidevineDrm extends Drm {
 
 
   /**
-   * Base 64 Encoded
+   * Base 64 Encoded (required)
    * @return pssh
    */
   public String getPssh() {
@@ -74,10 +74,10 @@ public class WidevineDrm extends Drm {
   }
 
   /**
-   * Base 64 Encoded
+   * Base 64 Encoded (required)
    *
    * @param pssh
-   * Base 64 Encoded
+   *        Base 64 Encoded (required)
    */
   public void setPssh(String pssh) {
     this.pssh = pssh;
@@ -104,7 +104,6 @@ public class WidevineDrm extends Drm {
     return Objects.hash(key, kid, pssh, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -127,6 +126,5 @@ public class WidevineDrm extends Drm {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

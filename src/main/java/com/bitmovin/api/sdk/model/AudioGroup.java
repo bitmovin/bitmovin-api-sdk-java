@@ -20,7 +20,7 @@ public class AudioGroup {
 
 
   /**
-   * Name of the audio group
+   * Name of the audio group (required)
    * @return name
    */
   public String getName() {
@@ -28,10 +28,10 @@ public class AudioGroup {
   }
 
   /**
-   * Name of the audio group
+   * Name of the audio group (required)
    *
    * @param name
-   * Name of the audio group
+   *        Name of the audio group (required)
    */
   public void setName(String name) {
     this.name = name;
@@ -39,7 +39,7 @@ public class AudioGroup {
 
 
   /**
-   * Priority of the audio group
+   * Priority of the audio group (required)
    * minimum: 0
    * maximum: 100
    * @return priority
@@ -49,12 +49,12 @@ public class AudioGroup {
   }
 
   /**
-   * Priority of the audio group
+   * Priority of the audio group (required)
    * minimum: 0
    * maximum: 100
    *
    * @param priority
-   * Priority of the audio group
+   *        Priority of the audio group (required)
    * minimum: 0
    * maximum: 100
    */
@@ -81,7 +81,6 @@ public class AudioGroup {
     return Objects.hash(name, priority);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -103,6 +102,5 @@ public class AudioGroup {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

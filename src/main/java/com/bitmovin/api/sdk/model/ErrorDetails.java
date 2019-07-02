@@ -27,7 +27,7 @@ public class ErrorDetails {
 
 
   /**
-   * Specific error code
+   * Specific error code (required)
    * @return code
    */
   public Integer getCode() {
@@ -35,10 +35,10 @@ public class ErrorDetails {
   }
 
   /**
-   * Specific error code
+   * Specific error code (required)
    *
    * @param code
-   * Specific error code
+   *        Specific error code (required)
    */
   public void setCode(Integer code) {
     this.code = code;
@@ -46,7 +46,7 @@ public class ErrorDetails {
 
 
   /**
-   * Error group name
+   * Error group name (required)
    * @return category
    */
   public String getCategory() {
@@ -54,10 +54,10 @@ public class ErrorDetails {
   }
 
   /**
-   * Error group name
+   * Error group name (required)
    *
    * @param category
-   * Error group name
+   *        Error group name (required)
    */
   public void setCategory(String category) {
     this.category = category;
@@ -65,7 +65,7 @@ public class ErrorDetails {
 
 
   /**
-   * Detailed error message
+   * Detailed error message (required)
    * @return text
    */
   public String getText() {
@@ -73,10 +73,10 @@ public class ErrorDetails {
   }
 
   /**
-   * Detailed error message
+   * Detailed error message (required)
    *
    * @param text
-   * Detailed error message
+   *        Detailed error message (required)
    */
   public void setText(String text) {
     this.text = text;
@@ -84,7 +84,7 @@ public class ErrorDetails {
 
 
   /**
-   * Information if the encoding could potentially succeed when retrying.
+   * Information if the encoding could potentially succeed when retrying. (required)
    * @return retryHint
    */
   public RetryHint getRetryHint() {
@@ -92,10 +92,10 @@ public class ErrorDetails {
   }
 
   /**
-   * Information if the encoding could potentially succeed when retrying.
+   * Information if the encoding could potentially succeed when retrying. (required)
    *
    * @param retryHint
-   * Information if the encoding could potentially succeed when retrying.
+   *        Information if the encoding could potentially succeed when retrying. (required)
    */
   public void setRetryHint(RetryHint retryHint) {
     this.retryHint = retryHint;
@@ -122,7 +122,6 @@ public class ErrorDetails {
     return Objects.hash(code, category, text, retryHint);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -146,6 +145,5 @@ public class ErrorDetails {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

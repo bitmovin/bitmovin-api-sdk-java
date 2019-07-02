@@ -48,7 +48,7 @@ public class AnalyticsExportTask extends BitmovinResponse {
 
 
   /**
-   * Start of timeframe which is exported in UTC format
+   * Start of timeframe which is exported in UTC format (required)
    * @return startTime
    */
   public Date getStartTime() {
@@ -56,10 +56,10 @@ public class AnalyticsExportTask extends BitmovinResponse {
   }
 
   /**
-   * Start of timeframe which is exported in UTC format
+   * Start of timeframe which is exported in UTC format (required)
    *
    * @param startTime
-   * Start of timeframe which is exported in UTC format
+   *        Start of timeframe which is exported in UTC format (required)
    */
   public void setStartTime(Date startTime) {
     this.startTime = startTime;
@@ -67,7 +67,7 @@ public class AnalyticsExportTask extends BitmovinResponse {
 
 
   /**
-   * End of timeframe which is exported in UTC format
+   * End of timeframe which is exported in UTC format (required)
    * @return endTime
    */
   public Date getEndTime() {
@@ -75,10 +75,10 @@ public class AnalyticsExportTask extends BitmovinResponse {
   }
 
   /**
-   * End of timeframe which is exported in UTC format
+   * End of timeframe which is exported in UTC format (required)
    *
    * @param endTime
-   * End of timeframe which is exported in UTC format
+   *        End of timeframe which is exported in UTC format (required)
    */
   public void setEndTime(Date endTime) {
     this.endTime = endTime;
@@ -86,7 +86,7 @@ public class AnalyticsExportTask extends BitmovinResponse {
 
 
   /**
-   * Name of the export task
+   * Name of the export task (required)
    * @return name
    */
   public String getName() {
@@ -94,10 +94,10 @@ public class AnalyticsExportTask extends BitmovinResponse {
   }
 
   /**
-   * Name of the export task
+   * Name of the export task (required)
    *
    * @param name
-   * Name of the export task
+   *        Name of the export task (required)
    */
   public void setName(String name) {
     this.name = name;
@@ -116,7 +116,7 @@ public class AnalyticsExportTask extends BitmovinResponse {
    * Export task description
    *
    * @param description
-   * Export task description
+   *        Export task description
    */
   public void setDescription(String description) {
     this.description = description;
@@ -124,7 +124,7 @@ public class AnalyticsExportTask extends BitmovinResponse {
 
 
   /**
-   * License key
+   * License key (required)
    * @return licenseKey
    */
   public String getLicenseKey() {
@@ -132,10 +132,10 @@ public class AnalyticsExportTask extends BitmovinResponse {
   }
 
   /**
-   * License key
+   * License key (required)
    *
    * @param licenseKey
-   * License key
+   *        License key (required)
    */
   public void setLicenseKey(String licenseKey) {
     this.licenseKey = licenseKey;
@@ -229,7 +229,6 @@ public class AnalyticsExportTask extends BitmovinResponse {
     return Objects.hash(startTime, endTime, name, description, licenseKey, output, progress, status, startedAt, finishedAt, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -259,6 +258,5 @@ public class AnalyticsExportTask extends BitmovinResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

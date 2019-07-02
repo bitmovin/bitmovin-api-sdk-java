@@ -103,7 +103,6 @@ public class DeinterlaceFilter extends Filter {
     return Objects.hash(parity, mode, frameSelectionMode, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -126,6 +125,5 @@ public class DeinterlaceFilter extends Filter {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

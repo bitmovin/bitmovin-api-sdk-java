@@ -21,7 +21,7 @@ public class InternalChunkLength {
 
 
   /**
-   * Defines how the internal chunk length for encoding will be determined
+   * Defines how the internal chunk length for encoding will be determined (required)
    * @return mode
    */
   public ChunkLengthMode getMode() {
@@ -29,10 +29,10 @@ public class InternalChunkLength {
   }
 
   /**
-   * Defines how the internal chunk length for encoding will be determined
+   * Defines how the internal chunk length for encoding will be determined (required)
    *
    * @param mode
-   * Defines how the internal chunk length for encoding will be determined
+   *        Defines how the internal chunk length for encoding will be determined (required)
    */
   public void setMode(ChunkLengthMode mode) {
     this.mode = mode;
@@ -55,7 +55,7 @@ public class InternalChunkLength {
    * maximum: 180
    *
    * @param customChunkLength
-   * Defines a custom internal chunk length in seconds to be used for encoding if mode is set to &#x60;CUSTOM&#x60;. Valid range is from 1 to 180 seconds
+   *        Defines a custom internal chunk length in seconds to be used for encoding if mode is set to &#x60;CUSTOM&#x60;. Valid range is from 1 to 180 seconds
    * minimum: 1
    * maximum: 180
    */
@@ -82,7 +82,6 @@ public class InternalChunkLength {
     return Objects.hash(mode, customChunkLength);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -104,6 +103,5 @@ public class InternalChunkLength {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

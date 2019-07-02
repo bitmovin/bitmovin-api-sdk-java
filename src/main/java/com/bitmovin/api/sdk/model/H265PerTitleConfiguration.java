@@ -40,7 +40,7 @@ public class H265PerTitleConfiguration extends PerTitleConfiguration {
    * Desired target quality of the highest representation expressed as CRF value
    *
    * @param targetQualityCrf
-   * Desired target quality of the highest representation expressed as CRF value
+   *        Desired target quality of the highest representation expressed as CRF value
    */
   public void setTargetQualityCrf(Double targetQualityCrf) {
     this.targetQualityCrf = targetQualityCrf;
@@ -59,7 +59,7 @@ public class H265PerTitleConfiguration extends PerTitleConfiguration {
    * This factor is used to calculate the minBitrate of the codec configuration for the generated representations as a multiple of the targetBitrate
    *
    * @param codecMinBitrateFactor
-   * This factor is used to calculate the minBitrate of the codec configuration for the generated representations as a multiple of the targetBitrate
+   *        This factor is used to calculate the minBitrate of the codec configuration for the generated representations as a multiple of the targetBitrate
    */
   public void setCodecMinBitrateFactor(Double codecMinBitrateFactor) {
     this.codecMinBitrateFactor = codecMinBitrateFactor;
@@ -78,7 +78,7 @@ public class H265PerTitleConfiguration extends PerTitleConfiguration {
    * This factor is used to calculate the maxBitrate of the codec configuration for the generated representations as a multiple of the targetBitrate
    *
    * @param codecMaxBitrateFactor
-   * This factor is used to calculate the maxBitrate of the codec configuration for the generated representations as a multiple of the targetBitrate
+   *        This factor is used to calculate the maxBitrate of the codec configuration for the generated representations as a multiple of the targetBitrate
    */
   public void setCodecMaxBitrateFactor(Double codecMaxBitrateFactor) {
     this.codecMaxBitrateFactor = codecMaxBitrateFactor;
@@ -97,7 +97,7 @@ public class H265PerTitleConfiguration extends PerTitleConfiguration {
    * This factor is used to calculate the bufsize of the codec configuration for the generated representations as a multiple of the targetBitrate
    *
    * @param codecBufsizeFactor
-   * This factor is used to calculate the bufsize of the codec configuration for the generated representations as a multiple of the targetBitrate
+   *        This factor is used to calculate the bufsize of the codec configuration for the generated representations as a multiple of the targetBitrate
    */
   public void setCodecBufsizeFactor(Double codecBufsizeFactor) {
     this.codecBufsizeFactor = codecBufsizeFactor;
@@ -125,7 +125,6 @@ public class H265PerTitleConfiguration extends PerTitleConfiguration {
     return Objects.hash(targetQualityCrf, codecMinBitrateFactor, codecMaxBitrateFactor, codecBufsizeFactor, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -149,6 +148,5 @@ public class H265PerTitleConfiguration extends PerTitleConfiguration {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

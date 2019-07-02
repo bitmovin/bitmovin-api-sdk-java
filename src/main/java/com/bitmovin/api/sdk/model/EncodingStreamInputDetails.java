@@ -97,9 +97,6 @@ public class EncodingStreamInputDetails {
 
 
   public EncodingStreamInputDetails putTagsItem(String key, Object tagsItem) {
-    if (this.tags == null) {
-      this.tags = new HashMap<String, Object>();
-    }
     this.tags.put(key, tagsItem);
     return this;
   }
@@ -116,7 +113,7 @@ public class EncodingStreamInputDetails {
    * Additional metadata saved in the input file
    *
    * @param tags
-   * Additional metadata saved in the input file
+   *        Additional metadata saved in the input file
    */
   public void setTags(Map<String, Object> tags) {
     this.tags = tags;
@@ -181,7 +178,6 @@ public class EncodingStreamInputDetails {
     return Objects.hash(formatName, startTime, duration, size, bitrate, tags, videoStreams, audioStreams, metaStreams, subtitleStreams);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -211,6 +207,5 @@ public class EncodingStreamInputDetails {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

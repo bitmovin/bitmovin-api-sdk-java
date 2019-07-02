@@ -32,9 +32,6 @@ public class AdaptationSet extends BitmovinResponse {
 
 
   public AdaptationSet addCustomAttributesItem(CustomAttribute customAttributesItem) {
-    if (this.customAttributes == null) {
-      this.customAttributes = new ArrayList<>();
-    }
     this.customAttributes.add(customAttributesItem);
     return this;
   }
@@ -51,7 +48,7 @@ public class AdaptationSet extends BitmovinResponse {
    * Custom adaptation set attributes
    *
    * @param customAttributes
-   * Custom adaptation set attributes
+   *        Custom adaptation set attributes
    */
   public void setCustomAttributes(List<CustomAttribute> customAttributes) {
     this.customAttributes = customAttributes;
@@ -59,9 +56,6 @@ public class AdaptationSet extends BitmovinResponse {
 
 
   public AdaptationSet addRolesItem(AdaptationSetRole rolesItem) {
-    if (this.roles == null) {
-      this.roles = new ArrayList<>();
-    }
     this.roles.add(rolesItem);
     return this;
   }
@@ -78,7 +72,7 @@ public class AdaptationSet extends BitmovinResponse {
    * Roles of the adaptation set
    *
    * @param roles
-   * Roles of the adaptation set
+   *        Roles of the adaptation set
    */
   public void setRoles(List<AdaptationSetRole> roles) {
     this.roles = roles;
@@ -86,9 +80,6 @@ public class AdaptationSet extends BitmovinResponse {
 
 
   public AdaptationSet addAccessibilitiesItem(Accessibility accessibilitiesItem) {
-    if (this.accessibilities == null) {
-      this.accessibilities = new ArrayList<>();
-    }
     this.accessibilities.add(accessibilitiesItem);
     return this;
   }
@@ -105,7 +96,7 @@ public class AdaptationSet extends BitmovinResponse {
    * Provide signaling of CEA 607 and CEA 708
    *
    * @param accessibilities
-   * Provide signaling of CEA 607 and CEA 708
+   *        Provide signaling of CEA 607 and CEA 708
    */
   public void setAccessibilities(List<Accessibility> accessibilities) {
     this.accessibilities = accessibilities;
@@ -132,7 +123,6 @@ public class AdaptationSet extends BitmovinResponse {
     return Objects.hash(customAttributes, roles, accessibilities, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -155,6 +145,5 @@ public class AdaptationSet extends BitmovinResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

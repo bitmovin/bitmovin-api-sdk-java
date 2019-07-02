@@ -21,7 +21,7 @@ public class IFramePlaylist extends BitmovinResource {
 
 
   /**
-   * The filename of your I-frame playlist
+   * The filename of your I-frame playlist (required)
    * @return filename
    */
   public String getFilename() {
@@ -29,10 +29,10 @@ public class IFramePlaylist extends BitmovinResource {
   }
 
   /**
-   * The filename of your I-frame playlist
+   * The filename of your I-frame playlist (required)
    *
    * @param filename
-   * The filename of your I-frame playlist
+   *        The filename of your I-frame playlist (required)
    */
   public void setFilename(String filename) {
     this.filename = filename;
@@ -57,7 +57,6 @@ public class IFramePlaylist extends BitmovinResource {
     return Objects.hash(filename, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -78,6 +77,5 @@ public class IFramePlaylist extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

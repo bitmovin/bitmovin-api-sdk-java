@@ -41,7 +41,7 @@ public class EncodingErrorDefinition {
    * The error code.
    *
    * @param code
-   * The error code.
+   *        The error code.
    */
   public void setCode(Integer code) {
     this.code = code;
@@ -60,7 +60,7 @@ public class EncodingErrorDefinition {
    * The error category.
    *
    * @param category
-   * The error category.
+   *        The error category.
    */
   public void setCategory(String category) {
     this.category = category;
@@ -79,7 +79,7 @@ public class EncodingErrorDefinition {
    * The error message, optional. Can include placeholders like {1}, {2} which are replaced with the respective dependency when the error is thrown.
    *
    * @param message
-   * The error message, optional. Can include placeholders like {1}, {2} which are replaced with the respective dependency when the error is thrown.
+   *        The error message, optional. Can include placeholders like {1}, {2} which are replaced with the respective dependency when the error is thrown.
    */
   public void setMessage(String message) {
     this.message = message;
@@ -98,7 +98,7 @@ public class EncodingErrorDefinition {
    * The returned error description.
    *
    * @param description
-   * The returned error description.
+   *        The returned error description.
    */
   public void setDescription(String description) {
     this.description = description;
@@ -117,7 +117,7 @@ public class EncodingErrorDefinition {
    * Indicates if the call that caused the error should be retried.
    *
    * @param retryHint
-   * Indicates if the call that caused the error should be retried.
+   *        Indicates if the call that caused the error should be retried.
    */
   public void setRetryHint(ErrorRetryHint retryHint) {
     this.retryHint = retryHint;
@@ -145,7 +145,6 @@ public class EncodingErrorDefinition {
     return Objects.hash(code, category, message, description, retryHint);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -170,6 +169,5 @@ public class EncodingErrorDefinition {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

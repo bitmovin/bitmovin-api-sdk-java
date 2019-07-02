@@ -7,6 +7,7 @@ import com.bitmovin.api.sdk.model.Ignoring;
 import com.bitmovin.api.sdk.model.Muxing;
 import com.bitmovin.api.sdk.model.MuxingStream;
 import com.bitmovin.api.sdk.model.StreamConditionsMode;
+import com.bitmovin.api.sdk.model.TsMuxingConfiguration;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -35,9 +36,12 @@ public class TsMuxing extends Muxing {
   @JsonProperty("segmentsMuxed")
   private Integer segmentsMuxed;
 
+  @JsonProperty("configuration")
+  private TsMuxingConfiguration _configuration;
+
 
   /**
-   * Length of the fragments in seconds
+   * Length of the fragments in seconds (required)
    * @return segmentLength
    */
   public Double getSegmentLength() {
@@ -45,10 +49,10 @@ public class TsMuxing extends Muxing {
   }
 
   /**
-   * Length of the fragments in seconds
+   * Length of the fragments in seconds (required)
    *
    * @param segmentLength
-   * Length of the fragments in seconds
+   *        Length of the fragments in seconds (required)
    */
   public void setSegmentLength(Double segmentLength) {
     this.segmentLength = segmentLength;
@@ -67,7 +71,7 @@ public class TsMuxing extends Muxing {
    * Segment naming policy
    *
    * @param segmentNaming
-   * Segment naming policy
+   *        Segment naming policy
    */
   public void setSegmentNaming(String segmentNaming) {
     this.segmentNaming = segmentNaming;
@@ -86,7 +90,7 @@ public class TsMuxing extends Muxing {
    * Segment naming policy containing a placeholder of the format &#39;{rand_chars:x}&#39;, which will be replaced by a random alphanumeric string of length x (default 32) on each (re)start of the encoding. The resulting string will be copied to the segmentNaming property. Intended to avoid re-use of segment names after restarting a live encoding. If segmentNamingTemplate is set, segmentNaming must not be set.
    *
    * @param segmentNamingTemplate
-   * Segment naming policy containing a placeholder of the format &#39;{rand_chars:x}&#39;, which will be replaced by a random alphanumeric string of length x (default 32) on each (re)start of the encoding. The resulting string will be copied to the segmentNaming property. Intended to avoid re-use of segment names after restarting a live encoding. If segmentNamingTemplate is set, segmentNaming must not be set.
+   *        Segment naming policy containing a placeholder of the format &#39;{rand_chars:x}&#39;, which will be replaced by a random alphanumeric string of length x (default 32) on each (re)start of the encoding. The resulting string will be copied to the segmentNaming property. Intended to avoid re-use of segment names after restarting a live encoding. If segmentNamingTemplate is set, segmentNaming must not be set.
    */
   public void setSegmentNamingTemplate(String segmentNamingTemplate) {
     this.segmentNamingTemplate = segmentNamingTemplate;
@@ -105,7 +109,7 @@ public class TsMuxing extends Muxing {
    * Offset of MPEG-TS timestamps in seconds. E.g., first packet will start with PTS 900,000 for a 10 seconds offset (90,000 MPEG-TS timescale).
    *
    * @param startOffset
-   * Offset of MPEG-TS timestamps in seconds. E.g., first packet will start with PTS 900,000 for a 10 seconds offset (90,000 MPEG-TS timescale).
+   *        Offset of MPEG-TS timestamps in seconds. E.g., first packet will start with PTS 900,000 for a 10 seconds offset (90,000 MPEG-TS timescale).
    */
   public void setStartOffset(Integer startOffset) {
     this.startOffset = startOffset;
@@ -117,6 +121,25 @@ public class TsMuxing extends Muxing {
    */
   public Integer getSegmentsMuxed() {
     return segmentsMuxed;
+  }
+
+
+  /**
+   * Advanced Configuration of the MPEG Transport Stream Parameters
+   * @return _configuration
+   */
+  public TsMuxingConfiguration getConfiguration() {
+    return _configuration;
+  }
+
+  /**
+   * Advanced Configuration of the MPEG Transport Stream Parameters
+   *
+   * @param _configuration
+   *        Advanced Configuration of the MPEG Transport Stream Parameters
+   */
+  public void setConfiguration(TsMuxingConfiguration _configuration) {
+    this._configuration = _configuration;
   }
 
 
@@ -134,14 +157,14 @@ public class TsMuxing extends Muxing {
         Objects.equals(this.segmentNamingTemplate, tsMuxing.segmentNamingTemplate) &&
         Objects.equals(this.startOffset, tsMuxing.startOffset) &&
         Objects.equals(this.segmentsMuxed, tsMuxing.segmentsMuxed) &&
+        Objects.equals(this._configuration, tsMuxing._configuration) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(segmentLength, segmentNaming, segmentNamingTemplate, startOffset, segmentsMuxed, super.hashCode());
+    return Objects.hash(segmentLength, segmentNaming, segmentNamingTemplate, startOffset, segmentsMuxed, _configuration, super.hashCode());
   }
-
 
   @Override
   public String toString() {
@@ -153,6 +176,7 @@ public class TsMuxing extends Muxing {
     sb.append("    segmentNamingTemplate: ").append(toIndentedString(segmentNamingTemplate)).append("\n");
     sb.append("    startOffset: ").append(toIndentedString(startOffset)).append("\n");
     sb.append("    segmentsMuxed: ").append(toIndentedString(segmentsMuxed)).append("\n");
+    sb.append("    _configuration: ").append(toIndentedString(_configuration)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -167,6 +191,5 @@ public class TsMuxing extends Muxing {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

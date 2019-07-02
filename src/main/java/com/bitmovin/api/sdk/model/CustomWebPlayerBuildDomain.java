@@ -21,7 +21,7 @@ public class CustomWebPlayerBuildDomain extends BitmovinResource {
 
 
   /**
-   * Domain where the player is allowed to play
+   * Domain where the player is allowed to play (required)
    * @return domain
    */
   public String getDomain() {
@@ -29,10 +29,10 @@ public class CustomWebPlayerBuildDomain extends BitmovinResource {
   }
 
   /**
-   * Domain where the player is allowed to play
+   * Domain where the player is allowed to play (required)
    *
    * @param domain
-   * Domain where the player is allowed to play
+   *        Domain where the player is allowed to play (required)
    */
   public void setDomain(String domain) {
     this.domain = domain;
@@ -57,7 +57,6 @@ public class CustomWebPlayerBuildDomain extends BitmovinResource {
     return Objects.hash(domain, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -78,6 +77,5 @@ public class CustomWebPlayerBuildDomain extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

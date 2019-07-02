@@ -17,8 +17,10 @@ import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.fmp4.Fmp4Api;
+import com.bitmovin.api.sdk.encoding.encodings.muxings.chunkedText.ChunkedTextApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.cmaf.CmafApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.segmentedRaw.SegmentedRawApi;
+import com.bitmovin.api.sdk.encoding.encodings.muxings.text.TextApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.ts.TsApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.webm.WebmApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.mp3.Mp3Api;
@@ -30,8 +32,10 @@ import com.bitmovin.api.sdk.encoding.encodings.muxings.progressiveMov.Progressiv
 
 public class MuxingsApi {
     public final Fmp4Api fmp4;
+    public final ChunkedTextApi chunkedText;
     public final CmafApi cmaf;
     public final SegmentedRawApi segmentedRaw;
+    public final TextApi text;
     public final TsApi ts;
     public final WebmApi webm;
     public final Mp3Api mp3;
@@ -52,8 +56,10 @@ public class MuxingsApi {
         this.apiClient = clientFactory.createApiClient(MuxingsApiClient.class);
 
         this.fmp4 = new Fmp4Api(clientFactory);
+        this.chunkedText = new ChunkedTextApi(clientFactory);
         this.cmaf = new CmafApi(clientFactory);
         this.segmentedRaw = new SegmentedRawApi(clientFactory);
+        this.text = new TextApi(clientFactory);
         this.ts = new TsApi(clientFactory);
         this.webm = new WebmApi(clientFactory);
         this.mp3 = new Mp3Api(clientFactory);

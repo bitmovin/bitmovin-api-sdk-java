@@ -26,7 +26,7 @@ public class KubernetesCluster extends BitmovinResource {
   private String agentDeploymentDownloadUrl;
 
   /**
-   * Shows if the Bitmovin Agent is alive
+   * Shows if the Bitmovin Agent is alive (required)
    * @return online
    */
   public Boolean getOnline() {
@@ -34,7 +34,7 @@ public class KubernetesCluster extends BitmovinResource {
   }
 
   /**
-   * Shows if the Kubernetes cluster is accessible by the Bitmovin Agent
+   * Shows if the Kubernetes cluster is accessible by the Bitmovin Agent (required)
    * @return connected
    */
   public Boolean getConnected() {
@@ -70,7 +70,6 @@ public class KubernetesCluster extends BitmovinResource {
     return Objects.hash(online, connected, agentDeploymentDownloadUrl, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -93,6 +92,5 @@ public class KubernetesCluster extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

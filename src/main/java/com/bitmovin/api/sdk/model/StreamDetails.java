@@ -117,7 +117,6 @@ public class StreamDetails {
     return Objects.hash(id, codec, duration, position);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -141,6 +140,5 @@ public class StreamDetails {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

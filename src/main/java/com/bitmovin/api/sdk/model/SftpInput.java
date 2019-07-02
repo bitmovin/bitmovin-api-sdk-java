@@ -33,7 +33,7 @@ public class SftpInput extends Input {
 
 
   /**
-   * Host Url or IP of the SFTP server
+   * Host Url or IP of the SFTP server (required)
    * @return host
    */
   public String getHost() {
@@ -41,10 +41,10 @@ public class SftpInput extends Input {
   }
 
   /**
-   * Host Url or IP of the SFTP server
+   * Host Url or IP of the SFTP server (required)
    *
    * @param host
-   * Host Url or IP of the SFTP server
+   *        Host Url or IP of the SFTP server (required)
    */
   public void setHost(String host) {
     this.host = host;
@@ -63,7 +63,7 @@ public class SftpInput extends Input {
    * Port to use, standard for SFTP: 22
    *
    * @param port
-   * Port to use, standard for SFTP: 22
+   *        Port to use, standard for SFTP: 22
    */
   public void setPort(Integer port) {
     this.port = port;
@@ -82,7 +82,7 @@ public class SftpInput extends Input {
    * Use passive mode. Default is true.
    *
    * @param passive
-   * Use passive mode. Default is true.
+   *        Use passive mode. Default is true.
    */
   public void setPassive(Boolean passive) {
     this.passive = passive;
@@ -101,7 +101,7 @@ public class SftpInput extends Input {
    * Your SFTP Username
    *
    * @param username
-   * Your SFTP Username
+   *        Your SFTP Username
    */
   public void setUsername(String username) {
     this.username = username;
@@ -120,7 +120,7 @@ public class SftpInput extends Input {
    * Your SFTP password
    *
    * @param password
-   * Your SFTP password
+   *        Your SFTP password
    */
   public void setPassword(String password) {
     this.password = password;
@@ -149,7 +149,6 @@ public class SftpInput extends Input {
     return Objects.hash(host, port, passive, username, password, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -174,6 +173,5 @@ public class SftpInput extends Input {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

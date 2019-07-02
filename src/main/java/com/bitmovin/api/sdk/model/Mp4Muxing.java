@@ -51,7 +51,7 @@ public class Mp4Muxing extends Muxing {
    * Name of the new Video
    *
    * @param filename
-   * Name of the new Video
+   *        Name of the new Video
    */
   public void setFilename(String filename) {
     this.filename = filename;
@@ -70,7 +70,7 @@ public class Mp4Muxing extends Muxing {
    *  Duration of fragments in milliseconds. Required for Fragmented MP4 Muxing (for Smooth Streaming or DASH On-Demand). Not setting this will result in unfragmented mp4.
    *
    * @param fragmentDuration
-   *  Duration of fragments in milliseconds. Required for Fragmented MP4 Muxing (for Smooth Streaming or DASH On-Demand). Not setting this will result in unfragmented mp4.
+   *         Duration of fragments in milliseconds. Required for Fragmented MP4 Muxing (for Smooth Streaming or DASH On-Demand). Not setting this will result in unfragmented mp4.
    */
   public void setFragmentDuration(Integer fragmentDuration) {
     this.fragmentDuration = fragmentDuration;
@@ -125,7 +125,7 @@ public class Mp4Muxing extends Muxing {
    * Modifies the internal chunk length used for chunked encoding
    *
    * @param internalChunkLength
-   * Modifies the internal chunk length used for chunked encoding
+   *        Modifies the internal chunk length used for chunked encoding
    */
   public void setInternalChunkLength(InternalChunkLength internalChunkLength) {
     this.internalChunkLength = internalChunkLength;
@@ -154,7 +154,6 @@ public class Mp4Muxing extends Muxing {
     return Objects.hash(filename, fragmentDuration, timeCode, fragmentedMP4MuxingManifestType, internalChunkLength, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -179,6 +178,5 @@ public class Mp4Muxing extends Muxing {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

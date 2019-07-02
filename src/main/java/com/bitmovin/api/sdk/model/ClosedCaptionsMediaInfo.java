@@ -22,7 +22,7 @@ public class ClosedCaptionsMediaInfo extends SegmentsMediaInfo {
 
 
   /**
-   * Specifies a Rendition within the segments in the Media Playlist. (See HLS spec 4.3.4.1. EXT-X-MEDIA INSTREAM-ID)
+   * Specifies a Rendition within the segments in the Media Playlist. (See HLS spec 4.3.4.1. EXT-X-MEDIA INSTREAM-ID) (required)
    * @return instreamId
    */
   public String getInstreamId() {
@@ -30,10 +30,10 @@ public class ClosedCaptionsMediaInfo extends SegmentsMediaInfo {
   }
 
   /**
-   * Specifies a Rendition within the segments in the Media Playlist. (See HLS spec 4.3.4.1. EXT-X-MEDIA INSTREAM-ID)
+   * Specifies a Rendition within the segments in the Media Playlist. (See HLS spec 4.3.4.1. EXT-X-MEDIA INSTREAM-ID) (required)
    *
    * @param instreamId
-   * Specifies a Rendition within the segments in the Media Playlist. (See HLS spec 4.3.4.1. EXT-X-MEDIA INSTREAM-ID)
+   *        Specifies a Rendition within the segments in the Media Playlist. (See HLS spec 4.3.4.1. EXT-X-MEDIA INSTREAM-ID) (required)
    */
   public void setInstreamId(String instreamId) {
     this.instreamId = instreamId;
@@ -52,7 +52,7 @@ public class ClosedCaptionsMediaInfo extends SegmentsMediaInfo {
    * A value of true indicates that the Rendition contains content which is considered essential to play.
    *
    * @param forced
-   * A value of true indicates that the Rendition contains content which is considered essential to play.
+   *        A value of true indicates that the Rendition contains content which is considered essential to play.
    */
   public void setForced(Boolean forced) {
     this.forced = forced;
@@ -78,7 +78,6 @@ public class ClosedCaptionsMediaInfo extends SegmentsMediaInfo {
     return Objects.hash(instreamId, forced, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -100,6 +99,5 @@ public class ClosedCaptionsMediaInfo extends SegmentsMediaInfo {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

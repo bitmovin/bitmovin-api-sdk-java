@@ -25,7 +25,7 @@ public class AudioVolumeFilter extends Filter {
 
 
   /**
-   * Audio volume value
+   * Audio volume value (required)
    * @return volume
    */
   public Double getVolume() {
@@ -33,10 +33,10 @@ public class AudioVolumeFilter extends Filter {
   }
 
   /**
-   * Audio volume value
+   * Audio volume value (required)
    *
    * @param volume
-   * Audio volume value
+   *        Audio volume value (required)
    */
   public void setVolume(Double volume) {
     this.volume = volume;
@@ -80,7 +80,6 @@ public class AudioVolumeFilter extends Filter {
     return Objects.hash(volume, unit, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -102,6 +101,5 @@ public class AudioVolumeFilter extends Filter {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

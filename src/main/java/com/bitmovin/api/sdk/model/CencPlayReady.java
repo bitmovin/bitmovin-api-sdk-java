@@ -31,7 +31,7 @@ public class CencPlayReady {
    * Url of the license server. Either the laUrl or the pssh needs to be provided.
    *
    * @param laUrl
-   * Url of the license server. Either the laUrl or the pssh needs to be provided.
+   *        Url of the license server. Either the laUrl or the pssh needs to be provided.
    */
   public void setLaUrl(String laUrl) {
     this.laUrl = laUrl;
@@ -50,7 +50,7 @@ public class CencPlayReady {
    * Base64 encoded pssh payload.
    *
    * @param pssh
-   * Base64 encoded pssh payload.
+   *        Base64 encoded pssh payload.
    */
   public void setPssh(String pssh) {
     this.pssh = pssh;
@@ -75,7 +75,6 @@ public class CencPlayReady {
     return Objects.hash(laUrl, pssh);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -97,6 +96,5 @@ public class CencPlayReady {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

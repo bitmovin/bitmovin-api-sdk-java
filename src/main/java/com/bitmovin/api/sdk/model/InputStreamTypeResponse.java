@@ -29,7 +29,7 @@ public class InputStreamTypeResponse {
    * The type of the input stream
    *
    * @param type
-   * The type of the input stream
+   *        The type of the input stream
    */
   public void setType(InputStreamType type) {
     this.type = type;
@@ -53,7 +53,6 @@ public class InputStreamTypeResponse {
     return Objects.hash(type);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -74,6 +73,5 @@ public class InputStreamTypeResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

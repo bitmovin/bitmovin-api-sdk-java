@@ -36,7 +36,7 @@ public class Webhook extends BitmovinResource {
 
 
   /**
-   * Webhook url
+   * Webhook url (required)
    * @return url
    */
   public String getUrl() {
@@ -44,10 +44,10 @@ public class Webhook extends BitmovinResource {
   }
 
   /**
-   * Webhook url
+   * Webhook url (required)
    *
    * @param url
-   * Webhook url
+   *        Webhook url (required)
    */
   public void setUrl(String url) {
     this.url = url;
@@ -66,7 +66,7 @@ public class Webhook extends BitmovinResource {
    * HTTP method used for the webhook
    *
    * @param method
-   * HTTP method used for the webhook
+   *        HTTP method used for the webhook
    */
   public void setMethod(WebhookHttpMethod method) {
     this.method = method;
@@ -85,7 +85,7 @@ public class Webhook extends BitmovinResource {
    * Whether to skip SSL certification verification or not
    *
    * @param insecureSsl
-   * Whether to skip SSL certification verification or not
+   *        Whether to skip SSL certification verification or not
    */
   public void setInsecureSsl(Boolean insecureSsl) {
     this.insecureSsl = insecureSsl;
@@ -104,7 +104,7 @@ public class Webhook extends BitmovinResource {
    * Encryption used for the webhook
    *
    * @param encryption
-   * Encryption used for the webhook
+   *        Encryption used for the webhook
    */
   public void setEncryption(WebhookEncryption encryption) {
     this.encryption = encryption;
@@ -123,7 +123,7 @@ public class Webhook extends BitmovinResource {
    * Signature used for the webhook
    *
    * @param signature
-   * Signature used for the webhook
+   *        Signature used for the webhook
    */
   public void setSignature(WebhookSignature signature) {
     this.signature = signature;
@@ -152,7 +152,6 @@ public class Webhook extends BitmovinResource {
     return Objects.hash(url, method, insecureSsl, encryption, signature, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -177,6 +176,5 @@ public class Webhook extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

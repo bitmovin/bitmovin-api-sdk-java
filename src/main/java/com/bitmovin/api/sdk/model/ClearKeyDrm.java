@@ -25,7 +25,7 @@ public class ClearKeyDrm extends Drm {
 
 
   /**
-   * 16 byte encryption key, 32 hexadecimal characters
+   * 16 byte encryption key, 32 hexadecimal characters (required)
    * @return key
    */
   public String getKey() {
@@ -33,10 +33,10 @@ public class ClearKeyDrm extends Drm {
   }
 
   /**
-   * 16 byte encryption key, 32 hexadecimal characters
+   * 16 byte encryption key, 32 hexadecimal characters (required)
    *
    * @param key
-   * 16 byte encryption key, 32 hexadecimal characters
+   *        16 byte encryption key, 32 hexadecimal characters (required)
    */
   public void setKey(String key) {
     this.key = key;
@@ -44,7 +44,7 @@ public class ClearKeyDrm extends Drm {
 
 
   /**
-   * 16 byte key id
+   * 16 byte key id (required)
    * @return kid
    */
   public String getKid() {
@@ -52,10 +52,10 @@ public class ClearKeyDrm extends Drm {
   }
 
   /**
-   * 16 byte key id
+   * 16 byte key id (required)
    *
    * @param kid
-   * 16 byte key id
+   *        16 byte key id (required)
    */
   public void setKid(String kid) {
     this.kid = kid;
@@ -81,7 +81,6 @@ public class ClearKeyDrm extends Drm {
     return Objects.hash(key, kid, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -103,6 +102,5 @@ public class ClearKeyDrm extends Drm {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

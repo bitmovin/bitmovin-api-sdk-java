@@ -67,7 +67,7 @@ public class DashManifest extends Manifest {
    * The filename of your manifest
    *
    * @param manifestName
-   * The filename of your manifest
+   *        The filename of your manifest
    */
   public void setManifestName(String manifestName) {
     this.manifestName = manifestName;
@@ -75,9 +75,6 @@ public class DashManifest extends Manifest {
 
 
   public DashManifest addNamespacesItem(XmlNamespace namespacesItem) {
-    if (this.namespaces == null) {
-      this.namespaces = new ArrayList<>();
-    }
     this.namespaces.add(namespacesItem);
     return this;
   }
@@ -94,7 +91,7 @@ public class DashManifest extends Manifest {
    * List of additional XML namespaces to add to the DASH Manifest
    *
    * @param namespaces
-   * List of additional XML namespaces to add to the DASH Manifest
+   *        List of additional XML namespaces to add to the DASH Manifest
    */
   public void setNamespaces(List<XmlNamespace> namespaces) {
     this.namespaces = namespaces;
@@ -102,9 +99,6 @@ public class DashManifest extends Manifest {
 
 
   public DashManifest addUtcTimingsItem(UtcTiming utcTimingsItem) {
-    if (this.utcTimings == null) {
-      this.utcTimings = new ArrayList<>();
-    }
     this.utcTimings.add(utcTimingsItem);
     return this;
   }
@@ -121,7 +115,7 @@ public class DashManifest extends Manifest {
    * List of UTC Timings to use for live streaming
    *
    * @param utcTimings
-   * List of UTC Timings to use for live streaming
+   *        List of UTC Timings to use for live streaming
    */
   public void setUtcTimings(List<UtcTiming> utcTimings) {
     this.utcTimings = utcTimings;
@@ -149,7 +143,6 @@ public class DashManifest extends Manifest {
     return Objects.hash(profile, manifestName, namespaces, utcTimings, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -173,6 +166,5 @@ public class DashManifest extends Manifest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

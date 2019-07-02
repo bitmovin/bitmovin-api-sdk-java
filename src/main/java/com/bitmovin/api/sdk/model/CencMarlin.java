@@ -29,7 +29,6 @@ public class CencMarlin {
     return Objects.hash();
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -49,6 +48,5 @@ public class CencMarlin {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

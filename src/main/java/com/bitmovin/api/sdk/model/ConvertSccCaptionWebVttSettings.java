@@ -53,7 +53,7 @@ public class ConvertSccCaptionWebVttSettings {
    * Remove flash (blinking) information when converting SCC to WebVTT
    *
    * @param removeFlash
-   * Remove flash (blinking) information when converting SCC to WebVTT
+   *        Remove flash (blinking) information when converting SCC to WebVTT
    */
   public void setRemoveFlash(Boolean removeFlash) {
     this.removeFlash = removeFlash;
@@ -72,7 +72,7 @@ public class ConvertSccCaptionWebVttSettings {
    * Remove color information when converting SCC to WebVTT
    *
    * @param removeColor
-   * Remove color information when converting SCC to WebVTT
+   *        Remove color information when converting SCC to WebVTT
    */
   public void setRemoveColor(Boolean removeColor) {
     this.removeColor = removeColor;
@@ -98,7 +98,6 @@ public class ConvertSccCaptionWebVttSettings {
     return Objects.hash(positionMode, removeFlash, removeColor);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -121,6 +120,5 @@ public class ConvertSccCaptionWebVttSettings {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

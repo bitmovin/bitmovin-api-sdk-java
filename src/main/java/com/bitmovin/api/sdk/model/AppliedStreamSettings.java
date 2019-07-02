@@ -31,7 +31,7 @@ public class AppliedStreamSettings {
    * The applied width. Useful if the width in the configuration was undefined
    *
    * @param width
-   * The applied width. Useful if the width in the configuration was undefined
+   *        The applied width. Useful if the width in the configuration was undefined
    */
   public void setWidth(Integer width) {
     this.width = width;
@@ -50,7 +50,7 @@ public class AppliedStreamSettings {
    * The applied height. Useful if the height in the configuration was undefined
    *
    * @param height
-   * The applied height. Useful if the height in the configuration was undefined
+   *        The applied height. Useful if the height in the configuration was undefined
    */
   public void setHeight(Integer height) {
     this.height = height;
@@ -75,7 +75,6 @@ public class AppliedStreamSettings {
     return Objects.hash(width, height);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -97,6 +96,5 @@ public class AppliedStreamSettings {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -50,7 +50,7 @@ public class NotificationStateEntry extends BitmovinResponse {
 
 
   /**
-   * Indicate if notification was sent
+   * Indicate if notification was sent (required)
    * @return muted
    */
   public Boolean getMuted() {
@@ -58,10 +58,10 @@ public class NotificationStateEntry extends BitmovinResponse {
   }
 
   /**
-   * Indicate if notification was sent
+   * Indicate if notification was sent (required)
    *
    * @param muted
-   * Indicate if notification was sent
+   *        Indicate if notification was sent (required)
    */
   public void setMuted(Boolean muted) {
     this.muted = muted;
@@ -69,7 +69,7 @@ public class NotificationStateEntry extends BitmovinResponse {
 
 
   /**
-   * The notification this state belongs to
+   * The notification this state belongs to (required)
    * @return notificationId
    */
   public String getNotificationId() {
@@ -77,10 +77,10 @@ public class NotificationStateEntry extends BitmovinResponse {
   }
 
   /**
-   * The notification this state belongs to
+   * The notification this state belongs to (required)
    *
    * @param notificationId
-   * The notification this state belongs to
+   *        The notification this state belongs to (required)
    */
   public void setNotificationId(String notificationId) {
     this.notificationId = notificationId;
@@ -88,7 +88,7 @@ public class NotificationStateEntry extends BitmovinResponse {
 
 
   /**
-   * Indicate if triggered for specific resource
+   * Indicate if triggered for specific resource (required)
    * @return resourceId
    */
   public String getResourceId() {
@@ -96,10 +96,10 @@ public class NotificationStateEntry extends BitmovinResponse {
   }
 
   /**
-   * Indicate if triggered for specific resource
+   * Indicate if triggered for specific resource (required)
    *
    * @param resourceId
-   * Indicate if triggered for specific resource
+   *        Indicate if triggered for specific resource (required)
    */
   public void setResourceId(String resourceId) {
     this.resourceId = resourceId;
@@ -146,7 +146,6 @@ public class NotificationStateEntry extends BitmovinResponse {
     return Objects.hash(state, muted, notificationId, resourceId, triggeredAt, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -171,6 +170,5 @@ public class NotificationStateEntry extends BitmovinResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

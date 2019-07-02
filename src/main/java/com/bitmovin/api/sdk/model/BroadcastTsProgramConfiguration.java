@@ -38,7 +38,7 @@ public class BroadcastTsProgramConfiguration {
    * maximum: 65535
    *
    * @param programNumber
-   * An integer value. Value for program_number field in Program Map Table (PMT). The value zero is reserved for the NIT PID entry in the PAT.
+   *        An integer value. Value for program_number field in Program Map Table (PMT). The value zero is reserved for the NIT PID entry in the PAT.
    * minimum: 1
    * maximum: 65535
    */
@@ -63,7 +63,7 @@ public class BroadcastTsProgramConfiguration {
    * maximum: 8190
    *
    * @param pidForPMT
-   * An integer value. Packet identifier (PID) to use for Program Map Table (PMT). Recommended value is 2 x programNumber.
+   *        An integer value. Packet identifier (PID) to use for Program Map Table (PMT). Recommended value is 2 x programNumber.
    * minimum: 10
    * maximum: 8190
    */
@@ -84,7 +84,7 @@ public class BroadcastTsProgramConfiguration {
    * Insert Program Clock References (PCRs) on all packetized elemementary stream packets. When false, indicates that PCRs should be inserted on every PES header. This parameter is effective only when the PCR packet identifier is the same as a video or audio elementary stream.
    *
    * @param insertProgramClockRefOnPes
-   * Insert Program Clock References (PCRs) on all packetized elemementary stream packets. When false, indicates that PCRs should be inserted on every PES header. This parameter is effective only when the PCR packet identifier is the same as a video or audio elementary stream.
+   *        Insert Program Clock References (PCRs) on all packetized elemementary stream packets. When false, indicates that PCRs should be inserted on every PES header. This parameter is effective only when the PCR packet identifier is the same as a video or audio elementary stream.
    */
   public void setInsertProgramClockRefOnPes(Boolean insertProgramClockRefOnPes) {
     this.insertProgramClockRefOnPes = insertProgramClockRefOnPes;
@@ -110,7 +110,6 @@ public class BroadcastTsProgramConfiguration {
     return Objects.hash(programNumber, pidForPMT, insertProgramClockRefOnPes);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -133,6 +132,5 @@ public class BroadcastTsProgramConfiguration {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

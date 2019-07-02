@@ -30,7 +30,7 @@ public class DashManifestDefault extends DashManifest {
 
 
   /**
-   * The id of the encoding to create a default manifest from
+   * The id of the encoding to create a default manifest from (required)
    * @return encodingId
    */
   public String getEncodingId() {
@@ -38,10 +38,10 @@ public class DashManifestDefault extends DashManifest {
   }
 
   /**
-   * The id of the encoding to create a default manifest from
+   * The id of the encoding to create a default manifest from (required)
    *
    * @param encodingId
-   * The id of the encoding to create a default manifest from
+   *        The id of the encoding to create a default manifest from (required)
    */
   public void setEncodingId(String encodingId) {
     this.encodingId = encodingId;
@@ -60,7 +60,7 @@ public class DashManifestDefault extends DashManifest {
    * The version of the default manifest generator
    *
    * @param version
-   * The version of the default manifest generator
+   *        The version of the default manifest generator
    */
   public void setVersion(DashManifestDefaultVersion version) {
     this.version = version;
@@ -86,7 +86,6 @@ public class DashManifestDefault extends DashManifest {
     return Objects.hash(encodingId, version, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -108,6 +107,5 @@ public class DashManifestDefault extends DashManifest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -31,7 +31,7 @@ public class SegmentedRawMuxing extends Muxing {
 
 
   /**
-   * Length of the fragments in seconds
+   * Length of the fragments in seconds (required)
    * @return segmentLength
    */
   public Double getSegmentLength() {
@@ -39,10 +39,10 @@ public class SegmentedRawMuxing extends Muxing {
   }
 
   /**
-   * Length of the fragments in seconds
+   * Length of the fragments in seconds (required)
    *
    * @param segmentLength
-   * Length of the fragments in seconds
+   *        Length of the fragments in seconds (required)
    */
   public void setSegmentLength(Double segmentLength) {
     this.segmentLength = segmentLength;
@@ -50,7 +50,7 @@ public class SegmentedRawMuxing extends Muxing {
 
 
   /**
-   * Segment naming policy
+   * Segment naming policy (required)
    * @return segmentNaming
    */
   public String getSegmentNaming() {
@@ -58,10 +58,10 @@ public class SegmentedRawMuxing extends Muxing {
   }
 
   /**
-   * Segment naming policy
+   * Segment naming policy (required)
    *
    * @param segmentNaming
-   * Segment naming policy
+   *        Segment naming policy (required)
    */
   public void setSegmentNaming(String segmentNaming) {
     this.segmentNaming = segmentNaming;
@@ -96,7 +96,6 @@ public class SegmentedRawMuxing extends Muxing {
     return Objects.hash(segmentLength, segmentNaming, segmentsMuxed, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -119,6 +118,5 @@ public class SegmentedRawMuxing extends Muxing {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

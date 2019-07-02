@@ -45,7 +45,7 @@ public class BroadcastTsMuxingConfiguration {
    * Transport configuration details for the Broadcast TS muxing.
    *
    * @param transport
-   * Transport configuration details for the Broadcast TS muxing.
+   *        Transport configuration details for the Broadcast TS muxing.
    */
   public void setTransport(BroadcastTsTransportConfiguration transport) {
     this.transport = transport;
@@ -64,7 +64,7 @@ public class BroadcastTsMuxingConfiguration {
    * Program configuration details for the Broadcast TS muxing.
    *
    * @param program
-   * Program configuration details for the Broadcast TS muxing.
+   *        Program configuration details for the Broadcast TS muxing.
    */
   public void setProgram(BroadcastTsProgramConfiguration program) {
     this.program = program;
@@ -72,9 +72,6 @@ public class BroadcastTsMuxingConfiguration {
 
 
   public BroadcastTsMuxingConfiguration addVideoStreamsItem(BroadcastTsVideoInputStreamConfiguration videoStreamsItem) {
-    if (this.videoStreams == null) {
-      this.videoStreams = new ArrayList<>();
-    }
     this.videoStreams.add(videoStreamsItem);
     return this;
   }
@@ -98,9 +95,6 @@ public class BroadcastTsMuxingConfiguration {
 
 
   public BroadcastTsMuxingConfiguration addAudioStreamsItem(BroadcastTsAudioInputStreamConfiguration audioStreamsItem) {
-    if (this.audioStreams == null) {
-      this.audioStreams = new ArrayList<>();
-    }
     this.audioStreams.add(audioStreamsItem);
     return this;
   }
@@ -143,7 +137,6 @@ public class BroadcastTsMuxingConfiguration {
     return Objects.hash(transport, program, videoStreams, audioStreams);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -167,6 +160,5 @@ public class BroadcastTsMuxingConfiguration {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -43,7 +43,13 @@ public enum MuxingType {
   PROGRESSIVE_TS("PROGRESSIVE_TS"),
   
   
-  BROADCAST_TS("BROADCAST_TS");
+  BROADCAST_TS("BROADCAST_TS"),
+  
+  
+  CHUNKED_TEXT("CHUNKED_TEXT"),
+  
+  
+  TEXT("TEXT");
 
   private String value;
 

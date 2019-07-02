@@ -41,7 +41,7 @@ public class Manifest extends BitmovinResource {
   }
 
   /**
-   * The outputs to store the manifest
+   * The outputs to store the manifest (required)
    * @return outputs
    */
   public List<EncodingOutput> getOutputs() {
@@ -49,10 +49,10 @@ public class Manifest extends BitmovinResource {
   }
 
   /**
-   * The outputs to store the manifest
+   * The outputs to store the manifest (required)
    *
    * @param outputs
-   * The outputs to store the manifest
+   *        The outputs to store the manifest (required)
    */
   public void setOutputs(List<EncodingOutput> outputs) {
     this.outputs = outputs;
@@ -78,7 +78,6 @@ public class Manifest extends BitmovinResource {
     return Objects.hash(type, outputs, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -100,6 +99,5 @@ public class Manifest extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

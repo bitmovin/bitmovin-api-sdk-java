@@ -39,7 +39,7 @@ public class S3Output extends Output {
 
 
   /**
-   * Amazon S3 bucket name
+   * Amazon S3 bucket name (required)
    * @return bucketName
    */
   public String getBucketName() {
@@ -47,10 +47,10 @@ public class S3Output extends Output {
   }
 
   /**
-   * Amazon S3 bucket name
+   * Amazon S3 bucket name (required)
    *
    * @param bucketName
-   * Amazon S3 bucket name
+   *        Amazon S3 bucket name (required)
    */
   public void setBucketName(String bucketName) {
     this.bucketName = bucketName;
@@ -58,7 +58,7 @@ public class S3Output extends Output {
 
 
   /**
-   * Amazon S3 access key
+   * Amazon S3 access key (required)
    * @return accessKey
    */
   public String getAccessKey() {
@@ -66,10 +66,10 @@ public class S3Output extends Output {
   }
 
   /**
-   * Amazon S3 access key
+   * Amazon S3 access key (required)
    *
    * @param accessKey
-   * Amazon S3 access key
+   *        Amazon S3 access key (required)
    */
   public void setAccessKey(String accessKey) {
     this.accessKey = accessKey;
@@ -77,7 +77,7 @@ public class S3Output extends Output {
 
 
   /**
-   * Amazon S3 secret key
+   * Amazon S3 secret key (required)
    * @return secretKey
    */
   public String getSecretKey() {
@@ -85,10 +85,10 @@ public class S3Output extends Output {
   }
 
   /**
-   * Amazon S3 secret key
+   * Amazon S3 secret key (required)
    *
    * @param secretKey
-   * Amazon S3 secret key
+   *        Amazon S3 secret key (required)
    */
   public void setSecretKey(String secretKey) {
     this.secretKey = secretKey;
@@ -107,7 +107,7 @@ public class S3Output extends Output {
    * If set a user defined tag (x-amz-meta-) with that key will be used to store the MD5 hash of the file.
    *
    * @param md5MetaTag
-   * If set a user defined tag (x-amz-meta-) with that key will be used to store the MD5 hash of the file.
+   *        If set a user defined tag (x-amz-meta-) with that key will be used to store the MD5 hash of the file.
    */
   public void setMd5MetaTag(String md5MetaTag) {
     this.md5MetaTag = md5MetaTag;
@@ -173,7 +173,6 @@ public class S3Output extends Output {
     return Objects.hash(bucketName, accessKey, secretKey, md5MetaTag, cloudRegion, signatureVersion, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -199,6 +198,5 @@ public class S3Output extends Output {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

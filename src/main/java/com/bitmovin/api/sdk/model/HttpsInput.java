@@ -30,7 +30,7 @@ public class HttpsInput extends Input {
 
 
   /**
-   * Host Url or IP of the HTTP server
+   * Host Url or IP of the HTTP server (required)
    * @return host
    */
   public String getHost() {
@@ -38,10 +38,10 @@ public class HttpsInput extends Input {
   }
 
   /**
-   * Host Url or IP of the HTTP server
+   * Host Url or IP of the HTTP server (required)
    *
    * @param host
-   * Host Url or IP of the HTTP server
+   *        Host Url or IP of the HTTP server (required)
    */
   public void setHost(String host) {
     this.host = host;
@@ -60,7 +60,7 @@ public class HttpsInput extends Input {
    * Basic Auth Username, if required
    *
    * @param username
-   * Basic Auth Username, if required
+   *        Basic Auth Username, if required
    */
   public void setUsername(String username) {
     this.username = username;
@@ -79,7 +79,7 @@ public class HttpsInput extends Input {
    * Basic Auth Password, if required
    *
    * @param password
-   * Basic Auth Password, if required
+   *        Basic Auth Password, if required
    */
   public void setPassword(String password) {
     this.password = password;
@@ -98,7 +98,7 @@ public class HttpsInput extends Input {
    * Custom Port
    *
    * @param port
-   * Custom Port
+   *        Custom Port
    */
   public void setPort(Integer port) {
     this.port = port;
@@ -126,7 +126,6 @@ public class HttpsInput extends Input {
     return Objects.hash(host, username, password, port, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -150,6 +149,5 @@ public class HttpsInput extends Input {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

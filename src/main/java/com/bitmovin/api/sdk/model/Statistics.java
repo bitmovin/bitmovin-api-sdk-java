@@ -20,7 +20,7 @@ public class Statistics {
 
 
   /**
-   * Bytes encoded total.
+   * Bytes encoded total. (required)
    * @return bytesEncodedTotal
    */
   public Long getBytesEncodedTotal() {
@@ -28,10 +28,10 @@ public class Statistics {
   }
 
   /**
-   * Bytes encoded total.
+   * Bytes encoded total. (required)
    *
    * @param bytesEncodedTotal
-   * Bytes encoded total.
+   *        Bytes encoded total. (required)
    */
   public void setBytesEncodedTotal(Long bytesEncodedTotal) {
     this.bytesEncodedTotal = bytesEncodedTotal;
@@ -39,7 +39,7 @@ public class Statistics {
 
 
   /**
-   * Time in seconds encoded for all contained daily statistics.
+   * Time in seconds encoded for all contained daily statistics. (required)
    * @return timeEncodedTotal
    */
   public Long getTimeEncodedTotal() {
@@ -47,10 +47,10 @@ public class Statistics {
   }
 
   /**
-   * Time in seconds encoded for all contained daily statistics.
+   * Time in seconds encoded for all contained daily statistics. (required)
    *
    * @param timeEncodedTotal
-   * Time in seconds encoded for all contained daily statistics.
+   *        Time in seconds encoded for all contained daily statistics. (required)
    */
   public void setTimeEncodedTotal(Long timeEncodedTotal) {
     this.timeEncodedTotal = timeEncodedTotal;
@@ -75,7 +75,6 @@ public class Statistics {
     return Objects.hash(bytesEncodedTotal, timeEncodedTotal);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -97,6 +96,5 @@ public class Statistics {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

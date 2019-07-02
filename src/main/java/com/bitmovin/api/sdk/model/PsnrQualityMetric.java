@@ -39,7 +39,7 @@ public class PsnrQualityMetric {
 
 
   /**
-   * Peak signal-to-noise ratio
+   * Peak signal-to-noise ratio (required)
    * @return psnr
    */
   public Double getPsnr() {
@@ -47,10 +47,10 @@ public class PsnrQualityMetric {
   }
 
   /**
-   * Peak signal-to-noise ratio
+   * Peak signal-to-noise ratio (required)
    *
    * @param psnr
-   * Peak signal-to-noise ratio
+   *        Peak signal-to-noise ratio (required)
    */
   public void setPsnr(Double psnr) {
     this.psnr = psnr;
@@ -75,7 +75,6 @@ public class PsnrQualityMetric {
     return Objects.hash(timeSpan, psnr);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -97,6 +96,5 @@ public class PsnrQualityMetric {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -125,7 +125,6 @@ public class MuxingInformationAudioTrack {
     return Objects.hash(index, codec, codecIso, bitRate, rate, sampleRate, channels, duration);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -153,6 +152,5 @@ public class MuxingInformationAudioTrack {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -56,7 +56,6 @@ public class Input extends BitmovinResource {
     return Objects.hash(super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -76,6 +75,5 @@ public class Input extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -90,9 +90,6 @@ public class Stream extends BitmovinResource {
 
 
   public Stream addOutputsItem(EncodingOutput outputsItem) {
-    if (this.outputs == null) {
-      this.outputs = new ArrayList<>();
-    }
     this.outputs.add(outputsItem);
     return this;
   }
@@ -127,7 +124,7 @@ public class Stream extends BitmovinResource {
    * Set true to create quality metadata for this stream
    *
    * @param createQualityMetaData
-   * Set true to create quality metadata for this stream
+   *        Set true to create quality metadata for this stream
    */
   public void setCreateQualityMetaData(Boolean createQualityMetaData) {
     this.createQualityMetaData = createQualityMetaData;
@@ -135,7 +132,7 @@ public class Stream extends BitmovinResource {
 
 
   /**
-   * Id of the codec configuration
+   * Id of the codec configuration (required)
    * @return codecConfigId
    */
   public String getCodecConfigId() {
@@ -143,10 +140,10 @@ public class Stream extends BitmovinResource {
   }
 
   /**
-   * Id of the codec configuration
+   * Id of the codec configuration (required)
    *
    * @param codecConfigId
-   * Id of the codec configuration
+   *        Id of the codec configuration (required)
    */
   public void setCodecConfigId(String codecConfigId) {
     this.codecConfigId = codecConfigId;
@@ -165,7 +162,7 @@ public class Stream extends BitmovinResource {
    * Number of encoded segments. Available after encoding finishes.
    *
    * @param segmentsEncoded
-   * Number of encoded segments. Available after encoding finishes.
+   *        Number of encoded segments. Available after encoding finishes.
    */
   public void setSegmentsEncoded(Integer segmentsEncoded) {
     this.segmentsEncoded = segmentsEncoded;
@@ -184,7 +181,7 @@ public class Stream extends BitmovinResource {
    * Conditions to evaluate before creating the stream. If this evaluation fails, the stream won&#39;t be created. All muxings that depend on the stream will also not be created.
    *
    * @param conditions
-   * Conditions to evaluate before creating the stream. If this evaluation fails, the stream won&#39;t be created. All muxings that depend on the stream will also not be created.
+   *        Conditions to evaluate before creating the stream. If this evaluation fails, the stream won&#39;t be created. All muxings that depend on the stream will also not be created.
    */
   public void setConditions(AbstractCondition conditions) {
     this.conditions = conditions;
@@ -192,9 +189,6 @@ public class Stream extends BitmovinResource {
 
 
   public Stream addIgnoredByItem(Ignoring ignoredByItem) {
-    if (this.ignoredBy == null) {
-      this.ignoredBy = new ArrayList<>();
-    }
     this.ignoredBy.add(ignoredByItem);
     return this;
   }
@@ -211,7 +205,7 @@ public class Stream extends BitmovinResource {
    * If this is set and contains objects, then this stream has been ignored during the encoding process
    *
    * @param ignoredBy
-   * If this is set and contains objects, then this stream has been ignored during the encoding process
+   *        If this is set and contains objects, then this stream has been ignored during the encoding process
    */
   public void setIgnoredBy(List<Ignoring> ignoredBy) {
     this.ignoredBy = ignoredBy;
@@ -230,7 +224,7 @@ public class Stream extends BitmovinResource {
    * Mode of the stream
    *
    * @param mode
-   * Mode of the stream
+   *        Mode of the stream
    */
   public void setMode(StreamMode mode) {
     this.mode = mode;
@@ -249,7 +243,7 @@ public class Stream extends BitmovinResource {
    * Settings to configure Per-Title on stream level
    *
    * @param perTitleSettings
-   * Settings to configure Per-Title on stream level
+   *        Settings to configure Per-Title on stream level
    */
   public void setPerTitleSettings(StreamPerTitleSettings perTitleSettings) {
     this.perTitleSettings = perTitleSettings;
@@ -286,7 +280,7 @@ public class Stream extends BitmovinResource {
    * Determines how to react to errors during decoding
    *
    * @param decodingErrorMode
-   * Determines how to react to errors during decoding
+   *        Determines how to react to errors during decoding
    */
   public void setDecodingErrorMode(DecodingErrorMode decodingErrorMode) {
     this.decodingErrorMode = decodingErrorMode;
@@ -330,7 +324,6 @@ public class Stream extends BitmovinResource {
     return Objects.hash(inputStreams, outputs, createQualityMetaData, codecConfigId, segmentsEncoded, conditions, ignoredBy, mode, perTitleSettings, metadata, decodingErrorMode, appliedSettings, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -362,6 +355,5 @@ public class Stream extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -31,7 +31,7 @@ public class PrewarmEncoderSettings extends BitmovinResource {
 
 
   /**
-   * Encoder Version to be prewarmed. Only one encoder of this version can be prewarmed per cluster.
+   * Encoder Version to be prewarmed. Only one encoder of this version can be prewarmed per cluster. (required)
    * @return encoderVersion
    */
   public String getEncoderVersion() {
@@ -39,10 +39,10 @@ public class PrewarmEncoderSettings extends BitmovinResource {
   }
 
   /**
-   * Encoder Version to be prewarmed. Only one encoder of this version can be prewarmed per cluster.
+   * Encoder Version to be prewarmed. Only one encoder of this version can be prewarmed per cluster. (required)
    *
    * @param encoderVersion
-   * Encoder Version to be prewarmed. Only one encoder of this version can be prewarmed per cluster.
+   *        Encoder Version to be prewarmed. Only one encoder of this version can be prewarmed per cluster. (required)
    */
   public void setEncoderVersion(String encoderVersion) {
     this.encoderVersion = encoderVersion;
@@ -50,7 +50,7 @@ public class PrewarmEncoderSettings extends BitmovinResource {
 
 
   /**
-   * The minimum number of prewarmed encoders of this Version
+   * The minimum number of prewarmed encoders of this Version (required)
    * @return minPrewarmed
    */
   public Integer getMinPrewarmed() {
@@ -58,10 +58,10 @@ public class PrewarmEncoderSettings extends BitmovinResource {
   }
 
   /**
-   * The minimum number of prewarmed encoders of this Version
+   * The minimum number of prewarmed encoders of this Version (required)
    *
    * @param minPrewarmed
-   * The minimum number of prewarmed encoders of this Version
+   *        The minimum number of prewarmed encoders of this Version (required)
    */
   public void setMinPrewarmed(Integer minPrewarmed) {
     this.minPrewarmed = minPrewarmed;
@@ -80,7 +80,7 @@ public class PrewarmEncoderSettings extends BitmovinResource {
    * The maximum number of concurrent prewarmed encoders of this Version
    *
    * @param maxPrewarmed
-   * The maximum number of concurrent prewarmed encoders of this Version
+   *        The maximum number of concurrent prewarmed encoders of this Version
    */
   public void setMaxPrewarmed(Integer maxPrewarmed) {
     this.maxPrewarmed = maxPrewarmed;
@@ -126,7 +126,6 @@ public class PrewarmEncoderSettings extends BitmovinResource {
     return Objects.hash(encoderVersion, minPrewarmed, maxPrewarmed, logLevel, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -150,6 +149,5 @@ public class PrewarmEncoderSettings extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

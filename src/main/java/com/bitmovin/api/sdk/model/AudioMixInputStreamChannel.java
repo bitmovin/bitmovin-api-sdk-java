@@ -35,7 +35,7 @@ public class AudioMixInputStreamChannel {
    * The id of the input stream that should be used for mixing.
    *
    * @param inputStreamId
-   * The id of the input stream that should be used for mixing.
+   *        The id of the input stream that should be used for mixing.
    */
   public void setInputStreamId(String inputStreamId) {
     this.inputStreamId = inputStreamId;
@@ -72,7 +72,7 @@ public class AudioMixInputStreamChannel {
    * Number of this output channel. If type is &#39;CHANNEL_NUMBER&#39;, this must be set.
    *
    * @param outputChannelNumber
-   * Number of this output channel. If type is &#39;CHANNEL_NUMBER&#39;, this must be set.
+   *        Number of this output channel. If type is &#39;CHANNEL_NUMBER&#39;, this must be set.
    */
   public void setOutputChannelNumber(Integer outputChannelNumber) {
     this.outputChannelNumber = outputChannelNumber;
@@ -98,7 +98,6 @@ public class AudioMixInputStreamChannel {
     return Objects.hash(inputStreamId, outputChannelType, outputChannelNumber);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -121,6 +120,5 @@ public class AudioMixInputStreamChannel {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

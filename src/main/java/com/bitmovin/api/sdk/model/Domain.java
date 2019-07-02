@@ -21,7 +21,7 @@ public class Domain extends BitmovinResource {
 
 
   /**
-   * Host where the player is allowed to play
+   * Host where the player is allowed to play (required)
    * @return url
    */
   public String getUrl() {
@@ -29,10 +29,10 @@ public class Domain extends BitmovinResource {
   }
 
   /**
-   * Host where the player is allowed to play
+   * Host where the player is allowed to play (required)
    *
    * @param url
-   * Host where the player is allowed to play
+   *        Host where the player is allowed to play (required)
    */
   public void setUrl(String url) {
     this.url = url;
@@ -57,7 +57,6 @@ public class Domain extends BitmovinResource {
     return Objects.hash(url, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -78,6 +77,5 @@ public class Domain extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

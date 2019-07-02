@@ -26,7 +26,7 @@ public class StreamFilterList {
   }
 
   /**
-   * List of stream filters
+   * List of stream filters (required)
    * @return filters
    */
   public List<StreamFilter> getFilters() {
@@ -34,10 +34,10 @@ public class StreamFilterList {
   }
 
   /**
-   * List of stream filters
+   * List of stream filters (required)
    *
    * @param filters
-   * List of stream filters
+   *        List of stream filters (required)
    */
   public void setFilters(List<StreamFilter> filters) {
     this.filters = filters;
@@ -61,7 +61,6 @@ public class StreamFilterList {
     return Objects.hash(filters);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -82,6 +81,5 @@ public class StreamFilterList {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

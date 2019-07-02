@@ -45,7 +45,7 @@ public class CropFilter extends Filter {
    * Amount of pixels which will be cropped of the input video from the left side.
    *
    * @param left
-   * Amount of pixels which will be cropped of the input video from the left side.
+   *        Amount of pixels which will be cropped of the input video from the left side.
    */
   public void setLeft(Integer left) {
     this.left = left;
@@ -64,7 +64,7 @@ public class CropFilter extends Filter {
    * Amount of pixels which will be cropped of the input video from the right side.
    *
    * @param right
-   * Amount of pixels which will be cropped of the input video from the right side.
+   *        Amount of pixels which will be cropped of the input video from the right side.
    */
   public void setRight(Integer right) {
     this.right = right;
@@ -83,7 +83,7 @@ public class CropFilter extends Filter {
    * Amount of pixels which will be cropped of the input video from the top.
    *
    * @param top
-   * Amount of pixels which will be cropped of the input video from the top.
+   *        Amount of pixels which will be cropped of the input video from the top.
    */
   public void setTop(Integer top) {
     this.top = top;
@@ -102,7 +102,7 @@ public class CropFilter extends Filter {
    * Amount of pixels which will be cropped of the input video from the bottom.
    *
    * @param bottom
-   * Amount of pixels which will be cropped of the input video from the bottom.
+   *        Amount of pixels which will be cropped of the input video from the bottom.
    */
   public void setBottom(Integer bottom) {
     this.bottom = bottom;
@@ -149,7 +149,6 @@ public class CropFilter extends Filter {
     return Objects.hash(left, right, top, bottom, unit, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -174,6 +173,5 @@ public class CropFilter extends Filter {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

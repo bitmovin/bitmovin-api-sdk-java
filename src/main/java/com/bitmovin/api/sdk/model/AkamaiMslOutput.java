@@ -33,7 +33,7 @@ public class AkamaiMslOutput extends Output {
 
 
   /**
-   * The Akamai stream ID
+   * The Akamai stream ID (required)
    * @return streamId
    */
   public Integer getStreamId() {
@@ -41,10 +41,10 @@ public class AkamaiMslOutput extends Output {
   }
 
   /**
-   * The Akamai stream ID
+   * The Akamai stream ID (required)
    *
    * @param streamId
-   * The Akamai stream ID
+   *        The Akamai stream ID (required)
    */
   public void setStreamId(Integer streamId) {
     this.streamId = streamId;
@@ -52,7 +52,7 @@ public class AkamaiMslOutput extends Output {
 
 
   /**
-   * The Akamai event name
+   * The Akamai event name (required)
    * @return eventName
    */
   public String getEventName() {
@@ -60,10 +60,10 @@ public class AkamaiMslOutput extends Output {
   }
 
   /**
-   * The Akamai event name
+   * The Akamai event name (required)
    *
    * @param eventName
-   * The Akamai event name
+   *        The Akamai event name (required)
    */
   public void setEventName(String eventName) {
     this.eventName = eventName;
@@ -127,7 +127,6 @@ public class AkamaiMslOutput extends Output {
     return Objects.hash(streamId, eventName, streamFormat, mslVersion, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -151,6 +150,5 @@ public class AkamaiMslOutput extends Output {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

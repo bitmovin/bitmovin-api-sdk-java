@@ -41,7 +41,7 @@ public class StreamPerTitleFixedResolutionAndBitrateSettings {
    * The minimum bitrate that will be used for that template.
    *
    * @param minBitrate
-   * The minimum bitrate that will be used for that template.
+   *        The minimum bitrate that will be used for that template.
    */
   public void setMinBitrate(Integer minBitrate) {
     this.minBitrate = minBitrate;
@@ -60,7 +60,7 @@ public class StreamPerTitleFixedResolutionAndBitrateSettings {
    * The maximum bitrate that will be used for that template.
    *
    * @param maxBitrate
-   * The maximum bitrate that will be used for that template.
+   *        The maximum bitrate that will be used for that template.
    */
   public void setMaxBitrate(Integer maxBitrate) {
     this.maxBitrate = maxBitrate;
@@ -79,7 +79,7 @@ public class StreamPerTitleFixedResolutionAndBitrateSettings {
    * Bitrate selection mode
    *
    * @param bitrateSelectionMode
-   * Bitrate selection mode
+   *        Bitrate selection mode
    */
   public void setBitrateSelectionMode(BitrateSelectionMode bitrateSelectionMode) {
     this.bitrateSelectionMode = bitrateSelectionMode;
@@ -98,7 +98,7 @@ public class StreamPerTitleFixedResolutionAndBitrateSettings {
    * Low complexity boundary for max bitrate
    *
    * @param lowComplexityBoundaryForMaxBitrate
-   * Low complexity boundary for max bitrate
+   *        Low complexity boundary for max bitrate
    */
   public void setLowComplexityBoundaryForMaxBitrate(Double lowComplexityBoundaryForMaxBitrate) {
     this.lowComplexityBoundaryForMaxBitrate = lowComplexityBoundaryForMaxBitrate;
@@ -117,7 +117,7 @@ public class StreamPerTitleFixedResolutionAndBitrateSettings {
    * High complexity boundary for max bitrate
    *
    * @param highComplexityBoundaryForMaxBitrate
-   * High complexity boundary for max bitrate
+   *        High complexity boundary for max bitrate
    */
   public void setHighComplexityBoundaryForMaxBitrate(Double highComplexityBoundaryForMaxBitrate) {
     this.highComplexityBoundaryForMaxBitrate = highComplexityBoundaryForMaxBitrate;
@@ -145,7 +145,6 @@ public class StreamPerTitleFixedResolutionAndBitrateSettings {
     return Objects.hash(minBitrate, maxBitrate, bitrateSelectionMode, lowComplexityBoundaryForMaxBitrate, highComplexityBoundaryForMaxBitrate);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -170,6 +169,5 @@ public class StreamPerTitleFixedResolutionAndBitrateSettings {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -27,7 +27,7 @@ public class DailyStatisticsPerLabel {
 
 
   /**
-   * Date, format. yyyy-MM-dd
+   * Date, format. yyyy-MM-dd (required)
    * @return date
    */
   public Date getDate() {
@@ -35,10 +35,10 @@ public class DailyStatisticsPerLabel {
   }
 
   /**
-   * Date, format. yyyy-MM-dd
+   * Date, format. yyyy-MM-dd (required)
    *
    * @param date
-   * Date, format. yyyy-MM-dd
+   *        Date, format. yyyy-MM-dd (required)
    */
   public void setDate(Date date) {
     this.date = date;
@@ -51,7 +51,7 @@ public class DailyStatisticsPerLabel {
   }
 
   /**
-   * List of labels and their aggregated statistics
+   * List of labels and their aggregated statistics (required)
    * @return labels
    */
   public List<DailyStatistics> getLabels() {
@@ -59,10 +59,10 @@ public class DailyStatisticsPerLabel {
   }
 
   /**
-   * List of labels and their aggregated statistics
+   * List of labels and their aggregated statistics (required)
    *
    * @param labels
-   * List of labels and their aggregated statistics
+   *        List of labels and their aggregated statistics (required)
    */
   public void setLabels(List<DailyStatistics> labels) {
     this.labels = labels;
@@ -87,7 +87,6 @@ public class DailyStatisticsPerLabel {
     return Objects.hash(date, labels);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -109,6 +108,5 @@ public class DailyStatisticsPerLabel {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

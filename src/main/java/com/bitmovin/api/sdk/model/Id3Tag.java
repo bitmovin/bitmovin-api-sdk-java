@@ -64,7 +64,7 @@ public class Id3Tag extends BitmovinResource {
    * Frame number at which the Tag should be inserted
    *
    * @param frame
-   * Frame number at which the Tag should be inserted
+   *        Frame number at which the Tag should be inserted
    */
   public void setFrame(Long frame) {
     this.frame = frame;
@@ -83,7 +83,7 @@ public class Id3Tag extends BitmovinResource {
    * Time in seconds where the Tag should be inserted
    *
    * @param time
-   * Time in seconds where the Tag should be inserted
+   *        Time in seconds where the Tag should be inserted
    */
   public void setTime(Double time) {
     this.time = time;
@@ -110,7 +110,6 @@ public class Id3Tag extends BitmovinResource {
     return Objects.hash(positionMode, frame, time, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -133,6 +132,5 @@ public class Id3Tag extends BitmovinResource {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

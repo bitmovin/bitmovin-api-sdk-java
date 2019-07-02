@@ -29,7 +29,7 @@ public class InputTypeResponse {
    * The type of the input
    *
    * @param type
-   * The type of the input
+   *        The type of the input
    */
   public void setType(InputType type) {
     this.type = type;
@@ -53,7 +53,6 @@ public class InputTypeResponse {
     return Objects.hash(type);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -74,6 +73,5 @@ public class InputTypeResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

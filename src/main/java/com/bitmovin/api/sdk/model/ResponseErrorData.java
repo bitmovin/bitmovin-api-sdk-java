@@ -35,7 +35,7 @@ public class ResponseErrorData {
 
 
   /**
-   * Contains an error code as defined in https://bitmovin.com/encoding-documentation/bitmovin-api/#/introduction/api-error-codes 
+   * Contains an error code as defined in https://bitmovin.com/encoding-documentation/bitmovin-api/#/introduction/api-error-codes (required)
    * @return code
    */
   public Integer getCode() {
@@ -43,10 +43,10 @@ public class ResponseErrorData {
   }
 
   /**
-   * Contains an error code as defined in https://bitmovin.com/encoding-documentation/bitmovin-api/#/introduction/api-error-codes 
+   * Contains an error code as defined in https://bitmovin.com/encoding-documentation/bitmovin-api/#/introduction/api-error-codes (required)
    *
    * @param code
-   * Contains an error code as defined in https://bitmovin.com/encoding-documentation/bitmovin-api/#/introduction/api-error-codes 
+   *        Contains an error code as defined in https://bitmovin.com/encoding-documentation/bitmovin-api/#/introduction/api-error-codes (required)
    */
   public void setCode(Integer code) {
     this.code = code;
@@ -54,7 +54,7 @@ public class ResponseErrorData {
 
 
   /**
-   * General error message
+   * General error message (required)
    * @return message
    */
   public String getMessage() {
@@ -62,10 +62,10 @@ public class ResponseErrorData {
   }
 
   /**
-   * General error message
+   * General error message (required)
    *
    * @param message
-   * General error message
+   *        General error message (required)
    */
   public void setMessage(String message) {
     this.message = message;
@@ -73,7 +73,7 @@ public class ResponseErrorData {
 
 
   /**
-   * More detailed message meant for developers
+   * More detailed message meant for developers (required)
    * @return developerMessage
    */
   public String getDeveloperMessage() {
@@ -81,10 +81,10 @@ public class ResponseErrorData {
   }
 
   /**
-   * More detailed message meant for developers
+   * More detailed message meant for developers (required)
    *
    * @param developerMessage
-   * More detailed message meant for developers
+   *        More detailed message meant for developers (required)
    */
   public void setDeveloperMessage(String developerMessage) {
     this.developerMessage = developerMessage;
@@ -92,9 +92,6 @@ public class ResponseErrorData {
 
 
   public ResponseErrorData addLinksItem(Link linksItem) {
-    if (this.links == null) {
-      this.links = new ArrayList<>();
-    }
     this.links.add(linksItem);
     return this;
   }
@@ -111,7 +108,7 @@ public class ResponseErrorData {
    * collection of links to webpages containing further information on the topic
    *
    * @param links
-   * collection of links to webpages containing further information on the topic
+   *        collection of links to webpages containing further information on the topic
    */
   public void setLinks(List<Link> links) {
     this.links = links;
@@ -119,9 +116,6 @@ public class ResponseErrorData {
 
 
   public ResponseErrorData addDetailsItem(Message detailsItem) {
-    if (this.details == null) {
-      this.details = new ArrayList<>();
-    }
     this.details.add(detailsItem);
     return this;
   }
@@ -138,7 +132,7 @@ public class ResponseErrorData {
    * collection of messages containing more detailed information on the cause of the error
    *
    * @param details
-   * collection of messages containing more detailed information on the cause of the error
+   *        collection of messages containing more detailed information on the cause of the error
    */
   public void setDetails(List<Message> details) {
     this.details = details;
@@ -166,7 +160,6 @@ public class ResponseErrorData {
     return Objects.hash(code, message, developerMessage, links, details);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -191,6 +184,5 @@ public class ResponseErrorData {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

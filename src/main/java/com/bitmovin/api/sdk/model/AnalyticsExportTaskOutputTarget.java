@@ -20,7 +20,7 @@ public class AnalyticsExportTaskOutputTarget {
 
 
   /**
-   * Path where the export should be saved
+   * Path where the export should be saved (required)
    * @return outputPath
    */
   public String getOutputPath() {
@@ -28,10 +28,10 @@ public class AnalyticsExportTaskOutputTarget {
   }
 
   /**
-   * Path where the export should be saved
+   * Path where the export should be saved (required)
    *
    * @param outputPath
-   * Path where the export should be saved
+   *        Path where the export should be saved (required)
    */
   public void setOutputPath(String outputPath) {
     this.outputPath = outputPath;
@@ -39,7 +39,7 @@ public class AnalyticsExportTaskOutputTarget {
 
 
   /**
-   * Id of the output that should be used
+   * Id of the output that should be used (required)
    * @return outputId
    */
   public String getOutputId() {
@@ -47,10 +47,10 @@ public class AnalyticsExportTaskOutputTarget {
   }
 
   /**
-   * Id of the output that should be used
+   * Id of the output that should be used (required)
    *
    * @param outputId
-   * Id of the output that should be used
+   *        Id of the output that should be used (required)
    */
   public void setOutputId(String outputId) {
     this.outputId = outputId;
@@ -75,7 +75,6 @@ public class AnalyticsExportTaskOutputTarget {
     return Objects.hash(outputPath, outputId);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -97,6 +96,5 @@ public class AnalyticsExportTaskOutputTarget {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

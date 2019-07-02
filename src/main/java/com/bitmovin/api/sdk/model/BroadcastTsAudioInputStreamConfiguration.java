@@ -33,7 +33,7 @@ public class BroadcastTsAudioInputStreamConfiguration extends BroadcastTsInputSt
    * Use ATSC buffer model for AC-3. If true, use the ATSC version of the T-STD buffer model is used. This parameter applies to AC-3 streams only.
    *
    * @param useATSCBufferModel
-   * Use ATSC buffer model for AC-3. If true, use the ATSC version of the T-STD buffer model is used. This parameter applies to AC-3 streams only.
+   *        Use ATSC buffer model for AC-3. If true, use the ATSC version of the T-STD buffer model is used. This parameter applies to AC-3 streams only.
    */
   public void setUseATSCBufferModel(Boolean useATSCBufferModel) {
     this.useATSCBufferModel = useATSCBufferModel;
@@ -52,7 +52,7 @@ public class BroadcastTsAudioInputStreamConfiguration extends BroadcastTsInputSt
    * Language of the audio stream. Specified according to the ISO 639-2 alpha code for the language descriptor.
    *
    * @param language
-   * Language of the audio stream. Specified according to the ISO 639-2 alpha code for the language descriptor.
+   *        Language of the audio stream. Specified according to the ISO 639-2 alpha code for the language descriptor.
    */
   public void setLanguage(String language) {
     this.language = language;
@@ -78,7 +78,6 @@ public class BroadcastTsAudioInputStreamConfiguration extends BroadcastTsInputSt
     return Objects.hash(useATSCBufferModel, language, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -100,6 +99,5 @@ public class BroadcastTsAudioInputStreamConfiguration extends BroadcastTsInputSt
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -32,7 +32,7 @@ public class Period extends BitmovinResponse {
    * Starting time in seconds
    *
    * @param start
-   * Starting time in seconds
+   *        Starting time in seconds
    */
   public void setStart(Double start) {
     this.start = start;
@@ -51,7 +51,7 @@ public class Period extends BitmovinResponse {
    * Duration in seconds
    *
    * @param duration
-   * Duration in seconds
+   *        Duration in seconds
    */
   public void setDuration(Double duration) {
     this.duration = duration;
@@ -77,7 +77,6 @@ public class Period extends BitmovinResponse {
     return Objects.hash(start, duration, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -99,6 +98,5 @@ public class Period extends BitmovinResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -30,7 +30,7 @@ public class AudioMediaInfo extends StandardMediaInfo {
    * A value of true indicates that the Rendition contains content which is considered essential to play.
    *
    * @param forced
-   * A value of true indicates that the Rendition contains content which is considered essential to play.
+   *        A value of true indicates that the Rendition contains content which is considered essential to play.
    */
   public void setForced(Boolean forced) {
     this.forced = forced;
@@ -55,7 +55,6 @@ public class AudioMediaInfo extends StandardMediaInfo {
     return Objects.hash(forced, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -76,6 +75,5 @@ public class AudioMediaInfo extends StandardMediaInfo {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

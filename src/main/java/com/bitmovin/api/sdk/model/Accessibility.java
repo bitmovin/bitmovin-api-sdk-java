@@ -20,7 +20,7 @@ public class Accessibility {
 
 
   /**
-   * Can be either list of languages or a complete map of services (or CC channels, in CEA-608 terminology)
+   * Can be either list of languages or a complete map of services (or CC channels, in CEA-608 terminology) (required)
    * @return value
    */
   public String getValue() {
@@ -28,10 +28,10 @@ public class Accessibility {
   }
 
   /**
-   * Can be either list of languages or a complete map of services (or CC channels, in CEA-608 terminology)
+   * Can be either list of languages or a complete map of services (or CC channels, in CEA-608 terminology) (required)
    *
    * @param value
-   * Can be either list of languages or a complete map of services (or CC channels, in CEA-608 terminology)
+   *        Can be either list of languages or a complete map of services (or CC channels, in CEA-608 terminology) (required)
    */
   public void setValue(String value) {
     this.value = value;
@@ -39,7 +39,7 @@ public class Accessibility {
 
 
   /**
-   * The scheme id to use. Please refer to the DASH standard.
+   * The scheme id to use. Please refer to the DASH standard. (required)
    * @return schemeIdUri
    */
   public String getSchemeIdUri() {
@@ -47,10 +47,10 @@ public class Accessibility {
   }
 
   /**
-   * The scheme id to use. Please refer to the DASH standard.
+   * The scheme id to use. Please refer to the DASH standard. (required)
    *
    * @param schemeIdUri
-   * The scheme id to use. Please refer to the DASH standard.
+   *        The scheme id to use. Please refer to the DASH standard. (required)
    */
   public void setSchemeIdUri(String schemeIdUri) {
     this.schemeIdUri = schemeIdUri;
@@ -75,7 +75,6 @@ public class Accessibility {
     return Objects.hash(value, schemeIdUri);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -97,6 +96,5 @@ public class Accessibility {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

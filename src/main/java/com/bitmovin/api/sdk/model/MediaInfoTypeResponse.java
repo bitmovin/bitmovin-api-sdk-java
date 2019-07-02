@@ -29,7 +29,7 @@ public class MediaInfoTypeResponse {
    * The type of the media-info
    *
    * @param type
-   * The type of the media-info
+   *        The type of the media-info
    */
   public void setType(MediaInfoType type) {
     this.type = type;
@@ -53,7 +53,6 @@ public class MediaInfoTypeResponse {
     return Objects.hash(type);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -74,6 +73,5 @@ public class MediaInfoTypeResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -25,7 +25,7 @@ public class AudioGroupConfiguration {
 
 
   /**
-   * Dropping mode
+   * Dropping mode (required)
    * @return droppingMode
    */
   public VariantStreamDroppingMode getDroppingMode() {
@@ -33,10 +33,10 @@ public class AudioGroupConfiguration {
   }
 
   /**
-   * Dropping mode
+   * Dropping mode (required)
    *
    * @param droppingMode
-   * Dropping mode
+   *        Dropping mode (required)
    */
   public void setDroppingMode(VariantStreamDroppingMode droppingMode) {
     this.droppingMode = droppingMode;
@@ -49,7 +49,7 @@ public class AudioGroupConfiguration {
   }
 
   /**
-   * Audio groups
+   * Audio groups (required)
    * @return groups
    */
   public List<AudioGroup> getGroups() {
@@ -57,10 +57,10 @@ public class AudioGroupConfiguration {
   }
 
   /**
-   * Audio groups
+   * Audio groups (required)
    *
    * @param groups
-   * Audio groups
+   *        Audio groups (required)
    */
   public void setGroups(List<AudioGroup> groups) {
     this.groups = groups;
@@ -85,7 +85,6 @@ public class AudioGroupConfiguration {
     return Objects.hash(droppingMode, groups);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -107,6 +106,5 @@ public class AudioGroupConfiguration {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

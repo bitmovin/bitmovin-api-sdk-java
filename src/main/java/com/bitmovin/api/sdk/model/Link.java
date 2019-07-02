@@ -20,7 +20,7 @@ public class Link {
 
 
   /**
-   * webpage target URL
+   * webpage target URL (required)
    * @return href
    */
   public String getHref() {
@@ -28,10 +28,10 @@ public class Link {
   }
 
   /**
-   * webpage target URL
+   * webpage target URL (required)
    *
    * @param href
-   * webpage target URL
+   *        webpage target URL (required)
    */
   public void setHref(String href) {
     this.href = href;
@@ -50,7 +50,7 @@ public class Link {
    * Short description of the linked page
    *
    * @param title
-   * Short description of the linked page
+   *        Short description of the linked page
    */
   public void setTitle(String title) {
     this.title = title;
@@ -75,7 +75,6 @@ public class Link {
     return Objects.hash(href, title);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -97,6 +96,5 @@ public class Link {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

@@ -20,7 +20,7 @@ public class StreamFilter {
 
 
   /**
-   * The id of the filter that should be used in the stream
+   * The id of the filter that should be used in the stream (required)
    * @return id
    */
   public String getId() {
@@ -28,10 +28,10 @@ public class StreamFilter {
   }
 
   /**
-   * The id of the filter that should be used in the stream
+   * The id of the filter that should be used in the stream (required)
    *
    * @param id
-   * The id of the filter that should be used in the stream
+   *        The id of the filter that should be used in the stream (required)
    */
   public void setId(String id) {
     this.id = id;
@@ -39,7 +39,7 @@ public class StreamFilter {
 
 
   /**
-   * Defines the order in which filters are applied. Filters are applied in ascending order.
+   * Defines the order in which filters are applied. Filters are applied in ascending order. (required)
    * @return position
    */
   public Integer getPosition() {
@@ -47,10 +47,10 @@ public class StreamFilter {
   }
 
   /**
-   * Defines the order in which filters are applied. Filters are applied in ascending order.
+   * Defines the order in which filters are applied. Filters are applied in ascending order. (required)
    *
    * @param position
-   * Defines the order in which filters are applied. Filters are applied in ascending order.
+   *        Defines the order in which filters are applied. Filters are applied in ascending order. (required)
    */
   public void setPosition(Integer position) {
     this.position = position;
@@ -75,7 +75,6 @@ public class StreamFilter {
     return Objects.hash(id, position);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -97,6 +96,5 @@ public class StreamFilter {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

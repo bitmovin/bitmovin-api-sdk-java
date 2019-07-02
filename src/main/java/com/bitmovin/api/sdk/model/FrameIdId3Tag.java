@@ -25,7 +25,7 @@ public class FrameIdId3Tag extends Id3Tag {
 
 
   /**
-   * Base64 Encoded Data
+   * Base64 Encoded Data (required)
    * @return bytes
    */
   public String getBytes() {
@@ -33,10 +33,10 @@ public class FrameIdId3Tag extends Id3Tag {
   }
 
   /**
-   * Base64 Encoded Data
+   * Base64 Encoded Data (required)
    *
    * @param bytes
-   * Base64 Encoded Data
+   *        Base64 Encoded Data (required)
    */
   public void setBytes(String bytes) {
     this.bytes = bytes;
@@ -44,7 +44,7 @@ public class FrameIdId3Tag extends Id3Tag {
 
 
   /**
-   * 4 character long Frame ID
+   * 4 character long Frame ID (required)
    * @return frameId
    */
   public String getFrameId() {
@@ -52,10 +52,10 @@ public class FrameIdId3Tag extends Id3Tag {
   }
 
   /**
-   * 4 character long Frame ID
+   * 4 character long Frame ID (required)
    *
    * @param frameId
-   * 4 character long Frame ID
+   *        4 character long Frame ID (required)
    */
   public void setFrameId(String frameId) {
     this.frameId = frameId;
@@ -81,7 +81,6 @@ public class FrameIdId3Tag extends Id3Tag {
     return Objects.hash(bytes, frameId, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -103,6 +102,5 @@ public class FrameIdId3Tag extends Id3Tag {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

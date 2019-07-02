@@ -52,7 +52,7 @@ public class CencDrm extends Drm {
 
 
   /**
-   * 16 byte encryption key, 32 hexadecimal characters
+   * 16 byte encryption key, 32 hexadecimal characters (required)
    * @return key
    */
   public String getKey() {
@@ -60,10 +60,10 @@ public class CencDrm extends Drm {
   }
 
   /**
-   * 16 byte encryption key, 32 hexadecimal characters
+   * 16 byte encryption key, 32 hexadecimal characters (required)
    *
    * @param key
-   * 16 byte encryption key, 32 hexadecimal characters
+   *        16 byte encryption key, 32 hexadecimal characters (required)
    */
   public void setKey(String key) {
     this.key = key;
@@ -82,7 +82,7 @@ public class CencDrm extends Drm {
    * 16 byte encryption key id. Required for any other DRM but FairPlay
    *
    * @param kid
-   * 16 byte encryption key id. Required for any other DRM but FairPlay
+   *        16 byte encryption key id. Required for any other DRM but FairPlay
    */
   public void setKid(String kid) {
     this.kid = kid;
@@ -90,7 +90,7 @@ public class CencDrm extends Drm {
 
 
   /**
-   * The encryption method to use. Default is &#x60;CTR&#x60;
+   * The encryption method to use. Default is &#x60;CTR&#x60; (required)
    * @return encryptionMode
    */
   public EncryptionMode getEncryptionMode() {
@@ -98,10 +98,10 @@ public class CencDrm extends Drm {
   }
 
   /**
-   * The encryption method to use. Default is &#x60;CTR&#x60;
+   * The encryption method to use. Default is &#x60;CTR&#x60; (required)
    *
    * @param encryptionMode
-   * The encryption method to use. Default is &#x60;CTR&#x60;
+   *        The encryption method to use. Default is &#x60;CTR&#x60; (required)
    */
   public void setEncryptionMode(EncryptionMode encryptionMode) {
     this.encryptionMode = encryptionMode;
@@ -120,7 +120,7 @@ public class CencDrm extends Drm {
    * Size of the initialization vector
    *
    * @param ivSize
-   * Size of the initialization vector
+   *        Size of the initialization vector
    */
   public void setIvSize(IvSize ivSize) {
     this.ivSize = ivSize;
@@ -139,7 +139,7 @@ public class CencDrm extends Drm {
    * Enables compatibility with the Protected Interoperable File Format (PIFF) specification
    *
    * @param enablePiffCompatibility
-   * Enables compatibility with the Protected Interoperable File Format (PIFF) specification
+   *        Enables compatibility with the Protected Interoperable File Format (PIFF) specification
    */
   public void setEnablePiffCompatibility(Boolean enablePiffCompatibility) {
     this.enablePiffCompatibility = enablePiffCompatibility;
@@ -158,7 +158,7 @@ public class CencDrm extends Drm {
    * Configuration for Widevine DRM
    *
    * @param widevine
-   * Configuration for Widevine DRM
+   *        Configuration for Widevine DRM
    */
   public void setWidevine(CencWidevine widevine) {
     this.widevine = widevine;
@@ -177,7 +177,7 @@ public class CencDrm extends Drm {
    * Configuration for PlayReady DRM
    *
    * @param playReady
-   * Configuration for PlayReady DRM
+   *        Configuration for PlayReady DRM
    */
   public void setPlayReady(CencPlayReady playReady) {
     this.playReady = playReady;
@@ -196,7 +196,7 @@ public class CencDrm extends Drm {
    * Configuration for Marlin DRM
    *
    * @param marlin
-   * Configuration for Marlin DRM
+   *        Configuration for Marlin DRM
    */
   public void setMarlin(CencMarlin marlin) {
     this.marlin = marlin;
@@ -215,7 +215,7 @@ public class CencDrm extends Drm {
    * Configuration for FairPlay DRM
    *
    * @param fairPlay
-   * Configuration for FairPlay DRM
+   *        Configuration for FairPlay DRM
    */
   public void setFairPlay(CencFairPlay fairPlay) {
     this.fairPlay = fairPlay;
@@ -248,7 +248,6 @@ public class CencDrm extends Drm {
     return Objects.hash(key, kid, encryptionMode, ivSize, enablePiffCompatibility, widevine, playReady, marlin, fairPlay, super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -277,6 +276,5 @@ public class CencDrm extends Drm {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 
