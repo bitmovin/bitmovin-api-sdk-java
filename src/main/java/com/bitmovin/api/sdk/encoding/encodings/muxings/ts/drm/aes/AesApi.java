@@ -46,7 +46,7 @@ public class AesApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the TS muxing. (required)
-     * @param aesEncryptionDrm  (required)
+     * @param aesEncryptionDrm The AES Encryption to be created (required)
      * @return AesEncryptionDrm
      * @throws BitmovinException if fails to make API call
      */

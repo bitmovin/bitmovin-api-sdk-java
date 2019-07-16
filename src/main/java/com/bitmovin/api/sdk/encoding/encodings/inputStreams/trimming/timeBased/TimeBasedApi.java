@@ -42,7 +42,7 @@ public class TimeBasedApi {
      * Add Time-Based Trimming Input Stream
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param timeBasedTrimmingInputStream  (required)
+     * @param timeBasedTrimmingInputStream The Time-Based Trimming Input Stream to be created (required)
      * @return TimeBasedTrimmingInputStream
      * @throws BitmovinException if fails to make API call
      */

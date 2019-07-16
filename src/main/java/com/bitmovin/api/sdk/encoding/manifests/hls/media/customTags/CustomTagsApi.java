@@ -43,7 +43,7 @@ public class CustomTagsApi {
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param mediaId Id of the audio media. (required)
-     * @param customTag  (required)
+     * @param customTag The Custom Tag to be added (required)
      * @return CustomTag
      * @throws BitmovinException if fails to make API call
      */

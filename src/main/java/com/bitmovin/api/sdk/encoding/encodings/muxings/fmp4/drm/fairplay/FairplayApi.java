@@ -46,7 +46,7 @@ public class FairplayApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing (required)
-     * @param fairPlayDrm  (required)
+     * @param fairPlayDrm The FairPlay DRM to be created (required)
      * @return FairPlayDrm
      * @throws BitmovinException if fails to make API call
      */

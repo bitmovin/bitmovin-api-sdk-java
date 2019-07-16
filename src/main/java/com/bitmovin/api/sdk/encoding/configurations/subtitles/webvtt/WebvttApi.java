@@ -44,7 +44,7 @@ public class WebvttApi {
     /**
      * Create WebVtt Subtitle Configuration
      * 
-     * @param webVttConfiguration  (required)
+     * @param webVttConfiguration The WebVtt Subtitle Configuration to be created (required)
      * @return WebVttConfiguration
      * @throws BitmovinException if fails to make API call
      */

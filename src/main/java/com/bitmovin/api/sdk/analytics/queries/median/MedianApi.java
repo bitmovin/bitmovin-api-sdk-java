@@ -41,7 +41,7 @@ public class MedianApi {
     /**
      * Median
      * 
-     * @param analyticsMedianQueryRequest  (required)
+     * @param analyticsMedianQueryRequest Analytics Query Object (required)
      * @return AnalyticsResponse
      * @throws BitmovinException if fails to make API call
      */

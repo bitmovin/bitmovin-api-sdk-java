@@ -42,7 +42,7 @@ public class DvbTeletextApi {
      * Add DVB-Teletext Input Stream
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param dvbTeletextInputStream  (required)
+     * @param dvbTeletextInputStream The DVB-Teletext Input Stream to be created (required)
      * @return DvbTeletextInputStream
      * @throws BitmovinException if fails to make API call
      */

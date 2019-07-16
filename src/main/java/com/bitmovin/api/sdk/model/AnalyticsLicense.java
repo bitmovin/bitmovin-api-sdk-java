@@ -2,7 +2,11 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.AnalyticsLicenseCustomDataFieldLabels;
+import com.bitmovin.api.sdk.model.AnalyticsLicenseDomain;
 import com.bitmovin.api.sdk.model.BitmovinResponse;
+import java.util.ArrayList;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -18,6 +22,28 @@ public class AnalyticsLicense extends BitmovinResponse {
 
   @JsonProperty("licenseKey")
   private String licenseKey;
+
+  @JsonProperty("createdAt")
+  private String createdAt;
+
+  @JsonProperty("maxImpressions")
+  private Long maxImpressions;
+
+  @JsonProperty("impressions")
+  private Long impressions;
+
+  @JsonProperty("domains")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<AnalyticsLicenseDomain> domains = new ArrayList<AnalyticsLicenseDomain>();
+
+  @JsonProperty("ignoreDNT")
+  private Boolean ignoreDNT;
+
+  @JsonProperty("timeZone")
+  private String timeZone;
+
+  @JsonProperty("customDataFieldLabels")
+  private AnalyticsLicenseCustomDataFieldLabels customDataFieldLabels;
 
 
   /**
@@ -38,9 +64,8 @@ public class AnalyticsLicense extends BitmovinResponse {
     this.name = name;
   }
 
-
   /**
-   * License Key (required)
+   * License Key
    * @return licenseKey
    */
   public String getLicenseKey() {
@@ -48,13 +73,70 @@ public class AnalyticsLicense extends BitmovinResponse {
   }
 
   /**
-   * License Key (required)
-   *
-   * @param licenseKey
-   *        License Key (required)
+   * Creation date of the Analytics License
+   * @return createdAt
    */
-  public void setLicenseKey(String licenseKey) {
-    this.licenseKey = licenseKey;
+  public String getCreatedAt() {
+    return createdAt;
+  }
+
+  /**
+   * Maximum number of impressions
+   * @return maxImpressions
+   */
+  public Long getMaxImpressions() {
+    return maxImpressions;
+  }
+
+  /**
+   * Number of impressions recorded
+   * @return impressions
+   */
+  public Long getImpressions() {
+    return impressions;
+  }
+
+  /**
+   * Whitelisted domains
+   * @return domains
+   */
+  public List<AnalyticsLicenseDomain> getDomains() {
+    return domains;
+  }
+
+  /**
+   * Whether the Do Not Track request from the browser should be ignored
+   * @return ignoreDNT
+   */
+  public Boolean getIgnoreDNT() {
+    return ignoreDNT;
+  }
+
+  /**
+   * The timezone of the Analytics License
+   * @return timeZone
+   */
+  public String getTimeZone() {
+    return timeZone;
+  }
+
+
+  /**
+   * Labels for CustomData fields
+   * @return customDataFieldLabels
+   */
+  public AnalyticsLicenseCustomDataFieldLabels getCustomDataFieldLabels() {
+    return customDataFieldLabels;
+  }
+
+  /**
+   * Labels for CustomData fields
+   *
+   * @param customDataFieldLabels
+   *        Labels for CustomData fields
+   */
+  public void setCustomDataFieldLabels(AnalyticsLicenseCustomDataFieldLabels customDataFieldLabels) {
+    this.customDataFieldLabels = customDataFieldLabels;
   }
 
 
@@ -69,12 +151,19 @@ public class AnalyticsLicense extends BitmovinResponse {
     AnalyticsLicense analyticsLicense = (AnalyticsLicense) o;
     return Objects.equals(this.name, analyticsLicense.name) &&
         Objects.equals(this.licenseKey, analyticsLicense.licenseKey) &&
+        Objects.equals(this.createdAt, analyticsLicense.createdAt) &&
+        Objects.equals(this.maxImpressions, analyticsLicense.maxImpressions) &&
+        Objects.equals(this.impressions, analyticsLicense.impressions) &&
+        Objects.equals(this.domains, analyticsLicense.domains) &&
+        Objects.equals(this.ignoreDNT, analyticsLicense.ignoreDNT) &&
+        Objects.equals(this.timeZone, analyticsLicense.timeZone) &&
+        Objects.equals(this.customDataFieldLabels, analyticsLicense.customDataFieldLabels) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, licenseKey, super.hashCode());
+    return Objects.hash(name, licenseKey, createdAt, maxImpressions, impressions, domains, ignoreDNT, timeZone, customDataFieldLabels, super.hashCode());
   }
 
   @Override
@@ -84,6 +173,13 @@ public class AnalyticsLicense extends BitmovinResponse {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    licenseKey: ").append(toIndentedString(licenseKey)).append("\n");
+    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    maxImpressions: ").append(toIndentedString(maxImpressions)).append("\n");
+    sb.append("    impressions: ").append(toIndentedString(impressions)).append("\n");
+    sb.append("    domains: ").append(toIndentedString(domains)).append("\n");
+    sb.append("    ignoreDNT: ").append(toIndentedString(ignoreDNT)).append("\n");
+    sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
+    sb.append("    customDataFieldLabels: ").append(toIndentedString(customDataFieldLabels)).append("\n");
     sb.append("}");
     return sb.toString();
   }

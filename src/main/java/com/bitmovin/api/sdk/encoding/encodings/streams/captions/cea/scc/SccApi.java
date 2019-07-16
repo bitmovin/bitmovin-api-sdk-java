@@ -46,7 +46,7 @@ public class SccApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
-     * @param sccCaption  (required)
+     * @param sccCaption The SCC captions to be embedded as 607/708 into Stream (required)
      * @return SccCaption
      * @throws BitmovinException if fails to make API call
      */

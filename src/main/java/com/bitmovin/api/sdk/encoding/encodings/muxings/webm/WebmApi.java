@@ -48,7 +48,7 @@ public class WebmApi {
      * Add WebM Segment Muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param webmMuxing  (required)
+     * @param webmMuxing The WebM Segment Muxing to be created (required)
      * @return WebmMuxing
      * @throws BitmovinException if fails to make API call
      */

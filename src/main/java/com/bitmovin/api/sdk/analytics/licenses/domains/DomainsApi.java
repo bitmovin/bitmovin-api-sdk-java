@@ -42,7 +42,7 @@ public class DomainsApi {
      * Add Domain
      * 
      * @param licenseId License id (required)
-     * @param domain  (required)
+     * @param domain The domain to be added (required)
      * @return Domain
      * @throws BitmovinException if fails to make API call
      */

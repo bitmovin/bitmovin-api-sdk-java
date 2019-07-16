@@ -44,7 +44,7 @@ public class AwsApi {
     /**
      * Add AWS Account
      * 
-     * @param awsAccount  (required)
+     * @param awsAccount The AWS Account to be added (required)
      * @return AwsAccount
      * @throws BitmovinException if fails to make API call
      */

@@ -44,7 +44,7 @@ public class UnsharpApi {
     /**
      * Create Unsharp Filter
      * 
-     * @param unsharpFilter  (required)
+     * @param unsharpFilter The Unsharp Filter to be created (required)
      * @return UnsharpFilter
      * @throws BitmovinException if fails to make API call
      */

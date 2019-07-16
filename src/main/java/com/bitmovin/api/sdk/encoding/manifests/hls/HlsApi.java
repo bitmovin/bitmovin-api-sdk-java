@@ -53,7 +53,7 @@ public class HlsApi {
     /**
      * Create HLS Manifest
      * 
-     * @param hlsManifest  (required)
+     * @param hlsManifest The HLS Manifest to be created (required)
      * @return HlsManifest
      * @throws BitmovinException if fails to make API call
      */

@@ -48,7 +48,7 @@ public class SidecarsApi {
      * Add Sidecar
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param sidecarFile  (required)
+     * @param sidecarFile The Sidecar to be added (required)
      * @return SidecarFile
      * @throws BitmovinException if fails to make API call
      */

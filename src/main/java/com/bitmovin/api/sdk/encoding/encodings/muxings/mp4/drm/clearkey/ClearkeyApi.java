@@ -46,7 +46,7 @@ public class ClearkeyApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP4 muxing. (required)
-     * @param clearKeyDrm  (required)
+     * @param clearKeyDrm The ClearKey DRM to be created (required)
      * @return ClearKeyDrm
      * @throws BitmovinException if fails to make API call
      */

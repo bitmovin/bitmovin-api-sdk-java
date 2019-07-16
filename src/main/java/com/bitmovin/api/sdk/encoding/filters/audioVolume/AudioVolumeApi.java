@@ -44,7 +44,7 @@ public class AudioVolumeApi {
     /**
      * Create Audio Volume Filter
      * 
-     * @param audioVolumeFilter  (required)
+     * @param audioVolumeFilter The Audio Volume Filter to be created (required)
      * @return AudioVolumeFilter
      * @throws BitmovinException if fails to make API call
      */

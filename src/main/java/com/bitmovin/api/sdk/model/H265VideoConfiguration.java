@@ -120,10 +120,10 @@ public class H265VideoConfiguration extends VideoConfiguration {
   private String masterDisplay;
 
   @JsonProperty("maxContentLightLevel")
-  private String maxContentLightLevel;
+  private Integer maxContentLightLevel;
 
-  @JsonProperty("maxAverageLightLevel")
-  private Integer maxAverageLightLevel;
+  @JsonProperty("maxPictureAverageLightLevel")
+  private Integer maxPictureAverageLightLevel;
 
   @JsonProperty("hdr")
   private Boolean hdr;
@@ -874,7 +874,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * Set the max content light level (MaxCLL). Use together with maxPictureAverageLightLevel (which will be 0 if not set). Part of HDR-10 metadata.
    * @return maxContentLightLevel
    */
-  public String getMaxContentLightLevel() {
+  public Integer getMaxContentLightLevel() {
     return maxContentLightLevel;
   }
 
@@ -884,27 +884,27 @@ public class H265VideoConfiguration extends VideoConfiguration {
    * @param maxContentLightLevel
    *        Set the max content light level (MaxCLL). Use together with maxPictureAverageLightLevel (which will be 0 if not set). Part of HDR-10 metadata.
    */
-  public void setMaxContentLightLevel(String maxContentLightLevel) {
+  public void setMaxContentLightLevel(Integer maxContentLightLevel) {
     this.maxContentLightLevel = maxContentLightLevel;
   }
 
 
   /**
    * Set the maximum picture average light level (MaxFALL). Use together with maxContentLightLevel (which will be 0 if not set). Part of HDR-10 metadata.
-   * @return maxAverageLightLevel
+   * @return maxPictureAverageLightLevel
    */
-  public Integer getMaxAverageLightLevel() {
-    return maxAverageLightLevel;
+  public Integer getMaxPictureAverageLightLevel() {
+    return maxPictureAverageLightLevel;
   }
 
   /**
    * Set the maximum picture average light level (MaxFALL). Use together with maxContentLightLevel (which will be 0 if not set). Part of HDR-10 metadata.
    *
-   * @param maxAverageLightLevel
+   * @param maxPictureAverageLightLevel
    *        Set the maximum picture average light level (MaxFALL). Use together with maxContentLightLevel (which will be 0 if not set). Part of HDR-10 metadata.
    */
-  public void setMaxAverageLightLevel(Integer maxAverageLightLevel) {
-    this.maxAverageLightLevel = maxAverageLightLevel;
+  public void setMaxPictureAverageLightLevel(Integer maxPictureAverageLightLevel) {
+    this.maxPictureAverageLightLevel = maxPictureAverageLightLevel;
   }
 
 
@@ -2249,7 +2249,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
         Objects.equals(this.sao, h265VideoConfiguration.sao) &&
         Objects.equals(this.masterDisplay, h265VideoConfiguration.masterDisplay) &&
         Objects.equals(this.maxContentLightLevel, h265VideoConfiguration.maxContentLightLevel) &&
-        Objects.equals(this.maxAverageLightLevel, h265VideoConfiguration.maxAverageLightLevel) &&
+        Objects.equals(this.maxPictureAverageLightLevel, h265VideoConfiguration.maxPictureAverageLightLevel) &&
         Objects.equals(this.hdr, h265VideoConfiguration.hdr) &&
         Objects.equals(this.sceneCutThreshold, h265VideoConfiguration.sceneCutThreshold) &&
         Objects.equals(this.adaptiveQuantizationMode, h265VideoConfiguration.adaptiveQuantizationMode) &&
@@ -2320,7 +2320,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
 
   @Override
   public int hashCode() {
-    return Objects.hash(presetConfiguration, crf, profile, bframes, refFrames, qp, maxBitrate, minBitrate, bufsize, minGop, maxGop, openGop, minKeyframeInterval, maxKeyframeInterval, level, rcLookahead, bAdapt, maxCTUSize, tuIntraDepth, tuInterDepth, motionSearch, subMe, motionSearchRange, weightPredictionOnPSlice, weightPredictionOnBSlice, sao, masterDisplay, maxContentLightLevel, maxAverageLightLevel, hdr, sceneCutThreshold, adaptiveQuantizationMode, enableHlgSignaling, videoFormat, psyRateDistortionOptimization, psyRateDistortionOptimizedQuantization, enableHrdSignaling, cutree, minCodingUnitSize, lookaheadSlices, limitReferences, rectangularMotionPartitionsAnalysis, asymetricMotionPartitionsAnalysis, limitModes, maxMerge, earlySkip, recursionSkip, fastSearchForAngularIntraPredictions, evaluationOfIntraModesInBSlices, signHide, rateDistortionLevelForModeDecision, rateDistortionLevelForQuantization, qpMin, qpMax, wavefrontParallelProcessing, slices, copyPicture, levelHighTier, skipSplitRateDistortionAnalysis, codingUnitLossless, transformSkip, refineRateDistortionCost, limitTransformUnitDepthRecursion, noiseReductionIntra, noiseReductionInter, rateDistortionPenalty, maximumTransformUnitSize, dynamicRateDistortionStrength, ssimRateDistortionOptimization, temporalMotionVectorPredictors, analyzeSourceFramePixels, strongIntraSmoothing, constrainedIntraPrediction, scenecutBias, allowedRADLBeforeIDR, gopLookahead, bframeBias, forceFlush, adaptiveQuantizationStrength, adaptiveQuantizationMotion, quantizationGroupSize, strictCbr, qpOffsetChromaCb, qpOffsetChromaCr, ipRatio, pbRatio, quantizerCurveCompressionFactor, qpStep, grainOptimizedRateControl, blurQuants, blurComplexity, saoNonDeblock, limitSao, lowpassDct, super.hashCode());
+    return Objects.hash(presetConfiguration, crf, profile, bframes, refFrames, qp, maxBitrate, minBitrate, bufsize, minGop, maxGop, openGop, minKeyframeInterval, maxKeyframeInterval, level, rcLookahead, bAdapt, maxCTUSize, tuIntraDepth, tuInterDepth, motionSearch, subMe, motionSearchRange, weightPredictionOnPSlice, weightPredictionOnBSlice, sao, masterDisplay, maxContentLightLevel, maxPictureAverageLightLevel, hdr, sceneCutThreshold, adaptiveQuantizationMode, enableHlgSignaling, videoFormat, psyRateDistortionOptimization, psyRateDistortionOptimizedQuantization, enableHrdSignaling, cutree, minCodingUnitSize, lookaheadSlices, limitReferences, rectangularMotionPartitionsAnalysis, asymetricMotionPartitionsAnalysis, limitModes, maxMerge, earlySkip, recursionSkip, fastSearchForAngularIntraPredictions, evaluationOfIntraModesInBSlices, signHide, rateDistortionLevelForModeDecision, rateDistortionLevelForQuantization, qpMin, qpMax, wavefrontParallelProcessing, slices, copyPicture, levelHighTier, skipSplitRateDistortionAnalysis, codingUnitLossless, transformSkip, refineRateDistortionCost, limitTransformUnitDepthRecursion, noiseReductionIntra, noiseReductionInter, rateDistortionPenalty, maximumTransformUnitSize, dynamicRateDistortionStrength, ssimRateDistortionOptimization, temporalMotionVectorPredictors, analyzeSourceFramePixels, strongIntraSmoothing, constrainedIntraPrediction, scenecutBias, allowedRADLBeforeIDR, gopLookahead, bframeBias, forceFlush, adaptiveQuantizationStrength, adaptiveQuantizationMotion, quantizationGroupSize, strictCbr, qpOffsetChromaCb, qpOffsetChromaCr, ipRatio, pbRatio, quantizerCurveCompressionFactor, qpStep, grainOptimizedRateControl, blurQuants, blurComplexity, saoNonDeblock, limitSao, lowpassDct, super.hashCode());
   }
 
   @Override
@@ -2356,7 +2356,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
     sb.append("    sao: ").append(toIndentedString(sao)).append("\n");
     sb.append("    masterDisplay: ").append(toIndentedString(masterDisplay)).append("\n");
     sb.append("    maxContentLightLevel: ").append(toIndentedString(maxContentLightLevel)).append("\n");
-    sb.append("    maxAverageLightLevel: ").append(toIndentedString(maxAverageLightLevel)).append("\n");
+    sb.append("    maxPictureAverageLightLevel: ").append(toIndentedString(maxPictureAverageLightLevel)).append("\n");
     sb.append("    hdr: ").append(toIndentedString(hdr)).append("\n");
     sb.append("    sceneCutThreshold: ").append(toIndentedString(sceneCutThreshold)).append("\n");
     sb.append("    adaptiveQuantizationMode: ").append(toIndentedString(adaptiveQuantizationMode)).append("\n");

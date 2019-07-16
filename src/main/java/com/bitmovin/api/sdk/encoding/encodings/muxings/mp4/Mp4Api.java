@@ -51,7 +51,7 @@ public class Mp4Api {
      * Add MP4 Muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param mp4Muxing  (required)
+     * @param mp4Muxing The MP4 Muxing to be created (required)
      * @return Mp4Muxing
      * @throws BitmovinException if fails to make API call
      */

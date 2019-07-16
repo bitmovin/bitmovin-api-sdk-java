@@ -43,7 +43,7 @@ public class FiltersApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
-     * @param streamFilter  (required)
+     * @param streamFilter The Filters to be added (required)
      * @return StreamFilterList
      * @throws BitmovinException if fails to make API call
      */

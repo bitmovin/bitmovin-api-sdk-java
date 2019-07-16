@@ -45,7 +45,7 @@ public class SegmentedRawApi {
      * Add Segmented RAW Muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param segmentedRawMuxing  (required)
+     * @param segmentedRawMuxing The Segmented RAW Muxing to be created (required)
      * @return SegmentedRawMuxing
      * @throws BitmovinException if fails to make API call
      */

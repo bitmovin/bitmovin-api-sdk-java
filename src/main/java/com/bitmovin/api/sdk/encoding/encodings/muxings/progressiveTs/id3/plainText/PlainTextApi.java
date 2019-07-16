@@ -46,7 +46,7 @@ public class PlainTextApi {
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param muxingId ID of the Progressive TS Muxing (required)
-     * @param plaintextId3Tag  (required)
+     * @param plaintextId3Tag The Plain Text ID3 Tag to be created (required)
      * @return PlaintextId3Tag
      * @throws BitmovinException if fails to make API call
      */

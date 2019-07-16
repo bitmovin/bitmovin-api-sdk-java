@@ -18,6 +18,8 @@ public class LiveEncoding {
   @JsonProperty("encoderIp")
   private String encoderIp;
 
+  @JsonProperty("application")
+  private String application;
 
   /**
    * Stream key of the live encoder (required)
@@ -28,17 +30,6 @@ public class LiveEncoding {
   }
 
   /**
-   * Stream key of the live encoder (required)
-   *
-   * @param streamKey
-   *        Stream key of the live encoder (required)
-   */
-  public void setStreamKey(String streamKey) {
-    this.streamKey = streamKey;
-  }
-
-
-  /**
    * IP address of the live encoder (required)
    * @return encoderIp
    */
@@ -47,13 +38,11 @@ public class LiveEncoding {
   }
 
   /**
-   * IP address of the live encoder (required)
-   *
-   * @param encoderIp
-   *        IP address of the live encoder (required)
+   * This will indicate the application &#39;live&#39;
+   * @return application
    */
-  public void setEncoderIp(String encoderIp) {
-    this.encoderIp = encoderIp;
+  public String getApplication() {
+    return application;
   }
 
 
@@ -67,12 +56,13 @@ public class LiveEncoding {
     }
     LiveEncoding liveEncoding = (LiveEncoding) o;
     return Objects.equals(this.streamKey, liveEncoding.streamKey) &&
-        Objects.equals(this.encoderIp, liveEncoding.encoderIp);
+        Objects.equals(this.encoderIp, liveEncoding.encoderIp) &&
+        Objects.equals(this.application, liveEncoding.application);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(streamKey, encoderIp);
+    return Objects.hash(streamKey, encoderIp, application);
   }
 
   @Override
@@ -82,6 +72,7 @@ public class LiveEncoding {
     
     sb.append("    streamKey: ").append(toIndentedString(streamKey)).append("\n");
     sb.append("    encoderIp: ").append(toIndentedString(encoderIp)).append("\n");
+    sb.append("    application: ").append(toIndentedString(application)).append("\n");
     sb.append("}");
     return sb.toString();
   }

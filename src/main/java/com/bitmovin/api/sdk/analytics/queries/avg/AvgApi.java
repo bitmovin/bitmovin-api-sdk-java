@@ -41,7 +41,7 @@ public class AvgApi {
     /**
      * Avg
      * 
-     * @param analyticsAvgQueryRequest  (required)
+     * @param analyticsAvgQueryRequest Analytics Query Object (required)
      * @return AnalyticsResponse
      * @throws BitmovinException if fails to make API call
      */

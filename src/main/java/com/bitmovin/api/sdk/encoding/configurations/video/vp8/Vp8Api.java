@@ -44,7 +44,7 @@ public class Vp8Api {
     /**
      * Create VP8 Codec Configuration
      * 
-     * @param vp8VideoConfiguration  (required)
+     * @param vp8VideoConfiguration The VP8 Codec Configuration to be created (required)
      * @return Vp8VideoConfiguration
      * @throws BitmovinException if fails to make API call
      */

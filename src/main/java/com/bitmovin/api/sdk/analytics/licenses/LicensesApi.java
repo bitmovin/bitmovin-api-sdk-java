@@ -73,6 +73,18 @@ public class LicensesApi {
         return this.apiClient.list().getData().getResult();
     }
     
+    /**
+     * Update Analytics License
+     * 
+     * @param licenseId License id (required)
+     * @param analyticsLicenseUpdateRequest Analytics License details to be updated (required)
+     * @return AnalyticsLicense
+     * @throws BitmovinException if fails to make API call
+     */
+    public AnalyticsLicense update(String licenseId, AnalyticsLicenseUpdateRequest analyticsLicenseUpdateRequest) throws BitmovinException {
+        return this.apiClient.update(licenseId, analyticsLicenseUpdateRequest).getData().getResult();
+    }
+    
     interface LicensesApiClient {
     
         @RequestLine("POST /analytics/licenses")
@@ -83,5 +95,8 @@ public class LicensesApi {
     
         @RequestLine("GET /analytics/licenses")
         ResponseEnvelope<PaginationResponse<AnalyticsLicense>> list() throws BitmovinException;
+    
+        @RequestLine("PUT /analytics/licenses/{license_id}")
+        ResponseEnvelope<AnalyticsLicense> update(@Param(value = "license_id") String licenseId, AnalyticsLicenseUpdateRequest analyticsLicenseUpdateRequest) throws BitmovinException;
     }
 }

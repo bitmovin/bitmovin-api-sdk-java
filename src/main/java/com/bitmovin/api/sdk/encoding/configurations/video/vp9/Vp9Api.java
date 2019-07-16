@@ -44,7 +44,7 @@ public class Vp9Api {
     /**
      * Create VP9 Codec Configuration
      * 
-     * @param vp9VideoConfiguration  (required)
+     * @param vp9VideoConfiguration The VP9 Codec Configuration to be created (required)
      * @return Vp9VideoConfiguration
      * @throws BitmovinException if fails to make API call
      */

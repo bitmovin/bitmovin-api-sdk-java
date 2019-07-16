@@ -45,7 +45,7 @@ public class ChunkedTextApi {
      * Add Chunked Text Muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param chunkedTextMuxing  (required)
+     * @param chunkedTextMuxing The Chunked Text Muxing to be created (required)
      * @return ChunkedTextMuxing
      * @throws BitmovinException if fails to make API call
      */

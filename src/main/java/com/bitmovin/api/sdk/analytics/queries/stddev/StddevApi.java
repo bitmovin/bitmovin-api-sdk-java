@@ -41,7 +41,7 @@ public class StddevApi {
     /**
      * Stddev
      * 
-     * @param analyticsStddevQueryRequest  (required)
+     * @param analyticsStddevQueryRequest Analytics Query Object (required)
      * @return AnalyticsResponse
      * @throws BitmovinException if fails to make API call
      */

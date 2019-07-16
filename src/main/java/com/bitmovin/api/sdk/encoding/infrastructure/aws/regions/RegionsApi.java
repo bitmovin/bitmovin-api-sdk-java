@@ -43,7 +43,7 @@ public class RegionsApi {
      * 
      * @param infrastructureId Id of the AWS account (required)
      * @param region AWS region. (required)
-     * @param awsAccountRegionSettings  (required)
+     * @param awsAccountRegionSettings The AWS Region Settings to be added (required)
      * @return AwsAccountRegionSettings
      * @throws BitmovinException if fails to make API call
      */

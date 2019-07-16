@@ -44,7 +44,7 @@ public class DeinterlaceApi {
     /**
      * Create Deinterlace Filter
      * 
-     * @param deinterlaceFilter  (required)
+     * @param deinterlaceFilter The Deinterlace Filter to be created (required)
      * @return DeinterlaceFilter
      * @throws BitmovinException if fails to make API call
      */

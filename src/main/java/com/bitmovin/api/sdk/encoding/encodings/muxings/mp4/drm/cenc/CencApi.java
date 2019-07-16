@@ -46,7 +46,7 @@ public class CencApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the mp4 fragment. (required)
-     * @param cencDrm  (required)
+     * @param cencDrm The CENC DRM to be created (required)
      * @return CencDrm
      * @throws BitmovinException if fails to make API call
      */

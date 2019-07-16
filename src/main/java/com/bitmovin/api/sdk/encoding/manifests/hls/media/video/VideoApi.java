@@ -42,7 +42,7 @@ public class VideoApi {
      * Add Video Media
      * 
      * @param manifestId Id of the hls manifest. (required)
-     * @param videoMediaInfo  (required)
+     * @param videoMediaInfo The Video Media to be added (required)
      * @return VideoMediaInfo
      * @throws BitmovinException if fails to make API call
      */

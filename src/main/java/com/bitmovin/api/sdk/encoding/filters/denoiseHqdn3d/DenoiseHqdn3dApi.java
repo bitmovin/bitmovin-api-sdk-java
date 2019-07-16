@@ -44,7 +44,7 @@ public class DenoiseHqdn3dApi {
     /**
      * Create Denoise hqdn3d Filter
      * 
-     * @param denoiseHqdn3dFilter  (required)
+     * @param denoiseHqdn3dFilter The Denoise hqdn3d Filter to be created (required)
      * @return DenoiseHqdn3dFilter
      * @throws BitmovinException if fails to make API call
      */

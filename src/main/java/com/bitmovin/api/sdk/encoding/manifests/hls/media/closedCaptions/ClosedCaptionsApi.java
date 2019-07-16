@@ -42,7 +42,7 @@ public class ClosedCaptionsApi {
      * Add Closed Captions Media
      * 
      * @param manifestId Id of the hls manifest. (required)
-     * @param closedCaptionsMediaInfo  (required)
+     * @param closedCaptionsMediaInfo The Closed Captions Media to be added (required)
      * @return ClosedCaptionsMediaInfo
      * @throws BitmovinException if fails to make API call
      */

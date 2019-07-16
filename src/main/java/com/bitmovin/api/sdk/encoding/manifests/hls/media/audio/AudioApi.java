@@ -42,7 +42,7 @@ public class AudioApi {
      * Add Audio Media
      * 
      * @param manifestId Id of the hls manifest. (required)
-     * @param audioMediaInfo  (required)
+     * @param audioMediaInfo The Audio Media to be added (required)
      * @return AudioMediaInfo
      * @throws BitmovinException if fails to make API call
      */

@@ -46,7 +46,7 @@ public class MarlinApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)
-     * @param marlinDrm  (required)
+     * @param marlinDrm The Marlin DRM to be created (required)
      * @return MarlinDrm
      * @throws BitmovinException if fails to make API call
      */

@@ -44,7 +44,7 @@ public class VorbisApi {
     /**
      * Create Vorbis Codec Configuration
      * 
-     * @param vorbisAudioConfiguration  (required)
+     * @param vorbisAudioConfiguration The Vorbis Codec Configuration to be created (required)
      * @return VorbisAudioConfiguration
      * @throws BitmovinException if fails to make API call
      */

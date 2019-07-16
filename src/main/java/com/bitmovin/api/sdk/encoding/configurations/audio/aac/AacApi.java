@@ -44,7 +44,7 @@ public class AacApi {
     /**
      * Create AAC Codec Configuration
      * 
-     * @param aacAudioConfiguration  (required)
+     * @param aacAudioConfiguration The AAC Codec Configuration to be created (required)
      * @return AacAudioConfiguration
      * @throws BitmovinException if fails to make API call
      */

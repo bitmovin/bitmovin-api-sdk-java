@@ -42,7 +42,7 @@ public class VttApi {
      * Add VTT Media
      * 
      * @param manifestId Id of the hls manifest. (required)
-     * @param vttMediaInfo  (required)
+     * @param vttMediaInfo The VTT Media to be added (required)
      * @return VttMediaInfo
      * @throws BitmovinException if fails to make API call
      */

@@ -46,7 +46,7 @@ public class PlayreadyApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)
-     * @param playReadyDrm  (required)
+     * @param playReadyDrm The PlayReady DRM to be created (required)
      * @return PlayReadyDrm
      * @throws BitmovinException if fails to make API call
      */

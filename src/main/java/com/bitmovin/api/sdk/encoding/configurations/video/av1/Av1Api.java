@@ -44,7 +44,7 @@ public class Av1Api {
     /**
      * Create AV1 Codec Configuration
      * 
-     * @param av1VideoConfiguration  (required)
+     * @param av1VideoConfiguration The AV1 Codec Configuration to be created (required)
      * @return Av1VideoConfiguration
      * @throws BitmovinException if fails to make API call
      */

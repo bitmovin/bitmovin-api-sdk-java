@@ -42,7 +42,7 @@ public class FileApi {
      * Add File input stream
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param fileInputStream  (required)
+     * @param fileInputStream The File input stream to be created (required)
      * @return FileInputStream
      * @throws BitmovinException if fails to make API call
      */

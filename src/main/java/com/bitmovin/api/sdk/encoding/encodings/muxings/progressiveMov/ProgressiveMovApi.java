@@ -48,7 +48,7 @@ public class ProgressiveMovApi {
      * Add Progressive MOV Muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param progressiveMovMuxing  (required)
+     * @param progressiveMovMuxing The Progressive MOV Muxing to be created (required)
      * @return ProgressiveMovMuxing
      * @throws BitmovinException if fails to make API call
      */

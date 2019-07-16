@@ -42,7 +42,7 @@ public class ContentprotectionApi {
      * Add Content Protection to Smooth Streaming
      * 
      * @param manifestId Id of the Smooth Streaming manifest. (required)
-     * @param smoothManifestContentProtection  (required)
+     * @param smoothManifestContentProtection The Content Protection to be added (required)
      * @return SmoothManifestContentProtection
      * @throws BitmovinException if fails to make API call
      */

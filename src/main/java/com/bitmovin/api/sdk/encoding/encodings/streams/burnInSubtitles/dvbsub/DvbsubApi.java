@@ -43,7 +43,7 @@ public class DvbsubApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
-     * @param streamDvbSubSubtitle  (required)
+     * @param streamDvbSubSubtitle The Burn-In DVB-SUB Subtitle to be added (required)
      * @return StreamDvbSubSubtitle
      * @throws BitmovinException if fails to make API call
      */

@@ -42,7 +42,7 @@ public class H264PictureTimingApi {
      * Add H264 Picture Timing Trimming Input Stream
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param h264PictureTimingTrimmingInputStream  (required)
+     * @param h264PictureTimingTrimmingInputStream The H264 Picture Timing Trimming Input Stream to be created (required)
      * @return H264PictureTimingTrimmingInputStream
      * @throws BitmovinException if fails to make API call
      */

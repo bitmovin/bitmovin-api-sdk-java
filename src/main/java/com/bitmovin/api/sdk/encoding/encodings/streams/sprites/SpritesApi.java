@@ -46,7 +46,7 @@ public class SpritesApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
-     * @param sprite  (required)
+     * @param sprite The Sprite to be added (required)
      * @return Sprite
      * @throws BitmovinException if fails to make API call
      */

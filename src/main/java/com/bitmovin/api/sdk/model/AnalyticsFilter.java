@@ -2,7 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.AnalyticsOperator;
+import com.bitmovin.api.sdk.model.AnalyticsBaseFilter;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -12,68 +12,25 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  * AnalyticsFilter
  */
 
-public class AnalyticsFilter {
-  @JsonProperty("name")
-  private String name;
-
-  @JsonProperty("operator")
-  private AnalyticsOperator operator;
-
+public class AnalyticsFilter extends AnalyticsBaseFilter {
   @JsonProperty("value")
-  private String value;
+  private Object value;
 
 
   /**
-   * Get name
-   * @return name
-   */
-  public String getName() {
-    return name;
-  }
-
-  /**
-   * Set name
-   *
-   * @param name
-   */
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
-  /**
-   * Get operator
-   * @return operator
-   */
-  public AnalyticsOperator getOperator() {
-    return operator;
-  }
-
-  /**
-   * Set operator
-   *
-   * @param operator
-   */
-  public void setOperator(AnalyticsOperator operator) {
-    this.operator = operator;
-  }
-
-
-  /**
-   * The value to compare to the property specified by the name (required)
+   * Get value
    * @return value
    */
-  public String getValue() {
+  public Object getValue() {
     return value;
   }
 
   /**
-   * The value to compare to the property specified by the name (required)
+   * Set value
    *
    * @param value
-   *        The value to compare to the property specified by the name (required)
    */
-  public void setValue(String value) {
+  public void setValue(Object value) {
     this.value = value;
   }
 
@@ -87,23 +44,20 @@ public class AnalyticsFilter {
       return false;
     }
     AnalyticsFilter analyticsFilter = (AnalyticsFilter) o;
-    return Objects.equals(this.name, analyticsFilter.name) &&
-        Objects.equals(this.operator, analyticsFilter.operator) &&
-        Objects.equals(this.value, analyticsFilter.value);
+    return Objects.equals(this.value, analyticsFilter.value) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, operator, value);
+    return Objects.hash(value, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AnalyticsFilter {\n");
-    
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();

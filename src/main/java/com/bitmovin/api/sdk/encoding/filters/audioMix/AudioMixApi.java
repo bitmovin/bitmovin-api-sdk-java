@@ -44,7 +44,7 @@ public class AudioMixApi {
     /**
      * Create Audio Mix Filter
      * 
-     * @param audioMixFilter  (required)
+     * @param audioMixFilter The Audio Mix Filter to be created (required)
      * @return AudioMixFilter
      * @throws BitmovinException if fails to make API call
      */

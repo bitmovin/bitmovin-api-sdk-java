@@ -43,7 +43,10 @@ public enum OutputType {
   SFTP("SFTP"),
   
   
-  AKAMAI_MSL("AKAMAI_MSL");
+  AKAMAI_MSL("AKAMAI_MSL"),
+  
+  
+  LIVE_MEDIA_INGEST("LIVE_MEDIA_INGEST");
 
   private String value;
 

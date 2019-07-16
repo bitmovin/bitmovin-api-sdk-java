@@ -42,7 +42,7 @@ public class PrewarmedDeploymentApi {
      * Prewarm Encoders
      * 
      * @param infrastructureId Id of the kubernetes cluster. (required)
-     * @param prewarmEncoderSettings  (required)
+     * @param prewarmEncoderSettings Settings for prewarming Encoders (required)
      * @return PrewarmEncoderSettings
      * @throws BitmovinException if fails to make API call
      */

@@ -48,7 +48,7 @@ public class StreamsApi {
      * Add Variant Stream
      * 
      * @param manifestId Id of the hls manifest. (required)
-     * @param streamInfo  (required)
+     * @param streamInfo The Variant Stream to be added (required)
      * @return StreamInfo
      * @throws BitmovinException if fails to make API call
      */

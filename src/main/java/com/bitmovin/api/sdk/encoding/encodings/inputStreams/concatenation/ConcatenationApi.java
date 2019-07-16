@@ -42,7 +42,7 @@ public class ConcatenationApi {
      * Add Concatenation Input Stream
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param concatenationInputStream  (required)
+     * @param concatenationInputStream The Concatenation Input Stream to be created (required)
      * @return ConcatenationInputStream
      * @throws BitmovinException if fails to make API call
      */

@@ -44,7 +44,7 @@ public class WatermarkApi {
     /**
      * Create Watermark Filter
      * 
-     * @param watermarkFilter Only one horizontal and one vertical distance parameter is allowed, either top or bottom, and either left or right. See example body. (required)
+     * @param watermarkFilter The Watermark Filter to be created. Only one horizontal and one vertical distance parameter is allowed, either top or bottom, and either left or right. See example body. (required)
      * @return WatermarkFilter
      * @throws BitmovinException if fails to make API call
      */

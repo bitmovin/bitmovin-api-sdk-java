@@ -2,7 +2,8 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.AnalyticsFilter;
+import com.bitmovin.api.sdk.model.AnalyticsAttribute;
+import com.bitmovin.api.sdk.model.AnalyticsBaseFilter;
 import com.bitmovin.api.sdk.model.AnalyticsInterval;
 import com.bitmovin.api.sdk.model.AnalyticsOrderByEntry;
 import com.bitmovin.api.sdk.model.AnalyticsQueryTimeframe;
@@ -23,21 +24,21 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
 
   @JsonProperty("filters")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
-  private List<AnalyticsFilter> filters = new ArrayList<AnalyticsFilter>();
+  private List<AnalyticsBaseFilter> filters = new ArrayList<AnalyticsBaseFilter>();
 
   @JsonProperty("orderBy")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<AnalyticsOrderByEntry> orderBy = new ArrayList<AnalyticsOrderByEntry>();
 
   @JsonProperty("dimension")
-  private String dimension;
+  private AnalyticsAttribute dimension;
 
   @JsonProperty("interval")
   private AnalyticsInterval interval;
 
   @JsonProperty("groupBy")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
-  private List<String> groupBy = new ArrayList<String>();
+  private List<AnalyticsAttribute> groupBy = new ArrayList<AnalyticsAttribute>();
 
   @JsonProperty("limit")
   private Long limit;
@@ -65,7 +66,7 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
   }
 
 
-  public AnalyticsQueryRequest addFiltersItem(AnalyticsFilter filtersItem) {
+  public AnalyticsQueryRequest addFiltersItem(AnalyticsBaseFilter filtersItem) {
     this.filters.add(filtersItem);
     return this;
   }
@@ -74,7 +75,7 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
    * Get filters
    * @return filters
    */
-  public List<AnalyticsFilter> getFilters() {
+  public List<AnalyticsBaseFilter> getFilters() {
     return filters;
   }
 
@@ -83,7 +84,7 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
    *
    * @param filters
    */
-  public void setFilters(List<AnalyticsFilter> filters) {
+  public void setFilters(List<AnalyticsBaseFilter> filters) {
     this.filters = filters;
   }
 
@@ -115,7 +116,7 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
    * Get dimension
    * @return dimension
    */
-  public String getDimension() {
+  public AnalyticsAttribute getDimension() {
     return dimension;
   }
 
@@ -124,7 +125,7 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
    *
    * @param dimension
    */
-  public void setDimension(String dimension) {
+  public void setDimension(AnalyticsAttribute dimension) {
     this.dimension = dimension;
   }
 
@@ -147,7 +148,7 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
   }
 
 
-  public AnalyticsQueryRequest addGroupByItem(String groupByItem) {
+  public AnalyticsQueryRequest addGroupByItem(AnalyticsAttribute groupByItem) {
     this.groupBy.add(groupByItem);
     return this;
   }
@@ -156,7 +157,7 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
    * Get groupBy
    * @return groupBy
    */
-  public List<String> getGroupBy() {
+  public List<AnalyticsAttribute> getGroupBy() {
     return groupBy;
   }
 
@@ -165,7 +166,7 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
    *
    * @param groupBy
    */
-  public void setGroupBy(List<String> groupBy) {
+  public void setGroupBy(List<AnalyticsAttribute> groupBy) {
     this.groupBy = groupBy;
   }
 

@@ -41,7 +41,7 @@ public class VarianceApi {
     /**
      * Variance
      * 
-     * @param analyticsVarianceQueryRequest  (required)
+     * @param analyticsVarianceQueryRequest Analytics Query Object (required)
      * @return AnalyticsResponse
      * @throws BitmovinException if fails to make API call
      */

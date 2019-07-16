@@ -45,7 +45,7 @@ public class TextApi {
      * Add Text Muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param textMuxing  (required)
+     * @param textMuxing The Text Muxing to be created (required)
      * @return TextMuxing
      * @throws BitmovinException if fails to make API call
      */

@@ -42,7 +42,7 @@ public class Cea708Api {
      * Add CEA 708 Input Stream
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param cea708CaptionInputStream  (required)
+     * @param cea708CaptionInputStream The CEA 708 Input Stream to be created (required)
      * @return Cea708CaptionInputStream
      * @throws BitmovinException if fails to make API call
      */

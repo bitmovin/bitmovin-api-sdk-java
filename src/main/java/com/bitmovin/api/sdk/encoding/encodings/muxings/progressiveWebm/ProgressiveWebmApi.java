@@ -48,7 +48,7 @@ public class ProgressiveWebmApi {
      * Add Progressive WebM Muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param progressiveWebmMuxing  (required)
+     * @param progressiveWebmMuxing The Progressive WebM Muxing to be created (required)
      * @return ProgressiveWebmMuxing
      * @throws BitmovinException if fails to make API call
      */

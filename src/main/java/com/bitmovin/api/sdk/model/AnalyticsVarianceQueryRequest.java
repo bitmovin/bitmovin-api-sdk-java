@@ -2,7 +2,8 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.AnalyticsFilter;
+import com.bitmovin.api.sdk.model.AnalyticsAttribute;
+import com.bitmovin.api.sdk.model.AnalyticsBaseFilter;
 import com.bitmovin.api.sdk.model.AnalyticsInterval;
 import com.bitmovin.api.sdk.model.AnalyticsOrderByEntry;
 import com.bitmovin.api.sdk.model.AnalyticsQueryRequest;

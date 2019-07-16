@@ -44,7 +44,7 @@ public class HeAacV1Api {
     /**
      * Create HE-AAC v1 Codec Configuration
      * 
-     * @param heAacV1AudioConfiguration  (required)
+     * @param heAacV1AudioConfiguration The HE-AAC Codec Configuration to be created (required)
      * @return HeAacV1AudioConfiguration
      * @throws BitmovinException if fails to make API call
      */

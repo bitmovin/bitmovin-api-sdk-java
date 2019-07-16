@@ -44,7 +44,7 @@ public class CropApi {
     /**
      * Create Crop Filter
      * 
-     * @param cropFilter  (required)
+     * @param cropFilter The Crop Filter to be created (required)
      * @return CropFilter
      * @throws BitmovinException if fails to make API call
      */

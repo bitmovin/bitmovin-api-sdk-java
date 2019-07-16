@@ -53,7 +53,7 @@ public class ConfigurationApi {
      * Update Kubernetes Cluster Configuration
      * 
      * @param infrastructureId Id of the Kubernetes cluster (required)
-     * @param kubernetesClusterConfiguration  (required)
+     * @param kubernetesClusterConfiguration The Kubernetes Cluster Configuration which should be applied (required)
      * @return KubernetesClusterConfiguration
      * @throws BitmovinException if fails to make API call
      */

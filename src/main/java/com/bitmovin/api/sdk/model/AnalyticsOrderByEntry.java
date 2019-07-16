@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.AnalyticsAttribute;
 import com.bitmovin.api.sdk.model.AnalyticsOrder;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -14,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class AnalyticsOrderByEntry {
   @JsonProperty("name")
-  private String name;
+  private AnalyticsAttribute name;
 
   @JsonProperty("order")
   private AnalyticsOrder order;
@@ -24,7 +25,7 @@ public class AnalyticsOrderByEntry {
    * Get name
    * @return name
    */
-  public String getName() {
+  public AnalyticsAttribute getName() {
     return name;
   }
 
@@ -33,7 +34,7 @@ public class AnalyticsOrderByEntry {
    *
    * @param name
    */
-  public void setName(String name) {
+  public void setName(AnalyticsAttribute name) {
     this.name = name;
   }
 

@@ -42,7 +42,7 @@ public class IngestApi {
      * Add Ingest Input Stream
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param ingestInputStream  (required)
+     * @param ingestInputStream The Ingest Input Stream to be created (required)
      * @return IngestInputStream
      * @throws BitmovinException if fails to make API call
      */

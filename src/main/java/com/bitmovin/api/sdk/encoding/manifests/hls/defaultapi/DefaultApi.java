@@ -41,7 +41,7 @@ public class DefaultApi {
     /**
      * Create HLS Manifest Default
      * 
-     * @param hlsManifestDefault  (required)
+     * @param hlsManifestDefault The HLS Manifest to be created (required)
      * @return HlsManifestDefault
      * @throws BitmovinException if fails to make API call
      */

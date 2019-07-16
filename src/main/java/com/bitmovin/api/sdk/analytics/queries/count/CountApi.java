@@ -41,7 +41,7 @@ public class CountApi {
     /**
      * Count
      * 
-     * @param analyticsCountQueryRequest  (required)
+     * @param analyticsCountQueryRequest Analytics Query Object (required)
      * @return AnalyticsResponse
      * @throws BitmovinException if fails to make API call
      */

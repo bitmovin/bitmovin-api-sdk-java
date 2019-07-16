@@ -42,7 +42,7 @@ public class KeyframesApi {
      * Create Keyframes
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param keyframe  (required)
+     * @param keyframe The Keyframes to be created (required)
      * @return Keyframe
      * @throws BitmovinException if fails to make API call
      */

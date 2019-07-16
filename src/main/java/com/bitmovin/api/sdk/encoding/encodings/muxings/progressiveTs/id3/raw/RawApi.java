@@ -46,7 +46,7 @@ public class RawApi {
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param muxingId ID of the Progressive TS Muxing (required)
-     * @param rawId3Tag  (required)
+     * @param rawId3Tag The Raw ID3 Tag to be created (required)
      * @return RawId3Tag
      * @throws BitmovinException if fails to make API call
      */

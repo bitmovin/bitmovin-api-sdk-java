@@ -46,7 +46,7 @@ public class BifsApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
-     * @param bif  (required)
+     * @param bif The Roku Bif file to be added (required)
      * @return Bif
      * @throws BitmovinException if fails to make API call
      */

@@ -50,7 +50,7 @@ public class WebApi {
     /**
      * Add Custom Web Player Build
      * 
-     * @param customPlayerBuildDetails  (required)
+     * @param customPlayerBuildDetails The Custom Web Player Build to be added (required)
      * @return CustomPlayerBuildDetails
      * @throws BitmovinException if fails to make API call
      */
