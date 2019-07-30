@@ -28,7 +28,7 @@ public class ProgressiveTsMuxing extends Muxing {
   private String filename;
 
   @JsonProperty("startOffset")
-  private Double startOffset;
+  private Integer startOffset;
 
   @JsonProperty("internalChunkLength")
   private InternalChunkLength internalChunkLength;
@@ -73,20 +73,20 @@ public class ProgressiveTsMuxing extends Muxing {
 
 
   /**
-   * Offset of MPEG-TS timestamps in seconds. E.g., first packet will start with PTS 900,000 for a 10 seconds offset (90,000 MPEG-TS timescale).
+   * Offset of MPEG-TS timestamps in seconds. e.g. first packet will start with PTS 900,000 for a 10 seconds offset (90,000 MPEG-TS timescale).
    * @return startOffset
    */
-  public Double getStartOffset() {
+  public Integer getStartOffset() {
     return startOffset;
   }
 
   /**
-   * Offset of MPEG-TS timestamps in seconds. E.g., first packet will start with PTS 900,000 for a 10 seconds offset (90,000 MPEG-TS timescale).
+   * Offset of MPEG-TS timestamps in seconds. e.g. first packet will start with PTS 900,000 for a 10 seconds offset (90,000 MPEG-TS timescale).
    *
    * @param startOffset
-   *        Offset of MPEG-TS timestamps in seconds. E.g., first packet will start with PTS 900,000 for a 10 seconds offset (90,000 MPEG-TS timescale).
+   *        Offset of MPEG-TS timestamps in seconds. e.g. first packet will start with PTS 900,000 for a 10 seconds offset (90,000 MPEG-TS timescale).
    */
-  public void setStartOffset(Double startOffset) {
+  public void setStartOffset(Integer startOffset) {
     this.startOffset = startOffset;
   }
 

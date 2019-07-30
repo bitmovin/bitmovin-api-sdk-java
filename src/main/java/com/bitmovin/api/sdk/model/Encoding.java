@@ -4,7 +4,9 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.BitmovinResource;
 import com.bitmovin.api.sdk.model.CloudRegion;
+import com.bitmovin.api.sdk.model.EncodingMode;
 import com.bitmovin.api.sdk.model.InfrastructureSettings;
+import com.bitmovin.api.sdk.model.Status;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -30,6 +32,18 @@ public class Encoding extends BitmovinResource {
 
   @JsonProperty("infrastructure")
   private InfrastructureSettings infrastructure;
+
+  @JsonProperty("selectedEncoderVersion")
+  private String selectedEncoderVersion;
+
+  @JsonProperty("selectedEncodingMode")
+  private EncodingMode selectedEncodingMode;
+
+  @JsonProperty("selectedCloudRegion")
+  private CloudRegion selectedCloudRegion;
+
+  @JsonProperty("status")
+  private Status status;
 
   @JsonProperty("labels")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -109,6 +123,38 @@ public class Encoding extends BitmovinResource {
     this.infrastructure = infrastructure;
   }
 
+  /**
+   * Will be set to the encoder version that was actually used for the encoding. This is especially useful when starting an encoding with a version tag like STABLE or BETA.
+   * @return selectedEncoderVersion
+   */
+  public String getSelectedEncoderVersion() {
+    return selectedEncoderVersion;
+  }
+
+  /**
+   * Will be set to the encoding mode that was actually used for the encoding. This is especially useful when starting an encoding with encoding mode STANDARD.
+   * @return selectedEncodingMode
+   */
+  public EncodingMode getSelectedEncodingMode() {
+    return selectedEncodingMode;
+  }
+
+  /**
+   * Contains the region which was selected when cloudregion:AUTO was specified
+   * @return selectedCloudRegion
+   */
+  public CloudRegion getSelectedCloudRegion() {
+    return selectedCloudRegion;
+  }
+
+  /**
+   * The current status of the encoding.
+   * @return status
+   */
+  public Status getStatus() {
+    return status;
+  }
+
 
   public Encoding addLabelsItem(String labelsItem) {
     this.labels.add(labelsItem);
@@ -147,13 +193,17 @@ public class Encoding extends BitmovinResource {
         Objects.equals(this.encoderVersion, encoding.encoderVersion) &&
         Objects.equals(this.infrastructureId, encoding.infrastructureId) &&
         Objects.equals(this.infrastructure, encoding.infrastructure) &&
+        Objects.equals(this.selectedEncoderVersion, encoding.selectedEncoderVersion) &&
+        Objects.equals(this.selectedEncodingMode, encoding.selectedEncodingMode) &&
+        Objects.equals(this.selectedCloudRegion, encoding.selectedCloudRegion) &&
+        Objects.equals(this.status, encoding.status) &&
         Objects.equals(this.labels, encoding.labels) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cloudRegion, encoderVersion, infrastructureId, infrastructure, labels, super.hashCode());
+    return Objects.hash(cloudRegion, encoderVersion, infrastructureId, infrastructure, selectedEncoderVersion, selectedEncodingMode, selectedCloudRegion, status, labels, super.hashCode());
   }
 
   @Override
@@ -165,6 +215,10 @@ public class Encoding extends BitmovinResource {
     sb.append("    encoderVersion: ").append(toIndentedString(encoderVersion)).append("\n");
     sb.append("    infrastructureId: ").append(toIndentedString(infrastructureId)).append("\n");
     sb.append("    infrastructure: ").append(toIndentedString(infrastructure)).append("\n");
+    sb.append("    selectedEncoderVersion: ").append(toIndentedString(selectedEncoderVersion)).append("\n");
+    sb.append("    selectedEncodingMode: ").append(toIndentedString(selectedEncodingMode)).append("\n");
+    sb.append("    selectedCloudRegion: ").append(toIndentedString(selectedCloudRegion)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
     sb.append("}");
     return sb.toString();

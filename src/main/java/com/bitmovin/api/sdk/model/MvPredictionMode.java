@@ -58,7 +58,7 @@ public enum MvPredictionMode {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    return null;
   }
 }
 

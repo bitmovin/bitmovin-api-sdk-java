@@ -41,7 +41,7 @@ public enum IgnoredBy {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    return null;
   }
 }
 

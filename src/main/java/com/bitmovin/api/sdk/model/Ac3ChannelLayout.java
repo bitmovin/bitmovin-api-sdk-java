@@ -108,7 +108,7 @@ public enum Ac3ChannelLayout {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    return null;
   }
 }
 

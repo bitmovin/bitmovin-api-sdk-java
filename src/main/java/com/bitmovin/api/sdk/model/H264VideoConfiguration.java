@@ -214,7 +214,7 @@ public class H264VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Get profile
+   * When setting a profile, all other settings must not exceed the limits which are defined in the profile. Otherwise, a higher profile may be automatically chosen. (required)
    * @return profile
    */
   public ProfileH264 getProfile() {
@@ -222,9 +222,10 @@ public class H264VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Set profile
+   * When setting a profile, all other settings must not exceed the limits which are defined in the profile. Otherwise, a higher profile may be automatically chosen. (required)
    *
    * @param profile
+   *        When setting a profile, all other settings must not exceed the limits which are defined in the profile. Otherwise, a higher profile may be automatically chosen. (required)
    */
   public void setProfile(ProfileH264 profile) {
     this.profile = profile;
@@ -546,7 +547,7 @@ public class H264VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Get level
+   * If three-pass encoding is used and a level is set for the encoder, the bitrate for some segments may exceed the bitrate limit which is defined by the level.
    * @return level
    */
   public LevelH264 getLevel() {
@@ -554,9 +555,10 @@ public class H264VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Set level
+   * If three-pass encoding is used and a level is set for the encoder, the bitrate for some segments may exceed the bitrate limit which is defined by the level.
    *
    * @param level
+   *        If three-pass encoding is used and a level is set for the encoder, the bitrate for some segments may exceed the bitrate limit which is defined by the level.
    */
   public void setLevel(LevelH264 level) {
     this.level = level;

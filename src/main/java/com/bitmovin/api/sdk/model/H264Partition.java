@@ -73,7 +73,7 @@ public enum H264Partition {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    return null;
   }
 }
 

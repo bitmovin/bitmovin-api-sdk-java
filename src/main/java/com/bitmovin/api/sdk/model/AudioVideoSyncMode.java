@@ -48,7 +48,7 @@ public enum AudioVideoSyncMode {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    return null;
   }
 }
 

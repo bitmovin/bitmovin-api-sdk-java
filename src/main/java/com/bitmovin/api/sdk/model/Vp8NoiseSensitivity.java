@@ -63,7 +63,7 @@ public enum Vp8NoiseSensitivity {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    return null;
   }
 }
 

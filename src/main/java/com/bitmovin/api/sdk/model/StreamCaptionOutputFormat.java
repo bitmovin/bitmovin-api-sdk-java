@@ -43,7 +43,7 @@ public enum StreamCaptionOutputFormat {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    return null;
   }
 }
 

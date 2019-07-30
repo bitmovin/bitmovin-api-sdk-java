@@ -58,7 +58,7 @@ public enum TuInterDepth {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    return null;
   }
 }
 

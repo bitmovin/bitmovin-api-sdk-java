@@ -44,7 +44,7 @@ public enum Id3TagPositionMode {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    return null;
   }
 }
 

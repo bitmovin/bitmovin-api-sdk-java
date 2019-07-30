@@ -9,11 +9,15 @@ import feign.Logger;
 import feign.jackson.JacksonEncoder;
 
 import java.text.SimpleDateFormat;
+import java.util.Collection;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.TimeZone;
 
 public class BitmovinApiClientFactoryImpl implements BitmovinApiClientFactory {
     private final String apiKey;
     private final String tenantOrgId;
+    private final Map<String, Collection<String>> headers;
     private final Logger logger;
     private final Logger.Level logLevel;
     private final String baseUrl;
@@ -25,7 +29,9 @@ public class BitmovinApiClientFactoryImpl implements BitmovinApiClientFactory {
         String tenantOrgId,
         String baseUrl,
         Logger logger,
-        Logger.Level logLevel) {
+        Logger.Level logLevel,
+        Map<String, Collection<String>> headers) {
+
 
         if (apiKey == null || apiKey.isEmpty()) {
             throw new IllegalArgumentException("Parameter 'apiKey' may not be null or empty.");
@@ -33,6 +39,11 @@ public class BitmovinApiClientFactoryImpl implements BitmovinApiClientFactory {
 
         this.apiKey = apiKey;
         this.tenantOrgId = tenantOrgId;
+        if (headers != null) {
+            this.headers = headers;
+        } else {
+            this.headers = new LinkedHashMap<>();
+        }
 
         if (baseUrl != null && !baseUrl.isEmpty()) {
             this.baseUrl = baseUrl;
@@ -80,6 +91,6 @@ public class BitmovinApiClientFactoryImpl implements BitmovinApiClientFactory {
             .errorDecoder(new BitmovinErrorDecoder(mapper))
             .logger(this.logger)
             .logLevel(this.logLevel)
-            .requestInterceptor(new BitmovinHeadersInterceptor(this.apiKey, this.tenantOrgId));
+            .requestInterceptor(new BitmovinHeadersInterceptor(this.apiKey, this.tenantOrgId, this.headers));
     }
 }

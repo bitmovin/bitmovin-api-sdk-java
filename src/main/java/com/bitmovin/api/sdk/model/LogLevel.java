@@ -59,7 +59,7 @@ public enum LogLevel {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    return null;
   }
 }
 

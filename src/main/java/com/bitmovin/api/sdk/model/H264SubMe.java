@@ -88,7 +88,7 @@ public enum H264SubMe {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    return null;
   }
 }
 

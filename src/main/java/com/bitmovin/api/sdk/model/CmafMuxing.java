@@ -39,7 +39,7 @@ public class CmafMuxing extends Muxing {
   private Integer segmentsMuxed;
 
   @JsonProperty("framesPerCmafChunk")
-  private Object framesPerCmafChunk;
+  private Integer framesPerCmafChunk;
 
 
   /**
@@ -149,7 +149,7 @@ public class CmafMuxing extends Muxing {
    * Number of media frames per CMAF chunk. Defaults to: Length of a segment in frames. Minimum: 1. Maximum: Length of a segment in frames.
    * @return framesPerCmafChunk
    */
-  public Object getFramesPerCmafChunk() {
+  public Integer getFramesPerCmafChunk() {
     return framesPerCmafChunk;
   }
 
@@ -159,7 +159,7 @@ public class CmafMuxing extends Muxing {
    * @param framesPerCmafChunk
    *        Number of media frames per CMAF chunk. Defaults to: Length of a segment in frames. Minimum: 1. Maximum: Length of a segment in frames.
    */
-  public void setFramesPerCmafChunk(Object framesPerCmafChunk) {
+  public void setFramesPerCmafChunk(Integer framesPerCmafChunk) {
     this.framesPerCmafChunk = framesPerCmafChunk;
   }
 

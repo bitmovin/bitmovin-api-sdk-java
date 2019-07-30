@@ -58,7 +58,7 @@ public enum Vp9AqMode {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    return null;
   }
 }
 

@@ -53,7 +53,7 @@ public enum H264InterlaceMode {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    return null;
   }
 }
 

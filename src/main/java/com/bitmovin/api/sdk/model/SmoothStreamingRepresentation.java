@@ -31,6 +31,9 @@ public class SmoothStreamingRepresentation extends BitmovinResource {
   @JsonProperty("trackName")
   private String trackName;
 
+  @JsonProperty("priority")
+  private Integer priority;
+
 
   /**
    * Id of the encoding (required)
@@ -127,6 +130,25 @@ public class SmoothStreamingRepresentation extends BitmovinResource {
   }
 
 
+  /**
+   * Specify the priority of this representation. Representations with higher priority will be listed first in the manifest.
+   * @return priority
+   */
+  public Integer getPriority() {
+    return priority;
+  }
+
+  /**
+   * Specify the priority of this representation. Representations with higher priority will be listed first in the manifest.
+   *
+   * @param priority
+   *        Specify the priority of this representation. Representations with higher priority will be listed first in the manifest.
+   */
+  public void setPriority(Integer priority) {
+    this.priority = priority;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -141,12 +163,13 @@ public class SmoothStreamingRepresentation extends BitmovinResource {
         Objects.equals(this.mediaFile, smoothStreamingRepresentation.mediaFile) &&
         Objects.equals(this.language, smoothStreamingRepresentation.language) &&
         Objects.equals(this.trackName, smoothStreamingRepresentation.trackName) &&
+        Objects.equals(this.priority, smoothStreamingRepresentation.priority) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(encodingId, muxingId, mediaFile, language, trackName, super.hashCode());
+    return Objects.hash(encodingId, muxingId, mediaFile, language, trackName, priority, super.hashCode());
   }
 
   @Override
@@ -159,6 +182,7 @@ public class SmoothStreamingRepresentation extends BitmovinResource {
     sb.append("    mediaFile: ").append(toIndentedString(mediaFile)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    trackName: ").append(toIndentedString(trackName)).append("\n");
+    sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("}");
     return sb.toString();
   }

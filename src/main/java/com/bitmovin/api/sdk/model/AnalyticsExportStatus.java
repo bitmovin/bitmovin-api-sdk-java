@@ -50,7 +50,7 @@ public enum AnalyticsExportStatus {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    return null;
   }
 }
 

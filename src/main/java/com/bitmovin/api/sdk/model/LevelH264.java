@@ -123,7 +123,7 @@ public enum LevelH264 {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    return null;
   }
 }
 

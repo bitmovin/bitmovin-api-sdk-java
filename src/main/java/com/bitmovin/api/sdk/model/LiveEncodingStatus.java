@@ -56,7 +56,7 @@ public enum LiveEncodingStatus {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    return null;
   }
 }
 

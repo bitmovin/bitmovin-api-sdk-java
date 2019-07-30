@@ -308,7 +308,7 @@ public enum AnalyticsAttribute {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    return null;
   }
 }
 

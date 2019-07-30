@@ -53,7 +53,7 @@ public enum H264MotionEstimationMethod {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    return null;
   }
 }
 

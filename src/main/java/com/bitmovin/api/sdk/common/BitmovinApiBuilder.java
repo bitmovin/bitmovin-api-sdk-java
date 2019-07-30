@@ -4,6 +4,8 @@ import feign.Logger;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
+import java.util.Map;
 
 public class BitmovinApiBuilder<T> {
 
@@ -13,9 +15,15 @@ public class BitmovinApiBuilder<T> {
     private String baseUrl;
     private Logger logger;
     private Logger.Level logLevel;
+    private Map<String, Collection<String>> headers;
 
     public BitmovinApiBuilder(Class<T> apiClientClass) {
         this.apiClientClass = apiClientClass;
+    }
+
+    public BitmovinApiBuilder<T> withHeaders(Map<String, Collection<String>> headers) {
+        this.headers = headers;
+        return this;
     }
 
     public BitmovinApiBuilder<T> withApiKey(String apiKey) {
@@ -47,7 +55,8 @@ public class BitmovinApiBuilder<T> {
                     this.tenantOrgId,
                     this.baseUrl,
                     this.logger,
-                    this.logLevel
+                    this.logLevel,
+                    this.headers
                 );
 
             Constructor ctor = apiClientClass.getConstructor(BitmovinApiClientFactory.class);

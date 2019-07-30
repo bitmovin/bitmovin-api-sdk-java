@@ -23,10 +23,10 @@ public class StreamPerTitleFixedResolutionAndBitrateSettings {
   private BitrateSelectionMode bitrateSelectionMode;
 
   @JsonProperty("lowComplexityBoundaryForMaxBitrate")
-  private Double lowComplexityBoundaryForMaxBitrate;
+  private Integer lowComplexityBoundaryForMaxBitrate;
 
   @JsonProperty("highComplexityBoundaryForMaxBitrate")
-  private Double highComplexityBoundaryForMaxBitrate;
+  private Integer highComplexityBoundaryForMaxBitrate;
 
 
   /**
@@ -90,7 +90,7 @@ public class StreamPerTitleFixedResolutionAndBitrateSettings {
    * Low complexity boundary for max bitrate
    * @return lowComplexityBoundaryForMaxBitrate
    */
-  public Double getLowComplexityBoundaryForMaxBitrate() {
+  public Integer getLowComplexityBoundaryForMaxBitrate() {
     return lowComplexityBoundaryForMaxBitrate;
   }
 
@@ -100,7 +100,7 @@ public class StreamPerTitleFixedResolutionAndBitrateSettings {
    * @param lowComplexityBoundaryForMaxBitrate
    *        Low complexity boundary for max bitrate
    */
-  public void setLowComplexityBoundaryForMaxBitrate(Double lowComplexityBoundaryForMaxBitrate) {
+  public void setLowComplexityBoundaryForMaxBitrate(Integer lowComplexityBoundaryForMaxBitrate) {
     this.lowComplexityBoundaryForMaxBitrate = lowComplexityBoundaryForMaxBitrate;
   }
 
@@ -109,7 +109,7 @@ public class StreamPerTitleFixedResolutionAndBitrateSettings {
    * High complexity boundary for max bitrate
    * @return highComplexityBoundaryForMaxBitrate
    */
-  public Double getHighComplexityBoundaryForMaxBitrate() {
+  public Integer getHighComplexityBoundaryForMaxBitrate() {
     return highComplexityBoundaryForMaxBitrate;
   }
 
@@ -119,7 +119,7 @@ public class StreamPerTitleFixedResolutionAndBitrateSettings {
    * @param highComplexityBoundaryForMaxBitrate
    *        High complexity boundary for max bitrate
    */
-  public void setHighComplexityBoundaryForMaxBitrate(Double highComplexityBoundaryForMaxBitrate) {
+  public void setHighComplexityBoundaryForMaxBitrate(Integer highComplexityBoundaryForMaxBitrate) {
     this.highComplexityBoundaryForMaxBitrate = highComplexityBoundaryForMaxBitrate;
   }
 

@@ -48,7 +48,7 @@ public enum Cea608ChannelType {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    return null;
   }
 }
 
