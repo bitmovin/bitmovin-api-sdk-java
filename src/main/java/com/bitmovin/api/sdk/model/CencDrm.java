@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * CencDrm
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = CencDrm.class)
 public class CencDrm extends Drm {
   @JsonProperty("key")
   private String key;

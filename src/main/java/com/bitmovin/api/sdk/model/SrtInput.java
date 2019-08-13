@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * SrtInput
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = SrtInput.class)
 public class SrtInput extends Input {
   @JsonProperty("mode")
   private SrtMode mode;

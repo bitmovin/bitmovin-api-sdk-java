@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * AzureOutput
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = AzureOutput.class)
 public class AzureOutput extends Output {
   @JsonProperty("accountName")
   private String accountName;

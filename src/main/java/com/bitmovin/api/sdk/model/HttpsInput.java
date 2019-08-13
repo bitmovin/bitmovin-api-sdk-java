@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * HttpsInput
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = HttpsInput.class)
 public class HttpsInput extends Input {
   @JsonProperty("host")
   private String host;

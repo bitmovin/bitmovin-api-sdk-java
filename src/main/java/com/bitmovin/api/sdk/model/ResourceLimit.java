@@ -8,15 +8,18 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * AnalyticsBaseFilter
+ * ResourceLimit
  */
 
-public class AnalyticsBaseFilter {
+public class ResourceLimit {
   @JsonProperty("name")
   private String name;
 
-  @JsonProperty("operator")
-  private String operator;
+  @JsonProperty("value")
+  private String value;
+
+  @JsonProperty("effectiveValue")
+  private String effectiveValue;
 
 
   /**
@@ -38,20 +41,28 @@ public class AnalyticsBaseFilter {
 
 
   /**
-   * Get operator
-   * @return operator
+   * Get value
+   * @return value
    */
-  public String getOperator() {
-    return operator;
+  public String getValue() {
+    return value;
   }
 
   /**
-   * Set operator
+   * Set value
    *
-   * @param operator
+   * @param value
    */
-  public void setOperator(String operator) {
-    this.operator = operator;
+  public void setValue(String value) {
+    this.value = value;
+  }
+
+  /**
+   * Specifies the remaining limit value for limits divided to sub-organizations. This property is returned only for parent organizations and only for mentioned limits.
+   * @return effectiveValue
+   */
+  public String getEffectiveValue() {
+    return effectiveValue;
   }
 
 
@@ -63,23 +74,25 @@ public class AnalyticsBaseFilter {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AnalyticsBaseFilter analyticsBaseFilter = (AnalyticsBaseFilter) o;
-    return Objects.equals(this.name, analyticsBaseFilter.name) &&
-        Objects.equals(this.operator, analyticsBaseFilter.operator);
+    ResourceLimit resourceLimit = (ResourceLimit) o;
+    return Objects.equals(this.name, resourceLimit.name) &&
+        Objects.equals(this.value, resourceLimit.value) &&
+        Objects.equals(this.effectiveValue, resourceLimit.effectiveValue);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, operator);
+    return Objects.hash(name, value, effectiveValue);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AnalyticsBaseFilter {\n");
+    sb.append("class ResourceLimit {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    effectiveValue: ").append(toIndentedString(effectiveValue)).append("\n");
     sb.append("}");
     return sb.toString();
   }

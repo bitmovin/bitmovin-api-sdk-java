@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * OpusAudioConfiguration
  */
-
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = OpusAudioConfiguration.class)
 public class OpusAudioConfiguration extends AudioConfiguration {
   @JsonProperty("channelLayout")
   private OpusChannelLayout channelLayout;

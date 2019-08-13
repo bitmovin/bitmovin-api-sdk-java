@@ -6,6 +6,7 @@ import com.bitmovin.api.sdk.model.AnalyticsLicenseCustomDataFieldLabels;
 import com.bitmovin.api.sdk.model.AnalyticsLicenseDomain;
 import com.bitmovin.api.sdk.model.BitmovinResponse;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -24,7 +25,7 @@ public class AnalyticsLicense extends BitmovinResponse {
   private String licenseKey;
 
   @JsonProperty("createdAt")
-  private String createdAt;
+  private Date createdAt;
 
   @JsonProperty("maxImpressions")
   private Long maxImpressions;
@@ -73,10 +74,10 @@ public class AnalyticsLicense extends BitmovinResponse {
   }
 
   /**
-   * Creation date of the Analytics License
+   * Creation date of the Analytics License in UTC format
    * @return createdAt
    */
-  public String getCreatedAt() {
+  public Date getCreatedAt() {
     return createdAt;
   }
 

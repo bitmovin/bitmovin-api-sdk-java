@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * EnhancedWatermarkFilter
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = EnhancedWatermarkFilter.class)
 public class EnhancedWatermarkFilter extends Filter {
   @JsonProperty("image")
   private String image;

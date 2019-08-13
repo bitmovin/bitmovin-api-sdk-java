@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * ConcatenationInputStream
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = ConcatenationInputStream.class)
 public class ConcatenationInputStream extends InputStream {
   @JsonProperty("concatenation")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)

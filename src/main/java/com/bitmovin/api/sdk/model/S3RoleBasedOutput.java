@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * S3RoleBasedOutput
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = S3RoleBasedOutput.class)
 public class S3RoleBasedOutput extends Output {
   @JsonProperty("bucketName")
   private String bucketName;

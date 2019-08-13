@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * Ac3AudioConfiguration
  */
-
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = Ac3AudioConfiguration.class)
 public class Ac3AudioConfiguration extends AudioConfiguration {
   @JsonProperty("channelLayout")
   private Ac3ChannelLayout channelLayout;

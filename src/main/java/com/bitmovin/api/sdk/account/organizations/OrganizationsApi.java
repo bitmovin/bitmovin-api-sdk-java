@@ -16,9 +16,11 @@ import com.bitmovin.api.sdk.common.BitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
+import com.bitmovin.api.sdk.account.organizations.subOrganizations.SubOrganizationsApi;
 import com.bitmovin.api.sdk.account.organizations.groups.GroupsApi;
 
 public class OrganizationsApi {
+    public final SubOrganizationsApi subOrganizations;
     public final GroupsApi groups;
 
     private final OrganizationsApiClient apiClient;
@@ -31,6 +33,7 @@ public class OrganizationsApi {
 
         this.apiClient = clientFactory.createApiClient(OrganizationsApiClient.class);
 
+        this.subOrganizations = new SubOrganizationsApi(clientFactory);
         this.groups = new GroupsApi(clientFactory);
     }
 
@@ -53,20 +56,9 @@ public class OrganizationsApi {
     }
     
     /**
-     * Delete Organization
-     * 
-     * @param organizationId Id of the organization (required)
-     * @return BitmovinResponse
-     * @throws BitmovinException if fails to make API call
-     */
-    public BitmovinResponse delete(String organizationId) throws BitmovinException {
-        return this.apiClient.delete(organizationId).getData().getResult();
-    }
-    
-    /**
      * Organization Details
      * 
-     * @param organizationId Id of the organization (required)
+     * @param organizationId ID of the organization (required)
      * @return Organization
      * @throws BitmovinException if fails to make API call
      */
@@ -88,9 +80,6 @@ public class OrganizationsApi {
     
         @RequestLine("POST /account/organizations")
         ResponseEnvelope<Organization> create(Organization organization) throws BitmovinException;
-    
-        @RequestLine("DELETE /account/organizations/{organization_id}")
-        ResponseEnvelope<BitmovinResponse> delete(@Param(value = "organization_id") String organizationId) throws BitmovinException;
     
         @RequestLine("GET /account/organizations/{organization_id}")
         ResponseEnvelope<Organization> get(@Param(value = "organization_id") String organizationId) throws BitmovinException;

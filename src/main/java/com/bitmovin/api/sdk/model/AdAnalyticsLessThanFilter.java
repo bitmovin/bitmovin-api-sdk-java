@@ -2,17 +2,18 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.AnalyticsBaseFilter;
+import com.bitmovin.api.sdk.model.AdAnalyticsAbstractFilter;
+import com.bitmovin.api.sdk.model.AdAnalyticsAttribute;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * AnalyticsFilter
+ * AdAnalyticsLessThanFilter
  */
-
-public class AnalyticsFilter extends AnalyticsBaseFilter {
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "operator", visible = false, defaultImpl = AdAnalyticsLessThanFilter.class)
+public class AdAnalyticsLessThanFilter extends AdAnalyticsAbstractFilter {
   @JsonProperty("value")
   private Object value;
 
@@ -43,8 +44,8 @@ public class AnalyticsFilter extends AnalyticsBaseFilter {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AnalyticsFilter analyticsFilter = (AnalyticsFilter) o;
-    return Objects.equals(this.value, analyticsFilter.value) &&
+    AdAnalyticsLessThanFilter adAnalyticsLessThanFilter = (AdAnalyticsLessThanFilter) o;
+    return Objects.equals(this.value, adAnalyticsLessThanFilter.value) &&
         super.equals(o);
   }
 
@@ -56,7 +57,7 @@ public class AnalyticsFilter extends AnalyticsBaseFilter {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AnalyticsFilter {\n");
+    sb.append("class AdAnalyticsLessThanFilter {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");

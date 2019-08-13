@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * ProgressiveWebmMuxing
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = ProgressiveWebmMuxing.class)
 public class ProgressiveWebmMuxing extends Muxing {
   @JsonProperty("filename")
   private String filename;

@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * H264PictureTimingTrimmingInputStream
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = H264PictureTimingTrimmingInputStream.class)
 public class H264PictureTimingTrimmingInputStream extends InputStream {
   @JsonProperty("inputStreamId")
   private String inputStreamId;

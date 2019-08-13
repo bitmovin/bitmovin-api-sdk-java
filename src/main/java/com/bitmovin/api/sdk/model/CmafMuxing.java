@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * CmafMuxing
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = CmafMuxing.class)
 public class CmafMuxing extends Muxing {
   @JsonProperty("segmentLength")
   private Double segmentLength;

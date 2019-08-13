@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * AbstractConjunction
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = AbstractConjunction.class)
 public class AbstractConjunction extends AbstractCondition {
   @JsonProperty("conditions")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)

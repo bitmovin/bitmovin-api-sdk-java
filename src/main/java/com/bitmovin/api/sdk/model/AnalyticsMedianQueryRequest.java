@@ -2,11 +2,12 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.AnalyticsAbstractFilter;
 import com.bitmovin.api.sdk.model.AnalyticsAttribute;
-import com.bitmovin.api.sdk.model.AnalyticsBaseFilter;
 import com.bitmovin.api.sdk.model.AnalyticsInterval;
 import com.bitmovin.api.sdk.model.AnalyticsOrderByEntry;
 import com.bitmovin.api.sdk.model.AnalyticsQueryRequest;
+import java.util.Date;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

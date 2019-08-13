@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * Cea708CaptionInputStream
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = Cea708CaptionInputStream.class)
 public class Cea708CaptionInputStream extends InputStream {
   @JsonProperty("inputId")
   private String inputId;

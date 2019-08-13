@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * MjpegVideoConfiguration
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = MjpegVideoConfiguration.class)
 public class MjpegVideoConfiguration extends CodecConfiguration {
   @JsonProperty("width")
   private Integer width;

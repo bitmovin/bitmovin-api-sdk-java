@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * RedundantRtmpInput
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = RedundantRtmpInput.class)
 public class RedundantRtmpInput extends Input {
   @JsonProperty("delayThreshold")
   private Integer delayThreshold;

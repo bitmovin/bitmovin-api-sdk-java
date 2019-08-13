@@ -11,28 +11,40 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets ScheduledContentInsertionStatus
+ * Gets or Sets AnalyticsQueryOperator
  */
-public enum ScheduledContentInsertionStatus {
+public enum AnalyticsQueryOperator {
   
   
-  CREATED("CREATED"),
+  IN("IN"),
   
   
-  SCHEDULED("SCHEDULED"),
+  EQ("EQ"),
   
   
-  TO_BE_DESCHEDULED("TO_BE_DESCHEDULED"),
+  NE("NE"),
   
   
-  DESCHEDULED("DESCHEDULED"),
+  LT("LT"),
   
   
-  ERROR("ERROR");
+  LTE("LTE"),
+  
+  
+  GT("GT"),
+  
+  
+  GTE("GTE"),
+  
+  
+  CONTAINS("CONTAINS"),
+  
+  
+  NOTCONTAINS("NOTCONTAINS");
 
   private String value;
 
-  ScheduledContentInsertionStatus(String value) {
+  AnalyticsQueryOperator(String value) {
     this.value = value;
   }
 
@@ -47,8 +59,8 @@ public enum ScheduledContentInsertionStatus {
   }
 
   @JsonCreator
-  public static ScheduledContentInsertionStatus fromValue(String text) {
-    for (ScheduledContentInsertionStatus b : ScheduledContentInsertionStatus.values()) {
+  public static AnalyticsQueryOperator fromValue(String text) {
+    for (AnalyticsQueryOperator b : AnalyticsQueryOperator.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

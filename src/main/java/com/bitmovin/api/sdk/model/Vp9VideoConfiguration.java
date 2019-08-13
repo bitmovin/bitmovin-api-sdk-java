@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * Vp9VideoConfiguration
  */
-
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = Vp9VideoConfiguration.class)
 public class Vp9VideoConfiguration extends VideoConfiguration {
   @JsonProperty("presetConfiguration")
   private PresetConfiguration presetConfiguration;

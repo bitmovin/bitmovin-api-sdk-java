@@ -1,4 +1,4 @@
-package com.bitmovin.api.sdk.encoding.encodings.live.stopInsertedContent;
+package com.bitmovin.api.sdk.encoding.encodings.live.insertableContent.stop;
 
 import java.util.Date;
 import java.util.List;
@@ -17,29 +17,29 @@ import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 
-public class StopInsertedContentApi {
+public class StopApi {
 
-    private final StopInsertedContentApiClient apiClient;
+    private final StopApiClient apiClient;
 
-    public StopInsertedContentApi(BitmovinApiClientFactory clientFactory) {
+    public StopApi(BitmovinApiClientFactory clientFactory) {
         if (clientFactory == null)
         {
             throw new IllegalArgumentException("Parameter 'clientFactory' may not be null.");
         }
 
-        this.apiClient = clientFactory.createApiClient(StopInsertedContentApiClient.class);
+        this.apiClient = clientFactory.createApiClient(StopApiClient.class);
 
     }
 
     /**
-     * Fluent builder for creating an instance of StopInsertedContentApi
+     * Fluent builder for creating an instance of StopApi
      */
-    public static BitmovinApiBuilder<StopInsertedContentApi> builder() {
-        return new BitmovinApiBuilder<>(StopInsertedContentApi.class);
+    public static BitmovinApiBuilder<StopApi> builder() {
+        return new BitmovinApiBuilder<>(StopApi.class);
     }
     
     /**
-     * Stop Currently Running Inserted Content
+     * Stops Currently Running Inserted Content
      * 
      * @param encodingId Id of the encoding. (required)
      * @throws BitmovinException if fails to make API call
@@ -48,11 +48,11 @@ public class StopInsertedContentApi {
         this.apiClient.create(encodingId);
     }
     
-    interface StopInsertedContentApiClient {
+    interface StopApiClient {
     
         @Headers("Content-Type: text/plain")
         @Body(" ")
-        @RequestLine("POST /encoding/encodings/{encoding_id}/live/stop-inserted-content")
+        @RequestLine("POST /encoding/encodings/{encoding_id}/live/insertable-content/stop")
         void create(@Param(value = "encoding_id") String encodingId) throws BitmovinException;
     }
 }

@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * AkamaiMslOutput
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = AkamaiMslOutput.class)
 public class AkamaiMslOutput extends Output {
   @JsonProperty("streamId")
   private Integer streamId;

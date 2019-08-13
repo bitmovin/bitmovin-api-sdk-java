@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * Vp8VideoConfiguration
  */
-
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = Vp8VideoConfiguration.class)
 public class Vp8VideoConfiguration extends VideoConfiguration {
   @JsonProperty("crf")
   private Integer crf;

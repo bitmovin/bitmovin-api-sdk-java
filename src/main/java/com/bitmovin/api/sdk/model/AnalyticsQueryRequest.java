@@ -2,12 +2,13 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.AnalyticsAbstractFilter;
 import com.bitmovin.api.sdk.model.AnalyticsAttribute;
-import com.bitmovin.api.sdk.model.AnalyticsBaseFilter;
 import com.bitmovin.api.sdk.model.AnalyticsInterval;
 import com.bitmovin.api.sdk.model.AnalyticsOrderByEntry;
 import com.bitmovin.api.sdk.model.AnalyticsQueryTimeframe;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -24,7 +25,7 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
 
   @JsonProperty("filters")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
-  private List<AnalyticsBaseFilter> filters = new ArrayList<AnalyticsBaseFilter>();
+  private List<AnalyticsAbstractFilter> filters = new ArrayList<AnalyticsAbstractFilter>();
 
   @JsonProperty("orderBy")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -66,7 +67,7 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
   }
 
 
-  public AnalyticsQueryRequest addFiltersItem(AnalyticsBaseFilter filtersItem) {
+  public AnalyticsQueryRequest addFiltersItem(AnalyticsAbstractFilter filtersItem) {
     this.filters.add(filtersItem);
     return this;
   }
@@ -75,7 +76,7 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
    * Get filters
    * @return filters
    */
-  public List<AnalyticsBaseFilter> getFilters() {
+  public List<AnalyticsAbstractFilter> getFilters() {
     return filters;
   }
 
@@ -84,7 +85,7 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
    *
    * @param filters
    */
-  public void setFilters(List<AnalyticsBaseFilter> filters) {
+  public void setFilters(List<AnalyticsAbstractFilter> filters) {
     this.filters = filters;
   }
 

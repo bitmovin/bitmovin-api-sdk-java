@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * Fmp4Muxing
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = Fmp4Muxing.class)
 public class Fmp4Muxing extends Muxing {
   @JsonProperty("segmentLength")
   private Double segmentLength;

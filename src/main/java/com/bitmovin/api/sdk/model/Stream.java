@@ -6,6 +6,7 @@ import com.bitmovin.api.sdk.model.AbstractCondition;
 import com.bitmovin.api.sdk.model.AppliedStreamSettings;
 import com.bitmovin.api.sdk.model.BitmovinResource;
 import com.bitmovin.api.sdk.model.DecodingErrorMode;
+import com.bitmovin.api.sdk.model.EncodingMode;
 import com.bitmovin.api.sdk.model.EncodingOutput;
 import com.bitmovin.api.sdk.model.Ignoring;
 import com.bitmovin.api.sdk.model.StreamInput;
@@ -52,6 +53,9 @@ public class Stream extends BitmovinResource {
 
   @JsonProperty("mode")
   private StreamMode mode;
+
+  @JsonProperty("selectedEncodingMode")
+  private EncodingMode selectedEncodingMode;
 
   @JsonProperty("perTitleSettings")
   private StreamPerTitleSettings perTitleSettings;
@@ -230,6 +234,14 @@ public class Stream extends BitmovinResource {
     this.mode = mode;
   }
 
+  /**
+   * The encoding mode of the stream which was applied by the assigned codec configuration
+   * @return selectedEncodingMode
+   */
+  public EncodingMode getSelectedEncodingMode() {
+    return selectedEncodingMode;
+  }
+
 
   /**
    * Settings to configure Per-Title on stream level
@@ -312,6 +324,7 @@ public class Stream extends BitmovinResource {
         Objects.equals(this.conditions, stream.conditions) &&
         Objects.equals(this.ignoredBy, stream.ignoredBy) &&
         Objects.equals(this.mode, stream.mode) &&
+        Objects.equals(this.selectedEncodingMode, stream.selectedEncodingMode) &&
         Objects.equals(this.perTitleSettings, stream.perTitleSettings) &&
         Objects.equals(this.metadata, stream.metadata) &&
         Objects.equals(this.decodingErrorMode, stream.decodingErrorMode) &&
@@ -321,7 +334,7 @@ public class Stream extends BitmovinResource {
 
   @Override
   public int hashCode() {
-    return Objects.hash(inputStreams, outputs, createQualityMetaData, codecConfigId, segmentsEncoded, conditions, ignoredBy, mode, perTitleSettings, metadata, decodingErrorMode, appliedSettings, super.hashCode());
+    return Objects.hash(inputStreams, outputs, createQualityMetaData, codecConfigId, segmentsEncoded, conditions, ignoredBy, mode, selectedEncodingMode, perTitleSettings, metadata, decodingErrorMode, appliedSettings, super.hashCode());
   }
 
   @Override
@@ -337,6 +350,7 @@ public class Stream extends BitmovinResource {
     sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
     sb.append("    ignoredBy: ").append(toIndentedString(ignoredBy)).append("\n");
     sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+    sb.append("    selectedEncodingMode: ").append(toIndentedString(selectedEncodingMode)).append("\n");
     sb.append("    perTitleSettings: ").append(toIndentedString(perTitleSettings)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    decodingErrorMode: ").append(toIndentedString(decodingErrorMode)).append("\n");

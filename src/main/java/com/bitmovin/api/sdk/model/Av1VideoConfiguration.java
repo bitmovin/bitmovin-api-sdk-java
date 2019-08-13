@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * Av1VideoConfiguration
  */
-
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = Av1VideoConfiguration.class)
 public class Av1VideoConfiguration extends VideoConfiguration {
   @JsonProperty("keyPlacementMode")
   private Av1KeyPlacementMode keyPlacementMode;

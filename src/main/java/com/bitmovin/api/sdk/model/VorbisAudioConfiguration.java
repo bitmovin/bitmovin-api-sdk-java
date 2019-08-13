@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * VorbisAudioConfiguration
  */
-
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = VorbisAudioConfiguration.class)
 public class VorbisAudioConfiguration extends AudioConfiguration {
   @JsonProperty("channelLayout")
   private VorbisChannelLayout channelLayout;

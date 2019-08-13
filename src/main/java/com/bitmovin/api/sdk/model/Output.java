@@ -16,7 +16,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * Output
  */
-
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false)
 @JsonSubTypes({
   @JsonSubTypes.Type(value = AkamaiNetStorageOutput.class, name = "AKAMAI_NETSTORAGE"),

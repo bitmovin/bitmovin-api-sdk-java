@@ -3,7 +3,7 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.BitmovinResource;
-import com.bitmovin.api.sdk.model.ScheduledContentInsertionStatus;
+import com.bitmovin.api.sdk.model.ScheduledInsertableContentStatus;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -13,10 +13,10 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * ScheduledContentInsertion
+ * ScheduledInsertableContent
  */
 
-public class ScheduledContentInsertion extends BitmovinResource {
+public class ScheduledInsertableContent extends BitmovinResource {
   @JsonProperty("contentId")
   private String contentId;
 
@@ -27,11 +27,11 @@ public class ScheduledContentInsertion extends BitmovinResource {
   private Double durationInSeconds;
 
   @JsonProperty("status")
-  private ScheduledContentInsertionStatus status;
+  private ScheduledInsertableContentStatus status;
 
 
   /**
-   * Id of the insertable content to play instead of the live stream (required)
+   * Id of the insertable content to play instead of the live stream
    * @return contentId
    */
   public String getContentId() {
@@ -39,10 +39,10 @@ public class ScheduledContentInsertion extends BitmovinResource {
   }
 
   /**
-   * Id of the insertable content to play instead of the live stream (required)
+   * Id of the insertable content to play instead of the live stream
    *
    * @param contentId
-   *        Id of the insertable content to play instead of the live stream (required)
+   *        Id of the insertable content to play instead of the live stream
    */
   public void setContentId(String contentId) {
     this.contentId = contentId;
@@ -87,10 +87,10 @@ public class ScheduledContentInsertion extends BitmovinResource {
   }
 
   /**
-   * Status of the scheduled content insertion.
+   * Status of the scheduled insertable content.
    * @return status
    */
-  public ScheduledContentInsertionStatus getStatus() {
+  public ScheduledInsertableContentStatus getStatus() {
     return status;
   }
 
@@ -103,11 +103,11 @@ public class ScheduledContentInsertion extends BitmovinResource {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ScheduledContentInsertion scheduledContentInsertion = (ScheduledContentInsertion) o;
-    return Objects.equals(this.contentId, scheduledContentInsertion.contentId) &&
-        Objects.equals(this.runAt, scheduledContentInsertion.runAt) &&
-        Objects.equals(this.durationInSeconds, scheduledContentInsertion.durationInSeconds) &&
-        Objects.equals(this.status, scheduledContentInsertion.status) &&
+    ScheduledInsertableContent scheduledInsertableContent = (ScheduledInsertableContent) o;
+    return Objects.equals(this.contentId, scheduledInsertableContent.contentId) &&
+        Objects.equals(this.runAt, scheduledInsertableContent.runAt) &&
+        Objects.equals(this.durationInSeconds, scheduledInsertableContent.durationInSeconds) &&
+        Objects.equals(this.status, scheduledInsertableContent.status) &&
         super.equals(o);
   }
 
@@ -119,7 +119,7 @@ public class ScheduledContentInsertion extends BitmovinResource {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ScheduledContentInsertion {\n");
+    sb.append("class ScheduledInsertableContent {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    contentId: ").append(toIndentedString(contentId)).append("\n");
     sb.append("    runAt: ").append(toIndentedString(runAt)).append("\n");

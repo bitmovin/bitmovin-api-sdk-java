@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * Mp2AudioConfiguration
  */
-
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = Mp2AudioConfiguration.class)
 public class Mp2AudioConfiguration extends AudioConfiguration {
   @JsonProperty("channelLayout")
   private ChannelLayout channelLayout;

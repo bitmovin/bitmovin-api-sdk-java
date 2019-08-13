@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * EbuR128SinglePassFilter
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = EbuR128SinglePassFilter.class)
 public class EbuR128SinglePassFilter extends Filter {
   @JsonProperty("integratedLoudness")
   private Double integratedLoudness;

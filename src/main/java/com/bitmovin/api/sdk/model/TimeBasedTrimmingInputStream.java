@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * TimeBasedTrimmingInputStream
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = TimeBasedTrimmingInputStream.class)
 public class TimeBasedTrimmingInputStream extends InputStream {
   @JsonProperty("inputStreamId")
   private String inputStreamId;

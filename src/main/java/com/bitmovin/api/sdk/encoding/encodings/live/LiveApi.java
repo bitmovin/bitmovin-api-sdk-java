@@ -17,13 +17,9 @@ import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.encodings.live.insertableContent.InsertableContentApi;
-import com.bitmovin.api.sdk.encoding.encodings.live.scheduledContentInsertion.ScheduledContentInsertionApi;
-import com.bitmovin.api.sdk.encoding.encodings.live.stopInsertedContent.StopInsertedContentApi;
 
 public class LiveApi {
     public final InsertableContentApi insertableContent;
-    public final ScheduledContentInsertionApi scheduledContentInsertion;
-    public final StopInsertedContentApi stopInsertedContent;
 
     private final LiveApiClient apiClient;
 
@@ -36,8 +32,6 @@ public class LiveApi {
         this.apiClient = clientFactory.createApiClient(LiveApiClient.class);
 
         this.insertableContent = new InsertableContentApi(clientFactory);
-        this.scheduledContentInsertion = new ScheduledContentInsertionApi(clientFactory);
-        this.stopInsertedContent = new StopInsertedContentApi(clientFactory);
     }
 
     /**

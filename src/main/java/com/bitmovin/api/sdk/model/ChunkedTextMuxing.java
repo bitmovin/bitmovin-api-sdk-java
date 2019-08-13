@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * ChunkedTextMuxing
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = ChunkedTextMuxing.class)
 public class ChunkedTextMuxing extends Muxing {
   @JsonProperty("segmentLength")
   private Double segmentLength;

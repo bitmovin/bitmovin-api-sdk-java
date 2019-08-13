@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class BitmovinDateExpander implements Param.Expander
 {
-    private static final SimpleDateFormat FORMAT = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+    private static final SimpleDateFormat FORMAT = new SimpleDateFormat("yyyy-MM-dd");
 
     @Override
     public String expand(Object value)

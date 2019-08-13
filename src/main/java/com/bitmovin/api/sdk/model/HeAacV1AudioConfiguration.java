@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * HeAacV1AudioConfiguration
  */
-
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = HeAacV1AudioConfiguration.class)
 public class HeAacV1AudioConfiguration extends AudioConfiguration {
   @JsonProperty("channelLayout")
   private AacChannelLayout channelLayout;

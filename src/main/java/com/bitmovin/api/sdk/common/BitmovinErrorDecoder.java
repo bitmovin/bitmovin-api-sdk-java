@@ -97,9 +97,19 @@ public class BitmovinErrorDecoder implements ErrorDecoder {
     }
 
     private void appendErrorDetailMessage(StringBuilder stringBuilder, Message detail) {
-        appendLine(stringBuilder, String.format("  - id: %s", detail.getId()));
-        appendLine(stringBuilder, String.format("    date: %s", detail.getDate()));
-        appendLine(stringBuilder, String.format("    type: %s", detail.getType()));
+        String prefix = detail.getId() == null ? "" : "    ";
+        stringBuilder.append("  - ");
+
+        if (detail.getId() != null) {
+            appendLine(stringBuilder, String.format("id: %s", detail.getId()));
+        }
+
+        if (detail.getDate() != null) {
+            appendLine(stringBuilder, String.format(prefix + "date: %s", mapper.getDateFormat().format(detail.getDate())));
+            prefix = "    ";
+        }
+
+        appendLine(stringBuilder, String.format(prefix + "type: %s", detail.getType()));
         appendLine(stringBuilder, String.format("    text: %s", detail.getText()));
 
         if (detail.getField() != null) {

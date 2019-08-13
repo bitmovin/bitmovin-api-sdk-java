@@ -42,17 +42,17 @@ public class ImpressionsApi {
      * Impression Details
      * 
      * @param impressionId Impression id (required)
-     * @param analyticsLicense Analytics license (required)
+     * @param analyticsLicenseKey Analytics license (required)
      * @return AnalyticsImpressionDetails
      * @throws BitmovinException if fails to make API call
      */
-    public AnalyticsImpressionDetails create(String impressionId, AnalyticsLicense analyticsLicense) throws BitmovinException {
-        return this.apiClient.create(impressionId, analyticsLicense).getData().getResult();
+    public AnalyticsImpressionDetails create(String impressionId, AnalyticsLicenseKey analyticsLicenseKey) throws BitmovinException {
+        return this.apiClient.create(impressionId, analyticsLicenseKey).getData().getResult();
     }
     
     interface ImpressionsApiClient {
     
         @RequestLine("POST /analytics/impressions/{impression_id}")
-        ResponseEnvelope<AnalyticsImpressionDetails> create(@Param(value = "impression_id") String impressionId, AnalyticsLicense analyticsLicense) throws BitmovinException;
+        ResponseEnvelope<AnalyticsImpressionDetails> create(@Param(value = "impression_id") String impressionId, AnalyticsLicenseKey analyticsLicenseKey) throws BitmovinException;
     }
 }

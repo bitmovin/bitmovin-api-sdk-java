@@ -33,7 +33,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * H264VideoConfiguration
  */
-
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = H264VideoConfiguration.class)
 public class H264VideoConfiguration extends VideoConfiguration {
   @JsonProperty("presetConfiguration")
   private PresetConfiguration presetConfiguration;
