@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * CodecConfiguration
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = CodecConfiguration.class)
 @JsonSubTypes({
   @JsonSubTypes.Type(value = AacAudioConfiguration.class, name = "AAC"),
   @JsonSubTypes.Type(value = HeAacV1AudioConfiguration.class, name = "HE_AAC_V1"),

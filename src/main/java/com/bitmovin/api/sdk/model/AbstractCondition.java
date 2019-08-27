@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * AbstractCondition
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = AbstractCondition.class)
 @JsonSubTypes({
   @JsonSubTypes.Type(value = Condition.class, name = "CONDITION"),
   @JsonSubTypes.Type(value = AndConjunction.class, name = "AND"),

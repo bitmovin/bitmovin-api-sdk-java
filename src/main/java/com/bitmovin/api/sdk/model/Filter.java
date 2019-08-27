@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * Filter
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = Filter.class)
 @JsonSubTypes({
   @JsonSubTypes.Type(value = CropFilter.class, name = "CROP"),
   @JsonSubTypes.Type(value = WatermarkFilter.class, name = "WATERMARK"),

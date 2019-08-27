@@ -60,8 +60,8 @@ public class ErrorApi {
      * @return Webhook
      * @throws BitmovinException if fails to make API call
      */
-    public Webhook createbyEncodingId(String encodingId, Webhook webhook) throws BitmovinException {
-        return this.apiClient.createbyEncodingId(encodingId, webhook).getData().getResult();
+    public Webhook createByEncodingId(String encodingId, Webhook webhook) throws BitmovinException {
+        return this.apiClient.createByEncodingId(encodingId, webhook).getData().getResult();
     }
     
     /**
@@ -158,7 +158,7 @@ public class ErrorApi {
         ResponseEnvelope<Webhook> create(Webhook webhook) throws BitmovinException;
     
         @RequestLine("POST /notifications/webhooks/encoding/encodings/{encoding_id}/error")
-        ResponseEnvelope<Webhook> createbyEncodingId(@Param(value = "encoding_id") String encodingId, Webhook webhook) throws BitmovinException;
+        ResponseEnvelope<Webhook> createByEncodingId(@Param(value = "encoding_id") String encodingId, Webhook webhook) throws BitmovinException;
     
         @RequestLine("DELETE /notifications/webhooks/encoding/encodings/{encoding_id}/error/{webhook_id}")
         ResponseEnvelope<BitmovinResponse> deleteByEncodingIdAndWebhookId(@Param(value = "encoding_id") String encodingId, @Param(value = "webhook_id") String webhookId) throws BitmovinException;

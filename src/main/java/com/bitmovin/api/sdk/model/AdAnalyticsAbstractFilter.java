@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * AdAnalyticsAbstractFilter
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "operator", visible = false)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "operator", visible = false, defaultImpl = AdAnalyticsAbstractFilter.class)
 @JsonSubTypes({
   @JsonSubTypes.Type(value = AdAnalyticsInFilter.class, name = "IN"),
   @JsonSubTypes.Type(value = AdAnalyticsEqualFilter.class, name = "EQ"),

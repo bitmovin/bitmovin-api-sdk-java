@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * DvbTeletextInputStream
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = DvbTeletextInputStream.class)
+
 public class DvbTeletextInputStream extends InputStream {
   @JsonProperty("inputId")
   private String inputId;

@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * Id3Tag
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = Id3Tag.class)
 @JsonSubTypes({
   @JsonSubTypes.Type(value = RawId3Tag.class, name = "RAW"),
   @JsonSubTypes.Type(value = FrameIdId3Tag.class, name = "FRAME_ID"),
