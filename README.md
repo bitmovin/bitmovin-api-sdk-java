@@ -18,7 +18,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.bitmovin.api.sdk</groupId>
   <artifactId>bitmovin-api-sdk</artifactId>
-  <version>1.22.0</version>
+  <version>1.23.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -34,7 +34,7 @@ mvn clean install
 Add this dependency to your project's build file:
 
 ```groovy
-compile group: 'com.bitmovin.api.sdk', name= 'bitmovin-api-sdk', version: '1.22.0'
+compile group: 'com.bitmovin.api.sdk', name= 'bitmovin-api-sdk', version: '1.23.0'
 ```
 
 ## Initialization
@@ -46,3 +46,9 @@ BitmovinApi bitmovinApi = BitmovinApi.builder()
     .withApiKey("<YOUR_API_KEY>")
     .build();
 ```
+
+# Previous API Client (Legacy)
+
+`bitmovin-api-sdk-java` is the latest Bitmovin API client for Java. It guarantees 100% specification conformity at any given time and access to all features of the API as soon as they are released. 
+
+However, if you need to use the previous version for legacy reasons, you can still find it at [bitmovin-java](https://github.com/bitmovin/bitmovin-java). 

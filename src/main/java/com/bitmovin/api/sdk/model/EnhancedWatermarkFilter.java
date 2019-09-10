@@ -38,6 +38,12 @@ public class EnhancedWatermarkFilter extends Filter {
   @JsonProperty("opacity")
   private Double opacity;
 
+  @JsonProperty("width")
+  private Double width;
+
+  @JsonProperty("height")
+  private Double height;
+
 
   /**
    * URL of the file to be used as watermark image. Supported image formats: PNG, JPEG, BMP, GIF (required)
@@ -171,6 +177,44 @@ public class EnhancedWatermarkFilter extends Filter {
   }
 
 
+  /**
+   * Desired width of the watermark image, the unit of the parameter is specified separately by the parameter &#39;unit&#39;. If both width and height are set the watermark size is fixed. If only one is set the aspect ratio of the image will be used to rescale it
+   * @return width
+   */
+  public Double getWidth() {
+    return width;
+  }
+
+  /**
+   * Desired width of the watermark image, the unit of the parameter is specified separately by the parameter &#39;unit&#39;. If both width and height are set the watermark size is fixed. If only one is set the aspect ratio of the image will be used to rescale it
+   *
+   * @param width
+   *        Desired width of the watermark image, the unit of the parameter is specified separately by the parameter &#39;unit&#39;. If both width and height are set the watermark size is fixed. If only one is set the aspect ratio of the image will be used to rescale it
+   */
+  public void setWidth(Double width) {
+    this.width = width;
+  }
+
+
+  /**
+   * Desired height of the watermark image, the unit of the parameter is specified separately by the parameter &#39;unit&#39;. If both width and height are set the watermark size is fixed. If only one is set the aspect ratio of the image will be used to rescale it
+   * @return height
+   */
+  public Double getHeight() {
+    return height;
+  }
+
+  /**
+   * Desired height of the watermark image, the unit of the parameter is specified separately by the parameter &#39;unit&#39;. If both width and height are set the watermark size is fixed. If only one is set the aspect ratio of the image will be used to rescale it
+   *
+   * @param height
+   *        Desired height of the watermark image, the unit of the parameter is specified separately by the parameter &#39;unit&#39;. If both width and height are set the watermark size is fixed. If only one is set the aspect ratio of the image will be used to rescale it
+   */
+  public void setHeight(Double height) {
+    this.height = height;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -187,12 +231,14 @@ public class EnhancedWatermarkFilter extends Filter {
         Objects.equals(this.bottom, enhancedWatermarkFilter.bottom) &&
         Objects.equals(this.unit, enhancedWatermarkFilter.unit) &&
         Objects.equals(this.opacity, enhancedWatermarkFilter.opacity) &&
+        Objects.equals(this.width, enhancedWatermarkFilter.width) &&
+        Objects.equals(this.height, enhancedWatermarkFilter.height) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(image, left, right, top, bottom, unit, opacity, super.hashCode());
+    return Objects.hash(image, left, right, top, bottom, unit, opacity, width, height, super.hashCode());
   }
 
   @Override
@@ -207,6 +253,8 @@ public class EnhancedWatermarkFilter extends Filter {
     sb.append("    bottom: ").append(toIndentedString(bottom)).append("\n");
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
     sb.append("    opacity: ").append(toIndentedString(opacity)).append("\n");
+    sb.append("    width: ").append(toIndentedString(width)).append("\n");
+    sb.append("    height: ").append(toIndentedString(height)).append("\n");
     sb.append("}");
     return sb.toString();
   }

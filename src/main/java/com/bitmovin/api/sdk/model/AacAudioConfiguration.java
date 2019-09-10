@@ -20,6 +20,9 @@ public class AacAudioConfiguration extends AudioConfiguration {
   @JsonProperty("channelLayout")
   private AacChannelLayout channelLayout;
 
+  @JsonProperty("cutoffFrequency")
+  private Integer cutoffFrequency;
+
 
   /**
    * Channel layout of the audio codec configuration
@@ -40,6 +43,25 @@ public class AacAudioConfiguration extends AudioConfiguration {
   }
 
 
+  /**
+   * The highest frequency that will pass the audio encoder. This value is optional.
+   * @return cutoffFrequency
+   */
+  public Integer getCutoffFrequency() {
+    return cutoffFrequency;
+  }
+
+  /**
+   * The highest frequency that will pass the audio encoder. This value is optional.
+   *
+   * @param cutoffFrequency
+   *        The highest frequency that will pass the audio encoder. This value is optional.
+   */
+  public void setCutoffFrequency(Integer cutoffFrequency) {
+    this.cutoffFrequency = cutoffFrequency;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -50,12 +72,13 @@ public class AacAudioConfiguration extends AudioConfiguration {
     }
     AacAudioConfiguration aacAudioConfiguration = (AacAudioConfiguration) o;
     return Objects.equals(this.channelLayout, aacAudioConfiguration.channelLayout) &&
+        Objects.equals(this.cutoffFrequency, aacAudioConfiguration.cutoffFrequency) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(channelLayout, super.hashCode());
+    return Objects.hash(channelLayout, cutoffFrequency, super.hashCode());
   }
 
   @Override
@@ -64,6 +87,7 @@ public class AacAudioConfiguration extends AudioConfiguration {
     sb.append("class AacAudioConfiguration {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    channelLayout: ").append(toIndentedString(channelLayout)).append("\n");
+    sb.append("    cutoffFrequency: ").append(toIndentedString(cutoffFrequency)).append("\n");
     sb.append("}");
     return sb.toString();
   }

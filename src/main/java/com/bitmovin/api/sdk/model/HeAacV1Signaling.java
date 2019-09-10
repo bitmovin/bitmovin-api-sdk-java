@@ -11,40 +11,33 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets InputStreamType
+ * Gets or Sets HeAacV1Signaling
  */
-public enum InputStreamType {
+public enum HeAacV1Signaling {
   
+  /**
+   * Choose signaling implicitly (explicit hierarchical by default, implicit if global header is disabled).
+   */
+  DEFAULT("DEFAULT"),
   
-  INGEST("INGEST"),
+  /**
+   * Implicit backwards compatible signaling.
+   */
+  IMPLICIT("IMPLICIT"),
   
+  /**
+   * Explicit SBR, implicit PS signaling.
+   */
+  EXPLICIT_SBR("EXPLICIT_SBR"),
   
-  CONCATENATION("CONCATENATION"),
-  
-  
-  TRIMMING_TIME_BASED("TRIMMING_TIME_BASED"),
-  
-  
-  TRIMMING_TIME_CODE_TRACK("TRIMMING_TIME_CODE_TRACK"),
-  
-  
-  TRIMMING_H264_PICTURE_TIMING("TRIMMING_H264_PICTURE_TIMING"),
-  
-  
-  AUDIO_MIX("AUDIO_MIX"),
-  
-  
-  FILE("FILE"),
-  
-  
-  CAPTION_CEA608("CAPTION_CEA608"),
-  
-  
-  CAPTION_CEA708("CAPTION_CEA708");
+  /**
+   * Explicit hierarchical signaling.
+   */
+  EXPLICIT_HIERACHICAL("EXPLICIT_HIERACHICAL");
 
   private String value;
 
-  InputStreamType(String value) {
+  HeAacV1Signaling(String value) {
     this.value = value;
   }
 
@@ -59,8 +52,8 @@ public enum InputStreamType {
   }
 
   @JsonCreator
-  public static InputStreamType fromValue(String text) {
-    for (InputStreamType b : InputStreamType.values()) {
+  public static HeAacV1Signaling fromValue(String text) {
+    for (HeAacV1Signaling b : HeAacV1Signaling.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

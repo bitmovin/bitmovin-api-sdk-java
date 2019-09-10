@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.DeinterlaceAutoEnable;
 import com.bitmovin.api.sdk.model.DeinterlaceFrameSelectionMode;
 import com.bitmovin.api.sdk.model.DeinterlaceMode;
 import com.bitmovin.api.sdk.model.Filter;
@@ -27,6 +28,9 @@ public class DeinterlaceFilter extends Filter {
 
   @JsonProperty("frameSelectionMode")
   private DeinterlaceFrameSelectionMode frameSelectionMode;
+
+  @JsonProperty("autoEnable")
+  private DeinterlaceAutoEnable autoEnable;
 
 
   /**
@@ -83,6 +87,24 @@ public class DeinterlaceFilter extends Filter {
   }
 
 
+  /**
+   * Get autoEnable
+   * @return autoEnable
+   */
+  public DeinterlaceAutoEnable getAutoEnable() {
+    return autoEnable;
+  }
+
+  /**
+   * Set autoEnable
+   *
+   * @param autoEnable
+   */
+  public void setAutoEnable(DeinterlaceAutoEnable autoEnable) {
+    this.autoEnable = autoEnable;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -95,12 +117,13 @@ public class DeinterlaceFilter extends Filter {
     return Objects.equals(this.parity, deinterlaceFilter.parity) &&
         Objects.equals(this.mode, deinterlaceFilter.mode) &&
         Objects.equals(this.frameSelectionMode, deinterlaceFilter.frameSelectionMode) &&
+        Objects.equals(this.autoEnable, deinterlaceFilter.autoEnable) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(parity, mode, frameSelectionMode, super.hashCode());
+    return Objects.hash(parity, mode, frameSelectionMode, autoEnable, super.hashCode());
   }
 
   @Override
@@ -111,6 +134,7 @@ public class DeinterlaceFilter extends Filter {
     sb.append("    parity: ").append(toIndentedString(parity)).append("\n");
     sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
     sb.append("    frameSelectionMode: ").append(toIndentedString(frameSelectionMode)).append("\n");
+    sb.append("    autoEnable: ").append(toIndentedString(autoEnable)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AacChannelLayout;
 import com.bitmovin.api.sdk.model.AudioConfiguration;
+import com.bitmovin.api.sdk.model.HeAacV2Signaling;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +20,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 public class HeAacV2AudioConfiguration extends AudioConfiguration {
   @JsonProperty("channelLayout")
   private AacChannelLayout channelLayout;
+
+  @JsonProperty("signaling")
+  private HeAacV2Signaling signaling;
 
 
   /**
@@ -40,6 +44,25 @@ public class HeAacV2AudioConfiguration extends AudioConfiguration {
   }
 
 
+  /**
+   * Sets the Spectral Band Replication (SBR) and Parameteric Stereo (PS) signaling style.
+   * @return signaling
+   */
+  public HeAacV2Signaling getSignaling() {
+    return signaling;
+  }
+
+  /**
+   * Sets the Spectral Band Replication (SBR) and Parameteric Stereo (PS) signaling style.
+   *
+   * @param signaling
+   *        Sets the Spectral Band Replication (SBR) and Parameteric Stereo (PS) signaling style.
+   */
+  public void setSignaling(HeAacV2Signaling signaling) {
+    this.signaling = signaling;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -50,12 +73,13 @@ public class HeAacV2AudioConfiguration extends AudioConfiguration {
     }
     HeAacV2AudioConfiguration heAacV2AudioConfiguration = (HeAacV2AudioConfiguration) o;
     return Objects.equals(this.channelLayout, heAacV2AudioConfiguration.channelLayout) &&
+        Objects.equals(this.signaling, heAacV2AudioConfiguration.signaling) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(channelLayout, super.hashCode());
+    return Objects.hash(channelLayout, signaling, super.hashCode());
   }
 
   @Override
@@ -64,6 +88,7 @@ public class HeAacV2AudioConfiguration extends AudioConfiguration {
     sb.append("class HeAacV2AudioConfiguration {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    channelLayout: ").append(toIndentedString(channelLayout)).append("\n");
+    sb.append("    signaling: ").append(toIndentedString(signaling)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -22,6 +22,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
   @JsonSubTypes.Type(value = TimecodeTrackTrimmingInputStream.class, name = "TRIMMING_TIME_CODE_TRACK"),
   @JsonSubTypes.Type(value = H264PictureTimingTrimmingInputStream.class, name = "TRIMMING_H264_PICTURE_TIMING"),
   @JsonSubTypes.Type(value = AudioMixInputStream.class, name = "AUDIO_MIX"),
+  @JsonSubTypes.Type(value = Cea608CaptionInputStream.class, name = "CAPTION_CEA608"),
+  @JsonSubTypes.Type(value = Cea708CaptionInputStream.class, name = "CAPTION_CEA708"),
   @JsonSubTypes.Type(value = FileInputStream.class, name = "FILE"),
 })
 

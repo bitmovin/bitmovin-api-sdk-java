@@ -19,6 +19,9 @@ public class WebVttConfiguration extends BitmovinResource {
   @JsonProperty("appendOptionalZeroHour")
   private Boolean appendOptionalZeroHour;
 
+  @JsonProperty("ignoreRegion")
+  private Boolean ignoreRegion;
+
 
   /**
    * If set to true, the hours section on webvtt timestamp values will explicitely have zeroes instead of being omitted for values where hours &#x3D; 0.
@@ -39,6 +42,25 @@ public class WebVttConfiguration extends BitmovinResource {
   }
 
 
+  /**
+   * If set to true, the region information of the resulting webvtt file will be omitted. Defaults to false.
+   * @return ignoreRegion
+   */
+  public Boolean getIgnoreRegion() {
+    return ignoreRegion;
+  }
+
+  /**
+   * If set to true, the region information of the resulting webvtt file will be omitted. Defaults to false.
+   *
+   * @param ignoreRegion
+   *        If set to true, the region information of the resulting webvtt file will be omitted. Defaults to false.
+   */
+  public void setIgnoreRegion(Boolean ignoreRegion) {
+    this.ignoreRegion = ignoreRegion;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -49,12 +71,13 @@ public class WebVttConfiguration extends BitmovinResource {
     }
     WebVttConfiguration webVttConfiguration = (WebVttConfiguration) o;
     return Objects.equals(this.appendOptionalZeroHour, webVttConfiguration.appendOptionalZeroHour) &&
+        Objects.equals(this.ignoreRegion, webVttConfiguration.ignoreRegion) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(appendOptionalZeroHour, super.hashCode());
+    return Objects.hash(appendOptionalZeroHour, ignoreRegion, super.hashCode());
   }
 
   @Override
@@ -63,6 +86,7 @@ public class WebVttConfiguration extends BitmovinResource {
     sb.append("class WebVttConfiguration {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    appendOptionalZeroHour: ").append(toIndentedString(appendOptionalZeroHour)).append("\n");
+    sb.append("    ignoreRegion: ").append(toIndentedString(ignoreRegion)).append("\n");
     sb.append("}");
     return sb.toString();
   }
