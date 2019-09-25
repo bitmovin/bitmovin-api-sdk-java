@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -45,7 +46,11 @@ public class DailyApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<DailyStatisticsPerLabel> list() throws BitmovinException {
-        return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * Get Daily Statistics per Label
@@ -55,7 +60,11 @@ public class DailyApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<DailyStatisticsPerLabel> list(DailyStatisticsPerLabelListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -67,7 +76,11 @@ public class DailyApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<DailyStatisticsPerLabel> listByDateRange(Date from, Date to) throws BitmovinException {
-        return this.apiClient.listByDateRange(from, to, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.listByDateRange(from, to, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * Get daily statistics per label within specific dates
@@ -79,7 +92,11 @@ public class DailyApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<DailyStatisticsPerLabel> listByDateRange(Date from, Date to, DailyStatisticsPerLabelListByDateRangeQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.listByDateRange(from, to, queryParams).getData().getResult();
+        try {
+            return this.apiClient.listByDateRange(from, to, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface DailyApiClient {

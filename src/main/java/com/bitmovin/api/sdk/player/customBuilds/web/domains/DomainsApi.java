@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -46,7 +47,11 @@ public class DomainsApi {
      * @throws BitmovinException if fails to make API call
      */
     public CustomWebPlayerBuildDomain create(CustomWebPlayerBuildDomain customWebPlayerBuildDomain) throws BitmovinException {
-        return this.apiClient.create(customWebPlayerBuildDomain).getData().getResult();
+        try {
+            return this.apiClient.create(customWebPlayerBuildDomain).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -57,7 +62,11 @@ public class DomainsApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String domainId) throws BitmovinException {
-        return this.apiClient.delete(domainId).getData().getResult();
+        try {
+            return this.apiClient.delete(domainId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -68,7 +77,11 @@ public class DomainsApi {
      * @throws BitmovinException if fails to make API call
      */
     public CustomWebPlayerBuildDomain get(String domainId) throws BitmovinException {
-        return this.apiClient.get(domainId).getData().getResult();
+        try {
+            return this.apiClient.get(domainId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -78,7 +91,11 @@ public class DomainsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<CustomWebPlayerBuildDomain> list() throws BitmovinException {
-        return this.apiClient.list().getData().getResult();
+        try {
+            return this.apiClient.list().getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface DomainsApiClient {

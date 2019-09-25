@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -77,7 +78,11 @@ public class StreamsApi {
      * @throws BitmovinException if fails to make API call
      */
     public Stream create(String encodingId, Stream stream) throws BitmovinException {
-        return this.apiClient.create(encodingId, stream).getData().getResult();
+        try {
+            return this.apiClient.create(encodingId, stream).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -89,7 +94,11 @@ public class StreamsApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String encodingId, String streamId) throws BitmovinException {
-        return this.apiClient.delete(encodingId, streamId).getData().getResult();
+        try {
+            return this.apiClient.delete(encodingId, streamId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -101,7 +110,11 @@ public class StreamsApi {
      * @throws BitmovinException if fails to make API call
      */
     public Stream get(String encodingId, String streamId) throws BitmovinException {
-        return this.apiClient.get(encodingId, streamId).getData().getResult();
+        try {
+            return this.apiClient.get(encodingId, streamId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -112,7 +125,11 @@ public class StreamsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Stream> list(String encodingId) throws BitmovinException {
-        return this.apiClient.list(encodingId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List Streams
@@ -123,7 +140,11 @@ public class StreamsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Stream> list(String encodingId, StreamListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(encodingId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface StreamsApiClient {

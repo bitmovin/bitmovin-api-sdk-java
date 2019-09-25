@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -47,7 +48,11 @@ public class TypeApi {
      * @throws BitmovinException if fails to make API call
      */
     public InputStreamTypeResponse get(String encodingId, String inputStreamId) throws BitmovinException {
-        return this.apiClient.get(encodingId, inputStreamId).getData().getResult();
+        try {
+            return this.apiClient.get(encodingId, inputStreamId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface TypeApiClient {

@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -49,7 +50,11 @@ public class HeAacV2Api {
      * @throws BitmovinException if fails to make API call
      */
     public HeAacV2AudioConfiguration create(HeAacV2AudioConfiguration heAacV2AudioConfiguration) throws BitmovinException {
-        return this.apiClient.create(heAacV2AudioConfiguration).getData().getResult();
+        try {
+            return this.apiClient.create(heAacV2AudioConfiguration).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -60,7 +65,11 @@ public class HeAacV2Api {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String configurationId) throws BitmovinException {
-        return this.apiClient.delete(configurationId).getData().getResult();
+        try {
+            return this.apiClient.delete(configurationId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -71,7 +80,11 @@ public class HeAacV2Api {
      * @throws BitmovinException if fails to make API call
      */
     public HeAacV2AudioConfiguration get(String configurationId) throws BitmovinException {
-        return this.apiClient.get(configurationId).getData().getResult();
+        try {
+            return this.apiClient.get(configurationId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -81,7 +94,11 @@ public class HeAacV2Api {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<HeAacV2AudioConfiguration> list() throws BitmovinException {
-        return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List HE-AAC v2 Configurations
@@ -91,7 +108,11 @@ public class HeAacV2Api {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<HeAacV2AudioConfiguration> list(HeAacV2AudioConfigurationListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface HeAacV2ApiClient {

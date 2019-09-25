@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -46,7 +47,11 @@ public class ExportsApi {
      * @throws BitmovinException if fails to make API call
      */
     public AnalyticsExportTask create(AnalyticsExportTask analyticsExportTask) throws BitmovinException {
-        return this.apiClient.create(analyticsExportTask).getData().getResult();
+        try {
+            return this.apiClient.create(analyticsExportTask).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -57,7 +62,11 @@ public class ExportsApi {
      * @throws BitmovinException if fails to make API call
      */
     public AnalyticsExportTask get(String exportTaskId) throws BitmovinException {
-        return this.apiClient.get(exportTaskId).getData().getResult();
+        try {
+            return this.apiClient.get(exportTaskId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -67,7 +76,11 @@ public class ExportsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<AnalyticsExportTask> list() throws BitmovinException {
-        return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List Export Tasks
@@ -77,7 +90,11 @@ public class ExportsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<AnalyticsExportTask> list(AnalyticsExportTaskListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface ExportsApiClient {

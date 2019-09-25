@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -48,7 +49,11 @@ public class ScheduleApi {
      * @throws BitmovinException if fails to make API call
      */
     public ScheduledInsertableContent create(String encodingId, String contentId, ScheduledInsertableContent scheduledInsertableContent) throws BitmovinException {
-        return this.apiClient.create(encodingId, contentId, scheduledInsertableContent).getData().getResult();
+        try {
+            return this.apiClient.create(encodingId, contentId, scheduledInsertableContent).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -61,7 +66,11 @@ public class ScheduleApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String encodingId, String contentId, String scheduledContentId) throws BitmovinException {
-        return this.apiClient.delete(encodingId, contentId, scheduledContentId).getData().getResult();
+        try {
+            return this.apiClient.delete(encodingId, contentId, scheduledContentId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface ScheduleApiClient {

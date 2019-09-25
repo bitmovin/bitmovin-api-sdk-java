@@ -19,6 +19,9 @@ public enum FilterType {
   CROP("CROP"),
   
   
+  CONFORM("CONFORM"),
+  
+  
   WATERMARK("WATERMARK"),
   
   

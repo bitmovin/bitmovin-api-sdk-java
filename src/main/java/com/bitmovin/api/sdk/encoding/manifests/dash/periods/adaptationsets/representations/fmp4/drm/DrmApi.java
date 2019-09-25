@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -52,7 +53,11 @@ public class DrmApi {
      * @throws BitmovinException if fails to make API call
      */
     public DashFmp4DrmRepresentation create(String manifestId, String periodId, String adaptationsetId, DashFmp4DrmRepresentation dashFmp4DrmRepresentation) throws BitmovinException {
-        return this.apiClient.create(manifestId, periodId, adaptationsetId, dashFmp4DrmRepresentation).getData().getResult();
+        try {
+            return this.apiClient.create(manifestId, periodId, adaptationsetId, dashFmp4DrmRepresentation).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -66,7 +71,11 @@ public class DrmApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String manifestId, String periodId, String adaptationsetId, String representationId) throws BitmovinException {
-        return this.apiClient.delete(manifestId, periodId, adaptationsetId, representationId).getData().getResult();
+        try {
+            return this.apiClient.delete(manifestId, periodId, adaptationsetId, representationId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -80,7 +89,11 @@ public class DrmApi {
      * @throws BitmovinException if fails to make API call
      */
     public DashFmp4DrmRepresentation get(String manifestId, String periodId, String adaptationsetId, String representationId) throws BitmovinException {
-        return this.apiClient.get(manifestId, periodId, adaptationsetId, representationId).getData().getResult();
+        try {
+            return this.apiClient.get(manifestId, periodId, adaptationsetId, representationId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -93,7 +106,11 @@ public class DrmApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<DashFmp4DrmRepresentation> list(String manifestId, String periodId, String adaptationsetId) throws BitmovinException {
-        return this.apiClient.list(manifestId, periodId, adaptationsetId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(manifestId, periodId, adaptationsetId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List all DRM fMP4 Representations
@@ -106,7 +123,11 @@ public class DrmApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<DashFmp4DrmRepresentation> list(String manifestId, String periodId, String adaptationsetId, DashFmp4DrmRepresentationListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(manifestId, periodId, adaptationsetId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(manifestId, periodId, adaptationsetId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface DrmApiClient {

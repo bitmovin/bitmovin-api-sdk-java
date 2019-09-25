@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -47,7 +48,11 @@ public class WebvttApi {
      * @throws BitmovinException if fails to make API call
      */
     public WebVttSidecarFile create(String encodingId, WebVttSidecarFile webVttSidecarFile) throws BitmovinException {
-        return this.apiClient.create(encodingId, webVttSidecarFile).getData().getResult();
+        try {
+            return this.apiClient.create(encodingId, webVttSidecarFile).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -59,7 +64,11 @@ public class WebvttApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String encodingId, String sidecarId) throws BitmovinException {
-        return this.apiClient.delete(encodingId, sidecarId).getData().getResult();
+        try {
+            return this.apiClient.delete(encodingId, sidecarId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -71,7 +80,11 @@ public class WebvttApi {
      * @throws BitmovinException if fails to make API call
      */
     public WebVttSidecarFile get(String encodingId, String sidecarId) throws BitmovinException {
-        return this.apiClient.get(encodingId, sidecarId).getData().getResult();
+        try {
+            return this.apiClient.get(encodingId, sidecarId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface WebvttApiClient {

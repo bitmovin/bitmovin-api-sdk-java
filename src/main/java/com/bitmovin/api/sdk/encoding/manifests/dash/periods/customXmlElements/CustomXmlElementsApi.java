@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -48,7 +49,11 @@ public class CustomXmlElementsApi {
      * @throws BitmovinException if fails to make API call
      */
     public CustomXmlElement create(String manifestId, String periodId, CustomXmlElement customXmlElement) throws BitmovinException {
-        return this.apiClient.create(manifestId, periodId, customXmlElement).getData().getResult();
+        try {
+            return this.apiClient.create(manifestId, periodId, customXmlElement).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -61,7 +66,11 @@ public class CustomXmlElementsApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String manifestId, String periodId, String customXmlElementId) throws BitmovinException {
-        return this.apiClient.delete(manifestId, periodId, customXmlElementId).getData().getResult();
+        try {
+            return this.apiClient.delete(manifestId, periodId, customXmlElementId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -74,7 +83,11 @@ public class CustomXmlElementsApi {
      * @throws BitmovinException if fails to make API call
      */
     public CustomXmlElement get(String manifestId, String periodId, String customXmlElementId) throws BitmovinException {
-        return this.apiClient.get(manifestId, periodId, customXmlElementId).getData().getResult();
+        try {
+            return this.apiClient.get(manifestId, periodId, customXmlElementId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -86,7 +99,11 @@ public class CustomXmlElementsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<CustomXmlElement> list(String manifestId, String periodId) throws BitmovinException {
-        return this.apiClient.list(manifestId, periodId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(manifestId, periodId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List all Custom XML Elements of Period
@@ -98,7 +115,11 @@ public class CustomXmlElementsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<CustomXmlElement> list(String manifestId, String periodId, CustomXmlElementListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(manifestId, periodId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(manifestId, periodId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface CustomXmlElementsApiClient {

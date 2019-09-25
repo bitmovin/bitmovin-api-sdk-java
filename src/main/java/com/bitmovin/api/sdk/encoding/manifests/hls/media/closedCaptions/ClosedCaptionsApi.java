@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -47,7 +48,11 @@ public class ClosedCaptionsApi {
      * @throws BitmovinException if fails to make API call
      */
     public ClosedCaptionsMediaInfo create(String manifestId, ClosedCaptionsMediaInfo closedCaptionsMediaInfo) throws BitmovinException {
-        return this.apiClient.create(manifestId, closedCaptionsMediaInfo).getData().getResult();
+        try {
+            return this.apiClient.create(manifestId, closedCaptionsMediaInfo).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -59,7 +64,11 @@ public class ClosedCaptionsApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String manifestId, String mediaId) throws BitmovinException {
-        return this.apiClient.delete(manifestId, mediaId).getData().getResult();
+        try {
+            return this.apiClient.delete(manifestId, mediaId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -71,7 +80,11 @@ public class ClosedCaptionsApi {
      * @throws BitmovinException if fails to make API call
      */
     public ClosedCaptionsMediaInfo get(String manifestId, String mediaId) throws BitmovinException {
-        return this.apiClient.get(manifestId, mediaId).getData().getResult();
+        try {
+            return this.apiClient.get(manifestId, mediaId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -82,7 +95,11 @@ public class ClosedCaptionsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<ClosedCaptionsMediaInfo> list(String manifestId) throws BitmovinException {
-        return this.apiClient.list(manifestId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(manifestId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List all Closed Captions Media
@@ -93,7 +110,11 @@ public class ClosedCaptionsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<ClosedCaptionsMediaInfo> list(String manifestId, ClosedCaptionsMediaInfoListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(manifestId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(manifestId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface ClosedCaptionsApiClient {

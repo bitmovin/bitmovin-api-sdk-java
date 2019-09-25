@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -56,7 +57,11 @@ public class InsertableContentApi {
      * @throws BitmovinException if fails to make API call
      */
     public InsertableContent create(String encodingId, InsertableContent insertableContent) throws BitmovinException {
-        return this.apiClient.create(encodingId, insertableContent).getData().getResult();
+        try {
+            return this.apiClient.create(encodingId, insertableContent).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -67,7 +72,11 @@ public class InsertableContentApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<InsertableContent> list(String encodingId) throws BitmovinException {
-        return this.apiClient.list(encodingId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List All Inseratble Content Available For A Live Encoding
@@ -78,7 +87,11 @@ public class InsertableContentApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<InsertableContent> list(String encodingId, InsertableContentListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(encodingId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface InsertableContentApiClient {

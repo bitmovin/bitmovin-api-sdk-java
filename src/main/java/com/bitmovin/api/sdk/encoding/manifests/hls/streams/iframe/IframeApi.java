@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -48,7 +49,11 @@ public class IframeApi {
      * @throws BitmovinException if fails to make API call
      */
     public IFramePlaylist create(String manifestId, String streamId, IFramePlaylist iframePlaylist) throws BitmovinException {
-        return this.apiClient.create(manifestId, streamId, iframePlaylist).getData().getResult();
+        try {
+            return this.apiClient.create(manifestId, streamId, iframePlaylist).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -61,7 +66,11 @@ public class IframeApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String manifestId, String streamId, String iframeId) throws BitmovinException {
-        return this.apiClient.delete(manifestId, streamId, iframeId).getData().getResult();
+        try {
+            return this.apiClient.delete(manifestId, streamId, iframeId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -74,7 +83,11 @@ public class IframeApi {
      * @throws BitmovinException if fails to make API call
      */
     public IFramePlaylist get(String manifestId, String streamId, String iframeId) throws BitmovinException {
-        return this.apiClient.get(manifestId, streamId, iframeId).getData().getResult();
+        try {
+            return this.apiClient.get(manifestId, streamId, iframeId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -86,7 +99,11 @@ public class IframeApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<IFramePlaylist> list(String manifestId, String streamId) throws BitmovinException {
-        return this.apiClient.list(manifestId, streamId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(manifestId, streamId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List all I-frame playlists of a variant stream
@@ -98,7 +115,11 @@ public class IframeApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<IFramePlaylist> list(String manifestId, String streamId, IFramePlaylistListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(manifestId, streamId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(manifestId, streamId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface IframeApiClient {

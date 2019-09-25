@@ -18,7 +18,12 @@ public enum FileInputStreamType {
   /**
    * Specifies that the Sidecar file conforms to the TTML standard
    */
-  TTML("TTML");
+  TTML("TTML"),
+  
+  /**
+   * Specifies that the Sidecar file conforms to the WEBVTT standard
+   */
+  WEBVTT("WEBVTT");
 
   private String value;
 

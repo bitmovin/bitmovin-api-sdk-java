@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -48,7 +49,11 @@ public class RegionsApi {
      * @throws BitmovinException if fails to make API call
      */
     public AwsAccountRegionSettings create(String infrastructureId, AwsCloudRegion region, AwsAccountRegionSettings awsAccountRegionSettings) throws BitmovinException {
-        return this.apiClient.create(infrastructureId, region, awsAccountRegionSettings).getData().getResult();
+        try {
+            return this.apiClient.create(infrastructureId, region, awsAccountRegionSettings).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -60,7 +65,11 @@ public class RegionsApi {
      * @throws BitmovinException if fails to make API call
      */
     public AwsAccountRegionSettings delete(String infrastructureId, AwsCloudRegion region) throws BitmovinException {
-        return this.apiClient.delete(infrastructureId, region).getData().getResult();
+        try {
+            return this.apiClient.delete(infrastructureId, region).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -72,7 +81,11 @@ public class RegionsApi {
      * @throws BitmovinException if fails to make API call
      */
     public AwsAccountRegionSettings get(String infrastructureId, AwsCloudRegion region) throws BitmovinException {
-        return this.apiClient.get(infrastructureId, region).getData().getResult();
+        try {
+            return this.apiClient.get(infrastructureId, region).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -83,7 +96,11 @@ public class RegionsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<AwsAccountRegionSettings> list(String infrastructureId) throws BitmovinException {
-        return this.apiClient.list(infrastructureId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(infrastructureId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List AWS Region Settings
@@ -94,7 +111,11 @@ public class RegionsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<AwsAccountRegionSettings> list(String infrastructureId, AwsAccountRegionSettingsListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(infrastructureId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(infrastructureId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface RegionsApiClient {

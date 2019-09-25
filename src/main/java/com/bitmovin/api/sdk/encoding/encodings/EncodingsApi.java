@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -73,7 +74,11 @@ public class EncodingsApi {
      * @throws BitmovinException if fails to make API call
      */
     public Encoding create(Encoding encoding) throws BitmovinException {
-        return this.apiClient.create(encoding).getData().getResult();
+        try {
+            return this.apiClient.create(encoding).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -84,7 +89,11 @@ public class EncodingsApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String encodingId) throws BitmovinException {
-        return this.apiClient.delete(encodingId).getData().getResult();
+        try {
+            return this.apiClient.delete(encodingId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -95,7 +104,11 @@ public class EncodingsApi {
      * @throws BitmovinException if fails to make API call
      */
     public Encoding get(String encodingId) throws BitmovinException {
-        return this.apiClient.get(encodingId).getData().getResult();
+        try {
+            return this.apiClient.get(encodingId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -106,7 +119,11 @@ public class EncodingsApi {
      * @throws BitmovinException if fails to make API call
      */
     public StartEncodingRequest getStartRequest(String encodingId) throws BitmovinException {
-        return this.apiClient.getStartRequest(encodingId).getData().getResult();
+        try {
+            return this.apiClient.getStartRequest(encodingId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -116,7 +133,11 @@ public class EncodingsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Encoding> list() throws BitmovinException {
-        return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List all Encodings
@@ -126,7 +147,11 @@ public class EncodingsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Encoding> list(EncodingListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -138,7 +163,11 @@ public class EncodingsApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse reprioritize(String encodingId, ReprioritizeEncodingRequest reprioritizeEncodingRequest) throws BitmovinException {
-        return this.apiClient.reprioritize(encodingId, reprioritizeEncodingRequest).getData().getResult();
+        try {
+            return this.apiClient.reprioritize(encodingId, reprioritizeEncodingRequest).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -150,7 +179,11 @@ public class EncodingsApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse reschedule(String encodingId, RescheduleEncodingRequest rescheduleEncodingRequest) throws BitmovinException {
-        return this.apiClient.reschedule(encodingId, rescheduleEncodingRequest).getData().getResult();
+        try {
+            return this.apiClient.reschedule(encodingId, rescheduleEncodingRequest).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -162,7 +195,11 @@ public class EncodingsApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse start(String encodingId, StartEncodingRequest startEncodingRequest) throws BitmovinException {
-        return this.apiClient.start(encodingId, startEncodingRequest).getData().getResult();
+        try {
+            return this.apiClient.start(encodingId, startEncodingRequest).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -173,7 +210,11 @@ public class EncodingsApi {
      * @throws BitmovinException if fails to make API call
      */
     public Task status(String encodingId) throws BitmovinException {
-        return this.apiClient.status(encodingId).getData().getResult();
+        try {
+            return this.apiClient.status(encodingId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -184,7 +225,11 @@ public class EncodingsApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse stop(String encodingId) throws BitmovinException {
-        return this.apiClient.stop(encodingId).getData().getResult();
+        try {
+            return this.apiClient.stop(encodingId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface EncodingsApiClient {

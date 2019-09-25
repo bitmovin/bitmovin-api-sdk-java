@@ -25,6 +25,9 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
   @JsonProperty("audioBitrate")
   private Long audioBitrate;
 
+  @JsonProperty("audioLanguage")
+  private String audioLanguage;
+
   @JsonProperty("autoplay")
   private Boolean autoplay;
 
@@ -190,6 +193,12 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
   @JsonProperty("streamFormat")
   private String streamFormat;
 
+  @JsonProperty("subtitleEnabled")
+  private Boolean subtitleEnabled;
+
+  @JsonProperty("subtitleLanguage")
+  private String subtitleLanguage;
+
   @JsonProperty("time")
   private Long time;
 
@@ -307,6 +316,25 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
 
 
   /**
+   * Selected audio language
+   * @return audioLanguage
+   */
+  public String getAudioLanguage() {
+    return audioLanguage;
+  }
+
+  /**
+   * Selected audio language
+   *
+   * @param audioLanguage
+   *        Selected audio language
+   */
+  public void setAudioLanguage(String audioLanguage) {
+    this.audioLanguage = audioLanguage;
+  }
+
+
+  /**
    * Autoplay enabled
    * @return autoplay
    */
@@ -383,7 +411,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
 
 
   /**
-   * Millisecond the player buffered
+   * Milliseconds the player buffered
    * @return buffered
    */
   public Long getBuffered() {
@@ -391,10 +419,10 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
   }
 
   /**
-   * Millisecond the player buffered
+   * Milliseconds the player buffered
    *
    * @param buffered
-   *        Millisecond the player buffered
+   *        Milliseconds the player buffered
    */
   public void setBuffered(Long buffered) {
     this.buffered = buffered;
@@ -1352,6 +1380,44 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
 
 
   /**
+   * Subtitle enabled
+   * @return subtitleEnabled
+   */
+  public Boolean getSubtitleEnabled() {
+    return subtitleEnabled;
+  }
+
+  /**
+   * Subtitle enabled
+   *
+   * @param subtitleEnabled
+   *        Subtitle enabled
+   */
+  public void setSubtitleEnabled(Boolean subtitleEnabled) {
+    this.subtitleEnabled = subtitleEnabled;
+  }
+
+
+  /**
+   * Selected subtitle language
+   * @return subtitleLanguage
+   */
+  public String getSubtitleLanguage() {
+    return subtitleLanguage;
+  }
+
+  /**
+   * Selected subtitle language
+   *
+   * @param subtitleLanguage
+   *        Selected subtitle language
+   */
+  public void setSubtitleLanguage(String subtitleLanguage) {
+    this.subtitleLanguage = subtitleLanguage;
+  }
+
+
+  /**
    * Current time in milliseconds
    * @return time
    */
@@ -1611,6 +1677,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
         Objects.equals(this.analyticsVersion, analyticsImpressionDetails.analyticsVersion) &&
         Objects.equals(this.asn, analyticsImpressionDetails.asn) &&
         Objects.equals(this.audioBitrate, analyticsImpressionDetails.audioBitrate) &&
+        Objects.equals(this.audioLanguage, analyticsImpressionDetails.audioLanguage) &&
         Objects.equals(this.autoplay, analyticsImpressionDetails.autoplay) &&
         Objects.equals(this.browser, analyticsImpressionDetails.browser) &&
         Objects.equals(this.browserVersionMajor, analyticsImpressionDetails.browserVersionMajor) &&
@@ -1666,6 +1733,8 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
         Objects.equals(this.startupTime, analyticsImpressionDetails.startupTime) &&
         Objects.equals(this.state, analyticsImpressionDetails.state) &&
         Objects.equals(this.streamFormat, analyticsImpressionDetails.streamFormat) &&
+        Objects.equals(this.subtitleEnabled, analyticsImpressionDetails.subtitleEnabled) &&
+        Objects.equals(this.subtitleLanguage, analyticsImpressionDetails.subtitleLanguage) &&
         Objects.equals(this.time, analyticsImpressionDetails.time) &&
         Objects.equals(this.userId, analyticsImpressionDetails.userId) &&
         Objects.equals(this.videoBitrate, analyticsImpressionDetails.videoBitrate) &&
@@ -1684,7 +1753,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(ad, analyticsVersion, asn, audioBitrate, autoplay, browser, browserVersionMajor, browserVersionMinor, buffered, cdnProvider, city, clientTime, country, customUserId, customData1, customData2, customData3, customData4, customData5, deviceType, domain, drmLoadTime, drmType, droppedFrames, duration, errorCode, errorMessage, experimentName, impressionId, ipAddress, isCasting, isLive, isMuted, isp, language, licenseKey, operatingSystem, operatingSystemVersionMajor, operatingSystemVersionMinor, pageLoadTime, pageLoadType, path, paused, platform, played, player, playerKey, playerStartuptime, playerTech, playerVersion, region, screenHeight, screenWidth, seeked, sequenceNumber, size, startupTime, state, streamFormat, time, userId, videoBitrate, videoDuration, videoId, videoTitle, videoPlaybackHeight, videoPlaybackWidth, videoStartupTime, videotimeEnd, videotimeStart, videoWindowHeight, videoWindowWidth, super.hashCode());
+    return Objects.hash(ad, analyticsVersion, asn, audioBitrate, audioLanguage, autoplay, browser, browserVersionMajor, browserVersionMinor, buffered, cdnProvider, city, clientTime, country, customUserId, customData1, customData2, customData3, customData4, customData5, deviceType, domain, drmLoadTime, drmType, droppedFrames, duration, errorCode, errorMessage, experimentName, impressionId, ipAddress, isCasting, isLive, isMuted, isp, language, licenseKey, operatingSystem, operatingSystemVersionMajor, operatingSystemVersionMinor, pageLoadTime, pageLoadType, path, paused, platform, played, player, playerKey, playerStartuptime, playerTech, playerVersion, region, screenHeight, screenWidth, seeked, sequenceNumber, size, startupTime, state, streamFormat, subtitleEnabled, subtitleLanguage, time, userId, videoBitrate, videoDuration, videoId, videoTitle, videoPlaybackHeight, videoPlaybackWidth, videoStartupTime, videotimeEnd, videotimeStart, videoWindowHeight, videoWindowWidth, super.hashCode());
   }
 
   @Override
@@ -1696,6 +1765,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
     sb.append("    analyticsVersion: ").append(toIndentedString(analyticsVersion)).append("\n");
     sb.append("    asn: ").append(toIndentedString(asn)).append("\n");
     sb.append("    audioBitrate: ").append(toIndentedString(audioBitrate)).append("\n");
+    sb.append("    audioLanguage: ").append(toIndentedString(audioLanguage)).append("\n");
     sb.append("    autoplay: ").append(toIndentedString(autoplay)).append("\n");
     sb.append("    browser: ").append(toIndentedString(browser)).append("\n");
     sb.append("    browserVersionMajor: ").append(toIndentedString(browserVersionMajor)).append("\n");
@@ -1751,6 +1821,8 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
     sb.append("    startupTime: ").append(toIndentedString(startupTime)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    streamFormat: ").append(toIndentedString(streamFormat)).append("\n");
+    sb.append("    subtitleEnabled: ").append(toIndentedString(subtitleEnabled)).append("\n");
+    sb.append("    subtitleLanguage: ").append(toIndentedString(subtitleLanguage)).append("\n");
     sb.append("    time: ").append(toIndentedString(time)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    videoBitrate: ").append(toIndentedString(videoBitrate)).append("\n");

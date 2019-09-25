@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -51,7 +52,11 @@ public class FairplayApi {
      * @throws BitmovinException if fails to make API call
      */
     public FairPlayDrm create(String encodingId, String muxingId, FairPlayDrm fairPlayDrm) throws BitmovinException {
-        return this.apiClient.create(encodingId, muxingId, fairPlayDrm).getData().getResult();
+        try {
+            return this.apiClient.create(encodingId, muxingId, fairPlayDrm).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -64,7 +69,11 @@ public class FairplayApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String encodingId, String muxingId, String drmId) throws BitmovinException {
-        return this.apiClient.delete(encodingId, muxingId, drmId).getData().getResult();
+        try {
+            return this.apiClient.delete(encodingId, muxingId, drmId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -77,7 +86,11 @@ public class FairplayApi {
      * @throws BitmovinException if fails to make API call
      */
     public FairPlayDrm get(String encodingId, String muxingId, String drmId) throws BitmovinException {
-        return this.apiClient.get(encodingId, muxingId, drmId).getData().getResult();
+        try {
+            return this.apiClient.get(encodingId, muxingId, drmId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -89,7 +102,11 @@ public class FairplayApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<FairPlayDrm> list(String encodingId, String muxingId) throws BitmovinException {
-        return this.apiClient.list(encodingId, muxingId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, muxingId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List FairPlay DRMs of fMP4
@@ -101,7 +118,11 @@ public class FairplayApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<FairPlayDrm> list(String encodingId, String muxingId, FairPlayDrmListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(encodingId, muxingId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, muxingId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface FairplayApiClient {

@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -55,7 +56,11 @@ public class WebApi {
      * @throws BitmovinException if fails to make API call
      */
     public CustomPlayerBuildDetails create(CustomPlayerBuildDetails customPlayerBuildDetails) throws BitmovinException {
-        return this.apiClient.create(customPlayerBuildDetails).getData().getResult();
+        try {
+            return this.apiClient.create(customPlayerBuildDetails).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -66,7 +71,11 @@ public class WebApi {
      * @throws BitmovinException if fails to make API call
      */
     public CustomPlayerBuildStatus get(String customBuildId) throws BitmovinException {
-        return this.apiClient.get(customBuildId).getData().getResult();
+        try {
+            return this.apiClient.get(customBuildId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -76,7 +85,11 @@ public class WebApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<CustomPlayerBuildDetails> list() throws BitmovinException {
-        return this.apiClient.list().getData().getResult();
+        try {
+            return this.apiClient.list().getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -87,7 +100,11 @@ public class WebApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse start(String customBuildId) throws BitmovinException {
-        return this.apiClient.start(customBuildId).getData().getResult();
+        try {
+            return this.apiClient.start(customBuildId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface WebApiClient {

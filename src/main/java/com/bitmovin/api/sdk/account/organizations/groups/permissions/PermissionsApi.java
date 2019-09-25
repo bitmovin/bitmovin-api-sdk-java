@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -48,7 +49,11 @@ public class PermissionsApi {
      * @throws BitmovinException if fails to make API call
      */
     public Acl create(String organizationId, String groupId, Acl acl) throws BitmovinException {
-        return this.apiClient.create(organizationId, groupId, acl).getData().getResult();
+        try {
+            return this.apiClient.create(organizationId, groupId, acl).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -61,7 +66,11 @@ public class PermissionsApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String organizationId, String groupId, String permissionId) throws BitmovinException {
-        return this.apiClient.delete(organizationId, groupId, permissionId).getData().getResult();
+        try {
+            return this.apiClient.delete(organizationId, groupId, permissionId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -73,7 +82,11 @@ public class PermissionsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Acl> list(String organizationId, String groupId) throws BitmovinException {
-        return this.apiClient.list(organizationId, groupId).getData().getResult();
+        try {
+            return this.apiClient.list(organizationId, groupId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface PermissionsApiClient {

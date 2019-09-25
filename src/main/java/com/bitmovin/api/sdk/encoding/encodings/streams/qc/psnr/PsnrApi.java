@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -47,7 +48,11 @@ public class PsnrApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse create(String encodingId, String streamId) throws BitmovinException {
-        return this.apiClient.create(encodingId, streamId).getData().getResult();
+        try {
+            return this.apiClient.create(encodingId, streamId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -59,7 +64,11 @@ public class PsnrApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<PsnrQualityMetric> list(String encodingId, String streamId) throws BitmovinException {
-        return this.apiClient.list(encodingId, streamId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, streamId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * Get Stream PSNR metrics
@@ -71,7 +80,11 @@ public class PsnrApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<PsnrQualityMetric> list(String encodingId, String streamId, PsnrQualityMetricListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(encodingId, streamId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, streamId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface PsnrApiClient {

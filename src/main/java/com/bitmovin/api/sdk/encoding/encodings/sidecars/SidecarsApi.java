@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -53,7 +54,11 @@ public class SidecarsApi {
      * @throws BitmovinException if fails to make API call
      */
     public SidecarFile create(String encodingId, SidecarFile sidecarFile) throws BitmovinException {
-        return this.apiClient.create(encodingId, sidecarFile).getData().getResult();
+        try {
+            return this.apiClient.create(encodingId, sidecarFile).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -65,7 +70,11 @@ public class SidecarsApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String encodingId, String sidecarId) throws BitmovinException {
-        return this.apiClient.delete(encodingId, sidecarId).getData().getResult();
+        try {
+            return this.apiClient.delete(encodingId, sidecarId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -77,7 +86,11 @@ public class SidecarsApi {
      * @throws BitmovinException if fails to make API call
      */
     public SidecarFile get(String encodingId, String sidecarId) throws BitmovinException {
-        return this.apiClient.get(encodingId, sidecarId).getData().getResult();
+        try {
+            return this.apiClient.get(encodingId, sidecarId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -88,7 +101,11 @@ public class SidecarsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<SidecarFile> list(String encodingId) throws BitmovinException {
-        return this.apiClient.list(encodingId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List Sidecars
@@ -99,7 +116,11 @@ public class SidecarsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<SidecarFile> list(String encodingId, SidecarFileListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(encodingId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface SidecarsApiClient {

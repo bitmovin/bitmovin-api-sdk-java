@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -49,7 +50,11 @@ public class Mp2Api {
      * @throws BitmovinException if fails to make API call
      */
     public Mp2AudioConfiguration create(Mp2AudioConfiguration mp2AudioConfiguration) throws BitmovinException {
-        return this.apiClient.create(mp2AudioConfiguration).getData().getResult();
+        try {
+            return this.apiClient.create(mp2AudioConfiguration).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -60,7 +65,11 @@ public class Mp2Api {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String configurationId) throws BitmovinException {
-        return this.apiClient.delete(configurationId).getData().getResult();
+        try {
+            return this.apiClient.delete(configurationId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -71,7 +80,11 @@ public class Mp2Api {
      * @throws BitmovinException if fails to make API call
      */
     public Mp2AudioConfiguration get(String configurationId) throws BitmovinException {
-        return this.apiClient.get(configurationId).getData().getResult();
+        try {
+            return this.apiClient.get(configurationId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface Mp2ApiClient {

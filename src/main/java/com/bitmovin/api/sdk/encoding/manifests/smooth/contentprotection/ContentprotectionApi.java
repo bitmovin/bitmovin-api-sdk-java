@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -47,7 +48,11 @@ public class ContentprotectionApi {
      * @throws BitmovinException if fails to make API call
      */
     public SmoothManifestContentProtection create(String manifestId, SmoothManifestContentProtection smoothManifestContentProtection) throws BitmovinException {
-        return this.apiClient.create(manifestId, smoothManifestContentProtection).getData().getResult();
+        try {
+            return this.apiClient.create(manifestId, smoothManifestContentProtection).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -59,7 +64,11 @@ public class ContentprotectionApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String manifestId, String protectionId) throws BitmovinException {
-        return this.apiClient.delete(manifestId, protectionId).getData().getResult();
+        try {
+            return this.apiClient.delete(manifestId, protectionId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -71,7 +80,11 @@ public class ContentprotectionApi {
      * @throws BitmovinException if fails to make API call
      */
     public SmoothManifestContentProtection get(String manifestId, String protectionId) throws BitmovinException {
-        return this.apiClient.get(manifestId, protectionId).getData().getResult();
+        try {
+            return this.apiClient.get(manifestId, protectionId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -82,7 +95,11 @@ public class ContentprotectionApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<SmoothManifestContentProtection> list(String manifestId) throws BitmovinException {
-        return this.apiClient.list(manifestId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(manifestId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List Content Protection of Smooth Streaming
@@ -93,7 +110,11 @@ public class ContentprotectionApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<SmoothManifestContentProtection> list(String manifestId, SmoothManifestContentProtectionListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(manifestId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(manifestId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface ContentprotectionApiClient {

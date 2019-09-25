@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -48,7 +49,11 @@ public class TenantsApi {
      * @throws BitmovinException if fails to make API call
      */
     public Tenant create(String organizationId, String groupId, Tenant tenant) throws BitmovinException {
-        return this.apiClient.create(organizationId, groupId, tenant).getData().getResult();
+        try {
+            return this.apiClient.create(organizationId, groupId, tenant).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -61,7 +66,11 @@ public class TenantsApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String organizationId, String groupId, String tenantId) throws BitmovinException {
-        return this.apiClient.delete(organizationId, groupId, tenantId).getData().getResult();
+        try {
+            return this.apiClient.delete(organizationId, groupId, tenantId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -74,7 +83,11 @@ public class TenantsApi {
      * @throws BitmovinException if fails to make API call
      */
     public Tenant get(String organizationId, String groupId, String tenantId) throws BitmovinException {
-        return this.apiClient.get(organizationId, groupId, tenantId).getData().getResult();
+        try {
+            return this.apiClient.get(organizationId, groupId, tenantId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -86,7 +99,11 @@ public class TenantsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Tenant> list(String organizationId, String groupId) throws BitmovinException {
-        return this.apiClient.list(organizationId, groupId).getData().getResult();
+        try {
+            return this.apiClient.list(organizationId, groupId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface TenantsApiClient {

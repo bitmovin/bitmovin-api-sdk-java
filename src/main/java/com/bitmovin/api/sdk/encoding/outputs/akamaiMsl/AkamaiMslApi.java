@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -49,7 +50,11 @@ public class AkamaiMslApi {
      * @throws BitmovinException if fails to make API call
      */
     public AkamaiMslOutput create(AkamaiMslOutput akamaiMslOutput) throws BitmovinException {
-        return this.apiClient.create(akamaiMslOutput).getData().getResult();
+        try {
+            return this.apiClient.create(akamaiMslOutput).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -60,7 +65,11 @@ public class AkamaiMslApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String outputId) throws BitmovinException {
-        return this.apiClient.delete(outputId).getData().getResult();
+        try {
+            return this.apiClient.delete(outputId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -71,7 +80,11 @@ public class AkamaiMslApi {
      * @throws BitmovinException if fails to make API call
      */
     public AkamaiMslOutput get(String outputId) throws BitmovinException {
-        return this.apiClient.get(outputId).getData().getResult();
+        try {
+            return this.apiClient.get(outputId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -81,7 +94,11 @@ public class AkamaiMslApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<AkamaiMslOutput> list() throws BitmovinException {
-        return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List Akamai MSL Outputs
@@ -91,7 +108,11 @@ public class AkamaiMslApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<AkamaiMslOutput> list(AkamaiMslOutputListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface AkamaiMslApiClient {

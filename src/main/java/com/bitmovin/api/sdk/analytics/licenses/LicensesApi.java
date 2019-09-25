@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -49,7 +50,11 @@ public class LicensesApi {
      * @throws BitmovinException if fails to make API call
      */
     public AnalyticsLicense create(AnalyticsLicense analyticsLicense) throws BitmovinException {
-        return this.apiClient.create(analyticsLicense).getData().getResult();
+        try {
+            return this.apiClient.create(analyticsLicense).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -60,7 +65,11 @@ public class LicensesApi {
      * @throws BitmovinException if fails to make API call
      */
     public AnalyticsLicense get(String licenseId) throws BitmovinException {
-        return this.apiClient.get(licenseId).getData().getResult();
+        try {
+            return this.apiClient.get(licenseId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -70,7 +79,11 @@ public class LicensesApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<AnalyticsLicense> list() throws BitmovinException {
-        return this.apiClient.list().getData().getResult();
+        try {
+            return this.apiClient.list().getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -82,7 +95,11 @@ public class LicensesApi {
      * @throws BitmovinException if fails to make API call
      */
     public AnalyticsLicense update(String licenseId, AnalyticsLicenseUpdateRequest analyticsLicenseUpdateRequest) throws BitmovinException {
-        return this.apiClient.update(licenseId, analyticsLicenseUpdateRequest).getData().getResult();
+        try {
+            return this.apiClient.update(licenseId, analyticsLicenseUpdateRequest).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface LicensesApiClient {

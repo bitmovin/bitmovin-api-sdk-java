@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -46,7 +47,11 @@ public class ErrorApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Webhook> create(Webhook webhook) throws BitmovinException {
-        return this.apiClient.create(webhook).getData().getResult();
+        try {
+            return this.apiClient.create(webhook).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -58,7 +63,11 @@ public class ErrorApi {
      * @throws BitmovinException if fails to make API call
      */
     public Webhook createByManifestId(String manifestId, Webhook webhook) throws BitmovinException {
-        return this.apiClient.createByManifestId(manifestId, webhook).getData().getResult();
+        try {
+            return this.apiClient.createByManifestId(manifestId, webhook).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -70,7 +79,11 @@ public class ErrorApi {
      * @throws BitmovinException if fails to make API call
      */
     public Webhook update(String notificationId, Webhook webhook) throws BitmovinException {
-        return this.apiClient.update(notificationId, webhook).getData().getResult();
+        try {
+            return this.apiClient.update(notificationId, webhook).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface ErrorApiClient {

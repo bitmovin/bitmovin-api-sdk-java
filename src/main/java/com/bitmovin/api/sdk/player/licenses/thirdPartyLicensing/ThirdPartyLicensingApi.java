@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -47,7 +48,11 @@ public class ThirdPartyLicensingApi {
      * @throws BitmovinException if fails to make API call
      */
     public PlayerThirdPartyLicensing create(String licenseId, PlayerThirdPartyLicensing playerThirdPartyLicensing) throws BitmovinException {
-        return this.apiClient.create(licenseId, playerThirdPartyLicensing).getData().getResult();
+        try {
+            return this.apiClient.create(licenseId, playerThirdPartyLicensing).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -58,7 +63,11 @@ public class ThirdPartyLicensingApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String licenseId) throws BitmovinException {
-        return this.apiClient.delete(licenseId).getData().getResult();
+        try {
+            return this.apiClient.delete(licenseId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -69,7 +78,11 @@ public class ThirdPartyLicensingApi {
      * @throws BitmovinException if fails to make API call
      */
     public PlayerThirdPartyLicensing get(String licenseId) throws BitmovinException {
-        return this.apiClient.get(licenseId).getData().getResult();
+        try {
+            return this.apiClient.get(licenseId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface ThirdPartyLicensingApiClient {

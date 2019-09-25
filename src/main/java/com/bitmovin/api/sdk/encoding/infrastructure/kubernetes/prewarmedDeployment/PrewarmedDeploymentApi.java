@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -47,7 +48,11 @@ public class PrewarmedDeploymentApi {
      * @throws BitmovinException if fails to make API call
      */
     public PrewarmEncoderSettings create(String infrastructureId, PrewarmEncoderSettings prewarmEncoderSettings) throws BitmovinException {
-        return this.apiClient.create(infrastructureId, prewarmEncoderSettings).getData().getResult();
+        try {
+            return this.apiClient.create(infrastructureId, prewarmEncoderSettings).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -59,7 +64,11 @@ public class PrewarmedDeploymentApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String infrastructureId, String deploymentId) throws BitmovinException {
-        return this.apiClient.delete(infrastructureId, deploymentId).getData().getResult();
+        try {
+            return this.apiClient.delete(infrastructureId, deploymentId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -71,7 +80,11 @@ public class PrewarmedDeploymentApi {
      * @throws BitmovinException if fails to make API call
      */
     public PrewarmEncoderSettings get(String infrastructureId, String deploymentId) throws BitmovinException {
-        return this.apiClient.get(infrastructureId, deploymentId).getData().getResult();
+        try {
+            return this.apiClient.get(infrastructureId, deploymentId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -82,7 +95,11 @@ public class PrewarmedDeploymentApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<PrewarmEncoderSettings> list(String infrastructureId) throws BitmovinException {
-        return this.apiClient.list(infrastructureId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(infrastructureId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List Prewarmed Encoders
@@ -93,7 +110,11 @@ public class PrewarmedDeploymentApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<PrewarmEncoderSettings> list(String infrastructureId, PrewarmEncoderSettingsListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(infrastructureId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(infrastructureId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface PrewarmedDeploymentApiClient {

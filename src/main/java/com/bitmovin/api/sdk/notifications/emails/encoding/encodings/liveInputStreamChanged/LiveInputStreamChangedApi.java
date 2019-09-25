@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -46,7 +47,11 @@ public class LiveInputStreamChangedApi {
      * @throws BitmovinException if fails to make API call
      */
     public EmailNotificationWithStreamConditions create(EmailNotificationWithStreamConditionsRequest emailNotificationWithStreamConditionsRequest) throws BitmovinException {
-        return this.apiClient.create(emailNotificationWithStreamConditionsRequest).getData().getResult();
+        try {
+            return this.apiClient.create(emailNotificationWithStreamConditionsRequest).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -58,7 +63,11 @@ public class LiveInputStreamChangedApi {
      * @throws BitmovinException if fails to make API call
      */
     public EmailNotificationWithStreamConditions createByEncodingId(String encodingId, EmailNotificationWithStreamConditionsRequest emailNotificationWithStreamConditionsRequest) throws BitmovinException {
-        return this.apiClient.createByEncodingId(encodingId, emailNotificationWithStreamConditionsRequest).getData().getResult();
+        try {
+            return this.apiClient.createByEncodingId(encodingId, emailNotificationWithStreamConditionsRequest).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -70,7 +79,11 @@ public class LiveInputStreamChangedApi {
      * @throws BitmovinException if fails to make API call
      */
     public EmailNotificationWithStreamConditions update(String notificationId, EmailNotificationWithStreamConditionsRequest emailNotificationWithStreamConditionsRequest) throws BitmovinException {
-        return this.apiClient.update(notificationId, emailNotificationWithStreamConditionsRequest).getData().getResult();
+        try {
+            return this.apiClient.update(notificationId, emailNotificationWithStreamConditionsRequest).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface LiveInputStreamChangedApiClient {

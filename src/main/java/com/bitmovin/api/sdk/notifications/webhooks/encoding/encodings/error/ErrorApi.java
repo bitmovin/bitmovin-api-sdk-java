@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -49,7 +50,11 @@ public class ErrorApi {
      * @throws BitmovinException if fails to make API call
      */
     public Webhook create(Webhook webhook) throws BitmovinException {
-        return this.apiClient.create(webhook).getData().getResult();
+        try {
+            return this.apiClient.create(webhook).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -61,7 +66,11 @@ public class ErrorApi {
      * @throws BitmovinException if fails to make API call
      */
     public Webhook createByEncodingId(String encodingId, Webhook webhook) throws BitmovinException {
-        return this.apiClient.createByEncodingId(encodingId, webhook).getData().getResult();
+        try {
+            return this.apiClient.createByEncodingId(encodingId, webhook).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -73,7 +82,11 @@ public class ErrorApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse deleteByEncodingIdAndWebhookId(String encodingId, String webhookId) throws BitmovinException {
-        return this.apiClient.deleteByEncodingIdAndWebhookId(encodingId, webhookId).getData().getResult();
+        try {
+            return this.apiClient.deleteByEncodingIdAndWebhookId(encodingId, webhookId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -84,7 +97,11 @@ public class ErrorApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse deleteByWebhookId(String webhookId) throws BitmovinException {
-        return this.apiClient.deleteByWebhookId(webhookId).getData().getResult();
+        try {
+            return this.apiClient.deleteByWebhookId(webhookId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -96,7 +113,11 @@ public class ErrorApi {
      * @throws BitmovinException if fails to make API call
      */
     public Webhook getByEncodingIdAndWebhookId(String encodingId, String webhookId) throws BitmovinException {
-        return this.apiClient.getByEncodingIdAndWebhookId(encodingId, webhookId).getData().getResult();
+        try {
+            return this.apiClient.getByEncodingIdAndWebhookId(encodingId, webhookId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -107,7 +128,11 @@ public class ErrorApi {
      * @throws BitmovinException if fails to make API call
      */
     public Webhook getByWebhookId(String webhookId) throws BitmovinException {
-        return this.apiClient.getByWebhookId(webhookId).getData().getResult();
+        try {
+            return this.apiClient.getByWebhookId(webhookId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -117,7 +142,11 @@ public class ErrorApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Webhook> list() throws BitmovinException {
-        return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List Encoding Error Webhooks
@@ -127,7 +156,11 @@ public class ErrorApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Webhook> list(WebhookListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -138,7 +171,11 @@ public class ErrorApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Webhook> listByEncodingId(String encodingId) throws BitmovinException {
-        return this.apiClient.listByEncodingId(encodingId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.listByEncodingId(encodingId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List Encoding Error Webhooks for specific Encoding Resource
@@ -149,7 +186,11 @@ public class ErrorApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Webhook> listByEncodingId(String encodingId, WebhookListByEncodingIdQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.listByEncodingId(encodingId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.listByEncodingId(encodingId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface ErrorApiClient {

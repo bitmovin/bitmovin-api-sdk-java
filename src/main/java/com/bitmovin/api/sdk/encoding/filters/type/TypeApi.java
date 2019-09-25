@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -42,16 +43,20 @@ public class TypeApi {
      * Get Filter Type
      * 
      * @param filterId Id of the filter (required)
-     * @return FilterTypeResponse
+     * @return FilterType
      * @throws BitmovinException if fails to make API call
      */
-    public FilterTypeResponse get(String filterId) throws BitmovinException {
-        return this.apiClient.get(filterId).getData().getResult();
+    public FilterType get(String filterId) throws BitmovinException {
+        try {
+            return this.apiClient.get(filterId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface TypeApiClient {
     
         @RequestLine("GET /encoding/filters/{filter_id}/type")
-        ResponseEnvelope<FilterTypeResponse> get(@Param(value = "filter_id") String filterId) throws BitmovinException;
+        ResponseEnvelope<FilterType> get(@Param(value = "filter_id") String filterId) throws BitmovinException;
     }
 }

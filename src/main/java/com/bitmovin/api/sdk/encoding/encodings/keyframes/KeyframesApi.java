@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -47,7 +48,11 @@ public class KeyframesApi {
      * @throws BitmovinException if fails to make API call
      */
     public Keyframe create(String encodingId, Keyframe keyframe) throws BitmovinException {
-        return this.apiClient.create(encodingId, keyframe).getData().getResult();
+        try {
+            return this.apiClient.create(encodingId, keyframe).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -59,7 +64,11 @@ public class KeyframesApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String encodingId, String keyframeId) throws BitmovinException {
-        return this.apiClient.delete(encodingId, keyframeId).getData().getResult();
+        try {
+            return this.apiClient.delete(encodingId, keyframeId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -71,7 +80,11 @@ public class KeyframesApi {
      * @throws BitmovinException if fails to make API call
      */
     public Keyframe get(String encodingId, String keyframeId) throws BitmovinException {
-        return this.apiClient.get(encodingId, keyframeId).getData().getResult();
+        try {
+            return this.apiClient.get(encodingId, keyframeId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -82,7 +95,11 @@ public class KeyframesApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Keyframe> list(String encodingId) throws BitmovinException {
-        return this.apiClient.list(encodingId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List all Keyframes
@@ -93,7 +110,11 @@ public class KeyframesApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Keyframe> list(String encodingId, KeyframeListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(encodingId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface KeyframesApiClient {

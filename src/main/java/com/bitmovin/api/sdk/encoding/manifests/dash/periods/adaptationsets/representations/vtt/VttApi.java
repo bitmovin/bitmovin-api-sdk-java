@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -49,7 +50,11 @@ public class VttApi {
      * @throws BitmovinException if fails to make API call
      */
     public DashVttRepresentation create(String manifestId, String periodId, String adaptationsetId, DashVttRepresentation dashVttRepresentation) throws BitmovinException {
-        return this.apiClient.create(manifestId, periodId, adaptationsetId, dashVttRepresentation).getData().getResult();
+        try {
+            return this.apiClient.create(manifestId, periodId, adaptationsetId, dashVttRepresentation).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -63,7 +68,11 @@ public class VttApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String manifestId, String periodId, String adaptationsetId, String representationId) throws BitmovinException {
-        return this.apiClient.delete(manifestId, periodId, adaptationsetId, representationId).getData().getResult();
+        try {
+            return this.apiClient.delete(manifestId, periodId, adaptationsetId, representationId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -77,7 +86,11 @@ public class VttApi {
      * @throws BitmovinException if fails to make API call
      */
     public DashVttRepresentation get(String manifestId, String periodId, String adaptationsetId, String representationId) throws BitmovinException {
-        return this.apiClient.get(manifestId, periodId, adaptationsetId, representationId).getData().getResult();
+        try {
+            return this.apiClient.get(manifestId, periodId, adaptationsetId, representationId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -90,7 +103,11 @@ public class VttApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<DashVttRepresentation> list(String manifestId, String periodId, String adaptationsetId) throws BitmovinException {
-        return this.apiClient.list(manifestId, periodId, adaptationsetId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(manifestId, periodId, adaptationsetId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List all VTT Representations
@@ -103,7 +120,11 @@ public class VttApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<DashVttRepresentation> list(String manifestId, String periodId, String adaptationsetId, DashVttRepresentationListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(manifestId, periodId, adaptationsetId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(manifestId, periodId, adaptationsetId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface VttApiClient {

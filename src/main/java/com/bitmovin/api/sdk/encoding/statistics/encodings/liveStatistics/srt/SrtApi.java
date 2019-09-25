@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -46,7 +47,11 @@ public class SrtApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<SrtStatistics> list(String encodingId) throws BitmovinException {
-        return this.apiClient.list(encodingId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List Stream Infos of Live Statistics from an Encoding
@@ -57,7 +62,11 @@ public class SrtApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<SrtStatistics> list(String encodingId, SrtStatisticsListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(encodingId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -69,7 +78,11 @@ public class SrtApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<SrtStatistics> listBySrtInputId(String encodingId, String srtInputId) throws BitmovinException {
-        return this.apiClient.listBySrtInputId(encodingId, srtInputId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.listBySrtInputId(encodingId, srtInputId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List Statistics For SRT Live Stream Input
@@ -81,7 +94,11 @@ public class SrtApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<SrtStatistics> listBySrtInputId(String encodingId, String srtInputId, SrtStatisticsListBySrtInputIdQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.listBySrtInputId(encodingId, srtInputId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.listBySrtInputId(encodingId, srtInputId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface SrtApiClient {

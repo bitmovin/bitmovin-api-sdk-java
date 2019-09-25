@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -54,7 +55,11 @@ public class StatisticsApi {
      * @throws BitmovinException if fails to make API call
      */
     public Statistics get() throws BitmovinException {
-        return this.apiClient.get().getData().getResult();
+        try {
+            return this.apiClient.get().getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -66,7 +71,11 @@ public class StatisticsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Statistics> list(Date from, Date to) throws BitmovinException {
-        return this.apiClient.list(from, to, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(from, to, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * Show Overall Statistics Within Specific Dates
@@ -78,7 +87,11 @@ public class StatisticsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Statistics> list(Date from, Date to, StatisticsListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(from, to, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(from, to, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface StatisticsApiClient {

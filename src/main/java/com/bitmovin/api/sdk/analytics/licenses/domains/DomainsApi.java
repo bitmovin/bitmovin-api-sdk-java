@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -47,7 +48,11 @@ public class DomainsApi {
      * @throws BitmovinException if fails to make API call
      */
     public Domain create(String licenseId, Domain domain) throws BitmovinException {
-        return this.apiClient.create(licenseId, domain).getData().getResult();
+        try {
+            return this.apiClient.create(licenseId, domain).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -59,7 +64,11 @@ public class DomainsApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String licenseId, String domainId) throws BitmovinException {
-        return this.apiClient.delete(licenseId, domainId).getData().getResult();
+        try {
+            return this.apiClient.delete(licenseId, domainId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -70,7 +79,11 @@ public class DomainsApi {
      * @throws BitmovinException if fails to make API call
      */
     public DomainList get(String licenseId) throws BitmovinException {
-        return this.apiClient.get(licenseId).getData().getResult();
+        try {
+            return this.apiClient.get(licenseId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface DomainsApiClient {

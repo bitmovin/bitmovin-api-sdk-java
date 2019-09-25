@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -55,7 +56,11 @@ public class CmafApi {
      * @throws BitmovinException if fails to make API call
      */
     public DashCmafRepresentation create(String manifestId, String periodId, String adaptationsetId, DashCmafRepresentation dashCmafRepresentation) throws BitmovinException {
-        return this.apiClient.create(manifestId, periodId, adaptationsetId, dashCmafRepresentation).getData().getResult();
+        try {
+            return this.apiClient.create(manifestId, periodId, adaptationsetId, dashCmafRepresentation).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -69,7 +74,11 @@ public class CmafApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String manifestId, String periodId, String adaptationsetId, String representationId) throws BitmovinException {
-        return this.apiClient.delete(manifestId, periodId, adaptationsetId, representationId).getData().getResult();
+        try {
+            return this.apiClient.delete(manifestId, periodId, adaptationsetId, representationId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -83,7 +92,11 @@ public class CmafApi {
      * @throws BitmovinException if fails to make API call
      */
     public DashCmafRepresentation get(String manifestId, String periodId, String adaptationsetId, String representationId) throws BitmovinException {
-        return this.apiClient.get(manifestId, periodId, adaptationsetId, representationId).getData().getResult();
+        try {
+            return this.apiClient.get(manifestId, periodId, adaptationsetId, representationId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -96,7 +109,11 @@ public class CmafApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<DashCmafRepresentation> list(String manifestId, String periodId, String adaptationsetId) throws BitmovinException {
-        return this.apiClient.list(manifestId, periodId, adaptationsetId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(manifestId, periodId, adaptationsetId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List all CMAF Representations
@@ -109,7 +126,11 @@ public class CmafApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<DashCmafRepresentation> list(String manifestId, String periodId, String adaptationsetId, DashCmafRepresentationListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(manifestId, periodId, adaptationsetId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(manifestId, periodId, adaptationsetId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface CmafApiClient {

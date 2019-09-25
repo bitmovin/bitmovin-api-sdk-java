@@ -34,7 +34,7 @@ public class ScaleFilter extends Filter {
 
 
   /**
-   * The width of the output frame in pixel. If not set: codec configuration width will be used.
+   * The width of the output frame in pixels. If not set it will be based on the configured height by maintaining the original aspect ratio. If height is also not set, the original source dimensions will be applied.
    * @return width
    */
   public Integer getWidth() {
@@ -42,10 +42,10 @@ public class ScaleFilter extends Filter {
   }
 
   /**
-   * The width of the output frame in pixel. If not set: codec configuration width will be used.
+   * The width of the output frame in pixels. If not set it will be based on the configured height by maintaining the original aspect ratio. If height is also not set, the original source dimensions will be applied.
    *
    * @param width
-   *        The width of the output frame in pixel. If not set: codec configuration width will be used.
+   *        The width of the output frame in pixels. If not set it will be based on the configured height by maintaining the original aspect ratio. If height is also not set, the original source dimensions will be applied.
    */
   public void setWidth(Integer width) {
     this.width = width;
@@ -53,7 +53,7 @@ public class ScaleFilter extends Filter {
 
 
   /**
-   * The height of the output frame in pixel. If not set: codec configuration height will be used.
+   * The height of the output frame in pixels. If not set it will be based on the configured width by maintaining the original aspect ratio. If width is also not set, the original source dimensions will be applied.
    * @return height
    */
   public Integer getHeight() {
@@ -61,10 +61,10 @@ public class ScaleFilter extends Filter {
   }
 
   /**
-   * The height of the output frame in pixel. If not set: codec configuration height will be used.
+   * The height of the output frame in pixels. If not set it will be based on the configured width by maintaining the original aspect ratio. If width is also not set, the original source dimensions will be applied.
    *
    * @param height
-   *        The height of the output frame in pixel. If not set: codec configuration height will be used.
+   *        The height of the output frame in pixels. If not set it will be based on the configured width by maintaining the original aspect ratio. If width is also not set, the original source dimensions will be applied.
    */
   public void setHeight(Integer height) {
     this.height = height;

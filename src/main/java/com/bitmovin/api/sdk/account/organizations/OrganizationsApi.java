@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -52,7 +53,11 @@ public class OrganizationsApi {
      * @throws BitmovinException if fails to make API call
      */
     public Organization create(Organization organization) throws BitmovinException {
-        return this.apiClient.create(organization).getData().getResult();
+        try {
+            return this.apiClient.create(organization).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -63,7 +68,11 @@ public class OrganizationsApi {
      * @throws BitmovinException if fails to make API call
      */
     public Organization get(String organizationId) throws BitmovinException {
-        return this.apiClient.get(organizationId).getData().getResult();
+        try {
+            return this.apiClient.get(organizationId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -73,7 +82,11 @@ public class OrganizationsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Organization> list() throws BitmovinException {
-        return this.apiClient.list().getData().getResult();
+        try {
+            return this.apiClient.list().getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface OrganizationsApiClient {

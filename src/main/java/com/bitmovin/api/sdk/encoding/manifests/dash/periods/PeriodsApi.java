@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -53,7 +54,11 @@ public class PeriodsApi {
      * @throws BitmovinException if fails to make API call
      */
     public Period create(String manifestId, Period period) throws BitmovinException {
-        return this.apiClient.create(manifestId, period).getData().getResult();
+        try {
+            return this.apiClient.create(manifestId, period).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -65,7 +70,11 @@ public class PeriodsApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String manifestId, String periodId) throws BitmovinException {
-        return this.apiClient.delete(manifestId, periodId).getData().getResult();
+        try {
+            return this.apiClient.delete(manifestId, periodId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -77,7 +86,11 @@ public class PeriodsApi {
      * @throws BitmovinException if fails to make API call
      */
     public Period get(String manifestId, String periodId) throws BitmovinException {
-        return this.apiClient.get(manifestId, periodId).getData().getResult();
+        try {
+            return this.apiClient.get(manifestId, periodId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -88,7 +101,11 @@ public class PeriodsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Period> list(String manifestId) throws BitmovinException {
-        return this.apiClient.list(manifestId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(manifestId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List all Periods
@@ -99,7 +116,11 @@ public class PeriodsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Period> list(String manifestId, PeriodListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(manifestId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(manifestId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface PeriodsApiClient {

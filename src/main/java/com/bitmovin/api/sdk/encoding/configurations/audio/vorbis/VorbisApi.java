@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -49,7 +50,11 @@ public class VorbisApi {
      * @throws BitmovinException if fails to make API call
      */
     public VorbisAudioConfiguration create(VorbisAudioConfiguration vorbisAudioConfiguration) throws BitmovinException {
-        return this.apiClient.create(vorbisAudioConfiguration).getData().getResult();
+        try {
+            return this.apiClient.create(vorbisAudioConfiguration).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -60,7 +65,11 @@ public class VorbisApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String configurationId) throws BitmovinException {
-        return this.apiClient.delete(configurationId).getData().getResult();
+        try {
+            return this.apiClient.delete(configurationId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -71,7 +80,11 @@ public class VorbisApi {
      * @throws BitmovinException if fails to make API call
      */
     public VorbisAudioConfiguration get(String configurationId) throws BitmovinException {
-        return this.apiClient.get(configurationId).getData().getResult();
+        try {
+            return this.apiClient.get(configurationId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -81,7 +94,11 @@ public class VorbisApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<VorbisAudioConfiguration> list() throws BitmovinException {
-        return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List Vorbis Configurations
@@ -91,7 +108,11 @@ public class VorbisApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<VorbisAudioConfiguration> list(VorbisAudioConfigurationListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface VorbisApiClient {

@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -49,7 +50,11 @@ public class InterlaceApi {
      * @throws BitmovinException if fails to make API call
      */
     public InterlaceFilter create(InterlaceFilter interlaceFilter) throws BitmovinException {
-        return this.apiClient.create(interlaceFilter).getData().getResult();
+        try {
+            return this.apiClient.create(interlaceFilter).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -60,7 +65,11 @@ public class InterlaceApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String filterId) throws BitmovinException {
-        return this.apiClient.delete(filterId).getData().getResult();
+        try {
+            return this.apiClient.delete(filterId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -71,7 +80,11 @@ public class InterlaceApi {
      * @throws BitmovinException if fails to make API call
      */
     public InterlaceFilter get(String filterId) throws BitmovinException {
-        return this.apiClient.get(filterId).getData().getResult();
+        try {
+            return this.apiClient.get(filterId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -81,7 +94,11 @@ public class InterlaceApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<InterlaceFilter> list() throws BitmovinException {
-        return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List Interlace Filters
@@ -91,7 +108,11 @@ public class InterlaceApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<InterlaceFilter> list(InterlaceFilterListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface InterlaceApiClient {

@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -49,7 +50,11 @@ public class AkamaiNetstorageApi {
      * @throws BitmovinException if fails to make API call
      */
     public AkamaiNetStorageInput create(AkamaiNetStorageInput akamaiNetStorageInput) throws BitmovinException {
-        return this.apiClient.create(akamaiNetStorageInput).getData().getResult();
+        try {
+            return this.apiClient.create(akamaiNetStorageInput).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -60,7 +65,11 @@ public class AkamaiNetstorageApi {
      * @throws BitmovinException if fails to make API call
      */
     public AkamaiNetStorageInput delete(String inputId) throws BitmovinException {
-        return this.apiClient.delete(inputId).getData().getResult();
+        try {
+            return this.apiClient.delete(inputId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -71,7 +80,11 @@ public class AkamaiNetstorageApi {
      * @throws BitmovinException if fails to make API call
      */
     public AkamaiNetStorageInput get(String inputId) throws BitmovinException {
-        return this.apiClient.get(inputId).getData().getResult();
+        try {
+            return this.apiClient.get(inputId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -81,7 +94,11 @@ public class AkamaiNetstorageApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<AkamaiNetStorageInput> list() throws BitmovinException {
-        return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List Akamai NetStorage Inputs
@@ -91,7 +108,11 @@ public class AkamaiNetstorageApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<AkamaiNetStorageInput> list(AkamaiNetStorageInputListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface AkamaiNetstorageApiClient {

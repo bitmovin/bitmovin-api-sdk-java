@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -61,7 +62,11 @@ public class KubernetesApi {
      * @throws BitmovinException if fails to make API call
      */
     public KubernetesCluster create(KubernetesCluster kubernetesCluster) throws BitmovinException {
-        return this.apiClient.create(kubernetesCluster).getData().getResult();
+        try {
+            return this.apiClient.create(kubernetesCluster).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -72,7 +77,11 @@ public class KubernetesApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String infrastructureId) throws BitmovinException {
-        return this.apiClient.delete(infrastructureId).getData().getResult();
+        try {
+            return this.apiClient.delete(infrastructureId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -83,7 +92,11 @@ public class KubernetesApi {
      * @throws BitmovinException if fails to make API call
      */
     public KubernetesCluster get(String infrastructureId) throws BitmovinException {
-        return this.apiClient.get(infrastructureId).getData().getResult();
+        try {
+            return this.apiClient.get(infrastructureId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -93,7 +106,11 @@ public class KubernetesApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<KubernetesCluster> list() throws BitmovinException {
-        return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List Kubernetes Cluster
@@ -103,7 +120,11 @@ public class KubernetesApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<KubernetesCluster> list(KubernetesClusterListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface KubernetesApiClient {

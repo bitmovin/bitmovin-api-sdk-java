@@ -26,7 +26,7 @@ public class LiveHlsManifest {
 
 
   /**
-   * Hls manifest ids (required)
+   * HLS manifest ids (required)
    * @return manifestId
    */
   public String getManifestId() {
@@ -34,10 +34,10 @@ public class LiveHlsManifest {
   }
 
   /**
-   * Hls manifest ids (required)
+   * HLS manifest ids (required)
    *
    * @param manifestId
-   *        Hls manifest ids (required)
+   *        HLS manifest ids (required)
    */
   public void setManifestId(String manifestId) {
     this.manifestId = manifestId;

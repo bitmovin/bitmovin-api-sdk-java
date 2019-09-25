@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -48,7 +49,11 @@ public class TtmlApi {
      * @throws BitmovinException if fails to make API call
      */
     public TtmlEmbed delete(String encodingId, String muxingId, String captionsId) throws BitmovinException {
-        return this.apiClient.delete(encodingId, muxingId, captionsId).getData().getResult();
+        try {
+            return this.apiClient.delete(encodingId, muxingId, captionsId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -61,7 +66,11 @@ public class TtmlApi {
      * @throws BitmovinException if fails to make API call
      */
     public TtmlEmbed get(String encodingId, String muxingId, String captionsId) throws BitmovinException {
-        return this.apiClient.get(encodingId, muxingId, captionsId).getData().getResult();
+        try {
+            return this.apiClient.get(encodingId, muxingId, captionsId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface TtmlApiClient {

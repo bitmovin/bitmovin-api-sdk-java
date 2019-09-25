@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -45,7 +46,11 @@ public class AgentDeploymentApi {
      * @throws BitmovinException if fails to make API call
      */
     public void get(String infrastructureId) throws BitmovinException {
-        this.apiClient.get(infrastructureId);
+        try {
+            this.apiClient.get(infrastructureId);
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface AgentDeploymentApiClient {

@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -53,7 +54,11 @@ public class GroupsApi {
      * @throws BitmovinException if fails to make API call
      */
     public Group create(String organizationId, Group group) throws BitmovinException {
-        return this.apiClient.create(organizationId, group).getData().getResult();
+        try {
+            return this.apiClient.create(organizationId, group).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -65,7 +70,11 @@ public class GroupsApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String organizationId, String groupId) throws BitmovinException {
-        return this.apiClient.delete(organizationId, groupId).getData().getResult();
+        try {
+            return this.apiClient.delete(organizationId, groupId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -77,7 +86,11 @@ public class GroupsApi {
      * @throws BitmovinException if fails to make API call
      */
     public Group get(String organizationId, String groupId) throws BitmovinException {
-        return this.apiClient.get(organizationId, groupId).getData().getResult();
+        try {
+            return this.apiClient.get(organizationId, groupId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -88,7 +101,11 @@ public class GroupsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Group> list(String organizationId) throws BitmovinException {
-        return this.apiClient.list(organizationId).getData().getResult();
+        try {
+            return this.apiClient.list(organizationId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface GroupsApiClient {

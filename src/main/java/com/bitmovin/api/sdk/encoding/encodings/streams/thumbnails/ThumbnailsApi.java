@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -51,7 +52,11 @@ public class ThumbnailsApi {
      * @throws BitmovinException if fails to make API call
      */
     public Thumbnail create(String encodingId, String streamId, Thumbnail thumbnail) throws BitmovinException {
-        return this.apiClient.create(encodingId, streamId, thumbnail).getData().getResult();
+        try {
+            return this.apiClient.create(encodingId, streamId, thumbnail).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -64,7 +69,11 @@ public class ThumbnailsApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String encodingId, String streamId, String thumbnailId) throws BitmovinException {
-        return this.apiClient.delete(encodingId, streamId, thumbnailId).getData().getResult();
+        try {
+            return this.apiClient.delete(encodingId, streamId, thumbnailId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -77,7 +86,11 @@ public class ThumbnailsApi {
      * @throws BitmovinException if fails to make API call
      */
     public Thumbnail get(String encodingId, String streamId, String thumbnailId) throws BitmovinException {
-        return this.apiClient.get(encodingId, streamId, thumbnailId).getData().getResult();
+        try {
+            return this.apiClient.get(encodingId, streamId, thumbnailId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -89,7 +102,11 @@ public class ThumbnailsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Thumbnail> list(String encodingId, String streamId) throws BitmovinException {
-        return this.apiClient.list(encodingId, streamId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, streamId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List Thumbnails
@@ -101,7 +118,11 @@ public class ThumbnailsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Thumbnail> list(String encodingId, String streamId, ThumbnailListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(encodingId, streamId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, streamId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface ThumbnailsApiClient {

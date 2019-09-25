@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -53,7 +54,11 @@ public class ProgressiveMovApi {
      * @throws BitmovinException if fails to make API call
      */
     public ProgressiveMovMuxing create(String encodingId, ProgressiveMovMuxing progressiveMovMuxing) throws BitmovinException {
-        return this.apiClient.create(encodingId, progressiveMovMuxing).getData().getResult();
+        try {
+            return this.apiClient.create(encodingId, progressiveMovMuxing).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -65,7 +70,11 @@ public class ProgressiveMovApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String encodingId, String muxingId) throws BitmovinException {
-        return this.apiClient.delete(encodingId, muxingId).getData().getResult();
+        try {
+            return this.apiClient.delete(encodingId, muxingId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -77,7 +86,11 @@ public class ProgressiveMovApi {
      * @throws BitmovinException if fails to make API call
      */
     public ProgressiveMovMuxing get(String encodingId, String muxingId) throws BitmovinException {
-        return this.apiClient.get(encodingId, muxingId).getData().getResult();
+        try {
+            return this.apiClient.get(encodingId, muxingId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -88,7 +101,11 @@ public class ProgressiveMovApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<ProgressiveMovMuxing> list(String encodingId) throws BitmovinException {
-        return this.apiClient.list(encodingId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List Progressive MOV Muxings
@@ -99,7 +116,11 @@ public class ProgressiveMovApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<ProgressiveMovMuxing> list(String encodingId, ProgressiveMovMuxingListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(encodingId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface ProgressiveMovApiClient {

@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -48,7 +49,11 @@ public class SrtApi {
      * @throws BitmovinException if fails to make API call
      */
     public BurnInSubtitleSrt create(String encodingId, String streamId, BurnInSubtitleSrt burnInSubtitleSrt) throws BitmovinException {
-        return this.apiClient.create(encodingId, streamId, burnInSubtitleSrt).getData().getResult();
+        try {
+            return this.apiClient.create(encodingId, streamId, burnInSubtitleSrt).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -61,7 +66,11 @@ public class SrtApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String encodingId, String streamId, String subtitleId) throws BitmovinException {
-        return this.apiClient.delete(encodingId, streamId, subtitleId).getData().getResult();
+        try {
+            return this.apiClient.delete(encodingId, streamId, subtitleId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -74,7 +83,11 @@ public class SrtApi {
      * @throws BitmovinException if fails to make API call
      */
     public BurnInSubtitleSrt get(String encodingId, String streamId, String subtitleId) throws BitmovinException {
-        return this.apiClient.get(encodingId, streamId, subtitleId).getData().getResult();
+        try {
+            return this.apiClient.get(encodingId, streamId, subtitleId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -86,7 +99,11 @@ public class SrtApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<BurnInSubtitleSrt> list(String encodingId, String streamId) throws BitmovinException {
-        return this.apiClient.list(encodingId, streamId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, streamId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List the Burn-In SRT subtitles of a stream
@@ -98,7 +115,11 @@ public class SrtApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<BurnInSubtitleSrt> list(String encodingId, String streamId, BurnInSubtitleSrtListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(encodingId, streamId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, streamId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface SrtApiClient {

@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -49,7 +50,11 @@ public class UnsharpApi {
      * @throws BitmovinException if fails to make API call
      */
     public UnsharpFilter create(UnsharpFilter unsharpFilter) throws BitmovinException {
-        return this.apiClient.create(unsharpFilter).getData().getResult();
+        try {
+            return this.apiClient.create(unsharpFilter).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -60,7 +65,11 @@ public class UnsharpApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String filterId) throws BitmovinException {
-        return this.apiClient.delete(filterId).getData().getResult();
+        try {
+            return this.apiClient.delete(filterId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -71,7 +80,11 @@ public class UnsharpApi {
      * @throws BitmovinException if fails to make API call
      */
     public UnsharpFilter get(String filterId) throws BitmovinException {
-        return this.apiClient.get(filterId).getData().getResult();
+        try {
+            return this.apiClient.get(filterId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -81,7 +94,11 @@ public class UnsharpApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<UnsharpFilter> list() throws BitmovinException {
-        return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List Unsharp Filters
@@ -91,7 +108,11 @@ public class UnsharpApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<UnsharpFilter> list(UnsharpFilterListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface UnsharpApiClient {

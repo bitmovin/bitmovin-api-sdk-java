@@ -13,9 +13,11 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
+import com.bitmovin.api.sdk.encoding.filters.conform.ConformApi;
 import com.bitmovin.api.sdk.encoding.filters.watermark.WatermarkApi;
 import com.bitmovin.api.sdk.encoding.filters.audioVolume.AudioVolumeApi;
 import com.bitmovin.api.sdk.encoding.filters.enhancedWatermark.EnhancedWatermarkApi;
@@ -32,6 +34,7 @@ import com.bitmovin.api.sdk.encoding.filters.scale.ScaleApi;
 import com.bitmovin.api.sdk.encoding.filters.type.TypeApi;
 
 public class FiltersApi {
+    public final ConformApi conform;
     public final WatermarkApi watermark;
     public final AudioVolumeApi audioVolume;
     public final EnhancedWatermarkApi enhancedWatermark;
@@ -57,6 +60,7 @@ public class FiltersApi {
 
         this.apiClient = clientFactory.createApiClient(FiltersApiClient.class);
 
+        this.conform = new ConformApi(clientFactory);
         this.watermark = new WatermarkApi(clientFactory);
         this.audioVolume = new AudioVolumeApi(clientFactory);
         this.enhancedWatermark = new EnhancedWatermarkApi(clientFactory);
@@ -87,7 +91,11 @@ public class FiltersApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Filter> list() throws BitmovinException {
-        return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List all Filters
@@ -97,7 +105,11 @@ public class FiltersApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Filter> list(FilterListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface FiltersApiClient {

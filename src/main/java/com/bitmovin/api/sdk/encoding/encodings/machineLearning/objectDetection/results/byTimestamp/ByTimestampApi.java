@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -47,7 +48,11 @@ public class ByTimestampApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<ObjectDetectionTimestampResult> list(String encodingId, String objectDetectionId) throws BitmovinException {
-        return this.apiClient.list(encodingId, objectDetectionId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, objectDetectionId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List object detection results grouped by timestamp
@@ -59,7 +64,11 @@ public class ByTimestampApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<ObjectDetectionTimestampResult> list(String encodingId, String objectDetectionId, ObjectDetectionTimestampResultListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(encodingId, objectDetectionId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, objectDetectionId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface ByTimestampApiClient {

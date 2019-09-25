@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -49,7 +50,11 @@ public class ContentprotectionApi {
      * @throws BitmovinException if fails to make API call
      */
     public ContentProtection create(String manifestId, String periodId, String adaptationsetId, ContentProtection contentProtection) throws BitmovinException {
-        return this.apiClient.create(manifestId, periodId, adaptationsetId, contentProtection).getData().getResult();
+        try {
+            return this.apiClient.create(manifestId, periodId, adaptationsetId, contentProtection).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -63,7 +68,11 @@ public class ContentprotectionApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String manifestId, String periodId, String adaptationsetId, String contentprotectionId) throws BitmovinException {
-        return this.apiClient.delete(manifestId, periodId, adaptationsetId, contentprotectionId).getData().getResult();
+        try {
+            return this.apiClient.delete(manifestId, periodId, adaptationsetId, contentprotectionId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -77,7 +86,11 @@ public class ContentprotectionApi {
      * @throws BitmovinException if fails to make API call
      */
     public ContentProtection get(String manifestId, String periodId, String adaptationsetId, String contentprotectionId) throws BitmovinException {
-        return this.apiClient.get(manifestId, periodId, adaptationsetId, contentprotectionId).getData().getResult();
+        try {
+            return this.apiClient.get(manifestId, periodId, adaptationsetId, contentprotectionId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -90,7 +103,11 @@ public class ContentprotectionApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<ContentProtection> list(String manifestId, String periodId, String adaptationsetId) throws BitmovinException {
-        return this.apiClient.list(manifestId, periodId, adaptationsetId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(manifestId, periodId, adaptationsetId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List all AdaptationSet Content Protections
@@ -103,7 +120,11 @@ public class ContentprotectionApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<ContentProtection> list(String manifestId, String periodId, String adaptationsetId, ContentProtectionListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(manifestId, periodId, adaptationsetId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(manifestId, periodId, adaptationsetId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface ContentprotectionApiClient {

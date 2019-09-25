@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -49,7 +50,11 @@ public class DenoiseHqdn3dApi {
      * @throws BitmovinException if fails to make API call
      */
     public DenoiseHqdn3dFilter create(DenoiseHqdn3dFilter denoiseHqdn3dFilter) throws BitmovinException {
-        return this.apiClient.create(denoiseHqdn3dFilter).getData().getResult();
+        try {
+            return this.apiClient.create(denoiseHqdn3dFilter).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -60,7 +65,11 @@ public class DenoiseHqdn3dApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String filterId) throws BitmovinException {
-        return this.apiClient.delete(filterId).getData().getResult();
+        try {
+            return this.apiClient.delete(filterId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -71,7 +80,11 @@ public class DenoiseHqdn3dApi {
      * @throws BitmovinException if fails to make API call
      */
     public DenoiseHqdn3dFilter get(String filterId) throws BitmovinException {
-        return this.apiClient.get(filterId).getData().getResult();
+        try {
+            return this.apiClient.get(filterId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -81,7 +94,11 @@ public class DenoiseHqdn3dApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<DenoiseHqdn3dFilter> list() throws BitmovinException {
-        return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List Denoise hqdn3d Filters
@@ -91,7 +108,11 @@ public class DenoiseHqdn3dApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<DenoiseHqdn3dFilter> list(DenoiseHqdn3dFilterListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface DenoiseHqdn3dApiClient {

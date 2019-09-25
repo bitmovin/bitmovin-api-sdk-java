@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -46,7 +47,11 @@ public class SubOrganizationsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Organization> list(String organizationId) throws BitmovinException {
-        return this.apiClient.list(organizationId).getData().getResult();
+        try {
+            return this.apiClient.list(organizationId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface SubOrganizationsApiClient {

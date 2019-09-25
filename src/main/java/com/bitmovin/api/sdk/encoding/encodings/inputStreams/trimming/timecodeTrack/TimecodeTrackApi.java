@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -47,7 +48,11 @@ public class TimecodeTrackApi {
      * @throws BitmovinException if fails to make API call
      */
     public TimecodeTrackTrimmingInputStream create(String encodingId, TimecodeTrackTrimmingInputStream timecodeTrackTrimmingInputStream) throws BitmovinException {
-        return this.apiClient.create(encodingId, timecodeTrackTrimmingInputStream).getData().getResult();
+        try {
+            return this.apiClient.create(encodingId, timecodeTrackTrimmingInputStream).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -59,7 +64,11 @@ public class TimecodeTrackApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String encodingId, String inputStreamId) throws BitmovinException {
-        return this.apiClient.delete(encodingId, inputStreamId).getData().getResult();
+        try {
+            return this.apiClient.delete(encodingId, inputStreamId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -71,7 +80,11 @@ public class TimecodeTrackApi {
      * @throws BitmovinException if fails to make API call
      */
     public TimecodeTrackTrimmingInputStream get(String encodingId, String inputStreamId) throws BitmovinException {
-        return this.apiClient.get(encodingId, inputStreamId).getData().getResult();
+        try {
+            return this.apiClient.get(encodingId, inputStreamId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -82,7 +95,11 @@ public class TimecodeTrackApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<TimecodeTrackTrimmingInputStream> list(String encodingId) throws BitmovinException {
-        return this.apiClient.list(encodingId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List Timecode Track Trimming Input Streams
@@ -93,7 +110,11 @@ public class TimecodeTrackApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<TimecodeTrackTrimmingInputStream> list(String encodingId, TimecodeTrackTrimmingInputStreamListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(encodingId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface TimecodeTrackApiClient {

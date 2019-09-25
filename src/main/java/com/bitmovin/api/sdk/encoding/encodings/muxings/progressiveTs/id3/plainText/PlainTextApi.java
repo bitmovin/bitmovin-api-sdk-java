@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -51,7 +52,11 @@ public class PlainTextApi {
      * @throws BitmovinException if fails to make API call
      */
     public PlaintextId3Tag create(String encodingId, String muxingId, PlaintextId3Tag plaintextId3Tag) throws BitmovinException {
-        return this.apiClient.create(encodingId, muxingId, plaintextId3Tag).getData().getResult();
+        try {
+            return this.apiClient.create(encodingId, muxingId, plaintextId3Tag).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -64,7 +69,11 @@ public class PlainTextApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String encodingId, String muxingId, String id3TagId) throws BitmovinException {
-        return this.apiClient.delete(encodingId, muxingId, id3TagId).getData().getResult();
+        try {
+            return this.apiClient.delete(encodingId, muxingId, id3TagId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -77,7 +86,11 @@ public class PlainTextApi {
      * @throws BitmovinException if fails to make API call
      */
     public PlaintextId3Tag get(String encodingId, String muxingId, String id3TagId) throws BitmovinException {
-        return this.apiClient.get(encodingId, muxingId, id3TagId).getData().getResult();
+        try {
+            return this.apiClient.get(encodingId, muxingId, id3TagId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -89,7 +102,11 @@ public class PlainTextApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<PlaintextId3Tag> list(String encodingId, String muxingId) throws BitmovinException {
-        return this.apiClient.list(encodingId, muxingId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, muxingId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List Plain Text ID3 Tags of Progressive TS Muxing
@@ -101,7 +118,11 @@ public class PlainTextApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<PlaintextId3Tag> list(String encodingId, String muxingId, PlaintextId3TagListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(encodingId, muxingId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, muxingId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface PlainTextApiClient {

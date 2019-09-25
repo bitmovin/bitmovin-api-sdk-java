@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -49,7 +50,11 @@ public class EbuR128SinglePassApi {
      * @throws BitmovinException if fails to make API call
      */
     public EbuR128SinglePassFilter create(EbuR128SinglePassFilter ebuR128SinglePassFilter) throws BitmovinException {
-        return this.apiClient.create(ebuR128SinglePassFilter).getData().getResult();
+        try {
+            return this.apiClient.create(ebuR128SinglePassFilter).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -60,7 +65,11 @@ public class EbuR128SinglePassApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String filterId) throws BitmovinException {
-        return this.apiClient.delete(filterId).getData().getResult();
+        try {
+            return this.apiClient.delete(filterId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -71,7 +80,11 @@ public class EbuR128SinglePassApi {
      * @throws BitmovinException if fails to make API call
      */
     public EbuR128SinglePassFilter get(String filterId) throws BitmovinException {
-        return this.apiClient.get(filterId).getData().getResult();
+        try {
+            return this.apiClient.get(filterId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -81,7 +94,11 @@ public class EbuR128SinglePassApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<EbuR128SinglePassFilter> list() throws BitmovinException {
-        return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List EBU R128 Single Pass Filters
@@ -91,7 +108,11 @@ public class EbuR128SinglePassApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<EbuR128SinglePassFilter> list(EbuR128SinglePassFilterListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface EbuR128SinglePassApiClient {

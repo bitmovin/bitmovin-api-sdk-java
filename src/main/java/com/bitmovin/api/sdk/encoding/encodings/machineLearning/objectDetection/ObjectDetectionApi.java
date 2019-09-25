@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -53,7 +54,11 @@ public class ObjectDetectionApi {
      * @throws BitmovinException if fails to make API call
      */
     public ObjectDetectionConfiguration create(String encodingId, ObjectDetectionConfiguration objectDetectionConfiguration) throws BitmovinException {
-        return this.apiClient.create(encodingId, objectDetectionConfiguration).getData().getResult();
+        try {
+            return this.apiClient.create(encodingId, objectDetectionConfiguration).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -65,7 +70,11 @@ public class ObjectDetectionApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String encodingId, String objectDetectionId) throws BitmovinException {
-        return this.apiClient.delete(encodingId, objectDetectionId).getData().getResult();
+        try {
+            return this.apiClient.delete(encodingId, objectDetectionId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -77,7 +86,11 @@ public class ObjectDetectionApi {
      * @throws BitmovinException if fails to make API call
      */
     public ObjectDetectionConfiguration get(String encodingId, String objectDetectionId) throws BitmovinException {
-        return this.apiClient.get(encodingId, objectDetectionId).getData().getResult();
+        try {
+            return this.apiClient.get(encodingId, objectDetectionId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -88,7 +101,11 @@ public class ObjectDetectionApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<ObjectDetectionConfiguration> list(String encodingId) throws BitmovinException {
-        return this.apiClient.list(encodingId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List object detection configurations of an encoding
@@ -99,7 +116,11 @@ public class ObjectDetectionApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<ObjectDetectionConfiguration> list(String encodingId, ObjectDetectionConfigurationListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(encodingId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface ObjectDetectionApiClient {

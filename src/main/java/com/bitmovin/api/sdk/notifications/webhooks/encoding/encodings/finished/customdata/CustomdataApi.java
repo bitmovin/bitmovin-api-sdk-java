@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -47,7 +48,11 @@ public class CustomdataApi {
      * @throws BitmovinException if fails to make API call
      */
     public CustomData getCustomDataByEncodingIdAndWebhookId(String encodingId, String webhookId) throws BitmovinException {
-        return this.apiClient.getCustomDataByEncodingIdAndWebhookId(encodingId, webhookId).getData().getResult();
+        try {
+            return this.apiClient.getCustomDataByEncodingIdAndWebhookId(encodingId, webhookId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -58,7 +63,11 @@ public class CustomdataApi {
      * @throws BitmovinException if fails to make API call
      */
     public CustomData getCustomDataByWebhookId(String webhookId) throws BitmovinException {
-        return this.apiClient.getCustomDataByWebhookId(webhookId).getData().getResult();
+        try {
+            return this.apiClient.getCustomDataByWebhookId(webhookId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface CustomdataApiClient {

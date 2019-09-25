@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -49,7 +50,11 @@ public class RotateApi {
      * @throws BitmovinException if fails to make API call
      */
     public RotateFilter create(RotateFilter rotateFilter) throws BitmovinException {
-        return this.apiClient.create(rotateFilter).getData().getResult();
+        try {
+            return this.apiClient.create(rotateFilter).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -60,7 +65,11 @@ public class RotateApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String filterId) throws BitmovinException {
-        return this.apiClient.delete(filterId).getData().getResult();
+        try {
+            return this.apiClient.delete(filterId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -71,7 +80,11 @@ public class RotateApi {
      * @throws BitmovinException if fails to make API call
      */
     public RotateFilter get(String filterId) throws BitmovinException {
-        return this.apiClient.get(filterId).getData().getResult();
+        try {
+            return this.apiClient.get(filterId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -81,7 +94,11 @@ public class RotateApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<RotateFilter> list() throws BitmovinException {
-        return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List Rotate Filters
@@ -91,7 +108,11 @@ public class RotateApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<RotateFilter> list(RotateFilterListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface RotateApiClient {

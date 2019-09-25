@@ -1,12 +1,24 @@
-# Bitmovin Java API Client [![Javadocs](https://www.javadoc.io/badge/com.bitmovin.api.sdk/bitmovin-api-sdk.svg)](https://www.javadoc.io/doc/com.bitmovin.api.sdk/bitmovin-api-sdk)
+<p align="center">
+  <a href="https://www.bitmovin.com">
+    <img alt="Bitmovin Java API SDK Header" src="https://cdn.bitmovin.com/frontend/encoding/openapi-clients/readme-headers/ReadmeHeader_JavaSdk.png" >
+  </a>
 
-[![bitmovin](http://bitmovin-a.akamaihd.net/webpages/bitmovin-logo-github.png)](http://www.bitmovin.com)
+  <h4 align="center">
+    Java API SDK which enables you to seamlessly integrate the Bitmovin API into your projects.
+  </h4>
 
-Java-Client which enables you to seamlessly integrate the Bitmovin API into your projects. Using this API client requires an active account.
+  <p align="center">
+    <a href="https://search.maven.org/artifact/com.bitmovin.api.sdk/bitmovin-api-sdk"><img src="https://img.shields.io/maven-central/v/com.bitmovin.api.sdk/bitmovin-api-sdk.svg" alt="Maven"></img></a>
+    <a href="https://www.javadoc.io/doc/com.bitmovin.api.sdk/bitmovin-api-sdk"><img src="https://www.javadoc.io/badge/com.bitmovin.api.sdk/bitmovin-api-sdk.svg" alt="Javadocs"></a>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License"></a>
+  </p>
+</p>
 
-[Sign up for a Bitmovin Account!](https://dashboard.bitmovin.com/signup)
+Using this API client requires an active account.
 
-The full API reference can be found [here](https://bitmovin.com/docs).
+> Don't have an account yet? [Sign up for a free Bitmovin trial plan](https://dashboard.bitmovin.com/signup)!
+
+For full documentation of all available API endpoints, see the [Bitmovin API reference](https://bitmovin.com/docs).
 
 ## Installation
 
@@ -18,7 +30,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.bitmovin.api.sdk</groupId>
   <artifactId>bitmovin-api-sdk</artifactId>
-  <version>1.23.0</version>
+  <version>1.24.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -34,7 +46,7 @@ mvn clean install
 Add this dependency to your project's build file:
 
 ```groovy
-compile group: 'com.bitmovin.api.sdk', name= 'bitmovin-api-sdk', version: '1.23.0'
+compile group: 'com.bitmovin.api.sdk', name= 'bitmovin-api-sdk', version: '1.24.0'
 ```
 
 ## Initialization

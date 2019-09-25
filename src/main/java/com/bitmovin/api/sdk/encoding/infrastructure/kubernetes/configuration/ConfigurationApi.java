@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -46,7 +47,11 @@ public class ConfigurationApi {
      * @throws BitmovinException if fails to make API call
      */
     public KubernetesClusterConfiguration get(String infrastructureId) throws BitmovinException {
-        return this.apiClient.get(infrastructureId).getData().getResult();
+        try {
+            return this.apiClient.get(infrastructureId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -58,7 +63,11 @@ public class ConfigurationApi {
      * @throws BitmovinException if fails to make API call
      */
     public KubernetesClusterConfiguration update(String infrastructureId, KubernetesClusterConfiguration kubernetesClusterConfiguration) throws BitmovinException {
-        return this.apiClient.update(infrastructureId, kubernetesClusterConfiguration).getData().getResult();
+        try {
+            return this.apiClient.update(infrastructureId, kubernetesClusterConfiguration).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface ConfigurationApiClient {

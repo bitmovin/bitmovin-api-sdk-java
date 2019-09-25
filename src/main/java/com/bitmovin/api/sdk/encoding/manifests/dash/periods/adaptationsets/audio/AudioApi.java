@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -48,7 +49,11 @@ public class AudioApi {
      * @throws BitmovinException if fails to make API call
      */
     public AudioAdaptationSet create(String manifestId, String periodId, AudioAdaptationSet audioAdaptationSet) throws BitmovinException {
-        return this.apiClient.create(manifestId, periodId, audioAdaptationSet).getData().getResult();
+        try {
+            return this.apiClient.create(manifestId, periodId, audioAdaptationSet).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -61,7 +66,11 @@ public class AudioApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String manifestId, String periodId, String adaptationsetId) throws BitmovinException {
-        return this.apiClient.delete(manifestId, periodId, adaptationsetId).getData().getResult();
+        try {
+            return this.apiClient.delete(manifestId, periodId, adaptationsetId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -74,7 +83,11 @@ public class AudioApi {
      * @throws BitmovinException if fails to make API call
      */
     public AudioAdaptationSet get(String manifestId, String periodId, String adaptationsetId) throws BitmovinException {
-        return this.apiClient.get(manifestId, periodId, adaptationsetId).getData().getResult();
+        try {
+            return this.apiClient.get(manifestId, periodId, adaptationsetId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -86,7 +99,11 @@ public class AudioApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<AudioAdaptationSet> list(String manifestId, String periodId) throws BitmovinException {
-        return this.apiClient.list(manifestId, periodId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(manifestId, periodId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List all Audio AdaptationSets
@@ -98,7 +115,11 @@ public class AudioApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<AudioAdaptationSet> list(String manifestId, String periodId, AudioAdaptationSetListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(manifestId, periodId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(manifestId, periodId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface AudioApiClient {

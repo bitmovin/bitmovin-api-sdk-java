@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -48,7 +49,11 @@ public class CustomdataApi {
      * @throws BitmovinException if fails to make API call
      */
     public CustomData getCustomData(String encodingId, String streamId, String bifId) throws BitmovinException {
-        return this.apiClient.getCustomData(encodingId, streamId, bifId).getData().getResult();
+        try {
+            return this.apiClient.getCustomData(encodingId, streamId, bifId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface CustomdataApiClient {

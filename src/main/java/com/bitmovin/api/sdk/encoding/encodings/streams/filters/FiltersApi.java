@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -48,7 +49,11 @@ public class FiltersApi {
      * @throws BitmovinException if fails to make API call
      */
     public StreamFilterList create(String encodingId, String streamId, List<StreamFilter> streamFilter) throws BitmovinException {
-        return this.apiClient.create(encodingId, streamId, streamFilter).getData().getResult();
+        try {
+            return this.apiClient.create(encodingId, streamId, streamFilter).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -61,7 +66,11 @@ public class FiltersApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String encodingId, String streamId, String filterId) throws BitmovinException {
-        return this.apiClient.delete(encodingId, streamId, filterId).getData().getResult();
+        try {
+            return this.apiClient.delete(encodingId, streamId, filterId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -73,7 +82,11 @@ public class FiltersApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponseList deleteAll(String encodingId, String streamId) throws BitmovinException {
-        return this.apiClient.deleteAll(encodingId, streamId).getData().getResult();
+        try {
+            return this.apiClient.deleteAll(encodingId, streamId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -85,7 +98,11 @@ public class FiltersApi {
      * @throws BitmovinException if fails to make API call
      */
     public StreamFilterList list(String encodingId, String streamId) throws BitmovinException {
-        return this.apiClient.list(encodingId, streamId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, streamId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List the filters of a stream
@@ -97,7 +114,11 @@ public class FiltersApi {
      * @throws BitmovinException if fails to make API call
      */
     public StreamFilterList list(String encodingId, String streamId, StreamFilterListListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(encodingId, streamId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, streamId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface FiltersApiClient {

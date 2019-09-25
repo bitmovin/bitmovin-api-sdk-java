@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -51,7 +52,11 @@ public class BifsApi {
      * @throws BitmovinException if fails to make API call
      */
     public Bif create(String encodingId, String streamId, Bif bif) throws BitmovinException {
-        return this.apiClient.create(encodingId, streamId, bif).getData().getResult();
+        try {
+            return this.apiClient.create(encodingId, streamId, bif).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -64,7 +69,11 @@ public class BifsApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String encodingId, String streamId, String bifId) throws BitmovinException {
-        return this.apiClient.delete(encodingId, streamId, bifId).getData().getResult();
+        try {
+            return this.apiClient.delete(encodingId, streamId, bifId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -77,7 +86,11 @@ public class BifsApi {
      * @throws BitmovinException if fails to make API call
      */
     public Bif get(String encodingId, String streamId, String bifId) throws BitmovinException {
-        return this.apiClient.get(encodingId, streamId, bifId).getData().getResult();
+        try {
+            return this.apiClient.get(encodingId, streamId, bifId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -89,7 +102,11 @@ public class BifsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Bif> list(String encodingId, String streamId) throws BitmovinException {
-        return this.apiClient.list(encodingId, streamId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, streamId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List Bifs
@@ -101,7 +118,11 @@ public class BifsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Bif> list(String encodingId, String streamId, BifListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(encodingId, streamId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(encodingId, streamId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface BifsApiClient {

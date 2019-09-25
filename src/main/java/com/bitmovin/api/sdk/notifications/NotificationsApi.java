@@ -13,6 +13,7 @@ import feign.Headers;
 
 import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
+import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
@@ -55,7 +56,11 @@ public class NotificationsApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse delete(String notificationId) throws BitmovinException {
-        return this.apiClient.delete(notificationId).getData().getResult();
+        try {
+            return this.apiClient.delete(notificationId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -66,7 +71,11 @@ public class NotificationsApi {
      * @throws BitmovinException if fails to make API call
      */
     public Notification get(String notificationId) throws BitmovinException {
-        return this.apiClient.get(notificationId).getData().getResult();
+        try {
+            return this.apiClient.get(notificationId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -76,7 +85,11 @@ public class NotificationsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Notification> list() throws BitmovinException {
-        return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List Notifications
@@ -86,7 +99,11 @@ public class NotificationsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<Notification> list(NotificationListQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.list(queryParams).getData().getResult();
+        try {
+            return this.apiClient.list(queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -97,7 +114,11 @@ public class NotificationsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<NotificationStateEntry> listByNotificationId(String notificationId) throws BitmovinException {
-        return this.apiClient.listByNotificationId(notificationId, new HashMap<String, Object>()).getData().getResult();
+        try {
+            return this.apiClient.listByNotificationId(notificationId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     /**
      * List Notification State History (All Resources)
@@ -108,7 +129,11 @@ public class NotificationsApi {
      * @throws BitmovinException if fails to make API call
      */
     public PaginationResponse<NotificationStateEntry> listByNotificationId(String notificationId, NotificationStateEntryListByNotificationIdQueryParams queryParams) throws BitmovinException {
-        return this.apiClient.listByNotificationId(notificationId, queryParams).getData().getResult();
+        try {
+            return this.apiClient.listByNotificationId(notificationId, queryParams).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -119,7 +144,11 @@ public class NotificationsApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse mute(String notificationId) throws BitmovinException {
-        return this.apiClient.mute(notificationId).getData().getResult();
+        try {
+            return this.apiClient.mute(notificationId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -130,7 +159,11 @@ public class NotificationsApi {
      * @throws BitmovinException if fails to make API call
      */
     public BitmovinResponse unmute(String notificationId) throws BitmovinException {
-        return this.apiClient.unmute(notificationId).getData().getResult();
+        try {
+            return this.apiClient.unmute(notificationId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     interface NotificationsApiClient {
