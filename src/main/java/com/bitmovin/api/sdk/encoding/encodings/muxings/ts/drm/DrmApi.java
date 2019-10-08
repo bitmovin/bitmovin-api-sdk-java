@@ -19,10 +19,12 @@ import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.ts.drm.fairplay.FairplayApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.ts.drm.aes.AesApi;
+import com.bitmovin.api.sdk.encoding.encodings.muxings.ts.drm.speke.SpekeApi;
 
 public class DrmApi {
     public final FairplayApi fairplay;
     public final AesApi aes;
+    public final SpekeApi speke;
 
     private final DrmApiClient apiClient;
 
@@ -36,6 +38,7 @@ public class DrmApi {
 
         this.fairplay = new FairplayApi(clientFactory);
         this.aes = new AesApi(clientFactory);
+        this.speke = new SpekeApi(clientFactory);
     }
 
     /**

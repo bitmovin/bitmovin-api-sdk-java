@@ -22,6 +22,7 @@ import com.bitmovin.api.sdk.encoding.encodings.muxings.mp4.drm.clearkey.Clearkey
 import com.bitmovin.api.sdk.encoding.encodings.muxings.mp4.drm.widevine.WidevineApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.mp4.drm.marlin.MarlinApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.mp4.drm.cenc.CencApi;
+import com.bitmovin.api.sdk.encoding.encodings.muxings.mp4.drm.speke.SpekeApi;
 
 public class DrmApi {
     public final PlayreadyApi playready;
@@ -29,6 +30,7 @@ public class DrmApi {
     public final WidevineApi widevine;
     public final MarlinApi marlin;
     public final CencApi cenc;
+    public final SpekeApi speke;
 
     private final DrmApiClient apiClient;
 
@@ -45,6 +47,7 @@ public class DrmApi {
         this.widevine = new WidevineApi(clientFactory);
         this.marlin = new MarlinApi(clientFactory);
         this.cenc = new CencApi(clientFactory);
+        this.speke = new SpekeApi(clientFactory);
     }
 
     /**

@@ -33,6 +33,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
   @JsonSubTypes.Type(value = BroadcastTsMuxing.class, name = "BROADCAST_TS"),
   @JsonSubTypes.Type(value = ChunkedTextMuxing.class, name = "CHUNKED_TEXT"),
   @JsonSubTypes.Type(value = TextMuxing.class, name = "TEXT"),
+  @JsonSubTypes.Type(value = SegmentedRawMuxing.class, name = "SEGMENTED_RAW"),
 })
 
 public class Muxing extends BitmovinResource {

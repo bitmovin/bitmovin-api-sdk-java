@@ -53,7 +53,12 @@ public enum DrmType {
   /**
    * The type of the drm
    */
-  CENC("CENC");
+  CENC("CENC"),
+  
+  /**
+   * The type of the drm
+   */
+  SPEKE("SPEKE");
 
   private String value;
 

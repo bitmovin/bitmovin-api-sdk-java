@@ -26,6 +26,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
   @JsonSubTypes.Type(value = ClearKeyDrm.class, name = "CLEARKEY"),
   @JsonSubTypes.Type(value = AesEncryptionDrm.class, name = "AES"),
   @JsonSubTypes.Type(value = CencDrm.class, name = "CENC"),
+  @JsonSubTypes.Type(value = SpekeDrm.class, name = "SPEKE"),
 })
 
 public class Drm extends BitmovinResource {

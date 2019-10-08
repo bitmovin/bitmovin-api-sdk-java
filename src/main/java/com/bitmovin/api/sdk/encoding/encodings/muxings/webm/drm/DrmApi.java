@@ -18,9 +18,11 @@ import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.webm.drm.cenc.CencApi;
+import com.bitmovin.api.sdk.encoding.encodings.muxings.webm.drm.speke.SpekeApi;
 
 public class DrmApi {
     public final CencApi cenc;
+    public final SpekeApi speke;
 
     private final DrmApiClient apiClient;
 
@@ -33,6 +35,7 @@ public class DrmApi {
         this.apiClient = clientFactory.createApiClient(DrmApiClient.class);
 
         this.cenc = new CencApi(clientFactory);
+        this.speke = new SpekeApi(clientFactory);
     }
 
     /**

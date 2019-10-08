@@ -49,7 +49,10 @@ public enum MuxingType {
   CHUNKED_TEXT("CHUNKED_TEXT"),
   
   
-  TEXT("TEXT");
+  TEXT("TEXT"),
+  
+  
+  SEGMENTED_RAW("SEGMENTED_RAW");
 
   private String value;
 
