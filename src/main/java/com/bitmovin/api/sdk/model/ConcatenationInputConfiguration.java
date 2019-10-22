@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.PaddingSequence;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -20,6 +21,12 @@ public class ConcatenationInputConfiguration {
 
   @JsonProperty("position")
   private Integer position;
+
+  @JsonProperty("paddingBefore")
+  private PaddingSequence paddingBefore;
+
+  @JsonProperty("paddingAfter")
+  private PaddingSequence paddingAfter;
 
 
   /**
@@ -79,6 +86,44 @@ public class ConcatenationInputConfiguration {
   }
 
 
+  /**
+   * Inserts a padding sequence (black frames and/or silent audio) before the input stream. If this is set, all video output streams of the encoding need to use the same ConcatenationInputStream.
+   * @return paddingBefore
+   */
+  public PaddingSequence getPaddingBefore() {
+    return paddingBefore;
+  }
+
+  /**
+   * Inserts a padding sequence (black frames and/or silent audio) before the input stream. If this is set, all video output streams of the encoding need to use the same ConcatenationInputStream.
+   *
+   * @param paddingBefore
+   *        Inserts a padding sequence (black frames and/or silent audio) before the input stream. If this is set, all video output streams of the encoding need to use the same ConcatenationInputStream.
+   */
+  public void setPaddingBefore(PaddingSequence paddingBefore) {
+    this.paddingBefore = paddingBefore;
+  }
+
+
+  /**
+   * Inserts a padding sequence (black frames and/or silent audio) after the input stream. If this is set, all video output streams of the encoding need to use the same ConcatenationInputStream.
+   * @return paddingAfter
+   */
+  public PaddingSequence getPaddingAfter() {
+    return paddingAfter;
+  }
+
+  /**
+   * Inserts a padding sequence (black frames and/or silent audio) after the input stream. If this is set, all video output streams of the encoding need to use the same ConcatenationInputStream.
+   *
+   * @param paddingAfter
+   *        Inserts a padding sequence (black frames and/or silent audio) after the input stream. If this is set, all video output streams of the encoding need to use the same ConcatenationInputStream.
+   */
+  public void setPaddingAfter(PaddingSequence paddingAfter) {
+    this.paddingAfter = paddingAfter;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -90,12 +135,14 @@ public class ConcatenationInputConfiguration {
     ConcatenationInputConfiguration concatenationInputConfiguration = (ConcatenationInputConfiguration) o;
     return Objects.equals(this.inputStreamId, concatenationInputConfiguration.inputStreamId) &&
         Objects.equals(this.isMain, concatenationInputConfiguration.isMain) &&
-        Objects.equals(this.position, concatenationInputConfiguration.position);
+        Objects.equals(this.position, concatenationInputConfiguration.position) &&
+        Objects.equals(this.paddingBefore, concatenationInputConfiguration.paddingBefore) &&
+        Objects.equals(this.paddingAfter, concatenationInputConfiguration.paddingAfter);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(inputStreamId, isMain, position);
+    return Objects.hash(inputStreamId, isMain, position, paddingBefore, paddingAfter);
   }
 
   @Override
@@ -106,6 +153,8 @@ public class ConcatenationInputConfiguration {
     sb.append("    inputStreamId: ").append(toIndentedString(inputStreamId)).append("\n");
     sb.append("    isMain: ").append(toIndentedString(isMain)).append("\n");
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
+    sb.append("    paddingBefore: ").append(toIndentedString(paddingBefore)).append("\n");
+    sb.append("    paddingAfter: ").append(toIndentedString(paddingAfter)).append("\n");
     sb.append("}");
     return sb.toString();
   }

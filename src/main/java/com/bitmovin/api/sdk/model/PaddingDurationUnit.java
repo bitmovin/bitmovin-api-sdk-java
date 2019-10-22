@@ -11,25 +11,23 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets StatisticsResolution
+ * Gets or Sets PaddingDurationUnit
  */
-public enum StatisticsResolution {
+public enum PaddingDurationUnit {
   
+  /**
+   * Duration will be specified in seconds
+   */
+  SECONDS("SECONDS"),
   
-  SD("SD"),
-  
-  
-  HD("HD"),
-  
-  
-  UHD("UHD"),
-  
-  
-  UHD_8K("UHD_8K");
+  /**
+   * Duration will be specified in number of frames
+   */
+  FRAMES("FRAMES");
 
   private String value;
 
-  StatisticsResolution(String value) {
+  PaddingDurationUnit(String value) {
     this.value = value;
   }
 
@@ -44,8 +42,8 @@ public enum StatisticsResolution {
   }
 
   @JsonCreator
-  public static StatisticsResolution fromValue(String text) {
-    for (StatisticsResolution b : StatisticsResolution.values()) {
+  public static PaddingDurationUnit fromValue(String text) {
+    for (PaddingDurationUnit b : PaddingDurationUnit.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

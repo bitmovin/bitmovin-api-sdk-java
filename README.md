@@ -30,7 +30,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.bitmovin.api.sdk</groupId>
   <artifactId>bitmovin-api-sdk</artifactId>
-  <version>1.25.0</version>
+  <version>1.26.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -46,7 +46,7 @@ mvn clean install
 Add this dependency to your project's build file:
 
 ```groovy
-compile group: 'com.bitmovin.api.sdk', name= 'bitmovin-api-sdk', version: '1.25.0'
+compile group: 'com.bitmovin.api.sdk', name= 'bitmovin-api-sdk', version: '1.26.0'
 ```
 
 ## Initialization
@@ -58,6 +58,9 @@ BitmovinApi bitmovinApi = BitmovinApi.builder()
     .withApiKey("<YOUR_API_KEY>")
     .build();
 ```
+
+## Examples
+You can find sample workflow scripts in the [Bitmovin API SDK examples](https://github.com/bitmovin/bitmovin-api-sdk-examples) repository.
 
 # Previous API Client (Legacy)
 
