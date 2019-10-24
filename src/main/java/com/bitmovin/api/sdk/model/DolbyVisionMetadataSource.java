@@ -11,43 +11,23 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets Status
+ * Gets or Sets DolbyVisionMetadataSource
  */
-public enum Status {
+public enum DolbyVisionMetadataSource {
   
   /**
-   * The process has been created, but not started yet
+   * Dolby Vision Metadata is provided with an external XML file specified by the inputStreamId attribute.
    */
-  CREATED("CREATED"),
+  INPUT_STREAM("INPUT_STREAM"),
   
   /**
-   * The process has been enqueued for execution and will start as soon as resources are available
+   * Dolby Vision Metadata is embedded in the input video.
    */
-  QUEUED("QUEUED"),
-  
-  /**
-   * The process is being executed
-   */
-  RUNNING("RUNNING"),
-  
-  /**
-   * The process was finished successfully. This is a final state
-   */
-  FINISHED("FINISHED"),
-  
-  /**
-   * The process has stopped due to an error. This is a final state
-   */
-  ERROR("ERROR"),
-  
-  /**
-   * The process has been canceled by the user. This is a final state
-   */
-  CANCELED("CANCELED");
+  EMBEDDED("EMBEDDED");
 
   private String value;
 
-  Status(String value) {
+  DolbyVisionMetadataSource(String value) {
     this.value = value;
   }
 
@@ -62,8 +42,8 @@ public enum Status {
   }
 
   @JsonCreator
-  public static Status fromValue(String text) {
-    for (Status b : Status.values()) {
+  public static DolbyVisionMetadataSource fromValue(String text) {
+    for (DolbyVisionMetadataSource b : DolbyVisionMetadataSource.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

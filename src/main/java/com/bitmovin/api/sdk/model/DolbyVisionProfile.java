@@ -11,43 +11,38 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets Status
+ * Gets or Sets DolbyVisionProfile
  */
-public enum Status {
+public enum DolbyVisionProfile {
   
   /**
-   * The process has been created, but not started yet
+   * dvhe.04
    */
-  CREATED("CREATED"),
+  DVHE_04("DVHE_04"),
   
   /**
-   * The process has been enqueued for execution and will start as soon as resources are available
+   * dvhe.05
    */
-  QUEUED("QUEUED"),
+  DVHE_05("DVHE_05"),
   
   /**
-   * The process is being executed
+   * dvhe.07
    */
-  RUNNING("RUNNING"),
+  DVHE_07("DVHE_07"),
   
   /**
-   * The process was finished successfully. This is a final state
+   * hev1.08
    */
-  FINISHED("FINISHED"),
+  HEV1_08("HEV1_08"),
   
   /**
-   * The process has stopped due to an error. This is a final state
+   * avc3.09
    */
-  ERROR("ERROR"),
-  
-  /**
-   * The process has been canceled by the user. This is a final state
-   */
-  CANCELED("CANCELED");
+  AVC3_09("AVC3_09");
 
   private String value;
 
-  Status(String value) {
+  DolbyVisionProfile(String value) {
     this.value = value;
   }
 
@@ -62,8 +57,8 @@ public enum Status {
   }
 
   @JsonCreator
-  public static Status fromValue(String text) {
-    for (Status b : Status.values()) {
+  public static DolbyVisionProfile fromValue(String text) {
+    for (DolbyVisionProfile b : DolbyVisionProfile.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

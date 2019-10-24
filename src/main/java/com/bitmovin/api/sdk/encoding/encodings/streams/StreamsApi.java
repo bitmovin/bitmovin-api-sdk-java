@@ -24,6 +24,7 @@ import com.bitmovin.api.sdk.encoding.encodings.streams.filters.FiltersApi;
 import com.bitmovin.api.sdk.encoding.encodings.streams.burnInSubtitles.BurnInSubtitlesApi;
 import com.bitmovin.api.sdk.encoding.encodings.streams.captions.CaptionsApi;
 import com.bitmovin.api.sdk.encoding.encodings.streams.bifs.BifsApi;
+import com.bitmovin.api.sdk.encoding.encodings.streams.hdr.HdrApi;
 import com.bitmovin.api.sdk.encoding.encodings.streams.thumbnails.ThumbnailsApi;
 import com.bitmovin.api.sdk.encoding.encodings.streams.sprites.SpritesApi;
 import com.bitmovin.api.sdk.encoding.encodings.streams.qc.QcApi;
@@ -36,6 +37,7 @@ public class StreamsApi {
     public final BurnInSubtitlesApi burnInSubtitles;
     public final CaptionsApi captions;
     public final BifsApi bifs;
+    public final HdrApi hdr;
     public final ThumbnailsApi thumbnails;
     public final SpritesApi sprites;
     public final QcApi qc;
@@ -57,6 +59,7 @@ public class StreamsApi {
         this.burnInSubtitles = new BurnInSubtitlesApi(clientFactory);
         this.captions = new CaptionsApi(clientFactory);
         this.bifs = new BifsApi(clientFactory);
+        this.hdr = new HdrApi(clientFactory);
         this.thumbnails = new ThumbnailsApi(clientFactory);
         this.sprites = new SpritesApi(clientFactory);
         this.qc = new QcApi(clientFactory);

@@ -11,43 +11,23 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets Status
+ * Sets the Dolby Vision track&#39;s sample entry name
  */
-public enum Status {
+public enum DolbyVisionTrackSampleEntryName {
   
   /**
-   * The process has been created, but not started yet
+   * Sets the Dolby Vision track&#39;s sample entry name to &#x60;dvhe&#x60;. This is the default value
    */
-  CREATED("CREATED"),
+  DVHE("DVHE"),
   
   /**
-   * The process has been enqueued for execution and will start as soon as resources are available
+   * Sets the Dolby Vision track&#39;s sample entry name to &#x60;dvh1&#x60;
    */
-  QUEUED("QUEUED"),
-  
-  /**
-   * The process is being executed
-   */
-  RUNNING("RUNNING"),
-  
-  /**
-   * The process was finished successfully. This is a final state
-   */
-  FINISHED("FINISHED"),
-  
-  /**
-   * The process has stopped due to an error. This is a final state
-   */
-  ERROR("ERROR"),
-  
-  /**
-   * The process has been canceled by the user. This is a final state
-   */
-  CANCELED("CANCELED");
+  DVH1("DVH1");
 
   private String value;
 
-  Status(String value) {
+  DolbyVisionTrackSampleEntryName(String value) {
     this.value = value;
   }
 
@@ -62,8 +42,8 @@ public enum Status {
   }
 
   @JsonCreator
-  public static Status fromValue(String text) {
-    for (Status b : Status.values()) {
+  public static DolbyVisionTrackSampleEntryName fromValue(String text) {
+    for (DolbyVisionTrackSampleEntryName b : DolbyVisionTrackSampleEntryName.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

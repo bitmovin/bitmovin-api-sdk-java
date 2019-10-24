@@ -20,6 +20,7 @@ import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.encodings.inputStreams.type.TypeApi;
 import com.bitmovin.api.sdk.encoding.encodings.inputStreams.audioMix.AudioMixApi;
 import com.bitmovin.api.sdk.encoding.encodings.inputStreams.ingest.IngestApi;
+import com.bitmovin.api.sdk.encoding.encodings.inputStreams.sidecar.SidecarApi;
 import com.bitmovin.api.sdk.encoding.encodings.inputStreams.concatenation.ConcatenationApi;
 import com.bitmovin.api.sdk.encoding.encodings.inputStreams.file.FileApi;
 import com.bitmovin.api.sdk.encoding.encodings.inputStreams.trimming.TrimmingApi;
@@ -30,6 +31,7 @@ public class InputStreamsApi {
     public final TypeApi type;
     public final AudioMixApi audioMix;
     public final IngestApi ingest;
+    public final SidecarApi sidecar;
     public final ConcatenationApi concatenation;
     public final FileApi file;
     public final TrimmingApi trimming;
@@ -49,6 +51,7 @@ public class InputStreamsApi {
         this.type = new TypeApi(clientFactory);
         this.audioMix = new AudioMixApi(clientFactory);
         this.ingest = new IngestApi(clientFactory);
+        this.sidecar = new SidecarApi(clientFactory);
         this.concatenation = new ConcatenationApi(clientFactory);
         this.file = new FileApi(clientFactory);
         this.trimming = new TrimmingApi(clientFactory);

@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.DolbyVisionMuxingConfiguration;
 import com.bitmovin.api.sdk.model.EncodingOutput;
 import com.bitmovin.api.sdk.model.FragmentedMp4MuxingManifestType;
 import com.bitmovin.api.sdk.model.Ignoring;
@@ -37,6 +38,9 @@ public class Mp4Muxing extends Muxing {
 
   @JsonProperty("internalChunkLength")
   private InternalChunkLength internalChunkLength;
+
+  @JsonProperty("dolbyVisionConfiguration")
+  private DolbyVisionMuxingConfiguration dolbyVisionConfiguration;
 
 
   /**
@@ -132,6 +136,25 @@ public class Mp4Muxing extends Muxing {
   }
 
 
+  /**
+   * Dolby Vision specific configuration
+   * @return dolbyVisionConfiguration
+   */
+  public DolbyVisionMuxingConfiguration getDolbyVisionConfiguration() {
+    return dolbyVisionConfiguration;
+  }
+
+  /**
+   * Dolby Vision specific configuration
+   *
+   * @param dolbyVisionConfiguration
+   *        Dolby Vision specific configuration
+   */
+  public void setDolbyVisionConfiguration(DolbyVisionMuxingConfiguration dolbyVisionConfiguration) {
+    this.dolbyVisionConfiguration = dolbyVisionConfiguration;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -146,12 +169,13 @@ public class Mp4Muxing extends Muxing {
         Objects.equals(this.timeCode, mp4Muxing.timeCode) &&
         Objects.equals(this.fragmentedMP4MuxingManifestType, mp4Muxing.fragmentedMP4MuxingManifestType) &&
         Objects.equals(this.internalChunkLength, mp4Muxing.internalChunkLength) &&
+        Objects.equals(this.dolbyVisionConfiguration, mp4Muxing.dolbyVisionConfiguration) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(filename, fragmentDuration, timeCode, fragmentedMP4MuxingManifestType, internalChunkLength, super.hashCode());
+    return Objects.hash(filename, fragmentDuration, timeCode, fragmentedMP4MuxingManifestType, internalChunkLength, dolbyVisionConfiguration, super.hashCode());
   }
 
   @Override
@@ -164,6 +188,7 @@ public class Mp4Muxing extends Muxing {
     sb.append("    timeCode: ").append(toIndentedString(timeCode)).append("\n");
     sb.append("    fragmentedMP4MuxingManifestType: ").append(toIndentedString(fragmentedMP4MuxingManifestType)).append("\n");
     sb.append("    internalChunkLength: ").append(toIndentedString(internalChunkLength)).append("\n");
+    sb.append("    dolbyVisionConfiguration: ").append(toIndentedString(dolbyVisionConfiguration)).append("\n");
     sb.append("}");
     return sb.toString();
   }
