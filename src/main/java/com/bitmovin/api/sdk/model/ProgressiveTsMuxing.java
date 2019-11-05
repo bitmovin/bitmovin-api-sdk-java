@@ -4,7 +4,6 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.EncodingOutput;
 import com.bitmovin.api.sdk.model.Ignoring;
-import com.bitmovin.api.sdk.model.InternalChunkLength;
 import com.bitmovin.api.sdk.model.Muxing;
 import com.bitmovin.api.sdk.model.MuxingStream;
 import com.bitmovin.api.sdk.model.StreamConditionsMode;
@@ -29,9 +28,6 @@ public class ProgressiveTsMuxing extends Muxing {
 
   @JsonProperty("startOffset")
   private Integer startOffset;
-
-  @JsonProperty("internalChunkLength")
-  private InternalChunkLength internalChunkLength;
 
 
   /**
@@ -91,25 +87,6 @@ public class ProgressiveTsMuxing extends Muxing {
   }
 
 
-  /**
-   * Modifies the internal chunk length used for chunked encoding
-   * @return internalChunkLength
-   */
-  public InternalChunkLength getInternalChunkLength() {
-    return internalChunkLength;
-  }
-
-  /**
-   * Modifies the internal chunk length used for chunked encoding
-   *
-   * @param internalChunkLength
-   *        Modifies the internal chunk length used for chunked encoding
-   */
-  public void setInternalChunkLength(InternalChunkLength internalChunkLength) {
-    this.internalChunkLength = internalChunkLength;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -122,13 +99,12 @@ public class ProgressiveTsMuxing extends Muxing {
     return Objects.equals(this.segmentLength, progressiveTsMuxing.segmentLength) &&
         Objects.equals(this.filename, progressiveTsMuxing.filename) &&
         Objects.equals(this.startOffset, progressiveTsMuxing.startOffset) &&
-        Objects.equals(this.internalChunkLength, progressiveTsMuxing.internalChunkLength) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(segmentLength, filename, startOffset, internalChunkLength, super.hashCode());
+    return Objects.hash(segmentLength, filename, startOffset, super.hashCode());
   }
 
   @Override
@@ -139,7 +115,6 @@ public class ProgressiveTsMuxing extends Muxing {
     sb.append("    segmentLength: ").append(toIndentedString(segmentLength)).append("\n");
     sb.append("    filename: ").append(toIndentedString(filename)).append("\n");
     sb.append("    startOffset: ").append(toIndentedString(startOffset)).append("\n");
-    sb.append("    internalChunkLength: ").append(toIndentedString(internalChunkLength)).append("\n");
     sb.append("}");
     return sb.toString();
   }

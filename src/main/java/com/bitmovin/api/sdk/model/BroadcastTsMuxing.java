@@ -5,7 +5,6 @@ import java.util.Arrays;
 import com.bitmovin.api.sdk.model.BroadcastTsMuxingConfiguration;
 import com.bitmovin.api.sdk.model.EncodingOutput;
 import com.bitmovin.api.sdk.model.Ignoring;
-import com.bitmovin.api.sdk.model.InternalChunkLength;
 import com.bitmovin.api.sdk.model.Muxing;
 import com.bitmovin.api.sdk.model.MuxingStream;
 import com.bitmovin.api.sdk.model.StreamConditionsMode;
@@ -30,9 +29,6 @@ public class BroadcastTsMuxing extends Muxing {
 
   @JsonProperty("configuration")
   private BroadcastTsMuxingConfiguration _configuration;
-
-  @JsonProperty("internalChunkLength")
-  private InternalChunkLength internalChunkLength;
 
 
   /**
@@ -91,25 +87,6 @@ public class BroadcastTsMuxing extends Muxing {
   }
 
 
-  /**
-   * Modifies the internal chunk length used for chunked encoding
-   * @return internalChunkLength
-   */
-  public InternalChunkLength getInternalChunkLength() {
-    return internalChunkLength;
-  }
-
-  /**
-   * Modifies the internal chunk length used for chunked encoding
-   *
-   * @param internalChunkLength
-   *        Modifies the internal chunk length used for chunked encoding
-   */
-  public void setInternalChunkLength(InternalChunkLength internalChunkLength) {
-    this.internalChunkLength = internalChunkLength;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -122,13 +99,12 @@ public class BroadcastTsMuxing extends Muxing {
     return Objects.equals(this.segmentLength, broadcastTsMuxing.segmentLength) &&
         Objects.equals(this.filename, broadcastTsMuxing.filename) &&
         Objects.equals(this._configuration, broadcastTsMuxing._configuration) &&
-        Objects.equals(this.internalChunkLength, broadcastTsMuxing.internalChunkLength) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(segmentLength, filename, _configuration, internalChunkLength, super.hashCode());
+    return Objects.hash(segmentLength, filename, _configuration, super.hashCode());
   }
 
   @Override
@@ -139,7 +115,6 @@ public class BroadcastTsMuxing extends Muxing {
     sb.append("    segmentLength: ").append(toIndentedString(segmentLength)).append("\n");
     sb.append("    filename: ").append(toIndentedString(filename)).append("\n");
     sb.append("    _configuration: ").append(toIndentedString(_configuration)).append("\n");
-    sb.append("    internalChunkLength: ").append(toIndentedString(internalChunkLength)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -19,6 +19,9 @@ public class DashRepresentation extends BitmovinResponse {
   @JsonProperty("muxingId")
   private String muxingId;
 
+  @JsonProperty("dependencyId")
+  private String dependencyId;
+
 
   /**
    * UUID of an encoding (required)
@@ -58,6 +61,25 @@ public class DashRepresentation extends BitmovinResponse {
   }
 
 
+  /**
+   * Used to signal a dependency with another representation. The representation may belong to a different adaptation set
+   * @return dependencyId
+   */
+  public String getDependencyId() {
+    return dependencyId;
+  }
+
+  /**
+   * Used to signal a dependency with another representation. The representation may belong to a different adaptation set
+   *
+   * @param dependencyId
+   *        Used to signal a dependency with another representation. The representation may belong to a different adaptation set
+   */
+  public void setDependencyId(String dependencyId) {
+    this.dependencyId = dependencyId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -69,12 +91,13 @@ public class DashRepresentation extends BitmovinResponse {
     DashRepresentation dashRepresentation = (DashRepresentation) o;
     return Objects.equals(this.encodingId, dashRepresentation.encodingId) &&
         Objects.equals(this.muxingId, dashRepresentation.muxingId) &&
+        Objects.equals(this.dependencyId, dashRepresentation.dependencyId) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(encodingId, muxingId, super.hashCode());
+    return Objects.hash(encodingId, muxingId, dependencyId, super.hashCode());
   }
 
   @Override
@@ -84,6 +107,7 @@ public class DashRepresentation extends BitmovinResponse {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    encodingId: ").append(toIndentedString(encodingId)).append("\n");
     sb.append("    muxingId: ").append(toIndentedString(muxingId)).append("\n");
+    sb.append("    dependencyId: ").append(toIndentedString(dependencyId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -4,7 +4,6 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.EncodingOutput;
 import com.bitmovin.api.sdk.model.Ignoring;
-import com.bitmovin.api.sdk.model.InternalChunkLength;
 import com.bitmovin.api.sdk.model.Muxing;
 import com.bitmovin.api.sdk.model.MuxingStream;
 import com.bitmovin.api.sdk.model.StreamConditionsMode;
@@ -23,9 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 public class ProgressiveWebmMuxing extends Muxing {
   @JsonProperty("filename")
   private String filename;
-
-  @JsonProperty("internalChunkLength")
-  private InternalChunkLength internalChunkLength;
 
 
   /**
@@ -47,25 +43,6 @@ public class ProgressiveWebmMuxing extends Muxing {
   }
 
 
-  /**
-   * Modifies the internal chunk length used for chunked encoding
-   * @return internalChunkLength
-   */
-  public InternalChunkLength getInternalChunkLength() {
-    return internalChunkLength;
-  }
-
-  /**
-   * Modifies the internal chunk length used for chunked encoding
-   *
-   * @param internalChunkLength
-   *        Modifies the internal chunk length used for chunked encoding
-   */
-  public void setInternalChunkLength(InternalChunkLength internalChunkLength) {
-    this.internalChunkLength = internalChunkLength;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -76,13 +53,12 @@ public class ProgressiveWebmMuxing extends Muxing {
     }
     ProgressiveWebmMuxing progressiveWebmMuxing = (ProgressiveWebmMuxing) o;
     return Objects.equals(this.filename, progressiveWebmMuxing.filename) &&
-        Objects.equals(this.internalChunkLength, progressiveWebmMuxing.internalChunkLength) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(filename, internalChunkLength, super.hashCode());
+    return Objects.hash(filename, super.hashCode());
   }
 
   @Override
@@ -91,7 +67,6 @@ public class ProgressiveWebmMuxing extends Muxing {
     sb.append("class ProgressiveWebmMuxing {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    filename: ").append(toIndentedString(filename)).append("\n");
-    sb.append("    internalChunkLength: ").append(toIndentedString(internalChunkLength)).append("\n");
     sb.append("}");
     return sb.toString();
   }
