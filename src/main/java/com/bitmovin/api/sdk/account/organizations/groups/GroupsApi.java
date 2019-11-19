@@ -18,10 +18,12 @@ import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.account.organizations.groups.tenants.TenantsApi;
+import com.bitmovin.api.sdk.account.organizations.groups.invitations.InvitationsApi;
 import com.bitmovin.api.sdk.account.organizations.groups.permissions.PermissionsApi;
 
 public class GroupsApi {
     public final TenantsApi tenants;
+    public final InvitationsApi invitations;
     public final PermissionsApi permissions;
 
     private final GroupsApiClient apiClient;
@@ -35,6 +37,7 @@ public class GroupsApi {
         this.apiClient = clientFactory.createApiClient(GroupsApiClient.class);
 
         this.tenants = new TenantsApi(clientFactory);
+        this.invitations = new InvitationsApi(clientFactory);
         this.permissions = new PermissionsApi(clientFactory);
     }
 

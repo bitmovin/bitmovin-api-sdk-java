@@ -37,6 +37,8 @@ public class AccountInformation extends BitmovinResource {
   @JsonProperty("company")
   private String company;
 
+  @JsonProperty("isVerified")
+  private Boolean isVerified;
 
   /**
    * Email address of the account. (required)
@@ -47,37 +49,11 @@ public class AccountInformation extends BitmovinResource {
   }
 
   /**
-   * Email address of the account. (required)
-   *
-   * @param email
-   *        Email address of the account. (required)
-   */
-  public void setEmail(String email) {
-    this.email = email;
-  }
-
-
-  public AccountInformation addApiKeysItem(AccountApiKey apiKeysItem) {
-    this.apiKeys.add(apiKeysItem);
-    return this;
-  }
-
-  /**
    * ApiKeys associated with the account (required)
    * @return apiKeys
    */
   public List<AccountApiKey> getApiKeys() {
     return apiKeys;
-  }
-
-  /**
-   * ApiKeys associated with the account (required)
-   *
-   * @param apiKeys
-   *        ApiKeys associated with the account (required)
-   */
-  public void setApiKeys(List<AccountApiKey> apiKeys) {
-    this.apiKeys = apiKeys;
   }
 
 
@@ -156,6 +132,14 @@ public class AccountInformation extends BitmovinResource {
     this.company = company;
   }
 
+  /**
+   * Get isVerified
+   * @return isVerified
+   */
+  public Boolean getIsVerified() {
+    return isVerified;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -172,12 +156,13 @@ public class AccountInformation extends BitmovinResource {
         Objects.equals(this.lastName, accountInformation.lastName) &&
         Objects.equals(this.phone, accountInformation.phone) &&
         Objects.equals(this.company, accountInformation.company) &&
+        Objects.equals(this.isVerified, accountInformation.isVerified) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(email, apiKeys, firstName, lastName, phone, company, super.hashCode());
+    return Objects.hash(email, apiKeys, firstName, lastName, phone, company, isVerified, super.hashCode());
   }
 
   @Override
@@ -191,6 +176,7 @@ public class AccountInformation extends BitmovinResource {
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    company: ").append(toIndentedString(company)).append("\n");
+    sb.append("    isVerified: ").append(toIndentedString(isVerified)).append("\n");
     sb.append("}");
     return sb.toString();
   }

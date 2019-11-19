@@ -1,4 +1,4 @@
-package com.bitmovin.api.sdk.notifications.emails;
+package com.bitmovin.api.sdk.notifications.emails.usageReports;
 
 import java.util.Date;
 import java.util.List;
@@ -17,41 +17,35 @@ import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovin
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
-import com.bitmovin.api.sdk.notifications.emails.usageReports.UsageReportsApi;
-import com.bitmovin.api.sdk.notifications.emails.encoding.EncodingApi;
 
-public class EmailsApi {
-    public final UsageReportsApi usageReports;
-    public final EncodingApi encoding;
+public class UsageReportsApi {
 
-    private final EmailsApiClient apiClient;
+    private final UsageReportsApiClient apiClient;
 
-    public EmailsApi(BitmovinApiClientFactory clientFactory) {
+    public UsageReportsApi(BitmovinApiClientFactory clientFactory) {
         if (clientFactory == null)
         {
             throw new IllegalArgumentException("Parameter 'clientFactory' may not be null.");
         }
 
-        this.apiClient = clientFactory.createApiClient(EmailsApiClient.class);
+        this.apiClient = clientFactory.createApiClient(UsageReportsApiClient.class);
 
-        this.usageReports = new UsageReportsApi(clientFactory);
-        this.encoding = new EncodingApi(clientFactory);
     }
 
     /**
-     * Fluent builder for creating an instance of EmailsApi
+     * Fluent builder for creating an instance of UsageReportsApi
      */
-    public static BitmovinApiBuilder<EmailsApi> builder() {
-        return new BitmovinApiBuilder<>(EmailsApi.class);
+    public static BitmovinApiBuilder<UsageReportsApi> builder() {
+        return new BitmovinApiBuilder<>(UsageReportsApi.class);
     }
     
     /**
-     * List Email Notifications
+     * List Email Notifications (All Usage Reports)
      * 
-     * @return List&lt;Notification&gt;
+     * @return List&lt;EmailNotification&gt;
      * @throws BitmovinException if fails to make API call
      */
-    public PaginationResponse<Notification> list() throws BitmovinException {
+    public PaginationResponse<EmailNotification> list() throws BitmovinException {
         try {
             return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
         } catch (Exception ex) {
@@ -59,13 +53,13 @@ public class EmailsApi {
         }
     }
     /**
-     * List Email Notifications
+     * List Email Notifications (All Usage Reports)
      * 
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
-     * @return List&lt;Notification&gt;
+     * @return List&lt;EmailNotification&gt;
      * @throws BitmovinException if fails to make API call
      */
-    public PaginationResponse<Notification> list(NotificationListQueryParams queryParams) throws BitmovinException {
+    public PaginationResponse<EmailNotification> list(EmailNotificationListQueryParams queryParams) throws BitmovinException {
         try {
             return this.apiClient.list(queryParams).getData().getResult();
         } catch (Exception ex) {
@@ -73,9 +67,9 @@ public class EmailsApi {
         }
     }
     
-    interface EmailsApiClient {
+    interface UsageReportsApiClient {
     
-        @RequestLine("GET /notifications/emails")
-        ResponseEnvelope<PaginationResponse<Notification>> list(@QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        @RequestLine("GET /notifications/emails/usage-reports")
+        ResponseEnvelope<PaginationResponse<EmailNotification>> list(@QueryMap Map<String, Object> queryParams) throws BitmovinException;
     }
 }

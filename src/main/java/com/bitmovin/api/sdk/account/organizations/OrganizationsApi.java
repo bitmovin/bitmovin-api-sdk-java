@@ -89,6 +89,22 @@ public class OrganizationsApi {
         }
     }
     
+    /**
+     * Update Organization
+     * 
+     * @param organizationId ID of the organization (required)
+     * @param updateOrganizationRequest Organization Details fields to be updated (required)
+     * @return Organization
+     * @throws BitmovinException if fails to make API call
+     */
+    public Organization update(String organizationId, UpdateOrganizationRequest updateOrganizationRequest) throws BitmovinException {
+        try {
+            return this.apiClient.update(organizationId, updateOrganizationRequest).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+    
     interface OrganizationsApiClient {
     
         @RequestLine("POST /account/organizations")
@@ -99,5 +115,8 @@ public class OrganizationsApi {
     
         @RequestLine("GET /account/organizations")
         ResponseEnvelope<PaginationResponse<Organization>> list() throws BitmovinException;
+    
+        @RequestLine("PUT /account/organizations/{organization_id}")
+        ResponseEnvelope<Organization> update(@Param(value = "organization_id") String organizationId, UpdateOrganizationRequest updateOrganizationRequest) throws BitmovinException;
     }
 }

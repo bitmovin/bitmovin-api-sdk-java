@@ -17,7 +17,7 @@ public class MediaStream extends BitmovinResponse {
   private Integer position;
 
   @JsonProperty("duration")
-  private Long duration;
+  private Double duration;
 
   @JsonProperty("codec")
   private String codec;
@@ -46,7 +46,7 @@ public class MediaStream extends BitmovinResponse {
    * Duration of the stream in seconds
    * @return duration
    */
-  public Long getDuration() {
+  public Double getDuration() {
     return duration;
   }
 
@@ -56,7 +56,7 @@ public class MediaStream extends BitmovinResponse {
    * @param duration
    *        Duration of the stream in seconds
    */
-  public void setDuration(Long duration) {
+  public void setDuration(Double duration) {
     this.duration = duration;
   }
 
