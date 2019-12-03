@@ -35,6 +35,9 @@ public class WebmMuxing extends Muxing {
   @JsonProperty("initSegmentNameTemplate")
   private String initSegmentNameTemplate;
 
+  @JsonProperty("segmentsMuxed")
+  private Integer segmentsMuxed;
+
 
   /**
    * Length of the fragments in seconds (required)
@@ -130,6 +133,14 @@ public class WebmMuxing extends Muxing {
     this.initSegmentNameTemplate = initSegmentNameTemplate;
   }
 
+  /**
+   * Number of segments which have been encoded
+   * @return segmentsMuxed
+   */
+  public Integer getSegmentsMuxed() {
+    return segmentsMuxed;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -145,12 +156,13 @@ public class WebmMuxing extends Muxing {
         Objects.equals(this.segmentNamingTemplate, webmMuxing.segmentNamingTemplate) &&
         Objects.equals(this.initSegmentName, webmMuxing.initSegmentName) &&
         Objects.equals(this.initSegmentNameTemplate, webmMuxing.initSegmentNameTemplate) &&
+        Objects.equals(this.segmentsMuxed, webmMuxing.segmentsMuxed) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(segmentLength, segmentNaming, segmentNamingTemplate, initSegmentName, initSegmentNameTemplate, super.hashCode());
+    return Objects.hash(segmentLength, segmentNaming, segmentNamingTemplate, initSegmentName, initSegmentNameTemplate, segmentsMuxed, super.hashCode());
   }
 
   @Override
@@ -163,6 +175,7 @@ public class WebmMuxing extends Muxing {
     sb.append("    segmentNamingTemplate: ").append(toIndentedString(segmentNamingTemplate)).append("\n");
     sb.append("    initSegmentName: ").append(toIndentedString(initSegmentName)).append("\n");
     sb.append("    initSegmentNameTemplate: ").append(toIndentedString(initSegmentNameTemplate)).append("\n");
+    sb.append("    segmentsMuxed: ").append(toIndentedString(segmentsMuxed)).append("\n");
     sb.append("}");
     return sb.toString();
   }
