@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.PlayReadyAdditionalInformation;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -17,6 +18,9 @@ public class CencPlayReady {
 
   @JsonProperty("pssh")
   private String pssh;
+
+  @JsonProperty("additionalInformation")
+  private PlayReadyAdditionalInformation additionalInformation;
 
 
   /**
@@ -57,6 +61,24 @@ public class CencPlayReady {
   }
 
 
+  /**
+   * Get additionalInformation
+   * @return additionalInformation
+   */
+  public PlayReadyAdditionalInformation getAdditionalInformation() {
+    return additionalInformation;
+  }
+
+  /**
+   * Set additionalInformation
+   *
+   * @param additionalInformation
+   */
+  public void setAdditionalInformation(PlayReadyAdditionalInformation additionalInformation) {
+    this.additionalInformation = additionalInformation;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -67,12 +89,13 @@ public class CencPlayReady {
     }
     CencPlayReady cencPlayReady = (CencPlayReady) o;
     return Objects.equals(this.laUrl, cencPlayReady.laUrl) &&
-        Objects.equals(this.pssh, cencPlayReady.pssh);
+        Objects.equals(this.pssh, cencPlayReady.pssh) &&
+        Objects.equals(this.additionalInformation, cencPlayReady.additionalInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(laUrl, pssh);
+    return Objects.hash(laUrl, pssh, additionalInformation);
   }
 
   @Override
@@ -82,6 +105,7 @@ public class CencPlayReady {
     
     sb.append("    laUrl: ").append(toIndentedString(laUrl)).append("\n");
     sb.append("    pssh: ").append(toIndentedString(pssh)).append("\n");
+    sb.append("    additionalInformation: ").append(toIndentedString(additionalInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

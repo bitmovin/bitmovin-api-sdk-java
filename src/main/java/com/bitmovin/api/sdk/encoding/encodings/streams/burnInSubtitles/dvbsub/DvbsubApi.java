@@ -44,13 +44,79 @@ public class DvbsubApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
-     * @param streamDvbSubSubtitle The Burn-In DVB-SUB Subtitle to be added (required)
-     * @return StreamDvbSubSubtitle
+     * @param burnInSubtitleDvbSub The Burn-In DVB-SUB Subtitle to be added (required)
+     * @return BurnInSubtitleDvbSub
      * @throws BitmovinException if fails to make API call
      */
-    public StreamDvbSubSubtitle create(String encodingId, String streamId, StreamDvbSubSubtitle streamDvbSubSubtitle) throws BitmovinException {
+    public BurnInSubtitleDvbSub create(String encodingId, String streamId, BurnInSubtitleDvbSub burnInSubtitleDvbSub) throws BitmovinException {
         try {
-            return this.apiClient.create(encodingId, streamId, streamDvbSubSubtitle).getData().getResult();
+            return this.apiClient.create(encodingId, streamId, burnInSubtitleDvbSub).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+    
+    /**
+     * Delete Burn-In DVB-SUB Subtitle from Stream
+     * 
+     * @param encodingId Id of the encoding. (required)
+     * @param streamId Id of the stream. (required)
+     * @param subtitleId Id of the subtitle. (required)
+     * @return BitmovinResponse
+     * @throws BitmovinException if fails to make API call
+     */
+    public BitmovinResponse delete(String encodingId, String streamId, String subtitleId) throws BitmovinException {
+        try {
+            return this.apiClient.delete(encodingId, streamId, subtitleId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+    
+    /**
+     * Get Burn-In DVB-SUB Subtitle Details
+     * 
+     * @param encodingId Id of the encoding. (required)
+     * @param streamId Id of the stream. (required)
+     * @param subtitleId Id of the subtitle. (required)
+     * @return BurnInSubtitleDvbSub
+     * @throws BitmovinException if fails to make API call
+     */
+    public BurnInSubtitleDvbSub get(String encodingId, String streamId, String subtitleId) throws BitmovinException {
+        try {
+            return this.apiClient.get(encodingId, streamId, subtitleId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+    
+    /**
+     * List the Burn-In DVB-SUB subtitles of a stream
+     * 
+     * @param encodingId Id of the encoding. (required)
+     * @param streamId Id of the stream. (required)
+     * @return List&lt;BurnInSubtitleDvbSub&gt;
+     * @throws BitmovinException if fails to make API call
+     */
+    public PaginationResponse<BurnInSubtitleDvbSub> list(String encodingId, String streamId) throws BitmovinException {
+        try {
+            return this.apiClient.list(encodingId, streamId, new HashMap<String, Object>()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+    /**
+     * List the Burn-In DVB-SUB subtitles of a stream
+     * 
+     * @param encodingId Id of the encoding. (required)
+     * @param streamId Id of the stream. (required)
+     * @param queryParams The query parameters for sorting, filtering and paging options (optional)
+     * @return List&lt;BurnInSubtitleDvbSub&gt;
+     * @throws BitmovinException if fails to make API call
+     */
+    public PaginationResponse<BurnInSubtitleDvbSub> list(String encodingId, String streamId, BurnInSubtitleDvbSubListQueryParams queryParams) throws BitmovinException {
+        try {
+            return this.apiClient.list(encodingId, streamId, queryParams).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -59,6 +125,15 @@ public class DvbsubApi {
     interface DvbsubApiClient {
     
         @RequestLine("POST /encoding/encodings/{encoding_id}/streams/{stream_id}/burn-in-subtitles/dvbsub")
-        ResponseEnvelope<StreamDvbSubSubtitle> create(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, StreamDvbSubSubtitle streamDvbSubSubtitle) throws BitmovinException;
+        ResponseEnvelope<BurnInSubtitleDvbSub> create(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, BurnInSubtitleDvbSub burnInSubtitleDvbSub) throws BitmovinException;
+    
+        @RequestLine("DELETE /encoding/encodings/{encoding_id}/streams/{stream_id}/burn-in-subtitles/dvbsub/{subtitle_id}")
+        ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, @Param(value = "subtitle_id") String subtitleId) throws BitmovinException;
+    
+        @RequestLine("GET /encoding/encodings/{encoding_id}/streams/{stream_id}/burn-in-subtitles/dvbsub/{subtitle_id}")
+        ResponseEnvelope<BurnInSubtitleDvbSub> get(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, @Param(value = "subtitle_id") String subtitleId) throws BitmovinException;
+    
+        @RequestLine("GET /encoding/encodings/{encoding_id}/streams/{stream_id}/burn-in-subtitles/dvbsub")
+        ResponseEnvelope<PaginationResponse<BurnInSubtitleDvbSub>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
     }
 }

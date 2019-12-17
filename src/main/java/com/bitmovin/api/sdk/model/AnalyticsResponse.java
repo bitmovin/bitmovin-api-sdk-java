@@ -3,6 +3,7 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AnalyticsColumnLabel;
+import com.bitmovin.api.sdk.model.AnalyticsContextDescription;
 import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -25,6 +26,10 @@ public class AnalyticsResponse {
   @JsonProperty("columnLabels")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<AnalyticsColumnLabel> columnLabels = new ArrayList<AnalyticsColumnLabel>();
+
+  @JsonProperty("contextDescription")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<AnalyticsContextDescription> contextDescription = new ArrayList<AnalyticsContextDescription>();
 
 
   public AnalyticsResponse addRowsItem(Object rowsItem) {
@@ -92,6 +97,29 @@ public class AnalyticsResponse {
   }
 
 
+  public AnalyticsResponse addContextDescriptionItem(AnalyticsContextDescription contextDescriptionItem) {
+    this.contextDescription.add(contextDescriptionItem);
+    return this;
+  }
+
+  /**
+   * Get contextDescription
+   * @return contextDescription
+   */
+  public List<AnalyticsContextDescription> getContextDescription() {
+    return contextDescription;
+  }
+
+  /**
+   * Set contextDescription
+   *
+   * @param contextDescription
+   */
+  public void setContextDescription(List<AnalyticsContextDescription> contextDescription) {
+    this.contextDescription = contextDescription;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -103,12 +131,13 @@ public class AnalyticsResponse {
     AnalyticsResponse analyticsResponse = (AnalyticsResponse) o;
     return Objects.equals(this.rows, analyticsResponse.rows) &&
         Objects.equals(this.rowCount, analyticsResponse.rowCount) &&
-        Objects.equals(this.columnLabels, analyticsResponse.columnLabels);
+        Objects.equals(this.columnLabels, analyticsResponse.columnLabels) &&
+        Objects.equals(this.contextDescription, analyticsResponse.contextDescription);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(rows, rowCount, columnLabels);
+    return Objects.hash(rows, rowCount, columnLabels, contextDescription);
   }
 
   @Override
@@ -119,6 +148,7 @@ public class AnalyticsResponse {
     sb.append("    rows: ").append(toIndentedString(rows)).append("\n");
     sb.append("    rowCount: ").append(toIndentedString(rowCount)).append("\n");
     sb.append("    columnLabels: ").append(toIndentedString(columnLabels)).append("\n");
+    sb.append("    contextDescription: ").append(toIndentedString(contextDescription)).append("\n");
     sb.append("}");
     return sb.toString();
   }

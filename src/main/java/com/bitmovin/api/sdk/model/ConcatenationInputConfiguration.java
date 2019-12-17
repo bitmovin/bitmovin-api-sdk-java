@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.AspectMode;
 import com.bitmovin.api.sdk.model.PaddingSequence;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -27,6 +28,9 @@ public class ConcatenationInputConfiguration {
 
   @JsonProperty("paddingAfter")
   private PaddingSequence paddingAfter;
+
+  @JsonProperty("aspectMode")
+  private AspectMode aspectMode;
 
 
   /**
@@ -124,6 +128,25 @@ public class ConcatenationInputConfiguration {
   }
 
 
+  /**
+   * Specifies the aspect mode that is used when adapting to the main input stream&#39;s aspect ratio
+   * @return aspectMode
+   */
+  public AspectMode getAspectMode() {
+    return aspectMode;
+  }
+
+  /**
+   * Specifies the aspect mode that is used when adapting to the main input stream&#39;s aspect ratio
+   *
+   * @param aspectMode
+   *        Specifies the aspect mode that is used when adapting to the main input stream&#39;s aspect ratio
+   */
+  public void setAspectMode(AspectMode aspectMode) {
+    this.aspectMode = aspectMode;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -137,12 +160,13 @@ public class ConcatenationInputConfiguration {
         Objects.equals(this.isMain, concatenationInputConfiguration.isMain) &&
         Objects.equals(this.position, concatenationInputConfiguration.position) &&
         Objects.equals(this.paddingBefore, concatenationInputConfiguration.paddingBefore) &&
-        Objects.equals(this.paddingAfter, concatenationInputConfiguration.paddingAfter);
+        Objects.equals(this.paddingAfter, concatenationInputConfiguration.paddingAfter) &&
+        Objects.equals(this.aspectMode, concatenationInputConfiguration.aspectMode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(inputStreamId, isMain, position, paddingBefore, paddingAfter);
+    return Objects.hash(inputStreamId, isMain, position, paddingBefore, paddingAfter, aspectMode);
   }
 
   @Override
@@ -155,6 +179,7 @@ public class ConcatenationInputConfiguration {
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
     sb.append("    paddingBefore: ").append(toIndentedString(paddingBefore)).append("\n");
     sb.append("    paddingAfter: ").append(toIndentedString(paddingAfter)).append("\n");
+    sb.append("    aspectMode: ").append(toIndentedString(aspectMode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

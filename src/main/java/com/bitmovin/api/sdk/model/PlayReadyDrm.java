@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.Drm;
 import com.bitmovin.api.sdk.model.EncodingOutput;
+import com.bitmovin.api.sdk.model.PlayReadyAdditionalInformation;
 import com.bitmovin.api.sdk.model.PlayReadyEncryptionMethod;
 import java.util.Date;
 import java.util.List;
@@ -35,6 +36,9 @@ public class PlayReadyDrm extends Drm {
 
   @JsonProperty("kid")
   private String kid;
+
+  @JsonProperty("additionalInformation")
+  private PlayReadyAdditionalInformation additionalInformation;
 
 
   /**
@@ -150,6 +154,24 @@ public class PlayReadyDrm extends Drm {
   }
 
 
+  /**
+   * Get additionalInformation
+   * @return additionalInformation
+   */
+  public PlayReadyAdditionalInformation getAdditionalInformation() {
+    return additionalInformation;
+  }
+
+  /**
+   * Set additionalInformation
+   *
+   * @param additionalInformation
+   */
+  public void setAdditionalInformation(PlayReadyAdditionalInformation additionalInformation) {
+    this.additionalInformation = additionalInformation;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -165,12 +187,13 @@ public class PlayReadyDrm extends Drm {
         Objects.equals(this.pssh, playReadyDrm.pssh) &&
         Objects.equals(this.method, playReadyDrm.method) &&
         Objects.equals(this.kid, playReadyDrm.kid) &&
+        Objects.equals(this.additionalInformation, playReadyDrm.additionalInformation) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, keySeed, laUrl, pssh, method, kid, super.hashCode());
+    return Objects.hash(key, keySeed, laUrl, pssh, method, kid, additionalInformation, super.hashCode());
   }
 
   @Override
@@ -184,6 +207,7 @@ public class PlayReadyDrm extends Drm {
     sb.append("    pssh: ").append(toIndentedString(pssh)).append("\n");
     sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("    kid: ").append(toIndentedString(kid)).append("\n");
+    sb.append("    additionalInformation: ").append(toIndentedString(additionalInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

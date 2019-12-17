@@ -33,7 +33,7 @@ public class InsertableContent extends BitmovinResource {
   }
 
   /**
-   * List of video files to be inserted in the live stream. These have to match the codec, aspect ration and frame rate of the live stream.
+   * Either a list of video files to be inserted in the live stream which have to match the codec, aspect ratio and frame rate of the live stream or a single image file. Supported image formats are: &#x60;.Y.U.V&#x60;, &#x60;Alias PIX&#x60;, &#x60;animated GIF&#x60;, &#x60;APNG&#x60;, &#x60;BMP&#x60;, &#x60;DPX&#x60;, &#x60;FITS&#x60;, &#x60;JPEG&#x60;, &#x60;JPEG 2000&#x60;, &#x60;JPEG-LS&#x60;, &#x60;PAM&#x60;, &#x60;PBM&#x60;, &#x60;PCX&#x60;, &#x60;PGM&#x60;, &#x60;PGMYUV&#x60;, &#x60;PNG&#x60;, &#x60;PPM&#x60;, &#x60;SGI&#x60;, &#x60;Sun Rasterfile&#x60;, &#x60;TIFF&#x60;, &#x60;Truevision Targa&#x60;, &#x60;WebP&#x60;, &#x60;XBM&#x60;, &#x60;XFace&#x60;, &#x60;XPM&#x60;, &#x60;XWD&#x60;
    * @return inputs
    */
   public List<InsertableContentInput> getInputs() {
@@ -41,10 +41,10 @@ public class InsertableContent extends BitmovinResource {
   }
 
   /**
-   * List of video files to be inserted in the live stream. These have to match the codec, aspect ration and frame rate of the live stream.
+   * Either a list of video files to be inserted in the live stream which have to match the codec, aspect ratio and frame rate of the live stream or a single image file. Supported image formats are: &#x60;.Y.U.V&#x60;, &#x60;Alias PIX&#x60;, &#x60;animated GIF&#x60;, &#x60;APNG&#x60;, &#x60;BMP&#x60;, &#x60;DPX&#x60;, &#x60;FITS&#x60;, &#x60;JPEG&#x60;, &#x60;JPEG 2000&#x60;, &#x60;JPEG-LS&#x60;, &#x60;PAM&#x60;, &#x60;PBM&#x60;, &#x60;PCX&#x60;, &#x60;PGM&#x60;, &#x60;PGMYUV&#x60;, &#x60;PNG&#x60;, &#x60;PPM&#x60;, &#x60;SGI&#x60;, &#x60;Sun Rasterfile&#x60;, &#x60;TIFF&#x60;, &#x60;Truevision Targa&#x60;, &#x60;WebP&#x60;, &#x60;XBM&#x60;, &#x60;XFace&#x60;, &#x60;XPM&#x60;, &#x60;XWD&#x60;
    *
    * @param inputs
-   *        List of video files to be inserted in the live stream. These have to match the codec, aspect ration and frame rate of the live stream.
+   *        Either a list of video files to be inserted in the live stream which have to match the codec, aspect ratio and frame rate of the live stream or a single image file. Supported image formats are: &#x60;.Y.U.V&#x60;, &#x60;Alias PIX&#x60;, &#x60;animated GIF&#x60;, &#x60;APNG&#x60;, &#x60;BMP&#x60;, &#x60;DPX&#x60;, &#x60;FITS&#x60;, &#x60;JPEG&#x60;, &#x60;JPEG 2000&#x60;, &#x60;JPEG-LS&#x60;, &#x60;PAM&#x60;, &#x60;PBM&#x60;, &#x60;PCX&#x60;, &#x60;PGM&#x60;, &#x60;PGMYUV&#x60;, &#x60;PNG&#x60;, &#x60;PPM&#x60;, &#x60;SGI&#x60;, &#x60;Sun Rasterfile&#x60;, &#x60;TIFF&#x60;, &#x60;Truevision Targa&#x60;, &#x60;WebP&#x60;, &#x60;XBM&#x60;, &#x60;XFace&#x60;, &#x60;XPM&#x60;, &#x60;XWD&#x60;
    */
   public void setInputs(List<InsertableContentInput> inputs) {
     this.inputs = inputs;

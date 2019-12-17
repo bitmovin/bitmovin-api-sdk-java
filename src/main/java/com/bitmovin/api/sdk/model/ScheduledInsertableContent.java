@@ -50,7 +50,7 @@ public class ScheduledInsertableContent extends BitmovinResource {
 
 
   /**
-   * Time to to play the content in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Time to to play the content in UTC: YYYY-MM-DDThh:mm:ssZ, if this property is not set the content will be played as soon as possible.
    * @return runAt
    */
   public Date getRunAt() {
@@ -58,10 +58,10 @@ public class ScheduledInsertableContent extends BitmovinResource {
   }
 
   /**
-   * Time to to play the content in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Time to to play the content in UTC: YYYY-MM-DDThh:mm:ssZ, if this property is not set the content will be played as soon as possible.
    *
    * @param runAt
-   *        Time to to play the content in UTC: YYYY-MM-DDThh:mm:ssZ
+   *        Time to to play the content in UTC: YYYY-MM-DDThh:mm:ssZ, if this property is not set the content will be played as soon as possible.
    */
   public void setRunAt(Date runAt) {
     this.runAt = runAt;
@@ -69,7 +69,7 @@ public class ScheduledInsertableContent extends BitmovinResource {
 
 
   /**
-   * Duration for how long to play the content. Cut off if shorter, loop if longer than actual duration.
+   * Duration for how long to play the content. Cut off if shorter, loop if longer than actual duration. This property is required if the insertable content is an image.
    * @return durationInSeconds
    */
   public Double getDurationInSeconds() {
@@ -77,10 +77,10 @@ public class ScheduledInsertableContent extends BitmovinResource {
   }
 
   /**
-   * Duration for how long to play the content. Cut off if shorter, loop if longer than actual duration.
+   * Duration for how long to play the content. Cut off if shorter, loop if longer than actual duration. This property is required if the insertable content is an image.
    *
    * @param durationInSeconds
-   *        Duration for how long to play the content. Cut off if shorter, loop if longer than actual duration.
+   *        Duration for how long to play the content. Cut off if shorter, loop if longer than actual duration. This property is required if the insertable content is an image.
    */
   public void setDurationInSeconds(Double durationInSeconds) {
     this.durationInSeconds = durationInSeconds;

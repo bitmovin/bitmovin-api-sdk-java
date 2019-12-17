@@ -41,6 +41,9 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<AnalyticsAttribute> groupBy = new ArrayList<AnalyticsAttribute>();
 
+  @JsonProperty("includeContext")
+  private Boolean includeContext;
+
   @JsonProperty("limit")
   private Long limit;
 
@@ -173,6 +176,25 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
 
 
   /**
+   * Whether context data should be included in the response
+   * @return includeContext
+   */
+  public Boolean getIncludeContext() {
+    return includeContext;
+  }
+
+  /**
+   * Whether context data should be included in the response
+   *
+   * @param includeContext
+   *        Whether context data should be included in the response
+   */
+  public void setIncludeContext(Boolean includeContext) {
+    this.includeContext = includeContext;
+  }
+
+
+  /**
    * Maximum number of rows returned (max. 200)
    * @return limit
    */
@@ -225,6 +247,7 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
         Objects.equals(this.dimension, analyticsQueryRequest.dimension) &&
         Objects.equals(this.interval, analyticsQueryRequest.interval) &&
         Objects.equals(this.groupBy, analyticsQueryRequest.groupBy) &&
+        Objects.equals(this.includeContext, analyticsQueryRequest.includeContext) &&
         Objects.equals(this.limit, analyticsQueryRequest.limit) &&
         Objects.equals(this.offset, analyticsQueryRequest.offset) &&
         super.equals(o);
@@ -232,7 +255,7 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
 
   @Override
   public int hashCode() {
-    return Objects.hash(licenseKey, filters, orderBy, dimension, interval, groupBy, limit, offset, super.hashCode());
+    return Objects.hash(licenseKey, filters, orderBy, dimension, interval, groupBy, includeContext, limit, offset, super.hashCode());
   }
 
   @Override
@@ -246,6 +269,7 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
     sb.append("    dimension: ").append(toIndentedString(dimension)).append("\n");
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    groupBy: ").append(toIndentedString(groupBy)).append("\n");
+    sb.append("    includeContext: ").append(toIndentedString(includeContext)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
     sb.append("}");
