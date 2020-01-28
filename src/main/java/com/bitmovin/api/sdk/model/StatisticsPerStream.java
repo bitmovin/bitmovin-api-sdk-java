@@ -3,6 +3,7 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.CodecConfigType;
+import com.bitmovin.api.sdk.model.DolbyVisionPerStreamMode;
 import com.bitmovin.api.sdk.model.EncodingMode;
 import com.bitmovin.api.sdk.model.PsnrPerStreamMode;
 import com.bitmovin.api.sdk.model.StatisticsPerTitleStream;
@@ -70,6 +71,12 @@ public class StatisticsPerStream {
 
   @JsonProperty("psnrMultiplicator")
   private Double psnrMultiplicator;
+
+  @JsonProperty("dolbyVisionMode")
+  private DolbyVisionPerStreamMode dolbyVisionMode;
+
+  @JsonProperty("dolbyVisionMultiplicator")
+  private Double dolbyVisionMultiplicator;
 
 
   /**
@@ -409,6 +416,43 @@ public class StatisticsPerStream {
   }
 
 
+  /**
+   * Get dolbyVisionMode
+   * @return dolbyVisionMode
+   */
+  public DolbyVisionPerStreamMode getDolbyVisionMode() {
+    return dolbyVisionMode;
+  }
+
+  /**
+   * Set dolbyVisionMode
+   *
+   * @param dolbyVisionMode
+   */
+  public void setDolbyVisionMode(DolbyVisionPerStreamMode dolbyVisionMode) {
+    this.dolbyVisionMode = dolbyVisionMode;
+  }
+
+
+  /**
+   * The output minutes multiplicator for Dolby Vision streams
+   * @return dolbyVisionMultiplicator
+   */
+  public Double getDolbyVisionMultiplicator() {
+    return dolbyVisionMultiplicator;
+  }
+
+  /**
+   * The output minutes multiplicator for Dolby Vision streams
+   *
+   * @param dolbyVisionMultiplicator
+   *        The output minutes multiplicator for Dolby Vision streams
+   */
+  public void setDolbyVisionMultiplicator(Double dolbyVisionMultiplicator) {
+    this.dolbyVisionMultiplicator = dolbyVisionMultiplicator;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -435,12 +479,14 @@ public class StatisticsPerStream {
         Objects.equals(this.perTitleResultStream, statisticsPerStream.perTitleResultStream) &&
         Objects.equals(this.perTitleMultiplicator, statisticsPerStream.perTitleMultiplicator) &&
         Objects.equals(this.psnrMode, statisticsPerStream.psnrMode) &&
-        Objects.equals(this.psnrMultiplicator, statisticsPerStream.psnrMultiplicator);
+        Objects.equals(this.psnrMultiplicator, statisticsPerStream.psnrMultiplicator) &&
+        Objects.equals(this.dolbyVisionMode, statisticsPerStream.dolbyVisionMode) &&
+        Objects.equals(this.dolbyVisionMultiplicator, statisticsPerStream.dolbyVisionMultiplicator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(streamId, codecConfigId, multiplicator, encodedBytes, encodedSeconds, billableMinutes, width, height, rate, bitrate, codec, resolution, encodingMode, encodingModeMultiplicator, perTitleResultStream, perTitleMultiplicator, psnrMode, psnrMultiplicator);
+    return Objects.hash(streamId, codecConfigId, multiplicator, encodedBytes, encodedSeconds, billableMinutes, width, height, rate, bitrate, codec, resolution, encodingMode, encodingModeMultiplicator, perTitleResultStream, perTitleMultiplicator, psnrMode, psnrMultiplicator, dolbyVisionMode, dolbyVisionMultiplicator);
   }
 
   @Override
@@ -466,6 +512,8 @@ public class StatisticsPerStream {
     sb.append("    perTitleMultiplicator: ").append(toIndentedString(perTitleMultiplicator)).append("\n");
     sb.append("    psnrMode: ").append(toIndentedString(psnrMode)).append("\n");
     sb.append("    psnrMultiplicator: ").append(toIndentedString(psnrMultiplicator)).append("\n");
+    sb.append("    dolbyVisionMode: ").append(toIndentedString(dolbyVisionMode)).append("\n");
+    sb.append("    dolbyVisionMultiplicator: ").append(toIndentedString(dolbyVisionMultiplicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }
