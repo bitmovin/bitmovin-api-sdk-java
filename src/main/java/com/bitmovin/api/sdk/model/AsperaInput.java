@@ -34,6 +34,12 @@ public class AsperaInput extends Input {
   @JsonProperty("token")
   private String token;
 
+  @JsonProperty("sshPort")
+  private Integer sshPort;
+
+  @JsonProperty("faspPort")
+  private Integer faspPort;
+
 
   /**
    * Minimal download bandwidth. Examples: 100k, 100m, 100g
@@ -149,6 +155,44 @@ public class AsperaInput extends Input {
   }
 
 
+  /**
+   * Set the TCP port to be used for fasp session initiation
+   * @return sshPort
+   */
+  public Integer getSshPort() {
+    return sshPort;
+  }
+
+  /**
+   * Set the TCP port to be used for fasp session initiation
+   *
+   * @param sshPort
+   *        Set the TCP port to be used for fasp session initiation
+   */
+  public void setSshPort(Integer sshPort) {
+    this.sshPort = sshPort;
+  }
+
+
+  /**
+   * Set the UDP port to be used by fasp for data transfer
+   * @return faspPort
+   */
+  public Integer getFaspPort() {
+    return faspPort;
+  }
+
+  /**
+   * Set the UDP port to be used by fasp for data transfer
+   *
+   * @param faspPort
+   *        Set the UDP port to be used by fasp for data transfer
+   */
+  public void setFaspPort(Integer faspPort) {
+    this.faspPort = faspPort;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -164,12 +208,14 @@ public class AsperaInput extends Input {
         Objects.equals(this.username, asperaInput.username) &&
         Objects.equals(this.password, asperaInput.password) &&
         Objects.equals(this.token, asperaInput.token) &&
+        Objects.equals(this.sshPort, asperaInput.sshPort) &&
+        Objects.equals(this.faspPort, asperaInput.faspPort) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(minBandwidth, maxBandwidth, host, username, password, token, super.hashCode());
+    return Objects.hash(minBandwidth, maxBandwidth, host, username, password, token, sshPort, faspPort, super.hashCode());
   }
 
   @Override
@@ -183,6 +229,8 @@ public class AsperaInput extends Input {
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("    token: ").append(toIndentedString(token)).append("\n");
+    sb.append("    sshPort: ").append(toIndentedString(sshPort)).append("\n");
+    sb.append("    faspPort: ").append(toIndentedString(faspPort)).append("\n");
     sb.append("}");
     return sb.toString();
   }
