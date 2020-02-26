@@ -52,10 +52,10 @@ public class ProgressiveTsApi {
     }
     
     /**
-     * Add Progressive TS Muxing
+     * Add Progressive TS muxing
      * 
      * @param encodingId ID of the encoding. (required)
-     * @param progressiveTsMuxing The Progressive TS Muxing to be created (required)
+     * @param progressiveTsMuxing The Progressive TS muxing to be created (required)
      * @return ProgressiveTsMuxing
      * @throws BitmovinException if fails to make API call
      */
@@ -68,7 +68,7 @@ public class ProgressiveTsApi {
     }
     
     /**
-     * Delete Progressive TS Muxing
+     * Delete Progressive TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param muxingId ID of the Progressive TS muxing (required)
@@ -84,10 +84,10 @@ public class ProgressiveTsApi {
     }
     
     /**
-     * Progressive TS Muxing Details
+     * Progressive TS muxing details
      * 
      * @param encodingId ID of the Encoding. (required)
-     * @param muxingId ID of the Progressive TS Muxing (required)
+     * @param muxingId ID of the Progressive TS muxing (required)
      * @return ProgressiveTsMuxing
      * @throws BitmovinException if fails to make API call
      */
@@ -100,7 +100,7 @@ public class ProgressiveTsApi {
     }
     
     /**
-     * List Progressive TS Muxings
+     * List Progressive TS muxings
      * 
      * @param encodingId ID of the Encoding. (required)
      * @return List&lt;ProgressiveTsMuxing&gt;
@@ -114,7 +114,7 @@ public class ProgressiveTsApi {
         }
     }
     /**
-     * List Progressive TS Muxings
+     * List Progressive TS muxings
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

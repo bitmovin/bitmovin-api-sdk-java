@@ -43,10 +43,10 @@ public class FrameIdApi {
     }
     
     /**
-     * Add Frame ID ID3 Tag to Progressive TS Muxing
+     * Add Frame ID ID3 Tag to Progressive TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
-     * @param muxingId ID of the Progressive TS Muxing (required)
+     * @param muxingId ID of the Progressive TS muxing (required)
      * @param frameIdId3Tag The Frame ID ID3 Tag to be created (required)
      * @return FrameIdId3Tag
      * @throws BitmovinException if fails to make API call
@@ -60,10 +60,10 @@ public class FrameIdApi {
     }
     
     /**
-     * Delete Frame ID ID3 Tag of Progressive TS Muxing
+     * Delete Frame ID ID3 Tag of Progressive TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
-     * @param muxingId ID of the Progressive TS Muxing (required)
+     * @param muxingId ID of the Progressive TS muxing (required)
      * @param id3TagId ID of the Frame ID ID3 Tag (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
@@ -77,10 +77,10 @@ public class FrameIdApi {
     }
     
     /**
-     * Frame ID ID3 Tag Details of Progressive TS Muxing
+     * Frame ID ID3 Tag Details of Progressive TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
-     * @param muxingId ID of the Progressive TS Muxing (required)
+     * @param muxingId ID of the Progressive TS muxing (required)
      * @param id3TagId ID of the Frame ID ID3 Tag (required)
      * @return FrameIdId3Tag
      * @throws BitmovinException if fails to make API call
@@ -94,10 +94,10 @@ public class FrameIdApi {
     }
     
     /**
-     * List Frame ID ID3 Tags of Progressive TS Muxing
+     * List Frame ID ID3 Tags of Progressive TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
-     * @param muxingId ID of the Progressive TS Muxing (required)
+     * @param muxingId ID of the Progressive TS muxing (required)
      * @return List&lt;FrameIdId3Tag&gt;
      * @throws BitmovinException if fails to make API call
      */
@@ -109,10 +109,10 @@ public class FrameIdApi {
         }
     }
     /**
-     * List Frame ID ID3 Tags of Progressive TS Muxing
+     * List Frame ID ID3 Tags of Progressive TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
-     * @param muxingId ID of the Progressive TS Muxing (required)
+     * @param muxingId ID of the Progressive TS muxing (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;FrameIdId3Tag&gt;
      * @throws BitmovinException if fails to make API call

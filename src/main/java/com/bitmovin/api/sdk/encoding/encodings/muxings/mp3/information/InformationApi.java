@@ -40,10 +40,10 @@ public class InformationApi {
     }
     
     /**
-     * MP3 Muxing Information
+     * MP3 muxing Information
      * 
      * @param encodingId ID of the Encoding. (required)
-     * @param muxingId ID of the MP3 Muxing (required)
+     * @param muxingId ID of the MP3 muxing (required)
      * @return Mp3MuxingInformation
      * @throws BitmovinException if fails to make API call
      */

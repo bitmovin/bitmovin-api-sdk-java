@@ -40,7 +40,7 @@ public class CustomdataApi {
     }
     
     /**
-     * Segmented RAW Muxing Custom Data
+     * Segmented RAW muxing Custom Data
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Segmented RAW muxing (required)

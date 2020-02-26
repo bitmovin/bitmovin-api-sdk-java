@@ -40,7 +40,7 @@ public class CustomdataApi {
     }
     
     /**
-     * fMP4 Muxing Custom Data
+     * fMP4 muxing Custom Data
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing (required)

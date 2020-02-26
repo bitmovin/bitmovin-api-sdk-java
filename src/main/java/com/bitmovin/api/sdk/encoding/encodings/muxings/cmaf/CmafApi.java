@@ -18,12 +18,10 @@ import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.cmaf.customdata.CustomdataApi;
-import com.bitmovin.api.sdk.encoding.encodings.muxings.cmaf.drm.DrmApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.cmaf.captions.CaptionsApi;
 
 public class CmafApi {
     public final CustomdataApi customdata;
-    public final DrmApi drm;
     public final CaptionsApi captions;
 
     private final CmafApiClient apiClient;
@@ -37,7 +35,6 @@ public class CmafApi {
         this.apiClient = clientFactory.createApiClient(CmafApiClient.class);
 
         this.customdata = new CustomdataApi(clientFactory);
-        this.drm = new DrmApi(clientFactory);
         this.captions = new CaptionsApi(clientFactory);
     }
 
@@ -65,7 +62,7 @@ public class CmafApi {
     }
     
     /**
-     * Delete CMAF Muxing
+     * Delete CMAF muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the CMAF muxing (required)
@@ -81,7 +78,7 @@ public class CmafApi {
     }
     
     /**
-     * CMAF Muxing Details
+     * CMAF muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the CMAF muxing (required)

@@ -1,9 +1,9 @@
-package com.bitmovin.api.sdk.encoding.manifests.dash.periods.adaptationsets.representations.cmaf.drm.contentprotection;
+package com.bitmovin.api.sdk.encoding.encodings.muxings.progressiveWebm.drm.cenc;
 
 import java.util.HashMap;
 import com.bitmovin.api.sdk.model.*;
 
-public class ContentProtectionListQueryParams extends HashMap<String, Object> {
+public class CencDrmListQueryParams extends HashMap<String, Object> {
 
     public Integer getOffset() {
         return (Integer) this.get("offset");

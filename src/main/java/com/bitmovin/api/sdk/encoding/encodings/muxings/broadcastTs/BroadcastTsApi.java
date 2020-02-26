@@ -46,10 +46,10 @@ public class BroadcastTsApi {
     }
     
     /**
-     * Add Broadcast TS Muxing
+     * Add Broadcast TS muxing
      * 
      * @param encodingId ID of the encoding. (required)
-     * @param broadcastTsMuxing The Broadcast TS Muxing to be created (required)
+     * @param broadcastTsMuxing The Broadcast TS muxing to be created (required)
      * @return BroadcastTsMuxing
      * @throws BitmovinException if fails to make API call
      */
@@ -62,7 +62,7 @@ public class BroadcastTsApi {
     }
     
     /**
-     * Delete Broadcast TS Muxing
+     * Delete Broadcast TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param muxingId ID of the Broadcast TS muxing (required)
@@ -78,10 +78,10 @@ public class BroadcastTsApi {
     }
     
     /**
-     * Broadcast TS Muxing Details
+     * Broadcast TS muxing details
      * 
      * @param encodingId ID of the Encoding. (required)
-     * @param muxingId ID of the Broadcast TS Muxing (required)
+     * @param muxingId ID of the Broadcast TS muxing (required)
      * @return BroadcastTsMuxing
      * @throws BitmovinException if fails to make API call
      */
@@ -94,7 +94,7 @@ public class BroadcastTsApi {
     }
     
     /**
-     * List Broadcast TS Muxings
+     * List Broadcast TS muxings
      * 
      * @param encodingId ID of the Encoding. (required)
      * @return List&lt;BroadcastTsMuxing&gt;
@@ -108,7 +108,7 @@ public class BroadcastTsApi {
         }
     }
     /**
-     * List Broadcast TS Muxings
+     * List Broadcast TS muxings
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

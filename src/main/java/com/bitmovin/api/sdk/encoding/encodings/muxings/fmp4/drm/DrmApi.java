@@ -64,7 +64,7 @@ public class DrmApi {
     }
     
     /**
-     * List all DRMs of FMP4 Muxing
+     * List all DRMs of FMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing (required)

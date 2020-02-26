@@ -43,10 +43,10 @@ public class SegmentedRawApi {
     }
     
     /**
-     * Add Segmented RAW Muxing
+     * Add Segmented RAW muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param segmentedRawMuxing The Segmented RAW Muxing to be created (required)
+     * @param segmentedRawMuxing The Segmented RAW muxing to be created (required)
      * @return SegmentedRawMuxing
      * @throws BitmovinException if fails to make API call
      */
@@ -59,7 +59,7 @@ public class SegmentedRawApi {
     }
     
     /**
-     * Delete Segmented RAW Muxing
+     * Delete Segmented RAW muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Segmented RAW muxing (required)
@@ -75,7 +75,7 @@ public class SegmentedRawApi {
     }
     
     /**
-     * Segmented RAW Muxing Details
+     * Segmented RAW muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Segmented RAW muxing (required)
@@ -91,7 +91,7 @@ public class SegmentedRawApi {
     }
     
     /**
-     * List Segmented RAW Muxings
+     * List Segmented RAW muxings
      * 
      * @param encodingId Id of the encoding. (required)
      * @return List&lt;SegmentedRawMuxing&gt;
@@ -105,7 +105,7 @@ public class SegmentedRawApi {
         }
     }
     /**
-     * List Segmented RAW Muxings
+     * List Segmented RAW muxings
      * 
      * @param encodingId Id of the encoding. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

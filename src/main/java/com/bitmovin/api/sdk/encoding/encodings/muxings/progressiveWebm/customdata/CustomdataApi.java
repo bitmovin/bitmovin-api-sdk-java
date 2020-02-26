@@ -40,7 +40,7 @@ public class CustomdataApi {
     }
     
     /**
-     * Progressive WebM Muxing Custom Data
+     * Progressive WebM muxing Custom Data
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive WebM muxing (required)

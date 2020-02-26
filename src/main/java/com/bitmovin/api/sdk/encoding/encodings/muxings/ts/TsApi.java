@@ -46,10 +46,10 @@ public class TsApi {
     }
     
     /**
-     * Add TS Segment Muxing
+     * Add TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param tsMuxing The TS Segment Muxing to be created (required)
+     * @param tsMuxing The TS muxing to be created (required)
      * @return TsMuxing
      * @throws BitmovinException if fails to make API call
      */
@@ -62,10 +62,10 @@ public class TsApi {
     }
     
     /**
-     * Delete TS Segment Muxing
+     * Delete TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the ts segment muxing (required)
+     * @param muxingId Id of the TS muxing (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */
@@ -78,10 +78,10 @@ public class TsApi {
     }
     
     /**
-     * TS Segment Muxing Details
+     * TS muxing details
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the ts segment muxing (required)
+     * @param muxingId Id of the TS muxing (required)
      * @return TsMuxing
      * @throws BitmovinException if fails to make API call
      */
@@ -94,7 +94,7 @@ public class TsApi {
     }
     
     /**
-     * List TS Segment Muxings
+     * List TS muxings
      * 
      * @param encodingId Id of the encoding. (required)
      * @return List&lt;TsMuxing&gt;
@@ -108,7 +108,7 @@ public class TsApi {
         }
     }
     /**
-     * List TS Segment Muxings
+     * List TS muxings
      * 
      * @param encodingId Id of the encoding. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

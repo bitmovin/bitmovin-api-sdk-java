@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.PassthroughMode;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -14,6 +15,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 public class Cea608708SubtitleConfiguration {
   @JsonProperty("passthroughActivated")
   private Boolean passthroughActivated;
+
+  @JsonProperty("passthroughMode")
+  private PassthroughMode passthroughMode;
 
 
   /**
@@ -35,6 +39,24 @@ public class Cea608708SubtitleConfiguration {
   }
 
 
+  /**
+   * Get passthroughMode
+   * @return passthroughMode
+   */
+  public PassthroughMode getPassthroughMode() {
+    return passthroughMode;
+  }
+
+  /**
+   * Set passthroughMode
+   *
+   * @param passthroughMode
+   */
+  public void setPassthroughMode(PassthroughMode passthroughMode) {
+    this.passthroughMode = passthroughMode;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -44,12 +66,13 @@ public class Cea608708SubtitleConfiguration {
       return false;
     }
     Cea608708SubtitleConfiguration cea608708SubtitleConfiguration = (Cea608708SubtitleConfiguration) o;
-    return Objects.equals(this.passthroughActivated, cea608708SubtitleConfiguration.passthroughActivated);
+    return Objects.equals(this.passthroughActivated, cea608708SubtitleConfiguration.passthroughActivated) &&
+        Objects.equals(this.passthroughMode, cea608708SubtitleConfiguration.passthroughMode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(passthroughActivated);
+    return Objects.hash(passthroughActivated, passthroughMode);
   }
 
   @Override
@@ -58,6 +81,7 @@ public class Cea608708SubtitleConfiguration {
     sb.append("class Cea608708SubtitleConfiguration {\n");
     
     sb.append("    passthroughActivated: ").append(toIndentedString(passthroughActivated)).append("\n");
+    sb.append("    passthroughMode: ").append(toIndentedString(passthroughMode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

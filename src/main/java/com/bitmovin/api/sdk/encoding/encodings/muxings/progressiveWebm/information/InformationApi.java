@@ -40,7 +40,7 @@ public class InformationApi {
     }
     
     /**
-     * Progressive WebM Muxing Information
+     * Progressive WebM muxing Information
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param muxingId ID of the Progressive WebM muxing (required)

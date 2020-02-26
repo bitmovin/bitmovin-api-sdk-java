@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.BillableEncodingFeatureMinutes;
 import com.bitmovin.api.sdk.model.BillableEncodingMinutes;
+import com.bitmovin.api.sdk.model.EgressInformation;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -44,6 +45,10 @@ public class DailyStatistics {
   @JsonProperty("billableFeatureMinutes")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<BillableEncodingFeatureMinutes> billableFeatureMinutes = new ArrayList<BillableEncodingFeatureMinutes>();
+
+  @JsonProperty("billableEgressBytes")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<EgressInformation> billableEgressBytes = new ArrayList<EgressInformation>();
 
 
   /**
@@ -175,6 +180,14 @@ public class DailyStatistics {
     return billableFeatureMinutes;
   }
 
+  /**
+   * Get billableEgressBytes
+   * @return billableEgressBytes
+   */
+  public List<EgressInformation> getBillableEgressBytes() {
+    return billableEgressBytes;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -192,12 +205,13 @@ public class DailyStatistics {
         Objects.equals(this.label, dailyStatistics.label) &&
         Objects.equals(this.billableEncodingMinutes, dailyStatistics.billableEncodingMinutes) &&
         Objects.equals(this.billableTransmuxingMinutes, dailyStatistics.billableTransmuxingMinutes) &&
-        Objects.equals(this.billableFeatureMinutes, dailyStatistics.billableFeatureMinutes);
+        Objects.equals(this.billableFeatureMinutes, dailyStatistics.billableFeatureMinutes) &&
+        Objects.equals(this.billableEgressBytes, dailyStatistics.billableEgressBytes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(date, bytesEncoded, timeEncoded, billableMinutes, label, billableEncodingMinutes, billableTransmuxingMinutes, billableFeatureMinutes);
+    return Objects.hash(date, bytesEncoded, timeEncoded, billableMinutes, label, billableEncodingMinutes, billableTransmuxingMinutes, billableFeatureMinutes, billableEgressBytes);
   }
 
   @Override
@@ -213,6 +227,7 @@ public class DailyStatistics {
     sb.append("    billableEncodingMinutes: ").append(toIndentedString(billableEncodingMinutes)).append("\n");
     sb.append("    billableTransmuxingMinutes: ").append(toIndentedString(billableTransmuxingMinutes)).append("\n");
     sb.append("    billableFeatureMinutes: ").append(toIndentedString(billableFeatureMinutes)).append("\n");
+    sb.append("    billableEgressBytes: ").append(toIndentedString(billableEgressBytes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -17,11 +17,9 @@ import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovin
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
-import com.bitmovin.api.sdk.encoding.manifests.dash.periods.adaptationsets.representations.cmaf.drm.DrmApi;
 import com.bitmovin.api.sdk.encoding.manifests.dash.periods.adaptationsets.representations.cmaf.contentprotection.ContentprotectionApi;
 
 public class CmafApi {
-    public final DrmApi drm;
     public final ContentprotectionApi contentprotection;
 
     private final CmafApiClient apiClient;
@@ -34,7 +32,6 @@ public class CmafApi {
 
         this.apiClient = clientFactory.createApiClient(CmafApiClient.class);
 
-        this.drm = new DrmApi(clientFactory);
         this.contentprotection = new ContentprotectionApi(clientFactory);
     }
 

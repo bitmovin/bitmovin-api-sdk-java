@@ -40,10 +40,10 @@ public class InformationApi {
     }
     
     /**
-     * Progressive TS Muxing Information
+     * Progressive TS muxing Information
      * 
      * @param encodingId ID of the Encoding. (required)
-     * @param muxingId ID of the Progressive TS Muxing (required)
+     * @param muxingId ID of the Progressive TS muxing (required)
      * @return ProgressiveTsMuxingInformation
      * @throws BitmovinException if fails to make API call
      */

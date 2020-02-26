@@ -43,7 +43,12 @@ public enum Status {
   /**
    * The process has been canceled by the user. This is a final state
    */
-  CANCELED("CANCELED");
+  CANCELED("CANCELED"),
+  
+  /**
+   * The process has finished successfully, but at least one transfer to a configured output failed. The transfer attempt can be retried.
+   */
+  TRANSFER_ERROR("TRANSFER_ERROR");
 
   private String value;
 

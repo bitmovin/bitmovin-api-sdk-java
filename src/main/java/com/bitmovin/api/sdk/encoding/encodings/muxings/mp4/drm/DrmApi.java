@@ -58,7 +58,7 @@ public class DrmApi {
     }
     
     /**
-     * List all DRM configurations of MP4 Muxing
+     * List all DRM configurations of MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP4 muxing (required)

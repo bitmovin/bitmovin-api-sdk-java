@@ -43,7 +43,7 @@ public class CustomdataApi {
      * Chunked Text muxing custom data
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the Chunked Text Muxing (required)
+     * @param muxingId Id of the Chunked Text muxing (required)
      * @return CustomData
      * @throws BitmovinException if fails to make API call
      */

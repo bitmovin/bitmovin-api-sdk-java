@@ -40,10 +40,10 @@ public class CustomdataApi {
     }
     
     /**
-     * Text Muxing custom data
+     * Text muxing custom data
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the Text Muxing (required)
+     * @param muxingId Id of the Text muxing (required)
      * @return CustomData
      * @throws BitmovinException if fails to make API call
      */

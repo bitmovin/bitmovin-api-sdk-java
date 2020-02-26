@@ -40,7 +40,7 @@ public class InformationApi {
     }
     
     /**
-     * Progressive MOV Muxing Information
+     * Progressive MOV muxing Information
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param muxingId ID of the Progressive MOV muxing (required)

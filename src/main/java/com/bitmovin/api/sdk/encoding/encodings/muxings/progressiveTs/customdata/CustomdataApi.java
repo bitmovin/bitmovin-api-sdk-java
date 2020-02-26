@@ -40,7 +40,7 @@ public class CustomdataApi {
     }
     
     /**
-     * Progressive TS Muxing Custom Data
+     * Progressive TS muxing Custom Data
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param muxingId ID of the Progressive TS muxing (required)

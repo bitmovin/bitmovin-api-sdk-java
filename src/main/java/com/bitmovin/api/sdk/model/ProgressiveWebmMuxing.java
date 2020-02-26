@@ -6,6 +6,7 @@ import com.bitmovin.api.sdk.model.EncodingOutput;
 import com.bitmovin.api.sdk.model.Ignoring;
 import com.bitmovin.api.sdk.model.Muxing;
 import com.bitmovin.api.sdk.model.MuxingStream;
+import com.bitmovin.api.sdk.model.ProgressiveWebmMuxingManifestType;
 import com.bitmovin.api.sdk.model.StreamConditionsMode;
 import java.util.Date;
 import java.util.List;
@@ -22,6 +23,12 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 public class ProgressiveWebmMuxing extends Muxing {
   @JsonProperty("filename")
   private String filename;
+
+  @JsonProperty("manifestType")
+  private ProgressiveWebmMuxingManifestType manifestType;
+
+  @JsonProperty("segmentLength")
+  private Double segmentLength;
 
 
   /**
@@ -43,6 +50,43 @@ public class ProgressiveWebmMuxing extends Muxing {
   }
 
 
+  /**
+   * Get manifestType
+   * @return manifestType
+   */
+  public ProgressiveWebmMuxingManifestType getManifestType() {
+    return manifestType;
+  }
+
+  /**
+   * Set manifestType
+   *
+   * @param manifestType
+   */
+  public void setManifestType(ProgressiveWebmMuxingManifestType manifestType) {
+    this.manifestType = manifestType;
+  }
+
+
+  /**
+   * Determines the length of segments in seconds if manifestType is set to DASH_ON_DEMAND. Defaults to 4 seconds
+   * @return segmentLength
+   */
+  public Double getSegmentLength() {
+    return segmentLength;
+  }
+
+  /**
+   * Determines the length of segments in seconds if manifestType is set to DASH_ON_DEMAND. Defaults to 4 seconds
+   *
+   * @param segmentLength
+   *        Determines the length of segments in seconds if manifestType is set to DASH_ON_DEMAND. Defaults to 4 seconds
+   */
+  public void setSegmentLength(Double segmentLength) {
+    this.segmentLength = segmentLength;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -53,12 +97,14 @@ public class ProgressiveWebmMuxing extends Muxing {
     }
     ProgressiveWebmMuxing progressiveWebmMuxing = (ProgressiveWebmMuxing) o;
     return Objects.equals(this.filename, progressiveWebmMuxing.filename) &&
+        Objects.equals(this.manifestType, progressiveWebmMuxing.manifestType) &&
+        Objects.equals(this.segmentLength, progressiveWebmMuxing.segmentLength) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(filename, super.hashCode());
+    return Objects.hash(filename, manifestType, segmentLength, super.hashCode());
   }
 
   @Override
@@ -67,6 +113,8 @@ public class ProgressiveWebmMuxing extends Muxing {
     sb.append("class ProgressiveWebmMuxing {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    filename: ").append(toIndentedString(filename)).append("\n");
+    sb.append("    manifestType: ").append(toIndentedString(manifestType)).append("\n");
+    sb.append("    segmentLength: ").append(toIndentedString(segmentLength)).append("\n");
     sb.append("}");
     return sb.toString();
   }

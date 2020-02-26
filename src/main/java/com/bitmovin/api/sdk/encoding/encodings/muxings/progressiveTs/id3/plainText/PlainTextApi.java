@@ -43,10 +43,10 @@ public class PlainTextApi {
     }
     
     /**
-     * Add Plain Text ID3 Tag to Progressive TS Muxing
+     * Add Plain Text ID3 Tag to Progressive TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
-     * @param muxingId ID of the Progressive TS Muxing (required)
+     * @param muxingId ID of the Progressive TS muxing (required)
      * @param plaintextId3Tag The Plain Text ID3 Tag to be created (required)
      * @return PlaintextId3Tag
      * @throws BitmovinException if fails to make API call
@@ -60,10 +60,10 @@ public class PlainTextApi {
     }
     
     /**
-     * Delete Plain Text ID3 Tag of Progressive TS Muxing
+     * Delete Plain Text ID3 Tag of Progressive TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
-     * @param muxingId ID of the Progressive TS Muxing (required)
+     * @param muxingId ID of the Progressive TS muxing (required)
      * @param id3TagId ID of the Plain Text ID3 Tag (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
@@ -77,10 +77,10 @@ public class PlainTextApi {
     }
     
     /**
-     * Plain Text ID3 Tag Details of Progressive TS Muxing
+     * Plain Text ID3 Tag Details of Progressive TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
-     * @param muxingId ID of the Progressive TS Muxing (required)
+     * @param muxingId ID of the Progressive TS muxing (required)
      * @param id3TagId ID of the Plain Text ID3 Tag (required)
      * @return PlaintextId3Tag
      * @throws BitmovinException if fails to make API call
@@ -94,10 +94,10 @@ public class PlainTextApi {
     }
     
     /**
-     * List Plain Text ID3 Tags of Progressive TS Muxing
+     * List Plain Text ID3 Tags of Progressive TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
-     * @param muxingId ID of the Progressive TS Muxing (required)
+     * @param muxingId ID of the Progressive TS muxing (required)
      * @return List&lt;PlaintextId3Tag&gt;
      * @throws BitmovinException if fails to make API call
      */
@@ -109,10 +109,10 @@ public class PlainTextApi {
         }
     }
     /**
-     * List Plain Text ID3 Tags of Progressive TS Muxing
+     * List Plain Text ID3 Tags of Progressive TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
-     * @param muxingId ID of the Progressive TS Muxing (required)
+     * @param muxingId ID of the Progressive TS muxing (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;PlaintextId3Tag&gt;
      * @throws BitmovinException if fails to make API call

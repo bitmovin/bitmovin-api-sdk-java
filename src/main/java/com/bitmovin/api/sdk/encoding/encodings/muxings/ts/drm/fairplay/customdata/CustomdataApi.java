@@ -40,10 +40,10 @@ public class CustomdataApi {
     }
     
     /**
-     * FairPlay DRM Custom Data of TS Segment
+     * FairPlay DRM Custom Data of TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the ts segment. (required)
+     * @param muxingId Id of the TS muxing. (required)
      * @param drmId Id of the FairPlay DRM configuration. (required)
      * @return CustomData
      * @throws BitmovinException if fails to make API call

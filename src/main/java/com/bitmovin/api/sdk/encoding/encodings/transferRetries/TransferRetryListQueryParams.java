@@ -1,9 +1,9 @@
-package com.bitmovin.api.sdk.encoding.manifests.dash.periods.adaptationsets.representations.cmaf.drm;
+package com.bitmovin.api.sdk.encoding.encodings.transferRetries;
 
 import java.util.HashMap;
 import com.bitmovin.api.sdk.model.*;
 
-public class DashCmafDrmRepresentationListQueryParams extends HashMap<String, Object> {
+public class TransferRetryListQueryParams extends HashMap<String, Object> {
 
     public Integer getOffset() {
         return (Integer) this.get("offset");

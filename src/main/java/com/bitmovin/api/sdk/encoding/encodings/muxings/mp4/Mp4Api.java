@@ -49,10 +49,10 @@ public class Mp4Api {
     }
     
     /**
-     * Add MP4 Muxing
+     * Add MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param mp4Muxing The MP4 Muxing to be created (required)
+     * @param mp4Muxing The MP4 muxing to be created (required)
      * @return Mp4Muxing
      * @throws BitmovinException if fails to make API call
      */
@@ -65,7 +65,7 @@ public class Mp4Api {
     }
     
     /**
-     * Delete MP4 Muxing
+     * Delete MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP4 muxing (required)
@@ -81,7 +81,7 @@ public class Mp4Api {
     }
     
     /**
-     * MP4 Segment Muxing Details
+     * MP4 muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP4 muxing (required)
@@ -97,7 +97,7 @@ public class Mp4Api {
     }
     
     /**
-     * List MP4 Muxings
+     * List MP4 muxings
      * 
      * @param encodingId Id of the encoding. (required)
      * @return List&lt;Mp4Muxing&gt;
@@ -111,7 +111,7 @@ public class Mp4Api {
         }
     }
     /**
-     * List MP4 Muxings
+     * List MP4 muxings
      * 
      * @param encodingId Id of the encoding. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

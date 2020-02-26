@@ -40,7 +40,7 @@ public class CustomdataApi {
     }
     
     /**
-     * Progressive MOV Muxing Custom Data
+     * Progressive MOV muxing Custom Data
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive MOV muxing (required)

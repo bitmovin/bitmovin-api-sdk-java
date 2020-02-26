@@ -1,10 +1,12 @@
-package com.bitmovin.api.sdk.encoding.encodings.muxings.cmaf.drm;
+package com.bitmovin.api.sdk.encoding.encodings.muxings.progressiveWebm.drm;
 
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
-import com.bitmovin.api.sdk.encoding.encodings.muxings.cmaf.drm.speke.SpekeApi;
+import com.bitmovin.api.sdk.encoding.encodings.muxings.progressiveWebm.drm.cenc.CencApi;
+import com.bitmovin.api.sdk.encoding.encodings.muxings.progressiveWebm.drm.speke.SpekeApi;
 
 public class DrmApi {
+    public final CencApi cenc;
     public final SpekeApi speke;
 
     public DrmApi(BitmovinApiClientFactory clientFactory) {
@@ -13,6 +15,7 @@ public class DrmApi {
             throw new IllegalArgumentException("Parameter 'clientFactory' may not be null.");
         }
 
+        this.cenc = new CencApi(clientFactory);
         this.speke = new SpekeApi(clientFactory);
     }
 

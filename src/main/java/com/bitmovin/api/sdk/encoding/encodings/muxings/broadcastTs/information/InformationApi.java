@@ -40,10 +40,10 @@ public class InformationApi {
     }
     
     /**
-     * Broadcast TS Muxing Information
+     * Broadcast TS muxing Information
      * 
      * @param encodingId ID of the Encoding. (required)
-     * @param muxingId ID of the Broadcast TS Muxing (required)
+     * @param muxingId ID of the Broadcast TS muxing (required)
      * @return BroadcastTsMuxingInformation
      * @throws BitmovinException if fails to make API call
      */

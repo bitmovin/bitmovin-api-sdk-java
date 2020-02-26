@@ -43,10 +43,10 @@ public class SpekeApi {
     }
     
     /**
-     * Add SPEKE DRM key provider to TS Segment
+     * Add SPEKE DRM key provider to TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the TS Segment muxing (required)
+     * @param muxingId Id of the TS muxing (required)
      * @param spekeDrm The SPEKE DRM key provider to be created (required)
      * @return SpekeDrm
      * @throws BitmovinException if fails to make API call
@@ -60,10 +60,10 @@ public class SpekeApi {
     }
     
     /**
-     * Delete SPEKE DRM from TS Segment
+     * Delete SPEKE DRM from TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the TS Segment muxing (required)
+     * @param muxingId Id of the TS muxing (required)
      * @param drmId Id of the SPEKE DRM. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
@@ -77,10 +77,10 @@ public class SpekeApi {
     }
     
     /**
-     * SPEKE DRM Details of TS Segment
+     * SPEKE DRM Details of TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the TS Segment muxing (required)
+     * @param muxingId Id of the TS muxing (required)
      * @param drmId Id of the SPEKE DRM. (required)
      * @return SpekeDrm
      * @throws BitmovinException if fails to make API call
@@ -94,10 +94,10 @@ public class SpekeApi {
     }
     
     /**
-     * List SPEKE DRM of TS Segment
+     * List SPEKE DRM of TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the TS Segment muxing (required)
+     * @param muxingId Id of the TS muxing (required)
      * @return List&lt;SpekeDrm&gt;
      * @throws BitmovinException if fails to make API call
      */
@@ -109,10 +109,10 @@ public class SpekeApi {
         }
     }
     /**
-     * List SPEKE DRM of TS Segment
+     * List SPEKE DRM of TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the TS Segment muxing (required)
+     * @param muxingId Id of the TS muxing (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;SpekeDrm&gt;
      * @throws BitmovinException if fails to make API call

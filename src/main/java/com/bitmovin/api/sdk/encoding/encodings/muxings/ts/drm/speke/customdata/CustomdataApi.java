@@ -40,10 +40,10 @@ public class CustomdataApi {
     }
     
     /**
-     * SPEKE DRM Custom Data of TS Segment
+     * SPEKE DRM Custom Data of TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the TS Segment muxing (required)
+     * @param muxingId Id of the TS muxing (required)
      * @param drmId Id of the SPEKE DRM. (required)
      * @return CustomData
      * @throws BitmovinException if fails to make API call

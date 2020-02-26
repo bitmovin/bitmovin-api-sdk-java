@@ -28,7 +28,7 @@ public class HlsManifestDefault extends HlsManifest {
 
 
   /**
-   * The id of the encoding to create a default manifest from (required)
+   * The id of the encoding to create a default manifest from. (required)
    * @return encodingId
    */
   public String getEncodingId() {
@@ -36,10 +36,10 @@ public class HlsManifestDefault extends HlsManifest {
   }
 
   /**
-   * The id of the encoding to create a default manifest from (required)
+   * The id of the encoding to create a default manifest from. (required)
    *
    * @param encodingId
-   *        The id of the encoding to create a default manifest from (required)
+   *        The id of the encoding to create a default manifest from. (required)
    */
   public void setEncodingId(String encodingId) {
     this.encodingId = encodingId;

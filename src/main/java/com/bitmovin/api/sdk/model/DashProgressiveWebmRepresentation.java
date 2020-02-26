@@ -2,39 +2,37 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.DashCmafRepresentation;
-import com.bitmovin.api.sdk.model.DashRepresentationType;
-import com.bitmovin.api.sdk.model.DashRepresentationTypeMode;
+import com.bitmovin.api.sdk.model.DashRepresentation;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * DashCmafDrmRepresentation
+ * DashProgressiveWebmRepresentation
  */
 
-public class DashCmafDrmRepresentation extends DashCmafRepresentation {
-  @JsonProperty("drmId")
-  private String drmId;
+public class DashProgressiveWebmRepresentation extends DashRepresentation {
+  @JsonProperty("filePath")
+  private String filePath;
 
 
   /**
-   * DRM Id (required)
-   * @return drmId
+   * Path to the Progressive WebM file (required)
+   * @return filePath
    */
-  public String getDrmId() {
-    return drmId;
+  public String getFilePath() {
+    return filePath;
   }
 
   /**
-   * DRM Id (required)
+   * Path to the Progressive WebM file (required)
    *
-   * @param drmId
-   *        DRM Id (required)
+   * @param filePath
+   *        Path to the Progressive WebM file (required)
    */
-  public void setDrmId(String drmId) {
-    this.drmId = drmId;
+  public void setFilePath(String filePath) {
+    this.filePath = filePath;
   }
 
 
@@ -46,22 +44,22 @@ public class DashCmafDrmRepresentation extends DashCmafRepresentation {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DashCmafDrmRepresentation dashCmafDrmRepresentation = (DashCmafDrmRepresentation) o;
-    return Objects.equals(this.drmId, dashCmafDrmRepresentation.drmId) &&
+    DashProgressiveWebmRepresentation dashProgressiveWebmRepresentation = (DashProgressiveWebmRepresentation) o;
+    return Objects.equals(this.filePath, dashProgressiveWebmRepresentation.filePath) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(drmId, super.hashCode());
+    return Objects.hash(filePath, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DashCmafDrmRepresentation {\n");
+    sb.append("class DashProgressiveWebmRepresentation {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    drmId: ").append(toIndentedString(drmId)).append("\n");
+    sb.append("    filePath: ").append(toIndentedString(filePath)).append("\n");
     sb.append("}");
     return sb.toString();
   }

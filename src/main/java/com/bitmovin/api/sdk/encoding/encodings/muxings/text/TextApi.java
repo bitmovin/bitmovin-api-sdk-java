@@ -43,10 +43,10 @@ public class TextApi {
     }
     
     /**
-     * Add Text Muxing
+     * Add Text muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param textMuxing The Text Muxing to be created (required)
+     * @param textMuxing The Text muxing to be created (required)
      * @return TextMuxing
      * @throws BitmovinException if fails to make API call
      */
@@ -59,7 +59,7 @@ public class TextApi {
     }
     
     /**
-     * Delete Text Muxing
+     * Delete Text muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Text muxing (required)
@@ -75,7 +75,7 @@ public class TextApi {
     }
     
     /**
-     * Text Muxing Details
+     * Text muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Text muxing (required)
@@ -91,7 +91,7 @@ public class TextApi {
     }
     
     /**
-     * List Text Muxings
+     * List Text muxings
      * 
      * @param encodingId Id of the encoding. (required)
      * @return List&lt;TextMuxing&gt;
@@ -105,7 +105,7 @@ public class TextApi {
         }
     }
     /**
-     * List Text Muxings
+     * List Text muxings
      * 
      * @param encodingId Id of the encoding. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

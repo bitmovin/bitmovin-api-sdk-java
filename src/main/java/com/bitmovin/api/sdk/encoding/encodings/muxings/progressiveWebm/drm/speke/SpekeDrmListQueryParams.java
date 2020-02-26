@@ -1,4 +1,4 @@
-package com.bitmovin.api.sdk.encoding.encodings.muxings.cmaf.drm.speke;
+package com.bitmovin.api.sdk.encoding.encodings.muxings.progressiveWebm.drm.speke;
 
 import java.util.HashMap;
 import com.bitmovin.api.sdk.model.*;

@@ -40,7 +40,7 @@ public class CustomdataApi {
     }
     
     /**
-     * Broadcast TS Muxing Custom Data
+     * Broadcast TS muxing Custom Data
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param muxingId ID of the Broadcast TS muxing (required)

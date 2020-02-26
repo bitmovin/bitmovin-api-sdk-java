@@ -40,10 +40,10 @@ public class CustomdataApi {
     }
     
     /**
-     * Frame ID ID3 Tag Custom Data of Progressive TS Muxing
+     * Frame ID ID3 Tag Custom Data of Progressive TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
-     * @param muxingId ID of the Progressive TS Muxing (required)
+     * @param muxingId ID of the Progressive TS muxing (required)
      * @param id3TagId ID of the Frame ID ID3 Tag (required)
      * @return CustomData
      * @throws BitmovinException if fails to make API call

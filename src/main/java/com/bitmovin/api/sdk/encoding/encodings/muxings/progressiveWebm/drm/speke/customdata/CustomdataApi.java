@@ -1,4 +1,4 @@
-package com.bitmovin.api.sdk.encoding.encodings.muxings.cmaf.drm.speke.customdata;
+package com.bitmovin.api.sdk.encoding.encodings.muxings.progressiveWebm.drm.speke.customdata;
 
 import java.util.Date;
 import java.util.List;
@@ -40,10 +40,10 @@ public class CustomdataApi {
     }
     
     /**
-     * SPEKE DRM Custom Data of CMAF
+     * SPEKE DRM Custom Data of Progressive WebM
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the CMAF muxing (required)
+     * @param muxingId Id of the Progressive WebM muxing (required)
      * @param drmId Id of the SPEKE DRM. (required)
      * @return CustomData
      * @throws BitmovinException if fails to make API call
@@ -58,7 +58,7 @@ public class CustomdataApi {
     
     interface CustomdataApiClient {
     
-        @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/cmaf/{muxing_id}/drm/speke/{drm_id}/customData")
+        @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/progressive-webm/{muxing_id}/drm/speke/{drm_id}/customData")
         ResponseEnvelope<CustomData> getCustomData(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @Param(value = "drm_id") String drmId) throws BitmovinException;
     }
 }

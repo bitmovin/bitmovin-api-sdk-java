@@ -46,7 +46,7 @@ public class DrmApi {
     }
     
     /**
-     * List all DRM configurations of Progressive TS Muxing
+     * List all DRM configurations of Progressive TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive TS muxing (required)

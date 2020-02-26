@@ -40,7 +40,7 @@ public class CustomdataApi {
     }
     
     /**
-     * MP3 Muxing Custom Data
+     * MP3 muxing Custom Data
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP3 muxing (required)

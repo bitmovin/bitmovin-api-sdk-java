@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.BillableEncodingFeatureMinutes;
 import com.bitmovin.api.sdk.model.BillableEncodingMinutes;
+import com.bitmovin.api.sdk.model.EgressInformation;
 import com.bitmovin.api.sdk.model.Statistics;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +34,10 @@ public class StatisticsPerLabel extends Statistics {
   @JsonProperty("billableFeatureMinutes")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<BillableEncodingFeatureMinutes> billableFeatureMinutes = new ArrayList<BillableEncodingFeatureMinutes>();
+
+  @JsonProperty("billableEgressBytes")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<EgressInformation> billableEgressBytes = new ArrayList<EgressInformation>();
 
 
   /**
@@ -107,6 +112,14 @@ public class StatisticsPerLabel extends Statistics {
     return billableFeatureMinutes;
   }
 
+  /**
+   * Billable egress output
+   * @return billableEgressBytes
+   */
+  public List<EgressInformation> getBillableEgressBytes() {
+    return billableEgressBytes;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -122,12 +135,13 @@ public class StatisticsPerLabel extends Statistics {
         Objects.equals(this.billableEncodingMinutes, statisticsPerLabel.billableEncodingMinutes) &&
         Objects.equals(this.billableTransmuxingMinutes, statisticsPerLabel.billableTransmuxingMinutes) &&
         Objects.equals(this.billableFeatureMinutes, statisticsPerLabel.billableFeatureMinutes) &&
+        Objects.equals(this.billableEgressBytes, statisticsPerLabel.billableEgressBytes) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(label, billableMinutes, billableEncodingMinutes, billableTransmuxingMinutes, billableFeatureMinutes, super.hashCode());
+    return Objects.hash(label, billableMinutes, billableEncodingMinutes, billableTransmuxingMinutes, billableFeatureMinutes, billableEgressBytes, super.hashCode());
   }
 
   @Override
@@ -140,6 +154,7 @@ public class StatisticsPerLabel extends Statistics {
     sb.append("    billableEncodingMinutes: ").append(toIndentedString(billableEncodingMinutes)).append("\n");
     sb.append("    billableTransmuxingMinutes: ").append(toIndentedString(billableTransmuxingMinutes)).append("\n");
     sb.append("    billableFeatureMinutes: ").append(toIndentedString(billableFeatureMinutes)).append("\n");
+    sb.append("    billableEgressBytes: ").append(toIndentedString(billableEgressBytes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

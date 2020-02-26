@@ -43,7 +43,7 @@ public class FairplayApi {
     }
     
     /**
-     * Add FairPlay DRM to TS Segment
+     * Add FairPlay DRM to TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the TS muxing. (required)
@@ -60,10 +60,10 @@ public class FairplayApi {
     }
     
     /**
-     * Delete FairPlay DRM from TS Segment
+     * Delete FairPlay DRM from TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the transport streams segment. (required)
+     * @param muxingId Id of the TS muxing. (required)
      * @param drmId Id of the FairPlay DRM configuration. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
@@ -77,10 +77,10 @@ public class FairplayApi {
     }
     
     /**
-     * FairPlay DRM Details of TS Segment
+     * FairPlay DRM Details of TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the transport streams segment. (required)
+     * @param muxingId Id of the TS muxing. (required)
      * @param drmId Id of the FairPlay DRM configuration. (required)
      * @return FairPlayDrm
      * @throws BitmovinException if fails to make API call
@@ -94,10 +94,10 @@ public class FairplayApi {
     }
     
     /**
-     * List FairPlay DRMs of TS Segment
+     * List FairPlay DRMs of TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the transport streams segment. (required)
+     * @param muxingId Id of the TS muxing. (required)
      * @return List&lt;FairPlayDrm&gt;
      * @throws BitmovinException if fails to make API call
      */
@@ -109,10 +109,10 @@ public class FairplayApi {
         }
     }
     /**
-     * List FairPlay DRMs of TS Segment
+     * List FairPlay DRMs of TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the transport streams segment. (required)
+     * @param muxingId Id of the TS muxing. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;FairPlayDrm&gt;
      * @throws BitmovinException if fails to make API call

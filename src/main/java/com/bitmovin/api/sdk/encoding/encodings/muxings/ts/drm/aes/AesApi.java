@@ -43,7 +43,7 @@ public class AesApi {
     }
     
     /**
-     * Add AES Encryption to TS Segment
+     * Add AES Encryption to TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the TS muxing. (required)
@@ -60,10 +60,10 @@ public class AesApi {
     }
     
     /**
-     * Delete AES Encryption from TS Segment
+     * Delete AES Encryption from TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the transport stream segment. (required)
+     * @param muxingId Id of the TS muxing. (required)
      * @param drmId Id of the PlayReady DRM configuration. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
@@ -77,10 +77,10 @@ public class AesApi {
     }
     
     /**
-     * AES Encryption Details of TS Segment
+     * AES Encryption Details of TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the transport stream segment. (required)
+     * @param muxingId Id of the TS muxing. (required)
      * @param drmId Id of the AESEncryption configuration. (required)
      * @return AesEncryptionDrm
      * @throws BitmovinException if fails to make API call
@@ -94,10 +94,10 @@ public class AesApi {
     }
     
     /**
-     * List AES Encryption of TS Segment
+     * List AES Encryption of TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the transport stream segment. (required)
+     * @param muxingId Id of the TS muxing. (required)
      * @return List&lt;AesEncryptionDrm&gt;
      * @throws BitmovinException if fails to make API call
      */
@@ -109,10 +109,10 @@ public class AesApi {
         }
     }
     /**
-     * List AES Encryption of TS Segment
+     * List AES Encryption of TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the transport stream segment. (required)
+     * @param muxingId Id of the TS muxing. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;AesEncryptionDrm&gt;
      * @throws BitmovinException if fails to make API call

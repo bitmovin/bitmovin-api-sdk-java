@@ -19,10 +19,12 @@ import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.progressiveWebm.customdata.CustomdataApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.progressiveWebm.information.InformationApi;
+import com.bitmovin.api.sdk.encoding.encodings.muxings.progressiveWebm.drm.DrmApi;
 
 public class ProgressiveWebmApi {
     public final CustomdataApi customdata;
     public final InformationApi information;
+    public final DrmApi drm;
 
     private final ProgressiveWebmApiClient apiClient;
 
@@ -36,6 +38,7 @@ public class ProgressiveWebmApi {
 
         this.customdata = new CustomdataApi(clientFactory);
         this.information = new InformationApi(clientFactory);
+        this.drm = new DrmApi(clientFactory);
     }
 
     /**
@@ -46,10 +49,10 @@ public class ProgressiveWebmApi {
     }
     
     /**
-     * Add Progressive WebM Muxing
+     * Add Progressive WebM muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param progressiveWebmMuxing The Progressive WebM Muxing to be created (required)
+     * @param progressiveWebmMuxing The Progressive WebM muxing to be created (required)
      * @return ProgressiveWebmMuxing
      * @throws BitmovinException if fails to make API call
      */
@@ -62,7 +65,7 @@ public class ProgressiveWebmApi {
     }
     
     /**
-     * Delete Progressive WebM Muxing
+     * Delete Progressive WebM muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive WebM muxing (required)
@@ -78,7 +81,7 @@ public class ProgressiveWebmApi {
     }
     
     /**
-     * Progressive WebM Muxing Details
+     * Progressive WebM muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive WebM muxing (required)
@@ -94,7 +97,7 @@ public class ProgressiveWebmApi {
     }
     
     /**
-     * List Progressive WebM Muxings
+     * List Progressive WebM muxings
      * 
      * @param encodingId Id of the encoding. (required)
      * @return List&lt;ProgressiveWebmMuxing&gt;
@@ -108,7 +111,7 @@ public class ProgressiveWebmApi {
         }
     }
     /**
-     * List Progressive WebM Muxings
+     * List Progressive WebM muxings
      * 
      * @param encodingId Id of the encoding. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

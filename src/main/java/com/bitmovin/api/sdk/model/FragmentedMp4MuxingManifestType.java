@@ -31,7 +31,7 @@ public enum FragmentedMp4MuxingManifestType {
   HLS_BYTE_RANGES("HLS_BYTE_RANGES"),
   
   /**
-   * Dont create a manifest
+   * Do not create a manifest
    */
   NONE("NONE"),
   

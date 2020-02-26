@@ -46,7 +46,7 @@ public class DrmApi {
     }
     
     /**
-     * List all DRM configurations of WebM Muxing
+     * List all DRM configurations of WebM muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the WebM muxing (required)

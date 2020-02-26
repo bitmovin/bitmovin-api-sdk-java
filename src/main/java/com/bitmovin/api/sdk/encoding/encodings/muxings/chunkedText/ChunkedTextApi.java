@@ -43,10 +43,10 @@ public class ChunkedTextApi {
     }
     
     /**
-     * Add Chunked Text Muxing
+     * Add Chunked Text muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param chunkedTextMuxing The Chunked Text Muxing to be created (required)
+     * @param chunkedTextMuxing The Chunked Text muxing to be created (required)
      * @return ChunkedTextMuxing
      * @throws BitmovinException if fails to make API call
      */
@@ -59,10 +59,10 @@ public class ChunkedTextApi {
     }
     
     /**
-     * Delete Chunked Text Muxing
+     * Delete Chunked Text muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the Chunked Text Muxing (required)
+     * @param muxingId Id of the Chunked Text muxing (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */
@@ -75,10 +75,10 @@ public class ChunkedTextApi {
     }
     
     /**
-     * Chunked Text Muxing Details
+     * Chunked Text muxing details
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the Chunked Text Muxing (required)
+     * @param muxingId Id of the Chunked Text muxing (required)
      * @return ChunkedTextMuxing
      * @throws BitmovinException if fails to make API call
      */
@@ -91,7 +91,7 @@ public class ChunkedTextApi {
     }
     
     /**
-     * List Chunked Text Muxings
+     * List Chunked Text muxings
      * 
      * @param encodingId Id of the encoding. (required)
      * @return List&lt;ChunkedTextMuxing&gt;
@@ -105,7 +105,7 @@ public class ChunkedTextApi {
         }
     }
     /**
-     * List Chunked Text Muxings
+     * List Chunked Text muxings
      * 
      * @param encodingId Id of the encoding. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

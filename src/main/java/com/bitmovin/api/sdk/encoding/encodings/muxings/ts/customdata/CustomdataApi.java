@@ -40,10 +40,10 @@ public class CustomdataApi {
     }
     
     /**
-     * TS Segment Muxing Custom Data
+     * TS muxing Custom Data
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the ts segment muxing (required)
+     * @param muxingId Id of the TS muxing (required)
      * @return CustomData
      * @throws BitmovinException if fails to make API call
      */

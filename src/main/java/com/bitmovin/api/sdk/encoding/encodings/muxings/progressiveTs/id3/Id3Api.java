@@ -49,10 +49,10 @@ public class Id3Api {
     }
     
     /**
-     * List all ID3 Tags of Progressive TS Muxing
+     * List all ID3 Tags of Progressive TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
-     * @param muxingId ID of the Progressive TS Muxing (required)
+     * @param muxingId ID of the Progressive TS muxing (required)
      * @return List&lt;Id3Tag&gt;
      * @throws BitmovinException if fails to make API call
      */
@@ -64,10 +64,10 @@ public class Id3Api {
         }
     }
     /**
-     * List all ID3 Tags of Progressive TS Muxing
+     * List all ID3 Tags of Progressive TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
-     * @param muxingId ID of the Progressive TS Muxing (required)
+     * @param muxingId ID of the Progressive TS muxing (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;Id3Tag&gt;
      * @throws BitmovinException if fails to make API call

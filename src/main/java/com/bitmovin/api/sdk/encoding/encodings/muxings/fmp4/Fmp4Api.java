@@ -46,10 +46,10 @@ public class Fmp4Api {
     }
     
     /**
-     * Add fMP4 Segment Muxing
+     * Add fMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param fmp4Muxing The fMP4 Segment Muxing to be created (required)
+     * @param fmp4Muxing The fMP4 muxing to be created (required)
      * @return Fmp4Muxing
      * @throws BitmovinException if fails to make API call
      */
@@ -62,7 +62,7 @@ public class Fmp4Api {
     }
     
     /**
-     * Delete fMP4 Muxing
+     * Delete fMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing (required)
@@ -78,7 +78,7 @@ public class Fmp4Api {
     }
     
     /**
-     * fMP4 Segment Muxing Details
+     * fMP4 muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing (required)
@@ -94,7 +94,7 @@ public class Fmp4Api {
     }
     
     /**
-     * List fMP4 Segment Muxings
+     * List fMP4 muxings
      * 
      * @param encodingId Id of the encoding. (required)
      * @return List&lt;Fmp4Muxing&gt;
@@ -108,7 +108,7 @@ public class Fmp4Api {
         }
     }
     /**
-     * List fMP4 Segment Muxings
+     * List fMP4 muxings
      * 
      * @param encodingId Id of the encoding. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

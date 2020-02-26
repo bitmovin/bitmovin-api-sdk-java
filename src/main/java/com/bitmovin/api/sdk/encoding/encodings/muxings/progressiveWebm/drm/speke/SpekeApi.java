@@ -1,4 +1,4 @@
-package com.bitmovin.api.sdk.encoding.encodings.muxings.cmaf.drm.speke;
+package com.bitmovin.api.sdk.encoding.encodings.muxings.progressiveWebm.drm.speke;
 
 import java.util.Date;
 import java.util.List;
@@ -17,7 +17,7 @@ import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovin
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
-import com.bitmovin.api.sdk.encoding.encodings.muxings.cmaf.drm.speke.customdata.CustomdataApi;
+import com.bitmovin.api.sdk.encoding.encodings.muxings.progressiveWebm.drm.speke.customdata.CustomdataApi;
 
 public class SpekeApi {
     public final CustomdataApi customdata;
@@ -43,10 +43,10 @@ public class SpekeApi {
     }
     
     /**
-     * Add SPEKE DRM key provider to CMAF
+     * Add SPEKE DRM key provider to Progressive WebM
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the CMAF muxing (required)
+     * @param muxingId Id of the Progressive WebM muxing (required)
      * @param spekeDrm The SPEKE DRM key provider to be created (required)
      * @return SpekeDrm
      * @throws BitmovinException if fails to make API call
@@ -60,10 +60,10 @@ public class SpekeApi {
     }
     
     /**
-     * Delete SPEKE DRM from CMAF
+     * Delete SPEKE DRM from Progressive WebM
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the CMAF muxing (required)
+     * @param muxingId Id of the Progressive WebM muxing (required)
      * @param drmId Id of the SPEKE DRM. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
@@ -77,10 +77,10 @@ public class SpekeApi {
     }
     
     /**
-     * SPEKE DRM Details of CMAF
+     * SPEKE DRM Details of Progressive WebM
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the CMAF muxing (required)
+     * @param muxingId Id of the Progressive WebM muxing (required)
      * @param drmId Id of the SPEKE DRM. (required)
      * @return SpekeDrm
      * @throws BitmovinException if fails to make API call
@@ -94,10 +94,10 @@ public class SpekeApi {
     }
     
     /**
-     * List SPEKE DRM of CMAF
+     * List SPEKE DRM of Progressive WebM
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the CMAF muxing (required)
+     * @param muxingId Id of the Progressive WebM muxing (required)
      * @return List&lt;SpekeDrm&gt;
      * @throws BitmovinException if fails to make API call
      */
@@ -109,10 +109,10 @@ public class SpekeApi {
         }
     }
     /**
-     * List SPEKE DRM of CMAF
+     * List SPEKE DRM of Progressive WebM
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the CMAF muxing (required)
+     * @param muxingId Id of the Progressive WebM muxing (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;SpekeDrm&gt;
      * @throws BitmovinException if fails to make API call
@@ -127,16 +127,16 @@ public class SpekeApi {
     
     interface SpekeApiClient {
     
-        @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/cmaf/{muxing_id}/drm/speke")
+        @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/progressive-webm/{muxing_id}/drm/speke")
         ResponseEnvelope<SpekeDrm> create(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, SpekeDrm spekeDrm) throws BitmovinException;
     
-        @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/cmaf/{muxing_id}/drm/speke/{drm_id}")
+        @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/progressive-webm/{muxing_id}/drm/speke/{drm_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @Param(value = "drm_id") String drmId) throws BitmovinException;
     
-        @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/cmaf/{muxing_id}/drm/speke/{drm_id}")
+        @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/progressive-webm/{muxing_id}/drm/speke/{drm_id}")
         ResponseEnvelope<SpekeDrm> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @Param(value = "drm_id") String drmId) throws BitmovinException;
     
-        @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/cmaf/{muxing_id}/drm/speke")
+        @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/progressive-webm/{muxing_id}/drm/speke")
         ResponseEnvelope<PaginationResponse<SpekeDrm>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
     }
 }

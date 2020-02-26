@@ -124,7 +124,7 @@ public class VideoConfiguration extends CodecConfiguration {
 
 
   /**
-   * Get pixelFormat
+   * Describes the color encoding, bit depth, and chroma subsampling of each pixel in the output image.
    * @return pixelFormat
    */
   public PixelFormat getPixelFormat() {
@@ -132,9 +132,10 @@ public class VideoConfiguration extends CodecConfiguration {
   }
 
   /**
-   * Set pixelFormat
+   * Describes the color encoding, bit depth, and chroma subsampling of each pixel in the output image.
    *
    * @param pixelFormat
+   *        Describes the color encoding, bit depth, and chroma subsampling of each pixel in the output image.
    */
   public void setPixelFormat(PixelFormat pixelFormat) {
     this.pixelFormat = pixelFormat;

@@ -7,6 +7,7 @@ import com.bitmovin.api.sdk.encoding.manifests.dash.periods.adaptationsets.repre
 import com.bitmovin.api.sdk.encoding.manifests.dash.periods.adaptationsets.representations.cmaf.CmafApi;
 import com.bitmovin.api.sdk.encoding.manifests.dash.periods.adaptationsets.representations.mp4.Mp4Api;
 import com.bitmovin.api.sdk.encoding.manifests.dash.periods.adaptationsets.representations.webm.WebmApi;
+import com.bitmovin.api.sdk.encoding.manifests.dash.periods.adaptationsets.representations.progressiveWebm.ProgressiveWebmApi;
 
 public class RepresentationsApi {
     public final VttApi vtt;
@@ -14,6 +15,7 @@ public class RepresentationsApi {
     public final CmafApi cmaf;
     public final Mp4Api mp4;
     public final WebmApi webm;
+    public final ProgressiveWebmApi progressiveWebm;
 
     public RepresentationsApi(BitmovinApiClientFactory clientFactory) {
         if (clientFactory == null)
@@ -26,6 +28,7 @@ public class RepresentationsApi {
         this.cmaf = new CmafApi(clientFactory);
         this.mp4 = new Mp4Api(clientFactory);
         this.webm = new WebmApi(clientFactory);
+        this.progressiveWebm = new ProgressiveWebmApi(clientFactory);
     }
 
     /**

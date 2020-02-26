@@ -46,10 +46,10 @@ public class WebmApi {
     }
     
     /**
-     * Add WebM Segment Muxing
+     * Add WebM muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param webmMuxing The WebM Segment Muxing to be created (required)
+     * @param webmMuxing The WebM muxing to be created (required)
      * @return WebmMuxing
      * @throws BitmovinException if fails to make API call
      */
@@ -62,7 +62,7 @@ public class WebmApi {
     }
     
     /**
-     * Delete WebM Muxing
+     * Delete WebM muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the WebM muxing (required)
@@ -78,7 +78,7 @@ public class WebmApi {
     }
     
     /**
-     * WebM Segment Muxing Details
+     * WebM muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the WebM muxing (required)
@@ -94,7 +94,7 @@ public class WebmApi {
     }
     
     /**
-     * List WebM Segment Muxings
+     * List WebM muxings
      * 
      * @param encodingId Id of the encoding. (required)
      * @return List&lt;WebmMuxing&gt;
@@ -108,7 +108,7 @@ public class WebmApi {
         }
     }
     /**
-     * List WebM Segment Muxings
+     * List WebM muxings
      * 
      * @param encodingId Id of the encoding. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

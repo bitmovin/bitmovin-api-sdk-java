@@ -46,10 +46,10 @@ public class Mp3Api {
     }
     
     /**
-     * Add MP3 Muxing
+     * Add MP3 muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param mp3Muxing The MP3 Muxing to be created (required)
+     * @param mp3Muxing The MP3 muxing to be created (required)
      * @return Mp3Muxing
      * @throws BitmovinException if fails to make API call
      */
@@ -62,7 +62,7 @@ public class Mp3Api {
     }
     
     /**
-     * Delete MP3 Muxing
+     * Delete MP3 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP3 muxing (required)
@@ -78,7 +78,7 @@ public class Mp3Api {
     }
     
     /**
-     * MP3 Muxing Details
+     * MP3 muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP3 muxing (required)
@@ -94,7 +94,7 @@ public class Mp3Api {
     }
     
     /**
-     * List MP3 Muxings
+     * List MP3 muxings
      * 
      * @param encodingId Id of the encoding. (required)
      * @return List&lt;Mp3Muxing&gt;
@@ -108,7 +108,7 @@ public class Mp3Api {
         }
     }
     /**
-     * List MP3 Muxings
+     * List MP3 muxings
      * 
      * @param encodingId Id of the encoding. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

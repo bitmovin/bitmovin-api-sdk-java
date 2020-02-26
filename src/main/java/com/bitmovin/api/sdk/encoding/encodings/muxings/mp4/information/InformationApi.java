@@ -40,10 +40,10 @@ public class InformationApi {
     }
     
     /**
-     * MP4 Muxing Information
+     * MP4 muxing Information
      * 
      * @param encodingId ID of the Encoding. (required)
-     * @param muxingId ID of the MP4 Muxing (required)
+     * @param muxingId ID of the MP4 muxing (required)
      * @return Mp4MuxingInformation
      * @throws BitmovinException if fails to make API call
      */

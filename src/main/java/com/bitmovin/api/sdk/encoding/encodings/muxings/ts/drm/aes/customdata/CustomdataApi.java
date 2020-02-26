@@ -40,10 +40,10 @@ public class CustomdataApi {
     }
     
     /**
-     * AES Encryption Custom Data of TS Segment
+     * AES Encryption Custom Data of TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the transport stream segment. (required)
+     * @param muxingId Id of the TS muxing. (required)
      * @param drmId Id of the PlayReady DRM configuration. (required)
      * @return CustomData
      * @throws BitmovinException if fails to make API call

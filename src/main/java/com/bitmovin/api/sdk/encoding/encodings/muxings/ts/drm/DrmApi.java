@@ -49,7 +49,7 @@ public class DrmApi {
     }
     
     /**
-     * List all DRM configurations of TS Muxing
+     * List all DRM configurations of TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the TS muxing (required)

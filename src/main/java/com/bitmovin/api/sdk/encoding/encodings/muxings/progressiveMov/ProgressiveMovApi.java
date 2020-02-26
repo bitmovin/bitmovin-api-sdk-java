@@ -46,10 +46,10 @@ public class ProgressiveMovApi {
     }
     
     /**
-     * Add Progressive MOV Muxing
+     * Add Progressive MOV muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param progressiveMovMuxing The Progressive MOV Muxing to be created (required)
+     * @param progressiveMovMuxing The Progressive MOV muxing to be created (required)
      * @return ProgressiveMovMuxing
      * @throws BitmovinException if fails to make API call
      */
@@ -62,7 +62,7 @@ public class ProgressiveMovApi {
     }
     
     /**
-     * Delete Progressive MOV Muxing
+     * Delete Progressive MOV muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive MOV muxing (required)
@@ -78,7 +78,7 @@ public class ProgressiveMovApi {
     }
     
     /**
-     * Progressive MOV Muxing Details
+     * Progressive MOV muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive MOV muxing (required)
@@ -94,7 +94,7 @@ public class ProgressiveMovApi {
     }
     
     /**
-     * List Progressive MOV Muxings
+     * List Progressive MOV muxings
      * 
      * @param encodingId Id of the encoding. (required)
      * @return List&lt;ProgressiveMovMuxing&gt;
@@ -108,7 +108,7 @@ public class ProgressiveMovApi {
         }
     }
     /**
-     * List Progressive MOV Muxings
+     * List Progressive MOV muxings
      * 
      * @param encodingId Id of the encoding. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

@@ -40,7 +40,7 @@ public class CustomdataApi {
     }
     
     /**
-     * MP4 Segment Muxing Custom Data
+     * MP4 muxing Custom Data
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP4 muxing (required)

@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.BillableEncodingFeatureMinutes;
 import com.bitmovin.api.sdk.model.BillableEncodingMinutes;
+import com.bitmovin.api.sdk.model.EgressInformation;
 import com.bitmovin.api.sdk.model.StatisticsPerMuxing;
 import com.bitmovin.api.sdk.model.StatisticsPerStream;
 import java.util.ArrayList;
@@ -39,6 +40,10 @@ public class EncodingStats {
   @JsonProperty("billableMinutes")
   private Double billableMinutes;
 
+  @JsonProperty("billableEgressBytes")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<EgressInformation> billableEgressBytes = new ArrayList<EgressInformation>();
+
   @JsonProperty("billableEncodingMinutes")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<BillableEncodingMinutes> billableEncodingMinutes = new ArrayList<BillableEncodingMinutes>();
@@ -61,7 +66,6 @@ public class EncodingStats {
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<BillableEncodingFeatureMinutes> features = new ArrayList<BillableEncodingFeatureMinutes>();
 
-
   /**
    * Date, format. yyyy-MM-dd
    * @return date
@@ -69,17 +73,6 @@ public class EncodingStats {
   public Date getDate() {
     return date;
   }
-
-  /**
-   * Date, format. yyyy-MM-dd
-   *
-   * @param date
-   *        Date, format. yyyy-MM-dd
-   */
-  public void setDate(Date date) {
-    this.date = date;
-  }
-
 
   /**
    * The id of the encoding (required)
@@ -90,34 +83,12 @@ public class EncodingStats {
   }
 
   /**
-   * The id of the encoding (required)
-   *
-   * @param encodingId
-   *        The id of the encoding (required)
-   */
-  public void setEncodingId(String encodingId) {
-    this.encodingId = encodingId;
-  }
-
-
-  /**
    * Total bytes encoded
    * @return bytesEncoded
    */
   public Long getBytesEncoded() {
     return bytesEncoded;
   }
-
-  /**
-   * Total bytes encoded
-   *
-   * @param bytesEncoded
-   *        Total bytes encoded
-   */
-  public void setBytesEncoded(Long bytesEncoded) {
-    this.bytesEncoded = bytesEncoded;
-  }
-
 
   /**
    * Total time encoded
@@ -128,34 +99,12 @@ public class EncodingStats {
   }
 
   /**
-   * Total time encoded
-   *
-   * @param timeEncoded
-   *        Total time encoded
-   */
-  public void setTimeEncoded(Long timeEncoded) {
-    this.timeEncoded = timeEncoded;
-  }
-
-
-  /**
    * Downloaded size of the input file
    * @return downloadedSize
    */
   public Long getDownloadedSize() {
     return downloadedSize;
   }
-
-  /**
-   * Downloaded size of the input file
-   *
-   * @param downloadedSize
-   *        Downloaded size of the input file
-   */
-  public void setDownloadedSize(Long downloadedSize) {
-    this.downloadedSize = downloadedSize;
-  }
-
 
   /**
    * Billable minutes
@@ -166,19 +115,11 @@ public class EncodingStats {
   }
 
   /**
-   * Billable minutes
-   *
-   * @param billableMinutes
-   *        Billable minutes
+   * Billable egress output
+   * @return billableEgressBytes
    */
-  public void setBillableMinutes(Double billableMinutes) {
-    this.billableMinutes = billableMinutes;
-  }
-
-
-  public EncodingStats addBillableEncodingMinutesItem(BillableEncodingMinutes billableEncodingMinutesItem) {
-    this.billableEncodingMinutes.add(billableEncodingMinutesItem);
-    return this;
+  public List<EgressInformation> getBillableEgressBytes() {
+    return billableEgressBytes;
   }
 
   /**
@@ -190,17 +131,6 @@ public class EncodingStats {
   }
 
   /**
-   * Detailed statistics per stream
-   *
-   * @param billableEncodingMinutes
-   *        Detailed statistics per stream
-   */
-  public void setBillableEncodingMinutes(List<BillableEncodingMinutes> billableEncodingMinutes) {
-    this.billableEncodingMinutes = billableEncodingMinutes;
-  }
-
-
-  /**
    * Billable transmuxing minutes (required)
    * @return billableTransmuxingMinutes
    */
@@ -209,38 +139,11 @@ public class EncodingStats {
   }
 
   /**
-   * Billable transmuxing minutes (required)
-   *
-   * @param billableTransmuxingMinutes
-   *        Billable transmuxing minutes (required)
-   */
-  public void setBillableTransmuxingMinutes(Double billableTransmuxingMinutes) {
-    this.billableTransmuxingMinutes = billableTransmuxingMinutes;
-  }
-
-
-  /**
    * Billable feature minutes
    * @return billableFeatureMinutes
    */
   public Double getBillableFeatureMinutes() {
     return billableFeatureMinutes;
-  }
-
-  /**
-   * Billable feature minutes
-   *
-   * @param billableFeatureMinutes
-   *        Billable feature minutes
-   */
-  public void setBillableFeatureMinutes(Double billableFeatureMinutes) {
-    this.billableFeatureMinutes = billableFeatureMinutes;
-  }
-
-
-  public EncodingStats addStreamsItem(StatisticsPerStream streamsItem) {
-    this.streams.add(streamsItem);
-    return this;
   }
 
   /**
@@ -252,22 +155,6 @@ public class EncodingStats {
   }
 
   /**
-   * Detailed statistics per stream (required)
-   *
-   * @param streams
-   *        Detailed statistics per stream (required)
-   */
-  public void setStreams(List<StatisticsPerStream> streams) {
-    this.streams = streams;
-  }
-
-
-  public EncodingStats addMuxingsItem(StatisticsPerMuxing muxingsItem) {
-    this.muxings.add(muxingsItem);
-    return this;
-  }
-
-  /**
    * Detailed statistics per muxing (required)
    * @return muxings
    */
@@ -276,37 +163,11 @@ public class EncodingStats {
   }
 
   /**
-   * Detailed statistics per muxing (required)
-   *
-   * @param muxings
-   *        Detailed statistics per muxing (required)
-   */
-  public void setMuxings(List<StatisticsPerMuxing> muxings) {
-    this.muxings = muxings;
-  }
-
-
-  public EncodingStats addFeaturesItem(BillableEncodingFeatureMinutes featuresItem) {
-    this.features.add(featuresItem);
-    return this;
-  }
-
-  /**
    * Detailed statistics per feature
    * @return features
    */
   public List<BillableEncodingFeatureMinutes> getFeatures() {
     return features;
-  }
-
-  /**
-   * Detailed statistics per feature
-   *
-   * @param features
-   *        Detailed statistics per feature
-   */
-  public void setFeatures(List<BillableEncodingFeatureMinutes> features) {
-    this.features = features;
   }
 
 
@@ -325,6 +186,7 @@ public class EncodingStats {
         Objects.equals(this.timeEncoded, encodingStats.timeEncoded) &&
         Objects.equals(this.downloadedSize, encodingStats.downloadedSize) &&
         Objects.equals(this.billableMinutes, encodingStats.billableMinutes) &&
+        Objects.equals(this.billableEgressBytes, encodingStats.billableEgressBytes) &&
         Objects.equals(this.billableEncodingMinutes, encodingStats.billableEncodingMinutes) &&
         Objects.equals(this.billableTransmuxingMinutes, encodingStats.billableTransmuxingMinutes) &&
         Objects.equals(this.billableFeatureMinutes, encodingStats.billableFeatureMinutes) &&
@@ -335,7 +197,7 @@ public class EncodingStats {
 
   @Override
   public int hashCode() {
-    return Objects.hash(date, encodingId, bytesEncoded, timeEncoded, downloadedSize, billableMinutes, billableEncodingMinutes, billableTransmuxingMinutes, billableFeatureMinutes, streams, muxings, features);
+    return Objects.hash(date, encodingId, bytesEncoded, timeEncoded, downloadedSize, billableMinutes, billableEgressBytes, billableEncodingMinutes, billableTransmuxingMinutes, billableFeatureMinutes, streams, muxings, features);
   }
 
   @Override
@@ -349,6 +211,7 @@ public class EncodingStats {
     sb.append("    timeEncoded: ").append(toIndentedString(timeEncoded)).append("\n");
     sb.append("    downloadedSize: ").append(toIndentedString(downloadedSize)).append("\n");
     sb.append("    billableMinutes: ").append(toIndentedString(billableMinutes)).append("\n");
+    sb.append("    billableEgressBytes: ").append(toIndentedString(billableEgressBytes)).append("\n");
     sb.append("    billableEncodingMinutes: ").append(toIndentedString(billableEncodingMinutes)).append("\n");
     sb.append("    billableTransmuxingMinutes: ").append(toIndentedString(billableTransmuxingMinutes)).append("\n");
     sb.append("    billableFeatureMinutes: ").append(toIndentedString(billableFeatureMinutes)).append("\n");
