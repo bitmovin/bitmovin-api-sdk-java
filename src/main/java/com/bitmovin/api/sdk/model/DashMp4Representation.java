@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.DashOnDemandRepresentationType;
 import com.bitmovin.api.sdk.model.DashRepresentation;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -15,6 +16,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 public class DashMp4Representation extends DashRepresentation {
   @JsonProperty("filePath")
   private String filePath;
+
+  @JsonProperty("type")
+  private DashOnDemandRepresentationType type;
 
 
   /**
@@ -36,6 +40,25 @@ public class DashMp4Representation extends DashRepresentation {
   }
 
 
+  /**
+   * The type of the dash representation
+   * @return type
+   */
+  public DashOnDemandRepresentationType getType() {
+    return type;
+  }
+
+  /**
+   * The type of the dash representation
+   *
+   * @param type
+   *        The type of the dash representation
+   */
+  public void setType(DashOnDemandRepresentationType type) {
+    this.type = type;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -46,12 +69,13 @@ public class DashMp4Representation extends DashRepresentation {
     }
     DashMp4Representation dashMp4Representation = (DashMp4Representation) o;
     return Objects.equals(this.filePath, dashMp4Representation.filePath) &&
+        Objects.equals(this.type, dashMp4Representation.type) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(filePath, super.hashCode());
+    return Objects.hash(filePath, type, super.hashCode());
   }
 
   @Override
@@ -60,6 +84,7 @@ public class DashMp4Representation extends DashRepresentation {
     sb.append("class DashMp4Representation {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    filePath: ").append(toIndentedString(filePath)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }

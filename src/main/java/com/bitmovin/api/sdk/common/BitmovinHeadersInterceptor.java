@@ -21,7 +21,7 @@ public class BitmovinHeadersInterceptor implements RequestInterceptor {
         requestTemplate.header("Content-Type", "application/json");
         requestTemplate.header("X-Api-Key", this.apiKey);
         requestTemplate.header("X-Api-Client", "bitmovin-api-sdk-java");
-        requestTemplate.header("X-Api-Client-Version", "1.35.0");
+        requestTemplate.header("X-Api-Client-Version", "1.36.0");
 
         if (this.tenantOrgId != null && !this.tenantOrgId.isEmpty()) {
             requestTemplate.header("X-Tenant-Org-Id", this.tenantOrgId);
