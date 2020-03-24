@@ -1,4 +1,4 @@
-package com.bitmovin.api.sdk.encoding.encodings.muxings.progressiveTs.drm.aes;
+package com.bitmovin.api.sdk.encoding.encodings.muxings.fmp4.drm.aes;
 
 import java.util.Date;
 import java.util.List;
@@ -17,7 +17,7 @@ import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovin
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
-import com.bitmovin.api.sdk.encoding.encodings.muxings.progressiveTs.drm.aes.customdata.CustomdataApi;
+import com.bitmovin.api.sdk.encoding.encodings.muxings.fmp4.drm.aes.customdata.CustomdataApi;
 
 public class AesApi {
     public final CustomdataApi customdata;
@@ -43,11 +43,11 @@ public class AesApi {
     }
     
     /**
-     * Add AES encryption configuration to Progressive TS muxing
+     * Add AES Encryption to fMP4
      * 
-     * @param encodingId Id of the encoding (required)
-     * @param muxingId Id of the Progressive TS muxing (required)
-     * @param aesEncryptionDrm The AES encryption configuration to be created. Note that for AES encryption in conjunction with Progressive TS muxing the &#39;iv&#39; must remain unset or be empty. (required)
+     * @param encodingId Id of the encoding. (required)
+     * @param muxingId Id of the fMP4 muxing. (required)
+     * @param aesEncryptionDrm The AES Encryption to be created (required)
      * @return AesEncryptionDrm
      * @throws BitmovinException if fails to make API call
      */
@@ -60,11 +60,11 @@ public class AesApi {
     }
     
     /**
-     * Delete AES encryption configuration from Progressive TS muxing
+     * Delete AES Encryption from fMP4
      * 
-     * @param encodingId Id of the encoding (required)
-     * @param muxingId Id of the Progressive TS muxing (required)
-     * @param drmId Id of the AES encryption configuration (required)
+     * @param encodingId Id of the encoding. (required)
+     * @param muxingId Id of the fMP4 muxing. (required)
+     * @param drmId Id of the AES encryption configuration. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */
@@ -77,11 +77,11 @@ public class AesApi {
     }
     
     /**
-     * AES encryption Details of Progressive TS muxing
+     * AES Encryption Details of fMP4
      * 
-     * @param encodingId Id of the encoding (required)
-     * @param muxingId Id of the Progressive TS muxing (required)
-     * @param drmId Id of the AES encryption configuration (required)
+     * @param encodingId Id of the encoding. (required)
+     * @param muxingId Id of the fMP4 muxing. (required)
+     * @param drmId Id of the AESEncryption configuration. (required)
      * @return AesEncryptionDrm
      * @throws BitmovinException if fails to make API call
      */
@@ -94,10 +94,10 @@ public class AesApi {
     }
     
     /**
-     * List AES encryption configurations of Progressive TS muxing
+     * List AES Encryption of fMP4
      * 
-     * @param encodingId Id of the encoding (required)
-     * @param muxingId Id of the Progressive TS muxing (required)
+     * @param encodingId Id of the encoding. (required)
+     * @param muxingId Id of the fMP4 muxing. (required)
      * @return List&lt;AesEncryptionDrm&gt;
      * @throws BitmovinException if fails to make API call
      */
@@ -109,10 +109,10 @@ public class AesApi {
         }
     }
     /**
-     * List AES encryption configurations of Progressive TS muxing
+     * List AES Encryption of fMP4
      * 
-     * @param encodingId Id of the encoding (required)
-     * @param muxingId Id of the Progressive TS muxing (required)
+     * @param encodingId Id of the encoding. (required)
+     * @param muxingId Id of the fMP4 muxing. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;AesEncryptionDrm&gt;
      * @throws BitmovinException if fails to make API call
@@ -127,16 +127,16 @@ public class AesApi {
     
     interface AesApiClient {
     
-        @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/progressive-ts/{muxing_id}/drm/aes")
+        @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/fmp4/{muxing_id}/drm/aes")
         ResponseEnvelope<AesEncryptionDrm> create(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, AesEncryptionDrm aesEncryptionDrm) throws BitmovinException;
     
-        @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/progressive-ts/{muxing_id}/drm/aes/{drm_id}")
+        @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/fmp4/{muxing_id}/drm/aes/{drm_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @Param(value = "drm_id") String drmId) throws BitmovinException;
     
-        @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/progressive-ts/{muxing_id}/drm/aes/{drm_id}")
+        @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/fmp4/{muxing_id}/drm/aes/{drm_id}")
         ResponseEnvelope<AesEncryptionDrm> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @Param(value = "drm_id") String drmId) throws BitmovinException;
     
-        @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/progressive-ts/{muxing_id}/drm/aes")
+        @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/fmp4/{muxing_id}/drm/aes")
         ResponseEnvelope<PaginationResponse<AesEncryptionDrm>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
     }
 }
