@@ -42,11 +42,11 @@ public class FinishedApi {
     /**
      * Add Manifest Finished Successfully Webhook (All Manifests)
      * 
-     * @param webhook Add a new webhook notification if a manifest creation finished successfully (required)
-     * @return List&lt;Webhook&gt;
+     * @param webhook Add a new webhook notification if a manifest creation finished successfully. **Note:** A maximum number of 5 webhooks is allowed (required)
+     * @return Webhook
      * @throws BitmovinException if fails to make API call
      */
-    public PaginationResponse<Webhook> create(Webhook webhook) throws BitmovinException {
+    public Webhook create(Webhook webhook) throws BitmovinException {
         try {
             return this.apiClient.create(webhook).getData().getResult();
         } catch (Exception ex) {
@@ -58,13 +58,28 @@ public class FinishedApi {
      * Add Manifest Finished Successfully Webhook Notification (Specific Manifest)
      * 
      * @param manifestId Id of the manifest resource (required)
-     * @param webhook The webhook notifications object (required)
+     * @param webhook The webhook notifications object. **Note:** A maximum number of 5 webhooks is allowed (required)
      * @return Webhook
      * @throws BitmovinException if fails to make API call
      */
     public Webhook createByManifestId(String manifestId, Webhook webhook) throws BitmovinException {
         try {
             return this.apiClient.createByManifestId(manifestId, webhook).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+    
+    /**
+     * Delete Manifest Finished Webhook
+     * 
+     * @param notificationId Id of the webhook notification (required)
+     * @return BitmovinResponse
+     * @throws BitmovinException if fails to make API call
+     */
+    public BitmovinResponse delete(String notificationId) throws BitmovinException {
+        try {
+            return this.apiClient.delete(notificationId).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -89,10 +104,13 @@ public class FinishedApi {
     interface FinishedApiClient {
     
         @RequestLine("POST /notifications/webhooks/encoding/manifest/finished")
-        ResponseEnvelope<PaginationResponse<Webhook>> create(Webhook webhook) throws BitmovinException;
+        ResponseEnvelope<Webhook> create(Webhook webhook) throws BitmovinException;
     
         @RequestLine("POST /notifications/webhooks/encoding/manifest/{manifest_id}/finished")
         ResponseEnvelope<Webhook> createByManifestId(@Param(value = "manifest_id") String manifestId, Webhook webhook) throws BitmovinException;
+    
+        @RequestLine("DELETE /notifications/webhooks/encoding/manifest/finished/{notification_id}")
+        ResponseEnvelope<BitmovinResponse> delete(@Param(value = "notification_id") String notificationId) throws BitmovinException;
     
         @RequestLine("PUT /notifications/webhooks/encoding/manifest/finished/{notification_id}")
         ResponseEnvelope<Webhook> update(@Param(value = "notification_id") String notificationId, Webhook webhook) throws BitmovinException;

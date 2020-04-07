@@ -34,6 +34,9 @@ public class Webhook extends BitmovinResource {
   @JsonProperty("signature")
   private WebhookSignature signature;
 
+  @JsonProperty("schema")
+  private Object schema;
+
 
   /**
    * Webhook url (required)
@@ -130,6 +133,25 @@ public class Webhook extends BitmovinResource {
   }
 
 
+  /**
+   * The json schema of the data that is send as webhook payload
+   * @return schema
+   */
+  public Object getSchema() {
+    return schema;
+  }
+
+  /**
+   * The json schema of the data that is send as webhook payload
+   *
+   * @param schema
+   *        The json schema of the data that is send as webhook payload
+   */
+  public void setSchema(Object schema) {
+    this.schema = schema;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -144,12 +166,13 @@ public class Webhook extends BitmovinResource {
         Objects.equals(this.insecureSsl, webhook.insecureSsl) &&
         Objects.equals(this.encryption, webhook.encryption) &&
         Objects.equals(this.signature, webhook.signature) &&
+        Objects.equals(this.schema, webhook.schema) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(url, method, insecureSsl, encryption, signature, super.hashCode());
+    return Objects.hash(url, method, insecureSsl, encryption, signature, schema, super.hashCode());
   }
 
   @Override
@@ -162,6 +185,7 @@ public class Webhook extends BitmovinResource {
     sb.append("    insecureSsl: ").append(toIndentedString(insecureSsl)).append("\n");
     sb.append("    encryption: ").append(toIndentedString(encryption)).append("\n");
     sb.append("    signature: ").append(toIndentedString(signature)).append("\n");
+    sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
     sb.append("}");
     return sb.toString();
   }

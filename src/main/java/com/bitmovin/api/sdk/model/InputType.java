@@ -70,7 +70,10 @@ public enum InputType {
   ZIXI("ZIXI"),
   
   
-  SRT("SRT");
+  SRT("SRT"),
+  
+  
+  GCS_SERVICE_ACCOUNT("GCS_SERVICE_ACCOUNT");
 
   private String value;
 

@@ -45,7 +45,7 @@ public class FinishedApi {
     /**
      * Add Encoding Finished Webhook
      * 
-     * @param webhook The Encoding Finished Webhook to be added (required)
+     * @param webhook The Encoding Finished Webhook to be added. **Note:** A maximum number of 5 webhooks is allowed (required)
      * @return Webhook
      * @throws BitmovinException if fails to make API call
      */
@@ -58,10 +58,10 @@ public class FinishedApi {
     }
     
     /**
-     * Add Encoding Finished Webhook for specific Encoding Resource
+     * Add Encoding Finished Webhook for specific Encoding Resource.
      * 
      * @param encodingId Id of the encoding (required)
-     * @param webhook The Encoding Finished Webhook to be added (required)
+     * @param webhook The Encoding Finished Webhook to be added. **Note:** A maximum number of 5 webhooks is allowed (required)
      * @return Webhook
      * @throws BitmovinException if fails to make API call
      */

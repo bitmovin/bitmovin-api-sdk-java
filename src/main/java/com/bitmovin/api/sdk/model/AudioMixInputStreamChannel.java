@@ -3,6 +3,9 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AudioMixChannelType;
+import com.bitmovin.api.sdk.model.AudioMixInputStreamSourceChannel;
+import java.util.ArrayList;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -21,6 +24,10 @@ public class AudioMixInputStreamChannel {
 
   @JsonProperty("outputChannelNumber")
   private Integer outputChannelNumber;
+
+  @JsonProperty("sourceChannels")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<AudioMixInputStreamSourceChannel> sourceChannels = new ArrayList<AudioMixInputStreamSourceChannel>();
 
 
   /**
@@ -79,6 +86,30 @@ public class AudioMixInputStreamChannel {
   }
 
 
+  public AudioMixInputStreamChannel addSourceChannelsItem(AudioMixInputStreamSourceChannel sourceChannelsItem) {
+    this.sourceChannels.add(sourceChannelsItem);
+    return this;
+  }
+
+  /**
+   * List of source channels to be mixed
+   * @return sourceChannels
+   */
+  public List<AudioMixInputStreamSourceChannel> getSourceChannels() {
+    return sourceChannels;
+  }
+
+  /**
+   * List of source channels to be mixed
+   *
+   * @param sourceChannels
+   *        List of source channels to be mixed
+   */
+  public void setSourceChannels(List<AudioMixInputStreamSourceChannel> sourceChannels) {
+    this.sourceChannels = sourceChannels;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -90,12 +121,13 @@ public class AudioMixInputStreamChannel {
     AudioMixInputStreamChannel audioMixInputStreamChannel = (AudioMixInputStreamChannel) o;
     return Objects.equals(this.inputStreamId, audioMixInputStreamChannel.inputStreamId) &&
         Objects.equals(this.outputChannelType, audioMixInputStreamChannel.outputChannelType) &&
-        Objects.equals(this.outputChannelNumber, audioMixInputStreamChannel.outputChannelNumber);
+        Objects.equals(this.outputChannelNumber, audioMixInputStreamChannel.outputChannelNumber) &&
+        Objects.equals(this.sourceChannels, audioMixInputStreamChannel.sourceChannels);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(inputStreamId, outputChannelType, outputChannelNumber);
+    return Objects.hash(inputStreamId, outputChannelType, outputChannelNumber, sourceChannels);
   }
 
   @Override
@@ -106,6 +138,7 @@ public class AudioMixInputStreamChannel {
     sb.append("    inputStreamId: ").append(toIndentedString(inputStreamId)).append("\n");
     sb.append("    outputChannelType: ").append(toIndentedString(outputChannelType)).append("\n");
     sb.append("    outputChannelNumber: ").append(toIndentedString(outputChannelNumber)).append("\n");
+    sb.append("    sourceChannels: ").append(toIndentedString(sourceChannels)).append("\n");
     sb.append("}");
     return sb.toString();
   }

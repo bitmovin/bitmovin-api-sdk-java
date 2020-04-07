@@ -29,6 +29,9 @@ public class BillableEncodingMinutes {
   @JsonProperty("psnrMode")
   private PsnrPerStreamMode psnrMode;
 
+  @JsonProperty("preset")
+  private String preset;
+
   @JsonProperty("billableMinutes")
   private BillableEncodingMinutesDetails billableMinutes;
 
@@ -104,6 +107,14 @@ public class BillableEncodingMinutes {
     this.psnrMode = psnrMode;
   }
 
+  /**
+   * Name of the preset configuration used for the codec configuration or \&quot;CUSTOM\&quot; if any preset values were overridden
+   * @return preset
+   */
+  public String getPreset() {
+    return preset;
+  }
+
 
   /**
    * Get billableMinutes
@@ -136,12 +147,13 @@ public class BillableEncodingMinutes {
         Objects.equals(this.codec, billableEncodingMinutes.codec) &&
         Objects.equals(this.perTitleResultStream, billableEncodingMinutes.perTitleResultStream) &&
         Objects.equals(this.psnrMode, billableEncodingMinutes.psnrMode) &&
+        Objects.equals(this.preset, billableEncodingMinutes.preset) &&
         Objects.equals(this.billableMinutes, billableEncodingMinutes.billableMinutes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(encodingMode, codec, perTitleResultStream, psnrMode, billableMinutes);
+    return Objects.hash(encodingMode, codec, perTitleResultStream, psnrMode, preset, billableMinutes);
   }
 
   @Override
@@ -153,6 +165,7 @@ public class BillableEncodingMinutes {
     sb.append("    codec: ").append(toIndentedString(codec)).append("\n");
     sb.append("    perTitleResultStream: ").append(toIndentedString(perTitleResultStream)).append("\n");
     sb.append("    psnrMode: ").append(toIndentedString(psnrMode)).append("\n");
+    sb.append("    preset: ").append(toIndentedString(preset)).append("\n");
     sb.append("    billableMinutes: ").append(toIndentedString(billableMinutes)).append("\n");
     sb.append("}");
     return sb.toString();

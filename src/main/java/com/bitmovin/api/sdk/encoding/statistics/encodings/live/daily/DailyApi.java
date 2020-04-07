@@ -1,4 +1,4 @@
-package com.bitmovin.api.sdk.encoding.statistics.encodings.live;
+package com.bitmovin.api.sdk.encoding.statistics.encodings.live.daily;
 
 import java.util.Date;
 import java.util.List;
@@ -17,61 +17,30 @@ import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovin
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
-import com.bitmovin.api.sdk.encoding.statistics.encodings.live.daily.DailyApi;
 
-public class LiveApi {
-    public final DailyApi daily;
+public class DailyApi {
 
-    private final LiveApiClient apiClient;
+    private final DailyApiClient apiClient;
 
-    public LiveApi(BitmovinApiClientFactory clientFactory) {
+    public DailyApi(BitmovinApiClientFactory clientFactory) {
         if (clientFactory == null)
         {
             throw new IllegalArgumentException("Parameter 'clientFactory' may not be null.");
         }
 
-        this.apiClient = clientFactory.createApiClient(LiveApiClient.class);
+        this.apiClient = clientFactory.createApiClient(DailyApiClient.class);
 
-        this.daily = new DailyApi(clientFactory);
     }
 
     /**
-     * Fluent builder for creating an instance of LiveApi
+     * Fluent builder for creating an instance of DailyApi
      */
-    public static BitmovinApiBuilder<LiveApi> builder() {
-        return new BitmovinApiBuilder<>(LiveApi.class);
+    public static BitmovinApiBuilder<DailyApi> builder() {
+        return new BitmovinApiBuilder<>(DailyApi.class);
     }
     
     /**
-     * List Live Encoding Statistics
-     * 
-     * @return List&lt;EncodingStatisticsLive&gt;
-     * @throws BitmovinException if fails to make API call
-     */
-    public PaginationResponse<EncodingStatisticsLive> list() throws BitmovinException {
-        try {
-            return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
-        } catch (Exception ex) {
-            throw buildBitmovinException(ex);
-        }
-    }
-    /**
-     * List Live Encoding Statistics
-     * 
-     * @param queryParams The query parameters for sorting, filtering and paging options (optional)
-     * @return List&lt;EncodingStatisticsLive&gt;
-     * @throws BitmovinException if fails to make API call
-     */
-    public PaginationResponse<EncodingStatisticsLive> list(EncodingStatisticsLiveListQueryParams queryParams) throws BitmovinException {
-        try {
-            return this.apiClient.list(queryParams).getData().getResult();
-        } catch (Exception ex) {
-            throw buildBitmovinException(ex);
-        }
-    }
-    
-    /**
-     * List live encoding statistics within specific dates
+     * List daily live encoding statistics within specific dates
      * 
      * @param from Start date, format: yyyy-MM-dd (required)
      * @param to End date, format: yyyy-MM-dd (required)
@@ -86,7 +55,7 @@ public class LiveApi {
         }
     }
     /**
-     * List live encoding statistics within specific dates
+     * List daily live encoding statistics within specific dates
      * 
      * @param from Start date, format: yyyy-MM-dd (required)
      * @param to End date, format: yyyy-MM-dd (required)
@@ -102,12 +71,9 @@ public class LiveApi {
         }
     }
     
-    interface LiveApiClient {
+    interface DailyApiClient {
     
-        @RequestLine("GET /encoding/statistics/encodings/live")
-        ResponseEnvelope<PaginationResponse<EncodingStatisticsLive>> list(@QueryMap Map<String, Object> queryParams) throws BitmovinException;
-    
-        @RequestLine("GET /encoding/statistics/encodings/live/{from}/{to}")
+        @RequestLine("GET /encoding/statistics/encodings/live/daily/{from}/{to}")
         ResponseEnvelope<PaginationResponse<EncodingStatisticsLive>> listByDateRange(@Param(value = "from", expander = BitmovinDateExpander.class) Date from, @Param(value = "to", expander = BitmovinDateExpander.class) Date to, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
     }
 }

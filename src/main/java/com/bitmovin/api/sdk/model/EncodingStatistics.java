@@ -14,6 +14,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class EncodingStatistics {
   @JsonProperty("date")
+  @com.fasterxml.jackson.annotation.JsonFormat
+        (shape = com.fasterxml.jackson.annotation.JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
   private Date date;
 
   @JsonProperty("bytesEncoded")

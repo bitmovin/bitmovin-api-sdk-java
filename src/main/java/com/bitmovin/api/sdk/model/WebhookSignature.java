@@ -38,12 +38,23 @@ public class WebhookSignature {
     this.type = type;
   }
 
+
   /**
    * The key of the signature (required)
    * @return key
    */
   public String getKey() {
     return key;
+  }
+
+  /**
+   * The key of the signature (required)
+   *
+   * @param key
+   *        The key of the signature (required)
+   */
+  public void setKey(String key) {
+    this.key = key;
   }
 
 

@@ -40,6 +40,9 @@ public enum PresetConfiguration {
   VOD_HIGH_QUALITY("VOD_HIGH_QUALITY"),
   
   
+  VOD_QUALITY("VOD_QUALITY"),
+  
+  
   VOD_HIGH_SPEED("VOD_HIGH_SPEED"),
   
   

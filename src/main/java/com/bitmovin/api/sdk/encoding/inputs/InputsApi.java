@@ -25,6 +25,7 @@ import com.bitmovin.api.sdk.encoding.inputs.s3RoleBased.S3RoleBasedApi;
 import com.bitmovin.api.sdk.encoding.inputs.genericS3.GenericS3Api;
 import com.bitmovin.api.sdk.encoding.inputs.local.LocalApi;
 import com.bitmovin.api.sdk.encoding.inputs.gcs.GcsApi;
+import com.bitmovin.api.sdk.encoding.inputs.gcsServiceAccount.GcsServiceAccountApi;
 import com.bitmovin.api.sdk.encoding.inputs.azure.AzureApi;
 import com.bitmovin.api.sdk.encoding.inputs.ftp.FtpApi;
 import com.bitmovin.api.sdk.encoding.inputs.sftp.SftpApi;
@@ -47,6 +48,7 @@ public class InputsApi {
     public final GenericS3Api genericS3;
     public final LocalApi local;
     public final GcsApi gcs;
+    public final GcsServiceAccountApi gcsServiceAccount;
     public final AzureApi azure;
     public final FtpApi ftp;
     public final SftpApi sftp;
@@ -78,6 +80,7 @@ public class InputsApi {
         this.genericS3 = new GenericS3Api(clientFactory);
         this.local = new LocalApi(clientFactory);
         this.gcs = new GcsApi(clientFactory);
+        this.gcsServiceAccount = new GcsServiceAccountApi(clientFactory);
         this.azure = new AzureApi(clientFactory);
         this.ftp = new FtpApi(clientFactory);
         this.sftp = new SftpApi(clientFactory);
