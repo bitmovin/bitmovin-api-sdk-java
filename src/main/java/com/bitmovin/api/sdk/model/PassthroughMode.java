@@ -16,14 +16,19 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum PassthroughMode {
   
   /**
-   * Configure if the encoding should use the video stream as the passthrough mode or a dedicated caption stream.
+   * Select the embedded captions from the video stream
    */
   VIDEO_STREAM("VIDEO_STREAM"),
   
   /**
-   * Configure if the encoding should use the video stream as the passthrough mode or a dedicated caption stream.
+   * Select the captions from a separate caption stream
    */
-  CAPTION_STREAM("CAPTION_STREAM");
+  CAPTION_STREAM("CAPTION_STREAM"),
+  
+  /**
+   * Select the captions from the video stream or from the caption stream. Don&#39;t use this option if the input file contains both caption variants.
+   */
+  VIDEO_CAPTION_STREAM("VIDEO_CAPTION_STREAM");
 
   private String value;
 

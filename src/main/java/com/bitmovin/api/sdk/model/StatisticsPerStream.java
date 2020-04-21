@@ -78,6 +78,17 @@ public class StatisticsPerStream {
   @JsonProperty("dolbyVisionMultiplicator")
   private Double dolbyVisionMultiplicator;
 
+  @JsonProperty("preset")
+  private String preset;
+
+  @JsonProperty("presetMultiplicator")
+  private Double presetMultiplicator;
+
+  @JsonProperty("live")
+  private Boolean live;
+
+  @JsonProperty("liveMultiplicator")
+  private Double liveMultiplicator;
 
   /**
    * ID of the stream (required)
@@ -88,34 +99,12 @@ public class StatisticsPerStream {
   }
 
   /**
-   * ID of the stream (required)
-   *
-   * @param streamId
-   *        ID of the stream (required)
-   */
-  public void setStreamId(String streamId) {
-    this.streamId = streamId;
-  }
-
-
-  /**
    * ID of the condec configuration (required)
    * @return codecConfigId
    */
   public String getCodecConfigId() {
     return codecConfigId;
   }
-
-  /**
-   * ID of the condec configuration (required)
-   *
-   * @param codecConfigId
-   *        ID of the condec configuration (required)
-   */
-  public void setCodecConfigId(String codecConfigId) {
-    this.codecConfigId = codecConfigId;
-  }
-
 
   /**
    * Multiplier for the encoded minutes. Depends on muxing type. (required)
@@ -126,34 +115,12 @@ public class StatisticsPerStream {
   }
 
   /**
-   * Multiplier for the encoded minutes. Depends on muxing type. (required)
-   *
-   * @param multiplicator
-   *        Multiplier for the encoded minutes. Depends on muxing type. (required)
-   */
-  public void setMultiplicator(Double multiplicator) {
-    this.multiplicator = multiplicator;
-  }
-
-
-  /**
    * Encoded bytes. (required)
    * @return encodedBytes
    */
   public Long getEncodedBytes() {
     return encodedBytes;
   }
-
-  /**
-   * Encoded bytes. (required)
-   *
-   * @param encodedBytes
-   *        Encoded bytes. (required)
-   */
-  public void setEncodedBytes(Long encodedBytes) {
-    this.encodedBytes = encodedBytes;
-  }
-
 
   /**
    * Length of the stream. (required)
@@ -164,34 +131,12 @@ public class StatisticsPerStream {
   }
 
   /**
-   * Length of the stream. (required)
-   *
-   * @param encodedSeconds
-   *        Length of the stream. (required)
-   */
-  public void setEncodedSeconds(Double encodedSeconds) {
-    this.encodedSeconds = encodedSeconds;
-  }
-
-
-  /**
    * Minutes you will be charged for (billableMinutes &#x3D; encodedSeconds * multiplicator) (required)
    * @return billableMinutes
    */
   public Double getBillableMinutes() {
     return billableMinutes;
   }
-
-  /**
-   * Minutes you will be charged for (billableMinutes &#x3D; encodedSeconds * multiplicator) (required)
-   *
-   * @param billableMinutes
-   *        Minutes you will be charged for (billableMinutes &#x3D; encodedSeconds * multiplicator) (required)
-   */
-  public void setBillableMinutes(Double billableMinutes) {
-    this.billableMinutes = billableMinutes;
-  }
-
 
   /**
    * Video width, only if video stream
@@ -202,34 +147,12 @@ public class StatisticsPerStream {
   }
 
   /**
-   * Video width, only if video stream
-   *
-   * @param width
-   *        Video width, only if video stream
-   */
-  public void setWidth(Long width) {
-    this.width = width;
-  }
-
-
-  /**
    * Video height, only if video stream
    * @return height
    */
   public Long getHeight() {
     return height;
   }
-
-  /**
-   * Video height, only if video stream
-   *
-   * @param height
-   *        Video height, only if video stream
-   */
-  public void setHeight(Long height) {
-    this.height = height;
-  }
-
 
   /**
    * If it&#39; a video stream this value is the FPS, for audio it&#39;s the sample rate. (required)
@@ -240,32 +163,11 @@ public class StatisticsPerStream {
   }
 
   /**
-   * If it&#39; a video stream this value is the FPS, for audio it&#39;s the sample rate. (required)
-   *
-   * @param rate
-   *        If it&#39; a video stream this value is the FPS, for audio it&#39;s the sample rate. (required)
-   */
-  public void setRate(Double rate) {
-    this.rate = rate;
-  }
-
-
-  /**
    * Bitrate of the stream (required)
    * @return bitrate
    */
   public Long getBitrate() {
     return bitrate;
-  }
-
-  /**
-   * Bitrate of the stream (required)
-   *
-   * @param bitrate
-   *        Bitrate of the stream (required)
-   */
-  public void setBitrate(Long bitrate) {
-    this.bitrate = bitrate;
   }
 
 
@@ -322,23 +224,12 @@ public class StatisticsPerStream {
     this.encodingMode = encodingMode;
   }
 
-
   /**
    * The output minutes multiplicator for the given encodingMode
    * @return encodingModeMultiplicator
    */
   public Double getEncodingModeMultiplicator() {
     return encodingModeMultiplicator;
-  }
-
-  /**
-   * The output minutes multiplicator for the given encodingMode
-   *
-   * @param encodingModeMultiplicator
-   *        The output minutes multiplicator for the given encodingMode
-   */
-  public void setEncodingModeMultiplicator(Double encodingModeMultiplicator) {
-    this.encodingModeMultiplicator = encodingModeMultiplicator;
   }
 
 
@@ -359,23 +250,12 @@ public class StatisticsPerStream {
     this.perTitleResultStream = perTitleResultStream;
   }
 
-
   /**
    * The output minutes multiplicator for per-title
    * @return perTitleMultiplicator
    */
   public Double getPerTitleMultiplicator() {
     return perTitleMultiplicator;
-  }
-
-  /**
-   * The output minutes multiplicator for per-title
-   *
-   * @param perTitleMultiplicator
-   *        The output minutes multiplicator for per-title
-   */
-  public void setPerTitleMultiplicator(Double perTitleMultiplicator) {
-    this.perTitleMultiplicator = perTitleMultiplicator;
   }
 
 
@@ -396,23 +276,12 @@ public class StatisticsPerStream {
     this.psnrMode = psnrMode;
   }
 
-
   /**
    * The output minutes multiplicator for psnr streams
    * @return psnrMultiplicator
    */
   public Double getPsnrMultiplicator() {
     return psnrMultiplicator;
-  }
-
-  /**
-   * The output minutes multiplicator for psnr streams
-   *
-   * @param psnrMultiplicator
-   *        The output minutes multiplicator for psnr streams
-   */
-  public void setPsnrMultiplicator(Double psnrMultiplicator) {
-    this.psnrMultiplicator = psnrMultiplicator;
   }
 
 
@@ -433,7 +302,6 @@ public class StatisticsPerStream {
     this.dolbyVisionMode = dolbyVisionMode;
   }
 
-
   /**
    * The output minutes multiplicator for Dolby Vision streams
    * @return dolbyVisionMultiplicator
@@ -443,13 +311,35 @@ public class StatisticsPerStream {
   }
 
   /**
-   * The output minutes multiplicator for Dolby Vision streams
-   *
-   * @param dolbyVisionMultiplicator
-   *        The output minutes multiplicator for Dolby Vision streams
+   * Name of the preset configuration used for the codec configuration or \&quot;CUSTOM\&quot; if any preset values were overridden
+   * @return preset
    */
-  public void setDolbyVisionMultiplicator(Double dolbyVisionMultiplicator) {
-    this.dolbyVisionMultiplicator = dolbyVisionMultiplicator;
+  public String getPreset() {
+    return preset;
+  }
+
+  /**
+   * The output minutes multiplicator for the used codec configuration preset.
+   * @return presetMultiplicator
+   */
+  public Double getPresetMultiplicator() {
+    return presetMultiplicator;
+  }
+
+  /**
+   * Indicates if the stream was part of a live encoding.
+   * @return live
+   */
+  public Boolean getLive() {
+    return live;
+  }
+
+  /**
+   * The output minutes multiplicator for live streams.
+   * @return liveMultiplicator
+   */
+  public Double getLiveMultiplicator() {
+    return liveMultiplicator;
   }
 
 
@@ -481,12 +371,16 @@ public class StatisticsPerStream {
         Objects.equals(this.psnrMode, statisticsPerStream.psnrMode) &&
         Objects.equals(this.psnrMultiplicator, statisticsPerStream.psnrMultiplicator) &&
         Objects.equals(this.dolbyVisionMode, statisticsPerStream.dolbyVisionMode) &&
-        Objects.equals(this.dolbyVisionMultiplicator, statisticsPerStream.dolbyVisionMultiplicator);
+        Objects.equals(this.dolbyVisionMultiplicator, statisticsPerStream.dolbyVisionMultiplicator) &&
+        Objects.equals(this.preset, statisticsPerStream.preset) &&
+        Objects.equals(this.presetMultiplicator, statisticsPerStream.presetMultiplicator) &&
+        Objects.equals(this.live, statisticsPerStream.live) &&
+        Objects.equals(this.liveMultiplicator, statisticsPerStream.liveMultiplicator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(streamId, codecConfigId, multiplicator, encodedBytes, encodedSeconds, billableMinutes, width, height, rate, bitrate, codec, resolution, encodingMode, encodingModeMultiplicator, perTitleResultStream, perTitleMultiplicator, psnrMode, psnrMultiplicator, dolbyVisionMode, dolbyVisionMultiplicator);
+    return Objects.hash(streamId, codecConfigId, multiplicator, encodedBytes, encodedSeconds, billableMinutes, width, height, rate, bitrate, codec, resolution, encodingMode, encodingModeMultiplicator, perTitleResultStream, perTitleMultiplicator, psnrMode, psnrMultiplicator, dolbyVisionMode, dolbyVisionMultiplicator, preset, presetMultiplicator, live, liveMultiplicator);
   }
 
   @Override
@@ -514,6 +408,10 @@ public class StatisticsPerStream {
     sb.append("    psnrMultiplicator: ").append(toIndentedString(psnrMultiplicator)).append("\n");
     sb.append("    dolbyVisionMode: ").append(toIndentedString(dolbyVisionMode)).append("\n");
     sb.append("    dolbyVisionMultiplicator: ").append(toIndentedString(dolbyVisionMultiplicator)).append("\n");
+    sb.append("    preset: ").append(toIndentedString(preset)).append("\n");
+    sb.append("    presetMultiplicator: ").append(toIndentedString(presetMultiplicator)).append("\n");
+    sb.append("    live: ").append(toIndentedString(live)).append("\n");
+    sb.append("    liveMultiplicator: ").append(toIndentedString(liveMultiplicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }

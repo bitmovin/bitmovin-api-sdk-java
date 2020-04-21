@@ -7,11 +7,10 @@ import com.bitmovin.api.sdk.model.ResponseErrorData;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import feign.Request;
 import feign.Response;
+import feign.Util;
 import feign.codec.ErrorDecoder;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.Reader;
 import java.nio.charset.StandardCharsets;
 
 public class BitmovinErrorDecoder implements ErrorDecoder {
@@ -29,10 +28,7 @@ public class BitmovinErrorDecoder implements ErrorDecoder {
                 requestJsonBody = new String(response.request().body(), StandardCharsets.UTF_8);
             }
 
-            String responseJsonBody = null;
-            if (response.body() != null && !this.isNoContent(response.body())) {
-                responseJsonBody = response.body().toString();
-            }
+            String responseJsonBody = getResponseJsonBody(response);
 
             ResponseError responseError = null;
             try {
@@ -48,6 +44,16 @@ public class BitmovinErrorDecoder implements ErrorDecoder {
         } catch (IOException e) {
             return e;
         }
+    }
+
+    private String getResponseJsonBody(Response response) throws IOException
+    {
+        int status = response.status();
+        if (response.body() != null && status != 204 && status != 205) {
+            byte[] bodyData = Util.toByteArray(response.body().asInputStream());
+            return Util.decodeOrDefault(bodyData, Util.UTF_8, null);
+        }
+        return null;
     }
 
     private String buildErrorMessage(ResponseError responseError, String shortMessage, Request request, String requestJsonBody, Response response, String responseJsonBody) {
@@ -138,14 +144,5 @@ public class BitmovinErrorDecoder implements ErrorDecoder {
     private void appendLine(StringBuilder errorMessage, String message) {
         errorMessage.append(message);
         errorMessage.append(System.lineSeparator());
-    }
-
-    private boolean isNoContent(Response.Body body) throws IOException {
-        Reader reader = new BufferedReader(body.asReader());
-        reader.mark(1);
-        boolean noContent = reader.read() == -1;
-        reader.reset();
-
-        return noContent;
     }
 }

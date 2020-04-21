@@ -32,6 +32,9 @@ public class BillableEncodingMinutes {
   @JsonProperty("preset")
   private String preset;
 
+  @JsonProperty("live")
+  private Boolean live;
+
   @JsonProperty("billableMinutes")
   private BillableEncodingMinutesDetails billableMinutes;
 
@@ -115,6 +118,14 @@ public class BillableEncodingMinutes {
     return preset;
   }
 
+  /**
+   * Indicates if the stream was part of a live encoding.
+   * @return live
+   */
+  public Boolean getLive() {
+    return live;
+  }
+
 
   /**
    * Get billableMinutes
@@ -148,12 +159,13 @@ public class BillableEncodingMinutes {
         Objects.equals(this.perTitleResultStream, billableEncodingMinutes.perTitleResultStream) &&
         Objects.equals(this.psnrMode, billableEncodingMinutes.psnrMode) &&
         Objects.equals(this.preset, billableEncodingMinutes.preset) &&
+        Objects.equals(this.live, billableEncodingMinutes.live) &&
         Objects.equals(this.billableMinutes, billableEncodingMinutes.billableMinutes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(encodingMode, codec, perTitleResultStream, psnrMode, preset, billableMinutes);
+    return Objects.hash(encodingMode, codec, perTitleResultStream, psnrMode, preset, live, billableMinutes);
   }
 
   @Override
@@ -166,6 +178,7 @@ public class BillableEncodingMinutes {
     sb.append("    perTitleResultStream: ").append(toIndentedString(perTitleResultStream)).append("\n");
     sb.append("    psnrMode: ").append(toIndentedString(psnrMode)).append("\n");
     sb.append("    preset: ").append(toIndentedString(preset)).append("\n");
+    sb.append("    live: ").append(toIndentedString(live)).append("\n");
     sb.append("    billableMinutes: ").append(toIndentedString(billableMinutes)).append("\n");
     sb.append("}");
     return sb.toString();
