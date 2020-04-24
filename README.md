@@ -46,7 +46,7 @@ mvn clean install
 Add this dependency to your project's build file:
 
 ```groovy
-compile group: 'com.bitmovin.api.sdk', name= 'bitmovin-api-sdk', version: '1.39.0'
+compile group: 'com.bitmovin.api.sdk', name: 'bitmovin-api-sdk', version: '1.39.0'
 ```
 
 ## Initialization
