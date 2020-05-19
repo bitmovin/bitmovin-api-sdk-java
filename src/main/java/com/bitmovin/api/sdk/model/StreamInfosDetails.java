@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class StreamInfosDetails {
   @JsonProperty("id")
-  private Long id;
+  private String id;
 
   @JsonProperty("mediaType")
   private MediaType mediaType;
@@ -73,7 +73,7 @@ public class StreamInfosDetails {
    * The id of the stream (required)
    * @return id
    */
-  public Long getId() {
+  public String getId() {
     return id;
   }
 
@@ -83,7 +83,7 @@ public class StreamInfosDetails {
    * @param id
    *        The id of the stream (required)
    */
-  public void setId(Long id) {
+  public void setId(String id) {
     this.id = id;
   }
 
