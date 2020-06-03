@@ -43,11 +43,11 @@ public class AesApi {
     }
     
     /**
-     * Add AES Encryption to fMP4
+     * Add AES encryption configuration to fMP4
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)
-     * @param aesEncryptionDrm The AES Encryption to be created (required)
+     * @param aesEncryptionDrm The AES encryption configuration to be created (required)
      * @return AesEncryptionDrm
      * @throws BitmovinException if fails to make API call
      */
@@ -60,7 +60,7 @@ public class AesApi {
     }
     
     /**
-     * Delete AES Encryption from fMP4
+     * Delete AES encryption configuration from an fMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)
@@ -77,11 +77,11 @@ public class AesApi {
     }
     
     /**
-     * AES Encryption Details of fMP4
+     * AES encryption Details of an fMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)
-     * @param drmId Id of the AESEncryption configuration. (required)
+     * @param drmId Id of the AES encryption configuration. (required)
      * @return AesEncryptionDrm
      * @throws BitmovinException if fails to make API call
      */
@@ -94,7 +94,7 @@ public class AesApi {
     }
     
     /**
-     * List AES Encryption of fMP4
+     * List AES encryption configurations of an fMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)
@@ -109,7 +109,7 @@ public class AesApi {
         }
     }
     /**
-     * List AES Encryption of fMP4
+     * List AES encryption configurations of an fMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)

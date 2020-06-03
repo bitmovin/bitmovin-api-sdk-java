@@ -60,7 +60,7 @@ public class SpekeApi {
     }
     
     /**
-     * Delete SPEKE DRM from Progressive WebM
+     * Delete SPEKE DRM from a Progressive WebM muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive WebM muxing (required)
@@ -77,7 +77,7 @@ public class SpekeApi {
     }
     
     /**
-     * SPEKE DRM Details of Progressive WebM
+     * SPEKE DRM Details of a Progressive WebM muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive WebM muxing (required)
@@ -94,7 +94,7 @@ public class SpekeApi {
     }
     
     /**
-     * List SPEKE DRM of Progressive WebM
+     * List SPEKE DRM of a Progressive WebM muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive WebM muxing (required)
@@ -109,7 +109,7 @@ public class SpekeApi {
         }
     }
     /**
-     * List SPEKE DRM of Progressive WebM
+     * List SPEKE DRM of a Progressive WebM muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive WebM muxing (required)

@@ -49,7 +49,7 @@ public class Id3Api {
     }
     
     /**
-     * List all ID3 Tags of Progressive TS muxing
+     * List all ID3 Tags of a Progressive TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param muxingId ID of the Progressive TS muxing (required)
@@ -64,7 +64,7 @@ public class Id3Api {
         }
     }
     /**
-     * List all ID3 Tags of Progressive TS muxing
+     * List all ID3 Tags of a Progressive TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param muxingId ID of the Progressive TS muxing (required)

@@ -60,7 +60,7 @@ public class SpekeApi {
     }
     
     /**
-     * Delete SPEKE DRM from Progressive TS
+     * Delete SPEKE DRM from a Progressive TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive TS muxing (required)
@@ -77,7 +77,7 @@ public class SpekeApi {
     }
     
     /**
-     * SPEKE DRM Details of Progressive TS
+     * SPEKE DRM Details of a Progressive TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive TS muxing (required)
@@ -94,7 +94,7 @@ public class SpekeApi {
     }
     
     /**
-     * List SPEKE DRM of Progressive TS
+     * List SPEKE DRM of a Progressive TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive TS muxing (required)
@@ -109,7 +109,7 @@ public class SpekeApi {
         }
     }
     /**
-     * List SPEKE DRM of Progressive TS
+     * List SPEKE DRM of a Progressive TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive TS muxing (required)

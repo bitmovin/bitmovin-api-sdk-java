@@ -40,7 +40,7 @@ public class CustomdataApi {
     }
     
     /**
-     * Marlin DRM Custom Data of fMP4
+     * Marlin DRM Custom Data of an fMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing (required)

@@ -40,7 +40,7 @@ public class CustomdataApi {
     }
     
     /**
-     * ClearKey DRM Custom Data of MP4
+     * ClearKey DRM Custom Data of an MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the mp4. (required)

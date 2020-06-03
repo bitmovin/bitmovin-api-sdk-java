@@ -43,7 +43,7 @@ public class WidevineApi {
     }
     
     /**
-     * Add Widevine DRM to fMP4
+     * Add Widevine DRM to an fMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)
@@ -60,7 +60,7 @@ public class WidevineApi {
     }
     
     /**
-     * Delete Widevine DRM from fMP4
+     * Delete Widevine DRM from an fMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing (required)
@@ -77,7 +77,7 @@ public class WidevineApi {
     }
     
     /**
-     * Widevine DRM Details of fMP4
+     * Widevine DRM Details of an fMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)
@@ -94,7 +94,7 @@ public class WidevineApi {
     }
     
     /**
-     * List Widevine DRMs of fMP4
+     * List Widevine DRMs of an fMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing (required)
@@ -109,7 +109,7 @@ public class WidevineApi {
         }
     }
     /**
-     * List Widevine DRMs of fMP4
+     * List Widevine DRMs of an fMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing (required)

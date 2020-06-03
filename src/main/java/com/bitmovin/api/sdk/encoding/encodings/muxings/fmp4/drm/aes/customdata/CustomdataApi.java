@@ -40,7 +40,7 @@ public class CustomdataApi {
     }
     
     /**
-     * AES Encryption Custom Data of fMP4
+     * AES encryption Custom Data of an fMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)

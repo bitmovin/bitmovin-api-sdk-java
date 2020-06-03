@@ -45,7 +45,7 @@ public class S3Api {
     /**
      * Create S3 Output
      * 
-     * @param s3Output The S3 output to be created (required)
+     * @param s3Output The S3 output to be created  The following permissions are required for S3 output:  * s3:PutObject  * s3:PutObjectAcl  * s3:ListBucket  * s3:GetBucketLocation  (required)
      * @return S3Output
      * @throws BitmovinException if fails to make API call
      */

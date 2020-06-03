@@ -43,7 +43,7 @@ public class AudioConfiguration extends CodecConfiguration {
 
 
   /**
-   * Audio sampling rate Hz
+   * Audio sampling rate in Hz
    * @return rate
    */
   public Double getRate() {
@@ -51,10 +51,10 @@ public class AudioConfiguration extends CodecConfiguration {
   }
 
   /**
-   * Audio sampling rate Hz
+   * Audio sampling rate in Hz
    *
    * @param rate
-   *        Audio sampling rate Hz
+   *        Audio sampling rate in Hz
    */
   public void setRate(Double rate) {
     this.rate = rate;

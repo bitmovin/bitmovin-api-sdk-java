@@ -43,7 +43,7 @@ public class PrimetimeApi {
     }
     
     /**
-     * Add PrimeTime DRM to fMP4
+     * Add PrimeTime DRM to an fMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)
@@ -60,7 +60,7 @@ public class PrimetimeApi {
     }
     
     /**
-     * Delete PrimeTime DRM from fMP4
+     * Delete PrimeTime DRM from an fMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing (required)
@@ -77,7 +77,7 @@ public class PrimetimeApi {
     }
     
     /**
-     * PrimeTime DRM Details of fMP4
+     * PrimeTime DRM Details of an fMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing (required)
@@ -94,7 +94,7 @@ public class PrimetimeApi {
     }
     
     /**
-     * List PrimeTime DRMs of fMP4
+     * List PrimeTime DRMs of an fMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing (required)
@@ -109,7 +109,7 @@ public class PrimetimeApi {
         }
     }
     /**
-     * List PrimeTime DRMs of fMP4
+     * List PrimeTime DRMs of an fMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing (required)

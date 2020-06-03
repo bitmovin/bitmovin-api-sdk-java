@@ -5,6 +5,7 @@ import java.util.Arrays;
 import com.bitmovin.api.sdk.model.BitmovinResource;
 import com.bitmovin.api.sdk.model.EncodingOutput;
 import com.bitmovin.api.sdk.model.ManifestType;
+import com.bitmovin.api.sdk.model.Status;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -25,6 +26,9 @@ public class Manifest extends BitmovinResource {
   @JsonProperty("outputs")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<EncodingOutput> outputs = new ArrayList<EncodingOutput>();
+
+  @JsonProperty("status")
+  private Status status;
 
   /**
    * Get type
@@ -59,6 +63,25 @@ public class Manifest extends BitmovinResource {
   }
 
 
+  /**
+   * Current status
+   * @return status
+   */
+  public Status getStatus() {
+    return status;
+  }
+
+  /**
+   * Current status
+   *
+   * @param status
+   *        Current status
+   */
+  public void setStatus(Status status) {
+    this.status = status;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -70,12 +93,13 @@ public class Manifest extends BitmovinResource {
     Manifest manifest = (Manifest) o;
     return Objects.equals(this.type, manifest.type) &&
         Objects.equals(this.outputs, manifest.outputs) &&
+        Objects.equals(this.status, manifest.status) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, outputs, super.hashCode());
+    return Objects.hash(type, outputs, status, super.hashCode());
   }
 
   @Override
@@ -85,6 +109,7 @@ public class Manifest extends BitmovinResource {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    outputs: ").append(toIndentedString(outputs)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }

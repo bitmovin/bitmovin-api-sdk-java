@@ -6,6 +6,7 @@ import com.bitmovin.api.sdk.model.EncodingOutput;
 import com.bitmovin.api.sdk.model.ManifestType;
 import com.bitmovin.api.sdk.model.SmoothManifestDefaultVersion;
 import com.bitmovin.api.sdk.model.SmoothStreamingManifest;
+import com.bitmovin.api.sdk.model.Status;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;

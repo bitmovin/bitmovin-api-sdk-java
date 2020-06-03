@@ -40,7 +40,7 @@ public class CustomdataApi {
     }
     
     /**
-     * Frame ID ID3 Tag Custom Data of Progressive TS muxing
+     * Frame ID ID3 Tag Custom Data of a Progressive TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param muxingId ID of the Progressive TS muxing (required)

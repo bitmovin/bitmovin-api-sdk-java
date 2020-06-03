@@ -43,11 +43,11 @@ public class AesApi {
     }
     
     /**
-     * Add AES Encryption to TS muxing
+     * Add AES encryption configuration to a TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the TS muxing. (required)
-     * @param aesEncryptionDrm The AES Encryption to be created (required)
+     * @param aesEncryptionDrm The AES encryption configuration to be created (required)
      * @return AesEncryptionDrm
      * @throws BitmovinException if fails to make API call
      */
@@ -60,7 +60,7 @@ public class AesApi {
     }
     
     /**
-     * Delete AES Encryption from TS muxing
+     * Delete AES encryption configuration from a TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the TS muxing. (required)
@@ -77,11 +77,11 @@ public class AesApi {
     }
     
     /**
-     * AES Encryption Details of TS muxing
+     * AES encryption Details of a TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the TS muxing. (required)
-     * @param drmId Id of the AESEncryption configuration. (required)
+     * @param drmId Id of the AES encryption configuration. (required)
      * @return AesEncryptionDrm
      * @throws BitmovinException if fails to make API call
      */
@@ -94,7 +94,7 @@ public class AesApi {
     }
     
     /**
-     * List AES Encryption of TS muxing
+     * List AES encryption configurations of a TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the TS muxing. (required)
@@ -109,7 +109,7 @@ public class AesApi {
         }
     }
     /**
-     * List AES Encryption of TS muxing
+     * List AES encryption configurations of a TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the TS muxing. (required)

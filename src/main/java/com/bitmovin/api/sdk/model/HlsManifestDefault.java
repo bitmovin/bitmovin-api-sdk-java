@@ -7,6 +7,7 @@ import com.bitmovin.api.sdk.model.HlsManifest;
 import com.bitmovin.api.sdk.model.HlsManifestDefaultVersion;
 import com.bitmovin.api.sdk.model.HlsVersion;
 import com.bitmovin.api.sdk.model.ManifestType;
+import com.bitmovin.api.sdk.model.Status;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;

@@ -40,7 +40,7 @@ public class CustomdataApi {
     }
     
     /**
-     * AES encryption Custom Data of Progressive TS muxing
+     * AES encryption Custom Data of a Progressive TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive TS muxing (required)

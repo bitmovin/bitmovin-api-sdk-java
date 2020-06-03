@@ -8,6 +8,7 @@ import com.bitmovin.api.sdk.model.DashProfile;
 import com.bitmovin.api.sdk.model.DefaultDashManifestPeriod;
 import com.bitmovin.api.sdk.model.EncodingOutput;
 import com.bitmovin.api.sdk.model.ManifestType;
+import com.bitmovin.api.sdk.model.Status;
 import com.bitmovin.api.sdk.model.UtcTiming;
 import com.bitmovin.api.sdk.model.XmlNamespace;
 import java.util.ArrayList;

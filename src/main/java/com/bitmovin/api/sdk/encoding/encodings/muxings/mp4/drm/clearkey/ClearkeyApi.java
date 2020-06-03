@@ -43,7 +43,7 @@ public class ClearkeyApi {
     }
     
     /**
-     * Add ClearKey DRM to MP4
+     * Add ClearKey DRM to an MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP4 muxing. (required)
@@ -60,7 +60,7 @@ public class ClearkeyApi {
     }
     
     /**
-     * Delete ClearKey DRM from MP4
+     * Delete ClearKey DRM from an MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the mp4. (required)
@@ -77,7 +77,7 @@ public class ClearkeyApi {
     }
     
     /**
-     * ClearKey DRM Details of MP4
+     * ClearKey DRM Details of an MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the mp4. (required)
@@ -94,7 +94,7 @@ public class ClearkeyApi {
     }
     
     /**
-     * List ClearKey DRMs of MP4
+     * List ClearKey DRMs of an MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the mp4. (required)
@@ -109,7 +109,7 @@ public class ClearkeyApi {
         }
     }
     /**
-     * List ClearKey DRMs of MP4
+     * List ClearKey DRMs of an MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the mp4. (required)

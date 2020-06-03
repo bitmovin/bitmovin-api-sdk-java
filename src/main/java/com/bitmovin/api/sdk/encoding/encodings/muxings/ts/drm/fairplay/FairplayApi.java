@@ -43,7 +43,7 @@ public class FairplayApi {
     }
     
     /**
-     * Add FairPlay DRM to TS muxing
+     * Add FairPlay DRM to a TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the TS muxing. (required)
@@ -60,7 +60,7 @@ public class FairplayApi {
     }
     
     /**
-     * Delete FairPlay DRM from TS muxing
+     * Delete FairPlay DRM from a TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the TS muxing. (required)
@@ -77,7 +77,7 @@ public class FairplayApi {
     }
     
     /**
-     * FairPlay DRM Details of TS muxing
+     * FairPlay DRM Details of a TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the TS muxing. (required)
@@ -94,7 +94,7 @@ public class FairplayApi {
     }
     
     /**
-     * List FairPlay DRMs of TS muxing
+     * List FairPlay DRMs of a TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the TS muxing. (required)
@@ -109,7 +109,7 @@ public class FairplayApi {
         }
     }
     /**
-     * List FairPlay DRMs of TS muxing
+     * List FairPlay DRMs of a TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the TS muxing. (required)

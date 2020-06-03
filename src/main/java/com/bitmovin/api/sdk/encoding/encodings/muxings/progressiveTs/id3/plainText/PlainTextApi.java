@@ -43,7 +43,7 @@ public class PlainTextApi {
     }
     
     /**
-     * Add Plain Text ID3 Tag to Progressive TS muxing
+     * Add Plain Text ID3 Tag to a Progressive TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param muxingId ID of the Progressive TS muxing (required)
@@ -60,7 +60,7 @@ public class PlainTextApi {
     }
     
     /**
-     * Delete Plain Text ID3 Tag of Progressive TS muxing
+     * Delete Plain Text ID3 Tag of a Progressive TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param muxingId ID of the Progressive TS muxing (required)
@@ -77,7 +77,7 @@ public class PlainTextApi {
     }
     
     /**
-     * Plain Text ID3 Tag Details of Progressive TS muxing
+     * Plain Text ID3 Tag Details of a Progressive TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param muxingId ID of the Progressive TS muxing (required)
@@ -94,7 +94,7 @@ public class PlainTextApi {
     }
     
     /**
-     * List Plain Text ID3 Tags of Progressive TS muxing
+     * List Plain Text ID3 Tags of a Progressive TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param muxingId ID of the Progressive TS muxing (required)
@@ -109,7 +109,7 @@ public class PlainTextApi {
         }
     }
     /**
-     * List Plain Text ID3 Tags of Progressive TS muxing
+     * List Plain Text ID3 Tags of a Progressive TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param muxingId ID of the Progressive TS muxing (required)

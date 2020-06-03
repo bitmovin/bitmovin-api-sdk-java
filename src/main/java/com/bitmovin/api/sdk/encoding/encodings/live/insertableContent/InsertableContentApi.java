@@ -65,7 +65,7 @@ public class InsertableContentApi {
     }
     
     /**
-     * List All Inseratble Content Available For A Live Encoding
+     * List All Insertable Content Available For A Live Encoding
      * 
      * @param encodingId Id of the encoding. (required)
      * @return List&lt;InsertableContent&gt;
@@ -79,7 +79,7 @@ public class InsertableContentApi {
         }
     }
     /**
-     * List All Inseratble Content Available For A Live Encoding
+     * List All Insertable Content Available For A Live Encoding
      * 
      * @param encodingId Id of the encoding. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

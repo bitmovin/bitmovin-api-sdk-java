@@ -45,7 +45,7 @@ public class S3Api {
     /**
      * Create S3 Input
      * 
-     * @param s3Input The S3 input to be created (required)
+     * @param s3Input The S3 input to be created  The following permissions are required for S3 input:   * s3:GetObject   * s3:GetBucketLocation,  (required)
      * @return S3Input
      * @throws BitmovinException if fails to make API call
      */

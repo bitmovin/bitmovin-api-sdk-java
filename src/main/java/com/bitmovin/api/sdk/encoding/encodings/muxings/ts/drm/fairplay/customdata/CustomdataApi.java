@@ -40,7 +40,7 @@ public class CustomdataApi {
     }
     
     /**
-     * FairPlay DRM Custom Data of TS muxing
+     * FairPlay DRM Custom Data of a TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the TS muxing. (required)

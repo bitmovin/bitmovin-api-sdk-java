@@ -43,7 +43,7 @@ public class SpekeApi {
     }
     
     /**
-     * Add SPEKE DRM key provider to MP4
+     * Add SPEKE DRM key provider to an MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP4 muxing (required)
@@ -60,7 +60,7 @@ public class SpekeApi {
     }
     
     /**
-     * Delete SPEKE DRM from MP4
+     * Delete SPEKE DRM from an MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP4 muxing (required)
@@ -77,7 +77,7 @@ public class SpekeApi {
     }
     
     /**
-     * SPEKE DRM Details of MP4
+     * SPEKE DRM Details of an MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP4 muxing (required)
@@ -94,7 +94,7 @@ public class SpekeApi {
     }
     
     /**
-     * List SPEKE DRM of MP4
+     * List SPEKE DRM of an MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP4 muxing (required)
@@ -109,7 +109,7 @@ public class SpekeApi {
         }
     }
     /**
-     * List SPEKE DRM of MP4
+     * List SPEKE DRM of an MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP4 muxing (required)

@@ -43,7 +43,7 @@ public class CencApi {
     }
     
     /**
-     * Add CENC DRM to MP4
+     * Add CENC DRM to an MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the mp4 fragment. (required)
@@ -60,7 +60,7 @@ public class CencApi {
     }
     
     /**
-     * Delete CENC DRM from MP4
+     * Delete CENC DRM from an MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP4 muxing (required)
@@ -77,7 +77,7 @@ public class CencApi {
     }
     
     /**
-     * CENC DRM Details of MP4
+     * CENC DRM Details of an MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP4 muxing. (required)
@@ -94,7 +94,7 @@ public class CencApi {
     }
     
     /**
-     * List CENC DRMs of MP4
+     * List CENC DRMs of an MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP4 muxing. (required)
@@ -109,7 +109,7 @@ public class CencApi {
         }
     }
     /**
-     * List CENC DRMs of MP4
+     * List CENC DRMs of an MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP4 muxing. (required)

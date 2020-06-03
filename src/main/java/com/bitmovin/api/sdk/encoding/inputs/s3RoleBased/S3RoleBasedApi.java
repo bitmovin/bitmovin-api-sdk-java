@@ -45,7 +45,7 @@ public class S3RoleBasedApi {
     /**
      * Create S3 Role-based Input
      * 
-     * @param s3RoleBasedInput The S3 Role-based input to be created (required)
+     * @param s3RoleBasedInput The S3 Role-based input to be created  The following permissions are required for S3 Role-based input:   * s3:GetObject   * s3:GetBucketLocation,  (required)
      * @return S3RoleBasedInput
      * @throws BitmovinException if fails to make API call
      */

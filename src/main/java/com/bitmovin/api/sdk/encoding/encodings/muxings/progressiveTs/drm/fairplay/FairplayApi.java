@@ -43,10 +43,10 @@ public class FairplayApi {
     }
     
     /**
-     * Add FairPlay DRM to Progressive TS
+     * Add FairPlay DRM to a Progressive TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the progressive TS fragment. (required)
+     * @param muxingId Id of the Progressive TS muxing. (required)
      * @param fairPlayDrm The FairPlay DRM to be created (required)
      * @return FairPlayDrm
      * @throws BitmovinException if fails to make API call
@@ -60,10 +60,10 @@ public class FairplayApi {
     }
     
     /**
-     * Delete FairPlay DRM from Progressive TS
+     * Delete FairPlay DRM from a Progressive TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the progressive TS fragment. (required)
+     * @param muxingId Id of the Progressive TS muxing. (required)
      * @param drmId Id of the FairPlay DRM configuration. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
@@ -77,10 +77,10 @@ public class FairplayApi {
     }
     
     /**
-     * FairPlay DRM Details of Progressive TS
+     * FairPlay DRM Details of a Progressive TS
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the progressive TS fragment. (required)
+     * @param muxingId Id of the Progressive TS muxing. (required)
      * @param drmId Id of the FairPlay DRM configuration. (required)
      * @return FairPlayDrm
      * @throws BitmovinException if fails to make API call
@@ -94,10 +94,10 @@ public class FairplayApi {
     }
     
     /**
-     * List FairPlay DRMs of Progressive TS
+     * List FairPlay DRMs of a Progressive TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the progressive TS fragment. (required)
+     * @param muxingId Id of the Progressive TS muxing. (required)
      * @return List&lt;FairPlayDrm&gt;
      * @throws BitmovinException if fails to make API call
      */
@@ -109,10 +109,10 @@ public class FairplayApi {
         }
     }
     /**
-     * List FairPlay DRMs of Progressive TS
+     * List FairPlay DRMs of a Progressive TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
-     * @param muxingId Id of the progressive TS fragment. (required)
+     * @param muxingId Id of the Progressive TS muxing. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;FairPlayDrm&gt;
      * @throws BitmovinException if fails to make API call

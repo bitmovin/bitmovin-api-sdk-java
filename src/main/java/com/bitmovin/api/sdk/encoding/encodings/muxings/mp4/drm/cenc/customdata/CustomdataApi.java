@@ -40,7 +40,7 @@ public class CustomdataApi {
     }
     
     /**
-     * CENC DRM Custom Data of MP4
+     * CENC DRM Custom Data of an MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP4 muxing. (required)

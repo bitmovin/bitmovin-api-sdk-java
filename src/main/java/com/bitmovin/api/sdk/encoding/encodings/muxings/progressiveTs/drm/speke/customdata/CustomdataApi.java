@@ -40,7 +40,7 @@ public class CustomdataApi {
     }
     
     /**
-     * SPEKE DRM Custom Data of Progressive TS
+     * SPEKE DRM Custom Data of a Progressive TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive TS muxing (required)

@@ -45,7 +45,7 @@ public class S3RoleBasedApi {
     /**
      * Create S3 Role-based Output
      * 
-     * @param s3RoleBasedOutput The S3 Role-based output to be created (required)
+     * @param s3RoleBasedOutput The S3 Role-based output to be created  The following permissions are required for S3 Role-based output:  * s3:PutObject  * s3:PutObjectAcl  * s3:ListBucket  * s3:GetBucketLocation  (required)
      * @return S3RoleBasedOutput
      * @throws BitmovinException if fails to make API call
      */

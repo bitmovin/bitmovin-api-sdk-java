@@ -43,7 +43,7 @@ public class MarlinApi {
     }
     
     /**
-     * Add Marlin DRM to MP4
+     * Add Marlin DRM to an MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP4 muxing. (required)
@@ -60,7 +60,7 @@ public class MarlinApi {
     }
     
     /**
-     * Delete Marlin DRM from MP4
+     * Delete Marlin DRM from an MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the mp4. (required)
@@ -77,7 +77,7 @@ public class MarlinApi {
     }
     
     /**
-     * Marlin DRM Details of MP4
+     * Marlin DRM Details of an MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the mp4. (required)
@@ -94,7 +94,7 @@ public class MarlinApi {
     }
     
     /**
-     * List Marlin DRMs of MP4
+     * List Marlin DRMs of an MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the mp4. (required)
@@ -109,7 +109,7 @@ public class MarlinApi {
         }
     }
     /**
-     * List Marlin DRMs of MP4
+     * List Marlin DRMs of an MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the mp4. (required)
