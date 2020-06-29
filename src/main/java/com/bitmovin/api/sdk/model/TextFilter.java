@@ -48,7 +48,7 @@ public class TextFilter extends Filter {
   private String fontSizeExpression;
 
   @JsonProperty("alpha")
-  private Integer alpha;
+  private Double alpha;
 
   @JsonProperty("shadowColor")
   private String shadowColor;
@@ -70,6 +70,9 @@ public class TextFilter extends Filter {
 
   @JsonProperty("y")
   private String y;
+
+  @JsonProperty("rate")
+  private String rate;
 
 
   /**
@@ -265,7 +268,7 @@ public class TextFilter extends Filter {
    * If set, alpha blending for the text is applied. Values are valid between 0.0 and 1.0.
    * @return alpha
    */
-  public Integer getAlpha() {
+  public Double getAlpha() {
     return alpha;
   }
 
@@ -275,7 +278,7 @@ public class TextFilter extends Filter {
    * @param alpha
    *        If set, alpha blending for the text is applied. Values are valid between 0.0 and 1.0.
    */
-  public void setAlpha(Integer alpha) {
+  public void setAlpha(Double alpha) {
     this.alpha = alpha;
   }
 
@@ -413,6 +416,24 @@ public class TextFilter extends Filter {
   }
 
 
+  /**
+   * Get rate
+   * @return rate
+   */
+  public String getRate() {
+    return rate;
+  }
+
+  /**
+   * Set rate
+   *
+   * @param rate
+   */
+  public void setRate(String rate) {
+    this.rate = rate;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -440,12 +461,13 @@ public class TextFilter extends Filter {
         Objects.equals(this.text, textFilter.text) &&
         Objects.equals(this.x, textFilter.x) &&
         Objects.equals(this.y, textFilter.y) &&
+        Objects.equals(this.rate, textFilter.rate) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(font, box, boxBorderWidth, boxColor, lineSpacing, borderWidth, fixBounds, fontColor, fontSize, fontSizeExpression, alpha, shadowColor, shadowX, shadowY, timecode, text, x, y, super.hashCode());
+    return Objects.hash(font, box, boxBorderWidth, boxColor, lineSpacing, borderWidth, fixBounds, fontColor, fontSize, fontSizeExpression, alpha, shadowColor, shadowX, shadowY, timecode, text, x, y, rate, super.hashCode());
   }
 
   @Override
@@ -471,6 +493,7 @@ public class TextFilter extends Filter {
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    x: ").append(toIndentedString(x)).append("\n");
     sb.append("    y: ").append(toIndentedString(y)).append("\n");
+    sb.append("    rate: ").append(toIndentedString(rate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

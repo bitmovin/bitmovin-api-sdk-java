@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.AvailabilityStartTimeMode;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -20,6 +21,15 @@ public class LiveDashManifest {
 
   @JsonProperty("liveEdgeOffset")
   private Double liveEdgeOffset;
+
+  @JsonProperty("suggestedPresentationDelay")
+  private Double suggestedPresentationDelay;
+
+  @JsonProperty("minimumUpdatePeriod")
+  private Double minimumUpdatePeriod;
+
+  @JsonProperty("availabilityStartTimeMode")
+  private AvailabilityStartTimeMode availabilityStartTimeMode;
 
 
   /**
@@ -79,6 +89,63 @@ public class LiveDashManifest {
   }
 
 
+  /**
+   * The suggestedPresentationDelay to be set in the DASH manifest. If nothing is set, no value will be set.
+   * @return suggestedPresentationDelay
+   */
+  public Double getSuggestedPresentationDelay() {
+    return suggestedPresentationDelay;
+  }
+
+  /**
+   * The suggestedPresentationDelay to be set in the DASH manifest. If nothing is set, no value will be set.
+   *
+   * @param suggestedPresentationDelay
+   *        The suggestedPresentationDelay to be set in the DASH manifest. If nothing is set, no value will be set.
+   */
+  public void setSuggestedPresentationDelay(Double suggestedPresentationDelay) {
+    this.suggestedPresentationDelay = suggestedPresentationDelay;
+  }
+
+
+  /**
+   * The minimumUpdatePeriod to be set in the DASH manifest. If nothing is set, the segment duration will be set.
+   * @return minimumUpdatePeriod
+   */
+  public Double getMinimumUpdatePeriod() {
+    return minimumUpdatePeriod;
+  }
+
+  /**
+   * The minimumUpdatePeriod to be set in the DASH manifest. If nothing is set, the segment duration will be set.
+   *
+   * @param minimumUpdatePeriod
+   *        The minimumUpdatePeriod to be set in the DASH manifest. If nothing is set, the segment duration will be set.
+   */
+  public void setMinimumUpdatePeriod(Double minimumUpdatePeriod) {
+    this.minimumUpdatePeriod = minimumUpdatePeriod;
+  }
+
+
+  /**
+   * The mode to trigger the availabilityStartTime initialization.
+   * @return availabilityStartTimeMode
+   */
+  public AvailabilityStartTimeMode getAvailabilityStartTimeMode() {
+    return availabilityStartTimeMode;
+  }
+
+  /**
+   * The mode to trigger the availabilityStartTime initialization.
+   *
+   * @param availabilityStartTimeMode
+   *        The mode to trigger the availabilityStartTime initialization.
+   */
+  public void setAvailabilityStartTimeMode(AvailabilityStartTimeMode availabilityStartTimeMode) {
+    this.availabilityStartTimeMode = availabilityStartTimeMode;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -90,12 +157,15 @@ public class LiveDashManifest {
     LiveDashManifest liveDashManifest = (LiveDashManifest) o;
     return Objects.equals(this.manifestId, liveDashManifest.manifestId) &&
         Objects.equals(this.timeshift, liveDashManifest.timeshift) &&
-        Objects.equals(this.liveEdgeOffset, liveDashManifest.liveEdgeOffset);
+        Objects.equals(this.liveEdgeOffset, liveDashManifest.liveEdgeOffset) &&
+        Objects.equals(this.suggestedPresentationDelay, liveDashManifest.suggestedPresentationDelay) &&
+        Objects.equals(this.minimumUpdatePeriod, liveDashManifest.minimumUpdatePeriod) &&
+        Objects.equals(this.availabilityStartTimeMode, liveDashManifest.availabilityStartTimeMode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(manifestId, timeshift, liveEdgeOffset);
+    return Objects.hash(manifestId, timeshift, liveEdgeOffset, suggestedPresentationDelay, minimumUpdatePeriod, availabilityStartTimeMode);
   }
 
   @Override
@@ -106,6 +176,9 @@ public class LiveDashManifest {
     sb.append("    manifestId: ").append(toIndentedString(manifestId)).append("\n");
     sb.append("    timeshift: ").append(toIndentedString(timeshift)).append("\n");
     sb.append("    liveEdgeOffset: ").append(toIndentedString(liveEdgeOffset)).append("\n");
+    sb.append("    suggestedPresentationDelay: ").append(toIndentedString(suggestedPresentationDelay)).append("\n");
+    sb.append("    minimumUpdatePeriod: ").append(toIndentedString(minimumUpdatePeriod)).append("\n");
+    sb.append("    availabilityStartTimeMode: ").append(toIndentedString(availabilityStartTimeMode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.AudioVolumeFormat;
 import com.bitmovin.api.sdk.model.AudioVolumeUnit;
 import com.bitmovin.api.sdk.model.Filter;
 import java.util.Date;
@@ -22,6 +23,9 @@ public class AudioVolumeFilter extends Filter {
 
   @JsonProperty("unit")
   private AudioVolumeUnit unit;
+
+  @JsonProperty("format")
+  private AudioVolumeFormat format;
 
 
   /**
@@ -61,6 +65,24 @@ public class AudioVolumeFilter extends Filter {
   }
 
 
+  /**
+   * Get format
+   * @return format
+   */
+  public AudioVolumeFormat getFormat() {
+    return format;
+  }
+
+  /**
+   * Set format
+   *
+   * @param format
+   */
+  public void setFormat(AudioVolumeFormat format) {
+    this.format = format;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -72,12 +94,13 @@ public class AudioVolumeFilter extends Filter {
     AudioVolumeFilter audioVolumeFilter = (AudioVolumeFilter) o;
     return Objects.equals(this.volume, audioVolumeFilter.volume) &&
         Objects.equals(this.unit, audioVolumeFilter.unit) &&
+        Objects.equals(this.format, audioVolumeFilter.format) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(volume, unit, super.hashCode());
+    return Objects.hash(volume, unit, format, super.hashCode());
   }
 
   @Override
@@ -87,6 +110,7 @@ public class AudioVolumeFilter extends Filter {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
+    sb.append("    format: ").append(toIndentedString(format)).append("\n");
     sb.append("}");
     return sb.toString();
   }

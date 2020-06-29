@@ -2,8 +2,14 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.BillableEncodingFeatureMinutes;
+import com.bitmovin.api.sdk.model.BillableEncodingMinutes;
+import com.bitmovin.api.sdk.model.EgressInformation;
 import com.bitmovin.api.sdk.model.EncodingStatistics;
+import com.bitmovin.api.sdk.model.StatisticsPerMuxing;
+import com.bitmovin.api.sdk.model.StatisticsPerStream;
 import java.util.Date;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;

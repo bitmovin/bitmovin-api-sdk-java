@@ -2,7 +2,14 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.BillableEncodingFeatureMinutes;
+import com.bitmovin.api.sdk.model.BillableEncodingMinutes;
+import com.bitmovin.api.sdk.model.EgressInformation;
+import com.bitmovin.api.sdk.model.StatisticsPerMuxing;
+import com.bitmovin.api.sdk.model.StatisticsPerStream;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -26,6 +33,32 @@ public class EncodingStatistics {
 
   @JsonProperty("bytesEgress")
   private Long bytesEgress;
+
+  @JsonProperty("billableEncodingMinutes")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<BillableEncodingMinutes> billableEncodingMinutes = new ArrayList<BillableEncodingMinutes>();
+
+  @JsonProperty("billableEgressBytes")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<EgressInformation> billableEgressBytes = new ArrayList<EgressInformation>();
+
+  @JsonProperty("streams")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<StatisticsPerStream> streams = new ArrayList<StatisticsPerStream>();
+
+  @JsonProperty("muxings")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<StatisticsPerMuxing> muxings = new ArrayList<StatisticsPerMuxing>();
+
+  @JsonProperty("features")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<BillableEncodingFeatureMinutes> features = new ArrayList<BillableEncodingFeatureMinutes>();
+
+  @JsonProperty("billableTransmuxingMinutes")
+  private Double billableTransmuxingMinutes;
+
+  @JsonProperty("billableFeatureMinutes")
+  private Double billableFeatureMinutes;
 
   /**
    * Date, format. yyyy-MM-dd (required)
@@ -60,6 +93,137 @@ public class EncodingStatistics {
   }
 
 
+  public EncodingStatistics addBillableEncodingMinutesItem(BillableEncodingMinutes billableEncodingMinutesItem) {
+    this.billableEncodingMinutes.add(billableEncodingMinutesItem);
+    return this;
+  }
+
+  /**
+   * Get billableEncodingMinutes
+   * @return billableEncodingMinutes
+   */
+  public List<BillableEncodingMinutes> getBillableEncodingMinutes() {
+    return billableEncodingMinutes;
+  }
+
+  /**
+   * Set billableEncodingMinutes
+   *
+   * @param billableEncodingMinutes
+   */
+  public void setBillableEncodingMinutes(List<BillableEncodingMinutes> billableEncodingMinutes) {
+    this.billableEncodingMinutes = billableEncodingMinutes;
+  }
+
+
+  public EncodingStatistics addBillableEgressBytesItem(EgressInformation billableEgressBytesItem) {
+    this.billableEgressBytes.add(billableEgressBytesItem);
+    return this;
+  }
+
+  /**
+   * Get billableEgressBytes
+   * @return billableEgressBytes
+   */
+  public List<EgressInformation> getBillableEgressBytes() {
+    return billableEgressBytes;
+  }
+
+  /**
+   * Set billableEgressBytes
+   *
+   * @param billableEgressBytes
+   */
+  public void setBillableEgressBytes(List<EgressInformation> billableEgressBytes) {
+    this.billableEgressBytes = billableEgressBytes;
+  }
+
+
+  public EncodingStatistics addStreamsItem(StatisticsPerStream streamsItem) {
+    this.streams.add(streamsItem);
+    return this;
+  }
+
+  /**
+   * Get streams
+   * @return streams
+   */
+  public List<StatisticsPerStream> getStreams() {
+    return streams;
+  }
+
+  /**
+   * Set streams
+   *
+   * @param streams
+   */
+  public void setStreams(List<StatisticsPerStream> streams) {
+    this.streams = streams;
+  }
+
+
+  public EncodingStatistics addMuxingsItem(StatisticsPerMuxing muxingsItem) {
+    this.muxings.add(muxingsItem);
+    return this;
+  }
+
+  /**
+   * Get muxings
+   * @return muxings
+   */
+  public List<StatisticsPerMuxing> getMuxings() {
+    return muxings;
+  }
+
+  /**
+   * Set muxings
+   *
+   * @param muxings
+   */
+  public void setMuxings(List<StatisticsPerMuxing> muxings) {
+    this.muxings = muxings;
+  }
+
+
+  public EncodingStatistics addFeaturesItem(BillableEncodingFeatureMinutes featuresItem) {
+    this.features.add(featuresItem);
+    return this;
+  }
+
+  /**
+   * Get features
+   * @return features
+   */
+  public List<BillableEncodingFeatureMinutes> getFeatures() {
+    return features;
+  }
+
+  /**
+   * Set features
+   *
+   * @param features
+   */
+  public void setFeatures(List<BillableEncodingFeatureMinutes> features) {
+    this.features = features;
+  }
+
+  /**
+   * Billable minutes for the muxings.
+   * @return billableTransmuxingMinutes
+   */
+  public Double getBillableTransmuxingMinutes() {
+    return billableTransmuxingMinutes;
+  }
+
+  /**
+   * Billable minutes for the features.
+   * @return billableFeatureMinutes
+   */
+  public Double getBillableFeatureMinutes() {
+    return billableFeatureMinutes;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -72,12 +236,19 @@ public class EncodingStatistics {
     return Objects.equals(this.date, encodingStatistics.date) &&
         Objects.equals(this.bytesEncoded, encodingStatistics.bytesEncoded) &&
         Objects.equals(this.timeEncoded, encodingStatistics.timeEncoded) &&
-        Objects.equals(this.bytesEgress, encodingStatistics.bytesEgress);
+        Objects.equals(this.bytesEgress, encodingStatistics.bytesEgress) &&
+        Objects.equals(this.billableEncodingMinutes, encodingStatistics.billableEncodingMinutes) &&
+        Objects.equals(this.billableEgressBytes, encodingStatistics.billableEgressBytes) &&
+        Objects.equals(this.streams, encodingStatistics.streams) &&
+        Objects.equals(this.muxings, encodingStatistics.muxings) &&
+        Objects.equals(this.features, encodingStatistics.features) &&
+        Objects.equals(this.billableTransmuxingMinutes, encodingStatistics.billableTransmuxingMinutes) &&
+        Objects.equals(this.billableFeatureMinutes, encodingStatistics.billableFeatureMinutes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(date, bytesEncoded, timeEncoded, bytesEgress);
+    return Objects.hash(date, bytesEncoded, timeEncoded, bytesEgress, billableEncodingMinutes, billableEgressBytes, streams, muxings, features, billableTransmuxingMinutes, billableFeatureMinutes);
   }
 
   @Override
@@ -89,6 +260,13 @@ public class EncodingStatistics {
     sb.append("    bytesEncoded: ").append(toIndentedString(bytesEncoded)).append("\n");
     sb.append("    timeEncoded: ").append(toIndentedString(timeEncoded)).append("\n");
     sb.append("    bytesEgress: ").append(toIndentedString(bytesEgress)).append("\n");
+    sb.append("    billableEncodingMinutes: ").append(toIndentedString(billableEncodingMinutes)).append("\n");
+    sb.append("    billableEgressBytes: ").append(toIndentedString(billableEgressBytes)).append("\n");
+    sb.append("    streams: ").append(toIndentedString(streams)).append("\n");
+    sb.append("    muxings: ").append(toIndentedString(muxings)).append("\n");
+    sb.append("    features: ").append(toIndentedString(features)).append("\n");
+    sb.append("    billableTransmuxingMinutes: ").append(toIndentedString(billableTransmuxingMinutes)).append("\n");
+    sb.append("    billableFeatureMinutes: ").append(toIndentedString(billableFeatureMinutes)).append("\n");
     sb.append("}");
     return sb.toString();
   }
