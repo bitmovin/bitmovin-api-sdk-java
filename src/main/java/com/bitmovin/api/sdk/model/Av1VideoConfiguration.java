@@ -5,6 +5,7 @@ import java.util.Arrays;
 import com.bitmovin.api.sdk.model.Av1AdaptiveQuantMode;
 import com.bitmovin.api.sdk.model.Av1KeyPlacementMode;
 import com.bitmovin.api.sdk.model.ColorConfig;
+import com.bitmovin.api.sdk.model.DisplayAspectRatio;
 import com.bitmovin.api.sdk.model.EncodingMode;
 import com.bitmovin.api.sdk.model.PixelFormat;
 import com.bitmovin.api.sdk.model.VideoConfiguration;

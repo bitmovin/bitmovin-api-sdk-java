@@ -5,6 +5,7 @@ import java.util.Arrays;
 import com.bitmovin.api.sdk.model.CodecConfigType;
 import com.bitmovin.api.sdk.model.DolbyVisionPerStreamMode;
 import com.bitmovin.api.sdk.model.EncodingMode;
+import com.bitmovin.api.sdk.model.InputFactor;
 import com.bitmovin.api.sdk.model.PsnrPerStreamMode;
 import com.bitmovin.api.sdk.model.StatisticsPerTitleStream;
 import com.bitmovin.api.sdk.model.StatisticsResolution;
@@ -89,6 +90,9 @@ public class StatisticsPerStream {
 
   @JsonProperty("liveMultiplicator")
   private Double liveMultiplicator;
+
+  @JsonProperty("inputFactor")
+  private InputFactor inputFactor;
 
   /**
    * ID of the stream (required)
@@ -343,6 +347,24 @@ public class StatisticsPerStream {
   }
 
 
+  /**
+   * Get inputFactor
+   * @return inputFactor
+   */
+  public InputFactor getInputFactor() {
+    return inputFactor;
+  }
+
+  /**
+   * Set inputFactor
+   *
+   * @param inputFactor
+   */
+  public void setInputFactor(InputFactor inputFactor) {
+    this.inputFactor = inputFactor;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -375,12 +397,13 @@ public class StatisticsPerStream {
         Objects.equals(this.preset, statisticsPerStream.preset) &&
         Objects.equals(this.presetMultiplicator, statisticsPerStream.presetMultiplicator) &&
         Objects.equals(this.live, statisticsPerStream.live) &&
-        Objects.equals(this.liveMultiplicator, statisticsPerStream.liveMultiplicator);
+        Objects.equals(this.liveMultiplicator, statisticsPerStream.liveMultiplicator) &&
+        Objects.equals(this.inputFactor, statisticsPerStream.inputFactor);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(streamId, codecConfigId, multiplicator, encodedBytes, encodedSeconds, billableMinutes, width, height, rate, bitrate, codec, resolution, encodingMode, encodingModeMultiplicator, perTitleResultStream, perTitleMultiplicator, psnrMode, psnrMultiplicator, dolbyVisionMode, dolbyVisionMultiplicator, preset, presetMultiplicator, live, liveMultiplicator);
+    return Objects.hash(streamId, codecConfigId, multiplicator, encodedBytes, encodedSeconds, billableMinutes, width, height, rate, bitrate, codec, resolution, encodingMode, encodingModeMultiplicator, perTitleResultStream, perTitleMultiplicator, psnrMode, psnrMultiplicator, dolbyVisionMode, dolbyVisionMultiplicator, preset, presetMultiplicator, live, liveMultiplicator, inputFactor);
   }
 
   @Override
@@ -412,6 +435,7 @@ public class StatisticsPerStream {
     sb.append("    presetMultiplicator: ").append(toIndentedString(presetMultiplicator)).append("\n");
     sb.append("    live: ").append(toIndentedString(live)).append("\n");
     sb.append("    liveMultiplicator: ").append(toIndentedString(liveMultiplicator)).append("\n");
+    sb.append("    inputFactor: ").append(toIndentedString(inputFactor)).append("\n");
     sb.append("}");
     return sb.toString();
   }

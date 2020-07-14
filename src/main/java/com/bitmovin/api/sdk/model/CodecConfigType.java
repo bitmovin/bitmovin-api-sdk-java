@@ -19,6 +19,9 @@ public enum CodecConfigType {
   AAC("AAC"),
   
   
+  DTS_PASSTHROUGH("DTS_PASSTHROUGH"),
+  
+  
   HE_AAC_V1("HE_AAC_V1"),
   
   

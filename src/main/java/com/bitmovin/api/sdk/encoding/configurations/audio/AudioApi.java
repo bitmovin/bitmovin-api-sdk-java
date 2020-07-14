@@ -3,6 +3,7 @@ package com.bitmovin.api.sdk.encoding.configurations.audio;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.configurations.audio.aac.AacApi;
+import com.bitmovin.api.sdk.encoding.configurations.audio.dtsPassthrough.DtsPassthroughApi;
 import com.bitmovin.api.sdk.encoding.configurations.audio.heAacV1.HeAacV1Api;
 import com.bitmovin.api.sdk.encoding.configurations.audio.heAacV2.HeAacV2Api;
 import com.bitmovin.api.sdk.encoding.configurations.audio.vorbis.VorbisApi;
@@ -14,6 +15,7 @@ import com.bitmovin.api.sdk.encoding.configurations.audio.mp3.Mp3Api;
 
 public class AudioApi {
     public final AacApi aac;
+    public final DtsPassthroughApi dtsPassthrough;
     public final HeAacV1Api heAacV1;
     public final HeAacV2Api heAacV2;
     public final VorbisApi vorbis;
@@ -30,6 +32,7 @@ public class AudioApi {
         }
 
         this.aac = new AacApi(clientFactory);
+        this.dtsPassthrough = new DtsPassthroughApi(clientFactory);
         this.heAacV1 = new HeAacV1Api(clientFactory);
         this.heAacV2 = new HeAacV2Api(clientFactory);
         this.vorbis = new VorbisApi(clientFactory);

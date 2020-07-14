@@ -30,6 +30,9 @@ public class AutoRestartConfiguration {
   @JsonProperty("scheduleExpression")
   private String scheduleExpression;
 
+  @JsonProperty("restartOnEncoderError")
+  private Boolean restartOnEncoderError;
+
 
   /**
    * If no segments were generated for the given number of seconds, a restart is triggered. Minimum: 30.0
@@ -160,6 +163,25 @@ public class AutoRestartConfiguration {
   }
 
 
+  /**
+   * Defines if the encoding should be restarted in case of an error during encoding.
+   * @return restartOnEncoderError
+   */
+  public Boolean getRestartOnEncoderError() {
+    return restartOnEncoderError;
+  }
+
+  /**
+   * Defines if the encoding should be restarted in case of an error during encoding.
+   *
+   * @param restartOnEncoderError
+   *        Defines if the encoding should be restarted in case of an error during encoding.
+   */
+  public void setRestartOnEncoderError(Boolean restartOnEncoderError) {
+    this.restartOnEncoderError = restartOnEncoderError;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -174,12 +196,13 @@ public class AutoRestartConfiguration {
         Objects.equals(this.framesWrittenTimeout, autoRestartConfiguration.framesWrittenTimeout) &&
         Objects.equals(this.hlsManifestsUpdateTimeout, autoRestartConfiguration.hlsManifestsUpdateTimeout) &&
         Objects.equals(this.dashManifestsUpdateTimeout, autoRestartConfiguration.dashManifestsUpdateTimeout) &&
-        Objects.equals(this.scheduleExpression, autoRestartConfiguration.scheduleExpression);
+        Objects.equals(this.scheduleExpression, autoRestartConfiguration.scheduleExpression) &&
+        Objects.equals(this.restartOnEncoderError, autoRestartConfiguration.restartOnEncoderError);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(segmentsWrittenTimeout, bytesWrittenTimeout, framesWrittenTimeout, hlsManifestsUpdateTimeout, dashManifestsUpdateTimeout, scheduleExpression);
+    return Objects.hash(segmentsWrittenTimeout, bytesWrittenTimeout, framesWrittenTimeout, hlsManifestsUpdateTimeout, dashManifestsUpdateTimeout, scheduleExpression, restartOnEncoderError);
   }
 
   @Override
@@ -193,6 +216,7 @@ public class AutoRestartConfiguration {
     sb.append("    hlsManifestsUpdateTimeout: ").append(toIndentedString(hlsManifestsUpdateTimeout)).append("\n");
     sb.append("    dashManifestsUpdateTimeout: ").append(toIndentedString(dashManifestsUpdateTimeout)).append("\n");
     sb.append("    scheduleExpression: ").append(toIndentedString(scheduleExpression)).append("\n");
+    sb.append("    restartOnEncoderError: ").append(toIndentedString(restartOnEncoderError)).append("\n");
     sb.append("}");
     return sb.toString();
   }

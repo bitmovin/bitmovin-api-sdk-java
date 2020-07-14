@@ -6,6 +6,7 @@ import com.bitmovin.api.sdk.model.AdaptiveQuantMode;
 import com.bitmovin.api.sdk.model.BAdapt;
 import com.bitmovin.api.sdk.model.Cea608708SubtitleConfiguration;
 import com.bitmovin.api.sdk.model.ColorConfig;
+import com.bitmovin.api.sdk.model.DisplayAspectRatio;
 import com.bitmovin.api.sdk.model.EncodingMode;
 import com.bitmovin.api.sdk.model.ForceFlushMode;
 import com.bitmovin.api.sdk.model.LevelH265;

@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.CodecConfiguration;
 import com.bitmovin.api.sdk.model.ColorConfig;
+import com.bitmovin.api.sdk.model.DisplayAspectRatio;
 import com.bitmovin.api.sdk.model.EncodingMode;
 import com.bitmovin.api.sdk.model.PixelFormat;
 import java.util.Date;
@@ -42,6 +43,9 @@ public class VideoConfiguration extends CodecConfiguration {
 
   @JsonProperty("sampleAspectRatioDenominator")
   private Integer sampleAspectRatioDenominator;
+
+  @JsonProperty("displayAspectRatio")
+  private DisplayAspectRatio displayAspectRatio;
 
   @JsonProperty("encodingMode")
   private EncodingMode encodingMode;
@@ -161,7 +165,7 @@ public class VideoConfiguration extends CodecConfiguration {
 
 
   /**
-   * The numerator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioDenominator is set.
+   * The numerator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioDenominator is set. If set then displayAspectRatio is not allowed.
    * @return sampleAspectRatioNumerator
    */
   public Integer getSampleAspectRatioNumerator() {
@@ -169,10 +173,10 @@ public class VideoConfiguration extends CodecConfiguration {
   }
 
   /**
-   * The numerator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioDenominator is set.
+   * The numerator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioDenominator is set. If set then displayAspectRatio is not allowed.
    *
    * @param sampleAspectRatioNumerator
-   *        The numerator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioDenominator is set.
+   *        The numerator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioDenominator is set. If set then displayAspectRatio is not allowed.
    */
   public void setSampleAspectRatioNumerator(Integer sampleAspectRatioNumerator) {
     this.sampleAspectRatioNumerator = sampleAspectRatioNumerator;
@@ -180,7 +184,7 @@ public class VideoConfiguration extends CodecConfiguration {
 
 
   /**
-   * The denominator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioNumerator is set.
+   * The denominator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioNumerator is set. If set then displayAspectRatio is not allowed.
    * @return sampleAspectRatioDenominator
    */
   public Integer getSampleAspectRatioDenominator() {
@@ -188,13 +192,32 @@ public class VideoConfiguration extends CodecConfiguration {
   }
 
   /**
-   * The denominator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioNumerator is set.
+   * The denominator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioNumerator is set. If set then displayAspectRatio is not allowed.
    *
    * @param sampleAspectRatioDenominator
-   *        The denominator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioNumerator is set.
+   *        The denominator of the sample aspect ratio (also known as pixel aspect ratio). Must be set if sampleAspectRatioNumerator is set. If set then displayAspectRatio is not allowed.
    */
   public void setSampleAspectRatioDenominator(Integer sampleAspectRatioDenominator) {
     this.sampleAspectRatioDenominator = sampleAspectRatioDenominator;
+  }
+
+
+  /**
+   * Specifies a display aspect ratio (DAR) to be enforced. The sample aspect ratio (SAR) will be adjusted accordingly. If set then sampleAspectRatioNumerator and sampleAspectRatioDenominator are not allowed.
+   * @return displayAspectRatio
+   */
+  public DisplayAspectRatio getDisplayAspectRatio() {
+    return displayAspectRatio;
+  }
+
+  /**
+   * Specifies a display aspect ratio (DAR) to be enforced. The sample aspect ratio (SAR) will be adjusted accordingly. If set then sampleAspectRatioNumerator and sampleAspectRatioDenominator are not allowed.
+   *
+   * @param displayAspectRatio
+   *        Specifies a display aspect ratio (DAR) to be enforced. The sample aspect ratio (SAR) will be adjusted accordingly. If set then sampleAspectRatioNumerator and sampleAspectRatioDenominator are not allowed.
+   */
+  public void setDisplayAspectRatio(DisplayAspectRatio displayAspectRatio) {
+    this.displayAspectRatio = displayAspectRatio;
   }
 
 
@@ -234,13 +257,14 @@ public class VideoConfiguration extends CodecConfiguration {
         Objects.equals(this.colorConfig, videoConfiguration.colorConfig) &&
         Objects.equals(this.sampleAspectRatioNumerator, videoConfiguration.sampleAspectRatioNumerator) &&
         Objects.equals(this.sampleAspectRatioDenominator, videoConfiguration.sampleAspectRatioDenominator) &&
+        Objects.equals(this.displayAspectRatio, videoConfiguration.displayAspectRatio) &&
         Objects.equals(this.encodingMode, videoConfiguration.encodingMode) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(width, height, bitrate, rate, pixelFormat, colorConfig, sampleAspectRatioNumerator, sampleAspectRatioDenominator, encodingMode, super.hashCode());
+    return Objects.hash(width, height, bitrate, rate, pixelFormat, colorConfig, sampleAspectRatioNumerator, sampleAspectRatioDenominator, displayAspectRatio, encodingMode, super.hashCode());
   }
 
   @Override
@@ -256,6 +280,7 @@ public class VideoConfiguration extends CodecConfiguration {
     sb.append("    colorConfig: ").append(toIndentedString(colorConfig)).append("\n");
     sb.append("    sampleAspectRatioNumerator: ").append(toIndentedString(sampleAspectRatioNumerator)).append("\n");
     sb.append("    sampleAspectRatioDenominator: ").append(toIndentedString(sampleAspectRatioDenominator)).append("\n");
+    sb.append("    displayAspectRatio: ").append(toIndentedString(displayAspectRatio)).append("\n");
     sb.append("    encodingMode: ").append(toIndentedString(encodingMode)).append("\n");
     sb.append("}");
     return sb.toString();

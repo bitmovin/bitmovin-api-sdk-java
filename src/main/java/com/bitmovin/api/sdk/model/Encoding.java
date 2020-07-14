@@ -24,6 +24,10 @@ public class Encoding extends BitmovinResource {
   @JsonProperty("cloudRegion")
   private CloudRegion cloudRegion;
 
+  @JsonProperty("fallbackCloudRegions")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<CloudRegion> fallbackCloudRegions = new ArrayList<CloudRegion>();
+
   @JsonProperty("encoderVersion")
   private String encoderVersion;
 
@@ -65,6 +69,30 @@ public class Encoding extends BitmovinResource {
    */
   public void setCloudRegion(CloudRegion cloudRegion) {
     this.cloudRegion = cloudRegion;
+  }
+
+
+  public Encoding addFallbackCloudRegionsItem(CloudRegion fallbackCloudRegionsItem) {
+    this.fallbackCloudRegions.add(fallbackCloudRegionsItem);
+    return this;
+  }
+
+  /**
+   * Specify a list of regions which are used in case the preferred region is down. Currently there are several restrictions. - The region has to be specific or AUTO - The region has to be for the same cloud provider as the default one - You can only configure at most 3 fallback regions 
+   * @return fallbackCloudRegions
+   */
+  public List<CloudRegion> getFallbackCloudRegions() {
+    return fallbackCloudRegions;
+  }
+
+  /**
+   * Specify a list of regions which are used in case the preferred region is down. Currently there are several restrictions. - The region has to be specific or AUTO - The region has to be for the same cloud provider as the default one - You can only configure at most 3 fallback regions 
+   *
+   * @param fallbackCloudRegions
+   *        Specify a list of regions which are used in case the preferred region is down. Currently there are several restrictions. - The region has to be specific or AUTO - The region has to be for the same cloud provider as the default one - You can only configure at most 3 fallback regions 
+   */
+  public void setFallbackCloudRegions(List<CloudRegion> fallbackCloudRegions) {
+    this.fallbackCloudRegions = fallbackCloudRegions;
   }
 
 
@@ -190,6 +218,7 @@ public class Encoding extends BitmovinResource {
     }
     Encoding encoding = (Encoding) o;
     return Objects.equals(this.cloudRegion, encoding.cloudRegion) &&
+        Objects.equals(this.fallbackCloudRegions, encoding.fallbackCloudRegions) &&
         Objects.equals(this.encoderVersion, encoding.encoderVersion) &&
         Objects.equals(this.infrastructureId, encoding.infrastructureId) &&
         Objects.equals(this.infrastructure, encoding.infrastructure) &&
@@ -203,7 +232,7 @@ public class Encoding extends BitmovinResource {
 
   @Override
   public int hashCode() {
-    return Objects.hash(cloudRegion, encoderVersion, infrastructureId, infrastructure, selectedEncoderVersion, selectedEncodingMode, selectedCloudRegion, status, labels, super.hashCode());
+    return Objects.hash(cloudRegion, fallbackCloudRegions, encoderVersion, infrastructureId, infrastructure, selectedEncoderVersion, selectedEncodingMode, selectedCloudRegion, status, labels, super.hashCode());
   }
 
   @Override
@@ -212,6 +241,7 @@ public class Encoding extends BitmovinResource {
     sb.append("class Encoding {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    cloudRegion: ").append(toIndentedString(cloudRegion)).append("\n");
+    sb.append("    fallbackCloudRegions: ").append(toIndentedString(fallbackCloudRegions)).append("\n");
     sb.append("    encoderVersion: ").append(toIndentedString(encoderVersion)).append("\n");
     sb.append("    infrastructureId: ").append(toIndentedString(infrastructureId)).append("\n");
     sb.append("    infrastructure: ").append(toIndentedString(infrastructure)).append("\n");
