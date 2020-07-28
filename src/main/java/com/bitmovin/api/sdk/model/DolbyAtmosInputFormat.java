@@ -11,64 +11,23 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets CodecConfigType
+ * Gets or Sets DolbyAtmosInputFormat
  */
-public enum CodecConfigType {
+public enum DolbyAtmosInputFormat {
   
+  /**
+   * Dolby Atmos input format is DAMF (Dolby Atmos Master Format), usually a .atmos file. The &#39;metadata&#39; and &#39;audio&#39; files referenced within this file need to reside in the same directory and will be resolved automatically.
+   */
+  DAMF("DAMF"),
   
-  AAC("AAC"),
-  
-  
-  DTS_PASSTHROUGH("DTS_PASSTHROUGH"),
-  
-  
-  HE_AAC_V1("HE_AAC_V1"),
-  
-  
-  HE_AAC_V2("HE_AAC_V2"),
-  
-  
-  H264("H264"),
-  
-  
-  H265("H265"),
-  
-  
-  VP9("VP9"),
-  
-  
-  VP8("VP8"),
-  
-  
-  MP2("MP2"),
-  
-  
-  MP3("MP3"),
-  
-  
-  AC3("AC3"),
-  
-  
-  EAC3("EAC3"),
-  
-  
-  OPUS("OPUS"),
-  
-  
-  VORBIS("VORBIS"),
-  
-  
-  MJPEG("MJPEG"),
-  
-  
-  AV1("AV1"),
-  
-  
-  DOLBY_ATMOS("DOLBY_ATMOS");
+  /**
+   * Dolby Atmos input format is ADM (Audio Definition Model), usually a .wav file
+   */
+  ADM("ADM");
 
   private String value;
 
-  CodecConfigType(String value) {
+  DolbyAtmosInputFormat(String value) {
     this.value = value;
   }
 
@@ -83,8 +42,8 @@ public enum CodecConfigType {
   }
 
   @JsonCreator
-  public static CodecConfigType fromValue(String text) {
-    for (CodecConfigType b : CodecConfigType.values()) {
+  public static DolbyAtmosInputFormat fromValue(String text) {
+    for (DolbyAtmosInputFormat b : DolbyAtmosInputFormat.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

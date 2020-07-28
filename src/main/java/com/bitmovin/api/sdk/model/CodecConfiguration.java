@@ -32,6 +32,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
   @JsonSubTypes.Type(value = VorbisAudioConfiguration.class, name = "VORBIS"),
   @JsonSubTypes.Type(value = MjpegVideoConfiguration.class, name = "MJPEG"),
   @JsonSubTypes.Type(value = Av1VideoConfiguration.class, name = "AV1"),
+  @JsonSubTypes.Type(value = DolbyAtmosAudioConfiguration.class, name = "DOLBY_ATMOS"),
 })
 
 public class CodecConfiguration extends BitmovinResource {

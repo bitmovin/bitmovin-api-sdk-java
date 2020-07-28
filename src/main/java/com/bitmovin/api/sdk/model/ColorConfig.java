@@ -171,7 +171,7 @@ public class ColorConfig {
 
 
   /**
-   * The color space to be applied
+   * The color space to be applied. If used on a Dolby Vision stream, this value must be set to UNSPECIFIED.
    * @return colorSpace
    */
   public ColorSpace getColorSpace() {
@@ -179,10 +179,10 @@ public class ColorConfig {
   }
 
   /**
-   * The color space to be applied
+   * The color space to be applied. If used on a Dolby Vision stream, this value must be set to UNSPECIFIED.
    *
    * @param colorSpace
-   *        The color space to be applied
+   *        The color space to be applied. If used on a Dolby Vision stream, this value must be set to UNSPECIFIED.
    */
   public void setColorSpace(ColorSpace colorSpace) {
     this.colorSpace = colorSpace;
@@ -190,7 +190,7 @@ public class ColorConfig {
 
 
   /**
-   * The color primaries to be applied
+   * The color primaries to be applied. If used on a Dolby Vision stream, this value must be set to UNSPECIFIED.
    * @return colorPrimaries
    */
   public ColorPrimaries getColorPrimaries() {
@@ -198,10 +198,10 @@ public class ColorConfig {
   }
 
   /**
-   * The color primaries to be applied
+   * The color primaries to be applied. If used on a Dolby Vision stream, this value must be set to UNSPECIFIED.
    *
    * @param colorPrimaries
-   *        The color primaries to be applied
+   *        The color primaries to be applied. If used on a Dolby Vision stream, this value must be set to UNSPECIFIED.
    */
   public void setColorPrimaries(ColorPrimaries colorPrimaries) {
     this.colorPrimaries = colorPrimaries;
@@ -209,7 +209,7 @@ public class ColorConfig {
 
 
   /**
-   * The color range to be applied
+   * The color range to be applied. If used on a Dolby Vision stream, this value must be set to JPEG.
    * @return colorRange
    */
   public ColorRange getColorRange() {
@@ -217,10 +217,10 @@ public class ColorConfig {
   }
 
   /**
-   * The color range to be applied
+   * The color range to be applied. If used on a Dolby Vision stream, this value must be set to JPEG.
    *
    * @param colorRange
-   *        The color range to be applied
+   *        The color range to be applied. If used on a Dolby Vision stream, this value must be set to JPEG.
    */
   public void setColorRange(ColorRange colorRange) {
     this.colorRange = colorRange;
@@ -228,7 +228,7 @@ public class ColorConfig {
 
 
   /**
-   * The color transfer to be applied
+   * The color transfer to be applied. If used on a Dolby Vision stream, this value must be set to UNSPECIFIED.
    * @return colorTransfer
    */
   public ColorTransfer getColorTransfer() {
@@ -236,10 +236,10 @@ public class ColorConfig {
   }
 
   /**
-   * The color transfer to be applied
+   * The color transfer to be applied. If used on a Dolby Vision stream, this value must be set to UNSPECIFIED.
    *
    * @param colorTransfer
-   *        The color transfer to be applied
+   *        The color transfer to be applied. If used on a Dolby Vision stream, this value must be set to UNSPECIFIED.
    */
   public void setColorTransfer(ColorTransfer colorTransfer) {
     this.colorTransfer = colorTransfer;

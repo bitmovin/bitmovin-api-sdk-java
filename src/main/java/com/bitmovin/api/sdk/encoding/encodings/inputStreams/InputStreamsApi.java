@@ -26,6 +26,7 @@ import com.bitmovin.api.sdk.encoding.encodings.inputStreams.file.FileApi;
 import com.bitmovin.api.sdk.encoding.encodings.inputStreams.trimming.TrimmingApi;
 import com.bitmovin.api.sdk.encoding.encodings.inputStreams.subtitles.SubtitlesApi;
 import com.bitmovin.api.sdk.encoding.encodings.inputStreams.captions.CaptionsApi;
+import com.bitmovin.api.sdk.encoding.encodings.inputStreams.dolbyAtmos.DolbyAtmosApi;
 
 public class InputStreamsApi {
     public final TypeApi type;
@@ -37,6 +38,7 @@ public class InputStreamsApi {
     public final TrimmingApi trimming;
     public final SubtitlesApi subtitles;
     public final CaptionsApi captions;
+    public final DolbyAtmosApi dolbyAtmos;
 
     private final InputStreamsApiClient apiClient;
 
@@ -57,6 +59,7 @@ public class InputStreamsApi {
         this.trimming = new TrimmingApi(clientFactory);
         this.subtitles = new SubtitlesApi(clientFactory);
         this.captions = new CaptionsApi(clientFactory);
+        this.dolbyAtmos = new DolbyAtmosApi(clientFactory);
     }
 
     /**

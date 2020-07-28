@@ -46,7 +46,10 @@ public enum InputStreamType {
   CAPTION_CEA708("CAPTION_CEA708"),
   
   
-  DVB_TELETEXT("DVB_TELETEXT");
+  DVB_TELETEXT("DVB_TELETEXT"),
+  
+  
+  DOLBY_ATMOS("DOLBY_ATMOS");
 
   private String value;
 

@@ -11,64 +11,38 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets CodecConfigType
+ * Algorithm to be used for measuring loudness
  */
-public enum CodecConfigType {
+public enum DolbyAtmosMeteringMode {
   
+  /**
+   * ITU-R BS.1770-1
+   */
+  ITU_R_BS_1770_1("ITU-R BS.1770-1"),
   
-  AAC("AAC"),
+  /**
+   * ITU-R BS.1770-2
+   */
+  ITU_R_BS_1770_2("ITU-R BS.1770-2"),
   
+  /**
+   * ITU-R BS.1770-3
+   */
+  ITU_R_BS_1770_3("ITU-R BS.1770-3"),
   
-  DTS_PASSTHROUGH("DTS_PASSTHROUGH"),
+  /**
+   * ITU-R BS.1770-4
+   */
+  ITU_R_BS_1770_4("ITU-R BS.1770-4"),
   
-  
-  HE_AAC_V1("HE_AAC_V1"),
-  
-  
-  HE_AAC_V2("HE_AAC_V2"),
-  
-  
-  H264("H264"),
-  
-  
-  H265("H265"),
-  
-  
-  VP9("VP9"),
-  
-  
-  VP8("VP8"),
-  
-  
-  MP2("MP2"),
-  
-  
-  MP3("MP3"),
-  
-  
-  AC3("AC3"),
-  
-  
-  EAC3("EAC3"),
-  
-  
-  OPUS("OPUS"),
-  
-  
-  VORBIS("VORBIS"),
-  
-  
-  MJPEG("MJPEG"),
-  
-  
-  AV1("AV1"),
-  
-  
-  DOLBY_ATMOS("DOLBY_ATMOS");
+  /**
+   * Leq (A)
+   */
+  LEQ_A("Leq (A)");
 
   private String value;
 
-  CodecConfigType(String value) {
+  DolbyAtmosMeteringMode(String value) {
     this.value = value;
   }
 
@@ -83,8 +57,8 @@ public enum CodecConfigType {
   }
 
   @JsonCreator
-  public static CodecConfigType fromValue(String text) {
-    for (CodecConfigType b : CodecConfigType.values()) {
+  public static DolbyAtmosMeteringMode fromValue(String text) {
+    for (DolbyAtmosMeteringMode b : DolbyAtmosMeteringMode.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
