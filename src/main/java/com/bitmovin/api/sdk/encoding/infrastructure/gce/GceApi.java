@@ -17,8 +17,10 @@ import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovin
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
+import com.bitmovin.api.sdk.encoding.infrastructure.gce.regions.RegionsApi;
 
 public class GceApi {
+    public final RegionsApi regions;
 
     private final GceApiClient apiClient;
 
@@ -30,6 +32,7 @@ public class GceApi {
 
         this.apiClient = clientFactory.createApiClient(GceApiClient.class);
 
+        this.regions = new RegionsApi(clientFactory);
     }
 
     /**

@@ -327,7 +327,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Use a set of well defined configurations preset to support certain use cases. Can be overwritten with more specific values.
+   * Use a set of well defined configurations preset to support certain use cases. Can be overwritten with more specific values. Valid values [VOD_HIGH_QUALITY, VOD_STANDARD, VOD_SPEED, VOD_HIGH_SPEED, VOD_VERYHIGH_SPEED, VOD_EXTRAHIGH_SPEED, VOD_SUPERHIGH_SPEED, VOD_ULTRAHIGH_SPEED, LIVE_LOW_LATENCY, LIVE_HIGH_QUALITY]
    * @return presetConfiguration
    */
   public PresetConfiguration getPresetConfiguration() {
@@ -335,10 +335,10 @@ public class H265VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Use a set of well defined configurations preset to support certain use cases. Can be overwritten with more specific values.
+   * Use a set of well defined configurations preset to support certain use cases. Can be overwritten with more specific values. Valid values [VOD_HIGH_QUALITY, VOD_STANDARD, VOD_SPEED, VOD_HIGH_SPEED, VOD_VERYHIGH_SPEED, VOD_EXTRAHIGH_SPEED, VOD_SUPERHIGH_SPEED, VOD_ULTRAHIGH_SPEED, LIVE_LOW_LATENCY, LIVE_HIGH_QUALITY]
    *
    * @param presetConfiguration
-   *        Use a set of well defined configurations preset to support certain use cases. Can be overwritten with more specific values.
+   *        Use a set of well defined configurations preset to support certain use cases. Can be overwritten with more specific values. Valid values [VOD_HIGH_QUALITY, VOD_STANDARD, VOD_SPEED, VOD_HIGH_SPEED, VOD_VERYHIGH_SPEED, VOD_EXTRAHIGH_SPEED, VOD_SUPERHIGH_SPEED, VOD_ULTRAHIGH_SPEED, LIVE_LOW_LATENCY, LIVE_HIGH_QUALITY]
    */
   public void setPresetConfiguration(PresetConfiguration presetConfiguration) {
     this.presetConfiguration = presetConfiguration;

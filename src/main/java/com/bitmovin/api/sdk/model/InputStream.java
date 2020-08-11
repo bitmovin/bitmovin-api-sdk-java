@@ -26,6 +26,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
   @JsonSubTypes.Type(value = Cea608CaptionInputStream.class, name = "CAPTION_CEA608"),
   @JsonSubTypes.Type(value = Cea708CaptionInputStream.class, name = "CAPTION_CEA708"),
   @JsonSubTypes.Type(value = FileInputStream.class, name = "FILE"),
+  @JsonSubTypes.Type(value = DvbSubtitleInputStream.class, name = "DVB_SUBTITLE"),
   @JsonSubTypes.Type(value = DvbTeletextInputStream.class, name = "DVB_TELETEXT"),
   @JsonSubTypes.Type(value = DolbyAtmosIngestInputStream.class, name = "DOLBY_ATMOS"),
 })

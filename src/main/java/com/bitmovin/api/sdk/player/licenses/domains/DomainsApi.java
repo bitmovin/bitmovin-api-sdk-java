@@ -43,7 +43,7 @@ public class DomainsApi {
      * Add Domain
      * 
      * @param licenseId Id of the Player License (required)
-     * @param domain The Domain to be added to Player License Whitelist (required)
+     * @param domain The Domain to be added to Player License Allowlist (required)
      * @return Domain
      * @throws BitmovinException if fails to make API call
      */
