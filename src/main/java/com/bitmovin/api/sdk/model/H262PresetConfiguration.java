@@ -11,55 +11,18 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets MuxingType
+ * Codec specific settings for XDCAM HD 422.
  */
-public enum MuxingType {
+public enum H262PresetConfiguration {
   
-  
-  FMP4("FMP4"),
-  
-  
-  CMAF("CMAF"),
-  
-  
-  MP4("MP4"),
-  
-  
-  TS("TS"),
-  
-  
-  WEBM("WEBM"),
-  
-  
-  MP3("MP3"),
-  
-  
-  MXF("MXF"),
-  
-  
-  PROGRESSIVE_WEBM("PROGRESSIVE_WEBM"),
-  
-  
-  PROGRESSIVE_MOV("PROGRESSIVE_MOV"),
-  
-  
-  PROGRESSIVE_TS("PROGRESSIVE_TS"),
-  
-  
-  BROADCAST_TS("BROADCAST_TS"),
-  
-  
-  CHUNKED_TEXT("CHUNKED_TEXT"),
-  
-  
-  TEXT("TEXT"),
-  
-  
-  SEGMENTED_RAW("SEGMENTED_RAW");
+  /**
+   * Codec specific settings for XDCAM HD 422.
+   */
+  XDCAM_HD_422("XDCAM_HD_422");
 
   private String value;
 
-  MuxingType(String value) {
+  H262PresetConfiguration(String value) {
     this.value = value;
   }
 
@@ -74,8 +37,8 @@ public enum MuxingType {
   }
 
   @JsonCreator
-  public static MuxingType fromValue(String text) {
-    for (MuxingType b : MuxingType.values()) {
+  public static H262PresetConfiguration fromValue(String text) {
+    for (H262PresetConfiguration b : H262PresetConfiguration.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

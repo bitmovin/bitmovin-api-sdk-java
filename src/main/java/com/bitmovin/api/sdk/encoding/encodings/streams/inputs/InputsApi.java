@@ -44,10 +44,10 @@ public class InputsApi {
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
-     * @return List&lt;StreamDetails&gt;
+     * @return List&lt;EncodingStreamInput&gt;
      * @throws BitmovinException if fails to make API call
      */
-    public PaginationResponse<StreamDetails> list(String encodingId, String streamId) throws BitmovinException {
+    public PaginationResponse<EncodingStreamInput> list(String encodingId, String streamId) throws BitmovinException {
         try {
             return this.apiClient.list(encodingId, streamId).getData().getResult();
         } catch (Exception ex) {
@@ -58,6 +58,6 @@ public class InputsApi {
     interface InputsApiClient {
     
         @RequestLine("GET /encoding/encodings/{encoding_id}/streams/{stream_id}/inputs")
-        ResponseEnvelope<PaginationResponse<StreamDetails>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<EncodingStreamInput>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId) throws BitmovinException;
     }
 }

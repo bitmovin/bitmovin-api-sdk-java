@@ -38,7 +38,7 @@ public class TransferRetry extends BitmovinResource {
   }
 
   /**
-   * Timestamp when the transfer-retry was started, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the transfer-retry was started, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    * @return startedAt
    */
   public Date getStartedAt() {
@@ -46,7 +46,7 @@ public class TransferRetry extends BitmovinResource {
   }
 
   /**
-   * Timestamp when the transfer-retry status changed to &#39;FINISHED&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the transfer-retry status changed to &#39;FINISHED&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    * @return finishedAt
    */
   public Date getFinishedAt() {
@@ -54,7 +54,7 @@ public class TransferRetry extends BitmovinResource {
   }
 
   /**
-   * Timestamp when the transfer-retry status changed to &#39;ERROR&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the transfer-retry status changed to &#39;ERROR&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    * @return errorAt
    */
   public Date getErrorAt() {

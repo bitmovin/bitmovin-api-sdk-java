@@ -2,7 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.BitmovinResource;
+import com.bitmovin.api.sdk.model.SubtitleConfiguration;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -14,8 +14,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * WebVttConfiguration
  */
-
-public class WebVttConfiguration extends BitmovinResource {
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = WebVttConfiguration.class)
+public class WebVttConfiguration extends SubtitleConfiguration {
   @JsonProperty("appendOptionalZeroHour")
   private Boolean appendOptionalZeroHour;
 

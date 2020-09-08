@@ -162,7 +162,7 @@ public class Task extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the task was created, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Timestamp when the task was created, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ
    * @return createdAt
    */
   public Date getCreatedAt() {
@@ -170,10 +170,10 @@ public class Task extends BitmovinResponse {
   }
 
   /**
-   * Timestamp when the task was created, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Timestamp when the task was created, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ
    *
    * @param createdAt
-   *        Timestamp when the task was created, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   *        Timestamp when the task was created, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ
    */
   public void setCreatedAt(Date createdAt) {
     this.createdAt = createdAt;
@@ -181,7 +181,7 @@ public class Task extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the task status changed to \&quot;QUEUED\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Timestamp when the task status changed to \&quot;QUEUED\&quot;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ
    * @return queuedAt
    */
   public Date getQueuedAt() {
@@ -189,10 +189,10 @@ public class Task extends BitmovinResponse {
   }
 
   /**
-   * Timestamp when the task status changed to \&quot;QUEUED\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Timestamp when the task status changed to \&quot;QUEUED\&quot;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ
    *
    * @param queuedAt
-   *        Timestamp when the task status changed to \&quot;QUEUED\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   *        Timestamp when the task status changed to \&quot;QUEUED\&quot;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ
    */
   public void setQueuedAt(Date queuedAt) {
     this.queuedAt = queuedAt;
@@ -200,7 +200,7 @@ public class Task extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the task status changed to to \&quot;RUNNING\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Timestamp when the task status changed to to \&quot;RUNNING\&quot;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ
    * @return runningAt
    */
   public Date getRunningAt() {
@@ -208,10 +208,10 @@ public class Task extends BitmovinResponse {
   }
 
   /**
-   * Timestamp when the task status changed to to \&quot;RUNNING\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Timestamp when the task status changed to to \&quot;RUNNING\&quot;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ
    *
    * @param runningAt
-   *        Timestamp when the task status changed to to \&quot;RUNNING\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   *        Timestamp when the task status changed to to \&quot;RUNNING\&quot;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ
    */
   public void setRunningAt(Date runningAt) {
     this.runningAt = runningAt;
@@ -219,7 +219,7 @@ public class Task extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the task status changed to \&quot;FINISHED\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Timestamp when the task status changed to \&quot;FINISHED\&quot;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ
    * @return finishedAt
    */
   public Date getFinishedAt() {
@@ -227,10 +227,10 @@ public class Task extends BitmovinResponse {
   }
 
   /**
-   * Timestamp when the task status changed to \&quot;FINISHED\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Timestamp when the task status changed to \&quot;FINISHED\&quot;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ
    *
    * @param finishedAt
-   *        Timestamp when the task status changed to \&quot;FINISHED\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   *        Timestamp when the task status changed to \&quot;FINISHED\&quot;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ
    */
   public void setFinishedAt(Date finishedAt) {
     this.finishedAt = finishedAt;
@@ -238,7 +238,7 @@ public class Task extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the task status changed to \&quot;ERROR\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Timestamp when the task status changed to \&quot;ERROR\&quot;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ
    * @return errorAt
    */
   public Date getErrorAt() {
@@ -246,10 +246,10 @@ public class Task extends BitmovinResponse {
   }
 
   /**
-   * Timestamp when the task status changed to \&quot;ERROR\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   * Timestamp when the task status changed to \&quot;ERROR\&quot;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ
    *
    * @param errorAt
-   *        Timestamp when the task status changed to \&quot;ERROR\&quot;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ
+   *        Timestamp when the task status changed to \&quot;ERROR\&quot;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ
    */
   public void setErrorAt(Date errorAt) {
     this.errorAt = errorAt;

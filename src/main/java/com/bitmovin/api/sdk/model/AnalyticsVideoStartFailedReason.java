@@ -11,55 +11,25 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets MuxingType
+ * Gets or Sets AnalyticsVideoStartFailedReason
  */
-public enum MuxingType {
+public enum AnalyticsVideoStartFailedReason {
   
   
-  FMP4("FMP4"),
+  PAGE_CLOSED("PAGE_CLOSED"),
   
   
-  CMAF("CMAF"),
+  PLAYER_ERROR("PLAYER_ERROR"),
   
   
-  MP4("MP4"),
+  TIMEOUT("TIMEOUT"),
   
   
-  TS("TS"),
-  
-  
-  WEBM("WEBM"),
-  
-  
-  MP3("MP3"),
-  
-  
-  MXF("MXF"),
-  
-  
-  PROGRESSIVE_WEBM("PROGRESSIVE_WEBM"),
-  
-  
-  PROGRESSIVE_MOV("PROGRESSIVE_MOV"),
-  
-  
-  PROGRESSIVE_TS("PROGRESSIVE_TS"),
-  
-  
-  BROADCAST_TS("BROADCAST_TS"),
-  
-  
-  CHUNKED_TEXT("CHUNKED_TEXT"),
-  
-  
-  TEXT("TEXT"),
-  
-  
-  SEGMENTED_RAW("SEGMENTED_RAW");
+  UNKNOWN("UNKNOWN");
 
   private String value;
 
-  MuxingType(String value) {
+  AnalyticsVideoStartFailedReason(String value) {
     this.value = value;
   }
 
@@ -74,8 +44,8 @@ public enum MuxingType {
   }
 
   @JsonCreator
-  public static MuxingType fromValue(String text) {
-    for (MuxingType b : MuxingType.values()) {
+  public static AnalyticsVideoStartFailedReason fromValue(String text) {
+    for (AnalyticsVideoStartFailedReason b : AnalyticsVideoStartFailedReason.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

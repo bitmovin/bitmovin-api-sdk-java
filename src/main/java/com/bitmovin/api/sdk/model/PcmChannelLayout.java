@@ -11,55 +11,18 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets MuxingType
+ * Gets or Sets PcmChannelLayout
  */
-public enum MuxingType {
+public enum PcmChannelLayout {
   
-  
-  FMP4("FMP4"),
-  
-  
-  CMAF("CMAF"),
-  
-  
-  MP4("MP4"),
-  
-  
-  TS("TS"),
-  
-  
-  WEBM("WEBM"),
-  
-  
-  MP3("MP3"),
-  
-  
-  MXF("MXF"),
-  
-  
-  PROGRESSIVE_WEBM("PROGRESSIVE_WEBM"),
-  
-  
-  PROGRESSIVE_MOV("PROGRESSIVE_MOV"),
-  
-  
-  PROGRESSIVE_TS("PROGRESSIVE_TS"),
-  
-  
-  BROADCAST_TS("BROADCAST_TS"),
-  
-  
-  CHUNKED_TEXT("CHUNKED_TEXT"),
-  
-  
-  TEXT("TEXT"),
-  
-  
-  SEGMENTED_RAW("SEGMENTED_RAW");
+  /**
+   * Channel layout Mono
+   */
+  MONO("MONO");
 
   private String value;
 
-  MuxingType(String value) {
+  PcmChannelLayout(String value) {
     this.value = value;
   }
 
@@ -74,8 +37,8 @@ public enum MuxingType {
   }
 
   @JsonCreator
-  public static MuxingType fromValue(String text) {
-    for (MuxingType b : MuxingType.values()) {
+  public static PcmChannelLayout fromValue(String text) {
+    for (PcmChannelLayout b : PcmChannelLayout.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

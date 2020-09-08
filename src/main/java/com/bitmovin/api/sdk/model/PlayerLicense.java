@@ -62,7 +62,7 @@ public class PlayerLicense extends BitmovinResponse {
   }
 
   /**
-   * Creation timestamp formatted in UTC: YYYY-MM-DDThh:mm:ssZ (required)
+   * Creation timestamp, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ (required)
    * @return createdAt
    */
   public Date getCreatedAt() {

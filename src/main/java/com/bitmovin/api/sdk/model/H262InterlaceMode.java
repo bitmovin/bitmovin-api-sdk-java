@@ -11,55 +11,28 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets MuxingType
+ * Using TOP_FIELD_FIRST or BOTTOM_FIELD_FIRST will output interlaced video
  */
-public enum MuxingType {
+public enum H262InterlaceMode {
   
+  /**
+   * Using TOP_FIELD_FIRST or BOTTOM_FIELD_FIRST will output interlaced video
+   */
+  NONE("NONE"),
   
-  FMP4("FMP4"),
+  /**
+   * Using TOP_FIELD_FIRST or BOTTOM_FIELD_FIRST will output interlaced video
+   */
+  TOP_FIELD_FIRST("TOP_FIELD_FIRST"),
   
-  
-  CMAF("CMAF"),
-  
-  
-  MP4("MP4"),
-  
-  
-  TS("TS"),
-  
-  
-  WEBM("WEBM"),
-  
-  
-  MP3("MP3"),
-  
-  
-  MXF("MXF"),
-  
-  
-  PROGRESSIVE_WEBM("PROGRESSIVE_WEBM"),
-  
-  
-  PROGRESSIVE_MOV("PROGRESSIVE_MOV"),
-  
-  
-  PROGRESSIVE_TS("PROGRESSIVE_TS"),
-  
-  
-  BROADCAST_TS("BROADCAST_TS"),
-  
-  
-  CHUNKED_TEXT("CHUNKED_TEXT"),
-  
-  
-  TEXT("TEXT"),
-  
-  
-  SEGMENTED_RAW("SEGMENTED_RAW");
+  /**
+   * Using TOP_FIELD_FIRST or BOTTOM_FIELD_FIRST will output interlaced video
+   */
+  BOTTOM_FIELD_FIRST("BOTTOM_FIELD_FIRST");
 
   private String value;
 
-  MuxingType(String value) {
+  H262InterlaceMode(String value) {
     this.value = value;
   }
 
@@ -74,8 +47,8 @@ public enum MuxingType {
   }
 
   @JsonCreator
-  public static MuxingType fromValue(String text) {
-    for (MuxingType b : MuxingType.values()) {
+  public static H262InterlaceMode fromValue(String text) {
+    for (H262InterlaceMode b : H262InterlaceMode.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

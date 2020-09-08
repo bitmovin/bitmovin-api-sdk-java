@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.AnalyticsVideoStartFailedReason;
 import com.bitmovin.api.sdk.model.BitmovinResponse;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -237,6 +238,12 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
 
   @JsonProperty("videoWindowWidth")
   private Integer videoWindowWidth;
+
+  @JsonProperty("videostartFailed")
+  private Boolean videostartFailed;
+
+  @JsonProperty("videostartFailedReason")
+  private AnalyticsVideoStartFailedReason videostartFailedReason;
 
 
   /**
@@ -1664,6 +1671,43 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
   }
 
 
+  /**
+   * True if starting the video failed
+   * @return videostartFailed
+   */
+  public Boolean getVideostartFailed() {
+    return videostartFailed;
+  }
+
+  /**
+   * True if starting the video failed
+   *
+   * @param videostartFailed
+   *        True if starting the video failed
+   */
+  public void setVideostartFailed(Boolean videostartFailed) {
+    this.videostartFailed = videostartFailed;
+  }
+
+
+  /**
+   * Get videostartFailedReason
+   * @return videostartFailedReason
+   */
+  public AnalyticsVideoStartFailedReason getVideostartFailedReason() {
+    return videostartFailedReason;
+  }
+
+  /**
+   * Set videostartFailedReason
+   *
+   * @param videostartFailedReason
+   */
+  public void setVideostartFailedReason(AnalyticsVideoStartFailedReason videostartFailedReason) {
+    this.videostartFailedReason = videostartFailedReason;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1748,12 +1792,14 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
         Objects.equals(this.videotimeStart, analyticsImpressionDetails.videotimeStart) &&
         Objects.equals(this.videoWindowHeight, analyticsImpressionDetails.videoWindowHeight) &&
         Objects.equals(this.videoWindowWidth, analyticsImpressionDetails.videoWindowWidth) &&
+        Objects.equals(this.videostartFailed, analyticsImpressionDetails.videostartFailed) &&
+        Objects.equals(this.videostartFailedReason, analyticsImpressionDetails.videostartFailedReason) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(ad, analyticsVersion, asn, audioBitrate, audioLanguage, autoplay, browser, browserVersionMajor, browserVersionMinor, buffered, cdnProvider, city, clientTime, country, customUserId, customData1, customData2, customData3, customData4, customData5, deviceType, domain, drmLoadTime, drmType, droppedFrames, duration, errorCode, errorMessage, experimentName, impressionId, ipAddress, isCasting, isLive, isMuted, isp, language, licenseKey, operatingSystem, operatingSystemVersionMajor, operatingSystemVersionMinor, pageLoadTime, pageLoadType, path, paused, platform, played, player, playerKey, playerStartuptime, playerTech, playerVersion, region, screenHeight, screenWidth, seeked, sequenceNumber, size, startupTime, state, streamFormat, subtitleEnabled, subtitleLanguage, time, userId, videoBitrate, videoDuration, videoId, videoTitle, videoPlaybackHeight, videoPlaybackWidth, videoStartupTime, videotimeEnd, videotimeStart, videoWindowHeight, videoWindowWidth, super.hashCode());
+    return Objects.hash(ad, analyticsVersion, asn, audioBitrate, audioLanguage, autoplay, browser, browserVersionMajor, browserVersionMinor, buffered, cdnProvider, city, clientTime, country, customUserId, customData1, customData2, customData3, customData4, customData5, deviceType, domain, drmLoadTime, drmType, droppedFrames, duration, errorCode, errorMessage, experimentName, impressionId, ipAddress, isCasting, isLive, isMuted, isp, language, licenseKey, operatingSystem, operatingSystemVersionMajor, operatingSystemVersionMinor, pageLoadTime, pageLoadType, path, paused, platform, played, player, playerKey, playerStartuptime, playerTech, playerVersion, region, screenHeight, screenWidth, seeked, sequenceNumber, size, startupTime, state, streamFormat, subtitleEnabled, subtitleLanguage, time, userId, videoBitrate, videoDuration, videoId, videoTitle, videoPlaybackHeight, videoPlaybackWidth, videoStartupTime, videotimeEnd, videotimeStart, videoWindowHeight, videoWindowWidth, videostartFailed, videostartFailedReason, super.hashCode());
   }
 
   @Override
@@ -1836,6 +1882,8 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
     sb.append("    videotimeStart: ").append(toIndentedString(videotimeStart)).append("\n");
     sb.append("    videoWindowHeight: ").append(toIndentedString(videoWindowHeight)).append("\n");
     sb.append("    videoWindowWidth: ").append(toIndentedString(videoWindowWidth)).append("\n");
+    sb.append("    videostartFailed: ").append(toIndentedString(videostartFailed)).append("\n");
+    sb.append("    videostartFailedReason: ").append(toIndentedString(videostartFailedReason)).append("\n");
     sb.append("}");
     return sb.toString();
   }

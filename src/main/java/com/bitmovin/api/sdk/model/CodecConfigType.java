@@ -64,7 +64,16 @@ public enum CodecConfigType {
   AV1("AV1"),
   
   
-  DOLBY_ATMOS("DOLBY_ATMOS");
+  DOLBY_ATMOS("DOLBY_ATMOS"),
+  
+  
+  H262("H262"),
+  
+  
+  PCM("PCM"),
+  
+  
+  WEBVTT("WEBVTT");
 
   private String value;
 

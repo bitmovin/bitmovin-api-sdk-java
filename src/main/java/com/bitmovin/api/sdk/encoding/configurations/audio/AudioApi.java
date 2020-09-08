@@ -9,6 +9,7 @@ import com.bitmovin.api.sdk.encoding.configurations.audio.heAacV1.HeAacV1Api;
 import com.bitmovin.api.sdk.encoding.configurations.audio.heAacV2.HeAacV2Api;
 import com.bitmovin.api.sdk.encoding.configurations.audio.vorbis.VorbisApi;
 import com.bitmovin.api.sdk.encoding.configurations.audio.opus.OpusApi;
+import com.bitmovin.api.sdk.encoding.configurations.audio.pcm.PcmApi;
 import com.bitmovin.api.sdk.encoding.configurations.audio.ac3.Ac3Api;
 import com.bitmovin.api.sdk.encoding.configurations.audio.eac3.Eac3Api;
 import com.bitmovin.api.sdk.encoding.configurations.audio.mp2.Mp2Api;
@@ -22,6 +23,7 @@ public class AudioApi {
     public final HeAacV2Api heAacV2;
     public final VorbisApi vorbis;
     public final OpusApi opus;
+    public final PcmApi pcm;
     public final Ac3Api ac3;
     public final Eac3Api eac3;
     public final Mp2Api mp2;
@@ -40,6 +42,7 @@ public class AudioApi {
         this.heAacV2 = new HeAacV2Api(clientFactory);
         this.vorbis = new VorbisApi(clientFactory);
         this.opus = new OpusApi(clientFactory);
+        this.pcm = new PcmApi(clientFactory);
         this.ac3 = new Ac3Api(clientFactory);
         this.eac3 = new Eac3Api(clientFactory);
         this.mp2 = new Mp2Api(clientFactory);

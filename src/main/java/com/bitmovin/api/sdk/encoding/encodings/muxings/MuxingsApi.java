@@ -26,6 +26,7 @@ import com.bitmovin.api.sdk.encoding.encodings.muxings.ts.TsApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.webm.WebmApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.mp3.Mp3Api;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.mp4.Mp4Api;
+import com.bitmovin.api.sdk.encoding.encodings.muxings.mxf.MxfApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.progressiveTs.ProgressiveTsApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.broadcastTs.BroadcastTsApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.progressiveWebm.ProgressiveWebmApi;
@@ -41,6 +42,7 @@ public class MuxingsApi {
     public final WebmApi webm;
     public final Mp3Api mp3;
     public final Mp4Api mp4;
+    public final MxfApi mxf;
     public final ProgressiveTsApi progressiveTs;
     public final BroadcastTsApi broadcastTs;
     public final ProgressiveWebmApi progressiveWebm;
@@ -65,6 +67,7 @@ public class MuxingsApi {
         this.webm = new WebmApi(clientFactory);
         this.mp3 = new Mp3Api(clientFactory);
         this.mp4 = new Mp4Api(clientFactory);
+        this.mxf = new MxfApi(clientFactory);
         this.progressiveTs = new ProgressiveTsApi(clientFactory);
         this.broadcastTs = new BroadcastTsApi(clientFactory);
         this.progressiveWebm = new ProgressiveWebmApi(clientFactory);

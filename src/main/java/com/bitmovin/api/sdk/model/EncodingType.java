@@ -11,55 +11,28 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets MuxingType
+ * Gets or Sets EncodingType
  */
-public enum MuxingType {
+public enum EncodingType {
   
+  /**
+   * Live Encoding
+   */
+  LIVE("LIVE"),
   
-  FMP4("FMP4"),
+  /**
+   * VOD Encoding
+   */
+  VOD("VOD"),
   
-  
-  CMAF("CMAF"),
-  
-  
-  MP4("MP4"),
-  
-  
-  TS("TS"),
-  
-  
-  WEBM("WEBM"),
-  
-  
-  MP3("MP3"),
-  
-  
-  MXF("MXF"),
-  
-  
-  PROGRESSIVE_WEBM("PROGRESSIVE_WEBM"),
-  
-  
-  PROGRESSIVE_MOV("PROGRESSIVE_MOV"),
-  
-  
-  PROGRESSIVE_TS("PROGRESSIVE_TS"),
-  
-  
-  BROADCAST_TS("BROADCAST_TS"),
-  
-  
-  CHUNKED_TEXT("CHUNKED_TEXT"),
-  
-  
-  TEXT("TEXT"),
-  
-  
-  SEGMENTED_RAW("SEGMENTED_RAW");
+  /**
+   * Type of an Encoding which has not yet been started
+   */
+  NONE("NONE");
 
   private String value;
 
-  MuxingType(String value) {
+  EncodingType(String value) {
     this.value = value;
   }
 
@@ -74,8 +47,8 @@ public enum MuxingType {
   }
 
   @JsonCreator
-  public static MuxingType fromValue(String text) {
-    for (MuxingType b : MuxingType.values()) {
+  public static EncodingType fromValue(String text) {
+    for (EncodingType b : EncodingType.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

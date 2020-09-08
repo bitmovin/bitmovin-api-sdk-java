@@ -135,7 +135,7 @@ public class Subtask extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the subtask was created, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask was created, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    * @return createdAt
    */
   public Date getCreatedAt() {
@@ -143,10 +143,10 @@ public class Subtask extends BitmovinResponse {
   }
 
   /**
-   * Timestamp when the subtask was created, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask was created, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    *
    * @param createdAt
-   *        Timestamp when the subtask was created, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   *        Timestamp when the subtask was created, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    */
   public void setCreatedAt(Date createdAt) {
     this.createdAt = createdAt;
@@ -154,7 +154,7 @@ public class Subtask extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the subtask was last updated, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask was last updated, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    * @return updatedAt
    */
   public Date getUpdatedAt() {
@@ -162,10 +162,10 @@ public class Subtask extends BitmovinResponse {
   }
 
   /**
-   * Timestamp when the subtask was last updated, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask was last updated, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    *
    * @param updatedAt
-   *        Timestamp when the subtask was last updated, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   *        Timestamp when the subtask was last updated, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    */
   public void setUpdatedAt(Date updatedAt) {
     this.updatedAt = updatedAt;
@@ -173,7 +173,7 @@ public class Subtask extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the subtask was started, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask was started, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    * @return startedAt
    */
   public Date getStartedAt() {
@@ -181,10 +181,10 @@ public class Subtask extends BitmovinResponse {
   }
 
   /**
-   * Timestamp when the subtask was started, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask was started, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    *
    * @param startedAt
-   *        Timestamp when the subtask was started, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   *        Timestamp when the subtask was started, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    */
   public void setStartedAt(Date startedAt) {
     this.startedAt = startedAt;
@@ -192,7 +192,7 @@ public class Subtask extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the subtask status changed to &#39;QUEUED&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask status changed to &#39;QUEUED&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    * @return queuedAt
    */
   public Date getQueuedAt() {
@@ -200,10 +200,10 @@ public class Subtask extends BitmovinResponse {
   }
 
   /**
-   * Timestamp when the subtask status changed to &#39;QUEUED&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask status changed to &#39;QUEUED&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    *
    * @param queuedAt
-   *        Timestamp when the subtask status changed to &#39;QUEUED&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   *        Timestamp when the subtask status changed to &#39;QUEUED&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    */
   public void setQueuedAt(Date queuedAt) {
     this.queuedAt = queuedAt;
@@ -211,7 +211,7 @@ public class Subtask extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the subtask status changed to to &#39;RUNNING&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask status changed to to &#39;RUNNING&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    * @return runningAt
    */
   public Date getRunningAt() {
@@ -219,10 +219,10 @@ public class Subtask extends BitmovinResponse {
   }
 
   /**
-   * Timestamp when the subtask status changed to to &#39;RUNNING&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask status changed to to &#39;RUNNING&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    *
    * @param runningAt
-   *        Timestamp when the subtask status changed to to &#39;RUNNING&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   *        Timestamp when the subtask status changed to to &#39;RUNNING&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    */
   public void setRunningAt(Date runningAt) {
     this.runningAt = runningAt;
@@ -230,7 +230,7 @@ public class Subtask extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the subtask status changed to &#39;FINISHED&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask status changed to &#39;FINISHED&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    * @return finishedAt
    */
   public Date getFinishedAt() {
@@ -238,10 +238,10 @@ public class Subtask extends BitmovinResponse {
   }
 
   /**
-   * Timestamp when the subtask status changed to &#39;FINISHED&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask status changed to &#39;FINISHED&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    *
    * @param finishedAt
-   *        Timestamp when the subtask status changed to &#39;FINISHED&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   *        Timestamp when the subtask status changed to &#39;FINISHED&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    */
   public void setFinishedAt(Date finishedAt) {
     this.finishedAt = finishedAt;
@@ -249,7 +249,7 @@ public class Subtask extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the subtask status changed to &#39;ERROR&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask status changed to &#39;ERROR&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    * @return errorAt
    */
   public Date getErrorAt() {
@@ -257,10 +257,10 @@ public class Subtask extends BitmovinResponse {
   }
 
   /**
-   * Timestamp when the subtask status changed to &#39;ERROR&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask status changed to &#39;ERROR&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    *
    * @param errorAt
-   *        Timestamp when the subtask status changed to &#39;ERROR&#39;, formatted in UTC: YYYY-MM-DDThh:mm:ssZ 
+   *        Timestamp when the subtask status changed to &#39;ERROR&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    */
   public void setErrorAt(Date errorAt) {
     this.errorAt = errorAt;

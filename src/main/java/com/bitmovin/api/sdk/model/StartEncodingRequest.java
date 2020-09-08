@@ -51,6 +51,10 @@ public class StartEncodingRequest {
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<ManifestResource> vodHlsManifests = new ArrayList<ManifestResource>();
 
+  @JsonProperty("vodSmoothManifests")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<ManifestResource> vodSmoothManifests = new ArrayList<ManifestResource>();
+
   @JsonProperty("perTitle")
   private PerTitle perTitle;
 
@@ -246,6 +250,30 @@ public class StartEncodingRequest {
   }
 
 
+  public StartEncodingRequest addVodSmoothManifestsItem(ManifestResource vodSmoothManifestsItem) {
+    this.vodSmoothManifests.add(vodSmoothManifestsItem);
+    return this;
+  }
+
+  /**
+   * List of VoD SMOOTH manifests to be created after encoding finished successfully
+   * @return vodSmoothManifests
+   */
+  public List<ManifestResource> getVodSmoothManifests() {
+    return vodSmoothManifests;
+  }
+
+  /**
+   * List of VoD SMOOTH manifests to be created after encoding finished successfully
+   *
+   * @param vodSmoothManifests
+   *        List of VoD SMOOTH manifests to be created after encoding finished successfully
+   */
+  public void setVodSmoothManifests(List<ManifestResource> vodSmoothManifests) {
+    this.vodSmoothManifests = vodSmoothManifests;
+  }
+
+
   /**
    * Per-Title settings
    * @return perTitle
@@ -283,12 +311,13 @@ public class StartEncodingRequest {
         Objects.equals(this.previewHlsManifests, startEncodingRequest.previewHlsManifests) &&
         Objects.equals(this.vodDashManifests, startEncodingRequest.vodDashManifests) &&
         Objects.equals(this.vodHlsManifests, startEncodingRequest.vodHlsManifests) &&
+        Objects.equals(this.vodSmoothManifests, startEncodingRequest.vodSmoothManifests) &&
         Objects.equals(this.perTitle, startEncodingRequest.perTitle);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(trimming, scheduling, tweaks, handleVariableInputFps, encodingMode, previewDashManifests, previewHlsManifests, vodDashManifests, vodHlsManifests, perTitle);
+    return Objects.hash(trimming, scheduling, tweaks, handleVariableInputFps, encodingMode, previewDashManifests, previewHlsManifests, vodDashManifests, vodHlsManifests, vodSmoothManifests, perTitle);
   }
 
   @Override
@@ -305,6 +334,7 @@ public class StartEncodingRequest {
     sb.append("    previewHlsManifests: ").append(toIndentedString(previewHlsManifests)).append("\n");
     sb.append("    vodDashManifests: ").append(toIndentedString(vodDashManifests)).append("\n");
     sb.append("    vodHlsManifests: ").append(toIndentedString(vodHlsManifests)).append("\n");
+    sb.append("    vodSmoothManifests: ").append(toIndentedString(vodSmoothManifests)).append("\n");
     sb.append("    perTitle: ").append(toIndentedString(perTitle)).append("\n");
     sb.append("}");
     return sb.toString();

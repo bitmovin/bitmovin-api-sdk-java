@@ -27,6 +27,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
   @JsonSubTypes.Type(value = TsMuxing.class, name = "TS"),
   @JsonSubTypes.Type(value = WebmMuxing.class, name = "WEBM"),
   @JsonSubTypes.Type(value = Mp3Muxing.class, name = "MP3"),
+  @JsonSubTypes.Type(value = MxfMuxing.class, name = "MXF"),
   @JsonSubTypes.Type(value = ProgressiveWebmMuxing.class, name = "PROGRESSIVE_WEBM"),
   @JsonSubTypes.Type(value = ProgressiveMovMuxing.class, name = "PROGRESSIVE_MOV"),
   @JsonSubTypes.Type(value = ProgressiveTsMuxing.class, name = "PROGRESSIVE_TS"),
