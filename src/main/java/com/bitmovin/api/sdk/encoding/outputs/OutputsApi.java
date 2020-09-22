@@ -79,6 +79,21 @@ public class OutputsApi {
     }
     
     /**
+     * Get Output Details
+     * 
+     * @param outputId Id of the wanted output (required)
+     * @return Output
+     * @throws BitmovinException if fails to make API call
+     */
+    public Output get(String outputId) throws BitmovinException {
+        try {
+            return this.apiClient.get(outputId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+    
+    /**
      * List all Outputs
      * 
      * @return List&lt;Output&gt;
@@ -107,6 +122,9 @@ public class OutputsApi {
     }
     
     interface OutputsApiClient {
+    
+        @RequestLine("GET /encoding/outputs/{output_id}")
+        ResponseEnvelope<Output> get(@Param(value = "output_id") String outputId) throws BitmovinException;
     
         @RequestLine("GET /encoding/outputs")
         ResponseEnvelope<PaginationResponse<Output>> list(@QueryMap Map<String, Object> queryParams) throws BitmovinException;

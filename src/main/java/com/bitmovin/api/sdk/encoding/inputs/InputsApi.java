@@ -103,6 +103,21 @@ public class InputsApi {
     }
     
     /**
+     * Get Input Details
+     * 
+     * @param inputId Id of the Input (required)
+     * @return Input
+     * @throws BitmovinException if fails to make API call
+     */
+    public Input get(String inputId) throws BitmovinException {
+        try {
+            return this.apiClient.get(inputId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+    
+    /**
      * List all Inputs
      * 
      * @return List&lt;Input&gt;
@@ -131,6 +146,9 @@ public class InputsApi {
     }
     
     interface InputsApiClient {
+    
+        @RequestLine("GET /encoding/inputs/{input_id}")
+        ResponseEnvelope<Input> get(@Param(value = "input_id") String inputId) throws BitmovinException;
     
         @RequestLine("GET /encoding/inputs")
         ResponseEnvelope<PaginationResponse<Input>> list(@QueryMap Map<String, Object> queryParams) throws BitmovinException;

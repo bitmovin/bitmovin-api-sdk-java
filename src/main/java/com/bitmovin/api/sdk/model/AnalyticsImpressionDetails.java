@@ -20,9 +20,6 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
   @JsonProperty("analyticsVersion")
   private String analyticsVersion;
 
-  @JsonProperty("asn")
-  private Long asn;
-
   @JsonProperty("audioBitrate")
   private Long audioBitrate;
 
@@ -281,25 +278,6 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
    */
   public void setAnalyticsVersion(String analyticsVersion) {
     this.analyticsVersion = analyticsVersion;
-  }
-
-
-  /**
-   * Autonomous System Number inferred from the IP address
-   * @return asn
-   */
-  public Long getAsn() {
-    return asn;
-  }
-
-  /**
-   * Autonomous System Number inferred from the IP address
-   *
-   * @param asn
-   *        Autonomous System Number inferred from the IP address
-   */
-  public void setAsn(Long asn) {
-    this.asn = asn;
   }
 
 
@@ -1719,7 +1697,6 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
     AnalyticsImpressionDetails analyticsImpressionDetails = (AnalyticsImpressionDetails) o;
     return Objects.equals(this.ad, analyticsImpressionDetails.ad) &&
         Objects.equals(this.analyticsVersion, analyticsImpressionDetails.analyticsVersion) &&
-        Objects.equals(this.asn, analyticsImpressionDetails.asn) &&
         Objects.equals(this.audioBitrate, analyticsImpressionDetails.audioBitrate) &&
         Objects.equals(this.audioLanguage, analyticsImpressionDetails.audioLanguage) &&
         Objects.equals(this.autoplay, analyticsImpressionDetails.autoplay) &&
@@ -1799,7 +1776,7 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(ad, analyticsVersion, asn, audioBitrate, audioLanguage, autoplay, browser, browserVersionMajor, browserVersionMinor, buffered, cdnProvider, city, clientTime, country, customUserId, customData1, customData2, customData3, customData4, customData5, deviceType, domain, drmLoadTime, drmType, droppedFrames, duration, errorCode, errorMessage, experimentName, impressionId, ipAddress, isCasting, isLive, isMuted, isp, language, licenseKey, operatingSystem, operatingSystemVersionMajor, operatingSystemVersionMinor, pageLoadTime, pageLoadType, path, paused, platform, played, player, playerKey, playerStartuptime, playerTech, playerVersion, region, screenHeight, screenWidth, seeked, sequenceNumber, size, startupTime, state, streamFormat, subtitleEnabled, subtitleLanguage, time, userId, videoBitrate, videoDuration, videoId, videoTitle, videoPlaybackHeight, videoPlaybackWidth, videoStartupTime, videotimeEnd, videotimeStart, videoWindowHeight, videoWindowWidth, videostartFailed, videostartFailedReason, super.hashCode());
+    return Objects.hash(ad, analyticsVersion, audioBitrate, audioLanguage, autoplay, browser, browserVersionMajor, browserVersionMinor, buffered, cdnProvider, city, clientTime, country, customUserId, customData1, customData2, customData3, customData4, customData5, deviceType, domain, drmLoadTime, drmType, droppedFrames, duration, errorCode, errorMessage, experimentName, impressionId, ipAddress, isCasting, isLive, isMuted, isp, language, licenseKey, operatingSystem, operatingSystemVersionMajor, operatingSystemVersionMinor, pageLoadTime, pageLoadType, path, paused, platform, played, player, playerKey, playerStartuptime, playerTech, playerVersion, region, screenHeight, screenWidth, seeked, sequenceNumber, size, startupTime, state, streamFormat, subtitleEnabled, subtitleLanguage, time, userId, videoBitrate, videoDuration, videoId, videoTitle, videoPlaybackHeight, videoPlaybackWidth, videoStartupTime, videotimeEnd, videotimeStart, videoWindowHeight, videoWindowWidth, videostartFailed, videostartFailedReason, super.hashCode());
   }
 
   @Override
@@ -1809,7 +1786,6 @@ public class AnalyticsImpressionDetails extends BitmovinResponse {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    ad: ").append(toIndentedString(ad)).append("\n");
     sb.append("    analyticsVersion: ").append(toIndentedString(analyticsVersion)).append("\n");
-    sb.append("    asn: ").append(toIndentedString(asn)).append("\n");
     sb.append("    audioBitrate: ").append(toIndentedString(audioBitrate)).append("\n");
     sb.append("    audioLanguage: ").append(toIndentedString(audioLanguage)).append("\n");
     sb.append("    autoplay: ").append(toIndentedString(autoplay)).append("\n");

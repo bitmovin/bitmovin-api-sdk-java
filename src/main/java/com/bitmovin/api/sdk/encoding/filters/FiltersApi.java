@@ -17,6 +17,7 @@ import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovin
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
+import com.bitmovin.api.sdk.encoding.filters.type.TypeApi;
 import com.bitmovin.api.sdk.encoding.filters.conform.ConformApi;
 import com.bitmovin.api.sdk.encoding.filters.watermark.WatermarkApi;
 import com.bitmovin.api.sdk.encoding.filters.audioVolume.AudioVolumeApi;
@@ -31,9 +32,9 @@ import com.bitmovin.api.sdk.encoding.filters.text.TextApi;
 import com.bitmovin.api.sdk.encoding.filters.interlace.InterlaceApi;
 import com.bitmovin.api.sdk.encoding.filters.unsharp.UnsharpApi;
 import com.bitmovin.api.sdk.encoding.filters.scale.ScaleApi;
-import com.bitmovin.api.sdk.encoding.filters.type.TypeApi;
 
 public class FiltersApi {
+    public final TypeApi type;
     public final ConformApi conform;
     public final WatermarkApi watermark;
     public final AudioVolumeApi audioVolume;
@@ -48,7 +49,6 @@ public class FiltersApi {
     public final InterlaceApi interlace;
     public final UnsharpApi unsharp;
     public final ScaleApi scale;
-    public final TypeApi type;
 
     private final FiltersApiClient apiClient;
 
@@ -60,6 +60,7 @@ public class FiltersApi {
 
         this.apiClient = clientFactory.createApiClient(FiltersApiClient.class);
 
+        this.type = new TypeApi(clientFactory);
         this.conform = new ConformApi(clientFactory);
         this.watermark = new WatermarkApi(clientFactory);
         this.audioVolume = new AudioVolumeApi(clientFactory);
@@ -74,7 +75,6 @@ public class FiltersApi {
         this.interlace = new InterlaceApi(clientFactory);
         this.unsharp = new UnsharpApi(clientFactory);
         this.scale = new ScaleApi(clientFactory);
-        this.type = new TypeApi(clientFactory);
     }
 
     /**
@@ -82,6 +82,21 @@ public class FiltersApi {
      */
     public static BitmovinApiBuilder<FiltersApi> builder() {
         return new BitmovinApiBuilder<>(FiltersApi.class);
+    }
+    
+    /**
+     * Get Filter Details
+     * 
+     * @param filterId Id of the filter (required)
+     * @return Filter
+     * @throws BitmovinException if fails to make API call
+     */
+    public Filter get(String filterId) throws BitmovinException {
+        try {
+            return this.apiClient.get(filterId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
     
     /**
@@ -113,6 +128,9 @@ public class FiltersApi {
     }
     
     interface FiltersApiClient {
+    
+        @RequestLine("GET /encoding/filters/{filter_id}")
+        ResponseEnvelope<Filter> get(@Param(value = "filter_id") String filterId) throws BitmovinException;
     
         @RequestLine("GET /encoding/filters")
         ResponseEnvelope<PaginationResponse<Filter>> list(@QueryMap Map<String, Object> queryParams) throws BitmovinException;

@@ -28,9 +28,6 @@ public enum AnalyticsAttribute {
   ANALYTICS_VERSION("ANALYTICS_VERSION"),
   
   
-  ASN("ASN"),
-  
-  
   AUDIO_BITRATE("AUDIO_BITRATE"),
   
   

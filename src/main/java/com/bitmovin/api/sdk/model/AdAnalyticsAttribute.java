@@ -106,9 +106,6 @@ public enum AdAnalyticsAttribute {
   API_FRAMEWORK("API_FRAMEWORK"),
   
   
-  ASN("ASN"),
-  
-  
   AUDIO_BITRATE("AUDIO_BITRATE"),
   
   

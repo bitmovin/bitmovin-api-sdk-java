@@ -24,6 +24,9 @@ public class AnalyticsImpressionsQuery extends AnalyticsQueryTimeframe {
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<AnalyticsAbstractFilter> filters = new ArrayList<AnalyticsAbstractFilter>();
 
+  @JsonProperty("limit")
+  private Integer limit;
+
 
   /**
    * Analytics license key
@@ -67,6 +70,25 @@ public class AnalyticsImpressionsQuery extends AnalyticsQueryTimeframe {
   }
 
 
+  /**
+   * Number of returned impressions
+   * @return limit
+   */
+  public Integer getLimit() {
+    return limit;
+  }
+
+  /**
+   * Number of returned impressions
+   *
+   * @param limit
+   *        Number of returned impressions
+   */
+  public void setLimit(Integer limit) {
+    this.limit = limit;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -78,12 +100,13 @@ public class AnalyticsImpressionsQuery extends AnalyticsQueryTimeframe {
     AnalyticsImpressionsQuery analyticsImpressionsQuery = (AnalyticsImpressionsQuery) o;
     return Objects.equals(this.licenseKey, analyticsImpressionsQuery.licenseKey) &&
         Objects.equals(this.filters, analyticsImpressionsQuery.filters) &&
+        Objects.equals(this.limit, analyticsImpressionsQuery.limit) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(licenseKey, filters, super.hashCode());
+    return Objects.hash(licenseKey, filters, limit, super.hashCode());
   }
 
   @Override
@@ -93,6 +116,7 @@ public class AnalyticsImpressionsQuery extends AnalyticsQueryTimeframe {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    licenseKey: ").append(toIndentedString(licenseKey)).append("\n");
     sb.append("    filters: ").append(toIndentedString(filters)).append("\n");
+    sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("}");
     return sb.toString();
   }

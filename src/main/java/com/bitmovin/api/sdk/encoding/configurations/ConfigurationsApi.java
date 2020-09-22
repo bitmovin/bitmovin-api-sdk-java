@@ -52,6 +52,21 @@ public class ConfigurationsApi {
     }
     
     /**
+     * Get Codec Configuration Details
+     * 
+     * @param configurationId Id of the codec configuration (required)
+     * @return CodecConfiguration
+     * @throws BitmovinException if fails to make API call
+     */
+    public CodecConfiguration get(String configurationId) throws BitmovinException {
+        try {
+            return this.apiClient.get(configurationId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+    
+    /**
      * List all Codec Configurations
      * 
      * @return List&lt;CodecConfiguration&gt;
@@ -80,6 +95,9 @@ public class ConfigurationsApi {
     }
     
     interface ConfigurationsApiClient {
+    
+        @RequestLine("GET /encoding/configurations/{configuration_id}")
+        ResponseEnvelope<CodecConfiguration> get(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
     
         @RequestLine("GET /encoding/configurations")
         ResponseEnvelope<PaginationResponse<CodecConfiguration>> list(@QueryMap Map<String, Object> queryParams) throws BitmovinException;

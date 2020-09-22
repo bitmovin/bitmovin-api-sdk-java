@@ -82,6 +82,22 @@ public class MuxingsApi {
     }
     
     /**
+     * Muxing Details
+     * 
+     * @param encodingId Id of the encoding. (required)
+     * @param muxingId Id of the muxing. (required)
+     * @return Muxing
+     * @throws BitmovinException if fails to make API call
+     */
+    public Muxing get(String encodingId, String muxingId) throws BitmovinException {
+        try {
+            return this.apiClient.get(encodingId, muxingId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+    
+    /**
      * List All Muxings
      * 
      * @param encodingId Id of the encoding. (required)
@@ -112,6 +128,9 @@ public class MuxingsApi {
     }
     
     interface MuxingsApiClient {
+    
+        @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/{muxing_id}")
+        ResponseEnvelope<Muxing> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
     
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings")
         ResponseEnvelope<PaginationResponse<Muxing>> list(@Param(value = "encoding_id") String encodingId, @QueryMap Map<String, Object> queryParams) throws BitmovinException;

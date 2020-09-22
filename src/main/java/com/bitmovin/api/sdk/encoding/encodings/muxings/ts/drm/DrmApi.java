@@ -49,6 +49,23 @@ public class DrmApi {
     }
     
     /**
+     * DRM Details of a TS muxing
+     * 
+     * @param encodingId Id of the encoding. (required)
+     * @param muxingId Id of the TS muxing (required)
+     * @param drmId Id of the DRM. (required)
+     * @return Drm
+     * @throws BitmovinException if fails to make API call
+     */
+    public Drm get(String encodingId, String muxingId, String drmId) throws BitmovinException {
+        try {
+            return this.apiClient.get(encodingId, muxingId, drmId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+    
+    /**
      * List all DRM configurations of a TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
@@ -65,6 +82,9 @@ public class DrmApi {
     }
     
     interface DrmApiClient {
+    
+        @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/ts/{muxing_id}/drm/{drm_id}")
+        ResponseEnvelope<Drm> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @Param(value = "drm_id") String drmId) throws BitmovinException;
     
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/ts/{muxing_id}/drm")
         ResponseEnvelope<PaginationResponse<Drm>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
