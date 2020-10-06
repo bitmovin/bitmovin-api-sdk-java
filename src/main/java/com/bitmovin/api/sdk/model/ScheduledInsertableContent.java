@@ -50,7 +50,7 @@ public class ScheduledInsertableContent extends BitmovinResource {
 
 
   /**
-   * Time to to play the content in UTC: YYYY-MM-DDThh:mm:ssZ, if this property is not set the content will be played as soon as possible.
+   * Time to play the content in UTC: YYYY-MM-DDThh:mm:ssZ, if this property is not set the content will be played as soon as possible.
    * @return runAt
    */
   public Date getRunAt() {
@@ -58,10 +58,10 @@ public class ScheduledInsertableContent extends BitmovinResource {
   }
 
   /**
-   * Time to to play the content in UTC: YYYY-MM-DDThh:mm:ssZ, if this property is not set the content will be played as soon as possible.
+   * Time to play the content in UTC: YYYY-MM-DDThh:mm:ssZ, if this property is not set the content will be played as soon as possible.
    *
    * @param runAt
-   *        Time to to play the content in UTC: YYYY-MM-DDThh:mm:ssZ, if this property is not set the content will be played as soon as possible.
+   *        Time to play the content in UTC: YYYY-MM-DDThh:mm:ssZ, if this property is not set the content will be played as soon as possible.
    */
   public void setRunAt(Date runAt) {
     this.runAt = runAt;

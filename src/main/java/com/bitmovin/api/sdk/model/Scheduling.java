@@ -17,9 +17,9 @@ public class Scheduling {
   @JsonProperty("priority")
   private Integer priority;
 
-  @JsonProperty("prewarmedInstancePoolIds")
+  @JsonProperty("prewarmedEncoderPoolIds")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
-  private List<String> prewarmedInstancePoolIds = new ArrayList<String>();
+  private List<String> prewarmedEncoderPoolIds = new ArrayList<String>();
 
 
   /**
@@ -47,27 +47,27 @@ public class Scheduling {
   }
 
 
-  public Scheduling addPrewarmedInstancePoolIdsItem(String prewarmedInstancePoolIdsItem) {
-    this.prewarmedInstancePoolIds.add(prewarmedInstancePoolIdsItem);
+  public Scheduling addPrewarmedEncoderPoolIdsItem(String prewarmedEncoderPoolIdsItem) {
+    this.prewarmedEncoderPoolIds.add(prewarmedEncoderPoolIdsItem);
     return this;
   }
 
   /**
-   * List of prewarmed Instance pools. If set, prewarmed instances from pools with these IDs will be used for the Encoding if available. The pool IDs will be tried in the order in which they are passed.
-   * @return prewarmedInstancePoolIds
+   * List of prewarmed encoder pools. If set, prewarmed encoders from pools with these IDs will be used for the encoding if available. The pool IDs will be tried in the order in which they are passed.
+   * @return prewarmedEncoderPoolIds
    */
-  public List<String> getPrewarmedInstancePoolIds() {
-    return prewarmedInstancePoolIds;
+  public List<String> getPrewarmedEncoderPoolIds() {
+    return prewarmedEncoderPoolIds;
   }
 
   /**
-   * List of prewarmed Instance pools. If set, prewarmed instances from pools with these IDs will be used for the Encoding if available. The pool IDs will be tried in the order in which they are passed.
+   * List of prewarmed encoder pools. If set, prewarmed encoders from pools with these IDs will be used for the encoding if available. The pool IDs will be tried in the order in which they are passed.
    *
-   * @param prewarmedInstancePoolIds
-   *        List of prewarmed Instance pools. If set, prewarmed instances from pools with these IDs will be used for the Encoding if available. The pool IDs will be tried in the order in which they are passed.
+   * @param prewarmedEncoderPoolIds
+   *        List of prewarmed encoder pools. If set, prewarmed encoders from pools with these IDs will be used for the encoding if available. The pool IDs will be tried in the order in which they are passed.
    */
-  public void setPrewarmedInstancePoolIds(List<String> prewarmedInstancePoolIds) {
-    this.prewarmedInstancePoolIds = prewarmedInstancePoolIds;
+  public void setPrewarmedEncoderPoolIds(List<String> prewarmedEncoderPoolIds) {
+    this.prewarmedEncoderPoolIds = prewarmedEncoderPoolIds;
   }
 
 
@@ -81,12 +81,12 @@ public class Scheduling {
     }
     Scheduling scheduling = (Scheduling) o;
     return Objects.equals(this.priority, scheduling.priority) &&
-        Objects.equals(this.prewarmedInstancePoolIds, scheduling.prewarmedInstancePoolIds);
+        Objects.equals(this.prewarmedEncoderPoolIds, scheduling.prewarmedEncoderPoolIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(priority, prewarmedInstancePoolIds);
+    return Objects.hash(priority, prewarmedEncoderPoolIds);
   }
 
   @Override
@@ -95,7 +95,7 @@ public class Scheduling {
     sb.append("class Scheduling {\n");
     
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
-    sb.append("    prewarmedInstancePoolIds: ").append(toIndentedString(prewarmedInstancePoolIds)).append("\n");
+    sb.append("    prewarmedEncoderPoolIds: ").append(toIndentedString(prewarmedEncoderPoolIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -211,7 +211,7 @@ public class Subtask extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the subtask status changed to to &#39;RUNNING&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask status changed to &#39;RUNNING&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    * @return runningAt
    */
   public Date getRunningAt() {
@@ -219,10 +219,10 @@ public class Subtask extends BitmovinResponse {
   }
 
   /**
-   * Timestamp when the subtask status changed to to &#39;RUNNING&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask status changed to &#39;RUNNING&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    *
    * @param runningAt
-   *        Timestamp when the subtask status changed to to &#39;RUNNING&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
+   *        Timestamp when the subtask status changed to &#39;RUNNING&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
    */
   public void setRunningAt(Date runningAt) {
     this.runningAt = runningAt;
@@ -230,7 +230,7 @@ public class Subtask extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the subtask status changed to &#39;FINISHED&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask status changed to a final state like  &#39;FINISHED&#39;, &#39;ERROR&#39;, &#39;CANCELED&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ  Note that this timestamp might be inaccurate for subtasks which ran prior to the [1.50.0 REST API release](https://bitmovin.com/docs/encoding/changelogs/rest). 
    * @return finishedAt
    */
   public Date getFinishedAt() {
@@ -238,10 +238,10 @@ public class Subtask extends BitmovinResponse {
   }
 
   /**
-   * Timestamp when the subtask status changed to &#39;FINISHED&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask status changed to a final state like  &#39;FINISHED&#39;, &#39;ERROR&#39;, &#39;CANCELED&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ  Note that this timestamp might be inaccurate for subtasks which ran prior to the [1.50.0 REST API release](https://bitmovin.com/docs/encoding/changelogs/rest). 
    *
    * @param finishedAt
-   *        Timestamp when the subtask status changed to &#39;FINISHED&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
+   *        Timestamp when the subtask status changed to a final state like  &#39;FINISHED&#39;, &#39;ERROR&#39;, &#39;CANCELED&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ  Note that this timestamp might be inaccurate for subtasks which ran prior to the [1.50.0 REST API release](https://bitmovin.com/docs/encoding/changelogs/rest). 
    */
   public void setFinishedAt(Date finishedAt) {
     this.finishedAt = finishedAt;
@@ -249,7 +249,7 @@ public class Subtask extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the subtask status changed to &#39;ERROR&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask status changed to &#39;ERROR&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ  Note that this timestamp is deprecated and is equivalent to finishedAt in case of an &#39;ERROR&#39;. 
    * @return errorAt
    */
   public Date getErrorAt() {
@@ -257,10 +257,10 @@ public class Subtask extends BitmovinResponse {
   }
 
   /**
-   * Timestamp when the subtask status changed to &#39;ERROR&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
+   * Timestamp when the subtask status changed to &#39;ERROR&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ  Note that this timestamp is deprecated and is equivalent to finishedAt in case of an &#39;ERROR&#39;. 
    *
    * @param errorAt
-   *        Timestamp when the subtask status changed to &#39;ERROR&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ 
+   *        Timestamp when the subtask status changed to &#39;ERROR&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ  Note that this timestamp is deprecated and is equivalent to finishedAt in case of an &#39;ERROR&#39;. 
    */
   public void setErrorAt(Date errorAt) {
     this.errorAt = errorAt;

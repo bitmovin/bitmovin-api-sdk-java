@@ -71,6 +71,17 @@ public class EncodingListQueryParams extends HashMap<String, Object> {
         this.put("cloudRegion", cloudRegion);
     }
 
+    public CloudRegion getSelectedCloudRegion() {
+        return (CloudRegion) this.get("selectedCloudRegion");
+    }
+
+    /**
+    * @param selectedCloudRegion Filter encodings to only show the ones with the selectedCloudRegion specified which was selected when cloudregion:AUTO was set (optional, default to null)
+    */
+    public void setSelectedCloudRegion(CloudRegion selectedCloudRegion) {
+        this.put("selectedCloudRegion", selectedCloudRegion);
+    }
+
     public String getEncoderVersion() {
         return (String) this.get("encoderVersion");
     }
@@ -80,6 +91,28 @@ public class EncodingListQueryParams extends HashMap<String, Object> {
     */
     public void setEncoderVersion(String encoderVersion) {
         this.put("encoderVersion", encoderVersion);
+    }
+
+    public String getSelectedEncoderVersion() {
+        return (String) this.get("selectedEncoderVersion");
+    }
+
+    /**
+    * @param selectedEncoderVersion Filter encodings to only show the ones with the encoderVersion specified that was actually used for the encoding. (optional)
+    */
+    public void setSelectedEncoderVersion(String selectedEncoderVersion) {
+        this.put("selectedEncoderVersion", selectedEncoderVersion);
+    }
+
+    public EncodingMode getSelectedEncodingMode() {
+        return (EncodingMode) this.get("selectedEncodingMode");
+    }
+
+    /**
+    * @param selectedEncodingMode Filter encodings to only show the ones with the encodingMode specified that was actually used for the encoding. (optional, default to null)
+    */
+    public void setSelectedEncodingMode(EncodingMode selectedEncodingMode) {
+        this.put("selectedEncodingMode", selectedEncodingMode);
     }
 
     public String getName() {

@@ -100,7 +100,7 @@ public class Encoding extends BitmovinResource {
   }
 
   /**
-   * Timestamp when the encoding status changed to to \&quot;RUNNING\&quot;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ
+   * Timestamp when the encoding status changed to \&quot;RUNNING\&quot;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ
    * @return runningAt
    */
   public Date getRunningAt() {
@@ -108,19 +108,30 @@ public class Encoding extends BitmovinResource {
   }
 
   /**
-   * Timestamp when the encoding status changed to \&quot;FINISHED\&quot;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ
+   * Timestamp when the encoding status changed to &#39;FINISHED&#39;, &#39;ERROR&#39;, &#39;CANCELED&#39;, or &#39;TRANSFER_ERROR&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ  Note that this timestamp might be inaccurate for encodings which ran prior to the [1.50.0 REST API release](https://bitmovin.com/docs/encoding/changelogs/rest). 
    * @return finishedAt
    */
   public Date getFinishedAt() {
     return finishedAt;
   }
 
+
   /**
-   * Timestamp when the encoding status changed to \&quot;ERROR\&quot;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ
+   * Timestamp when the encoding status changed to &#39;ERROR&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ  Note that this timestamp is deprecated and is equivalent to finishedAt in case of an &#39;ERROR&#39;. 
    * @return errorAt
    */
   public Date getErrorAt() {
     return errorAt;
+  }
+
+  /**
+   * Timestamp when the encoding status changed to &#39;ERROR&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ  Note that this timestamp is deprecated and is equivalent to finishedAt in case of an &#39;ERROR&#39;. 
+   *
+   * @param errorAt
+   *        Timestamp when the encoding status changed to &#39;ERROR&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ  Note that this timestamp is deprecated and is equivalent to finishedAt in case of an &#39;ERROR&#39;. 
+   */
+  public void setErrorAt(Date errorAt) {
+    this.errorAt = errorAt;
   }
 
   /**
@@ -230,7 +241,7 @@ public class Encoding extends BitmovinResource {
   }
 
   /**
-   * Will be set to the encoder version that was actually used for the encoding. This is especially useful when starting an encoding with a version tag like STABLE or BETA.
+   * After the encoding has been started, this will contain the encoder version that was actually used. Especially useful when starting an encoding with a version tag like STABLE or BETA.
    * @return selectedEncoderVersion
    */
   public String getSelectedEncoderVersion() {
@@ -238,7 +249,7 @@ public class Encoding extends BitmovinResource {
   }
 
   /**
-   * Will be set to the encoding mode that was actually used for the encoding. This is especially useful when starting an encoding with encoding mode STANDARD.
+   * After the encoding has been started, this will contain the encoding mode that was actually used. Especially useful when starting an encoding with encoding mode STANDARD.
    * @return selectedEncodingMode
    */
   public EncodingMode getSelectedEncodingMode() {
@@ -246,7 +257,7 @@ public class Encoding extends BitmovinResource {
   }
 
   /**
-   * Contains the region which was selected when cloudregion:AUTO was specified
+   * After the encoding has been started, this will contain the cloud region that was actually used. This will differ from cloudRegion if cloudRegion was set to an unspecific region (e.g. &#39;AUTO&#39;)
    * @return selectedCloudRegion
    */
   public CloudRegion getSelectedCloudRegion() {
