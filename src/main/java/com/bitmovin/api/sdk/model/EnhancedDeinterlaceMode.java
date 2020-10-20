@@ -11,58 +11,23 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets FilterType
+ * Specifies the method how fields are converted to frames
  */
-public enum FilterType {
+public enum EnhancedDeinterlaceMode {
   
+  /**
+   * Generate one frame for each frame
+   */
+  FRAME("FRAME"),
   
-  CROP("CROP"),
-  
-  
-  CONFORM("CONFORM"),
-  
-  
-  WATERMARK("WATERMARK"),
-  
-  
-  ENHANCED_WATERMARK("ENHANCED_WATERMARK"),
-  
-  
-  ROTATE("ROTATE"),
-  
-  
-  DEINTERLACE("DEINTERLACE"),
-  
-  
-  ENHANCED_DEINTERLACE("ENHANCED_DEINTERLACE"),
-  
-  
-  AUDIO_MIX("AUDIO_MIX"),
-  
-  
-  DENOISE_HQDN3D("DENOISE_HQDN3D"),
-  
-  
-  TEXT("TEXT"),
-  
-  
-  UNSHARP("UNSHARP"),
-  
-  
-  SCALE("SCALE"),
-  
-  
-  INTERLACE("INTERLACE"),
-  
-  
-  AUDIO_VOLUME("AUDIO_VOLUME"),
-  
-  
-  EBU_R128_SINGLE_PASS("EBU_R128_SINGLE_PASS");
+  /**
+   * Generate one frame for each field
+   */
+  FIELD("FIELD");
 
   private String value;
 
-  FilterType(String value) {
+  EnhancedDeinterlaceMode(String value) {
     this.value = value;
   }
 
@@ -77,8 +42,8 @@ public enum FilterType {
   }
 
   @JsonCreator
-  public static FilterType fromValue(String text) {
-    for (FilterType b : FilterType.values()) {
+  public static EnhancedDeinterlaceMode fromValue(String text) {
+    for (EnhancedDeinterlaceMode b : EnhancedDeinterlaceMode.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

@@ -11,58 +11,23 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets FilterType
+ * Specifies if the Enhanced Deinterlace filter should be applied unconditionally or only on demand.
  */
-public enum FilterType {
+public enum EnhancedDeinterlaceAutoEnable {
   
+  /**
+   * The content will always be deinterlaced with the settings specified (mode, parity)
+   */
+  ALWAYS_ON("ALWAYS_ON"),
   
-  CROP("CROP"),
-  
-  
-  CONFORM("CONFORM"),
-  
-  
-  WATERMARK("WATERMARK"),
-  
-  
-  ENHANCED_WATERMARK("ENHANCED_WATERMARK"),
-  
-  
-  ROTATE("ROTATE"),
-  
-  
-  DEINTERLACE("DEINTERLACE"),
-  
-  
-  ENHANCED_DEINTERLACE("ENHANCED_DEINTERLACE"),
-  
-  
-  AUDIO_MIX("AUDIO_MIX"),
-  
-  
-  DENOISE_HQDN3D("DENOISE_HQDN3D"),
-  
-  
-  TEXT("TEXT"),
-  
-  
-  UNSHARP("UNSHARP"),
-  
-  
-  SCALE("SCALE"),
-  
-  
-  INTERLACE("INTERLACE"),
-  
-  
-  AUDIO_VOLUME("AUDIO_VOLUME"),
-  
-  
-  EBU_R128_SINGLE_PASS("EBU_R128_SINGLE_PASS");
+  /**
+   * The Enhanced Deinterlace filter will only be applied when interlaced content is signaled in the meta data of the input stream.
+   */
+  META_DATA_BASED("META_DATA_BASED");
 
   private String value;
 
-  FilterType(String value) {
+  EnhancedDeinterlaceAutoEnable(String value) {
     this.value = value;
   }
 
@@ -77,8 +42,8 @@ public enum FilterType {
   }
 
   @JsonCreator
-  public static FilterType fromValue(String text) {
-    for (FilterType b : FilterType.values()) {
+  public static EnhancedDeinterlaceAutoEnable fromValue(String text) {
+    for (EnhancedDeinterlaceAutoEnable b : EnhancedDeinterlaceAutoEnable.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

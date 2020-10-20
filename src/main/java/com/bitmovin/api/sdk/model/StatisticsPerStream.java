@@ -91,6 +91,12 @@ public class StatisticsPerStream {
   @JsonProperty("liveMultiplicator")
   private Double liveMultiplicator;
 
+  @JsonProperty("enhancedDeinterlace")
+  private Boolean enhancedDeinterlace;
+
+  @JsonProperty("enhancedDeinterlaceMultiplicator")
+  private Double enhancedDeinterlaceMultiplicator;
+
   @JsonProperty("inputFactor")
   private InputFactor inputFactor;
 
@@ -346,6 +352,22 @@ public class StatisticsPerStream {
     return liveMultiplicator;
   }
 
+  /**
+   * Indicates if an enhanced interlace filter was used.
+   * @return enhancedDeinterlace
+   */
+  public Boolean getEnhancedDeinterlace() {
+    return enhancedDeinterlace;
+  }
+
+  /**
+   * The output minutes multiplicator for streams using an enhanced deinterlace filter.
+   * @return enhancedDeinterlaceMultiplicator
+   */
+  public Double getEnhancedDeinterlaceMultiplicator() {
+    return enhancedDeinterlaceMultiplicator;
+  }
+
 
   /**
    * Get inputFactor
@@ -398,12 +420,14 @@ public class StatisticsPerStream {
         Objects.equals(this.presetMultiplicator, statisticsPerStream.presetMultiplicator) &&
         Objects.equals(this.live, statisticsPerStream.live) &&
         Objects.equals(this.liveMultiplicator, statisticsPerStream.liveMultiplicator) &&
+        Objects.equals(this.enhancedDeinterlace, statisticsPerStream.enhancedDeinterlace) &&
+        Objects.equals(this.enhancedDeinterlaceMultiplicator, statisticsPerStream.enhancedDeinterlaceMultiplicator) &&
         Objects.equals(this.inputFactor, statisticsPerStream.inputFactor);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(streamId, codecConfigId, multiplicator, encodedBytes, encodedSeconds, billableMinutes, width, height, rate, bitrate, codec, resolution, encodingMode, encodingModeMultiplicator, perTitleResultStream, perTitleMultiplicator, psnrMode, psnrMultiplicator, dolbyVisionMode, dolbyVisionMultiplicator, preset, presetMultiplicator, live, liveMultiplicator, inputFactor);
+    return Objects.hash(streamId, codecConfigId, multiplicator, encodedBytes, encodedSeconds, billableMinutes, width, height, rate, bitrate, codec, resolution, encodingMode, encodingModeMultiplicator, perTitleResultStream, perTitleMultiplicator, psnrMode, psnrMultiplicator, dolbyVisionMode, dolbyVisionMultiplicator, preset, presetMultiplicator, live, liveMultiplicator, enhancedDeinterlace, enhancedDeinterlaceMultiplicator, inputFactor);
   }
 
   @Override
@@ -435,6 +459,8 @@ public class StatisticsPerStream {
     sb.append("    presetMultiplicator: ").append(toIndentedString(presetMultiplicator)).append("\n");
     sb.append("    live: ").append(toIndentedString(live)).append("\n");
     sb.append("    liveMultiplicator: ").append(toIndentedString(liveMultiplicator)).append("\n");
+    sb.append("    enhancedDeinterlace: ").append(toIndentedString(enhancedDeinterlace)).append("\n");
+    sb.append("    enhancedDeinterlaceMultiplicator: ").append(toIndentedString(enhancedDeinterlaceMultiplicator)).append("\n");
     sb.append("    inputFactor: ").append(toIndentedString(inputFactor)).append("\n");
     sb.append("}");
     return sb.toString();

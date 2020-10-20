@@ -25,6 +25,7 @@ import com.bitmovin.api.sdk.encoding.filters.enhancedWatermark.EnhancedWatermark
 import com.bitmovin.api.sdk.encoding.filters.crop.CropApi;
 import com.bitmovin.api.sdk.encoding.filters.rotate.RotateApi;
 import com.bitmovin.api.sdk.encoding.filters.deinterlace.DeinterlaceApi;
+import com.bitmovin.api.sdk.encoding.filters.enhancedDeinterlace.EnhancedDeinterlaceApi;
 import com.bitmovin.api.sdk.encoding.filters.audioMix.AudioMixApi;
 import com.bitmovin.api.sdk.encoding.filters.denoiseHqdn3d.DenoiseHqdn3dApi;
 import com.bitmovin.api.sdk.encoding.filters.ebuR128SinglePass.EbuR128SinglePassApi;
@@ -42,6 +43,7 @@ public class FiltersApi {
     public final CropApi crop;
     public final RotateApi rotate;
     public final DeinterlaceApi deinterlace;
+    public final EnhancedDeinterlaceApi enhancedDeinterlace;
     public final AudioMixApi audioMix;
     public final DenoiseHqdn3dApi denoiseHqdn3d;
     public final EbuR128SinglePassApi ebuR128SinglePass;
@@ -68,6 +70,7 @@ public class FiltersApi {
         this.crop = new CropApi(clientFactory);
         this.rotate = new RotateApi(clientFactory);
         this.deinterlace = new DeinterlaceApi(clientFactory);
+        this.enhancedDeinterlace = new EnhancedDeinterlaceApi(clientFactory);
         this.audioMix = new AudioMixApi(clientFactory);
         this.denoiseHqdn3d = new DenoiseHqdn3dApi(clientFactory);
         this.ebuR128SinglePass = new EbuR128SinglePassApi(clientFactory);

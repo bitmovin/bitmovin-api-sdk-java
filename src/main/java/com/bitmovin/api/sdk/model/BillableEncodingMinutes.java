@@ -35,6 +35,9 @@ public class BillableEncodingMinutes {
   @JsonProperty("live")
   private Boolean live;
 
+  @JsonProperty("enhancedDeinterlace")
+  private Boolean enhancedDeinterlace;
+
   @JsonProperty("billableMinutes")
   private BillableEncodingMinutesDetails billableMinutes;
 
@@ -126,6 +129,14 @@ public class BillableEncodingMinutes {
     return live;
   }
 
+  /**
+   * Indicates if an enhanced interlace filter was used.
+   * @return enhancedDeinterlace
+   */
+  public Boolean getEnhancedDeinterlace() {
+    return enhancedDeinterlace;
+  }
+
 
   /**
    * Get billableMinutes
@@ -160,12 +171,13 @@ public class BillableEncodingMinutes {
         Objects.equals(this.psnrMode, billableEncodingMinutes.psnrMode) &&
         Objects.equals(this.preset, billableEncodingMinutes.preset) &&
         Objects.equals(this.live, billableEncodingMinutes.live) &&
+        Objects.equals(this.enhancedDeinterlace, billableEncodingMinutes.enhancedDeinterlace) &&
         Objects.equals(this.billableMinutes, billableEncodingMinutes.billableMinutes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(encodingMode, codec, perTitleResultStream, psnrMode, preset, live, billableMinutes);
+    return Objects.hash(encodingMode, codec, perTitleResultStream, psnrMode, preset, live, enhancedDeinterlace, billableMinutes);
   }
 
   @Override
@@ -179,6 +191,7 @@ public class BillableEncodingMinutes {
     sb.append("    psnrMode: ").append(toIndentedString(psnrMode)).append("\n");
     sb.append("    preset: ").append(toIndentedString(preset)).append("\n");
     sb.append("    live: ").append(toIndentedString(live)).append("\n");
+    sb.append("    enhancedDeinterlace: ").append(toIndentedString(enhancedDeinterlace)).append("\n");
     sb.append("    billableMinutes: ").append(toIndentedString(billableMinutes)).append("\n");
     sb.append("}");
     return sb.toString();

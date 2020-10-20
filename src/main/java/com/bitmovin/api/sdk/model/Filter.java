@@ -22,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
   @JsonSubTypes.Type(value = EnhancedWatermarkFilter.class, name = "ENHANCED_WATERMARK"),
   @JsonSubTypes.Type(value = RotateFilter.class, name = "ROTATE"),
   @JsonSubTypes.Type(value = DeinterlaceFilter.class, name = "DEINTERLACE"),
+  @JsonSubTypes.Type(value = EnhancedDeinterlaceFilter.class, name = "ENHANCED_DEINTERLACE"),
   @JsonSubTypes.Type(value = AudioMixFilter.class, name = "AUDIO_MIX"),
   @JsonSubTypes.Type(value = DenoiseHqdn3dFilter.class, name = "DENOISE_HQDN3D"),
   @JsonSubTypes.Type(value = TextFilter.class, name = "TEXT"),

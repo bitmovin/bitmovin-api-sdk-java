@@ -11,58 +11,23 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets FilterType
+ * Specifies which field of an interlaced frame is assumed to be the first one
  */
-public enum FilterType {
+public enum EnhancedDeinterlaceParity {
   
+  /**
+   * Top field is first field
+   */
+  TOP_FIELD_FIRST("TOP_FIELD_FIRST"),
   
-  CROP("CROP"),
-  
-  
-  CONFORM("CONFORM"),
-  
-  
-  WATERMARK("WATERMARK"),
-  
-  
-  ENHANCED_WATERMARK("ENHANCED_WATERMARK"),
-  
-  
-  ROTATE("ROTATE"),
-  
-  
-  DEINTERLACE("DEINTERLACE"),
-  
-  
-  ENHANCED_DEINTERLACE("ENHANCED_DEINTERLACE"),
-  
-  
-  AUDIO_MIX("AUDIO_MIX"),
-  
-  
-  DENOISE_HQDN3D("DENOISE_HQDN3D"),
-  
-  
-  TEXT("TEXT"),
-  
-  
-  UNSHARP("UNSHARP"),
-  
-  
-  SCALE("SCALE"),
-  
-  
-  INTERLACE("INTERLACE"),
-  
-  
-  AUDIO_VOLUME("AUDIO_VOLUME"),
-  
-  
-  EBU_R128_SINGLE_PASS("EBU_R128_SINGLE_PASS");
+  /**
+   * Bottom field is first field
+   */
+  BOTTOM_FIELD_FIRST("BOTTOM_FIELD_FIRST");
 
   private String value;
 
-  FilterType(String value) {
+  EnhancedDeinterlaceParity(String value) {
     this.value = value;
   }
 
@@ -77,8 +42,8 @@ public enum FilterType {
   }
 
   @JsonCreator
-  public static FilterType fromValue(String text) {
-    for (FilterType b : FilterType.values()) {
+  public static EnhancedDeinterlaceParity fromValue(String text) {
+    for (EnhancedDeinterlaceParity b : EnhancedDeinterlaceParity.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

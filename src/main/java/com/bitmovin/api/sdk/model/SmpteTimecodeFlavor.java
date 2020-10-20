@@ -11,58 +11,28 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets FilterType
+ * Gets or Sets SmpteTimecodeFlavor
  */
-public enum FilterType {
+public enum SmpteTimecodeFlavor {
   
+  /**
+   * Automatically detect the flavor of timecodes depending on the separation character between seconds and frames (&quot;:&quot; meaning NON_DROP_FRAME, &quot;;&quot; or &quot;.&quot; meaning DROP_FRAME)
+   */
+  AUTO("AUTO"),
   
-  CROP("CROP"),
+  /**
+   * Interpret timecodes as non-drop frame (NDF or wall-clock time) timecodes
+   */
+  NON_DROP_FRAME("NON_DROP_FRAME"),
   
-  
-  CONFORM("CONFORM"),
-  
-  
-  WATERMARK("WATERMARK"),
-  
-  
-  ENHANCED_WATERMARK("ENHANCED_WATERMARK"),
-  
-  
-  ROTATE("ROTATE"),
-  
-  
-  DEINTERLACE("DEINTERLACE"),
-  
-  
-  ENHANCED_DEINTERLACE("ENHANCED_DEINTERLACE"),
-  
-  
-  AUDIO_MIX("AUDIO_MIX"),
-  
-  
-  DENOISE_HQDN3D("DENOISE_HQDN3D"),
-  
-  
-  TEXT("TEXT"),
-  
-  
-  UNSHARP("UNSHARP"),
-  
-  
-  SCALE("SCALE"),
-  
-  
-  INTERLACE("INTERLACE"),
-  
-  
-  AUDIO_VOLUME("AUDIO_VOLUME"),
-  
-  
-  EBU_R128_SINGLE_PASS("EBU_R128_SINGLE_PASS");
+  /**
+   * Interpret timecodes as drop-frame (DF) timecodes
+   */
+  DROP_FRAME("DROP_FRAME");
 
   private String value;
 
-  FilterType(String value) {
+  SmpteTimecodeFlavor(String value) {
     this.value = value;
   }
 
@@ -77,8 +47,8 @@ public enum FilterType {
   }
 
   @JsonCreator
-  public static FilterType fromValue(String text) {
-    for (FilterType b : FilterType.values()) {
+  public static SmpteTimecodeFlavor fromValue(String text) {
+    for (SmpteTimecodeFlavor b : SmpteTimecodeFlavor.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
