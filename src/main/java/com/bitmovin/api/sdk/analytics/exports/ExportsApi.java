@@ -15,6 +15,7 @@ import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
 import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
+import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 
@@ -77,7 +78,7 @@ public class ExportsApi {
      */
     public PaginationResponse<AnalyticsExportTask> list() throws BitmovinException {
         try {
-            return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+            return this.apiClient.list(new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -91,7 +92,7 @@ public class ExportsApi {
      */
     public PaginationResponse<AnalyticsExportTask> list(AnalyticsExportTaskListQueryParams queryParams) throws BitmovinException {
         try {
-            return this.apiClient.list(queryParams).getData().getResult();
+            return this.apiClient.list(new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -106,6 +107,6 @@ public class ExportsApi {
         ResponseEnvelope<AnalyticsExportTask> get(@Param(value = "export_task_id") String exportTaskId) throws BitmovinException;
     
         @RequestLine("GET /analytics/exports")
-        ResponseEnvelope<PaginationResponse<AnalyticsExportTask>> list(@QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<AnalyticsExportTask>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

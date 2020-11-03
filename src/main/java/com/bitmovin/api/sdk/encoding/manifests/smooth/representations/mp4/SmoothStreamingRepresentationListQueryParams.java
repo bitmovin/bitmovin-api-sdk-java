@@ -1,5 +1,6 @@
 package com.bitmovin.api.sdk.encoding.manifests.smooth.representations.mp4;
 
+import java.util.Date;
 import java.util.HashMap;
 import com.bitmovin.api.sdk.model.*;
 

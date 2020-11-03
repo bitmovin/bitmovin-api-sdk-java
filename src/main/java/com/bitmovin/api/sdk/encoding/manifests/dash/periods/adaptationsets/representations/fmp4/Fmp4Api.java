@@ -15,6 +15,7 @@ import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
 import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
+import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.manifests.dash.periods.adaptationsets.representations.fmp4.drm.DrmApi;
@@ -110,7 +111,7 @@ public class Fmp4Api {
      */
     public PaginationResponse<DashFmp4Representation> list(String manifestId, String periodId, String adaptationsetId) throws BitmovinException {
         try {
-            return this.apiClient.list(manifestId, periodId, adaptationsetId, new HashMap<String, Object>()).getData().getResult();
+            return this.apiClient.list(manifestId, periodId, adaptationsetId, new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -127,7 +128,7 @@ public class Fmp4Api {
      */
     public PaginationResponse<DashFmp4Representation> list(String manifestId, String periodId, String adaptationsetId, DashFmp4RepresentationListQueryParams queryParams) throws BitmovinException {
         try {
-            return this.apiClient.list(manifestId, periodId, adaptationsetId, queryParams).getData().getResult();
+            return this.apiClient.list(manifestId, periodId, adaptationsetId, new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -145,6 +146,6 @@ public class Fmp4Api {
         ResponseEnvelope<DashFmp4Representation> get(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, @Param(value = "representation_id") String representationId) throws BitmovinException;
     
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/representations/fmp4")
-        ResponseEnvelope<PaginationResponse<DashFmp4Representation>> list(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<DashFmp4Representation>> list(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

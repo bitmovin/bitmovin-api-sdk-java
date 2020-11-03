@@ -15,6 +15,7 @@ import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
 import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
+import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.mp3.customdata.CustomdataApi;
@@ -102,7 +103,7 @@ public class Mp3Api {
      */
     public PaginationResponse<Mp3Muxing> list(String encodingId) throws BitmovinException {
         try {
-            return this.apiClient.list(encodingId, new HashMap<String, Object>()).getData().getResult();
+            return this.apiClient.list(encodingId, new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -117,7 +118,7 @@ public class Mp3Api {
      */
     public PaginationResponse<Mp3Muxing> list(String encodingId, Mp3MuxingListQueryParams queryParams) throws BitmovinException {
         try {
-            return this.apiClient.list(encodingId, queryParams).getData().getResult();
+            return this.apiClient.list(encodingId, new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -135,6 +136,6 @@ public class Mp3Api {
         ResponseEnvelope<Mp3Muxing> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
     
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/mp3")
-        ResponseEnvelope<PaginationResponse<Mp3Muxing>> list(@Param(value = "encoding_id") String encodingId, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<Mp3Muxing>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

@@ -15,6 +15,7 @@ import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
 import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
+import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.progressiveTs.drm.speke.customdata.CustomdataApi;
@@ -103,7 +104,7 @@ public class SpekeApi {
      */
     public PaginationResponse<SpekeDrm> list(String encodingId, String muxingId) throws BitmovinException {
         try {
-            return this.apiClient.list(encodingId, muxingId, new HashMap<String, Object>()).getData().getResult();
+            return this.apiClient.list(encodingId, muxingId, new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -119,7 +120,7 @@ public class SpekeApi {
      */
     public PaginationResponse<SpekeDrm> list(String encodingId, String muxingId, SpekeDrmListQueryParams queryParams) throws BitmovinException {
         try {
-            return this.apiClient.list(encodingId, muxingId, queryParams).getData().getResult();
+            return this.apiClient.list(encodingId, muxingId, new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -137,6 +138,6 @@ public class SpekeApi {
         ResponseEnvelope<SpekeDrm> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @Param(value = "drm_id") String drmId) throws BitmovinException;
     
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/progressive-ts/{muxing_id}/drm/speke")
-        ResponseEnvelope<PaginationResponse<SpekeDrm>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<SpekeDrm>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

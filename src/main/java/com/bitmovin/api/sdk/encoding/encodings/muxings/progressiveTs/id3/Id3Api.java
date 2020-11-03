@@ -15,6 +15,7 @@ import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
 import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
+import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.progressiveTs.id3.raw.RawApi;
@@ -58,7 +59,7 @@ public class Id3Api {
      */
     public PaginationResponse<Id3Tag> list(String encodingId, String muxingId) throws BitmovinException {
         try {
-            return this.apiClient.list(encodingId, muxingId, new HashMap<String, Object>()).getData().getResult();
+            return this.apiClient.list(encodingId, muxingId, new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -74,7 +75,7 @@ public class Id3Api {
      */
     public PaginationResponse<Id3Tag> list(String encodingId, String muxingId, Id3TagListQueryParams queryParams) throws BitmovinException {
         try {
-            return this.apiClient.list(encodingId, muxingId, queryParams).getData().getResult();
+            return this.apiClient.list(encodingId, muxingId, new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -83,6 +84,6 @@ public class Id3Api {
     interface Id3ApiClient {
     
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/progressive-ts/{muxing_id}/id3")
-        ResponseEnvelope<PaginationResponse<Id3Tag>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<Id3Tag>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

@@ -15,6 +15,7 @@ import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
 import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
+import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.notifications.webhooks.encoding.encodings.error.customdata.CustomdataApi;
@@ -143,7 +144,7 @@ public class ErrorApi {
      */
     public PaginationResponse<Webhook> list() throws BitmovinException {
         try {
-            return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+            return this.apiClient.list(new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -157,7 +158,7 @@ public class ErrorApi {
      */
     public PaginationResponse<Webhook> list(WebhookListQueryParams queryParams) throws BitmovinException {
         try {
-            return this.apiClient.list(queryParams).getData().getResult();
+            return this.apiClient.list(new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -172,7 +173,7 @@ public class ErrorApi {
      */
     public PaginationResponse<Webhook> listByEncodingId(String encodingId) throws BitmovinException {
         try {
-            return this.apiClient.listByEncodingId(encodingId, new HashMap<String, Object>()).getData().getResult();
+            return this.apiClient.listByEncodingId(encodingId, new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -187,7 +188,7 @@ public class ErrorApi {
      */
     public PaginationResponse<Webhook> listByEncodingId(String encodingId, WebhookListByEncodingIdQueryParams queryParams) throws BitmovinException {
         try {
-            return this.apiClient.listByEncodingId(encodingId, queryParams).getData().getResult();
+            return this.apiClient.listByEncodingId(encodingId, new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -214,9 +215,9 @@ public class ErrorApi {
         ResponseEnvelope<Webhook> getByWebhookId(@Param(value = "webhook_id") String webhookId) throws BitmovinException;
     
         @RequestLine("GET /notifications/webhooks/encoding/encodings/error")
-        ResponseEnvelope<PaginationResponse<Webhook>> list(@QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<Webhook>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     
         @RequestLine("GET /notifications/webhooks/encoding/encodings/{encoding_id}/error")
-        ResponseEnvelope<PaginationResponse<Webhook>> listByEncodingId(@Param(value = "encoding_id") String encodingId, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<Webhook>> listByEncodingId(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

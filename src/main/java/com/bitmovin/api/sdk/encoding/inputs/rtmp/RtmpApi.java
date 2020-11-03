@@ -15,6 +15,7 @@ import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
 import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
+import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 
@@ -62,7 +63,7 @@ public class RtmpApi {
      */
     public PaginationResponse<RtmpInput> list() throws BitmovinException {
         try {
-            return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+            return this.apiClient.list(new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -76,7 +77,7 @@ public class RtmpApi {
      */
     public PaginationResponse<RtmpInput> list(RtmpInputListQueryParams queryParams) throws BitmovinException {
         try {
-            return this.apiClient.list(queryParams).getData().getResult();
+            return this.apiClient.list(new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -88,6 +89,6 @@ public class RtmpApi {
         ResponseEnvelope<RtmpInput> get(@Param(value = "input_id") String inputId) throws BitmovinException;
     
         @RequestLine("GET /encoding/inputs/rtmp")
-        ResponseEnvelope<PaginationResponse<RtmpInput>> list(@QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<RtmpInput>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

@@ -15,6 +15,7 @@ import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
 import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
+import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.notifications.webhooks.WebhooksApi;
@@ -86,7 +87,7 @@ public class NotificationsApi {
      */
     public PaginationResponse<Notification> list() throws BitmovinException {
         try {
-            return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+            return this.apiClient.list(new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -100,7 +101,7 @@ public class NotificationsApi {
      */
     public PaginationResponse<Notification> list(NotificationListQueryParams queryParams) throws BitmovinException {
         try {
-            return this.apiClient.list(queryParams).getData().getResult();
+            return this.apiClient.list(new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -115,7 +116,7 @@ public class NotificationsApi {
      */
     public PaginationResponse<NotificationStateEntry> listByNotificationId(String notificationId) throws BitmovinException {
         try {
-            return this.apiClient.listByNotificationId(notificationId, new HashMap<String, Object>()).getData().getResult();
+            return this.apiClient.listByNotificationId(notificationId, new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -130,7 +131,7 @@ public class NotificationsApi {
      */
     public PaginationResponse<NotificationStateEntry> listByNotificationId(String notificationId, NotificationStateEntryListByNotificationIdQueryParams queryParams) throws BitmovinException {
         try {
-            return this.apiClient.listByNotificationId(notificationId, queryParams).getData().getResult();
+            return this.apiClient.listByNotificationId(notificationId, new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -175,10 +176,10 @@ public class NotificationsApi {
         ResponseEnvelope<Notification> get(@Param(value = "notification_id") String notificationId) throws BitmovinException;
     
         @RequestLine("GET /notifications")
-        ResponseEnvelope<PaginationResponse<Notification>> list(@QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<Notification>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     
         @RequestLine("GET /notifications/{notification_id}/states")
-        ResponseEnvelope<PaginationResponse<NotificationStateEntry>> listByNotificationId(@Param(value = "notification_id") String notificationId, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<NotificationStateEntry>> listByNotificationId(@Param(value = "notification_id") String notificationId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     
         @Headers("Content-Type: text/plain")
         @Body(" ")

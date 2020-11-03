@@ -15,6 +15,7 @@ import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
 import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
+import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.manifests.dash.periods.customXmlElements.CustomXmlElementsApi;
@@ -102,7 +103,7 @@ public class PeriodsApi {
      */
     public PaginationResponse<Period> list(String manifestId) throws BitmovinException {
         try {
-            return this.apiClient.list(manifestId, new HashMap<String, Object>()).getData().getResult();
+            return this.apiClient.list(manifestId, new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -117,7 +118,7 @@ public class PeriodsApi {
      */
     public PaginationResponse<Period> list(String manifestId, PeriodListQueryParams queryParams) throws BitmovinException {
         try {
-            return this.apiClient.list(manifestId, queryParams).getData().getResult();
+            return this.apiClient.list(manifestId, new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -135,6 +136,6 @@ public class PeriodsApi {
         ResponseEnvelope<Period> get(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId) throws BitmovinException;
     
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/periods")
-        ResponseEnvelope<PaginationResponse<Period>> list(@Param(value = "manifest_id") String manifestId, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<Period>> list(@Param(value = "manifest_id") String manifestId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

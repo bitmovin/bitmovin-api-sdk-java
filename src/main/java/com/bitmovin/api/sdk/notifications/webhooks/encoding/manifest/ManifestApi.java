@@ -15,6 +15,7 @@ import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
 import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
+import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.notifications.webhooks.encoding.manifest.error.ErrorApi;
@@ -54,7 +55,7 @@ public class ManifestApi {
      */
     public PaginationResponse<Notification> list(String manifestId) throws BitmovinException {
         try {
-            return this.apiClient.list(manifestId, new HashMap<String, Object>()).getData().getResult();
+            return this.apiClient.list(manifestId, new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -69,7 +70,7 @@ public class ManifestApi {
      */
     public PaginationResponse<Notification> list(String manifestId, NotificationListQueryParams queryParams) throws BitmovinException {
         try {
-            return this.apiClient.list(manifestId, queryParams).getData().getResult();
+            return this.apiClient.list(manifestId, new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -78,6 +79,6 @@ public class ManifestApi {
     interface ManifestApiClient {
     
         @RequestLine("GET /notifications/webhooks/encoding/manifest/{manifest_id}")
-        ResponseEnvelope<PaginationResponse<Notification>> list(@Param(value = "manifest_id") String manifestId, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<Notification>> list(@Param(value = "manifest_id") String manifestId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

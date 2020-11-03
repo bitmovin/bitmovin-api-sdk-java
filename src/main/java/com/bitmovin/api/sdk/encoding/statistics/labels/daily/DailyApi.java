@@ -15,6 +15,7 @@ import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
 import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
+import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 
@@ -47,7 +48,7 @@ public class DailyApi {
      */
     public PaginationResponse<DailyStatisticsPerLabel> list() throws BitmovinException {
         try {
-            return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+            return this.apiClient.list(new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -61,7 +62,7 @@ public class DailyApi {
      */
     public PaginationResponse<DailyStatisticsPerLabel> list(DailyStatisticsPerLabelListQueryParams queryParams) throws BitmovinException {
         try {
-            return this.apiClient.list(queryParams).getData().getResult();
+            return this.apiClient.list(new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -77,7 +78,7 @@ public class DailyApi {
      */
     public PaginationResponse<DailyStatisticsPerLabel> listByDateRange(Date from, Date to) throws BitmovinException {
         try {
-            return this.apiClient.listByDateRange(from, to, new HashMap<String, Object>()).getData().getResult();
+            return this.apiClient.listByDateRange(from, to, new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -93,7 +94,7 @@ public class DailyApi {
      */
     public PaginationResponse<DailyStatisticsPerLabel> listByDateRange(Date from, Date to, DailyStatisticsPerLabelListByDateRangeQueryParams queryParams) throws BitmovinException {
         try {
-            return this.apiClient.listByDateRange(from, to, queryParams).getData().getResult();
+            return this.apiClient.listByDateRange(from, to, new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -102,9 +103,9 @@ public class DailyApi {
     interface DailyApiClient {
     
         @RequestLine("GET /encoding/statistics/labels/daily")
-        ResponseEnvelope<PaginationResponse<DailyStatisticsPerLabel>> list(@QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<DailyStatisticsPerLabel>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     
         @RequestLine("GET /encoding/statistics/labels/daily/{from}/{to}")
-        ResponseEnvelope<PaginationResponse<DailyStatisticsPerLabel>> listByDateRange(@Param(value = "from", expander = BitmovinDateExpander.class) Date from, @Param(value = "to", expander = BitmovinDateExpander.class) Date to, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<DailyStatisticsPerLabel>> listByDateRange(@Param(value = "from", expander = BitmovinDateExpander.class) Date from, @Param(value = "to", expander = BitmovinDateExpander.class) Date to, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

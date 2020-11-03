@@ -1,5 +1,6 @@
 package com.bitmovin.api.sdk.encoding.statistics.encodings.live.daily;
 
+import java.util.Date;
 import java.util.HashMap;
 import com.bitmovin.api.sdk.model.*;
 

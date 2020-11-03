@@ -15,6 +15,7 @@ import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
 import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
+import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.statistics.daily.DailyApi;
@@ -72,7 +73,7 @@ public class StatisticsApi {
      */
     public PaginationResponse<Statistics> list(Date from, Date to) throws BitmovinException {
         try {
-            return this.apiClient.list(from, to, new HashMap<String, Object>()).getData().getResult();
+            return this.apiClient.list(from, to, new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -88,7 +89,7 @@ public class StatisticsApi {
      */
     public PaginationResponse<Statistics> list(Date from, Date to, StatisticsListQueryParams queryParams) throws BitmovinException {
         try {
-            return this.apiClient.list(from, to, queryParams).getData().getResult();
+            return this.apiClient.list(from, to, new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -100,6 +101,6 @@ public class StatisticsApi {
         ResponseEnvelope<Statistics> get() throws BitmovinException;
     
         @RequestLine("GET /encoding/statistics/{from}/{to}")
-        ResponseEnvelope<PaginationResponse<Statistics>> list(@Param(value = "from", expander = BitmovinDateExpander.class) Date from, @Param(value = "to", expander = BitmovinDateExpander.class) Date to, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<Statistics>> list(@Param(value = "from", expander = BitmovinDateExpander.class) Date from, @Param(value = "to", expander = BitmovinDateExpander.class) Date to, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

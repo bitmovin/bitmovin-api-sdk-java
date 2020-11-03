@@ -15,6 +15,7 @@ import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
 import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
+import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.inputs.ftp.customdata.CustomdataApi;
@@ -95,7 +96,7 @@ public class FtpApi {
      */
     public PaginationResponse<FtpInput> list() throws BitmovinException {
         try {
-            return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+            return this.apiClient.list(new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -109,7 +110,7 @@ public class FtpApi {
      */
     public PaginationResponse<FtpInput> list(FtpInputListQueryParams queryParams) throws BitmovinException {
         try {
-            return this.apiClient.list(queryParams).getData().getResult();
+            return this.apiClient.list(new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -127,6 +128,6 @@ public class FtpApi {
         ResponseEnvelope<FtpInput> get(@Param(value = "input_id") String inputId) throws BitmovinException;
     
         @RequestLine("GET /encoding/inputs/ftp")
-        ResponseEnvelope<PaginationResponse<FtpInput>> list(@QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<FtpInput>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

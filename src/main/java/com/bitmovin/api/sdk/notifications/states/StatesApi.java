@@ -15,6 +15,7 @@ import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
 import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
+import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 
@@ -49,7 +50,7 @@ public class StatesApi {
      */
     public PaginationResponse<NotificationStateEntry> list(String notificationId, String resourceId) throws BitmovinException {
         try {
-            return this.apiClient.list(notificationId, resourceId, new HashMap<String, Object>()).getData().getResult();
+            return this.apiClient.list(notificationId, resourceId, new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -65,7 +66,7 @@ public class StatesApi {
      */
     public PaginationResponse<NotificationStateEntry> list(String notificationId, String resourceId, NotificationStateEntryListQueryParams queryParams) throws BitmovinException {
         try {
-            return this.apiClient.list(notificationId, resourceId, queryParams).getData().getResult();
+            return this.apiClient.list(notificationId, resourceId, new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -74,6 +75,6 @@ public class StatesApi {
     interface StatesApiClient {
     
         @RequestLine("GET /notifications/{notification_id}/states/{resource_id}")
-        ResponseEnvelope<PaginationResponse<NotificationStateEntry>> list(@Param(value = "notification_id") String notificationId, @Param(value = "resource_id") String resourceId, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<NotificationStateEntry>> list(@Param(value = "notification_id") String notificationId, @Param(value = "resource_id") String resourceId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

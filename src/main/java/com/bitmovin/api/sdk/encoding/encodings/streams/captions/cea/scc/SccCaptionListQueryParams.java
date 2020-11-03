@@ -1,5 +1,6 @@
 package com.bitmovin.api.sdk.encoding.encodings.streams.captions.cea.scc;
 
+import java.util.Date;
 import java.util.HashMap;
 import com.bitmovin.api.sdk.model.*;
 

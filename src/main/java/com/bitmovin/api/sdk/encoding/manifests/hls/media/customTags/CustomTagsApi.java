@@ -15,6 +15,7 @@ import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
 import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
+import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 
@@ -100,7 +101,7 @@ public class CustomTagsApi {
      */
     public PaginationResponse<CustomTag> list(String manifestId, String mediaId) throws BitmovinException {
         try {
-            return this.apiClient.list(manifestId, mediaId, new HashMap<String, Object>()).getData().getResult();
+            return this.apiClient.list(manifestId, mediaId, new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -116,7 +117,7 @@ public class CustomTagsApi {
      */
     public PaginationResponse<CustomTag> list(String manifestId, String mediaId, CustomTagListQueryParams queryParams) throws BitmovinException {
         try {
-            return this.apiClient.list(manifestId, mediaId, queryParams).getData().getResult();
+            return this.apiClient.list(manifestId, mediaId, new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -134,6 +135,6 @@ public class CustomTagsApi {
         ResponseEnvelope<CustomTag> get(@Param(value = "manifest_id") String manifestId, @Param(value = "media_id") String mediaId, @Param(value = "custom_tag_id") String customTagId) throws BitmovinException;
     
         @RequestLine("GET /encoding/manifests/hls/{manifest_id}/media/{media_id}/custom-tags")
-        ResponseEnvelope<PaginationResponse<CustomTag>> list(@Param(value = "manifest_id") String manifestId, @Param(value = "media_id") String mediaId, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<CustomTag>> list(@Param(value = "manifest_id") String manifestId, @Param(value = "media_id") String mediaId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

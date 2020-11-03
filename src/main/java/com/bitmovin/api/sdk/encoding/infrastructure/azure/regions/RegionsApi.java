@@ -15,6 +15,7 @@ import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
 import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
+import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 
@@ -97,7 +98,7 @@ public class RegionsApi {
      */
     public PaginationResponse<AzureAccountRegionSettings> list(String infrastructureId) throws BitmovinException {
         try {
-            return this.apiClient.list(infrastructureId, new HashMap<String, Object>()).getData().getResult();
+            return this.apiClient.list(infrastructureId, new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -112,7 +113,7 @@ public class RegionsApi {
      */
     public PaginationResponse<AzureAccountRegionSettings> list(String infrastructureId, AzureAccountRegionSettingsListQueryParams queryParams) throws BitmovinException {
         try {
-            return this.apiClient.list(infrastructureId, queryParams).getData().getResult();
+            return this.apiClient.list(infrastructureId, new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -130,6 +131,6 @@ public class RegionsApi {
         ResponseEnvelope<AzureAccountRegionSettings> get(@Param(value = "infrastructure_id") String infrastructureId, @Param(value = "region") AzureCloudRegion region) throws BitmovinException;
     
         @RequestLine("GET /encoding/infrastructure/azure/{infrastructure_id}/regions")
-        ResponseEnvelope<PaginationResponse<AzureAccountRegionSettings>> list(@Param(value = "infrastructure_id") String infrastructureId, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<AzureAccountRegionSettings>> list(@Param(value = "infrastructure_id") String infrastructureId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

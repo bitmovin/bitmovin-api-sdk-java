@@ -89,6 +89,7 @@ public class BitmovinApiClientFactoryImpl implements BitmovinApiClientFactory {
             .encoder(new JacksonEncoder(mapper))
             .decoder(new BitmovinDecoder(mapper))
             .errorDecoder(new BitmovinErrorDecoder(mapper))
+            .queryMapEncoder(new BitmovinQueryMapEncoder())
             .logger(this.logger)
             .logLevel(this.logLevel)
             .requestInterceptor(new BitmovinHeadersInterceptor(this.apiKey, this.tenantOrgId, this.headers));

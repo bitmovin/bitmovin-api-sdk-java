@@ -1,5 +1,6 @@
 package com.bitmovin.api.sdk.encoding.encodings;
 
+import java.util.Date;
 import java.util.HashMap;
 import com.bitmovin.api.sdk.model.*;
 
@@ -32,7 +33,7 @@ public class EncodingListQueryParams extends HashMap<String, Object> {
     }
 
     /**
-    * @param sort Order list result according an encoding resource attribute (optional)
+    * @param sort Order list result according an encoding resource attribute.  The fields that can be used for sorting are: + &#x60;id&#x60; + &#x60;startedAt&#x60; + &#x60;createdAt&#x60; + &#x60;modifiedAt&#x60; + &#x60;type&#x60; + &#x60;name&#x60; + &#x60;status&#x60; + &#x60;cloudRegion&#x60; + &#x60;encoderVersion&#x60;  (optional)
     */
     public void setSort(String sort) {
         this.put("sort", sort);
@@ -135,5 +136,49 @@ public class EncodingListQueryParams extends HashMap<String, Object> {
     */
     public void setSearch(String search) {
         this.put("search", search);
+    }
+
+    public Date getCreatedAtNewerThan() {
+        return (Date) this.get("createdAtNewerThan");
+    }
+
+    /**
+    * @param createdAtNewerThan Filter encodings to only return those created after this exact time, provided in ISO8601 format: YYYY-MM-DDThh:mm:ssZ (optional)
+    */
+    public void setCreatedAtNewerThan(Date createdAtNewerThan) {
+        this.put("createdAtNewerThan", createdAtNewerThan);
+    }
+
+    public Date getCreatedAtOlderThan() {
+        return (Date) this.get("createdAtOlderThan");
+    }
+
+    /**
+    * @param createdAtOlderThan Filter encodings to only return those created before this exact time, provided in ISO8601 format: YYYY-MM-DDThh:mm:ssZ (optional)
+    */
+    public void setCreatedAtOlderThan(Date createdAtOlderThan) {
+        this.put("createdAtOlderThan", createdAtOlderThan);
+    }
+
+    public Date getStartedAtNewerThan() {
+        return (Date) this.get("startedAtNewerThan");
+    }
+
+    /**
+    * @param startedAtNewerThan Filter encodings to only return those started after this exact time, provided in ISO8601 format: YYYY-MM-DDThh:mm:ssZ (optional)
+    */
+    public void setStartedAtNewerThan(Date startedAtNewerThan) {
+        this.put("startedAtNewerThan", startedAtNewerThan);
+    }
+
+    public Date getStartedAtOlderThan() {
+        return (Date) this.get("startedAtOlderThan");
+    }
+
+    /**
+    * @param startedAtOlderThan Filter encodings to only return those started before this exact time, provided in ISO8601 format: YYYY-MM-DDThh:mm:ssZ (optional)
+    */
+    public void setStartedAtOlderThan(Date startedAtOlderThan) {
+        this.put("startedAtOlderThan", startedAtOlderThan);
     }
 }

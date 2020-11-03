@@ -15,6 +15,7 @@ import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
 import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
+import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.encodings.machineLearning.objectDetection.results.byTimestamp.ByTimestampApi;
@@ -52,7 +53,7 @@ public class ResultsApi {
      */
     public PaginationResponse<ObjectDetectionResult> list(String encodingId, String objectDetectionId) throws BitmovinException {
         try {
-            return this.apiClient.list(encodingId, objectDetectionId, new HashMap<String, Object>()).getData().getResult();
+            return this.apiClient.list(encodingId, objectDetectionId, new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -68,7 +69,7 @@ public class ResultsApi {
      */
     public PaginationResponse<ObjectDetectionResult> list(String encodingId, String objectDetectionId, ObjectDetectionResultListQueryParams queryParams) throws BitmovinException {
         try {
-            return this.apiClient.list(encodingId, objectDetectionId, queryParams).getData().getResult();
+            return this.apiClient.list(encodingId, objectDetectionId, new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -77,6 +78,6 @@ public class ResultsApi {
     interface ResultsApiClient {
     
         @RequestLine("GET /encoding/encodings/{encoding_id}/machine-learning/object-detection/{object_detection_id}/results")
-        ResponseEnvelope<PaginationResponse<ObjectDetectionResult>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "object_detection_id") String objectDetectionId, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<ObjectDetectionResult>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "object_detection_id") String objectDetectionId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

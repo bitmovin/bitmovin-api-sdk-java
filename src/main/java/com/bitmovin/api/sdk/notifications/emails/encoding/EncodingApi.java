@@ -15,6 +15,7 @@ import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
 import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
+import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.notifications.emails.encoding.encodings.EncodingsApi;
@@ -50,7 +51,7 @@ public class EncodingApi {
      */
     public PaginationResponse<EmailNotification> list() throws BitmovinException {
         try {
-            return this.apiClient.list(new HashMap<String, Object>()).getData().getResult();
+            return this.apiClient.list(new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -64,7 +65,7 @@ public class EncodingApi {
      */
     public PaginationResponse<EmailNotification> list(EmailNotificationListQueryParams queryParams) throws BitmovinException {
         try {
-            return this.apiClient.list(queryParams).getData().getResult();
+            return this.apiClient.list(new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -73,6 +74,6 @@ public class EncodingApi {
     interface EncodingApiClient {
     
         @RequestLine("GET /notifications/emails/encoding")
-        ResponseEnvelope<PaginationResponse<EmailNotification>> list(@QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<EmailNotification>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

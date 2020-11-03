@@ -1,5 +1,6 @@
 package com.bitmovin.api.sdk.encoding.filters.text;
 
+import java.util.Date;
 import java.util.HashMap;
 import com.bitmovin.api.sdk.model.*;
 

@@ -15,6 +15,7 @@ import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
 import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
+import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 
@@ -65,7 +66,7 @@ public class PsnrApi {
      */
     public PaginationResponse<PsnrQualityMetric> list(String encodingId, String streamId) throws BitmovinException {
         try {
-            return this.apiClient.list(encodingId, streamId, new HashMap<String, Object>()).getData().getResult();
+            return this.apiClient.list(encodingId, streamId, new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -81,7 +82,7 @@ public class PsnrApi {
      */
     public PaginationResponse<PsnrQualityMetric> list(String encodingId, String streamId, PsnrQualityMetricListQueryParams queryParams) throws BitmovinException {
         try {
-            return this.apiClient.list(encodingId, streamId, queryParams).getData().getResult();
+            return this.apiClient.list(encodingId, streamId, new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -95,6 +96,6 @@ public class PsnrApi {
         ResponseEnvelope<BitmovinResponse> create(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId) throws BitmovinException;
     
         @RequestLine("GET /encoding/encodings/{encoding_id}/streams/{stream_id}/qc/psnr")
-        ResponseEnvelope<PaginationResponse<PsnrQualityMetric>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<PsnrQualityMetric>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

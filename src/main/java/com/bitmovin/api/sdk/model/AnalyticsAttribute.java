@@ -115,6 +115,9 @@ public enum AnalyticsAttribute {
   EXPERIMENT_NAME("EXPERIMENT_NAME"),
   
   
+  FUNCTION("FUNCTION"),
+  
+  
   HOUR("HOUR"),
   
   
@@ -200,6 +203,9 @@ public enum AnalyticsAttribute {
   
   
   PROG_URL("PROG_URL"),
+  
+  
+  REBUFFER_PERCENTAGE("REBUFFER_PERCENTAGE"),
   
   
   REGION("REGION"),

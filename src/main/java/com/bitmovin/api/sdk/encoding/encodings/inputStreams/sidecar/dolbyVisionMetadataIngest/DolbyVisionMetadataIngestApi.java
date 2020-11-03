@@ -15,6 +15,7 @@ import com.bitmovin.api.sdk.model.*;
 import com.bitmovin.api.sdk.common.BitmovinException;
 import static com.bitmovin.api.sdk.common.BitmovinExceptionFactory.buildBitmovinException;
 import com.bitmovin.api.sdk.common.BitmovinDateExpander;
+import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 
@@ -96,7 +97,7 @@ public class DolbyVisionMetadataIngestApi {
      */
     public PaginationResponse<DolbyVisionMetadataIngestInputStream> list(String encodingId) throws BitmovinException {
         try {
-            return this.apiClient.list(encodingId, new HashMap<String, Object>()).getData().getResult();
+            return this.apiClient.list(encodingId, new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -111,7 +112,7 @@ public class DolbyVisionMetadataIngestApi {
      */
     public PaginationResponse<DolbyVisionMetadataIngestInputStream> list(String encodingId, DolbyVisionMetadataIngestInputStreamListQueryParams queryParams) throws BitmovinException {
         try {
-            return this.apiClient.list(encodingId, queryParams).getData().getResult();
+            return this.apiClient.list(encodingId, new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -129,6 +130,6 @@ public class DolbyVisionMetadataIngestApi {
         ResponseEnvelope<DolbyVisionMetadataIngestInputStream> get(@Param(value = "encoding_id") String encodingId, @Param(value = "input_stream_id") String inputStreamId) throws BitmovinException;
     
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/sidecar/dolby-vision-metadata-ingest")
-        ResponseEnvelope<PaginationResponse<DolbyVisionMetadataIngestInputStream>> list(@Param(value = "encoding_id") String encodingId, @QueryMap Map<String, Object> queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<DolbyVisionMetadataIngestInputStream>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }
