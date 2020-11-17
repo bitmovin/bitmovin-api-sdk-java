@@ -10,9 +10,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/**
- * Extra recursion depth for intra coded units
- */
 public enum TuInterDepth {
   
   /**

@@ -10,9 +10,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/**
- * Specifies which field of an interlaced frame is assumed to be the first one
- */
 public enum PictureFieldParity {
   
   /**

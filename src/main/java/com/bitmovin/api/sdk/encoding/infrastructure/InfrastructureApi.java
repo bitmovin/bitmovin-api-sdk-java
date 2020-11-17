@@ -6,12 +6,14 @@ import com.bitmovin.api.sdk.encoding.infrastructure.kubernetes.KubernetesApi;
 import com.bitmovin.api.sdk.encoding.infrastructure.aws.AwsApi;
 import com.bitmovin.api.sdk.encoding.infrastructure.azure.AzureApi;
 import com.bitmovin.api.sdk.encoding.infrastructure.gce.GceApi;
+import com.bitmovin.api.sdk.encoding.infrastructure.prewarmedEncoderPools.PrewarmedEncoderPoolsApi;
 
 public class InfrastructureApi {
     public final KubernetesApi kubernetes;
     public final AwsApi aws;
     public final AzureApi azure;
     public final GceApi gce;
+    public final PrewarmedEncoderPoolsApi prewarmedEncoderPools;
 
     public InfrastructureApi(BitmovinApiClientFactory clientFactory) {
         if (clientFactory == null)
@@ -23,6 +25,7 @@ public class InfrastructureApi {
         this.aws = new AwsApi(clientFactory);
         this.azure = new AzureApi(clientFactory);
         this.gce = new GceApi(clientFactory);
+        this.prewarmedEncoderPools = new PrewarmedEncoderPoolsApi(clientFactory);
     }
 
     /**

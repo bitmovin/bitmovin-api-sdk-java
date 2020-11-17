@@ -10,9 +10,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/**
- * Specifies whether keyframes should be placed at fixed intervals or the encoder may determine optimal placement automatically
- */
 public enum Av1KeyPlacementMode {
   
   /**

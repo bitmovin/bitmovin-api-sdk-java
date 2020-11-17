@@ -10,9 +10,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/**
- * Penalty for 32x32 intra transfer units in non-I slices.
- */
 public enum RateDistortionPenaltyMode {
   
   /**

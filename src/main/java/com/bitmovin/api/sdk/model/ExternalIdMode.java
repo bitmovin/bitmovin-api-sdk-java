@@ -10,26 +10,26 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/**
- * Gets or Sets EncryptionType
- */
-public enum EncryptionType {
+public enum ExternalIdMode {
   
+  /**
+   * ExternalId can be provided by using the the &#x60;externalId&#x60; property. This way is not recommend by AWS (https://aws.amazon.com/blogs/security/how-to-use-external-id-when-granting-access-to-your-aws-resources/).
+   */
+  CUSTOM("CUSTOM"),
   
-  AES("AES"),
+  /**
+   * The response will include an externalId that&#39;s unique and consistent for your organization
+   */
+  GLOBAL("GLOBAL"),
   
-  
-  DESEDE("DESede"),
-  
-  
-  BLOWFISH("Blowfish"),
-  
-  
-  RSA("RSA");
+  /**
+   * The response will include a random externalId.
+   */
+  GENERATED("GENERATED");
 
   private String value;
 
-  EncryptionType(String value) {
+  ExternalIdMode(String value) {
     this.value = value;
   }
 
@@ -44,8 +44,8 @@ public enum EncryptionType {
   }
 
   @JsonCreator
-  public static EncryptionType fromValue(String text) {
-    for (EncryptionType b : EncryptionType.values()) {
+  public static ExternalIdMode fromValue(String text) {
+    for (ExternalIdMode b : ExternalIdMode.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

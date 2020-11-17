@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.ExternalIdMode;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -26,6 +27,9 @@ public class SpekeDrmProvider {
 
   @JsonProperty("externalId")
   private String externalId;
+
+  @JsonProperty("externalIdMode")
+  private ExternalIdMode externalIdMode;
 
   @JsonProperty("gatewayRegion")
   private String gatewayRegion;
@@ -127,6 +131,24 @@ public class SpekeDrmProvider {
 
 
   /**
+   * Get externalIdMode
+   * @return externalIdMode
+   */
+  public ExternalIdMode getExternalIdMode() {
+    return externalIdMode;
+  }
+
+  /**
+   * Set externalIdMode
+   *
+   * @param externalIdMode
+   */
+  public void setExternalIdMode(ExternalIdMode externalIdMode) {
+    this.externalIdMode = externalIdMode;
+  }
+
+
+  /**
    * Describes the region of the AWS API Gateway that is used to access the SPEKE server. This property is mandatory when setting &#39;roleArn&#39; and has to indicate in which region the AWS API Gateway is setup. This usually corresponds to the &#x60;{{region}}&#x60; one sets in the execute-api policy for the role as described in &#39;roleArn&#39;. 
    * @return gatewayRegion
    */
@@ -159,12 +181,13 @@ public class SpekeDrmProvider {
         Objects.equals(this.password, spekeDrmProvider.password) &&
         Objects.equals(this.roleArn, spekeDrmProvider.roleArn) &&
         Objects.equals(this.externalId, spekeDrmProvider.externalId) &&
+        Objects.equals(this.externalIdMode, spekeDrmProvider.externalIdMode) &&
         Objects.equals(this.gatewayRegion, spekeDrmProvider.gatewayRegion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(url, username, password, roleArn, externalId, gatewayRegion);
+    return Objects.hash(url, username, password, roleArn, externalId, externalIdMode, gatewayRegion);
   }
 
   @Override
@@ -177,6 +200,7 @@ public class SpekeDrmProvider {
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("    roleArn: ").append(toIndentedString(roleArn)).append("\n");
     sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
+    sb.append("    externalIdMode: ").append(toIndentedString(externalIdMode)).append("\n");
     sb.append("    gatewayRegion: ").append(toIndentedString(gatewayRegion)).append("\n");
     sb.append("}");
     return sb.toString();

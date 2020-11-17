@@ -10,9 +10,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/**
- * Enable evaluation of transform skip (bypass DCT but still use quantization) coding for 4x4 TU coded blocks.
- */
 public enum TransformSkipMode {
   
   /**

@@ -10,9 +10,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/**
- * Sets the Dolby Vision track&#39;s sample entry name
- */
 public enum DolbyVisionTrackSampleEntryName {
   
   /**

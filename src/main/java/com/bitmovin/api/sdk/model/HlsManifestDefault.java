@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.ChannelsAttributeForAudio;
 import com.bitmovin.api.sdk.model.EncodingOutput;
 import com.bitmovin.api.sdk.model.HlsManifest;
 import com.bitmovin.api.sdk.model.HlsManifestDefaultVersion;

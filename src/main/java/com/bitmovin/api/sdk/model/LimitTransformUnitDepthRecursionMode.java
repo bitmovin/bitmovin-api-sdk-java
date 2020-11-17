@@ -10,9 +10,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/**
- * Enables early exit from transform unit depth recursion, for inter coded blocks.
- */
 public enum LimitTransformUnitDepthRecursionMode {
   
   /**

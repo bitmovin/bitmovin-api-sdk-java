@@ -10,9 +10,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/**
- * Enables or disables Trellis quantization. NOTE: This requires cabac
- */
 public enum H264Trellis {
   
   /**

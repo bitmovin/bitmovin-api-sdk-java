@@ -10,9 +10,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/**
- * Enable adaptive quantization for sub-CTUs. This parameter specifies the minimum CU size at which QP can be adjusted.
- */
 public enum QuantizationGroupSize {
   
   /**

@@ -10,9 +10,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/**
- * Configure if the encoding should use the video stream as the passthrough mode or a dedicated caption stream.
- */
 public enum PassthroughMode {
   
   /**

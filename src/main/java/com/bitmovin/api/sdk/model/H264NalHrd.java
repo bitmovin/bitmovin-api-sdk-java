@@ -10,9 +10,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/**
- * Signal hypothetical reference decoder (HRD) information (requires bufsize to be set)
- */
 public enum H264NalHrd {
   
   /**

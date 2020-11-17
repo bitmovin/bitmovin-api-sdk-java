@@ -10,9 +10,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/**
- * Specifies if the Enhanced Deinterlace filter should be applied unconditionally or only on demand.
- */
 public enum EnhancedDeinterlaceAutoEnable {
   
   /**

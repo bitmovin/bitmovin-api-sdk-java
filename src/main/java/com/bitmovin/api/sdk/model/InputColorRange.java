@@ -10,9 +10,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/**
- * Override the color range detected in the input file. If not set the input color range will be automatically detected if possible.
- */
 public enum InputColorRange {
   
   /**

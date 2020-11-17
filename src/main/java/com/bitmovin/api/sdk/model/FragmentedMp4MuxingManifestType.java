@@ -10,9 +10,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/**
- * Manifest type to be generated for the Fragmented MP4 Muxing. Only significant if a valid fragmentDuration is passed. If this is not set, Smooth Streaming is assumed.
- */
 public enum FragmentedMp4MuxingManifestType {
   
   /**

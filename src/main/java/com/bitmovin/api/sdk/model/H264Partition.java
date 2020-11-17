@@ -10,9 +10,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/**
- * Partitions to consider. Analyzing more partition options improves quality at the cost of speed.
- */
 public enum H264Partition {
   
   /**

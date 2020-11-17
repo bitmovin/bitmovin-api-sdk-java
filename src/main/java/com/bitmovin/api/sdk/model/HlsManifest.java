@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.ChannelsAttributeForAudio;
 import com.bitmovin.api.sdk.model.EncodingOutput;
 import com.bitmovin.api.sdk.model.HlsVersion;
 import com.bitmovin.api.sdk.model.Manifest;
@@ -28,6 +29,9 @@ public class HlsManifest extends Manifest {
 
   @JsonProperty("hlsMasterPlaylistVersion")
   private HlsVersion hlsMasterPlaylistVersion;
+
+  @JsonProperty("channelsAttributeForAudio")
+  private ChannelsAttributeForAudio channelsAttributeForAudio;
 
 
   /**
@@ -87,6 +91,25 @@ public class HlsManifest extends Manifest {
   }
 
 
+  /**
+   * Controls the behaviour of the CHANNELS attribute for the EXT-X-VERSION tag
+   * @return channelsAttributeForAudio
+   */
+  public ChannelsAttributeForAudio getChannelsAttributeForAudio() {
+    return channelsAttributeForAudio;
+  }
+
+  /**
+   * Controls the behaviour of the CHANNELS attribute for the EXT-X-VERSION tag
+   *
+   * @param channelsAttributeForAudio
+   *        Controls the behaviour of the CHANNELS attribute for the EXT-X-VERSION tag
+   */
+  public void setChannelsAttributeForAudio(ChannelsAttributeForAudio channelsAttributeForAudio) {
+    this.channelsAttributeForAudio = channelsAttributeForAudio;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -99,12 +122,13 @@ public class HlsManifest extends Manifest {
     return Objects.equals(this.manifestName, hlsManifest.manifestName) &&
         Objects.equals(this.hlsMediaPlaylistVersion, hlsManifest.hlsMediaPlaylistVersion) &&
         Objects.equals(this.hlsMasterPlaylistVersion, hlsManifest.hlsMasterPlaylistVersion) &&
+        Objects.equals(this.channelsAttributeForAudio, hlsManifest.channelsAttributeForAudio) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(manifestName, hlsMediaPlaylistVersion, hlsMasterPlaylistVersion, super.hashCode());
+    return Objects.hash(manifestName, hlsMediaPlaylistVersion, hlsMasterPlaylistVersion, channelsAttributeForAudio, super.hashCode());
   }
 
   @Override
@@ -115,6 +139,7 @@ public class HlsManifest extends Manifest {
     sb.append("    manifestName: ").append(toIndentedString(manifestName)).append("\n");
     sb.append("    hlsMediaPlaylistVersion: ").append(toIndentedString(hlsMediaPlaylistVersion)).append("\n");
     sb.append("    hlsMasterPlaylistVersion: ").append(toIndentedString(hlsMasterPlaylistVersion)).append("\n");
+    sb.append("    channelsAttributeForAudio: ").append(toIndentedString(channelsAttributeForAudio)).append("\n");
     sb.append("}");
     return sb.toString();
   }

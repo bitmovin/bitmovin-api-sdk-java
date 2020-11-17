@@ -10,9 +10,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/**
- * Using TOP_FIELD_FIRST or BOTTOM_FIELD_FIRST will output interlaced video
- */
 public enum H262InterlaceMode {
   
   /**

@@ -3,6 +3,7 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AwsCloudRegion;
+import com.bitmovin.api.sdk.model.ExternalIdMode;
 import com.bitmovin.api.sdk.model.Input;
 import java.util.Date;
 import java.util.List;
@@ -25,6 +26,9 @@ public class S3RoleBasedInput extends Input {
 
   @JsonProperty("externalId")
   private String externalId;
+
+  @JsonProperty("externalIdMode")
+  private ExternalIdMode externalIdMode;
 
   @JsonProperty("cloudRegion")
   private AwsCloudRegion cloudRegion;
@@ -69,7 +73,7 @@ public class S3RoleBasedInput extends Input {
 
 
   /**
-   * External ID used together with the IAM role identified by &#x60;roleArn&#x60; to assume S3 access.  This ID is generated once by the owner of the account with the S3 bucket (i.e., you as a customer) and added to the IAM role on AWS. Although it can be any string we recommend using a randomly generated UUID for better uniqueness. This ID then should be added to the trust policy of the IAM role &#x60;roleArn&#x60; configured above so that it looks something like this:  &#x60;&#x60;&#x60; {   \&quot;Effect\&quot;: \&quot;Allow\&quot;,   \&quot;Principal\&quot;: {     \&quot;AWS\&quot;: \&quot;arn:aws:iam::630681592166:user/bitmovinCustomerS3Access\&quot;   },   \&quot;Action\&quot;: \&quot;sts:AssumeRole\&quot;,   \&quot;Condition\&quot;: {     \&quot;StringEquals\&quot;: {       \&quot;sts:ExternalId\&quot;: \&quot;{{externalId}}\&quot;     }   } } &#x60;&#x60;&#x60;  where \&quot;{{externalId}}\&quot; is the generated ID.  This property is optional but we recommend it as an additional security feature. We will use both the &#x60;roleArn&#x60; and the &#x60;externalId&#x60; to access your S3 data. If the Amazon IAM role has an external ID configured but it is not provided in the input configuration Bitmovin won&#39;t be able to read from the S3 bucket. Also if the provided external ID does not match the one configured for the IAM role on AWS side, Bitmovin won&#39;t be able to access the S3 bucket.  You can change the external ID whenever you want, just update the trust policy of the IAM role and provide the new external ID in the input configuration. Note that we then won&#39;t be able to access your S3 buckets with the old external ID anymore, so you have to provide new input configuration.  For more information please visit https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html 
+   * External ID used together with the IAM role identified by &#x60;roleArn&#x60; to assume S3 access.  This ID is provided by the API if &#x60;externalIdMode&#x60; is set to &#x60;GLOBAL&#x60; or &#x60;GENERATED&#x60;. If present, it has to be added to the trust policy of the IAM role &#x60;roleArn&#x60; configured above, otherwise the API won&#39;t be able to read from the S3 bucket. An appropriate trust policy would look like this:  &#x60;&#x60;&#x60; {   \&quot;Effect\&quot;: \&quot;Allow\&quot;,   \&quot;Principal\&quot;: {     \&quot;AWS\&quot;: \&quot;arn:aws:iam::630681592166:user/bitmovinCustomerS3Access\&quot;   },   \&quot;Action\&quot;: \&quot;sts:AssumeRole\&quot;,   \&quot;Condition\&quot;: {     \&quot;StringEquals\&quot;: {       \&quot;sts:ExternalId\&quot;: \&quot;{{externalId}}\&quot;     }   } } &#x60;&#x60;&#x60;  where \&quot;{{externalId}}\&quot; is the generated ID.  This property is optional but we recommend it as an additional security feature. We will use both the &#x60;roleArn&#x60; and the &#x60;externalId&#x60; to access your S3 data. If the Amazon IAM role has an external ID configured but it is not provided in the input configuration Bitmovin won&#39;t be able to read from the S3 bucket. Also if the external ID does not match the one configured for the IAM role on AWS side, Bitmovin won&#39;t be able to access the S3 bucket.  If you need to change the external ID that is used by your IAM role, you need to create a new input, and use the external ID provided by the API to update your IAM role.  For more information please visit https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html 
    * @return externalId
    */
   public String getExternalId() {
@@ -77,13 +81,31 @@ public class S3RoleBasedInput extends Input {
   }
 
   /**
-   * External ID used together with the IAM role identified by &#x60;roleArn&#x60; to assume S3 access.  This ID is generated once by the owner of the account with the S3 bucket (i.e., you as a customer) and added to the IAM role on AWS. Although it can be any string we recommend using a randomly generated UUID for better uniqueness. This ID then should be added to the trust policy of the IAM role &#x60;roleArn&#x60; configured above so that it looks something like this:  &#x60;&#x60;&#x60; {   \&quot;Effect\&quot;: \&quot;Allow\&quot;,   \&quot;Principal\&quot;: {     \&quot;AWS\&quot;: \&quot;arn:aws:iam::630681592166:user/bitmovinCustomerS3Access\&quot;   },   \&quot;Action\&quot;: \&quot;sts:AssumeRole\&quot;,   \&quot;Condition\&quot;: {     \&quot;StringEquals\&quot;: {       \&quot;sts:ExternalId\&quot;: \&quot;{{externalId}}\&quot;     }   } } &#x60;&#x60;&#x60;  where \&quot;{{externalId}}\&quot; is the generated ID.  This property is optional but we recommend it as an additional security feature. We will use both the &#x60;roleArn&#x60; and the &#x60;externalId&#x60; to access your S3 data. If the Amazon IAM role has an external ID configured but it is not provided in the input configuration Bitmovin won&#39;t be able to read from the S3 bucket. Also if the provided external ID does not match the one configured for the IAM role on AWS side, Bitmovin won&#39;t be able to access the S3 bucket.  You can change the external ID whenever you want, just update the trust policy of the IAM role and provide the new external ID in the input configuration. Note that we then won&#39;t be able to access your S3 buckets with the old external ID anymore, so you have to provide new input configuration.  For more information please visit https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html 
+   * External ID used together with the IAM role identified by &#x60;roleArn&#x60; to assume S3 access.  This ID is provided by the API if &#x60;externalIdMode&#x60; is set to &#x60;GLOBAL&#x60; or &#x60;GENERATED&#x60;. If present, it has to be added to the trust policy of the IAM role &#x60;roleArn&#x60; configured above, otherwise the API won&#39;t be able to read from the S3 bucket. An appropriate trust policy would look like this:  &#x60;&#x60;&#x60; {   \&quot;Effect\&quot;: \&quot;Allow\&quot;,   \&quot;Principal\&quot;: {     \&quot;AWS\&quot;: \&quot;arn:aws:iam::630681592166:user/bitmovinCustomerS3Access\&quot;   },   \&quot;Action\&quot;: \&quot;sts:AssumeRole\&quot;,   \&quot;Condition\&quot;: {     \&quot;StringEquals\&quot;: {       \&quot;sts:ExternalId\&quot;: \&quot;{{externalId}}\&quot;     }   } } &#x60;&#x60;&#x60;  where \&quot;{{externalId}}\&quot; is the generated ID.  This property is optional but we recommend it as an additional security feature. We will use both the &#x60;roleArn&#x60; and the &#x60;externalId&#x60; to access your S3 data. If the Amazon IAM role has an external ID configured but it is not provided in the input configuration Bitmovin won&#39;t be able to read from the S3 bucket. Also if the external ID does not match the one configured for the IAM role on AWS side, Bitmovin won&#39;t be able to access the S3 bucket.  If you need to change the external ID that is used by your IAM role, you need to create a new input, and use the external ID provided by the API to update your IAM role.  For more information please visit https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html 
    *
    * @param externalId
-   *        External ID used together with the IAM role identified by &#x60;roleArn&#x60; to assume S3 access.  This ID is generated once by the owner of the account with the S3 bucket (i.e., you as a customer) and added to the IAM role on AWS. Although it can be any string we recommend using a randomly generated UUID for better uniqueness. This ID then should be added to the trust policy of the IAM role &#x60;roleArn&#x60; configured above so that it looks something like this:  &#x60;&#x60;&#x60; {   \&quot;Effect\&quot;: \&quot;Allow\&quot;,   \&quot;Principal\&quot;: {     \&quot;AWS\&quot;: \&quot;arn:aws:iam::630681592166:user/bitmovinCustomerS3Access\&quot;   },   \&quot;Action\&quot;: \&quot;sts:AssumeRole\&quot;,   \&quot;Condition\&quot;: {     \&quot;StringEquals\&quot;: {       \&quot;sts:ExternalId\&quot;: \&quot;{{externalId}}\&quot;     }   } } &#x60;&#x60;&#x60;  where \&quot;{{externalId}}\&quot; is the generated ID.  This property is optional but we recommend it as an additional security feature. We will use both the &#x60;roleArn&#x60; and the &#x60;externalId&#x60; to access your S3 data. If the Amazon IAM role has an external ID configured but it is not provided in the input configuration Bitmovin won&#39;t be able to read from the S3 bucket. Also if the provided external ID does not match the one configured for the IAM role on AWS side, Bitmovin won&#39;t be able to access the S3 bucket.  You can change the external ID whenever you want, just update the trust policy of the IAM role and provide the new external ID in the input configuration. Note that we then won&#39;t be able to access your S3 buckets with the old external ID anymore, so you have to provide new input configuration.  For more information please visit https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html 
+   *        External ID used together with the IAM role identified by &#x60;roleArn&#x60; to assume S3 access.  This ID is provided by the API if &#x60;externalIdMode&#x60; is set to &#x60;GLOBAL&#x60; or &#x60;GENERATED&#x60;. If present, it has to be added to the trust policy of the IAM role &#x60;roleArn&#x60; configured above, otherwise the API won&#39;t be able to read from the S3 bucket. An appropriate trust policy would look like this:  &#x60;&#x60;&#x60; {   \&quot;Effect\&quot;: \&quot;Allow\&quot;,   \&quot;Principal\&quot;: {     \&quot;AWS\&quot;: \&quot;arn:aws:iam::630681592166:user/bitmovinCustomerS3Access\&quot;   },   \&quot;Action\&quot;: \&quot;sts:AssumeRole\&quot;,   \&quot;Condition\&quot;: {     \&quot;StringEquals\&quot;: {       \&quot;sts:ExternalId\&quot;: \&quot;{{externalId}}\&quot;     }   } } &#x60;&#x60;&#x60;  where \&quot;{{externalId}}\&quot; is the generated ID.  This property is optional but we recommend it as an additional security feature. We will use both the &#x60;roleArn&#x60; and the &#x60;externalId&#x60; to access your S3 data. If the Amazon IAM role has an external ID configured but it is not provided in the input configuration Bitmovin won&#39;t be able to read from the S3 bucket. Also if the external ID does not match the one configured for the IAM role on AWS side, Bitmovin won&#39;t be able to access the S3 bucket.  If you need to change the external ID that is used by your IAM role, you need to create a new input, and use the external ID provided by the API to update your IAM role.  For more information please visit https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html 
    */
   public void setExternalId(String externalId) {
     this.externalId = externalId;
+  }
+
+
+  /**
+   * Get externalIdMode
+   * @return externalIdMode
+   */
+  public ExternalIdMode getExternalIdMode() {
+    return externalIdMode;
+  }
+
+  /**
+   * Set externalIdMode
+   *
+   * @param externalIdMode
+   */
+  public void setExternalIdMode(ExternalIdMode externalIdMode) {
+    this.externalIdMode = externalIdMode;
   }
 
 
@@ -117,13 +139,14 @@ public class S3RoleBasedInput extends Input {
     return Objects.equals(this.bucketName, s3RoleBasedInput.bucketName) &&
         Objects.equals(this.roleArn, s3RoleBasedInput.roleArn) &&
         Objects.equals(this.externalId, s3RoleBasedInput.externalId) &&
+        Objects.equals(this.externalIdMode, s3RoleBasedInput.externalIdMode) &&
         Objects.equals(this.cloudRegion, s3RoleBasedInput.cloudRegion) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bucketName, roleArn, externalId, cloudRegion, super.hashCode());
+    return Objects.hash(bucketName, roleArn, externalId, externalIdMode, cloudRegion, super.hashCode());
   }
 
   @Override
@@ -134,6 +157,7 @@ public class S3RoleBasedInput extends Input {
     sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
     sb.append("    roleArn: ").append(toIndentedString(roleArn)).append("\n");
     sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
+    sb.append("    externalIdMode: ").append(toIndentedString(externalIdMode)).append("\n");
     sb.append("    cloudRegion: ").append(toIndentedString(cloudRegion)).append("\n");
     sb.append("}");
     return sb.toString();

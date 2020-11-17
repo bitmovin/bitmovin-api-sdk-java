@@ -3,7 +3,6 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.BitmovinResource;
-import com.bitmovin.api.sdk.model.WebhookEncryption;
 import com.bitmovin.api.sdk.model.WebhookHttpMethod;
 import com.bitmovin.api.sdk.model.WebhookSignature;
 import java.util.Date;
@@ -27,9 +26,6 @@ public class Webhook extends BitmovinResource {
 
   @JsonProperty("insecureSsl")
   private Boolean insecureSsl;
-
-  @JsonProperty("encryption")
-  private WebhookEncryption encryption;
 
   @JsonProperty("signature")
   private WebhookSignature signature;
@@ -96,25 +92,6 @@ public class Webhook extends BitmovinResource {
 
 
   /**
-   * Encryption used for the webhook
-   * @return encryption
-   */
-  public WebhookEncryption getEncryption() {
-    return encryption;
-  }
-
-  /**
-   * Encryption used for the webhook
-   *
-   * @param encryption
-   *        Encryption used for the webhook
-   */
-  public void setEncryption(WebhookEncryption encryption) {
-    this.encryption = encryption;
-  }
-
-
-  /**
    * Signature used for the webhook
    * @return signature
    */
@@ -164,7 +141,6 @@ public class Webhook extends BitmovinResource {
     return Objects.equals(this.url, webhook.url) &&
         Objects.equals(this.method, webhook.method) &&
         Objects.equals(this.insecureSsl, webhook.insecureSsl) &&
-        Objects.equals(this.encryption, webhook.encryption) &&
         Objects.equals(this.signature, webhook.signature) &&
         Objects.equals(this.schema, webhook.schema) &&
         super.equals(o);
@@ -172,7 +148,7 @@ public class Webhook extends BitmovinResource {
 
   @Override
   public int hashCode() {
-    return Objects.hash(url, method, insecureSsl, encryption, signature, schema, super.hashCode());
+    return Objects.hash(url, method, insecureSsl, signature, schema, super.hashCode());
   }
 
   @Override
@@ -183,7 +159,6 @@ public class Webhook extends BitmovinResource {
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("    insecureSsl: ").append(toIndentedString(insecureSsl)).append("\n");
-    sb.append("    encryption: ").append(toIndentedString(encryption)).append("\n");
     sb.append("    signature: ").append(toIndentedString(signature)).append("\n");
     sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
     sb.append("}");

@@ -10,9 +10,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/**
- * AV1 has a segment based feature that allows the encoder to adaptively change quantization parameter for each segment within a frame
- */
 public enum Av1AdaptiveQuantMode {
   
   /**
