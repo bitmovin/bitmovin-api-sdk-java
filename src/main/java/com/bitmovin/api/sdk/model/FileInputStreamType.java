@@ -13,12 +13,12 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum FileInputStreamType {
   
   /**
-   * Specifies that the Sidecar file conforms to the TTML standard
+   * Specifies that the sidecar file conforms to the TTML standard
    */
   TTML("TTML"),
   
   /**
-   * Specifies that the Sidecar file conforms to the WEBVTT standard
+   * Specifies that the sidecar file conforms to the WEBVTT standard
    */
   WEBVTT("WEBVTT");
 

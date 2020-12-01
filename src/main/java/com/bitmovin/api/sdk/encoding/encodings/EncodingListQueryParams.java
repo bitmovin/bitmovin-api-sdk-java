@@ -33,7 +33,7 @@ public class EncodingListQueryParams extends HashMap<String, Object> {
     }
 
     /**
-    * @param sort Order list result according an encoding resource attribute.  The fields that can be used for sorting are: + &#x60;id&#x60; + &#x60;startedAt&#x60; + &#x60;createdAt&#x60; + &#x60;modifiedAt&#x60; + &#x60;type&#x60; + &#x60;name&#x60; + &#x60;status&#x60; + &#x60;cloudRegion&#x60; + &#x60;encoderVersion&#x60;  (optional)
+    * @param sort Order list result according an encoding resource attribute.  The fields that can be used for sorting are: + &#x60;id&#x60; + &#x60;startedAt&#x60; + &#x60;createdAt&#x60; + &#x60;modifiedAt&#x60; + &#x60;finishedAt&#x60; + &#x60;type&#x60; + &#x60;name&#x60; + &#x60;status&#x60; + &#x60;cloudRegion&#x60; + &#x60;encoderVersion&#x60;  (optional)
     */
     public void setSort(String sort) {
         this.put("sort", sort);
@@ -143,7 +143,7 @@ public class EncodingListQueryParams extends HashMap<String, Object> {
     }
 
     /**
-    * @param createdAtNewerThan Filter encodings to only return those created after this exact time, provided in ISO8601 format: YYYY-MM-DDThh:mm:ssZ (optional)
+    * @param createdAtNewerThan Filter encodings to only return those created after this exact time, provided in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ (optional)
     */
     public void setCreatedAtNewerThan(Date createdAtNewerThan) {
         this.put("createdAtNewerThan", createdAtNewerThan);
@@ -154,7 +154,7 @@ public class EncodingListQueryParams extends HashMap<String, Object> {
     }
 
     /**
-    * @param createdAtOlderThan Filter encodings to only return those created before this exact time, provided in ISO8601 format: YYYY-MM-DDThh:mm:ssZ (optional)
+    * @param createdAtOlderThan Filter encodings to only return those created before this exact time, provided in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ (optional)
     */
     public void setCreatedAtOlderThan(Date createdAtOlderThan) {
         this.put("createdAtOlderThan", createdAtOlderThan);
@@ -165,7 +165,7 @@ public class EncodingListQueryParams extends HashMap<String, Object> {
     }
 
     /**
-    * @param startedAtNewerThan Filter encodings to only return those started after this exact time, provided in ISO8601 format: YYYY-MM-DDThh:mm:ssZ (optional)
+    * @param startedAtNewerThan Filter encodings to only return those started after this exact time, provided in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ (optional)
     */
     public void setStartedAtNewerThan(Date startedAtNewerThan) {
         this.put("startedAtNewerThan", startedAtNewerThan);
@@ -176,9 +176,31 @@ public class EncodingListQueryParams extends HashMap<String, Object> {
     }
 
     /**
-    * @param startedAtOlderThan Filter encodings to only return those started before this exact time, provided in ISO8601 format: YYYY-MM-DDThh:mm:ssZ (optional)
+    * @param startedAtOlderThan Filter encodings to only return those started before this exact time, provided in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ (optional)
     */
     public void setStartedAtOlderThan(Date startedAtOlderThan) {
         this.put("startedAtOlderThan", startedAtOlderThan);
+    }
+
+    public Date getFinishedAtNewerThan() {
+        return (Date) this.get("finishedAtNewerThan");
+    }
+
+    /**
+    * @param finishedAtNewerThan Filter encodings to only return those finished at newer than this exact time, provided in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ Available for all encodings started after REST API Service release v1.50.0 (Changelogs for more information https://bitmovin.com/docs/encoding/changelogs/rest)  (optional)
+    */
+    public void setFinishedAtNewerThan(Date finishedAtNewerThan) {
+        this.put("finishedAtNewerThan", finishedAtNewerThan);
+    }
+
+    public Date getFinishedAtOlderThan() {
+        return (Date) this.get("finishedAtOlderThan");
+    }
+
+    /**
+    * @param finishedAtOlderThan Filter encodings to only return those finished at older than this exact time, provided in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ Available for all encodings started after REST API Service release v1.50.0 (Changelogs for more information https://bitmovin.com/docs/encoding/changelogs/rest)  (optional)
+    */
+    public void setFinishedAtOlderThan(Date finishedAtOlderThan) {
+        this.put("finishedAtOlderThan", finishedAtOlderThan);
     }
 }

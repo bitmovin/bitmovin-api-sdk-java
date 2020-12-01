@@ -105,7 +105,7 @@ public class LabelsApi {
     
     interface LabelsApiClient {
     
-        @RequestLine("GET /encoding/statistics/labels/")
+        @RequestLine("GET /encoding/statistics/labels")
         ResponseEnvelope<PaginationResponse<StatisticsPerLabel>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     
         @RequestLine("GET /encoding/statistics/labels/{from}/{to}")

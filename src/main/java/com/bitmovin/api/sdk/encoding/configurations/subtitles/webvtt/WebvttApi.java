@@ -44,9 +44,9 @@ public class WebvttApi {
     }
     
     /**
-     * Create WebVtt Subtitle Configuration
+     * Create WebVtt subtitle configuration
      * 
-     * @param webVttConfiguration The WebVtt Subtitle Configuration to be created (required)
+     * @param webVttConfiguration The WebVtt subtitle configuration to be created (required)
      * @return WebVttConfiguration
      * @throws BitmovinException if fails to make API call
      */
@@ -59,7 +59,7 @@ public class WebvttApi {
     }
     
     /**
-     * Delete WebVtt Subtitle Configuration
+     * Delete WebVtt subtitle configuration
      * 
      * @param configurationId Id of the subtitle configuration (required)
      * @return BitmovinResponse
@@ -74,7 +74,7 @@ public class WebvttApi {
     }
     
     /**
-     * WebVtt Subtitle Configuration Details
+     * WebVtt subtitle configuration details
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return WebVttConfiguration
@@ -89,7 +89,7 @@ public class WebvttApi {
     }
     
     /**
-     * List WebVtt Configurations
+     * List WebVtt subtitle configurations
      * 
      * @return List&lt;WebVttConfiguration&gt;
      * @throws BitmovinException if fails to make API call
@@ -102,7 +102,7 @@ public class WebvttApi {
         }
     }
     /**
-     * List WebVtt Configurations
+     * List WebVtt subtitle configurations
      * 
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;WebVttConfiguration&gt;
@@ -118,7 +118,7 @@ public class WebvttApi {
     
     interface WebvttApiClient {
     
-        @RequestLine("POST /encoding/configurations/subtitles/webvtt/")
+        @RequestLine("POST /encoding/configurations/subtitles/webvtt")
         ResponseEnvelope<WebVttConfiguration> create(WebVttConfiguration webVttConfiguration) throws BitmovinException;
     
         @RequestLine("DELETE /encoding/configurations/subtitles/webvtt/{configuration_id}")
@@ -127,7 +127,7 @@ public class WebvttApi {
         @RequestLine("GET /encoding/configurations/subtitles/webvtt/{configuration_id}")
         ResponseEnvelope<WebVttConfiguration> get(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
     
-        @RequestLine("GET /encoding/configurations/subtitles/webvtt/")
+        @RequestLine("GET /encoding/configurations/subtitles/webvtt")
         ResponseEnvelope<PaginationResponse<WebVttConfiguration>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

@@ -115,23 +115,12 @@ public class Encoding extends BitmovinResource {
     return finishedAt;
   }
 
-
   /**
    * Timestamp when the encoding status changed to &#39;ERROR&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ  Note that this timestamp is deprecated and is equivalent to finishedAt in case of an &#39;ERROR&#39;. 
    * @return errorAt
    */
   public Date getErrorAt() {
     return errorAt;
-  }
-
-  /**
-   * Timestamp when the encoding status changed to &#39;ERROR&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ  Note that this timestamp is deprecated and is equivalent to finishedAt in case of an &#39;ERROR&#39;. 
-   *
-   * @param errorAt
-   *        Timestamp when the encoding status changed to &#39;ERROR&#39;, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ  Note that this timestamp is deprecated and is equivalent to finishedAt in case of an &#39;ERROR&#39;. 
-   */
-  public void setErrorAt(Date errorAt) {
-    this.errorAt = errorAt;
   }
 
   /**
