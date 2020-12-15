@@ -10,17 +10,23 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum AnalyticsRuleMetric {
+public enum StaticIpStatus {
   
   
-  AVG_VIDEO_STARTUPTIME("AVG_VIDEO_STARTUPTIME"),
+  CREATING("CREATING"),
   
   
-  MEDIAN_VIDEO_STARTUPTIME("MEDIAN_VIDEO_STARTUPTIME");
+  UNUSED("UNUSED"),
+  
+  
+  ERROR("ERROR"),
+  
+  
+  USED("USED");
 
   private String value;
 
-  AnalyticsRuleMetric(String value) {
+  StaticIpStatus(String value) {
     this.value = value;
   }
 
@@ -35,8 +41,8 @@ public enum AnalyticsRuleMetric {
   }
 
   @JsonCreator
-  public static AnalyticsRuleMetric fromValue(String text) {
-    for (AnalyticsRuleMetric b : AnalyticsRuleMetric.values()) {
+  public static StaticIpStatus fromValue(String text) {
+    for (StaticIpStatus b : StaticIpStatus.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

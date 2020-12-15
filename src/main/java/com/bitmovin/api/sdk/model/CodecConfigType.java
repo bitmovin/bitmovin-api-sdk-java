@@ -70,7 +70,10 @@ public enum CodecConfigType {
   PCM("PCM"),
   
   
-  WEBVTT("WEBVTT");
+  WEBVTT("WEBVTT"),
+  
+  
+  DVB_SUBTITLE("DVB_SUBTITLE");
 
   private String value;
 

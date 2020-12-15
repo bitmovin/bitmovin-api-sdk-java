@@ -1,10 +1,10 @@
-package com.bitmovin.api.sdk.analytics.alerting.incidents;
+package com.bitmovin.api.sdk.encoding.configurations.audio.mp2;
 
 import java.util.Date;
 import java.util.HashMap;
 import com.bitmovin.api.sdk.model.*;
 
-public class AnalyticsIncidentListQueryParams extends HashMap<String, Object> {
+public class Mp2AudioConfigurationListQueryParams extends HashMap<String, Object> {
 
     public Integer getOffset() {
         return (Integer) this.get("offset");
@@ -22,9 +22,20 @@ public class AnalyticsIncidentListQueryParams extends HashMap<String, Object> {
     }
 
     /**
-    * @param limit Maximum number of items to return. Default is 10, maximum is 100 (optional)
+    * @param limit Maximum number of items to return. Default is 25, maximum is 100 (optional)
     */
     public void setLimit(Integer limit) {
         this.put("limit", limit);
+    }
+
+    public String getName() {
+        return (String) this.get("name");
+    }
+
+    /**
+    * @param name Filter configuration by name (optional)
+    */
+    public void setName(String name) {
+        this.put("name", name);
     }
 }

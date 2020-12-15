@@ -33,7 +33,6 @@ public class ResponseErrorData {
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<Message> details = new ArrayList<Message>();
 
-
   /**
    * Contains an error code as defined in https://bitmovin.com/encoding-documentation/bitmovin-api/#/introduction/api-error-codes (required)
    * @return code
@@ -41,17 +40,6 @@ public class ResponseErrorData {
   public Integer getCode() {
     return code;
   }
-
-  /**
-   * Contains an error code as defined in https://bitmovin.com/encoding-documentation/bitmovin-api/#/introduction/api-error-codes (required)
-   *
-   * @param code
-   *        Contains an error code as defined in https://bitmovin.com/encoding-documentation/bitmovin-api/#/introduction/api-error-codes (required)
-   */
-  public void setCode(Integer code) {
-    this.code = code;
-  }
-
 
   /**
    * General error message (required)
@@ -62,38 +50,11 @@ public class ResponseErrorData {
   }
 
   /**
-   * General error message (required)
-   *
-   * @param message
-   *        General error message (required)
-   */
-  public void setMessage(String message) {
-    this.message = message;
-  }
-
-
-  /**
    * More detailed message meant for developers (required)
    * @return developerMessage
    */
   public String getDeveloperMessage() {
     return developerMessage;
-  }
-
-  /**
-   * More detailed message meant for developers (required)
-   *
-   * @param developerMessage
-   *        More detailed message meant for developers (required)
-   */
-  public void setDeveloperMessage(String developerMessage) {
-    this.developerMessage = developerMessage;
-  }
-
-
-  public ResponseErrorData addLinksItem(Link linksItem) {
-    this.links.add(linksItem);
-    return this;
   }
 
   /**
@@ -105,37 +66,11 @@ public class ResponseErrorData {
   }
 
   /**
-   * collection of links to webpages containing further information on the topic
-   *
-   * @param links
-   *        collection of links to webpages containing further information on the topic
-   */
-  public void setLinks(List<Link> links) {
-    this.links = links;
-  }
-
-
-  public ResponseErrorData addDetailsItem(Message detailsItem) {
-    this.details.add(detailsItem);
-    return this;
-  }
-
-  /**
    * collection of messages containing more detailed information on the cause of the error
    * @return details
    */
   public List<Message> getDetails() {
     return details;
-  }
-
-  /**
-   * collection of messages containing more detailed information on the cause of the error
-   *
-   * @param details
-   *        collection of messages containing more detailed information on the cause of the error
-   */
-  public void setDetails(List<Message> details) {
-    this.details = details;
   }
 
 

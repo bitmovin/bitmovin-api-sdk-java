@@ -59,6 +59,9 @@ public class Encoding extends BitmovinResource {
   @JsonProperty("infrastructure")
   private InfrastructureSettings infrastructure;
 
+  @JsonProperty("staticIpId")
+  private String staticIpId;
+
   @JsonProperty("selectedEncoderVersion")
   private String selectedEncoderVersion;
 
@@ -229,6 +232,25 @@ public class Encoding extends BitmovinResource {
     this.infrastructure = infrastructure;
   }
 
+
+  /**
+   * Specify an ID of a Static IP infrastructure resource this encoding should use. A Static IP cannot be used by multiple encodings at once. The encoding will go to an error state if the Static IP is already in use. This is currently only supported for live encodings.
+   * @return staticIpId
+   */
+  public String getStaticIpId() {
+    return staticIpId;
+  }
+
+  /**
+   * Specify an ID of a Static IP infrastructure resource this encoding should use. A Static IP cannot be used by multiple encodings at once. The encoding will go to an error state if the Static IP is already in use. This is currently only supported for live encodings.
+   *
+   * @param staticIpId
+   *        Specify an ID of a Static IP infrastructure resource this encoding should use. A Static IP cannot be used by multiple encodings at once. The encoding will go to an error state if the Static IP is already in use. This is currently only supported for live encodings.
+   */
+  public void setStaticIpId(String staticIpId) {
+    this.staticIpId = staticIpId;
+  }
+
   /**
    * After the encoding has been started, this will contain the encoder version that was actually used. Especially useful when starting an encoding with a version tag like STABLE or BETA.
    * @return selectedEncoderVersion
@@ -307,6 +329,7 @@ public class Encoding extends BitmovinResource {
         Objects.equals(this.encoderVersion, encoding.encoderVersion) &&
         Objects.equals(this.infrastructureId, encoding.infrastructureId) &&
         Objects.equals(this.infrastructure, encoding.infrastructure) &&
+        Objects.equals(this.staticIpId, encoding.staticIpId) &&
         Objects.equals(this.selectedEncoderVersion, encoding.selectedEncoderVersion) &&
         Objects.equals(this.selectedEncodingMode, encoding.selectedEncodingMode) &&
         Objects.equals(this.selectedCloudRegion, encoding.selectedCloudRegion) &&
@@ -317,7 +340,7 @@ public class Encoding extends BitmovinResource {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, startedAt, queuedAt, runningAt, finishedAt, errorAt, progress, cloudRegion, fallbackCloudRegions, encoderVersion, infrastructureId, infrastructure, selectedEncoderVersion, selectedEncodingMode, selectedCloudRegion, status, labels, super.hashCode());
+    return Objects.hash(type, startedAt, queuedAt, runningAt, finishedAt, errorAt, progress, cloudRegion, fallbackCloudRegions, encoderVersion, infrastructureId, infrastructure, staticIpId, selectedEncoderVersion, selectedEncodingMode, selectedCloudRegion, status, labels, super.hashCode());
   }
 
   @Override
@@ -337,6 +360,7 @@ public class Encoding extends BitmovinResource {
     sb.append("    encoderVersion: ").append(toIndentedString(encoderVersion)).append("\n");
     sb.append("    infrastructureId: ").append(toIndentedString(infrastructureId)).append("\n");
     sb.append("    infrastructure: ").append(toIndentedString(infrastructure)).append("\n");
+    sb.append("    staticIpId: ").append(toIndentedString(staticIpId)).append("\n");
     sb.append("    selectedEncoderVersion: ").append(toIndentedString(selectedEncoderVersion)).append("\n");
     sb.append("    selectedEncodingMode: ").append(toIndentedString(selectedEncodingMode)).append("\n");
     sb.append("    selectedCloudRegion: ").append(toIndentedString(selectedCloudRegion)).append("\n");

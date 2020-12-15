@@ -88,6 +88,36 @@ public class WebvttApi {
         }
     }
     
+    /**
+     * List WebVTT sidecar files
+     * 
+     * @param encodingId Id of the encoding. (required)
+     * @return List&lt;WebVttSidecarFile&gt;
+     * @throws BitmovinException if fails to make API call
+     */
+    public PaginationResponse<WebVttSidecarFile> list(String encodingId) throws BitmovinException {
+        try {
+            return this.apiClient.list(encodingId, new QueryMapWrapper()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+    /**
+     * List WebVTT sidecar files
+     * 
+     * @param encodingId Id of the encoding. (required)
+     * @param queryParams The query parameters for sorting, filtering and paging options (optional)
+     * @return List&lt;WebVttSidecarFile&gt;
+     * @throws BitmovinException if fails to make API call
+     */
+    public PaginationResponse<WebVttSidecarFile> list(String encodingId, WebVttSidecarFileListQueryParams queryParams) throws BitmovinException {
+        try {
+            return this.apiClient.list(encodingId, new QueryMapWrapper(queryParams)).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+    
     interface WebvttApiClient {
     
         @RequestLine("POST /encoding/encodings/{encoding_id}/sidecars/webvtt")
@@ -98,5 +128,8 @@ public class WebvttApi {
     
         @RequestLine("GET /encoding/encodings/{encoding_id}/sidecars/webvtt/{sidecar_id}")
         ResponseEnvelope<WebVttSidecarFile> get(@Param(value = "encoding_id") String encodingId, @Param(value = "sidecar_id") String sidecarId) throws BitmovinException;
+    
+        @RequestLine("GET /encoding/encodings/{encoding_id}/sidecars/webvtt")
+        ResponseEnvelope<PaginationResponse<WebVttSidecarFile>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

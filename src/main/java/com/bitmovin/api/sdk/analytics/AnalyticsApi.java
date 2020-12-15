@@ -10,7 +10,6 @@ import com.bitmovin.api.sdk.analytics.ads.AdsApi;
 import com.bitmovin.api.sdk.analytics.queries.QueriesApi;
 import com.bitmovin.api.sdk.analytics.licenses.LicensesApi;
 import com.bitmovin.api.sdk.analytics.outputs.OutputsApi;
-import com.bitmovin.api.sdk.analytics.alerting.AlertingApi;
 
 public class AnalyticsApi {
     public final ExportsApi exports;
@@ -21,7 +20,6 @@ public class AnalyticsApi {
     public final QueriesApi queries;
     public final LicensesApi licenses;
     public final OutputsApi outputs;
-    public final AlertingApi alerting;
 
     public AnalyticsApi(BitmovinApiClientFactory clientFactory) {
         if (clientFactory == null)
@@ -37,7 +35,6 @@ public class AnalyticsApi {
         this.queries = new QueriesApi(clientFactory);
         this.licenses = new LicensesApi(clientFactory);
         this.outputs = new OutputsApi(clientFactory);
-        this.alerting = new AlertingApi(clientFactory);
     }
 
     /**

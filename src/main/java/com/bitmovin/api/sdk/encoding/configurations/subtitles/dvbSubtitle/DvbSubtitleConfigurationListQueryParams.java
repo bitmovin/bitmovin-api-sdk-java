@@ -1,10 +1,10 @@
-package com.bitmovin.api.sdk.analytics.alerting.rules;
+package com.bitmovin.api.sdk.encoding.configurations.subtitles.dvbSubtitle;
 
 import java.util.Date;
 import java.util.HashMap;
 import com.bitmovin.api.sdk.model.*;
 
-public class AnalyticsAlertingRuleListQueryParams extends HashMap<String, Object> {
+public class DvbSubtitleConfigurationListQueryParams extends HashMap<String, Object> {
 
     public Integer getOffset() {
         return (Integer) this.get("offset");
@@ -26,5 +26,16 @@ public class AnalyticsAlertingRuleListQueryParams extends HashMap<String, Object
     */
     public void setLimit(Integer limit) {
         this.put("limit", limit);
+    }
+
+    public String getName() {
+        return (String) this.get("name");
+    }
+
+    /**
+    * @param name Filter configuration by name (optional)
+    */
+    public void setName(String name) {
+        this.put("name", name);
     }
 }

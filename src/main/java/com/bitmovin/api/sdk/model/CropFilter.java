@@ -34,7 +34,7 @@ public class CropFilter extends Filter {
 
 
   /**
-   * Amount of pixels which will be cropped of the input video from the left side.
+   * Amount of pixels that will be cropped of the input video from the left side. Must be zero or a positive value.
    * @return left
    */
   public Integer getLeft() {
@@ -42,10 +42,10 @@ public class CropFilter extends Filter {
   }
 
   /**
-   * Amount of pixels which will be cropped of the input video from the left side.
+   * Amount of pixels that will be cropped of the input video from the left side. Must be zero or a positive value.
    *
    * @param left
-   *        Amount of pixels which will be cropped of the input video from the left side.
+   *        Amount of pixels that will be cropped of the input video from the left side. Must be zero or a positive value.
    */
   public void setLeft(Integer left) {
     this.left = left;
@@ -53,7 +53,7 @@ public class CropFilter extends Filter {
 
 
   /**
-   * Amount of pixels which will be cropped of the input video from the right side.
+   * Amount of pixels that will be cropped of the input video from the right side. Must be zero or a positive value.
    * @return right
    */
   public Integer getRight() {
@@ -61,10 +61,10 @@ public class CropFilter extends Filter {
   }
 
   /**
-   * Amount of pixels which will be cropped of the input video from the right side.
+   * Amount of pixels that will be cropped of the input video from the right side. Must be zero or a positive value.
    *
    * @param right
-   *        Amount of pixels which will be cropped of the input video from the right side.
+   *        Amount of pixels that will be cropped of the input video from the right side. Must be zero or a positive value.
    */
   public void setRight(Integer right) {
     this.right = right;
@@ -72,7 +72,7 @@ public class CropFilter extends Filter {
 
 
   /**
-   * Amount of pixels which will be cropped of the input video from the top.
+   * Amount of pixels that will be cropped of the input video from the top. Must be zero or a positive value.
    * @return top
    */
   public Integer getTop() {
@@ -80,10 +80,10 @@ public class CropFilter extends Filter {
   }
 
   /**
-   * Amount of pixels which will be cropped of the input video from the top.
+   * Amount of pixels that will be cropped of the input video from the top. Must be zero or a positive value.
    *
    * @param top
-   *        Amount of pixels which will be cropped of the input video from the top.
+   *        Amount of pixels that will be cropped of the input video from the top. Must be zero or a positive value.
    */
   public void setTop(Integer top) {
     this.top = top;
@@ -91,7 +91,7 @@ public class CropFilter extends Filter {
 
 
   /**
-   * Amount of pixels which will be cropped of the input video from the bottom.
+   * Amount of pixels that will be cropped of the input video from the bottom. Must be zero or a positive value.
    * @return bottom
    */
   public Integer getBottom() {
@@ -99,10 +99,10 @@ public class CropFilter extends Filter {
   }
 
   /**
-   * Amount of pixels which will be cropped of the input video from the bottom.
+   * Amount of pixels that will be cropped of the input video from the bottom. Must be zero or a positive value.
    *
    * @param bottom
-   *        Amount of pixels which will be cropped of the input video from the bottom.
+   *        Amount of pixels that will be cropped of the input video from the bottom. Must be zero or a positive value.
    */
   public void setBottom(Integer bottom) {
     this.bottom = bottom;

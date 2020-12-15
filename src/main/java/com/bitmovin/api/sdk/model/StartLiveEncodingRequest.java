@@ -39,10 +39,6 @@ public class StartLiveEncodingRequest {
   @JsonProperty("autoRestartConfiguration")
   private AutoRestartConfiguration autoRestartConfiguration;
 
-  @JsonProperty("staticIpId")
-  @JsonInclude(JsonInclude.Include.NON_EMPTY)
-  private List<String> staticIpId = new ArrayList<String>();
-
 
   /**
    * Key for the stream. (a-zA-Z, 3-20 characters) (required)
@@ -168,30 +164,6 @@ public class StartLiveEncodingRequest {
   }
 
 
-  public StartLiveEncodingRequest addStaticIpIdItem(String staticIpIdItem) {
-    this.staticIpId.add(staticIpIdItem);
-    return this;
-  }
-
-  /**
-   * The static IP that will be used for the live encoding. If the provider and the region do not match the encoding start call will fail.
-   * @return staticIpId
-   */
-  public List<String> getStaticIpId() {
-    return staticIpId;
-  }
-
-  /**
-   * The static IP that will be used for the live encoding. If the provider and the region do not match the encoding start call will fail.
-   *
-   * @param staticIpId
-   *        The static IP that will be used for the live encoding. If the provider and the region do not match the encoding start call will fail.
-   */
-  public void setStaticIpId(List<String> staticIpId) {
-    this.staticIpId = staticIpId;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -206,13 +178,12 @@ public class StartLiveEncodingRequest {
         Objects.equals(this.dashManifests, startLiveEncodingRequest.dashManifests) &&
         Objects.equals(this.liveEncodingMode, startLiveEncodingRequest.liveEncodingMode) &&
         Objects.equals(this.reuploadSettings, startLiveEncodingRequest.reuploadSettings) &&
-        Objects.equals(this.autoRestartConfiguration, startLiveEncodingRequest.autoRestartConfiguration) &&
-        Objects.equals(this.staticIpId, startLiveEncodingRequest.staticIpId);
+        Objects.equals(this.autoRestartConfiguration, startLiveEncodingRequest.autoRestartConfiguration);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(streamKey, hlsManifests, dashManifests, liveEncodingMode, reuploadSettings, autoRestartConfiguration, staticIpId);
+    return Objects.hash(streamKey, hlsManifests, dashManifests, liveEncodingMode, reuploadSettings, autoRestartConfiguration);
   }
 
   @Override
@@ -226,7 +197,6 @@ public class StartLiveEncodingRequest {
     sb.append("    liveEncodingMode: ").append(toIndentedString(liveEncodingMode)).append("\n");
     sb.append("    reuploadSettings: ").append(toIndentedString(reuploadSettings)).append("\n");
     sb.append("    autoRestartConfiguration: ").append(toIndentedString(autoRestartConfiguration)).append("\n");
-    sb.append("    staticIpId: ").append(toIndentedString(staticIpId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

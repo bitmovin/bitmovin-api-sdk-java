@@ -1,4 +1,4 @@
-package com.bitmovin.api.sdk.encoding.configurations.audio.mp2;
+package com.bitmovin.api.sdk.encoding.configurations.subtitles.dvbSubtitle;
 
 import java.util.Date;
 import java.util.List;
@@ -18,50 +18,50 @@ import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
-import com.bitmovin.api.sdk.encoding.configurations.audio.mp2.customdata.CustomdataApi;
+import com.bitmovin.api.sdk.encoding.configurations.subtitles.dvbSubtitle.customdata.CustomdataApi;
 
-public class Mp2Api {
+public class DvbSubtitleApi {
     public final CustomdataApi customdata;
 
-    private final Mp2ApiClient apiClient;
+    private final DvbSubtitleApiClient apiClient;
 
-    public Mp2Api(BitmovinApiClientFactory clientFactory) {
+    public DvbSubtitleApi(BitmovinApiClientFactory clientFactory) {
         if (clientFactory == null)
         {
             throw new IllegalArgumentException("Parameter 'clientFactory' may not be null.");
         }
 
-        this.apiClient = clientFactory.createApiClient(Mp2ApiClient.class);
+        this.apiClient = clientFactory.createApiClient(DvbSubtitleApiClient.class);
 
         this.customdata = new CustomdataApi(clientFactory);
     }
 
     /**
-     * Fluent builder for creating an instance of Mp2Api
+     * Fluent builder for creating an instance of DvbSubtitleApi
      */
-    public static BitmovinApiBuilder<Mp2Api> builder() {
-        return new BitmovinApiBuilder<>(Mp2Api.class);
+    public static BitmovinApiBuilder<DvbSubtitleApi> builder() {
+        return new BitmovinApiBuilder<>(DvbSubtitleApi.class);
     }
     
     /**
-     * Create MP2 Codec Configuration
+     * Create DVB-SUB subtitle configuration
      * 
-     * @param mp2AudioConfiguration The MP2 Codec Configuration to be created (required)
-     * @return Mp2AudioConfiguration
+     * @param dvbSubtitleConfiguration The DVB-SUB subtitle configuration to be created (required)
+     * @return DvbSubtitleConfiguration
      * @throws BitmovinException if fails to make API call
      */
-    public Mp2AudioConfiguration create(Mp2AudioConfiguration mp2AudioConfiguration) throws BitmovinException {
+    public DvbSubtitleConfiguration create(DvbSubtitleConfiguration dvbSubtitleConfiguration) throws BitmovinException {
         try {
-            return this.apiClient.create(mp2AudioConfiguration).getData().getResult();
+            return this.apiClient.create(dvbSubtitleConfiguration).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
     }
     
     /**
-     * Delete MP2 Codec Configuration
+     * Delete DVB-SUB subtitle configuration
      * 
-     * @param configurationId Id of the codec configuration (required)
+     * @param configurationId Id of the subtitle configuration (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */
@@ -74,13 +74,13 @@ public class Mp2Api {
     }
     
     /**
-     * MP2 Codec Configuration Details
+     * DVB-SUB subtitle configuration details
      * 
      * @param configurationId Id of the codec configuration (required)
-     * @return Mp2AudioConfiguration
+     * @return DvbSubtitleConfiguration
      * @throws BitmovinException if fails to make API call
      */
-    public Mp2AudioConfiguration get(String configurationId) throws BitmovinException {
+    public DvbSubtitleConfiguration get(String configurationId) throws BitmovinException {
         try {
             return this.apiClient.get(configurationId).getData().getResult();
         } catch (Exception ex) {
@@ -89,12 +89,12 @@ public class Mp2Api {
     }
     
     /**
-     * List MP2 Configurations
+     * List DVB-SUB subtitle configurations
      * 
-     * @return List&lt;Mp2AudioConfiguration&gt;
+     * @return List&lt;DvbSubtitleConfiguration&gt;
      * @throws BitmovinException if fails to make API call
      */
-    public PaginationResponse<Mp2AudioConfiguration> list() throws BitmovinException {
+    public PaginationResponse<DvbSubtitleConfiguration> list() throws BitmovinException {
         try {
             return this.apiClient.list(new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
@@ -102,13 +102,13 @@ public class Mp2Api {
         }
     }
     /**
-     * List MP2 Configurations
+     * List DVB-SUB subtitle configurations
      * 
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
-     * @return List&lt;Mp2AudioConfiguration&gt;
+     * @return List&lt;DvbSubtitleConfiguration&gt;
      * @throws BitmovinException if fails to make API call
      */
-    public PaginationResponse<Mp2AudioConfiguration> list(Mp2AudioConfigurationListQueryParams queryParams) throws BitmovinException {
+    public PaginationResponse<DvbSubtitleConfiguration> list(DvbSubtitleConfigurationListQueryParams queryParams) throws BitmovinException {
         try {
             return this.apiClient.list(new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
@@ -116,18 +116,18 @@ public class Mp2Api {
         }
     }
     
-    interface Mp2ApiClient {
+    interface DvbSubtitleApiClient {
     
-        @RequestLine("POST /encoding/configurations/audio/mp2")
-        ResponseEnvelope<Mp2AudioConfiguration> create(Mp2AudioConfiguration mp2AudioConfiguration) throws BitmovinException;
+        @RequestLine("POST /encoding/configurations/subtitles/dvb-subtitle")
+        ResponseEnvelope<DvbSubtitleConfiguration> create(DvbSubtitleConfiguration dvbSubtitleConfiguration) throws BitmovinException;
     
-        @RequestLine("DELETE /encoding/configurations/audio/mp2/{configuration_id}")
+        @RequestLine("DELETE /encoding/configurations/subtitles/dvb-subtitle/{configuration_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
     
-        @RequestLine("GET /encoding/configurations/audio/mp2/{configuration_id}")
-        ResponseEnvelope<Mp2AudioConfiguration> get(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
+        @RequestLine("GET /encoding/configurations/subtitles/dvb-subtitle/{configuration_id}")
+        ResponseEnvelope<DvbSubtitleConfiguration> get(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
     
-        @RequestLine("GET /encoding/configurations/audio/mp2")
-        ResponseEnvelope<PaginationResponse<Mp2AudioConfiguration>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
+        @RequestLine("GET /encoding/configurations/subtitles/dvb-subtitle")
+        ResponseEnvelope<PaginationResponse<DvbSubtitleConfiguration>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

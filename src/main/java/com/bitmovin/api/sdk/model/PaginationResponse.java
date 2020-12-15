@@ -33,7 +33,6 @@ public class PaginationResponse<T> {
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<T> items = new ArrayList<T>();
 
-
   /**
    * Get totalCount
    * @return totalCount
@@ -41,16 +40,6 @@ public class PaginationResponse<T> {
   public Long getTotalCount() {
     return totalCount;
   }
-
-  /**
-   * Set totalCount
-   *
-   * @param totalCount
-   */
-  public void setTotalCount(Long totalCount) {
-    this.totalCount = totalCount;
-  }
-
 
   /**
    * Get offset
@@ -61,32 +50,12 @@ public class PaginationResponse<T> {
   }
 
   /**
-   * Set offset
-   *
-   * @param offset
-   */
-  public void setOffset(Integer offset) {
-    this.offset = offset;
-  }
-
-
-  /**
    * Get limit
    * @return limit
    */
   public Integer getLimit() {
     return limit;
   }
-
-  /**
-   * Set limit
-   *
-   * @param limit
-   */
-  public void setLimit(Integer limit) {
-    this.limit = limit;
-  }
-
 
   /**
    * Get previous
@@ -97,16 +66,6 @@ public class PaginationResponse<T> {
   }
 
   /**
-   * Set previous
-   *
-   * @param previous
-   */
-  public void setPrevious(String previous) {
-    this.previous = previous;
-  }
-
-
-  /**
    * Get next
    * @return next
    */
@@ -115,35 +74,11 @@ public class PaginationResponse<T> {
   }
 
   /**
-   * Set next
-   *
-   * @param next
-   */
-  public void setNext(String next) {
-    this.next = next;
-  }
-
-
-  public PaginationResponse addItemsItem(T itemsItem) {
-    this.items.add(itemsItem);
-    return this;
-  }
-
-  /**
    * Get items
    * @return items
    */
   public List<T> getItems() {
     return items;
-  }
-
-  /**
-   * Set items
-   *
-   * @param items
-   */
-  public void setItems(List<T> items) {
-    this.items = items;
   }
 
 

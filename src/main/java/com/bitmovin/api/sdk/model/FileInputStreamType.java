@@ -20,7 +20,12 @@ public enum FileInputStreamType {
   /**
    * Specifies that the sidecar file conforms to the WEBVTT standard
    */
-  WEBVTT("WEBVTT");
+  WEBVTT("WEBVTT"),
+  
+  /**
+   * Specifies that the sidecar file conforms to the SRT standard
+   */
+  SRT("SRT");
 
   private String value;
 
