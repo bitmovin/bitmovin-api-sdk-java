@@ -153,23 +153,12 @@ public class Stream extends BitmovinResource {
     this.codecConfigId = codecConfigId;
   }
 
-
   /**
    * Number of encoded segments. Available after encoding finishes.
    * @return segmentsEncoded
    */
   public Integer getSegmentsEncoded() {
     return segmentsEncoded;
-  }
-
-  /**
-   * Number of encoded segments. Available after encoding finishes.
-   *
-   * @param segmentsEncoded
-   *        Number of encoded segments. Available after encoding finishes.
-   */
-  public void setSegmentsEncoded(Integer segmentsEncoded) {
-    this.segmentsEncoded = segmentsEncoded;
   }
 
 

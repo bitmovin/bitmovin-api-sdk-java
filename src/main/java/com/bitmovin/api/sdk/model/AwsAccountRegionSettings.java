@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.AwsCloudRegion;
 import com.bitmovin.api.sdk.model.BitmovinResource;
 import java.util.Date;
 import java.util.List;
@@ -27,6 +28,9 @@ public class AwsAccountRegionSettings extends BitmovinResource {
 
   @JsonProperty("sshPort")
   private Integer sshPort;
+
+  @JsonProperty("region")
+  private AwsCloudRegion region;
 
 
   /**
@@ -111,6 +115,24 @@ public class AwsAccountRegionSettings extends BitmovinResource {
   }
 
 
+  /**
+   * Get region
+   * @return region
+   */
+  public AwsCloudRegion getRegion() {
+    return region;
+  }
+
+  /**
+   * Set region
+   *
+   * @param region
+   */
+  public void setRegion(AwsCloudRegion region) {
+    this.region = region;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -124,12 +146,13 @@ public class AwsAccountRegionSettings extends BitmovinResource {
         Objects.equals(this.securityGroupId, awsAccountRegionSettings.securityGroupId) &&
         Objects.equals(this.subnetId, awsAccountRegionSettings.subnetId) &&
         Objects.equals(this.sshPort, awsAccountRegionSettings.sshPort) &&
+        Objects.equals(this.region, awsAccountRegionSettings.region) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(limitParallelEncodings, securityGroupId, subnetId, sshPort, super.hashCode());
+    return Objects.hash(limitParallelEncodings, securityGroupId, subnetId, sshPort, region, super.hashCode());
   }
 
   @Override
@@ -141,6 +164,7 @@ public class AwsAccountRegionSettings extends BitmovinResource {
     sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
     sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
     sb.append("    sshPort: ").append(toIndentedString(sshPort)).append("\n");
+    sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("}");
     return sb.toString();
   }

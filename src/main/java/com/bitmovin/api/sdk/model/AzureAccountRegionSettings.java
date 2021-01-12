@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.AzureCloudRegion;
 import com.bitmovin.api.sdk.model.BitmovinResource;
 import java.util.Date;
 import java.util.List;
@@ -21,6 +22,9 @@ public class AzureAccountRegionSettings extends BitmovinResource {
 
   @JsonProperty("subnetName")
   private String subnetName;
+
+  @JsonProperty("region")
+  private AzureCloudRegion region;
 
 
   /**
@@ -61,6 +65,24 @@ public class AzureAccountRegionSettings extends BitmovinResource {
   }
 
 
+  /**
+   * Get region
+   * @return region
+   */
+  public AzureCloudRegion getRegion() {
+    return region;
+  }
+
+  /**
+   * Set region
+   *
+   * @param region
+   */
+  public void setRegion(AzureCloudRegion region) {
+    this.region = region;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -72,12 +94,13 @@ public class AzureAccountRegionSettings extends BitmovinResource {
     AzureAccountRegionSettings azureAccountRegionSettings = (AzureAccountRegionSettings) o;
     return Objects.equals(this.networkName, azureAccountRegionSettings.networkName) &&
         Objects.equals(this.subnetName, azureAccountRegionSettings.subnetName) &&
+        Objects.equals(this.region, azureAccountRegionSettings.region) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(networkName, subnetName, super.hashCode());
+    return Objects.hash(networkName, subnetName, region, super.hashCode());
   }
 
   @Override
@@ -87,6 +110,7 @@ public class AzureAccountRegionSettings extends BitmovinResource {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    networkName: ").append(toIndentedString(networkName)).append("\n");
     sb.append("    subnetName: ").append(toIndentedString(subnetName)).append("\n");
+    sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("}");
     return sb.toString();
   }

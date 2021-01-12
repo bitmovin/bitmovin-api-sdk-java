@@ -3,6 +3,7 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.BitmovinResource;
+import com.bitmovin.api.sdk.model.GoogleCloudRegion;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -21,6 +22,9 @@ public class GceAccountRegionSettings extends BitmovinResource {
 
   @JsonProperty("subnetId")
   private String subnetId;
+
+  @JsonProperty("region")
+  private GoogleCloudRegion region;
 
 
   /**
@@ -61,6 +65,24 @@ public class GceAccountRegionSettings extends BitmovinResource {
   }
 
 
+  /**
+   * Get region
+   * @return region
+   */
+  public GoogleCloudRegion getRegion() {
+    return region;
+  }
+
+  /**
+   * Set region
+   *
+   * @param region
+   */
+  public void setRegion(GoogleCloudRegion region) {
+    this.region = region;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -72,12 +94,13 @@ public class GceAccountRegionSettings extends BitmovinResource {
     GceAccountRegionSettings gceAccountRegionSettings = (GceAccountRegionSettings) o;
     return Objects.equals(this.network, gceAccountRegionSettings.network) &&
         Objects.equals(this.subnetId, gceAccountRegionSettings.subnetId) &&
+        Objects.equals(this.region, gceAccountRegionSettings.region) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(network, subnetId, super.hashCode());
+    return Objects.hash(network, subnetId, region, super.hashCode());
   }
 
   @Override
@@ -87,6 +110,7 @@ public class GceAccountRegionSettings extends BitmovinResource {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    network: ").append(toIndentedString(network)).append("\n");
     sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+    sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("}");
     return sb.toString();
   }
