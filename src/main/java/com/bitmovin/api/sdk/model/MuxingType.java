@@ -52,7 +52,10 @@ public enum MuxingType {
   TEXT("TEXT"),
   
   
-  SEGMENTED_RAW("SEGMENTED_RAW");
+  SEGMENTED_RAW("SEGMENTED_RAW"),
+  
+  
+  PACKED_AUDIO("PACKED_AUDIO");
 
   private String value;
 

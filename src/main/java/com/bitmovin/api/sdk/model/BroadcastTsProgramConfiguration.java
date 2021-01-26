@@ -21,6 +21,9 @@ public class BroadcastTsProgramConfiguration {
   @JsonProperty("insertProgramClockRefOnPes")
   private Boolean insertProgramClockRefOnPes;
 
+  @JsonProperty("programClockRefInterval")
+  private Integer programClockRefInterval;
+
 
   /**
    * An integer value. Value for program_number field in Program Map Table (PMT). The value zero is reserved for the NIT PID entry in the PAT.
@@ -91,6 +94,31 @@ public class BroadcastTsProgramConfiguration {
   }
 
 
+  /**
+   * Interval between Program Clock References (PCRs) in milliseconds. Defines the period between PCR fields inserted in the stream. The default value is 90ms.
+   * minimum: 1
+   * maximum: 100
+   * @return programClockRefInterval
+   */
+  public Integer getProgramClockRefInterval() {
+    return programClockRefInterval;
+  }
+
+  /**
+   * Interval between Program Clock References (PCRs) in milliseconds. Defines the period between PCR fields inserted in the stream. The default value is 90ms.
+   * minimum: 1
+   * maximum: 100
+   *
+   * @param programClockRefInterval
+   *        Interval between Program Clock References (PCRs) in milliseconds. Defines the period between PCR fields inserted in the stream. The default value is 90ms.
+   * minimum: 1
+   * maximum: 100
+   */
+  public void setProgramClockRefInterval(Integer programClockRefInterval) {
+    this.programClockRefInterval = programClockRefInterval;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -102,12 +130,13 @@ public class BroadcastTsProgramConfiguration {
     BroadcastTsProgramConfiguration broadcastTsProgramConfiguration = (BroadcastTsProgramConfiguration) o;
     return Objects.equals(this.programNumber, broadcastTsProgramConfiguration.programNumber) &&
         Objects.equals(this.pidForPMT, broadcastTsProgramConfiguration.pidForPMT) &&
-        Objects.equals(this.insertProgramClockRefOnPes, broadcastTsProgramConfiguration.insertProgramClockRefOnPes);
+        Objects.equals(this.insertProgramClockRefOnPes, broadcastTsProgramConfiguration.insertProgramClockRefOnPes) &&
+        Objects.equals(this.programClockRefInterval, broadcastTsProgramConfiguration.programClockRefInterval);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(programNumber, pidForPMT, insertProgramClockRefOnPes);
+    return Objects.hash(programNumber, pidForPMT, insertProgramClockRefOnPes, programClockRefInterval);
   }
 
   @Override
@@ -118,6 +147,7 @@ public class BroadcastTsProgramConfiguration {
     sb.append("    programNumber: ").append(toIndentedString(programNumber)).append("\n");
     sb.append("    pidForPMT: ").append(toIndentedString(pidForPMT)).append("\n");
     sb.append("    insertProgramClockRefOnPes: ").append(toIndentedString(insertProgramClockRefOnPes)).append("\n");
+    sb.append("    programClockRefInterval: ").append(toIndentedString(programClockRefInterval)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -25,7 +25,12 @@ public enum RetryHint {
   /**
    * The process is expected to fail on subsequent retries
    */
-  NO_RETRY("NO_RETRY");
+  NO_RETRY("NO_RETRY"),
+  
+  /**
+   * Unable to determine if the error is retryable.
+   */
+  UNDEFINED("UNDEFINED");
 
   private String value;
 

@@ -2,8 +2,9 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.AnalyticsImpressionSample;
-import java.util.ArrayList;
+import com.bitmovin.api.sdk.model.FragmentedMuxingInformation;
+import com.bitmovin.api.sdk.model.MuxingInformationAudioTrack;
+import com.bitmovin.api.sdk.model.MuxingInformationVideoTrack;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -11,10 +12,10 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * AnalyticsImpressionDetails
+ * PackedAudioMuxingInformation
  */
 
-public class AnalyticsImpressionDetails extends ArrayList<AnalyticsImpressionSample> {
+public class PackedAudioMuxingInformation extends FragmentedMuxingInformation {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -35,7 +36,7 @@ public class AnalyticsImpressionDetails extends ArrayList<AnalyticsImpressionSam
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AnalyticsImpressionDetails {\n");
+    sb.append("class PackedAudioMuxingInformation {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();

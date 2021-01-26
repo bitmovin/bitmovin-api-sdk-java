@@ -22,6 +22,7 @@ import com.bitmovin.api.sdk.encoding.encodings.muxings.fmp4.Fmp4Api;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.chunkedText.ChunkedTextApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.cmaf.CmafApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.segmentedRaw.SegmentedRawApi;
+import com.bitmovin.api.sdk.encoding.encodings.muxings.packedAudio.PackedAudioApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.text.TextApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.ts.TsApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.webm.WebmApi;
@@ -38,6 +39,7 @@ public class MuxingsApi {
     public final ChunkedTextApi chunkedText;
     public final CmafApi cmaf;
     public final SegmentedRawApi segmentedRaw;
+    public final PackedAudioApi packedAudio;
     public final TextApi text;
     public final TsApi ts;
     public final WebmApi webm;
@@ -63,6 +65,7 @@ public class MuxingsApi {
         this.chunkedText = new ChunkedTextApi(clientFactory);
         this.cmaf = new CmafApi(clientFactory);
         this.segmentedRaw = new SegmentedRawApi(clientFactory);
+        this.packedAudio = new PackedAudioApi(clientFactory);
         this.text = new TextApi(clientFactory);
         this.ts = new TsApi(clientFactory);
         this.webm = new WebmApi(clientFactory);
