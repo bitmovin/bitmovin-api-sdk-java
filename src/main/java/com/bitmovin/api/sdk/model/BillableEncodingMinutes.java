@@ -5,6 +5,7 @@ import java.util.Arrays;
 import com.bitmovin.api.sdk.model.BillableEncodingMinutesDetails;
 import com.bitmovin.api.sdk.model.CodecConfigType;
 import com.bitmovin.api.sdk.model.EncodingMode;
+import com.bitmovin.api.sdk.model.NexGuardABWatermarkingFeature;
 import com.bitmovin.api.sdk.model.PsnrPerStreamMode;
 import com.bitmovin.api.sdk.model.StatisticsPerTitleStream;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -37,6 +38,9 @@ public class BillableEncodingMinutes {
 
   @JsonProperty("enhancedDeinterlace")
   private Boolean enhancedDeinterlace;
+
+  @JsonProperty("nexGuardABWatermarkingType")
+  private NexGuardABWatermarkingFeature nexGuardABWatermarkingType;
 
   @JsonProperty("billableMinutes")
   private BillableEncodingMinutesDetails billableMinutes;
@@ -139,6 +143,24 @@ public class BillableEncodingMinutes {
 
 
   /**
+   * Get nexGuardABWatermarkingType
+   * @return nexGuardABWatermarkingType
+   */
+  public NexGuardABWatermarkingFeature getNexGuardABWatermarkingType() {
+    return nexGuardABWatermarkingType;
+  }
+
+  /**
+   * Set nexGuardABWatermarkingType
+   *
+   * @param nexGuardABWatermarkingType
+   */
+  public void setNexGuardABWatermarkingType(NexGuardABWatermarkingFeature nexGuardABWatermarkingType) {
+    this.nexGuardABWatermarkingType = nexGuardABWatermarkingType;
+  }
+
+
+  /**
    * Get billableMinutes
    * @return billableMinutes
    */
@@ -172,12 +194,13 @@ public class BillableEncodingMinutes {
         Objects.equals(this.preset, billableEncodingMinutes.preset) &&
         Objects.equals(this.live, billableEncodingMinutes.live) &&
         Objects.equals(this.enhancedDeinterlace, billableEncodingMinutes.enhancedDeinterlace) &&
+        Objects.equals(this.nexGuardABWatermarkingType, billableEncodingMinutes.nexGuardABWatermarkingType) &&
         Objects.equals(this.billableMinutes, billableEncodingMinutes.billableMinutes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(encodingMode, codec, perTitleResultStream, psnrMode, preset, live, enhancedDeinterlace, billableMinutes);
+    return Objects.hash(encodingMode, codec, perTitleResultStream, psnrMode, preset, live, enhancedDeinterlace, nexGuardABWatermarkingType, billableMinutes);
   }
 
   @Override
@@ -192,6 +215,7 @@ public class BillableEncodingMinutes {
     sb.append("    preset: ").append(toIndentedString(preset)).append("\n");
     sb.append("    live: ").append(toIndentedString(live)).append("\n");
     sb.append("    enhancedDeinterlace: ").append(toIndentedString(enhancedDeinterlace)).append("\n");
+    sb.append("    nexGuardABWatermarkingType: ").append(toIndentedString(nexGuardABWatermarkingType)).append("\n");
     sb.append("    billableMinutes: ").append(toIndentedString(billableMinutes)).append("\n");
     sb.append("}");
     return sb.toString();

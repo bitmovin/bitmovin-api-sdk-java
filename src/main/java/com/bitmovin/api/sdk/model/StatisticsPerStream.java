@@ -6,6 +6,7 @@ import com.bitmovin.api.sdk.model.CodecConfigType;
 import com.bitmovin.api.sdk.model.DolbyVisionPerStreamMode;
 import com.bitmovin.api.sdk.model.EncodingMode;
 import com.bitmovin.api.sdk.model.InputFactor;
+import com.bitmovin.api.sdk.model.NexGuardABWatermarkingFeature;
 import com.bitmovin.api.sdk.model.PsnrPerStreamMode;
 import com.bitmovin.api.sdk.model.StatisticsPerTitleStream;
 import com.bitmovin.api.sdk.model.StatisticsResolution;
@@ -96,6 +97,12 @@ public class StatisticsPerStream {
 
   @JsonProperty("enhancedDeinterlaceMultiplicator")
   private Double enhancedDeinterlaceMultiplicator;
+
+  @JsonProperty("nexGuardABWatermarkingType")
+  private NexGuardABWatermarkingFeature nexGuardABWatermarkingType;
+
+  @JsonProperty("nexGuardABWatermarkingMultiplicator")
+  private Double nexGuardABWatermarkingMultiplicator;
 
   @JsonProperty("inputFactor")
   private InputFactor inputFactor;
@@ -370,6 +377,32 @@ public class StatisticsPerStream {
 
 
   /**
+   * Get nexGuardABWatermarkingType
+   * @return nexGuardABWatermarkingType
+   */
+  public NexGuardABWatermarkingFeature getNexGuardABWatermarkingType() {
+    return nexGuardABWatermarkingType;
+  }
+
+  /**
+   * Set nexGuardABWatermarkingType
+   *
+   * @param nexGuardABWatermarkingType
+   */
+  public void setNexGuardABWatermarkingType(NexGuardABWatermarkingFeature nexGuardABWatermarkingType) {
+    this.nexGuardABWatermarkingType = nexGuardABWatermarkingType;
+  }
+
+  /**
+   * The output minutes multiplicator for streams using a NexGuard A/B Watermarking.
+   * @return nexGuardABWatermarkingMultiplicator
+   */
+  public Double getNexGuardABWatermarkingMultiplicator() {
+    return nexGuardABWatermarkingMultiplicator;
+  }
+
+
+  /**
    * Get inputFactor
    * @return inputFactor
    */
@@ -422,12 +455,14 @@ public class StatisticsPerStream {
         Objects.equals(this.liveMultiplicator, statisticsPerStream.liveMultiplicator) &&
         Objects.equals(this.enhancedDeinterlace, statisticsPerStream.enhancedDeinterlace) &&
         Objects.equals(this.enhancedDeinterlaceMultiplicator, statisticsPerStream.enhancedDeinterlaceMultiplicator) &&
+        Objects.equals(this.nexGuardABWatermarkingType, statisticsPerStream.nexGuardABWatermarkingType) &&
+        Objects.equals(this.nexGuardABWatermarkingMultiplicator, statisticsPerStream.nexGuardABWatermarkingMultiplicator) &&
         Objects.equals(this.inputFactor, statisticsPerStream.inputFactor);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(streamId, codecConfigId, multiplicator, encodedBytes, encodedSeconds, billableMinutes, width, height, rate, bitrate, codec, resolution, encodingMode, encodingModeMultiplicator, perTitleResultStream, perTitleMultiplicator, psnrMode, psnrMultiplicator, dolbyVisionMode, dolbyVisionMultiplicator, preset, presetMultiplicator, live, liveMultiplicator, enhancedDeinterlace, enhancedDeinterlaceMultiplicator, inputFactor);
+    return Objects.hash(streamId, codecConfigId, multiplicator, encodedBytes, encodedSeconds, billableMinutes, width, height, rate, bitrate, codec, resolution, encodingMode, encodingModeMultiplicator, perTitleResultStream, perTitleMultiplicator, psnrMode, psnrMultiplicator, dolbyVisionMode, dolbyVisionMultiplicator, preset, presetMultiplicator, live, liveMultiplicator, enhancedDeinterlace, enhancedDeinterlaceMultiplicator, nexGuardABWatermarkingType, nexGuardABWatermarkingMultiplicator, inputFactor);
   }
 
   @Override
@@ -461,6 +496,8 @@ public class StatisticsPerStream {
     sb.append("    liveMultiplicator: ").append(toIndentedString(liveMultiplicator)).append("\n");
     sb.append("    enhancedDeinterlace: ").append(toIndentedString(enhancedDeinterlace)).append("\n");
     sb.append("    enhancedDeinterlaceMultiplicator: ").append(toIndentedString(enhancedDeinterlaceMultiplicator)).append("\n");
+    sb.append("    nexGuardABWatermarkingType: ").append(toIndentedString(nexGuardABWatermarkingType)).append("\n");
+    sb.append("    nexGuardABWatermarkingMultiplicator: ").append(toIndentedString(nexGuardABWatermarkingMultiplicator)).append("\n");
     sb.append("    inputFactor: ").append(toIndentedString(inputFactor)).append("\n");
     sb.append("}");
     return sb.toString();

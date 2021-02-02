@@ -3,6 +3,7 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.SubtitleConfiguration;
+import com.bitmovin.api.sdk.model.WebVttCueIdentifierPolicy;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -21,6 +22,9 @@ public class WebVttConfiguration extends SubtitleConfiguration {
 
   @JsonProperty("ignoreRegion")
   private Boolean ignoreRegion;
+
+  @JsonProperty("cueIdentifierPolicy")
+  private WebVttCueIdentifierPolicy cueIdentifierPolicy;
 
 
   /**
@@ -61,6 +65,24 @@ public class WebVttConfiguration extends SubtitleConfiguration {
   }
 
 
+  /**
+   * Get cueIdentifierPolicy
+   * @return cueIdentifierPolicy
+   */
+  public WebVttCueIdentifierPolicy getCueIdentifierPolicy() {
+    return cueIdentifierPolicy;
+  }
+
+  /**
+   * Set cueIdentifierPolicy
+   *
+   * @param cueIdentifierPolicy
+   */
+  public void setCueIdentifierPolicy(WebVttCueIdentifierPolicy cueIdentifierPolicy) {
+    this.cueIdentifierPolicy = cueIdentifierPolicy;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -72,12 +94,13 @@ public class WebVttConfiguration extends SubtitleConfiguration {
     WebVttConfiguration webVttConfiguration = (WebVttConfiguration) o;
     return Objects.equals(this.appendOptionalZeroHour, webVttConfiguration.appendOptionalZeroHour) &&
         Objects.equals(this.ignoreRegion, webVttConfiguration.ignoreRegion) &&
+        Objects.equals(this.cueIdentifierPolicy, webVttConfiguration.cueIdentifierPolicy) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(appendOptionalZeroHour, ignoreRegion, super.hashCode());
+    return Objects.hash(appendOptionalZeroHour, ignoreRegion, cueIdentifierPolicy, super.hashCode());
   }
 
   @Override
@@ -87,6 +110,7 @@ public class WebVttConfiguration extends SubtitleConfiguration {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    appendOptionalZeroHour: ").append(toIndentedString(appendOptionalZeroHour)).append("\n");
     sb.append("    ignoreRegion: ").append(toIndentedString(ignoreRegion)).append("\n");
+    sb.append("    cueIdentifierPolicy: ").append(toIndentedString(cueIdentifierPolicy)).append("\n");
     sb.append("}");
     return sb.toString();
   }
