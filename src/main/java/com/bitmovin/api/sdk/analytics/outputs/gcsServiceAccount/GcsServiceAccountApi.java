@@ -46,13 +46,13 @@ public class GcsServiceAccountApi {
     /**
      * Create Service Account based GCS Output
      * 
-     * @param gcsServiceAccountOutput The GCS output to be created (required)
-     * @return GcsServiceAccountOutput
+     * @param analyticsGcsServiceAccountOutput The GCS output to be created (required)
+     * @return AnalyticsGcsServiceAccountOutput
      * @throws BitmovinException if fails to make API call
      */
-    public GcsServiceAccountOutput create(GcsServiceAccountOutput gcsServiceAccountOutput) throws BitmovinException {
+    public AnalyticsGcsServiceAccountOutput create(AnalyticsGcsServiceAccountOutput analyticsGcsServiceAccountOutput) throws BitmovinException {
         try {
-            return this.apiClient.create(gcsServiceAccountOutput).getData().getResult();
+            return this.apiClient.create(analyticsGcsServiceAccountOutput).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -91,10 +91,10 @@ public class GcsServiceAccountApi {
     /**
      * List Service Account based GCS Outputs
      * 
-     * @return List&lt;GcsServiceAccountOutput&gt;
+     * @return List&lt;AnalyticsGcsServiceAccountOutput&gt;
      * @throws BitmovinException if fails to make API call
      */
-    public PaginationResponse<GcsServiceAccountOutput> list() throws BitmovinException {
+    public PaginationResponse<AnalyticsGcsServiceAccountOutput> list() throws BitmovinException {
         try {
             return this.apiClient.list(new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
@@ -105,10 +105,10 @@ public class GcsServiceAccountApi {
      * List Service Account based GCS Outputs
      * 
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
-     * @return List&lt;GcsServiceAccountOutput&gt;
+     * @return List&lt;AnalyticsGcsServiceAccountOutput&gt;
      * @throws BitmovinException if fails to make API call
      */
-    public PaginationResponse<GcsServiceAccountOutput> list(GcsServiceAccountOutputListQueryParams queryParams) throws BitmovinException {
+    public PaginationResponse<AnalyticsGcsServiceAccountOutput> list(AnalyticsGcsServiceAccountOutputListQueryParams queryParams) throws BitmovinException {
         try {
             return this.apiClient.list(new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
@@ -119,7 +119,7 @@ public class GcsServiceAccountApi {
     interface GcsServiceAccountApiClient {
     
         @RequestLine("POST /analytics/outputs/gcs-service-account")
-        ResponseEnvelope<GcsServiceAccountOutput> create(GcsServiceAccountOutput gcsServiceAccountOutput) throws BitmovinException;
+        ResponseEnvelope<AnalyticsGcsServiceAccountOutput> create(AnalyticsGcsServiceAccountOutput analyticsGcsServiceAccountOutput) throws BitmovinException;
     
         @RequestLine("DELETE /analytics/outputs/gcs-service-account/{output_id}")
         ResponseEnvelope<GcsServiceAccountOutput> delete(@Param(value = "output_id") String outputId) throws BitmovinException;
@@ -128,6 +128,6 @@ public class GcsServiceAccountApi {
         ResponseEnvelope<GcsServiceAccountOutput> get(@Param(value = "output_id") String outputId) throws BitmovinException;
     
         @RequestLine("GET /analytics/outputs/gcs-service-account")
-        ResponseEnvelope<PaginationResponse<GcsServiceAccountOutput>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<AnalyticsGcsServiceAccountOutput>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

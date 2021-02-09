@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.HashMap;
 import com.bitmovin.api.sdk.model.*;
 
-public class S3RoleBasedOutputListQueryParams extends HashMap<String, Object> {
+public class AnalyticsS3RoleBasedOutputListQueryParams extends HashMap<String, Object> {
 
     public Integer getOffset() {
         return (Integer) this.get("offset");

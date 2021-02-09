@@ -46,13 +46,13 @@ public class S3RoleBasedApi {
     /**
      * Create S3 Role-based Output
      * 
-     * @param s3RoleBasedOutput The S3 Role-based output to be created (required)
-     * @return S3RoleBasedOutput
+     * @param analyticsS3RoleBasedOutput The S3 Role-based output to be created (required)
+     * @return AnalyticsS3RoleBasedOutput
      * @throws BitmovinException if fails to make API call
      */
-    public S3RoleBasedOutput create(S3RoleBasedOutput s3RoleBasedOutput) throws BitmovinException {
+    public AnalyticsS3RoleBasedOutput create(AnalyticsS3RoleBasedOutput analyticsS3RoleBasedOutput) throws BitmovinException {
         try {
-            return this.apiClient.create(s3RoleBasedOutput).getData().getResult();
+            return this.apiClient.create(analyticsS3RoleBasedOutput).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -91,10 +91,10 @@ public class S3RoleBasedApi {
     /**
      * List S3 Role-based Outputs
      * 
-     * @return List&lt;S3RoleBasedOutput&gt;
+     * @return List&lt;AnalyticsS3RoleBasedOutput&gt;
      * @throws BitmovinException if fails to make API call
      */
-    public PaginationResponse<S3RoleBasedOutput> list() throws BitmovinException {
+    public PaginationResponse<AnalyticsS3RoleBasedOutput> list() throws BitmovinException {
         try {
             return this.apiClient.list(new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
@@ -105,10 +105,10 @@ public class S3RoleBasedApi {
      * List S3 Role-based Outputs
      * 
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
-     * @return List&lt;S3RoleBasedOutput&gt;
+     * @return List&lt;AnalyticsS3RoleBasedOutput&gt;
      * @throws BitmovinException if fails to make API call
      */
-    public PaginationResponse<S3RoleBasedOutput> list(S3RoleBasedOutputListQueryParams queryParams) throws BitmovinException {
+    public PaginationResponse<AnalyticsS3RoleBasedOutput> list(AnalyticsS3RoleBasedOutputListQueryParams queryParams) throws BitmovinException {
         try {
             return this.apiClient.list(new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
@@ -119,7 +119,7 @@ public class S3RoleBasedApi {
     interface S3RoleBasedApiClient {
     
         @RequestLine("POST /analytics/outputs/s3-role-based")
-        ResponseEnvelope<S3RoleBasedOutput> create(S3RoleBasedOutput s3RoleBasedOutput) throws BitmovinException;
+        ResponseEnvelope<AnalyticsS3RoleBasedOutput> create(AnalyticsS3RoleBasedOutput analyticsS3RoleBasedOutput) throws BitmovinException;
     
         @RequestLine("DELETE /analytics/outputs/s3-role-based/{output_id}")
         ResponseEnvelope<S3RoleBasedOutput> delete(@Param(value = "output_id") String outputId) throws BitmovinException;
@@ -128,6 +128,6 @@ public class S3RoleBasedApi {
         ResponseEnvelope<S3RoleBasedOutput> get(@Param(value = "output_id") String outputId) throws BitmovinException;
     
         @RequestLine("GET /analytics/outputs/s3-role-based")
-        ResponseEnvelope<PaginationResponse<S3RoleBasedOutput>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<AnalyticsS3RoleBasedOutput>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }
