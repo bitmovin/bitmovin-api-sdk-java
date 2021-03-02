@@ -212,9 +212,6 @@ public enum CloudRegion {
   GOOGLE("GOOGLE"),
   
   
-  KUBERNETES("KUBERNETES"),
-  
-  
   EXTERNAL("EXTERNAL"),
   
   

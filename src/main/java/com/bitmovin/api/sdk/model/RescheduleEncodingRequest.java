@@ -17,7 +17,7 @@ public class RescheduleEncodingRequest {
 
 
   /**
-   * Id of a custom infrastructure, e.g., Kubernetes Cluster
+   * Id of a custom infrastructure, e.g., AWS Cloud Connect
    * @return infrastructureId
    */
   public String getInfrastructureId() {
@@ -25,10 +25,10 @@ public class RescheduleEncodingRequest {
   }
 
   /**
-   * Id of a custom infrastructure, e.g., Kubernetes Cluster
+   * Id of a custom infrastructure, e.g., AWS Cloud Connect
    *
    * @param infrastructureId
-   *        Id of a custom infrastructure, e.g., Kubernetes Cluster
+   *        Id of a custom infrastructure, e.g., AWS Cloud Connect
    */
   public void setInfrastructureId(String infrastructureId) {
     this.infrastructureId = infrastructureId;
