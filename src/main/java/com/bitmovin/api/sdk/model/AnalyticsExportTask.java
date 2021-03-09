@@ -4,8 +4,11 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AnalyticsExportStatus;
 import com.bitmovin.api.sdk.model.AnalyticsExportTaskOutputTarget;
+import com.bitmovin.api.sdk.model.AnalyticsExportType;
 import com.bitmovin.api.sdk.model.BitmovinResponse;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -45,6 +48,13 @@ public class AnalyticsExportTask extends BitmovinResponse {
 
   @JsonProperty("finishedAt")
   private Date finishedAt;
+
+  @JsonProperty("type")
+  private AnalyticsExportType type;
+
+  @JsonProperty("columns")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<String> columns = new ArrayList<String>();
 
 
   /**
@@ -202,6 +212,47 @@ public class AnalyticsExportTask extends BitmovinResponse {
   }
 
 
+  /**
+   * Get type
+   * @return type
+   */
+  public AnalyticsExportType getType() {
+    return type;
+  }
+
+  /**
+   * Set type
+   *
+   * @param type
+   */
+  public void setType(AnalyticsExportType type) {
+    this.type = type;
+  }
+
+
+  public AnalyticsExportTask addColumnsItem(String columnsItem) {
+    this.columns.add(columnsItem);
+    return this;
+  }
+
+  /**
+   * Get columns
+   * @return columns
+   */
+  public List<String> getColumns() {
+    return columns;
+  }
+
+  /**
+   * Set columns
+   *
+   * @param columns
+   */
+  public void setColumns(List<String> columns) {
+    this.columns = columns;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -221,12 +272,14 @@ public class AnalyticsExportTask extends BitmovinResponse {
         Objects.equals(this.status, analyticsExportTask.status) &&
         Objects.equals(this.startedAt, analyticsExportTask.startedAt) &&
         Objects.equals(this.finishedAt, analyticsExportTask.finishedAt) &&
+        Objects.equals(this.type, analyticsExportTask.type) &&
+        Objects.equals(this.columns, analyticsExportTask.columns) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startTime, endTime, name, description, licenseKey, output, progress, status, startedAt, finishedAt, super.hashCode());
+    return Objects.hash(startTime, endTime, name, description, licenseKey, output, progress, status, startedAt, finishedAt, type, columns, super.hashCode());
   }
 
   @Override
@@ -244,6 +297,8 @@ public class AnalyticsExportTask extends BitmovinResponse {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    startedAt: ").append(toIndentedString(startedAt)).append("\n");
     sb.append("    finishedAt: ").append(toIndentedString(finishedAt)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    columns: ").append(toIndentedString(columns)).append("\n");
     sb.append("}");
     return sb.toString();
   }

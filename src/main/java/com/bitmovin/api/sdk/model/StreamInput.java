@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.EncodingStreamInputDetails;
 import com.bitmovin.api.sdk.model.StreamSelectionMode;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -27,6 +28,9 @@ public class StreamInput {
 
   @JsonProperty("inputStreamId")
   private String inputStreamId;
+
+  @JsonProperty("analysisDetails")
+  private EncodingStreamInputDetails analysisDetails;
 
 
   /**
@@ -123,6 +127,14 @@ public class StreamInput {
     this.inputStreamId = inputStreamId;
   }
 
+  /**
+   * Input analysis details  This property is populated after the encoding has finished 
+   * @return analysisDetails
+   */
+  public EncodingStreamInputDetails getAnalysisDetails() {
+    return analysisDetails;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -137,12 +149,13 @@ public class StreamInput {
         Objects.equals(this.inputPath, streamInput.inputPath) &&
         Objects.equals(this.selectionMode, streamInput.selectionMode) &&
         Objects.equals(this.position, streamInput.position) &&
-        Objects.equals(this.inputStreamId, streamInput.inputStreamId);
+        Objects.equals(this.inputStreamId, streamInput.inputStreamId) &&
+        Objects.equals(this.analysisDetails, streamInput.analysisDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(inputId, inputPath, selectionMode, position, inputStreamId);
+    return Objects.hash(inputId, inputPath, selectionMode, position, inputStreamId, analysisDetails);
   }
 
   @Override
@@ -155,6 +168,7 @@ public class StreamInput {
     sb.append("    selectionMode: ").append(toIndentedString(selectionMode)).append("\n");
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
     sb.append("    inputStreamId: ").append(toIndentedString(inputStreamId)).append("\n");
+    sb.append("    analysisDetails: ").append(toIndentedString(analysisDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }

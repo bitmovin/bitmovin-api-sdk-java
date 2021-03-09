@@ -20,10 +20,12 @@ import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.packedAudio.customdata.CustomdataApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.packedAudio.information.InformationApi;
+import com.bitmovin.api.sdk.encoding.encodings.muxings.packedAudio.drm.DrmApi;
 
 public class PackedAudioApi {
     public final CustomdataApi customdata;
     public final InformationApi information;
+    public final DrmApi drm;
 
     private final PackedAudioApiClient apiClient;
 
@@ -37,6 +39,7 @@ public class PackedAudioApi {
 
         this.customdata = new CustomdataApi(clientFactory);
         this.information = new InformationApi(clientFactory);
+        this.drm = new DrmApi(clientFactory);
     }
 
     /**
