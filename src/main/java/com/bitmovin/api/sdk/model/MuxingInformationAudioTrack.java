@@ -93,7 +93,7 @@ public class MuxingInformationAudioTrack {
   }
 
   /**
-   * TODO add description
+   * The duration in seconds
    * @return duration
    */
   public Double getDuration() {

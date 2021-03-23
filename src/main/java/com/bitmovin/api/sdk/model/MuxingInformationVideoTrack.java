@@ -87,7 +87,7 @@ public class MuxingInformationVideoTrack {
   }
 
   /**
-   * TODO add description
+   * Get rate
    * @return rate
    */
   public Long getRate() {
