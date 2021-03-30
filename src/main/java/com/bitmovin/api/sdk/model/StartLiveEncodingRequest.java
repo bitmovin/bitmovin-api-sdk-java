@@ -6,6 +6,7 @@ import com.bitmovin.api.sdk.model.AutoRestartConfiguration;
 import com.bitmovin.api.sdk.model.EncodingMode;
 import com.bitmovin.api.sdk.model.LiveDashManifest;
 import com.bitmovin.api.sdk.model.LiveHlsManifest;
+import com.bitmovin.api.sdk.model.ManifestGenerator;
 import com.bitmovin.api.sdk.model.ReuploadSettings;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +36,9 @@ public class StartLiveEncodingRequest {
 
   @JsonProperty("reuploadSettings")
   private ReuploadSettings reuploadSettings;
+
+  @JsonProperty("manifestGenerator")
+  private ManifestGenerator manifestGenerator;
 
   @JsonProperty("autoRestartConfiguration")
   private AutoRestartConfiguration autoRestartConfiguration;
@@ -146,6 +150,25 @@ public class StartLiveEncodingRequest {
 
 
   /**
+   * Sets the version of the manifest generation engine
+   * @return manifestGenerator
+   */
+  public ManifestGenerator getManifestGenerator() {
+    return manifestGenerator;
+  }
+
+  /**
+   * Sets the version of the manifest generation engine
+   *
+   * @param manifestGenerator
+   *        Sets the version of the manifest generation engine
+   */
+  public void setManifestGenerator(ManifestGenerator manifestGenerator) {
+    this.manifestGenerator = manifestGenerator;
+  }
+
+
+  /**
    * Configuration for auto restarting the live encoding
    * @return autoRestartConfiguration
    */
@@ -178,12 +201,13 @@ public class StartLiveEncodingRequest {
         Objects.equals(this.dashManifests, startLiveEncodingRequest.dashManifests) &&
         Objects.equals(this.liveEncodingMode, startLiveEncodingRequest.liveEncodingMode) &&
         Objects.equals(this.reuploadSettings, startLiveEncodingRequest.reuploadSettings) &&
+        Objects.equals(this.manifestGenerator, startLiveEncodingRequest.manifestGenerator) &&
         Objects.equals(this.autoRestartConfiguration, startLiveEncodingRequest.autoRestartConfiguration);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(streamKey, hlsManifests, dashManifests, liveEncodingMode, reuploadSettings, autoRestartConfiguration);
+    return Objects.hash(streamKey, hlsManifests, dashManifests, liveEncodingMode, reuploadSettings, manifestGenerator, autoRestartConfiguration);
   }
 
   @Override
@@ -196,6 +220,7 @@ public class StartLiveEncodingRequest {
     sb.append("    dashManifests: ").append(toIndentedString(dashManifests)).append("\n");
     sb.append("    liveEncodingMode: ").append(toIndentedString(liveEncodingMode)).append("\n");
     sb.append("    reuploadSettings: ").append(toIndentedString(reuploadSettings)).append("\n");
+    sb.append("    manifestGenerator: ").append(toIndentedString(manifestGenerator)).append("\n");
     sb.append("    autoRestartConfiguration: ").append(toIndentedString(autoRestartConfiguration)).append("\n");
     sb.append("}");
     return sb.toString();

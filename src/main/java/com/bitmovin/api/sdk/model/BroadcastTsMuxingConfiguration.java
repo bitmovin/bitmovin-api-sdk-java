@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.BroadcastTsAudioInputStreamConfiguration;
 import com.bitmovin.api.sdk.model.BroadcastTsProgramConfiguration;
+import com.bitmovin.api.sdk.model.BroadcastTsSubtitleInputStreamConfiguration;
 import com.bitmovin.api.sdk.model.BroadcastTsTransportConfiguration;
 import com.bitmovin.api.sdk.model.BroadcastTsVideoInputStreamConfiguration;
 import java.util.ArrayList;
@@ -31,6 +32,10 @@ public class BroadcastTsMuxingConfiguration {
   @JsonProperty("audioStreams")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<BroadcastTsAudioInputStreamConfiguration> audioStreams = new ArrayList<BroadcastTsAudioInputStreamConfiguration>();
+
+  @JsonProperty("subtitleStreams")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<BroadcastTsSubtitleInputStreamConfiguration> subtitleStreams = new ArrayList<BroadcastTsSubtitleInputStreamConfiguration>();
 
 
   /**
@@ -117,6 +122,29 @@ public class BroadcastTsMuxingConfiguration {
   }
 
 
+  public BroadcastTsMuxingConfiguration addSubtitleStreamsItem(BroadcastTsSubtitleInputStreamConfiguration subtitleStreamsItem) {
+    this.subtitleStreams.add(subtitleStreamsItem);
+    return this;
+  }
+
+  /**
+   * Get subtitleStreams
+   * @return subtitleStreams
+   */
+  public List<BroadcastTsSubtitleInputStreamConfiguration> getSubtitleStreams() {
+    return subtitleStreams;
+  }
+
+  /**
+   * Set subtitleStreams
+   *
+   * @param subtitleStreams
+   */
+  public void setSubtitleStreams(List<BroadcastTsSubtitleInputStreamConfiguration> subtitleStreams) {
+    this.subtitleStreams = subtitleStreams;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -129,12 +157,13 @@ public class BroadcastTsMuxingConfiguration {
     return Objects.equals(this.transport, broadcastTsMuxingConfiguration.transport) &&
         Objects.equals(this.program, broadcastTsMuxingConfiguration.program) &&
         Objects.equals(this.videoStreams, broadcastTsMuxingConfiguration.videoStreams) &&
-        Objects.equals(this.audioStreams, broadcastTsMuxingConfiguration.audioStreams);
+        Objects.equals(this.audioStreams, broadcastTsMuxingConfiguration.audioStreams) &&
+        Objects.equals(this.subtitleStreams, broadcastTsMuxingConfiguration.subtitleStreams);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transport, program, videoStreams, audioStreams);
+    return Objects.hash(transport, program, videoStreams, audioStreams, subtitleStreams);
   }
 
   @Override
@@ -146,6 +175,7 @@ public class BroadcastTsMuxingConfiguration {
     sb.append("    program: ").append(toIndentedString(program)).append("\n");
     sb.append("    videoStreams: ").append(toIndentedString(videoStreams)).append("\n");
     sb.append("    audioStreams: ").append(toIndentedString(audioStreams)).append("\n");
+    sb.append("    subtitleStreams: ").append(toIndentedString(subtitleStreams)).append("\n");
     sb.append("}");
     return sb.toString();
   }
