@@ -162,7 +162,7 @@ public class Sprite extends BitmovinResource {
 
 
   /**
-   * Filename of the vtt-file. The file-extension \&quot;.vtt\&quot; is required. (required)
+   * Filename of the vtt-file. The file-extension \&quot;.vtt\&quot; is required.
    * @return vttName
    */
   public String getVttName() {
@@ -170,10 +170,10 @@ public class Sprite extends BitmovinResource {
   }
 
   /**
-   * Filename of the vtt-file. The file-extension \&quot;.vtt\&quot; is required. (required)
+   * Filename of the vtt-file. The file-extension \&quot;.vtt\&quot; is required.
    *
    * @param vttName
-   *        Filename of the vtt-file. The file-extension \&quot;.vtt\&quot; is required. (required)
+   *        Filename of the vtt-file. The file-extension \&quot;.vtt\&quot; is required.
    */
   public void setVttName(String vttName) {
     this.vttName = vttName;
@@ -204,7 +204,7 @@ public class Sprite extends BitmovinResource {
 
 
   /**
-   * Number of images per file. If more images are generated than specified in this value, multiple sprites will be created. You can use the placeholder &#39;%number%&#39; in the spriteName to specify the naming policy.
+   * Number of images per file. If more images are generated than specified in this value, multiple sprites will be created. You can use the placeholder &#39;%number%&#39; in the spriteName to specify the naming policy. Either this property must be set or hTiles and vTiles. 
    * @return imagesPerFile
    */
   public Integer getImagesPerFile() {
@@ -212,10 +212,10 @@ public class Sprite extends BitmovinResource {
   }
 
   /**
-   * Number of images per file. If more images are generated than specified in this value, multiple sprites will be created. You can use the placeholder &#39;%number%&#39; in the spriteName to specify the naming policy.
+   * Number of images per file. If more images are generated than specified in this value, multiple sprites will be created. You can use the placeholder &#39;%number%&#39; in the spriteName to specify the naming policy. Either this property must be set or hTiles and vTiles. 
    *
    * @param imagesPerFile
-   *        Number of images per file. If more images are generated than specified in this value, multiple sprites will be created. You can use the placeholder &#39;%number%&#39; in the spriteName to specify the naming policy.
+   *        Number of images per file. If more images are generated than specified in this value, multiple sprites will be created. You can use the placeholder &#39;%number%&#39; in the spriteName to specify the naming policy. Either this property must be set or hTiles and vTiles. 
    */
   public void setImagesPerFile(Integer imagesPerFile) {
     this.imagesPerFile = imagesPerFile;

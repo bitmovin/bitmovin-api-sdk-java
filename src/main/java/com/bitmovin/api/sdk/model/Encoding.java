@@ -53,9 +53,6 @@ public class Encoding extends BitmovinResource {
   @JsonProperty("encoderVersion")
   private String encoderVersion;
 
-  @JsonProperty("infrastructureId")
-  private String infrastructureId;
-
   @JsonProperty("infrastructure")
   private InfrastructureSettings infrastructure;
 
@@ -197,25 +194,6 @@ public class Encoding extends BitmovinResource {
 
 
   /**
-   * Define an external infrastructure to run the encoding on. Note If you set this value, the &#x60;cloudRegion&#x60; must be &#39;EXTERNAL&#39;.
-   * @return infrastructureId
-   */
-  public String getInfrastructureId() {
-    return infrastructureId;
-  }
-
-  /**
-   * Define an external infrastructure to run the encoding on. Note If you set this value, the &#x60;cloudRegion&#x60; must be &#39;EXTERNAL&#39;.
-   *
-   * @param infrastructureId
-   *        Define an external infrastructure to run the encoding on. Note If you set this value, the &#x60;cloudRegion&#x60; must be &#39;EXTERNAL&#39;.
-   */
-  public void setInfrastructureId(String infrastructureId) {
-    this.infrastructureId = infrastructureId;
-  }
-
-
-  /**
    * Get infrastructure
    * @return infrastructure
    */
@@ -327,7 +305,6 @@ public class Encoding extends BitmovinResource {
         Objects.equals(this.cloudRegion, encoding.cloudRegion) &&
         Objects.equals(this.fallbackCloudRegions, encoding.fallbackCloudRegions) &&
         Objects.equals(this.encoderVersion, encoding.encoderVersion) &&
-        Objects.equals(this.infrastructureId, encoding.infrastructureId) &&
         Objects.equals(this.infrastructure, encoding.infrastructure) &&
         Objects.equals(this.staticIpId, encoding.staticIpId) &&
         Objects.equals(this.selectedEncoderVersion, encoding.selectedEncoderVersion) &&
@@ -340,7 +317,7 @@ public class Encoding extends BitmovinResource {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, startedAt, queuedAt, runningAt, finishedAt, errorAt, progress, cloudRegion, fallbackCloudRegions, encoderVersion, infrastructureId, infrastructure, staticIpId, selectedEncoderVersion, selectedEncodingMode, selectedCloudRegion, status, labels, super.hashCode());
+    return Objects.hash(type, startedAt, queuedAt, runningAt, finishedAt, errorAt, progress, cloudRegion, fallbackCloudRegions, encoderVersion, infrastructure, staticIpId, selectedEncoderVersion, selectedEncodingMode, selectedCloudRegion, status, labels, super.hashCode());
   }
 
   @Override
@@ -358,7 +335,6 @@ public class Encoding extends BitmovinResource {
     sb.append("    cloudRegion: ").append(toIndentedString(cloudRegion)).append("\n");
     sb.append("    fallbackCloudRegions: ").append(toIndentedString(fallbackCloudRegions)).append("\n");
     sb.append("    encoderVersion: ").append(toIndentedString(encoderVersion)).append("\n");
-    sb.append("    infrastructureId: ").append(toIndentedString(infrastructureId)).append("\n");
     sb.append("    infrastructure: ").append(toIndentedString(infrastructure)).append("\n");
     sb.append("    staticIpId: ").append(toIndentedString(staticIpId)).append("\n");
     sb.append("    selectedEncoderVersion: ").append(toIndentedString(selectedEncoderVersion)).append("\n");

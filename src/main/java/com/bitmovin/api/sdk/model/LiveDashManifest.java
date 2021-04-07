@@ -33,7 +33,7 @@ public class LiveDashManifest {
 
 
   /**
-   * Dash manifest ids (required)
+   * Dash manifest id (required)
    * @return manifestId
    */
   public String getManifestId() {
@@ -41,10 +41,10 @@ public class LiveDashManifest {
   }
 
   /**
-   * Dash manifest ids (required)
+   * Dash manifest id (required)
    *
    * @param manifestId
-   *        Dash manifest ids (required)
+   *        Dash manifest id (required)
    */
   public void setManifestId(String manifestId) {
     this.manifestId = manifestId;

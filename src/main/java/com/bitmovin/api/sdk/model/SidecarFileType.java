@@ -10,21 +10,14 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum EnhancedDeinterlaceAutoEnable {
+public enum SidecarFileType {
   
-  /**
-   * The content will always be deinterlaced with the settings specified (mode, parity)
-   */
-  ALWAYS_ON("ALWAYS_ON"),
   
-  /**
-   * The Enhanced Deinterlace Filter will only be applied when interlaced content is signaled in the meta data of the input stream.
-   */
-  META_DATA_BASED("META_DATA_BASED");
+  WEB_VTT("WEB_VTT");
 
   private String value;
 
-  EnhancedDeinterlaceAutoEnable(String value) {
+  SidecarFileType(String value) {
     this.value = value;
   }
 
@@ -39,8 +32,8 @@ public enum EnhancedDeinterlaceAutoEnable {
   }
 
   @JsonCreator
-  public static EnhancedDeinterlaceAutoEnable fromValue(String text) {
-    for (EnhancedDeinterlaceAutoEnable b : EnhancedDeinterlaceAutoEnable.values()) {
+  public static SidecarFileType fromValue(String text) {
+    for (SidecarFileType b : SidecarFileType.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

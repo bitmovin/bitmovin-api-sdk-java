@@ -61,7 +61,7 @@ public class AudioMixApi {
     /**
      * Delete Audio Mix Filter
      * 
-     * @param filterId Id of the Audio Mix configuration. (required)
+     * @param filterId Id of the Audio Mix Filter. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */
@@ -76,7 +76,7 @@ public class AudioMixApi {
     /**
      * Audio Mix Filter Details
      * 
-     * @param filterId Id of the Audio Mix configuration. (required)
+     * @param filterId Id of the Audio Mix Filter. (required)
      * @return AudioMixFilter
      * @throws BitmovinException if fails to make API call
      */

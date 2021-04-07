@@ -61,7 +61,7 @@ public class WatermarkApi {
     /**
      * Delete Watermark Filter
      * 
-     * @param filterId Id of the watermark configuration. (required)
+     * @param filterId Id of the Watermark Filter. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */
@@ -76,7 +76,7 @@ public class WatermarkApi {
     /**
      * Watermark Filter Details
      * 
-     * @param filterId Id of the watermark configuration. (required)
+     * @param filterId Id of the Watermark Filter. (required)
      * @return WatermarkFilter
      * @throws BitmovinException if fails to make API call
      */

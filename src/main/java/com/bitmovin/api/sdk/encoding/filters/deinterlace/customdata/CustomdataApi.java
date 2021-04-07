@@ -43,7 +43,7 @@ public class CustomdataApi {
     /**
      * Deinterlace Filter Custom Data
      * 
-     * @param filterId Id of the deinterlace filter (required)
+     * @param filterId Id of the Deinterlace Filter (required)
      * @return CustomData
      * @throws BitmovinException if fails to make API call
      */

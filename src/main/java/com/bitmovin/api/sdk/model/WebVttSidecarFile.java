@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * An external WebVTT file that is added to an encoding. The size limit for a sidecar file is 10 MB
  */
-
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = WebVttSidecarFile.class)
 public class WebVttSidecarFile extends SidecarFile {
   @JsonProperty("segmentation")
   private WebVttSidecarFileSegmentation segmentation;

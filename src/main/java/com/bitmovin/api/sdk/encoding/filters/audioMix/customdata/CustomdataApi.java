@@ -43,7 +43,7 @@ public class CustomdataApi {
     /**
      * Audio Mix Filter Custom Data
      * 
-     * @param filterId Id of the Audio Mix configuration. (required)
+     * @param filterId Id of the Audio Mix Filter. (required)
      * @return CustomData
      * @throws BitmovinException if fails to make API call
      */

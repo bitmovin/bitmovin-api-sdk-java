@@ -148,6 +148,11 @@ public enum CloudRegion {
   GOOGLE_EUROPE_WEST_2("GOOGLE_EUROPE_WEST_2"),
   
   /**
+   * Google Frankfurt, Germany
+   */
+  GOOGLE_EUROPE_WEST_3("GOOGLE_EUROPE_WEST_3"),
+  
+  /**
    * Google Eemshaven, Netherlands
    */
   GOOGLE_EUROPE_WEST_4("GOOGLE_EUROPE_WEST_4"),

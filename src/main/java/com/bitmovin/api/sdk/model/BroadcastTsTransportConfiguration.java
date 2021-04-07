@@ -151,7 +151,7 @@ public class BroadcastTsTransportConfiguration {
 
 
   /**
-   * When false, the output stream is created at a constant bit rate. When true, the output rate is allowed to vary from a maximum rate set by the muxrate parameter down to the minimum required to carry the stream. Default: false
+   * When false, the output stream is created at a constant bit rate. When true, the output rate is allowed to vary from a maximum rate set by the muxrate parameter down to the minimum required to carry the stream.
    * @return variableMuxRate
    */
   public Boolean getVariableMuxRate() {
@@ -159,10 +159,10 @@ public class BroadcastTsTransportConfiguration {
   }
 
   /**
-   * When false, the output stream is created at a constant bit rate. When true, the output rate is allowed to vary from a maximum rate set by the muxrate parameter down to the minimum required to carry the stream. Default: false
+   * When false, the output stream is created at a constant bit rate. When true, the output rate is allowed to vary from a maximum rate set by the muxrate parameter down to the minimum required to carry the stream.
    *
    * @param variableMuxRate
-   *        When false, the output stream is created at a constant bit rate. When true, the output rate is allowed to vary from a maximum rate set by the muxrate parameter down to the minimum required to carry the stream. Default: false
+   *        When false, the output stream is created at a constant bit rate. When true, the output rate is allowed to vary from a maximum rate set by the muxrate parameter down to the minimum required to carry the stream.
    */
   public void setVariableMuxRate(Boolean variableMuxRate) {
     this.variableMuxRate = variableMuxRate;
@@ -170,7 +170,7 @@ public class BroadcastTsTransportConfiguration {
 
 
   /**
-   * Sets the presentation time stamp value for the first video frame. The timestamp is specified in the timescale of 90000. Default: 0
+   * Sets the presentation time stamp value for the first video frame. The timestamp is specified in the timescale of 90000
    * minimum: 0
    * maximum: 5400000
    * @return initialPresentationTimeStamp
@@ -180,12 +180,12 @@ public class BroadcastTsTransportConfiguration {
   }
 
   /**
-   * Sets the presentation time stamp value for the first video frame. The timestamp is specified in the timescale of 90000. Default: 0
+   * Sets the presentation time stamp value for the first video frame. The timestamp is specified in the timescale of 90000
    * minimum: 0
    * maximum: 5400000
    *
    * @param initialPresentationTimeStamp
-   *        Sets the presentation time stamp value for the first video frame. The timestamp is specified in the timescale of 90000. Default: 0
+   *        Sets the presentation time stamp value for the first video frame. The timestamp is specified in the timescale of 90000
    * minimum: 0
    * maximum: 5400000
    */
@@ -195,7 +195,7 @@ public class BroadcastTsTransportConfiguration {
 
 
   /**
-   * Sets the Program Clock Reference value at the beginning of the first packet for the transport stream. The PCR is specified in the timescale of 90000. Default: 0
+   * Sets the Program Clock Reference value at the beginning of the first packet for the transport stream. The PCR is specified in the timescale of 90000
    * minimum: 0
    * maximum: 2576980377600
    * @return initialProgramClockReference
@@ -205,12 +205,12 @@ public class BroadcastTsTransportConfiguration {
   }
 
   /**
-   * Sets the Program Clock Reference value at the beginning of the first packet for the transport stream. The PCR is specified in the timescale of 90000. Default: 0
+   * Sets the Program Clock Reference value at the beginning of the first packet for the transport stream. The PCR is specified in the timescale of 90000
    * minimum: 0
    * maximum: 2576980377600
    *
    * @param initialProgramClockReference
-   *        Sets the Program Clock Reference value at the beginning of the first packet for the transport stream. The PCR is specified in the timescale of 90000. Default: 0
+   *        Sets the Program Clock Reference value at the beginning of the first packet for the transport stream. The PCR is specified in the timescale of 90000
    * minimum: 0
    * maximum: 2576980377600
    */

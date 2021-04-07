@@ -61,7 +61,7 @@ public class RotateApi {
     /**
      * Delete Rotate Filter
      * 
-     * @param filterId Id of the Rotate configuration. (required)
+     * @param filterId Id of the Rotate Filter. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */
@@ -76,7 +76,7 @@ public class RotateApi {
     /**
      * Rotate Filter Details
      * 
-     * @param filterId Id of the Rotate configuration. (required)
+     * @param filterId Id of the Rotate Filter. (required)
      * @return RotateFilter
      * @throws BitmovinException if fails to make API call
      */

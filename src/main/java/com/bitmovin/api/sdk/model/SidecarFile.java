@@ -17,6 +17,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * A file that is added to an encoding. The size limit for a sidecar file is 10 MB
  */
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = SidecarFile.class)
+@JsonSubTypes({
+  @JsonSubTypes.Type(value = WebVttSidecarFile.class, name = "WEB_VTT"),
+})
 
 public class SidecarFile extends BitmovinResource {
   @JsonProperty("inputId")

@@ -61,7 +61,7 @@ public class EnhancedWatermarkApi {
     /**
      * Delete Enhanced Watermark Filter
      * 
-     * @param filterId Id of the enhanced watermark configuration. (required)
+     * @param filterId Id of the enhanced Watermark Filter. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */
@@ -76,7 +76,7 @@ public class EnhancedWatermarkApi {
     /**
      * Enhanced Watermark Filter Details
      * 
-     * @param filterId Id of the enhanced watermark configuration. (required)
+     * @param filterId Id of the enhanced Watermark Filter. (required)
      * @return EnhancedWatermarkFilter
      * @throws BitmovinException if fails to make API call
      */

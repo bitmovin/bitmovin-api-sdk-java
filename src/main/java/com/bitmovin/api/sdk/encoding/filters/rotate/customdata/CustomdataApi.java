@@ -43,7 +43,7 @@ public class CustomdataApi {
     /**
      * Rotate Filter Custom Data
      * 
-     * @param filterId Id of the Rotate configuration. (required)
+     * @param filterId Id of the Rotate Filter. (required)
      * @return CustomData
      * @throws BitmovinException if fails to make API call
      */

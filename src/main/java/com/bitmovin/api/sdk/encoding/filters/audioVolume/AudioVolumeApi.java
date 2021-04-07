@@ -61,7 +61,7 @@ public class AudioVolumeApi {
     /**
      * Delete Audio Volume Filter
      * 
-     * @param filterId Id of the Audio volume configuration. (required)
+     * @param filterId Id of the Audio Volume Filter. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */
@@ -76,7 +76,7 @@ public class AudioVolumeApi {
     /**
      * Audio Volume Filter Details
      * 
-     * @param filterId Id of the audio volume configuration. (required)
+     * @param filterId Id of the Audio Volume Filter. (required)
      * @return AudioVolumeFilter
      * @throws BitmovinException if fails to make API call
      */

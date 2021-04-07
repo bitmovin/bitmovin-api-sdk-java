@@ -43,7 +43,7 @@ public class CustomdataApi {
     /**
      * Audio Volume Filter Custom Data
      * 
-     * @param filterId Id of the Audio volume configuration. (required)
+     * @param filterId Id of the Audio Volume Filter. (required)
      * @return CustomData
      * @throws BitmovinException if fails to make API call
      */

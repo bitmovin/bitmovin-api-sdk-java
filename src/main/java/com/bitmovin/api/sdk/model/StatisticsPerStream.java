@@ -368,7 +368,7 @@ public class StatisticsPerStream {
   }
 
   /**
-   * The output minutes multiplicator for streams using an enhanced deinterlace filter.
+   * The output minutes multiplicator for streams using an enhanced Deinterlace Filter.
    * @return enhancedDeinterlaceMultiplicator
    */
   public Double getEnhancedDeinterlaceMultiplicator() {

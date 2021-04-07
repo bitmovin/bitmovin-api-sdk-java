@@ -61,7 +61,7 @@ public class CropApi {
     /**
      * Delete Crop Filter
      * 
-     * @param filterId Id of the Crop configuration. (required)
+     * @param filterId Id of the Crop Filter. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */
@@ -76,7 +76,7 @@ public class CropApi {
     /**
      * Crop Filter Details
      * 
-     * @param filterId Id of the Crop configuration. (required)
+     * @param filterId Id of the Crop Filter. (required)
      * @return CropFilter
      * @throws BitmovinException if fails to make API call
      */

@@ -61,7 +61,7 @@ public class DeinterlaceApi {
     /**
      * Delete Deinterlace Filter
      * 
-     * @param filterId Id of the deinterlace filter (required)
+     * @param filterId Id of the Deinterlace Filter (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */
@@ -76,7 +76,7 @@ public class DeinterlaceApi {
     /**
      * Deinterlace Filter Details
      * 
-     * @param filterId Id of the deinterlace filter (required)
+     * @param filterId Id of the Deinterlace Filter (required)
      * @return DeinterlaceFilter
      * @throws BitmovinException if fails to make API call
      */

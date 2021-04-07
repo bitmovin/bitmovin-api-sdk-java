@@ -43,7 +43,7 @@ public class CustomdataApi {
     /**
      * Enhanced Watermark Filter Custom Data
      * 
-     * @param filterId Id of the enhanced watermark configuration. (required)
+     * @param filterId Id of the enhanced Watermark Filter. (required)
      * @return CustomData
      * @throws BitmovinException if fails to make API call
      */

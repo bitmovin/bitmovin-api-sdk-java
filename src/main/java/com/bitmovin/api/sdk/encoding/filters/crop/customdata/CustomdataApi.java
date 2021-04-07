@@ -43,7 +43,7 @@ public class CustomdataApi {
     /**
      * Crop Filter Custom Data
      * 
-     * @param filterId Id of the Crop configuration. (required)
+     * @param filterId Id of the Crop Filter. (required)
      * @return CustomData
      * @throws BitmovinException if fails to make API call
      */
