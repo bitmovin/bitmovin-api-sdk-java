@@ -7,6 +7,7 @@ import com.bitmovin.api.sdk.model.DolbyVisionPerStreamMode;
 import com.bitmovin.api.sdk.model.EncodingMode;
 import com.bitmovin.api.sdk.model.InputFactor;
 import com.bitmovin.api.sdk.model.NexGuardABWatermarkingFeature;
+import com.bitmovin.api.sdk.model.PixelFormatBitDepth;
 import com.bitmovin.api.sdk.model.PsnrPerStreamMode;
 import com.bitmovin.api.sdk.model.StatisticsPerTitleStream;
 import com.bitmovin.api.sdk.model.StatisticsResolution;
@@ -103,6 +104,12 @@ public class StatisticsPerStream {
 
   @JsonProperty("nexGuardABWatermarkingMultiplicator")
   private Double nexGuardABWatermarkingMultiplicator;
+
+  @JsonProperty("pixelFormatBitDepth")
+  private PixelFormatBitDepth pixelFormatBitDepth;
+
+  @JsonProperty("pixelFormatMultiplicator")
+  private Double pixelFormatMultiplicator;
 
   @JsonProperty("inputFactor")
   private InputFactor inputFactor;
@@ -403,6 +410,32 @@ public class StatisticsPerStream {
 
 
   /**
+   * Get pixelFormatBitDepth
+   * @return pixelFormatBitDepth
+   */
+  public PixelFormatBitDepth getPixelFormatBitDepth() {
+    return pixelFormatBitDepth;
+  }
+
+  /**
+   * Set pixelFormatBitDepth
+   *
+   * @param pixelFormatBitDepth
+   */
+  public void setPixelFormatBitDepth(PixelFormatBitDepth pixelFormatBitDepth) {
+    this.pixelFormatBitDepth = pixelFormatBitDepth;
+  }
+
+  /**
+   * The output minutes multiplicator for the pixel format bit depth
+   * @return pixelFormatMultiplicator
+   */
+  public Double getPixelFormatMultiplicator() {
+    return pixelFormatMultiplicator;
+  }
+
+
+  /**
    * Get inputFactor
    * @return inputFactor
    */
@@ -457,12 +490,14 @@ public class StatisticsPerStream {
         Objects.equals(this.enhancedDeinterlaceMultiplicator, statisticsPerStream.enhancedDeinterlaceMultiplicator) &&
         Objects.equals(this.nexGuardABWatermarkingType, statisticsPerStream.nexGuardABWatermarkingType) &&
         Objects.equals(this.nexGuardABWatermarkingMultiplicator, statisticsPerStream.nexGuardABWatermarkingMultiplicator) &&
+        Objects.equals(this.pixelFormatBitDepth, statisticsPerStream.pixelFormatBitDepth) &&
+        Objects.equals(this.pixelFormatMultiplicator, statisticsPerStream.pixelFormatMultiplicator) &&
         Objects.equals(this.inputFactor, statisticsPerStream.inputFactor);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(streamId, codecConfigId, multiplicator, encodedBytes, encodedSeconds, billableMinutes, width, height, rate, bitrate, codec, resolution, encodingMode, encodingModeMultiplicator, perTitleResultStream, perTitleMultiplicator, psnrMode, psnrMultiplicator, dolbyVisionMode, dolbyVisionMultiplicator, preset, presetMultiplicator, live, liveMultiplicator, enhancedDeinterlace, enhancedDeinterlaceMultiplicator, nexGuardABWatermarkingType, nexGuardABWatermarkingMultiplicator, inputFactor);
+    return Objects.hash(streamId, codecConfigId, multiplicator, encodedBytes, encodedSeconds, billableMinutes, width, height, rate, bitrate, codec, resolution, encodingMode, encodingModeMultiplicator, perTitleResultStream, perTitleMultiplicator, psnrMode, psnrMultiplicator, dolbyVisionMode, dolbyVisionMultiplicator, preset, presetMultiplicator, live, liveMultiplicator, enhancedDeinterlace, enhancedDeinterlaceMultiplicator, nexGuardABWatermarkingType, nexGuardABWatermarkingMultiplicator, pixelFormatBitDepth, pixelFormatMultiplicator, inputFactor);
   }
 
   @Override
@@ -498,6 +533,8 @@ public class StatisticsPerStream {
     sb.append("    enhancedDeinterlaceMultiplicator: ").append(toIndentedString(enhancedDeinterlaceMultiplicator)).append("\n");
     sb.append("    nexGuardABWatermarkingType: ").append(toIndentedString(nexGuardABWatermarkingType)).append("\n");
     sb.append("    nexGuardABWatermarkingMultiplicator: ").append(toIndentedString(nexGuardABWatermarkingMultiplicator)).append("\n");
+    sb.append("    pixelFormatBitDepth: ").append(toIndentedString(pixelFormatBitDepth)).append("\n");
+    sb.append("    pixelFormatMultiplicator: ").append(toIndentedString(pixelFormatMultiplicator)).append("\n");
     sb.append("    inputFactor: ").append(toIndentedString(inputFactor)).append("\n");
     sb.append("}");
     return sb.toString();
