@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.SubtitleConfiguration;
 import com.bitmovin.api.sdk.model.WebVttCueIdentifierPolicy;
+import com.bitmovin.api.sdk.model.WebVttStyling;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -25,6 +26,9 @@ public class WebVttConfiguration extends SubtitleConfiguration {
 
   @JsonProperty("cueIdentifierPolicy")
   private WebVttCueIdentifierPolicy cueIdentifierPolicy;
+
+  @JsonProperty("styling")
+  private WebVttStyling styling;
 
 
   /**
@@ -83,6 +87,24 @@ public class WebVttConfiguration extends SubtitleConfiguration {
   }
 
 
+  /**
+   * Get styling
+   * @return styling
+   */
+  public WebVttStyling getStyling() {
+    return styling;
+  }
+
+  /**
+   * Set styling
+   *
+   * @param styling
+   */
+  public void setStyling(WebVttStyling styling) {
+    this.styling = styling;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -95,12 +117,13 @@ public class WebVttConfiguration extends SubtitleConfiguration {
     return Objects.equals(this.appendOptionalZeroHour, webVttConfiguration.appendOptionalZeroHour) &&
         Objects.equals(this.ignoreRegion, webVttConfiguration.ignoreRegion) &&
         Objects.equals(this.cueIdentifierPolicy, webVttConfiguration.cueIdentifierPolicy) &&
+        Objects.equals(this.styling, webVttConfiguration.styling) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(appendOptionalZeroHour, ignoreRegion, cueIdentifierPolicy, super.hashCode());
+    return Objects.hash(appendOptionalZeroHour, ignoreRegion, cueIdentifierPolicy, styling, super.hashCode());
   }
 
   @Override
@@ -111,6 +134,7 @@ public class WebVttConfiguration extends SubtitleConfiguration {
     sb.append("    appendOptionalZeroHour: ").append(toIndentedString(appendOptionalZeroHour)).append("\n");
     sb.append("    ignoreRegion: ").append(toIndentedString(ignoreRegion)).append("\n");
     sb.append("    cueIdentifierPolicy: ").append(toIndentedString(cueIdentifierPolicy)).append("\n");
+    sb.append("    styling: ").append(toIndentedString(styling)).append("\n");
     sb.append("}");
     return sb.toString();
   }
