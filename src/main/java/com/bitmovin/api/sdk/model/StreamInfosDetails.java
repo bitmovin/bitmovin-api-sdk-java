@@ -27,7 +27,7 @@ public class StreamInfosDetails {
   private Integer height;
 
   @JsonProperty("rate")
-  private Long rate;
+  private Double rate;
 
   @JsonProperty("codec")
   private LiveEncodingCodec codec;
@@ -149,7 +149,7 @@ public class StreamInfosDetails {
    * The rate (sample rate / fps) of the stream (required)
    * @return rate
    */
-  public Long getRate() {
+  public Double getRate() {
     return rate;
   }
 
@@ -159,7 +159,7 @@ public class StreamInfosDetails {
    * @param rate
    *        The rate (sample rate / fps) of the stream (required)
    */
-  public void setRate(Long rate) {
+  public void setRate(Double rate) {
     this.rate = rate;
   }
 
