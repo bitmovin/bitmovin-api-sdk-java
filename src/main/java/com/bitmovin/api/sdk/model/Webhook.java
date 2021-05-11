@@ -109,23 +109,12 @@ public class Webhook extends BitmovinResource {
     this.signature = signature;
   }
 
-
   /**
    * The json schema of the data that is send as webhook payload
    * @return schema
    */
   public Object getSchema() {
     return schema;
-  }
-
-  /**
-   * The json schema of the data that is send as webhook payload
-   *
-   * @param schema
-   *        The json schema of the data that is send as webhook payload
-   */
-  public void setSchema(Object schema) {
-    this.schema = schema;
   }
 
 

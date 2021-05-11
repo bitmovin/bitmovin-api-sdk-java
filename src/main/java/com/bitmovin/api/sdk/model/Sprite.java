@@ -4,6 +4,8 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.BitmovinResource;
 import com.bitmovin.api.sdk.model.EncodingOutput;
+import com.bitmovin.api.sdk.model.SpriteCreationMode;
+import com.bitmovin.api.sdk.model.SpriteJpegConfig;
 import com.bitmovin.api.sdk.model.SpriteUnit;
 import java.util.ArrayList;
 import java.util.Date;
@@ -46,6 +48,18 @@ public class Sprite extends BitmovinResource {
 
   @JsonProperty("imagesPerFile")
   private Integer imagesPerFile;
+
+  @JsonProperty("hTiles")
+  private Integer hTiles;
+
+  @JsonProperty("vTiles")
+  private Integer vTiles;
+
+  @JsonProperty("jpegConfig")
+  private SpriteJpegConfig jpegConfig;
+
+  @JsonProperty("creationMode")
+  private SpriteCreationMode creationMode;
 
 
   /**
@@ -124,7 +138,7 @@ public class Sprite extends BitmovinResource {
 
 
   /**
-   * Name of the sprite image. File extension \&quot;.jpg\&quot; or \&quot;.png\&quot; is required. (required)
+   * Name of the sprite image. File extension \&quot;.jpg\&quot;/\&quot;.jpeg\&quot; or \&quot;.png\&quot; is required. (required)
    * @return spriteName
    */
   public String getSpriteName() {
@@ -132,10 +146,10 @@ public class Sprite extends BitmovinResource {
   }
 
   /**
-   * Name of the sprite image. File extension \&quot;.jpg\&quot; or \&quot;.png\&quot; is required. (required)
+   * Name of the sprite image. File extension \&quot;.jpg\&quot;/\&quot;.jpeg\&quot; or \&quot;.png\&quot; is required. (required)
    *
    * @param spriteName
-   *        Name of the sprite image. File extension \&quot;.jpg\&quot; or \&quot;.png\&quot; is required. (required)
+   *        Name of the sprite image. File extension \&quot;.jpg\&quot;/\&quot;.jpeg\&quot; or \&quot;.png\&quot; is required. (required)
    */
   public void setSpriteName(String spriteName) {
     this.spriteName = spriteName;
@@ -222,6 +236,88 @@ public class Sprite extends BitmovinResource {
   }
 
 
+  /**
+   * Number of rows of images per file.  Has to be set together with vTiles. If this property and vTiles are set, the imagesPerFile property must not be set.  It is recommended to use the placeholder &#39;%number%&#39; in the spriteName to allow the generation of multiple sprites.  Only supported starting with encoder version &#x60;2.76.0&#x60;. 
+   * minimum: 1
+   * @return hTiles
+   */
+  public Integer getHTiles() {
+    return hTiles;
+  }
+
+  /**
+   * Number of rows of images per file.  Has to be set together with vTiles. If this property and vTiles are set, the imagesPerFile property must not be set.  It is recommended to use the placeholder &#39;%number%&#39; in the spriteName to allow the generation of multiple sprites.  Only supported starting with encoder version &#x60;2.76.0&#x60;. 
+   * minimum: 1
+   *
+   * @param hTiles
+   *        Number of rows of images per file.  Has to be set together with vTiles. If this property and vTiles are set, the imagesPerFile property must not be set.  It is recommended to use the placeholder &#39;%number%&#39; in the spriteName to allow the generation of multiple sprites.  Only supported starting with encoder version &#x60;2.76.0&#x60;. 
+   * minimum: 1
+   */
+  public void setHTiles(Integer hTiles) {
+    this.hTiles = hTiles;
+  }
+
+
+  /**
+   * Number of columns of images per file.  Has to be set together with hTiles. If this property and hTiles are set, the imagesPerFile property must not be set.  It is recommended to use the placeholder &#39;%number%&#39; in the spriteName to allow the generation of multiple sprites.  Only supported starting with encoder version &#x60;2.76.0&#x60;. 
+   * minimum: 1
+   * @return vTiles
+   */
+  public Integer getVTiles() {
+    return vTiles;
+  }
+
+  /**
+   * Number of columns of images per file.  Has to be set together with hTiles. If this property and hTiles are set, the imagesPerFile property must not be set.  It is recommended to use the placeholder &#39;%number%&#39; in the spriteName to allow the generation of multiple sprites.  Only supported starting with encoder version &#x60;2.76.0&#x60;. 
+   * minimum: 1
+   *
+   * @param vTiles
+   *        Number of columns of images per file.  Has to be set together with hTiles. If this property and hTiles are set, the imagesPerFile property must not be set.  It is recommended to use the placeholder &#39;%number%&#39; in the spriteName to allow the generation of multiple sprites.  Only supported starting with encoder version &#x60;2.76.0&#x60;. 
+   * minimum: 1
+   */
+  public void setVTiles(Integer vTiles) {
+    this.vTiles = vTiles;
+  }
+
+
+  /**
+   * Additional configuration for JPEG sprite generation.  If this property is set the extension of the file must be &#39;.jpg.&#39; or &#39;.jpeg&#39;  Only supported starting with encoder version &#x60;2.76.0&#x60; 
+   * @return jpegConfig
+   */
+  public SpriteJpegConfig getJpegConfig() {
+    return jpegConfig;
+  }
+
+  /**
+   * Additional configuration for JPEG sprite generation.  If this property is set the extension of the file must be &#39;.jpg.&#39; or &#39;.jpeg&#39;  Only supported starting with encoder version &#x60;2.76.0&#x60; 
+   *
+   * @param jpegConfig
+   *        Additional configuration for JPEG sprite generation.  If this property is set the extension of the file must be &#39;.jpg.&#39; or &#39;.jpeg&#39;  Only supported starting with encoder version &#x60;2.76.0&#x60; 
+   */
+  public void setJpegConfig(SpriteJpegConfig jpegConfig) {
+    this.jpegConfig = jpegConfig;
+  }
+
+
+  /**
+   * The creation mode for the thumbnails in the Sprite.  Two possible creation modes exist: generate thumbnails starting with the beginning of the video or after the first configured period.  When using distance&#x3D;10 and unit&#x3D;SECONDS and INTERVAL_END, the first image of the sprite is from the second 10 of the video. When using distance&#x3D;10 and unit&#x3D;SECONDS and INTERVAL_START, the first image of the sprite is from the very start of the video, while the second image is from second 10 of the video.  It is recommended to use &#39;INTERVAL_START&#39; when using the sprites for trick play so that there is an additional thumbnail from the beginning of the video.  Only supported starting with encoder version &#x60;2.76.0&#x60;. 
+   * @return creationMode
+   */
+  public SpriteCreationMode getCreationMode() {
+    return creationMode;
+  }
+
+  /**
+   * The creation mode for the thumbnails in the Sprite.  Two possible creation modes exist: generate thumbnails starting with the beginning of the video or after the first configured period.  When using distance&#x3D;10 and unit&#x3D;SECONDS and INTERVAL_END, the first image of the sprite is from the second 10 of the video. When using distance&#x3D;10 and unit&#x3D;SECONDS and INTERVAL_START, the first image of the sprite is from the very start of the video, while the second image is from second 10 of the video.  It is recommended to use &#39;INTERVAL_START&#39; when using the sprites for trick play so that there is an additional thumbnail from the beginning of the video.  Only supported starting with encoder version &#x60;2.76.0&#x60;. 
+   *
+   * @param creationMode
+   *        The creation mode for the thumbnails in the Sprite.  Two possible creation modes exist: generate thumbnails starting with the beginning of the video or after the first configured period.  When using distance&#x3D;10 and unit&#x3D;SECONDS and INTERVAL_END, the first image of the sprite is from the second 10 of the video. When using distance&#x3D;10 and unit&#x3D;SECONDS and INTERVAL_START, the first image of the sprite is from the very start of the video, while the second image is from second 10 of the video.  It is recommended to use &#39;INTERVAL_START&#39; when using the sprites for trick play so that there is an additional thumbnail from the beginning of the video.  Only supported starting with encoder version &#x60;2.76.0&#x60;. 
+   */
+  public void setCreationMode(SpriteCreationMode creationMode) {
+    this.creationMode = creationMode;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -240,12 +336,16 @@ public class Sprite extends BitmovinResource {
         Objects.equals(this.vttName, sprite.vttName) &&
         Objects.equals(this.outputs, sprite.outputs) &&
         Objects.equals(this.imagesPerFile, sprite.imagesPerFile) &&
+        Objects.equals(this.hTiles, sprite.hTiles) &&
+        Objects.equals(this.vTiles, sprite.vTiles) &&
+        Objects.equals(this.jpegConfig, sprite.jpegConfig) &&
+        Objects.equals(this.creationMode, sprite.creationMode) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(height, width, unit, distance, spriteName, filename, vttName, outputs, imagesPerFile, super.hashCode());
+    return Objects.hash(height, width, unit, distance, spriteName, filename, vttName, outputs, imagesPerFile, hTiles, vTiles, jpegConfig, creationMode, super.hashCode());
   }
 
   @Override
@@ -262,6 +362,10 @@ public class Sprite extends BitmovinResource {
     sb.append("    vttName: ").append(toIndentedString(vttName)).append("\n");
     sb.append("    outputs: ").append(toIndentedString(outputs)).append("\n");
     sb.append("    imagesPerFile: ").append(toIndentedString(imagesPerFile)).append("\n");
+    sb.append("    hTiles: ").append(toIndentedString(hTiles)).append("\n");
+    sb.append("    vTiles: ").append(toIndentedString(vTiles)).append("\n");
+    sb.append("    jpegConfig: ").append(toIndentedString(jpegConfig)).append("\n");
+    sb.append("    creationMode: ").append(toIndentedString(creationMode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

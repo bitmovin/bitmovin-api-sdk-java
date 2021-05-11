@@ -76,23 +76,12 @@ public class Notification extends BitmovinResponse {
     this.resourceId = resourceId;
   }
 
-
   /**
    * Last time the notification was triggered
    * @return triggeredAt
    */
   public Date getTriggeredAt() {
     return triggeredAt;
-  }
-
-  /**
-   * Last time the notification was triggered
-   *
-   * @param triggeredAt
-   *        Last time the notification was triggered
-   */
-  public void setTriggeredAt(Date triggeredAt) {
-    this.triggeredAt = triggeredAt;
   }
 
 

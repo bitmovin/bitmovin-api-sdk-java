@@ -105,22 +105,12 @@ public class NotificationStateEntry extends BitmovinResponse {
     this.resourceId = resourceId;
   }
 
-
   /**
    * Get triggeredAt
    * @return triggeredAt
    */
   public Date getTriggeredAt() {
     return triggeredAt;
-  }
-
-  /**
-   * Set triggeredAt
-   *
-   * @param triggeredAt
-   */
-  public void setTriggeredAt(Date triggeredAt) {
-    this.triggeredAt = triggeredAt;
   }
 
 

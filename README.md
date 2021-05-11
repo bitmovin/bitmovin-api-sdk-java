@@ -18,7 +18,18 @@ Using this API client requires an active account.
 
 > Don't have an account yet? [Sign up for a free Bitmovin trial plan](https://dashboard.bitmovin.com/signup)!
 
-For full documentation of all available API endpoints, see the [Bitmovin API reference](https://bitmovin.com/docs).
+
+---
+
+## Documentation & Release Notes
++ Full Bitmovin API reference documentation: https://bitmovin.com/docs/encoding/api-reference
++ SDK reference documentation for Java: https://www.javadoc.io/doc/com.bitmovin.api.sdk/bitmovin-api-sdk
++ Release Notes: https://bitmovin.com/docs/encoding/changelogs/rest
+
+## Support
+If you have any questions or issues with this SDK or its examples, or you require other technical support for our services, please login to your Bitmovin Dashboard at https://bitmovin.com/dashboard and [create a new support ticket](https://bitmovin.com/dashboard/support/cases/create?tab=encoding). Our team will get back to you as soon as possible :+1:
+
+---
 
 ## Installation
 
@@ -30,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.bitmovin.api.sdk</groupId>
   <artifactId>bitmovin-api-sdk</artifactId>
-  <version>1.70.0</version>
+  <version>1.71.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -46,7 +57,7 @@ mvn clean install
 Add this dependency to your project's build file:
 
 ```groovy
-compile group: 'com.bitmovin.api.sdk', name: 'bitmovin-api-sdk', version: '1.70.0'
+compile group: 'com.bitmovin.api.sdk', name: 'bitmovin-api-sdk', version: '1.71.0'
 ```
 
 ## Initialization
@@ -60,10 +71,13 @@ BitmovinApi bitmovinApi = BitmovinApi.builder()
 ```
 
 ## Examples
+
 You can find sample workflow scripts in the [Bitmovin API SDK examples](https://github.com/bitmovin/bitmovin-api-sdk-examples) repository.
+ 
+---
 
-# Previous API Client (Legacy)
+## Deprecated API Client (Legacy)
 
-`bitmovin-api-sdk-java` is the latest Bitmovin API client for Java. It guarantees 100% specification conformity at any given time and access to all features of the API as soon as they are released. 
+`bitmovin-api-sdk-java` is the latest Bitmovin API client for Java. It guarantees 100% specification conformity at any given time and access to all features of the API as soon as they are released.
 
-However, if you need to use the previous version for legacy reasons, you can still find it at [bitmovin-java](https://github.com/bitmovin/bitmovin-java). 
+However, if you need to use the previous version for legacy reasons, you can still find it at [bitmovin-java](https://github.com/bitmovin/bitmovin-java).
