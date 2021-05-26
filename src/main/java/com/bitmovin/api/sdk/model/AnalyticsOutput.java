@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonSubTypes({
   @JsonSubTypes.Type(value = AnalyticsS3RoleBasedOutput.class, name = "S3_ROLE_BASED"),
   @JsonSubTypes.Type(value = AnalyticsGcsServiceAccountOutput.class, name = "GCS_SERVICE_ACCOUNT"),
+  @JsonSubTypes.Type(value = AnalyticsAzureOutput.class, name = "AZURE"),
 })
 
 public class AnalyticsOutput extends BitmovinResource {
