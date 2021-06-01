@@ -6,6 +6,7 @@ import com.bitmovin.api.sdk.model.ChannelsAttributeForAudio;
 import com.bitmovin.api.sdk.model.EncodingOutput;
 import com.bitmovin.api.sdk.model.HlsManifest;
 import com.bitmovin.api.sdk.model.HlsManifestDefaultVersion;
+import com.bitmovin.api.sdk.model.HlsTargetDurationRoundingMode;
 import com.bitmovin.api.sdk.model.HlsVersion;
 import com.bitmovin.api.sdk.model.ManifestType;
 import com.bitmovin.api.sdk.model.Status;

@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.ChannelsAttributeForAudio;
 import com.bitmovin.api.sdk.model.EncodingOutput;
+import com.bitmovin.api.sdk.model.HlsTargetDurationRoundingMode;
 import com.bitmovin.api.sdk.model.HlsVersion;
 import com.bitmovin.api.sdk.model.Manifest;
 import com.bitmovin.api.sdk.model.ManifestType;
@@ -32,6 +33,9 @@ public class HlsManifest extends Manifest {
 
   @JsonProperty("channelsAttributeForAudio")
   private ChannelsAttributeForAudio channelsAttributeForAudio;
+
+  @JsonProperty("targetDurationRoundingMode")
+  private HlsTargetDurationRoundingMode targetDurationRoundingMode;
 
 
   /**
@@ -110,6 +114,25 @@ public class HlsManifest extends Manifest {
   }
 
 
+  /**
+   * The rounding applied to target duration. Two possible rouding modes exist: NORMAL_ROUNDING, when the target duration is rounded to the nearest integer, or UPWARDS_ROUNDING, when the target duration is rounded to the highest integer. 
+   * @return targetDurationRoundingMode
+   */
+  public HlsTargetDurationRoundingMode getTargetDurationRoundingMode() {
+    return targetDurationRoundingMode;
+  }
+
+  /**
+   * The rounding applied to target duration. Two possible rouding modes exist: NORMAL_ROUNDING, when the target duration is rounded to the nearest integer, or UPWARDS_ROUNDING, when the target duration is rounded to the highest integer. 
+   *
+   * @param targetDurationRoundingMode
+   *        The rounding applied to target duration. Two possible rouding modes exist: NORMAL_ROUNDING, when the target duration is rounded to the nearest integer, or UPWARDS_ROUNDING, when the target duration is rounded to the highest integer. 
+   */
+  public void setTargetDurationRoundingMode(HlsTargetDurationRoundingMode targetDurationRoundingMode) {
+    this.targetDurationRoundingMode = targetDurationRoundingMode;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -123,12 +146,13 @@ public class HlsManifest extends Manifest {
         Objects.equals(this.hlsMediaPlaylistVersion, hlsManifest.hlsMediaPlaylistVersion) &&
         Objects.equals(this.hlsMasterPlaylistVersion, hlsManifest.hlsMasterPlaylistVersion) &&
         Objects.equals(this.channelsAttributeForAudio, hlsManifest.channelsAttributeForAudio) &&
+        Objects.equals(this.targetDurationRoundingMode, hlsManifest.targetDurationRoundingMode) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(manifestName, hlsMediaPlaylistVersion, hlsMasterPlaylistVersion, channelsAttributeForAudio, super.hashCode());
+    return Objects.hash(manifestName, hlsMediaPlaylistVersion, hlsMasterPlaylistVersion, channelsAttributeForAudio, targetDurationRoundingMode, super.hashCode());
   }
 
   @Override
@@ -140,6 +164,7 @@ public class HlsManifest extends Manifest {
     sb.append("    hlsMediaPlaylistVersion: ").append(toIndentedString(hlsMediaPlaylistVersion)).append("\n");
     sb.append("    hlsMasterPlaylistVersion: ").append(toIndentedString(hlsMasterPlaylistVersion)).append("\n");
     sb.append("    channelsAttributeForAudio: ").append(toIndentedString(channelsAttributeForAudio)).append("\n");
+    sb.append("    targetDurationRoundingMode: ").append(toIndentedString(targetDurationRoundingMode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
