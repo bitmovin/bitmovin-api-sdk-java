@@ -76,7 +76,7 @@ public class Stream extends BitmovinResource {
   }
 
   /**
-   * Get inputStreams
+   * Determines the input source(s) for the stream. All video streams of an encoding need to have identical input configurations (required)
    * @return inputStreams
    */
   public List<StreamInput> getInputStreams() {
@@ -84,9 +84,10 @@ public class Stream extends BitmovinResource {
   }
 
   /**
-   * Set inputStreams
+   * Determines the input source(s) for the stream. All video streams of an encoding need to have identical input configurations (required)
    *
    * @param inputStreams
+   *        Determines the input source(s) for the stream. All video streams of an encoding need to have identical input configurations (required)
    */
   public void setInputStreams(List<StreamInput> inputStreams) {
     this.inputStreams = inputStreams;
