@@ -44,12 +44,14 @@ public class Eac3Api {
     }
     
     /**
-     * Create E-AC3 Codec Configuration
+     * Create E-AC3 Codec Configuration.  Deprecation notice: use Dolby Digital Plus instead. For more information check out our tutorial here: https://bitmovin.com/docs/encoding/tutorials/how-to-create-dolby-digital-plus-encodings 
      * 
      * @param eac3AudioConfiguration The E-AC3 Codec Configuration to be created (required)
      * @return Eac3AudioConfiguration
      * @throws BitmovinException if fails to make API call
+     * @deprecated
      */
+    @Deprecated
     public Eac3AudioConfiguration create(Eac3AudioConfiguration eac3AudioConfiguration) throws BitmovinException {
         try {
             return this.apiClient.create(eac3AudioConfiguration).getData().getResult();
@@ -59,12 +61,14 @@ public class Eac3Api {
     }
     
     /**
-     * Delete E-AC3 Codec Configuration
+     * Delete E-AC3 Codec Configuration.  Deprecation notice: use Dolby Digital Plus instead. For more information check out our tutorial here: https://bitmovin.com/docs/encoding/tutorials/how-to-create-dolby-digital-plus-encodings 
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
+     * @deprecated
      */
+    @Deprecated
     public BitmovinResponse delete(String configurationId) throws BitmovinException {
         try {
             return this.apiClient.delete(configurationId).getData().getResult();
@@ -74,12 +78,14 @@ public class Eac3Api {
     }
     
     /**
-     * E-AC3 Codec Configuration Details
+     * E-AC3 Codec Configuration Details.  Deprecation notice: use Dolby Digital Plus instead. For more information check out our tutorial here: https://bitmovin.com/docs/encoding/tutorials/how-to-create-dolby-digital-plus-encodings 
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return Eac3AudioConfiguration
      * @throws BitmovinException if fails to make API call
+     * @deprecated
      */
+    @Deprecated
     public Eac3AudioConfiguration get(String configurationId) throws BitmovinException {
         try {
             return this.apiClient.get(configurationId).getData().getResult();
@@ -89,11 +95,13 @@ public class Eac3Api {
     }
     
     /**
-     * List E-AC3 Configurations
+     * List E-AC3 Configurations.  Deprecation notice: use Dolby Digital Plus instead. For more information check out our tutorial here: https://bitmovin.com/docs/encoding/tutorials/how-to-create-dolby-digital-plus-encodings 
      * 
      * @return List&lt;Eac3AudioConfiguration&gt;
      * @throws BitmovinException if fails to make API call
+     * @deprecated
      */
+    @Deprecated
     public PaginationResponse<Eac3AudioConfiguration> list() throws BitmovinException {
         try {
             return this.apiClient.list(new QueryMapWrapper()).getData().getResult();
@@ -102,12 +110,14 @@ public class Eac3Api {
         }
     }
     /**
-     * List E-AC3 Configurations
+     * List E-AC3 Configurations.  Deprecation notice: use Dolby Digital Plus instead. For more information check out our tutorial here: https://bitmovin.com/docs/encoding/tutorials/how-to-create-dolby-digital-plus-encodings 
      * 
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;Eac3AudioConfiguration&gt;
      * @throws BitmovinException if fails to make API call
+     * @deprecated
      */
+    @Deprecated
     public PaginationResponse<Eac3AudioConfiguration> list(Eac3AudioConfigurationListQueryParams queryParams) throws BitmovinException {
         try {
             return this.apiClient.list(new QueryMapWrapper(queryParams)).getData().getResult();

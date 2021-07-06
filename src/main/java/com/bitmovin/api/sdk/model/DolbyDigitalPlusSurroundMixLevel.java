@@ -10,80 +10,34 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum CodecConfigType {
+public enum DolbyDigitalPlusSurroundMixLevel {
+  
+  /**
+   * -1.5 dB
+   */
+  MINUS_1_5_DB("MINUS_1_5_DB"),
+  
+  /**
+   * -3 dB
+   */
+  MINUS_3_DB("MINUS_3_DB"),
+  
+  /**
+   * -4.5 dB
+   */
+  MINUS_4_5_DB("MINUS_4_5_DB"),
+  
+  /**
+   * -6 dB
+   */
+  MINUS_6_DB("MINUS_6_DB"),
   
   
-  AAC("AAC"),
-  
-  
-  DTS_PASSTHROUGH("DTS_PASSTHROUGH"),
-  
-  
-  HE_AAC_V1("HE_AAC_V1"),
-  
-  
-  HE_AAC_V2("HE_AAC_V2"),
-  
-  
-  H264("H264"),
-  
-  
-  H265("H265"),
-  
-  
-  VP9("VP9"),
-  
-  
-  VP8("VP8"),
-  
-  
-  MP2("MP2"),
-  
-  
-  MP3("MP3"),
-  
-  
-  AC3("AC3"),
-  
-  
-  EAC3("EAC3"),
-  
-  
-  DD("DD"),
-  
-  
-  DDPLUS("DDPLUS"),
-  
-  
-  OPUS("OPUS"),
-  
-  
-  VORBIS("VORBIS"),
-  
-  
-  MJPEG("MJPEG"),
-  
-  
-  AV1("AV1"),
-  
-  
-  DOLBY_ATMOS("DOLBY_ATMOS"),
-  
-  
-  H262("H262"),
-  
-  
-  PCM("PCM"),
-  
-  
-  WEBVTT("WEBVTT"),
-  
-  
-  DVB_SUBTITLE("DVB_SUBTITLE");
+  MINUS_INFINITY_DB("MINUS_INFINITY_DB");
 
   private String value;
 
-  CodecConfigType(String value) {
+  DolbyDigitalPlusSurroundMixLevel(String value) {
     this.value = value;
   }
 
@@ -98,8 +52,8 @@ public enum CodecConfigType {
   }
 
   @JsonCreator
-  public static CodecConfigType fromValue(String text) {
-    for (CodecConfigType b : CodecConfigType.values()) {
+  public static DolbyDigitalPlusSurroundMixLevel fromValue(String text) {
+    for (DolbyDigitalPlusSurroundMixLevel b : DolbyDigitalPlusSurroundMixLevel.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

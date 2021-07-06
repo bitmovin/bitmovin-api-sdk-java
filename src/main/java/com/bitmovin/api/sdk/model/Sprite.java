@@ -63,7 +63,7 @@ public class Sprite extends BitmovinResource {
 
 
   /**
-   * Height of one thumbnail (required)
+   * Height of one thumbnail, either height or width are required fields. If only one is given the encoder will calculate the other way value based on the aspect ratio of the video file. If the encoder version is below 2.83.0 both are required 
    * @return height
    */
   public Integer getHeight() {
@@ -71,10 +71,10 @@ public class Sprite extends BitmovinResource {
   }
 
   /**
-   * Height of one thumbnail (required)
+   * Height of one thumbnail, either height or width are required fields. If only one is given the encoder will calculate the other way value based on the aspect ratio of the video file. If the encoder version is below 2.83.0 both are required 
    *
    * @param height
-   *        Height of one thumbnail (required)
+   *        Height of one thumbnail, either height or width are required fields. If only one is given the encoder will calculate the other way value based on the aspect ratio of the video file. If the encoder version is below 2.83.0 both are required 
    */
   public void setHeight(Integer height) {
     this.height = height;
@@ -82,7 +82,7 @@ public class Sprite extends BitmovinResource {
 
 
   /**
-   * Width of one thumbnail (required)
+   * Width of one thumbnail, either height or width are required fields. If only one is given the encoder will calculate the other way value based on the aspect ratio of the video file. If the encoder version is below 2.83.0 both are required 
    * @return width
    */
   public Integer getWidth() {
@@ -90,10 +90,10 @@ public class Sprite extends BitmovinResource {
   }
 
   /**
-   * Width of one thumbnail (required)
+   * Width of one thumbnail, either height or width are required fields. If only one is given the encoder will calculate the other way value based on the aspect ratio of the video file. If the encoder version is below 2.83.0 both are required 
    *
    * @param width
-   *        Width of one thumbnail (required)
+   *        Width of one thumbnail, either height or width are required fields. If only one is given the encoder will calculate the other way value based on the aspect ratio of the video file. If the encoder version is below 2.83.0 both are required 
    */
   public void setWidth(Integer width) {
     this.width = width;

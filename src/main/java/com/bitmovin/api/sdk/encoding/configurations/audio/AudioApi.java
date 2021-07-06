@@ -11,6 +11,8 @@ import com.bitmovin.api.sdk.encoding.configurations.audio.vorbis.VorbisApi;
 import com.bitmovin.api.sdk.encoding.configurations.audio.opus.OpusApi;
 import com.bitmovin.api.sdk.encoding.configurations.audio.pcm.PcmApi;
 import com.bitmovin.api.sdk.encoding.configurations.audio.ac3.Ac3Api;
+import com.bitmovin.api.sdk.encoding.configurations.audio.dolbyDigital.DolbyDigitalApi;
+import com.bitmovin.api.sdk.encoding.configurations.audio.dolbyDigitalPlus.DolbyDigitalPlusApi;
 import com.bitmovin.api.sdk.encoding.configurations.audio.eac3.Eac3Api;
 import com.bitmovin.api.sdk.encoding.configurations.audio.mp2.Mp2Api;
 import com.bitmovin.api.sdk.encoding.configurations.audio.mp3.Mp3Api;
@@ -25,6 +27,8 @@ public class AudioApi {
     public final OpusApi opus;
     public final PcmApi pcm;
     public final Ac3Api ac3;
+    public final DolbyDigitalApi dolbyDigital;
+    public final DolbyDigitalPlusApi dolbyDigitalPlus;
     public final Eac3Api eac3;
     public final Mp2Api mp2;
     public final Mp3Api mp3;
@@ -44,6 +48,8 @@ public class AudioApi {
         this.opus = new OpusApi(clientFactory);
         this.pcm = new PcmApi(clientFactory);
         this.ac3 = new Ac3Api(clientFactory);
+        this.dolbyDigital = new DolbyDigitalApi(clientFactory);
+        this.dolbyDigitalPlus = new DolbyDigitalPlusApi(clientFactory);
         this.eac3 = new Eac3Api(clientFactory);
         this.mp2 = new Mp2Api(clientFactory);
         this.mp3 = new Mp3Api(clientFactory);

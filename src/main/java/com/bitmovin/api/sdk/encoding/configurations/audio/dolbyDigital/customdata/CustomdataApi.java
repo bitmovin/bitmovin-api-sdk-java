@@ -1,4 +1,4 @@
-package com.bitmovin.api.sdk.encoding.configurations.audio.eac3.customdata;
+package com.bitmovin.api.sdk.encoding.configurations.audio.dolbyDigital.customdata;
 
 import java.util.Date;
 import java.util.List;
@@ -41,14 +41,12 @@ public class CustomdataApi {
     }
     
     /**
-     * E-AC3 Codec Configuration Custom Data.  Deprecation notice: use Dolby Digital Plus instead. For more information check out our tutorial here: https://bitmovin.com/docs/encoding/tutorials/how-to-create-dolby-digital-plus-encodings 
+     * Dolby Digital Codec Configuration Custom Data
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return CustomData
      * @throws BitmovinException if fails to make API call
-     * @deprecated
      */
-    @Deprecated
     public CustomData getCustomData(String configurationId) throws BitmovinException {
         try {
             return this.apiClient.getCustomData(configurationId).getData().getResult();
@@ -59,7 +57,7 @@ public class CustomdataApi {
     
     interface CustomdataApiClient {
     
-        @RequestLine("GET /encoding/configurations/audio/eac3/{configuration_id}/customData")
+        @RequestLine("GET /encoding/configurations/audio/dolby-digital/{configuration_id}/customData")
         ResponseEnvelope<CustomData> getCustomData(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
     }
 }

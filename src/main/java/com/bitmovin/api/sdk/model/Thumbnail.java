@@ -22,6 +22,9 @@ public class Thumbnail extends BitmovinResource {
   @JsonProperty("height")
   private Integer height;
 
+  @JsonProperty("width")
+  private Integer width;
+
   @JsonProperty("pattern")
   private String pattern;
 
@@ -41,7 +44,7 @@ public class Thumbnail extends BitmovinResource {
 
 
   /**
-   * Height of the thumbnail. (required)
+   * Height of the thumbnail, either height or width are required fields. If only one is given the encoder will calculate the other way value based on the aspect ratio of the video file. If the encoder version is below 2.83.0 only height is supported and mandatory. 
    * @return height
    */
   public Integer getHeight() {
@@ -49,10 +52,10 @@ public class Thumbnail extends BitmovinResource {
   }
 
   /**
-   * Height of the thumbnail. (required)
+   * Height of the thumbnail, either height or width are required fields. If only one is given the encoder will calculate the other way value based on the aspect ratio of the video file. If the encoder version is below 2.83.0 only height is supported and mandatory. 
    *
    * @param height
-   *        Height of the thumbnail. (required)
+   *        Height of the thumbnail, either height or width are required fields. If only one is given the encoder will calculate the other way value based on the aspect ratio of the video file. If the encoder version is below 2.83.0 only height is supported and mandatory. 
    */
   public void setHeight(Integer height) {
     this.height = height;
@@ -60,7 +63,26 @@ public class Thumbnail extends BitmovinResource {
 
 
   /**
-   *  Pattern which describes the thumbnail filenames. For example with thumbnail-%number%.png as pattern and 3 positions: thumbnail-3_0.png, thumbnail-5_0.png and thumbnail-25_5.png. (The number represents the position in the source video in seconds, in the previous example the first filename represents the thumbnail at 3s, the second one at 5s and the third one at 25.5s).
+   * Width of the thumbnail, either height or width are required fields. If only one is given the encoder will calculate the other way value based on the aspect ratio of the video file. If the encoder version is below 2.83.0 only height is supported 
+   * @return width
+   */
+  public Integer getWidth() {
+    return width;
+  }
+
+  /**
+   * Width of the thumbnail, either height or width are required fields. If only one is given the encoder will calculate the other way value based on the aspect ratio of the video file. If the encoder version is below 2.83.0 only height is supported 
+   *
+   * @param width
+   *        Width of the thumbnail, either height or width are required fields. If only one is given the encoder will calculate the other way value based on the aspect ratio of the video file. If the encoder version is below 2.83.0 only height is supported 
+   */
+  public void setWidth(Integer width) {
+    this.width = width;
+  }
+
+
+  /**
+   *  Pattern which describes the thumbnail filenames. For example with thumbnail-%number%.png as pattern and 3 positions: thumbnail-3_0.png, thumbnail-5_0.png and thumbnail-25_5.png. (The number represents the position in the source video in seconds, in the previous example the first filename represents the thumbnail at 3s, the second one at 5s and the third one at 25.5s). (required)
    * @return pattern
    */
   public String getPattern() {
@@ -68,10 +90,10 @@ public class Thumbnail extends BitmovinResource {
   }
 
   /**
-   *  Pattern which describes the thumbnail filenames. For example with thumbnail-%number%.png as pattern and 3 positions: thumbnail-3_0.png, thumbnail-5_0.png and thumbnail-25_5.png. (The number represents the position in the source video in seconds, in the previous example the first filename represents the thumbnail at 3s, the second one at 5s and the third one at 25.5s).
+   *  Pattern which describes the thumbnail filenames. For example with thumbnail-%number%.png as pattern and 3 positions: thumbnail-3_0.png, thumbnail-5_0.png and thumbnail-25_5.png. (The number represents the position in the source video in seconds, in the previous example the first filename represents the thumbnail at 3s, the second one at 5s and the third one at 25.5s). (required)
    *
    * @param pattern
-   *         Pattern which describes the thumbnail filenames. For example with thumbnail-%number%.png as pattern and 3 positions: thumbnail-3_0.png, thumbnail-5_0.png and thumbnail-25_5.png. (The number represents the position in the source video in seconds, in the previous example the first filename represents the thumbnail at 3s, the second one at 5s and the third one at 25.5s).
+   *         Pattern which describes the thumbnail filenames. For example with thumbnail-%number%.png as pattern and 3 positions: thumbnail-3_0.png, thumbnail-5_0.png and thumbnail-25_5.png. (The number represents the position in the source video in seconds, in the previous example the first filename represents the thumbnail at 3s, the second one at 5s and the third one at 25.5s). (required)
    */
   public void setPattern(String pattern) {
     this.pattern = pattern;
@@ -173,6 +195,7 @@ public class Thumbnail extends BitmovinResource {
     }
     Thumbnail thumbnail = (Thumbnail) o;
     return Objects.equals(this.height, thumbnail.height) &&
+        Objects.equals(this.width, thumbnail.width) &&
         Objects.equals(this.pattern, thumbnail.pattern) &&
         Objects.equals(this.interval, thumbnail.interval) &&
         Objects.equals(this.positions, thumbnail.positions) &&
@@ -183,7 +206,7 @@ public class Thumbnail extends BitmovinResource {
 
   @Override
   public int hashCode() {
-    return Objects.hash(height, pattern, interval, positions, outputs, unit, super.hashCode());
+    return Objects.hash(height, width, pattern, interval, positions, outputs, unit, super.hashCode());
   }
 
   @Override
@@ -192,6 +215,7 @@ public class Thumbnail extends BitmovinResource {
     sb.append("class Thumbnail {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    height: ").append(toIndentedString(height)).append("\n");
+    sb.append("    width: ").append(toIndentedString(width)).append("\n");
     sb.append("    pattern: ").append(toIndentedString(pattern)).append("\n");
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    positions: ").append(toIndentedString(positions)).append("\n");
