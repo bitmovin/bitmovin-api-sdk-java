@@ -39,6 +39,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
   @JsonSubTypes.Type(value = H262VideoConfiguration.class, name = "H262"),
   @JsonSubTypes.Type(value = PcmAudioConfiguration.class, name = "PCM"),
   @JsonSubTypes.Type(value = WebVttConfiguration.class, name = "WEBVTT"),
+  @JsonSubTypes.Type(value = ImscConfiguration.class, name = "IMSC"),
 })
 
 public class CodecConfiguration extends BitmovinResource {

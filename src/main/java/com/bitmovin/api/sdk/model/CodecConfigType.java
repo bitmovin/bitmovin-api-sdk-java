@@ -79,6 +79,9 @@ public enum CodecConfigType {
   WEBVTT("WEBVTT"),
   
   
+  IMSC("IMSC"),
+  
+  
   DVB_SUBTITLE("DVB_SUBTITLE");
 
   private String value;

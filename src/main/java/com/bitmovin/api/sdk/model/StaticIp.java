@@ -37,7 +37,7 @@ public class StaticIp extends BitmovinResponse {
 
 
   /**
-   * Required if the static IP should be created for an AWS infrastructure account.
+   * Required if the static IP should be created for an AWS infrastructure account. If this is left blank the static Ip will be created for the managed cloud.
    * @return infrastructureId
    */
   public String getInfrastructureId() {
@@ -45,10 +45,10 @@ public class StaticIp extends BitmovinResponse {
   }
 
   /**
-   * Required if the static IP should be created for an AWS infrastructure account.
+   * Required if the static IP should be created for an AWS infrastructure account. If this is left blank the static Ip will be created for the managed cloud.
    *
    * @param infrastructureId
-   *        Required if the static IP should be created for an AWS infrastructure account.
+   *        Required if the static IP should be created for an AWS infrastructure account. If this is left blank the static Ip will be created for the managed cloud.
    */
   public void setInfrastructureId(String infrastructureId) {
     this.infrastructureId = infrastructureId;

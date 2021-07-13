@@ -18,8 +18,10 @@ import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
+import com.bitmovin.api.sdk.analytics.impressions.ads.AdsApi;
 
 public class ImpressionsApi {
+    public final AdsApi ads;
 
     private final ImpressionsApiClient apiClient;
 
@@ -31,6 +33,7 @@ public class ImpressionsApi {
 
         this.apiClient = clientFactory.createApiClient(ImpressionsApiClient.class);
 
+        this.ads = new AdsApi(clientFactory);
     }
 
     /**
