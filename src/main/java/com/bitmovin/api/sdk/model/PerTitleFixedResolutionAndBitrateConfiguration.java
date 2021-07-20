@@ -38,7 +38,7 @@ public class PerTitleFixedResolutionAndBitrateConfiguration {
    *
    * @param forcedRenditionAboveHighestFixedRepresentation
    *        Number of forced renditions above the highest fixed representation (e.g. FIXED_RESOLUTION_AND_BITRATE). Forced renditions will be added, also if the Per-Title algorithm chooses the user defined force rendition to be the highest one.
-   * minimum: 1
+   *        minimum: 1
    */
   public void setForcedRenditionAboveHighestFixedRepresentation(Integer forcedRenditionAboveHighestFixedRepresentation) {
     this.forcedRenditionAboveHighestFixedRepresentation = forcedRenditionAboveHighestFixedRepresentation;

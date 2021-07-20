@@ -7,6 +7,7 @@ import com.bitmovin.api.sdk.model.EncodingOutput;
 import com.bitmovin.api.sdk.model.SpriteCreationMode;
 import com.bitmovin.api.sdk.model.SpriteJpegConfig;
 import com.bitmovin.api.sdk.model.SpriteUnit;
+import com.bitmovin.api.sdk.model.ThumbnailAspectMode;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -60,6 +61,9 @@ public class Sprite extends BitmovinResource {
 
   @JsonProperty("creationMode")
   private SpriteCreationMode creationMode;
+
+  @JsonProperty("aspectMode")
+  private ThumbnailAspectMode aspectMode;
 
 
   /**
@@ -251,7 +255,7 @@ public class Sprite extends BitmovinResource {
    *
    * @param hTiles
    *        Number of rows of images per file.  Has to be set together with vTiles. If this property and vTiles are set, the imagesPerFile property must not be set.  It is recommended to use the placeholder &#39;%number%&#39; in the spriteName to allow the generation of multiple sprites.  Only supported starting with encoder version &#x60;2.76.0&#x60;. 
-   * minimum: 1
+   *        minimum: 1
    */
   public void setHTiles(Integer hTiles) {
     this.hTiles = hTiles;
@@ -273,7 +277,7 @@ public class Sprite extends BitmovinResource {
    *
    * @param vTiles
    *        Number of columns of images per file.  Has to be set together with hTiles. If this property and hTiles are set, the imagesPerFile property must not be set.  It is recommended to use the placeholder &#39;%number%&#39; in the spriteName to allow the generation of multiple sprites.  Only supported starting with encoder version &#x60;2.76.0&#x60;. 
-   * minimum: 1
+   *        minimum: 1
    */
   public void setVTiles(Integer vTiles) {
     this.vTiles = vTiles;
@@ -318,6 +322,25 @@ public class Sprite extends BitmovinResource {
   }
 
 
+  /**
+   * Specifies the aspect mode that is used when both height and width are specified Only supported starting with encoder version &#x60;2.85.0&#x60;. 
+   * @return aspectMode
+   */
+  public ThumbnailAspectMode getAspectMode() {
+    return aspectMode;
+  }
+
+  /**
+   * Specifies the aspect mode that is used when both height and width are specified Only supported starting with encoder version &#x60;2.85.0&#x60;. 
+   *
+   * @param aspectMode
+   *        Specifies the aspect mode that is used when both height and width are specified Only supported starting with encoder version &#x60;2.85.0&#x60;. 
+   */
+  public void setAspectMode(ThumbnailAspectMode aspectMode) {
+    this.aspectMode = aspectMode;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -340,12 +363,13 @@ public class Sprite extends BitmovinResource {
         Objects.equals(this.vTiles, sprite.vTiles) &&
         Objects.equals(this.jpegConfig, sprite.jpegConfig) &&
         Objects.equals(this.creationMode, sprite.creationMode) &&
+        Objects.equals(this.aspectMode, sprite.aspectMode) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(height, width, unit, distance, spriteName, filename, vttName, outputs, imagesPerFile, hTiles, vTiles, jpegConfig, creationMode, super.hashCode());
+    return Objects.hash(height, width, unit, distance, spriteName, filename, vttName, outputs, imagesPerFile, hTiles, vTiles, jpegConfig, creationMode, aspectMode, super.hashCode());
   }
 
   @Override
@@ -366,6 +390,7 @@ public class Sprite extends BitmovinResource {
     sb.append("    vTiles: ").append(toIndentedString(vTiles)).append("\n");
     sb.append("    jpegConfig: ").append(toIndentedString(jpegConfig)).append("\n");
     sb.append("    creationMode: ").append(toIndentedString(creationMode)).append("\n");
+    sb.append("    aspectMode: ").append(toIndentedString(aspectMode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

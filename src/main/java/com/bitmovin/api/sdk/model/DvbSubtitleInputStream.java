@@ -88,7 +88,8 @@ public class DvbSubtitleInputStream extends InputStream {
 
 
   /**
-   * Position of the stream
+   * Position of the stream, starting from 0.
+   * minimum: 0
    * @return position
    */
   public Integer getPosition() {
@@ -96,10 +97,12 @@ public class DvbSubtitleInputStream extends InputStream {
   }
 
   /**
-   * Position of the stream
+   * Position of the stream, starting from 0.
+   * minimum: 0
    *
    * @param position
-   *        Position of the stream
+   *        Position of the stream, starting from 0.
+   *        minimum: 0
    */
   public void setPosition(Integer position) {
     this.position = position;

@@ -49,7 +49,7 @@ public class AutoRestartConfiguration {
    *
    * @param segmentsWrittenTimeout
    *        If no segments were generated for the given number of seconds, a restart is triggered. Minimum: 30.0
-   * minimum: 30
+   *        minimum: 30
    */
   public void setSegmentsWrittenTimeout(Double segmentsWrittenTimeout) {
     this.segmentsWrittenTimeout = segmentsWrittenTimeout;
@@ -71,7 +71,7 @@ public class AutoRestartConfiguration {
    *
    * @param bytesWrittenTimeout
    *        If no data was written for the given number of seconds, a restart is triggered. Minimum: 30.0
-   * minimum: 30
+   *        minimum: 30
    */
   public void setBytesWrittenTimeout(Double bytesWrittenTimeout) {
     this.bytesWrittenTimeout = bytesWrittenTimeout;
@@ -93,7 +93,7 @@ public class AutoRestartConfiguration {
    *
    * @param framesWrittenTimeout
    *        If no frames were generated for the given number of seconds, a restart is triggered. Minimum: 30.0
-   * minimum: 30
+   *        minimum: 30
    */
   public void setFramesWrittenTimeout(Double framesWrittenTimeout) {
     this.framesWrittenTimeout = framesWrittenTimeout;
@@ -115,7 +115,7 @@ public class AutoRestartConfiguration {
    *
    * @param hlsManifestsUpdateTimeout
    *        If HLS manifests were not updated for the given number of seconds, a restart is triggered. Minimum: 30.0
-   * minimum: 30
+   *        minimum: 30
    */
   public void setHlsManifestsUpdateTimeout(Double hlsManifestsUpdateTimeout) {
     this.hlsManifestsUpdateTimeout = hlsManifestsUpdateTimeout;
@@ -137,7 +137,7 @@ public class AutoRestartConfiguration {
    *
    * @param dashManifestsUpdateTimeout
    *        If DASH manifests were not updated for the given number of seconds, a restart is triggered. Minimum: 30.0
-   * minimum: 30
+   *        minimum: 30
    */
   public void setDashManifestsUpdateTimeout(Double dashManifestsUpdateTimeout) {
     this.dashManifestsUpdateTimeout = dashManifestsUpdateTimeout;

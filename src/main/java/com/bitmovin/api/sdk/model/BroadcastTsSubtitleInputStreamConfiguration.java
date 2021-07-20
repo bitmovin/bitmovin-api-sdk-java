@@ -58,8 +58,8 @@ public class BroadcastTsSubtitleInputStreamConfiguration {
    *
    * @param packetIdentifier
    *        An integer value. Packet Identifier (PID) for this stream.
-   * minimum: 16
-   * maximum: 8190
+   *        minimum: 16
+   *        maximum: 8190
    */
   public void setPacketIdentifier(Integer packetIdentifier) {
     this.packetIdentifier = packetIdentifier;
@@ -83,8 +83,8 @@ public class BroadcastTsSubtitleInputStreamConfiguration {
    *
    * @param rate
    *        The rate parameter determines the maximum rate in bits per second that should be used for the subtitle stream. The valid range is &#x60;100&#x60; to &#x60;60 000 000&#x60; bps or &#x60;0&#x60;. If the value is set to 0, we will examine the first 100 packets of subtitle packet data and use the highest rate that was computed. If the value is set too low, not enough to accommodate the subtitle bit-rate, then some PES packets corresponding to DVB subtitle stream will be dropped. This parameter is optional and the default value is 0. 
-   * minimum: 0
-   * maximum: 60000000
+   *        minimum: 0
+   *        maximum: 60000000
    */
   public void setRate(Integer rate) {
     this.rate = rate;

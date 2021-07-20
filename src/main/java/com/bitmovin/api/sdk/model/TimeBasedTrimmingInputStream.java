@@ -60,7 +60,7 @@ public class TimeBasedTrimmingInputStream extends InputStream {
    *
    * @param offset
    *        Defines the offset in seconds at which the encoding should start, beginning at 0. The frame indicated by this value will be included in the encoding
-   * minimum: 0
+   *        minimum: 0
    */
   public void setOffset(Double offset) {
     this.offset = offset;
@@ -82,7 +82,7 @@ public class TimeBasedTrimmingInputStream extends InputStream {
    *
    * @param duration
    *        Defines how many seconds of the input will be encoded
-   * minimum: 0
+   *        minimum: 0
    */
   public void setDuration(Double duration) {
     this.duration = duration;

@@ -53,8 +53,8 @@ public class TsMuxingConfiguration {
    *
    * @param programNumber
    *        An integer value. Value for program_number field in the MPEG Transport Stream Program Map Table (PMT). The value zero is reserved for the NIT PID entry in the PAT.
-   * minimum: 1
-   * maximum: 65535
+   *        minimum: 1
+   *        maximum: 65535
    */
   public void setProgramNumber(Integer programNumber) {
     this.programNumber = programNumber;

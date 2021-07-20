@@ -35,7 +35,7 @@ public class PaddingSequence {
    *
    * @param duration
    *        Duration of the padding sequence, given in the unit specified by the &#x60;unit&#x60; property. The maximum duration is 300 frames or 10 seconds. If the unit is &#x60;FRAMES&#x60;, this needs to be an integer value and will be interpreted based on the input frame rate of the main part of the ConcatenationInputStream that is used by your video output stream(s). &#x60;FRAMES&#x60; is not allowed if the encoding does not contain a video output stream. (required)
-   * minimum: 0
+   *        minimum: 0
    */
   public void setDuration(Double duration) {
     this.duration = duration;

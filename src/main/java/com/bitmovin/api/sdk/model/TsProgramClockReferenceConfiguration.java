@@ -36,8 +36,8 @@ public class TsProgramClockReferenceConfiguration {
    *
    * @param pid
    *        An integer value. Packet Identifier (PID) for the MPEG Transport Stream PCR. This should generally point to the video stream PID. If it is not explicitly set it will point to the video stream PID if exists, otherwise to the audio stream PID.
-   * minimum: 16
-   * maximum: 8190
+   *        minimum: 16
+   *        maximum: 8190
    */
   public void setPid(Integer pid) {
     this.pid = pid;
@@ -61,8 +61,8 @@ public class TsProgramClockReferenceConfiguration {
    *
    * @param interval
    *        An integer value. Nominal time between MPEG Transport Stream PCRs in milliseconds.
-   * minimum: 1
-   * maximum: 65535
+   *        minimum: 1
+   *        maximum: 65535
    */
   public void setInterval(Integer interval) {
     this.interval = interval;

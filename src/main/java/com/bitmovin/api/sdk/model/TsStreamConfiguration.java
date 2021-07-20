@@ -55,8 +55,8 @@ public class TsStreamConfiguration {
    *
    * @param pid
    *        An integer value. MPEG Transport Stream Packet Identifier (PID) for this stream. (required)
-   * minimum: 16
-   * maximum: 8190
+   *        minimum: 16
+   *        maximum: 8190
    */
   public void setPid(Integer pid) {
     this.pid = pid;

@@ -127,7 +127,7 @@ public class PrewarmedEncoderPool extends BitmovinResource {
    *
    * @param targetPoolSize
    *        Number of instances to keep prewarmed while the pool is running (required)
-   * minimum: 1
+   *        minimum: 1
    */
   public void setTargetPoolSize(Integer targetPoolSize) {
     this.targetPoolSize = targetPoolSize;

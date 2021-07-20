@@ -39,8 +39,8 @@ public class Scheduling {
    *
    * @param priority
    *        Specify the priority of this encoding (0 - 100). Higher numbers mean higher priority. Default is 50.
-   * minimum: 0
-   * maximum: 100
+   *        minimum: 0
+   *        maximum: 100
    */
   public void setPriority(Integer priority) {
     this.priority = priority;

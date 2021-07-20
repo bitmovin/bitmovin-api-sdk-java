@@ -362,8 +362,8 @@ public class H265VideoConfiguration extends VideoConfiguration {
    *
    * @param crf
    *        Sets the constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
-   * minimum: 0
-   * maximum: 51
+   *        minimum: 0
+   *        maximum: 51
    */
   public void setCrf(Double crf) {
     this.crf = crf;
@@ -405,8 +405,8 @@ public class H265VideoConfiguration extends VideoConfiguration {
    *
    * @param bframes
    *        Sets the amount of b frames
-   * minimum: 0
-   * maximum: 16
+   *        minimum: 0
+   *        maximum: 16
    */
   public void setBframes(Integer bframes) {
     this.bframes = bframes;
@@ -430,8 +430,8 @@ public class H265VideoConfiguration extends VideoConfiguration {
    *
    * @param refFrames
    *        Sets the amount of reference frames
-   * minimum: 0
-   * maximum: 16
+   *        minimum: 0
+   *        maximum: 16
    */
   public void setRefFrames(Integer refFrames) {
     this.refFrames = refFrames;
@@ -455,8 +455,8 @@ public class H265VideoConfiguration extends VideoConfiguration {
    *
    * @param qp
    *        Sets the quantization factor
-   * minimum: 0
-   * maximum: 51
+   *        minimum: 0
+   *        maximum: 51
    */
   public void setQp(Integer qp) {
     this.qp = qp;
@@ -650,8 +650,8 @@ public class H265VideoConfiguration extends VideoConfiguration {
    *
    * @param rcLookahead
    *        Number of frames for slice-type decision lookahead
-   * minimum: 1
-   * maximum: 250
+   *        minimum: 1
+   *        maximum: 250
    */
   public void setRcLookahead(Integer rcLookahead) {
     this.rcLookahead = rcLookahead;
@@ -766,8 +766,8 @@ public class H265VideoConfiguration extends VideoConfiguration {
    *
    * @param subMe
    *        Set the amount of subpel refinement to perform.
-   * minimum: 0
-   * maximum: 7
+   *        minimum: 0
+   *        maximum: 7
    */
   public void setSubMe(Integer subMe) {
     this.subMe = subMe;
@@ -791,8 +791,8 @@ public class H265VideoConfiguration extends VideoConfiguration {
    *
    * @param motionSearchRange
    *        Set the Motion search range.
-   * minimum: 0
-   * maximum: 32768
+   *        minimum: 0
+   *        maximum: 32768
    */
   public void setMotionSearchRange(Integer motionSearchRange) {
     this.motionSearchRange = motionSearchRange;
@@ -947,7 +947,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
    *
    * @param sceneCutThreshold
    *        Scene Change sensitivity. The higher the value, the more likely an I-Frame will be inserted. Set to 0 to disable it.
-   * minimum: 0
+   *        minimum: 0
    */
   public void setSceneCutThreshold(Integer sceneCutThreshold) {
     this.sceneCutThreshold = sceneCutThreshold;
@@ -1028,8 +1028,8 @@ public class H265VideoConfiguration extends VideoConfiguration {
    *
    * @param psyRateDistortionOptimization
    *        Psycho-visual rate-distortion retains fine details like film grain at the expense of more blocking artifacts. Higher values make the video appear sharper and more detailed but with a higher risk of blocking artifacts. Needs to have subMe with RD_IP, RD_ALL, RD_REF_IP, RD_REF_ALL, QPRD or FULL_RD
-   * minimum: 0
-   * maximum: 5
+   *        minimum: 0
+   *        maximum: 5
    */
   public void setPsyRateDistortionOptimization(Double psyRateDistortionOptimization) {
     this.psyRateDistortionOptimization = psyRateDistortionOptimization;
@@ -1053,8 +1053,8 @@ public class H265VideoConfiguration extends VideoConfiguration {
    *
    * @param psyRateDistortionOptimizedQuantization
    *        Strength of psycho-visual optimizations in quantization. Only has an effect in presets which use RDOQ (rd-levels 4 and 5). The value must be between 0 and 50, 1.0 is typical
-   * minimum: 0
-   * maximum: 50
+   *        minimum: 0
+   *        maximum: 50
    */
   public void setPsyRateDistortionOptimizedQuantization(Double psyRateDistortionOptimizedQuantization) {
     this.psyRateDistortionOptimizedQuantization = psyRateDistortionOptimizedQuantization;
@@ -1591,8 +1591,8 @@ public class H265VideoConfiguration extends VideoConfiguration {
    *
    * @param noiseReductionIntra
    *        An integer value, which denotes strength of noise reduction in intra CUs. Default 0.
-   * minimum: 0
-   * maximum: 2000
+   *        minimum: 0
+   *        maximum: 2000
    */
   public void setNoiseReductionIntra(Integer noiseReductionIntra) {
     this.noiseReductionIntra = noiseReductionIntra;
@@ -1616,8 +1616,8 @@ public class H265VideoConfiguration extends VideoConfiguration {
    *
    * @param noiseReductionInter
    *        An integer value, which denotes strength of noise reduction in inter CUs. Default 0.
-   * minimum: 0
-   * maximum: 2000
+   *        minimum: 0
+   *        maximum: 2000
    */
   public void setNoiseReductionInter(Integer noiseReductionInter) {
     this.noiseReductionInter = noiseReductionInter;
@@ -1679,8 +1679,8 @@ public class H265VideoConfiguration extends VideoConfiguration {
    *
    * @param dynamicRateDistortionStrength
    *        Increases the RD level at points where quality drops due to VBV rate control enforcement. Default 0.
-   * minimum: 0
-   * maximum: 4
+   *        minimum: 0
+   *        maximum: 4
    */
   public void setDynamicRateDistortionStrength(Integer dynamicRateDistortionStrength) {
     this.dynamicRateDistortionStrength = dynamicRateDistortionStrength;
@@ -1799,8 +1799,8 @@ public class H265VideoConfiguration extends VideoConfiguration {
    *
    * @param scenecutBias
    *        This value represents the percentage difference between the inter cost and intra cost of a frame used in scenecut detection. Default 5.0.
-   * minimum: 0
-   * maximum: 100
+   *        minimum: 0
+   *        maximum: 100
    */
   public void setScenecutBias(Double scenecutBias) {
     this.scenecutBias = scenecutBias;
@@ -1862,8 +1862,8 @@ public class H265VideoConfiguration extends VideoConfiguration {
    *
    * @param bframeBias
    *        Bias towards B frames in slicetype decision. The higher the bias the more likely the encoder is to use B frames. Default 0
-   * minimum: -90
-   * maximum: 100
+   *        minimum: -90
+   *        maximum: 100
    */
   public void setBframeBias(Integer bframeBias) {
     this.bframeBias = bframeBias;
@@ -1906,8 +1906,8 @@ public class H265VideoConfiguration extends VideoConfiguration {
    *
    * @param adaptiveQuantizationStrength
    *        Adjust the strength of the adaptive quantization offsets. Default 1.0.
-   * minimum: 0
-   * maximum: 3
+   *        minimum: 0
+   *        maximum: 3
    */
   public void setAdaptiveQuantizationStrength(Double adaptiveQuantizationStrength) {
     this.adaptiveQuantizationStrength = adaptiveQuantizationStrength;
@@ -1988,8 +1988,8 @@ public class H265VideoConfiguration extends VideoConfiguration {
    *
    * @param qpOffsetChromaCb
    *        Offset of Cb chroma QP from the luma QP selected by rate control. This is a general way to spend more or less bits on the chroma channel. Default 0
-   * minimum: -12
-   * maximum: 12
+   *        minimum: -12
+   *        maximum: 12
    */
   public void setQpOffsetChromaCb(Integer qpOffsetChromaCb) {
     this.qpOffsetChromaCb = qpOffsetChromaCb;
@@ -2013,8 +2013,8 @@ public class H265VideoConfiguration extends VideoConfiguration {
    *
    * @param qpOffsetChromaCr
    *        Offset of Cr chroma QP from the luma QP selected by rate control. This is a general way to spend more or less bits on the chroma channel. Default 0
-   * minimum: -12
-   * maximum: 12
+   *        minimum: -12
+   *        maximum: 12
    */
   public void setQpOffsetChromaCr(Integer qpOffsetChromaCr) {
     this.qpOffsetChromaCr = qpOffsetChromaCr;
@@ -2076,8 +2076,8 @@ public class H265VideoConfiguration extends VideoConfiguration {
    *
    * @param quantizerCurveCompressionFactor
    *        Sets the quantizer curve compression factor. It weights the frame quantizer based on the complexity of residual (measured by lookahead). Default 0.6
-   * minimum: 0.5
-   * maximum: 1
+   *        minimum: 0.5
+   *        maximum: 1
    */
   public void setQuantizerCurveCompressionFactor(Double quantizerCurveCompressionFactor) {
     this.quantizerCurveCompressionFactor = quantizerCurveCompressionFactor;

@@ -98,8 +98,8 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    *
    * @param crf
    *        Sets the constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
-   * minimum: 0
-   * maximum: 63
+   *        minimum: 0
+   *        maximum: 63
    */
   public void setCrf(Integer crf) {
     this.crf = crf;
@@ -123,8 +123,8 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    *
    * @param lagInFrames
    *        Number of frames to look ahead for alternate reference frame selection.
-   * minimum: 0
-   * maximum: 25
+   *        minimum: 0
+   *        maximum: 25
    */
   public void setLagInFrames(Integer lagInFrames) {
     this.lagInFrames = lagInFrames;
@@ -167,8 +167,8 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    *
    * @param qpMin
    *        Sets the minimum of quantization factor.
-   * minimum: 0
-   * maximum: 63
+   *        minimum: 0
+   *        maximum: 63
    */
   public void setQpMin(Integer qpMin) {
     this.qpMin = qpMin;
@@ -192,8 +192,8 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    *
    * @param qpMax
    *        Sets the maximum of quantization factor.
-   * minimum: 0
-   * maximum: 63
+   *        minimum: 0
+   *        maximum: 63
    */
   public void setQpMax(Integer qpMax) {
     this.qpMax = qpMax;
@@ -217,8 +217,8 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    *
    * @param rateUndershootPct
    *        Datarate undershoot (min) target (percentage).
-   * minimum: 0
-   * maximum: 100
+   *        minimum: 0
+   *        maximum: 100
    */
   public void setRateUndershootPct(Integer rateUndershootPct) {
     this.rateUndershootPct = rateUndershootPct;
@@ -242,8 +242,8 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    *
    * @param rateOvershootPct
    *        Datarate overshoot (max) target (percentage).
-   * minimum: 0
-   * maximum: 100
+   *        minimum: 0
+   *        maximum: 100
    */
   public void setRateOvershootPct(Integer rateOvershootPct) {
     this.rateOvershootPct = rateOvershootPct;
@@ -293,8 +293,8 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    *
    * @param sharpness
    *        Loop filter sharpness.
-   * minimum: 0
-   * maximum: 7
+   *        minimum: 0
+   *        maximum: 7
    */
   public void setSharpness(Integer sharpness) {
     this.sharpness = sharpness;
@@ -410,7 +410,7 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    *
    * @param staticThresh
    *        A change threshold on blocks below which they will be skipped by the encoder.
-   * minimum: 0
+   *        minimum: 0
    */
   public void setStaticThresh(Integer staticThresh) {
     this.staticThresh = staticThresh;
@@ -434,8 +434,8 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    *
    * @param arnrMaxFrames
    *        altref noise reduction max frame count.
-   * minimum: 0
-   * maximum: 15
+   *        minimum: 0
+   *        maximum: 15
    */
   public void setArnrMaxFrames(Integer arnrMaxFrames) {
     this.arnrMaxFrames = arnrMaxFrames;
@@ -459,8 +459,8 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
    *
    * @param arnrStrength
    *        altref noise reduction filter strength.
-   * minimum: 0
-   * maximum: 6
+   *        minimum: 0
+   *        maximum: 6
    */
   public void setArnrStrength(Integer arnrStrength) {
     this.arnrStrength = arnrStrength;

@@ -73,6 +73,7 @@ public class ConcatenationInputConfiguration {
 
   /**
    * A unique integer value that determines concatenation order (required)
+   * minimum: 0
    * @return position
    */
   public Integer getPosition() {
@@ -81,9 +82,11 @@ public class ConcatenationInputConfiguration {
 
   /**
    * A unique integer value that determines concatenation order (required)
+   * minimum: 0
    *
    * @param position
    *        A unique integer value that determines concatenation order (required)
+   *        minimum: 0
    */
   public void setPosition(Integer position) {
     this.position = position;

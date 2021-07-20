@@ -42,8 +42,8 @@ public class BroadcastTsProgramConfiguration {
    *
    * @param programNumber
    *        An integer value. Value for program_number field in Program Map Table (PMT). The value zero is reserved for the NIT PID entry in the PAT.
-   * minimum: 1
-   * maximum: 65535
+   *        minimum: 1
+   *        maximum: 65535
    */
   public void setProgramNumber(Integer programNumber) {
     this.programNumber = programNumber;
@@ -67,8 +67,8 @@ public class BroadcastTsProgramConfiguration {
    *
    * @param pidForPMT
    *        An integer value. Packet identifier (PID) to use for Program Map Table (PMT). Recommended value is 2 x programNumber.
-   * minimum: 10
-   * maximum: 8190
+   *        minimum: 10
+   *        maximum: 8190
    */
   public void setPidForPMT(Integer pidForPMT) {
     this.pidForPMT = pidForPMT;
@@ -111,8 +111,8 @@ public class BroadcastTsProgramConfiguration {
    *
    * @param programClockRefInterval
    *        Interval between Program Clock References (PCRs) in milliseconds. Defines the period between PCR fields inserted in the stream. The default value is 90ms.
-   * minimum: 1
-   * maximum: 100
+   *        minimum: 1
+   *        maximum: 100
    */
   public void setProgramClockRefInterval(Integer programClockRefInterval) {
     this.programClockRefInterval = programClockRefInterval;

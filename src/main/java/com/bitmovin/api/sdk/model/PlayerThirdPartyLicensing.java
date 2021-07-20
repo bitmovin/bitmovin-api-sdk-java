@@ -62,8 +62,8 @@ public class PlayerThirdPartyLicensing {
    *
    * @param licenseCheckTimeout
    *        Timeout in ms (required)
-   * minimum: 100
-   * maximum: 2000
+   *        minimum: 100
+   *        maximum: 2000
    */
   public void setLicenseCheckTimeout(Integer licenseCheckTimeout) {
     this.licenseCheckTimeout = licenseCheckTimeout;

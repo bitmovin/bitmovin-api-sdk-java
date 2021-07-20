@@ -65,8 +65,8 @@ public class BroadcastTsInputStreamConfiguration {
    *
    * @param packetIdentifier
    *        An integer value. Packet Identifier (PID) for this stream.
-   * minimum: 16
-   * maximum: 8190
+   *        minimum: 16
+   *        maximum: 8190
    */
   public void setPacketIdentifier(Integer packetIdentifier) {
     this.packetIdentifier = packetIdentifier;

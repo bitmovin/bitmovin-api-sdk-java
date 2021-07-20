@@ -151,8 +151,8 @@ public class Av1VideoConfiguration extends VideoConfiguration {
    *
    * @param lagInFrames
    *        Number of frames to look ahead for alternate reference frame selection
-   * minimum: 0
-   * maximum: 25
+   *        minimum: 0
+   *        maximum: 25
    */
   public void setLagInFrames(Integer lagInFrames) {
     this.lagInFrames = lagInFrames;
@@ -214,8 +214,8 @@ public class Av1VideoConfiguration extends VideoConfiguration {
    *
    * @param undershootPct
    *        Rate control adaptation undershoot control
-   * minimum: 0
-   * maximum: 1000
+   *        minimum: 0
+   *        maximum: 1000
    */
   public void setUndershootPct(Integer undershootPct) {
     this.undershootPct = undershootPct;
@@ -239,8 +239,8 @@ public class Av1VideoConfiguration extends VideoConfiguration {
    *
    * @param overshootPct
    *        Rate control adaptation overshoot control
-   * minimum: 0
-   * maximum: 1000
+   *        minimum: 0
+   *        maximum: 1000
    */
   public void setOvershootPct(Integer overshootPct) {
     this.overshootPct = overshootPct;
@@ -321,8 +321,8 @@ public class Av1VideoConfiguration extends VideoConfiguration {
    *
    * @param tileColumns
    *        Number of tile columns to use, log2
-   * minimum: 0
-   * maximum: 6
+   *        minimum: 0
+   *        maximum: 6
    */
   public void setTileColumns(Integer tileColumns) {
     this.tileColumns = tileColumns;
@@ -346,8 +346,8 @@ public class Av1VideoConfiguration extends VideoConfiguration {
    *
    * @param tileRows
    *        Number of tile rows to use, log2
-   * minimum: 0
-   * maximum: 2
+   *        minimum: 0
+   *        maximum: 2
    */
   public void setTileRows(Integer tileRows) {
     this.tileRows = tileRows;

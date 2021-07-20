@@ -107,8 +107,8 @@ public class H262VideoConfiguration extends VideoConfiguration {
    *
    * @param bframes
    *        Sets the amount of b frames.
-   * minimum: 0
-   * maximum: 16
+   *        minimum: 0
+   *        maximum: 16
    */
   public void setBframes(Integer bframes) {
     this.bframes = bframes;

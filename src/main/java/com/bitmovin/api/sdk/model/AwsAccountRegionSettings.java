@@ -107,8 +107,8 @@ public class AwsAccountRegionSettings extends BitmovinResource {
    *
    * @param sshPort
    *        Custom SSH port. Valid values: 1 - 65535. Leave empty if the default SSH port 22 is OK.
-   * minimum: 1
-   * maximum: 65535
+   *        minimum: 1
+   *        maximum: 65535
    */
   public void setSshPort(Integer sshPort) {
     this.sshPort = sshPort;

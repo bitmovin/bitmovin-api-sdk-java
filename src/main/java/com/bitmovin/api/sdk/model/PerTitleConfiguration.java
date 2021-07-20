@@ -145,7 +145,7 @@ public class PerTitleConfiguration {
    *
    * @param complexityFactor
    *        Will modify the assumed complexity for the Per-Title algorithm (&gt; 0.0). Values higher than 1 will increase complexity and thus select smaller resolutions for given bitrates. This will also result in a higher bitrate for the top rendition. Values lower than 1 will decrease assumed complexity and thus select higher resolutions for given bitrates and also decrease the bitrate of the top rendition
-   * minimum: 0
+   *        minimum: 0
    */
   public void setComplexityFactor(Double complexityFactor) {
     this.complexityFactor = complexityFactor;

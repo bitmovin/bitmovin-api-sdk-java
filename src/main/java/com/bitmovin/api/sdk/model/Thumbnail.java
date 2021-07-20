@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.BitmovinResource;
 import com.bitmovin.api.sdk.model.EncodingOutput;
+import com.bitmovin.api.sdk.model.ThumbnailAspectMode;
 import com.bitmovin.api.sdk.model.ThumbnailUnit;
 import java.util.ArrayList;
 import java.util.Date;
@@ -41,6 +42,9 @@ public class Thumbnail extends BitmovinResource {
 
   @JsonProperty("unit")
   private ThumbnailUnit unit;
+
+  @JsonProperty("aspectMode")
+  private ThumbnailAspectMode aspectMode;
 
 
   /**
@@ -185,6 +189,25 @@ public class Thumbnail extends BitmovinResource {
   }
 
 
+  /**
+   * Specifies the aspect mode that is used when both height and width are specified Only supported starting with encoder version &#x60;2.85.0&#x60;. 
+   * @return aspectMode
+   */
+  public ThumbnailAspectMode getAspectMode() {
+    return aspectMode;
+  }
+
+  /**
+   * Specifies the aspect mode that is used when both height and width are specified Only supported starting with encoder version &#x60;2.85.0&#x60;. 
+   *
+   * @param aspectMode
+   *        Specifies the aspect mode that is used when both height and width are specified Only supported starting with encoder version &#x60;2.85.0&#x60;. 
+   */
+  public void setAspectMode(ThumbnailAspectMode aspectMode) {
+    this.aspectMode = aspectMode;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -201,12 +224,13 @@ public class Thumbnail extends BitmovinResource {
         Objects.equals(this.positions, thumbnail.positions) &&
         Objects.equals(this.outputs, thumbnail.outputs) &&
         Objects.equals(this.unit, thumbnail.unit) &&
+        Objects.equals(this.aspectMode, thumbnail.aspectMode) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(height, width, pattern, interval, positions, outputs, unit, super.hashCode());
+    return Objects.hash(height, width, pattern, interval, positions, outputs, unit, aspectMode, super.hashCode());
   }
 
   @Override
@@ -221,6 +245,7 @@ public class Thumbnail extends BitmovinResource {
     sb.append("    positions: ").append(toIndentedString(positions)).append("\n");
     sb.append("    outputs: ").append(toIndentedString(outputs)).append("\n");
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
+    sb.append("    aspectMode: ").append(toIndentedString(aspectMode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

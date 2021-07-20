@@ -206,8 +206,8 @@ public class H264VideoConfiguration extends VideoConfiguration {
    *
    * @param crf
    *        Sets the constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
-   * minimum: 0
-   * maximum: 51
+   *        minimum: 0
+   *        maximum: 51
    */
   public void setCrf(Double crf) {
     this.crf = crf;
@@ -250,8 +250,8 @@ public class H264VideoConfiguration extends VideoConfiguration {
    *
    * @param bframes
    *        Sets the amount of b frames.
-   * minimum: 0
-   * maximum: 16
+   *        minimum: 0
+   *        maximum: 16
    */
   public void setBframes(Integer bframes) {
     this.bframes = bframes;
@@ -275,8 +275,8 @@ public class H264VideoConfiguration extends VideoConfiguration {
    *
    * @param refFrames
    *        Sets the amount of reference frames.
-   * minimum: 1
-   * maximum: 16
+   *        minimum: 1
+   *        maximum: 16
    */
   public void setRefFrames(Integer refFrames) {
     this.refFrames = refFrames;
@@ -300,8 +300,8 @@ public class H264VideoConfiguration extends VideoConfiguration {
    *
    * @param qpMin
    *        Sets the minimum of quantization factor.
-   * minimum: 0
-   * maximum: 69
+   *        minimum: 0
+   *        maximum: 69
    */
   public void setQpMin(Integer qpMin) {
     this.qpMin = qpMin;
@@ -325,8 +325,8 @@ public class H264VideoConfiguration extends VideoConfiguration {
    *
    * @param qpMax
    *        Sets the maximum of quantization factor.
-   * minimum: 0
-   * maximum: 69
+   *        minimum: 0
+   *        maximum: 69
    */
   public void setQpMax(Integer qpMax) {
     this.qpMax = qpMax;
@@ -368,8 +368,8 @@ public class H264VideoConfiguration extends VideoConfiguration {
    *
    * @param mvSearchRangeMax
    *        Sets the maximum Motion-Vector-Search-Range
-   * minimum: 16
-   * maximum: 24
+   *        minimum: 16
+   *        maximum: 24
    */
   public void setMvSearchRangeMax(Integer mvSearchRangeMax) {
     this.mvSearchRangeMax = mvSearchRangeMax;
@@ -619,8 +619,8 @@ public class H264VideoConfiguration extends VideoConfiguration {
    *
    * @param rcLookahead
    *        Number of frames for frame-type decision lookahead
-   * minimum: 0
-   * maximum: 250
+   *        minimum: 0
+   *        maximum: 250
    */
   public void setRcLookahead(Integer rcLookahead) {
     this.rcLookahead = rcLookahead;
@@ -706,8 +706,8 @@ public class H264VideoConfiguration extends VideoConfiguration {
    *
    * @param slices
    *        Number of slices per frame.
-   * minimum: 1
-   * maximum: 45
+   *        minimum: 1
+   *        maximum: 45
    */
   public void setSlices(Integer slices) {
     this.slices = slices;
@@ -750,8 +750,8 @@ public class H264VideoConfiguration extends VideoConfiguration {
    *
    * @param sceneCutThreshold
    *        Scene change sensitivity. The higher the value, the more likely an I-frame will be inserted. Set to 0 to disable it which is advised for scenarios where fixed GOP is required, e.g., adaptive streaming outputs like DASH, HLS and Smooth. Having this setting enabled can improve quality for progressive output with an increased internal chunk length (see &#x60;internalChunkLength&#x60; of muxings).
-   * minimum: 0
-   * maximum: 100
+   *        minimum: 0
+   *        maximum: 100
    */
   public void setSceneCutThreshold(Integer sceneCutThreshold) {
     this.sceneCutThreshold = sceneCutThreshold;

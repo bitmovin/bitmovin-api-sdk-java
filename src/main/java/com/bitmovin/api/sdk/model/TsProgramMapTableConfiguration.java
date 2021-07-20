@@ -33,8 +33,8 @@ public class TsProgramMapTableConfiguration {
    *
    * @param pid
    *        An integer value. Packet Identifier (PID) for the MPEG Transport Stream PMT.
-   * minimum: 16
-   * maximum: 8190
+   *        minimum: 16
+   *        maximum: 8190
    */
   public void setPid(Integer pid) {
     this.pid = pid;

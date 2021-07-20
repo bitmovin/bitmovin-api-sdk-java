@@ -55,8 +55,8 @@ public class AudioGroup {
    *
    * @param priority
    *        Priority of the audio group (required)
-   * minimum: 0
-   * maximum: 100
+   *        minimum: 0
+   *        maximum: 100
    */
   public void setPriority(Integer priority) {
     this.priority = priority;

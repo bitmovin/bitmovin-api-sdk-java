@@ -48,8 +48,8 @@ public class DolbyDigitalLoudnessControl {
    *
    * @param dialnorm
    *        Dialogue Normalization value to be set on the bitstream metadata. Required if the mode is &#x60;PASSTHROUGH&#x60;, or if the mode is &#x60;CORRECTION&#x60; and regulationType is &#x60;MANUAL&#x60;. For all other combinations dialnorm must not be set.
-   * minimum: -31
-   * maximum: -1
+   *        minimum: -31
+   *        maximum: -1
    */
   public void setDialnorm(Integer dialnorm) {
     this.dialnorm = dialnorm;
@@ -110,8 +110,8 @@ public class DolbyDigitalLoudnessControl {
    *
    * @param peakLimit
    *        The peak value in dB to use for loudness correction. This may only be set if the mode is &#x60;PASSTHROUGH&#x60;, or if the mode is &#x60;CORRECTION&#x60; and regulationType is &#x60;MANUAL&#x60;. For all other combinations peakLimit must not be set.
-   * minimum: -8
-   * maximum: -0.1
+   *        minimum: -8
+   *        maximum: -0.1
    */
   public void setPeakLimit(Double peakLimit) {
     this.peakLimit = peakLimit;

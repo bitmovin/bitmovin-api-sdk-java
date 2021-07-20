@@ -33,8 +33,8 @@ public class SpriteJpegConfig {
    *
    * @param quality
    *        Quality of the JPEG file in percent. Allowed values 20 - 100 (required)
-   * minimum: 20
-   * maximum: 100
+   *        minimum: 20
+   *        maximum: 100
    */
   public void setQuality(Integer quality) {
     this.quality = quality;

@@ -54,8 +54,8 @@ public class BroadcastTsTransportConfiguration {
    *
    * @param muxrate
    *        Output rate in bps. The value zero implies to use minimal rate. The minimal rate leaves approximately 15kbps of null packets in the stream.
-   * minimum: 0
-   * maximum: 1000000000
+   *        minimum: 0
+   *        maximum: 1000000000
    */
   public void setMuxrate(Double muxrate) {
     this.muxrate = muxrate;
@@ -117,8 +117,8 @@ public class BroadcastTsTransportConfiguration {
    *
    * @param patRepetitionRatePerSec
    *        Program Association Table (PAT) repetition rate per second. Number of PATs per second.
-   * minimum: 0.001
-   * maximum: 1000
+   *        minimum: 0.001
+   *        maximum: 1000
    */
   public void setPatRepetitionRatePerSec(Double patRepetitionRatePerSec) {
     this.patRepetitionRatePerSec = patRepetitionRatePerSec;
@@ -142,8 +142,8 @@ public class BroadcastTsTransportConfiguration {
    *
    * @param pmtRepetitionRatePerSec
    *        Program Map Table (PMT) repetition rate per second. Number of PMTs for each program per second.
-   * minimum: 0.001
-   * maximum: 1000
+   *        minimum: 0.001
+   *        maximum: 1000
    */
   public void setPmtRepetitionRatePerSec(Double pmtRepetitionRatePerSec) {
     this.pmtRepetitionRatePerSec = pmtRepetitionRatePerSec;
@@ -186,8 +186,8 @@ public class BroadcastTsTransportConfiguration {
    *
    * @param initialPresentationTimeStamp
    *        Sets the presentation time stamp value for the first video frame. The timestamp is specified in the timescale of 90000
-   * minimum: 0
-   * maximum: 5400000
+   *        minimum: 0
+   *        maximum: 5400000
    */
   public void setInitialPresentationTimeStamp(Double initialPresentationTimeStamp) {
     this.initialPresentationTimeStamp = initialPresentationTimeStamp;
@@ -211,8 +211,8 @@ public class BroadcastTsTransportConfiguration {
    *
    * @param initialProgramClockReference
    *        Sets the Program Clock Reference value at the beginning of the first packet for the transport stream. The PCR is specified in the timescale of 90000
-   * minimum: 0
-   * maximum: 2576980377600
+   *        minimum: 0
+   *        maximum: 2576980377600
    */
   public void setInitialProgramClockReference(Double initialProgramClockReference) {
     this.initialProgramClockReference = initialProgramClockReference;
