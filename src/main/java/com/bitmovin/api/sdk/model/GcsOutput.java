@@ -89,7 +89,7 @@ public class GcsOutput extends Output {
 
 
   /**
-   * Get cloudRegion
+   * The cloud region in which the bucket is located. Is used to determine the ideal location for your encodings automatically.
    * @return cloudRegion
    */
   public GoogleCloudRegion getCloudRegion() {
@@ -97,9 +97,10 @@ public class GcsOutput extends Output {
   }
 
   /**
-   * Set cloudRegion
+   * The cloud region in which the bucket is located. Is used to determine the ideal location for your encodings automatically.
    *
    * @param cloudRegion
+   *        The cloud region in which the bucket is located. Is used to determine the ideal location for your encodings automatically.
    */
   public void setCloudRegion(GoogleCloudRegion cloudRegion) {
     this.cloudRegion = cloudRegion;

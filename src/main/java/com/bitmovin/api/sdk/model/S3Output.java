@@ -115,7 +115,7 @@ public class S3Output extends Output {
 
 
   /**
-   * Get cloudRegion
+   * The cloud region in which the bucket is located. Is used to determine the ideal location for your encodings automatically.
    * @return cloudRegion
    */
   public AwsCloudRegion getCloudRegion() {
@@ -123,9 +123,10 @@ public class S3Output extends Output {
   }
 
   /**
-   * Set cloudRegion
+   * The cloud region in which the bucket is located. Is used to determine the ideal location for your encodings automatically.
    *
    * @param cloudRegion
+   *        The cloud region in which the bucket is located. Is used to determine the ideal location for your encodings automatically.
    */
   public void setCloudRegion(AwsCloudRegion cloudRegion) {
     this.cloudRegion = cloudRegion;
@@ -133,7 +134,7 @@ public class S3Output extends Output {
 
 
   /**
-   * Get signatureVersion
+   * Specifies the method used for authentication. Must be set to S3_V2 if the region supports both V2 and V4, but the bucket allows V2 only (see https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region)
    * @return signatureVersion
    */
   public S3SignatureVersion getSignatureVersion() {
@@ -141,9 +142,10 @@ public class S3Output extends Output {
   }
 
   /**
-   * Set signatureVersion
+   * Specifies the method used for authentication. Must be set to S3_V2 if the region supports both V2 and V4, but the bucket allows V2 only (see https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region)
    *
    * @param signatureVersion
+   *        Specifies the method used for authentication. Must be set to S3_V2 if the region supports both V2 and V4, but the bucket allows V2 only (see https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region)
    */
   public void setSignatureVersion(S3SignatureVersion signatureVersion) {
     this.signatureVersion = signatureVersion;

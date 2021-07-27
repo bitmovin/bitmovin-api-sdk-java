@@ -45,7 +45,7 @@ public class SccCaption extends BitmovinResource {
 
 
   /**
-   * Get smpteTimecodeFlavor
+   * Flavor of SMPTE timecodes in the SCC file (drop-frame or non-drop)
    * @return smpteTimecodeFlavor
    */
   public SmpteTimecodeFlavor getSmpteTimecodeFlavor() {
@@ -53,9 +53,10 @@ public class SccCaption extends BitmovinResource {
   }
 
   /**
-   * Set smpteTimecodeFlavor
+   * Flavor of SMPTE timecodes in the SCC file (drop-frame or non-drop)
    *
    * @param smpteTimecodeFlavor
+   *        Flavor of SMPTE timecodes in the SCC file (drop-frame or non-drop)
    */
   public void setSmpteTimecodeFlavor(SmpteTimecodeFlavor smpteTimecodeFlavor) {
     this.smpteTimecodeFlavor = smpteTimecodeFlavor;

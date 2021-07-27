@@ -64,22 +64,12 @@ public class GceAccountRegionSettings extends BitmovinResource {
     this.subnetId = subnetId;
   }
 
-
   /**
    * Get region
    * @return region
    */
   public GoogleCloudRegion getRegion() {
     return region;
-  }
-
-  /**
-   * Set region
-   *
-   * @param region
-   */
-  public void setRegion(GoogleCloudRegion region) {
-    this.region = region;
   }
 
 

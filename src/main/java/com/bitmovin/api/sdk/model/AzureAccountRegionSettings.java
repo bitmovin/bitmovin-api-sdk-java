@@ -64,22 +64,12 @@ public class AzureAccountRegionSettings extends BitmovinResource {
     this.subnetName = subnetName;
   }
 
-
   /**
    * Get region
    * @return region
    */
   public AzureCloudRegion getRegion() {
     return region;
-  }
-
-  /**
-   * Set region
-   *
-   * @param region
-   */
-  public void setRegion(AzureCloudRegion region) {
-    this.region = region;
   }
 
 

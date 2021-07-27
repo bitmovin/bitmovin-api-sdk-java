@@ -48,6 +48,9 @@ public class AnalyticsImpressionSample {
   @JsonProperty("cdn_provider")
   private String cdnProvider;
 
+  @JsonProperty("cast_tech")
+  private String castTech;
+
   @JsonProperty("city")
   private String city;
 
@@ -487,6 +490,25 @@ public class AnalyticsImpressionSample {
    */
   public void setCdnProvider(String cdnProvider) {
     this.cdnProvider = cdnProvider;
+  }
+
+
+  /**
+   * Casting Technology
+   * @return castTech
+   */
+  public String getCastTech() {
+    return castTech;
+  }
+
+  /**
+   * Casting Technology
+   *
+   * @param castTech
+   *        Casting Technology
+   */
+  public void setCastTech(String castTech) {
+    this.castTech = castTech;
   }
 
 
@@ -1940,7 +1962,7 @@ public class AnalyticsImpressionSample {
 
 
   /**
-   * Get videostartFailedReason
+   * Reason why starting the video failed
    * @return videostartFailedReason
    */
   public AnalyticsVideoStartFailedReason getVideostartFailedReason() {
@@ -1948,9 +1970,10 @@ public class AnalyticsImpressionSample {
   }
 
   /**
-   * Set videostartFailedReason
+   * Reason why starting the video failed
    *
    * @param videostartFailedReason
+   *        Reason why starting the video failed
    */
   public void setVideostartFailedReason(AnalyticsVideoStartFailedReason videostartFailedReason) {
     this.videostartFailedReason = videostartFailedReason;
@@ -1977,6 +2000,7 @@ public class AnalyticsImpressionSample {
         Objects.equals(this.browserVersionMinor, analyticsImpressionSample.browserVersionMinor) &&
         Objects.equals(this.buffered, analyticsImpressionSample.buffered) &&
         Objects.equals(this.cdnProvider, analyticsImpressionSample.cdnProvider) &&
+        Objects.equals(this.castTech, analyticsImpressionSample.castTech) &&
         Objects.equals(this.city, analyticsImpressionSample.city) &&
         Objects.equals(this.clientTime, analyticsImpressionSample.clientTime) &&
         Objects.equals(this.country, analyticsImpressionSample.country) &&
@@ -2058,7 +2082,7 @@ public class AnalyticsImpressionSample {
 
   @Override
   public int hashCode() {
-    return Objects.hash(ad, analyticsVersion, audioBitrate, audioCodec, audioLanguage, autoplay, browser, browserVersionMajor, browserVersionMinor, buffered, cdnProvider, city, clientTime, country, customUserId, customData1, customData2, customData3, customData4, customData5, customData6, customData7, deviceClass, deviceType, domain, drmLoadTime, drmType, droppedFrames, duration, errorCode, errorMessage, experimentName, impressionId, ipAddress, isCasting, isLive, isMuted, isp, language, licenseKey, m3u8Url, mpdUrl, operatingsystem, operatingsystemVersionMajor, operatingsystemVersionMinor, pageLoadTime, pageLoadType, path, paused, platform, played, player, playerKey, playerStartuptime, playerTech, playerVersion, progUrl, region, screenHeight, screenWidth, seeked, segmentDownloadCount, segmentDownloadSize, segmentDownloadTime, sequenceNumber, size, startuptime, state, streamFormat, subtitleEnabled, subtitleLanguage, supportedVideoCodes, time, userId, videoBitrate, videoCodec, videoDuration, videoId, videoTitle, videoPlaybackHeight, videoPlaybackWidth, videoStartuptime, videotimeEnd, videotimeStart, videoWindowHeight, videoWindowWidth, videostartFailed, videostartFailedReason);
+    return Objects.hash(ad, analyticsVersion, audioBitrate, audioCodec, audioLanguage, autoplay, browser, browserVersionMajor, browserVersionMinor, buffered, cdnProvider, castTech, city, clientTime, country, customUserId, customData1, customData2, customData3, customData4, customData5, customData6, customData7, deviceClass, deviceType, domain, drmLoadTime, drmType, droppedFrames, duration, errorCode, errorMessage, experimentName, impressionId, ipAddress, isCasting, isLive, isMuted, isp, language, licenseKey, m3u8Url, mpdUrl, operatingsystem, operatingsystemVersionMajor, operatingsystemVersionMinor, pageLoadTime, pageLoadType, path, paused, platform, played, player, playerKey, playerStartuptime, playerTech, playerVersion, progUrl, region, screenHeight, screenWidth, seeked, segmentDownloadCount, segmentDownloadSize, segmentDownloadTime, sequenceNumber, size, startuptime, state, streamFormat, subtitleEnabled, subtitleLanguage, supportedVideoCodes, time, userId, videoBitrate, videoCodec, videoDuration, videoId, videoTitle, videoPlaybackHeight, videoPlaybackWidth, videoStartuptime, videotimeEnd, videotimeStart, videoWindowHeight, videoWindowWidth, videostartFailed, videostartFailedReason);
   }
 
   @Override
@@ -2077,6 +2101,7 @@ public class AnalyticsImpressionSample {
     sb.append("    browserVersionMinor: ").append(toIndentedString(browserVersionMinor)).append("\n");
     sb.append("    buffered: ").append(toIndentedString(buffered)).append("\n");
     sb.append("    cdnProvider: ").append(toIndentedString(cdnProvider)).append("\n");
+    sb.append("    castTech: ").append(toIndentedString(castTech)).append("\n");
     sb.append("    city: ").append(toIndentedString(city)).append("\n");
     sb.append("    clientTime: ").append(toIndentedString(clientTime)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");

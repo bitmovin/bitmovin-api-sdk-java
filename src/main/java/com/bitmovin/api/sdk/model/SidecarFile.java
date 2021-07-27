@@ -99,7 +99,7 @@ public class SidecarFile extends BitmovinResource {
 
 
   /**
-   * Get errorMode
+   * This defines how errors should be handled
    * @return errorMode
    */
   public SidecarErrorMode getErrorMode() {
@@ -107,9 +107,10 @@ public class SidecarFile extends BitmovinResource {
   }
 
   /**
-   * Set errorMode
+   * This defines how errors should be handled
    *
    * @param errorMode
+   *        This defines how errors should be handled
    */
   public void setErrorMode(SidecarErrorMode errorMode) {
     this.errorMode = errorMode;

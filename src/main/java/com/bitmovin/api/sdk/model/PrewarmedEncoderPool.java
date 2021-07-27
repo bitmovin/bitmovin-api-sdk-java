@@ -58,7 +58,7 @@ public class PrewarmedEncoderPool extends BitmovinResource {
 
 
   /**
-   * Get cloudRegion
+   * The cloud region in which the pool&#39;s instances will be running. Must be a specific region (e.g. not &#39;AUTO&#39;, &#39;GOOGLE&#39; or &#39;EUROPE&#39;) (required)
    * @return cloudRegion
    */
   public CloudRegion getCloudRegion() {
@@ -66,9 +66,10 @@ public class PrewarmedEncoderPool extends BitmovinResource {
   }
 
   /**
-   * Set cloudRegion
+   * The cloud region in which the pool&#39;s instances will be running. Must be a specific region (e.g. not &#39;AUTO&#39;, &#39;GOOGLE&#39; or &#39;EUROPE&#39;) (required)
    *
    * @param cloudRegion
+   *        The cloud region in which the pool&#39;s instances will be running. Must be a specific region (e.g. not &#39;AUTO&#39;, &#39;GOOGLE&#39; or &#39;EUROPE&#39;) (required)
    */
   public void setCloudRegion(CloudRegion cloudRegion) {
     this.cloudRegion = cloudRegion;
@@ -95,7 +96,7 @@ public class PrewarmedEncoderPool extends BitmovinResource {
 
 
   /**
-   * Get diskSize
+   * Disk size of the prewarmed instances in GB. Needs to be chosen depending on input file sizes and encoding features used. (required)
    * @return diskSize
    */
   public PrewarmedEncoderDiskSize getDiskSize() {
@@ -103,9 +104,10 @@ public class PrewarmedEncoderPool extends BitmovinResource {
   }
 
   /**
-   * Set diskSize
+   * Disk size of the prewarmed instances in GB. Needs to be chosen depending on input file sizes and encoding features used. (required)
    *
    * @param diskSize
+   *        Disk size of the prewarmed instances in GB. Needs to be chosen depending on input file sizes and encoding features used. (required)
    */
   public void setDiskSize(PrewarmedEncoderDiskSize diskSize) {
     this.diskSize = diskSize;
@@ -133,22 +135,12 @@ public class PrewarmedEncoderPool extends BitmovinResource {
     this.targetPoolSize = targetPoolSize;
   }
 
-
   /**
-   * Get status
+   * Current status of the pool.
    * @return status
    */
   public PrewarmedEncoderPoolStatus getStatus() {
     return status;
-  }
-
-  /**
-   * Set status
-   *
-   * @param status
-   */
-  public void setStatus(PrewarmedEncoderPoolStatus status) {
-    this.status = status;
   }
 
 

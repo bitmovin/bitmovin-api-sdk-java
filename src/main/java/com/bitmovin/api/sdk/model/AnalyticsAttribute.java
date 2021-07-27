@@ -49,6 +49,9 @@ public enum AnalyticsAttribute {
   CDN_PROVIDER("CDN_PROVIDER"),
   
   
+  CAST_TECH("CAST_TECH"),
+  
+  
   CITY("CITY"),
   
   

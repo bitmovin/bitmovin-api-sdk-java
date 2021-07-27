@@ -71,7 +71,7 @@ public class AkamaiMslOutput extends Output {
 
 
   /**
-   * Get streamFormat
+   * The stream format. Only DASH is supported at the moment. (required)
    * @return streamFormat
    */
   public AkamaiMslStreamFormat getStreamFormat() {
@@ -79,9 +79,10 @@ public class AkamaiMslOutput extends Output {
   }
 
   /**
-   * Set streamFormat
+   * The stream format. Only DASH is supported at the moment. (required)
    *
    * @param streamFormat
+   *        The stream format. Only DASH is supported at the moment. (required)
    */
   public void setStreamFormat(AkamaiMslStreamFormat streamFormat) {
     this.streamFormat = streamFormat;
@@ -89,7 +90,7 @@ public class AkamaiMslOutput extends Output {
 
 
   /**
-   * Get mslVersion
+   * The Akamai MSL Version. Only MSL4 is supported at the moment. (required)
    * @return mslVersion
    */
   public AkamaiMslVersion getMslVersion() {
@@ -97,9 +98,10 @@ public class AkamaiMslOutput extends Output {
   }
 
   /**
-   * Set mslVersion
+   * The Akamai MSL Version. Only MSL4 is supported at the moment. (required)
    *
    * @param mslVersion
+   *        The Akamai MSL Version. Only MSL4 is supported at the moment. (required)
    */
   public void setMslVersion(AkamaiMslVersion mslVersion) {
     this.mslVersion = mslVersion;

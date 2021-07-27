@@ -177,22 +177,12 @@ public class AnalyticsExportTask extends BitmovinResponse {
     return progress;
   }
 
-
   /**
    * Get status
    * @return status
    */
   public AnalyticsExportStatus getStatus() {
     return status;
-  }
-
-  /**
-   * Set status
-   *
-   * @param status
-   */
-  public void setStatus(AnalyticsExportStatus status) {
-    this.status = status;
   }
 
   /**

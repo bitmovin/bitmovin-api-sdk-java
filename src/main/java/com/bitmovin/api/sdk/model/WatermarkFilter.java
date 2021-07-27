@@ -132,7 +132,7 @@ public class WatermarkFilter extends Filter {
 
 
   /**
-   * Get unit
+   * Specifies if the values of &#39;left&#39;, &#39;right&#39;, &#39;top&#39; and &#39;bottom&#39; are interpreted as pixels or as a percentage of the input video&#39;s dimensions.
    * @return unit
    */
   public PositionUnit getUnit() {
@@ -140,9 +140,10 @@ public class WatermarkFilter extends Filter {
   }
 
   /**
-   * Set unit
+   * Specifies if the values of &#39;left&#39;, &#39;right&#39;, &#39;top&#39; and &#39;bottom&#39; are interpreted as pixels or as a percentage of the input video&#39;s dimensions.
    *
    * @param unit
+   *        Specifies if the values of &#39;left&#39;, &#39;right&#39;, &#39;top&#39; and &#39;bottom&#39; are interpreted as pixels or as a percentage of the input video&#39;s dimensions.
    */
   public void setUnit(PositionUnit unit) {
     this.unit = unit;

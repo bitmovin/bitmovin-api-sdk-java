@@ -34,7 +34,7 @@ public class Organization extends BitmovinResource {
 
 
   /**
-   * Get type
+   * Specifies the type of the organization in the hierachy. Only sub-organizations can be newly created. (required)
    * @return type
    */
   public OrganizationType getType() {
@@ -42,9 +42,10 @@ public class Organization extends BitmovinResource {
   }
 
   /**
-   * Set type
+   * Specifies the type of the organization in the hierachy. Only sub-organizations can be newly created. (required)
    *
    * @param type
+   *        Specifies the type of the organization in the hierachy. Only sub-organizations can be newly created. (required)
    */
   public void setType(OrganizationType type) {
     this.type = type;

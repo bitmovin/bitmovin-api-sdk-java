@@ -114,22 +114,12 @@ public class AwsAccountRegionSettings extends BitmovinResource {
     this.sshPort = sshPort;
   }
 
-
   /**
    * Get region
    * @return region
    */
   public AwsCloudRegion getRegion() {
     return region;
-  }
-
-  /**
-   * Set region
-   *
-   * @param region
-   */
-  public void setRegion(AwsCloudRegion region) {
-    this.region = region;
   }
 
 

@@ -66,7 +66,7 @@ public class GcsServiceAccountInput extends Input {
 
 
   /**
-   * Get cloudRegion
+   * The cloud region in which the bucket is located. Is used to determine the ideal location for your encodings automatically.
    * @return cloudRegion
    */
   public GoogleCloudRegion getCloudRegion() {
@@ -74,9 +74,10 @@ public class GcsServiceAccountInput extends Input {
   }
 
   /**
-   * Set cloudRegion
+   * The cloud region in which the bucket is located. Is used to determine the ideal location for your encodings automatically.
    *
    * @param cloudRegion
+   *        The cloud region in which the bucket is located. Is used to determine the ideal location for your encodings automatically.
    */
   public void setCloudRegion(GoogleCloudRegion cloudRegion) {
     this.cloudRegion = cloudRegion;

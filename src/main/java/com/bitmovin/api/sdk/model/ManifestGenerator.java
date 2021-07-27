@@ -18,7 +18,12 @@ public enum ManifestGenerator {
   LEGACY("LEGACY"),
   
   /**
-   * The new manifest generator provides the same functionality as the old one, but it is still under active development and new features will become gradually available.
+   * Improved manifest generator which covers all manifest features available in our API.
+   */
+  V2("V2"),
+  
+  /**
+   * DEPRECATED - Please use V2 instead, this option will be removed soon.
    */
   V2_BETA("V2_BETA");
 
