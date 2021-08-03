@@ -18,7 +18,7 @@ public class Tweaks {
 
 
   /**
-   * Defines special audio video sync handling
+   * Different modes for syncing the start and end of audio input streams with the video inputs. This feature does not work with Dolby Digital (Plus) or Dolby Atmos.
    * @return audioVideoSyncMode
    */
   public AudioVideoSyncMode getAudioVideoSyncMode() {
@@ -26,10 +26,10 @@ public class Tweaks {
   }
 
   /**
-   * Defines special audio video sync handling
+   * Different modes for syncing the start and end of audio input streams with the video inputs. This feature does not work with Dolby Digital (Plus) or Dolby Atmos.
    *
    * @param audioVideoSyncMode
-   *        Defines special audio video sync handling
+   *        Different modes for syncing the start and end of audio input streams with the video inputs. This feature does not work with Dolby Digital (Plus) or Dolby Atmos.
    */
   public void setAudioVideoSyncMode(AudioVideoSyncMode audioVideoSyncMode) {
     this.audioVideoSyncMode = audioVideoSyncMode;

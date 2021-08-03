@@ -13,14 +13,19 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum AudioVideoSyncMode {
   
   /**
-   * Default audio video sync handling
+   * Do not add or drop any audio samples.
    */
   STANDARD("STANDARD"),
   
   /**
-   * Adds a sync at the start of the file. Useful if the source file was cut out of already encoded content.
+   * Drop audio samples or add audio silence samples at the start of the audio stream.
    */
-  RESYNC_AT_START("RESYNC_AT_START");
+  RESYNC_AT_START("RESYNC_AT_START"),
+  
+  /**
+   * Adds or drops audio samples at the start.&lt;br&gt; Adds silence audio samples at the end of the audio inputs.&lt;br&gt; This mode does not drop audio samples from the end.
+   */
+  RESYNC_AT_START_AND_END("RESYNC_AT_START_AND_END");
 
   private String value;
 
