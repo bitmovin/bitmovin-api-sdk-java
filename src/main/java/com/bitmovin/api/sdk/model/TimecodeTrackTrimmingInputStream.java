@@ -27,7 +27,7 @@ public class TimecodeTrackTrimmingInputStream extends InputStream {
 
 
   /**
-   * The id of the ingest input stream that should be trimmed
+   * The id of the ingest input stream that should be trimmed (required)
    * @return inputStreamId
    */
   public String getInputStreamId() {
@@ -35,10 +35,10 @@ public class TimecodeTrackTrimmingInputStream extends InputStream {
   }
 
   /**
-   * The id of the ingest input stream that should be trimmed
+   * The id of the ingest input stream that should be trimmed (required)
    *
    * @param inputStreamId
-   *        The id of the ingest input stream that should be trimmed
+   *        The id of the ingest input stream that should be trimmed (required)
    */
   public void setInputStreamId(String inputStreamId) {
     this.inputStreamId = inputStreamId;
@@ -46,7 +46,7 @@ public class TimecodeTrackTrimmingInputStream extends InputStream {
 
 
   /**
-   * Defines the timecode, in SMPTE-12M format, of the frame from which the encoding should start. The frame indicated by this value will be included in the encoding
+   * Defines the timecode, in SMPTE-12M format, of the frame from which the encoding should start. The frame indicated by this value will be included in the encoding (required)
    * @return startTimeCode
    */
   public String getStartTimeCode() {
@@ -54,10 +54,10 @@ public class TimecodeTrackTrimmingInputStream extends InputStream {
   }
 
   /**
-   * Defines the timecode, in SMPTE-12M format, of the frame from which the encoding should start. The frame indicated by this value will be included in the encoding
+   * Defines the timecode, in SMPTE-12M format, of the frame from which the encoding should start. The frame indicated by this value will be included in the encoding (required)
    *
    * @param startTimeCode
-   *        Defines the timecode, in SMPTE-12M format, of the frame from which the encoding should start. The frame indicated by this value will be included in the encoding
+   *        Defines the timecode, in SMPTE-12M format, of the frame from which the encoding should start. The frame indicated by this value will be included in the encoding (required)
    */
   public void setStartTimeCode(String startTimeCode) {
     this.startTimeCode = startTimeCode;
@@ -65,7 +65,7 @@ public class TimecodeTrackTrimmingInputStream extends InputStream {
 
 
   /**
-   * Defines the timecode, in SMPTE-12M format, of the frame at which the encoding should stop. The frame indicated by this value will be included in the encoding
+   * Defines the timecode, in SMPTE-12M format, of the frame at which the encoding should stop. The frame indicated by this value will be included in the encoding (required)
    * @return endTimeCode
    */
   public String getEndTimeCode() {
@@ -73,10 +73,10 @@ public class TimecodeTrackTrimmingInputStream extends InputStream {
   }
 
   /**
-   * Defines the timecode, in SMPTE-12M format, of the frame at which the encoding should stop. The frame indicated by this value will be included in the encoding
+   * Defines the timecode, in SMPTE-12M format, of the frame at which the encoding should stop. The frame indicated by this value will be included in the encoding (required)
    *
    * @param endTimeCode
-   *        Defines the timecode, in SMPTE-12M format, of the frame at which the encoding should stop. The frame indicated by this value will be included in the encoding
+   *        Defines the timecode, in SMPTE-12M format, of the frame at which the encoding should stop. The frame indicated by this value will be included in the encoding (required)
    */
   public void setEndTimeCode(String endTimeCode) {
     this.endTimeCode = endTimeCode;

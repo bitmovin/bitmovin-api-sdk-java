@@ -19,9 +19,11 @@ import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.analytics.impressions.ads.AdsApi;
+import com.bitmovin.api.sdk.analytics.impressions.errors.ErrorsApi;
 
 public class ImpressionsApi {
     public final AdsApi ads;
+    public final ErrorsApi errors;
 
     private final ImpressionsApiClient apiClient;
 
@@ -34,6 +36,7 @@ public class ImpressionsApi {
         this.apiClient = clientFactory.createApiClient(ImpressionsApiClient.class);
 
         this.ads = new AdsApi(clientFactory);
+        this.errors = new ErrorsApi(clientFactory);
     }
 
     /**

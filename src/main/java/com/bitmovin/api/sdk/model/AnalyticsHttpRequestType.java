@@ -10,89 +10,47 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum CodecConfigType {
+public enum AnalyticsHttpRequestType {
   
   
-  AAC("AAC"),
+  DRM_LICENSE_WIDEVINE_("DRM_LICENSE_WIDEVINE,"),
   
   
-  DTS("DTS"),
+  MEDIA_THUMBNAILS_("MEDIA_THUMBNAILS,"),
   
   
-  DTSX("DTSX"),
+  MEDIA_VIDEO_("MEDIA_VIDEO,"),
   
   
-  DTS_PASSTHROUGH("DTS_PASSTHROUGH"),
+  MEDIA_AUDIO_("MEDIA_AUDIO,"),
   
   
-  HE_AAC_V1("HE_AAC_V1"),
+  MEDIA_PROGRESSIVE_("MEDIA_PROGRESSIVE,"),
   
   
-  HE_AAC_V2("HE_AAC_V2"),
+  MEDIA_SUBTITLES_("MEDIA_SUBTITLES,"),
   
   
-  H264("H264"),
+  MANIFEST_DASH_("MANIFEST_DASH,"),
   
   
-  H265("H265"),
+  MANIFEST_HLS_MASTER_("MANIFEST_HLS_MASTER,"),
   
   
-  VP9("VP9"),
+  MANIFEST_HLS_VARIANT_("MANIFEST_HLS_VARIANT,"),
   
   
-  VP8("VP8"),
+  MANIFEST_SMOOTH_("MANIFEST_SMOOTH,"),
   
   
-  MP2("MP2"),
+  KEY_HLS_AES_("KEY_HLS_AES,"),
   
   
-  MP3("MP3"),
-  
-  
-  AC3("AC3"),
-  
-  
-  EAC3("EAC3"),
-  
-  
-  DD("DD"),
-  
-  
-  DDPLUS("DDPLUS"),
-  
-  
-  OPUS("OPUS"),
-  
-  
-  VORBIS("VORBIS"),
-  
-  
-  MJPEG("MJPEG"),
-  
-  
-  AV1("AV1"),
-  
-  
-  DOLBY_ATMOS("DOLBY_ATMOS"),
-  
-  
-  H262("H262"),
-  
-  
-  PCM("PCM"),
-  
-  
-  WEBVTT("WEBVTT"),
-  
-  
-  IMSC("IMSC"),
-  
-  
-  DVB_SUBTITLE("DVB_SUBTITLE");
+  UNKNOWN("UNKNOWN");
 
   private String value;
 
-  CodecConfigType(String value) {
+  AnalyticsHttpRequestType(String value) {
     this.value = value;
   }
 
@@ -107,8 +65,8 @@ public enum CodecConfigType {
   }
 
   @JsonCreator
-  public static CodecConfigType fromValue(String text) {
-    for (CodecConfigType b : CodecConfigType.values()) {
+  public static AnalyticsHttpRequestType fromValue(String text) {
+    for (AnalyticsHttpRequestType b : AnalyticsHttpRequestType.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

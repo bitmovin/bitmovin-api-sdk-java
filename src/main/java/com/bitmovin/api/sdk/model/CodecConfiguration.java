@@ -18,6 +18,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonSubTypes({
   @JsonSubTypes.Type(value = AacAudioConfiguration.class, name = "AAC"),
   @JsonSubTypes.Type(value = DtsPassthroughAudioConfiguration.class, name = "DTS_PASSTHROUGH"),
+  @JsonSubTypes.Type(value = DtsAudioConfiguration.class, name = "DTS"),
+  @JsonSubTypes.Type(value = DtsXAudioConfiguration.class, name = "DTSX"),
   @JsonSubTypes.Type(value = DvbSubtitleConfiguration.class, name = "DVB_SUBTITLE"),
   @JsonSubTypes.Type(value = HeAacV1AudioConfiguration.class, name = "HE_AAC_V1"),
   @JsonSubTypes.Type(value = HeAacV2AudioConfiguration.class, name = "HE_AAC_V2"),
