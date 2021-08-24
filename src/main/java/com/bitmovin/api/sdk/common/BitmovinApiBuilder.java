@@ -1,11 +1,14 @@
 package com.bitmovin.api.sdk.common;
 
 import feign.Logger;
+import feign.codec.ErrorDecoder;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Map;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.function.Function;
 
 public class BitmovinApiBuilder<T> {
 
@@ -15,6 +18,8 @@ public class BitmovinApiBuilder<T> {
     private String baseUrl;
     private Logger logger;
     private Logger.Level logLevel;
+    private Function<ObjectMapper, ErrorDecoder> errorDecoderFactory;
+
     private Map<String, Collection<String>> headers;
 
     public BitmovinApiBuilder(Class<T> apiClientClass) {
@@ -42,6 +47,11 @@ public class BitmovinApiBuilder<T> {
         return this;
     }
 
+    public BitmovinApiBuilder<T> withErrorDecoder(Function<ObjectMapper, ErrorDecoder> errorDecoderFactory) {
+        this.errorDecoderFactory = errorDecoderFactory;
+        return this;
+    }
+
     public BitmovinApiBuilder<T> withBaseUrl(String baseUrl) {
         this.baseUrl = baseUrl;
         return this;
@@ -56,6 +66,7 @@ public class BitmovinApiBuilder<T> {
                     this.baseUrl,
                     this.logger,
                     this.logLevel,
+                    this.errorDecoderFactory,
                     this.headers
                 );
 

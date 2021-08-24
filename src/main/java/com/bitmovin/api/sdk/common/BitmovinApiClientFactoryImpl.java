@@ -7,12 +7,14 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import feign.Feign;
 import feign.Logger;
 import feign.jackson.JacksonEncoder;
+import feign.codec.ErrorDecoder;
 
 import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.TimeZone;
+import java.util.function.Function;
 
 public class BitmovinApiClientFactoryImpl implements BitmovinApiClientFactory {
     private final String apiKey;
@@ -21,6 +23,7 @@ public class BitmovinApiClientFactoryImpl implements BitmovinApiClientFactory {
     private final Logger logger;
     private final Logger.Level logLevel;
     private final String baseUrl;
+    private ErrorDecoder errorDecoder;
 
     protected final Feign.Builder feignBuilder;
 
@@ -30,8 +33,8 @@ public class BitmovinApiClientFactoryImpl implements BitmovinApiClientFactory {
         String baseUrl,
         Logger logger,
         Logger.Level logLevel,
+        Function<ObjectMapper, ErrorDecoder> errorDecoderFactory,
         Map<String, Collection<String>> headers) {
-
 
         if (apiKey == null || apiKey.isEmpty()) {
             throw new IllegalArgumentException("Parameter 'apiKey' may not be null or empty.");
@@ -64,6 +67,13 @@ public class BitmovinApiClientFactoryImpl implements BitmovinApiClientFactory {
         }
 
         ObjectMapper mapper = createObjectMapper();
+
+        if (errorDecoderFactory != null) {
+            this.errorDecoder = errorDecoderFactory.apply(mapper);
+        } else {
+            this.errorDecoder = new BitmovinErrorDecoder(mapper);
+        }
+
         this.feignBuilder = createFeignBuilder(mapper);
     }
 
@@ -89,7 +99,7 @@ public class BitmovinApiClientFactoryImpl implements BitmovinApiClientFactory {
         return Feign.builder()
             .encoder(new JacksonEncoder(mapper))
             .decoder(new BitmovinDecoder(mapper))
-            .errorDecoder(new BitmovinErrorDecoder(mapper))
+            .errorDecoder(this.errorDecoder)
             .queryMapEncoder(new BitmovinQueryMapEncoder())
             .logger(this.logger)
             .logLevel(this.logLevel)

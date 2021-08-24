@@ -73,6 +73,11 @@ public enum GoogleCloudRegion {
   EUROPE_WEST_2("EUROPE_WEST_2"),
   
   /**
+   * Frankfurt, Germany
+   */
+  EUROPE_WEST_3("EUROPE_WEST_3"),
+  
+  /**
    * Eemshaven, Netherlands
    */
   EUROPE_WEST_4("EUROPE_WEST_4"),

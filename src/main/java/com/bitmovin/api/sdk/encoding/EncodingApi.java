@@ -10,6 +10,7 @@ import com.bitmovin.api.sdk.encoding.encodings.EncodingsApi;
 import com.bitmovin.api.sdk.encoding.manifests.ManifestsApi;
 import com.bitmovin.api.sdk.encoding.infrastructure.InfrastructureApi;
 import com.bitmovin.api.sdk.encoding.statistics.StatisticsApi;
+import com.bitmovin.api.sdk.encoding.watchFolders.WatchFoldersApi;
 import com.bitmovin.api.sdk.encoding.errorDefinitions.ErrorDefinitionsApi;
 
 public class EncodingApi {
@@ -21,6 +22,7 @@ public class EncodingApi {
     public final ManifestsApi manifests;
     public final InfrastructureApi infrastructure;
     public final StatisticsApi statistics;
+    public final WatchFoldersApi watchFolders;
     public final ErrorDefinitionsApi errorDefinitions;
 
     public EncodingApi(BitmovinApiClientFactory clientFactory) {
@@ -37,6 +39,7 @@ public class EncodingApi {
         this.manifests = new ManifestsApi(clientFactory);
         this.infrastructure = new InfrastructureApi(clientFactory);
         this.statistics = new StatisticsApi(clientFactory);
+        this.watchFolders = new WatchFoldersApi(clientFactory);
         this.errorDefinitions = new ErrorDefinitionsApi(clientFactory);
     }
 

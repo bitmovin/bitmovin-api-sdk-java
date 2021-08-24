@@ -10,21 +10,26 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum ManifestGenerator {
+public enum WatchFolderStatus {
   
   /**
-   * Legacy manifest generator.
+   * The watch folder is currently inactive
    */
-  LEGACY("LEGACY"),
+  STOPPED("STOPPED"),
   
   /**
-   * Improved manifest generator which covers all manifest features available in our API.
+   * The watch folder is currently active and monitors the storage for new files to be encoded
    */
-  V2("V2");
+  STARTED("STARTED"),
+  
+  /**
+   * The watch folder is inactive due to an error
+   */
+  ERROR("ERROR");
 
   private String value;
 
-  ManifestGenerator(String value) {
+  WatchFolderStatus(String value) {
     this.value = value;
   }
 
@@ -39,8 +44,8 @@ public enum ManifestGenerator {
   }
 
   @JsonCreator
-  public static ManifestGenerator fromValue(String text) {
-    for (ManifestGenerator b : ManifestGenerator.values()) {
+  public static WatchFolderStatus fromValue(String text) {
+    for (WatchFolderStatus b : WatchFolderStatus.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
