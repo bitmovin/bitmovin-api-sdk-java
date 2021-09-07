@@ -45,7 +45,7 @@ public class Mp3Api {
     public static BitmovinApiBuilder<Mp3Api> builder() {
         return new BitmovinApiBuilder<>(Mp3Api.class);
     }
-    
+
     /**
      * Add MP3 muxing
      * 
@@ -61,7 +61,7 @@ public class Mp3Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete MP3 muxing
      * 
@@ -77,7 +77,7 @@ public class Mp3Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * MP3 muxing details
      * 
@@ -93,7 +93,7 @@ public class Mp3Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List MP3 muxings
      * 
@@ -108,6 +108,7 @@ public class Mp3Api {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List MP3 muxings
      * 
@@ -123,9 +124,9 @@ public class Mp3Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface Mp3ApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/mp3")
         ResponseEnvelope<Mp3Muxing> create(@Param(value = "encoding_id") String encodingId, Mp3Muxing mp3Muxing) throws BitmovinException;
     

@@ -42,7 +42,7 @@ public class LocalApi {
     public static BitmovinApiBuilder<LocalApi> builder() {
         return new BitmovinApiBuilder<>(LocalApi.class);
     }
-    
+
     /**
      * Create Local Input
      * 
@@ -57,7 +57,7 @@ public class LocalApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Local Input
      * 
@@ -72,7 +72,7 @@ public class LocalApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Local Input Details
      * 
@@ -87,7 +87,7 @@ public class LocalApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Local Inputs
      * 
@@ -101,6 +101,7 @@ public class LocalApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Local Inputs
      * 
@@ -115,9 +116,9 @@ public class LocalApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface LocalApiClient {
-    
+
         @RequestLine("POST /encoding/inputs/local")
         ResponseEnvelope<LocalInput> create(LocalInput localInput) throws BitmovinException;
     

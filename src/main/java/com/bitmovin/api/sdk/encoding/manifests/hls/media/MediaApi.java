@@ -40,6 +40,6 @@ public class MediaApi {
     public static BitmovinApiBuilder<MediaApi> builder() {
         return new BitmovinApiBuilder<>(MediaApi.class);
     }
-    
+
     
 }

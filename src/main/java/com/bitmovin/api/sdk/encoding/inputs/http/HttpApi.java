@@ -42,7 +42,7 @@ public class HttpApi {
     public static BitmovinApiBuilder<HttpApi> builder() {
         return new BitmovinApiBuilder<>(HttpApi.class);
     }
-    
+
     /**
      * Create HTTP Input
      * 
@@ -57,7 +57,7 @@ public class HttpApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete HTTP Input
      * 
@@ -72,7 +72,7 @@ public class HttpApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * HTTP Input Details
      * 
@@ -87,7 +87,7 @@ public class HttpApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List HTTP Inputs
      * 
@@ -101,6 +101,7 @@ public class HttpApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List HTTP Inputs
      * 
@@ -115,9 +116,9 @@ public class HttpApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface HttpApiClient {
-    
+
         @RequestLine("POST /encoding/inputs/http")
         ResponseEnvelope<HttpInput> create(HttpInput httpInput) throws BitmovinException;
     

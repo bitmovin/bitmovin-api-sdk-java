@@ -42,7 +42,7 @@ public class CencApi {
     public static BitmovinApiBuilder<CencApi> builder() {
         return new BitmovinApiBuilder<>(CencApi.class);
     }
-    
+
     /**
      * Add CENC DRM to an MP4 muxing
      * 
@@ -59,7 +59,7 @@ public class CencApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete CENC DRM from an MP4 muxing
      * 
@@ -76,7 +76,7 @@ public class CencApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * CENC DRM Details of an MP4 muxing
      * 
@@ -93,7 +93,7 @@ public class CencApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List CENC DRMs of an MP4 muxing
      * 
@@ -109,6 +109,7 @@ public class CencApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List CENC DRMs of an MP4 muxing
      * 
@@ -125,9 +126,9 @@ public class CencApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface CencApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/mp4/{muxing_id}/drm/cenc")
         ResponseEnvelope<CencDrm> create(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, CencDrm cencDrm) throws BitmovinException;
     

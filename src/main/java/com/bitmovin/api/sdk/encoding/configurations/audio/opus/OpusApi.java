@@ -42,7 +42,7 @@ public class OpusApi {
     public static BitmovinApiBuilder<OpusApi> builder() {
         return new BitmovinApiBuilder<>(OpusApi.class);
     }
-    
+
     /**
      * Create Opus Codec Configuration
      * 
@@ -57,7 +57,7 @@ public class OpusApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Opus Codec Configuration
      * 
@@ -72,7 +72,7 @@ public class OpusApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Opus Codec Configuration Details
      * 
@@ -87,7 +87,7 @@ public class OpusApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Opus Configurations
      * 
@@ -101,6 +101,7 @@ public class OpusApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Opus Configurations
      * 
@@ -115,9 +116,9 @@ public class OpusApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface OpusApiClient {
-    
+
         @RequestLine("POST /encoding/configurations/audio/opus")
         ResponseEnvelope<OpusAudioConfiguration> create(OpusAudioConfiguration opusAudioConfiguration) throws BitmovinException;
     

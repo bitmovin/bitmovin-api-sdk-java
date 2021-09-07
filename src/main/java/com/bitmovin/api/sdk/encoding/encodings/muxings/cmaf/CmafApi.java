@@ -42,7 +42,7 @@ public class CmafApi {
     public static BitmovinApiBuilder<CmafApi> builder() {
         return new BitmovinApiBuilder<>(CmafApi.class);
     }
-    
+
     /**
      * Add CMAF muxing
      * 
@@ -58,7 +58,7 @@ public class CmafApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete CMAF muxing
      * 
@@ -74,7 +74,7 @@ public class CmafApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * CMAF muxing details
      * 
@@ -90,7 +90,7 @@ public class CmafApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List CMAF muxings
      * 
@@ -105,6 +105,7 @@ public class CmafApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List CMAF muxings
      * 
@@ -120,9 +121,9 @@ public class CmafApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface CmafApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/cmaf")
         ResponseEnvelope<CmafMuxing> create(@Param(value = "encoding_id") String encodingId, CmafMuxing cmafMuxing) throws BitmovinException;
     

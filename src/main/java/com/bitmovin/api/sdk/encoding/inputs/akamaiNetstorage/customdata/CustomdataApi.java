@@ -39,7 +39,7 @@ public class CustomdataApi {
     public static BitmovinApiBuilder<CustomdataApi> builder() {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
-    
+
     /**
      * Akamai NetStorage Custom Data
      * 
@@ -54,9 +54,9 @@ public class CustomdataApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface CustomdataApiClient {
-    
+
         @RequestLine("GET /encoding/inputs/akamai-netstorage/{input_id}/customData")
         ResponseEnvelope<CustomData> getCustomData(@Param(value = "input_id") String inputId) throws BitmovinException;
     }

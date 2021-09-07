@@ -39,7 +39,7 @@ public class InvitationsApi {
     public static BitmovinApiBuilder<InvitationsApi> builder() {
         return new BitmovinApiBuilder<>(InvitationsApi.class);
     }
-    
+
     /**
      * Add Invitation to Group
      * 
@@ -56,7 +56,7 @@ public class InvitationsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Invitations
      * 
@@ -72,9 +72,9 @@ public class InvitationsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface InvitationsApiClient {
-    
+
         @RequestLine("POST /account/organizations/{organization_id}/groups/{group_id}/invitations")
         ResponseEnvelope<Invitation> create(@Param(value = "organization_id") String organizationId, @Param(value = "group_id") String groupId, Invitation invitation) throws BitmovinException;
     

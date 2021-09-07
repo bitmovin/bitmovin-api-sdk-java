@@ -39,7 +39,7 @@ public class InformationApi {
     public static BitmovinApiBuilder<InformationApi> builder() {
         return new BitmovinApiBuilder<>(InformationApi.class);
     }
-    
+
     /**
      * Current Account Information
      * 
@@ -53,9 +53,9 @@ public class InformationApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface InformationApiClient {
-    
+
         @RequestLine("GET /account/information")
         ResponseEnvelope<AccountInformation> get() throws BitmovinException;
     }

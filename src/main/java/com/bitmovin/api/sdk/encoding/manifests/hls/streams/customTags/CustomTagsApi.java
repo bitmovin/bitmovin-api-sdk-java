@@ -39,7 +39,7 @@ public class CustomTagsApi {
     public static BitmovinApiBuilder<CustomTagsApi> builder() {
         return new BitmovinApiBuilder<>(CustomTagsApi.class);
     }
-    
+
     /**
      * Add Custom Tag to Variant Stream
      * 
@@ -56,7 +56,7 @@ public class CustomTagsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Custom Tag
      * 
@@ -73,7 +73,7 @@ public class CustomTagsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Custom Tag Details
      * 
@@ -90,7 +90,7 @@ public class CustomTagsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all Custom Tags of a Variant Stream
      * 
@@ -106,6 +106,7 @@ public class CustomTagsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all Custom Tags of a Variant Stream
      * 
@@ -122,9 +123,9 @@ public class CustomTagsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface CustomTagsApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/hls/{manifest_id}/streams/{stream_id}/custom-tags")
         ResponseEnvelope<CustomTag> create(@Param(value = "manifest_id") String manifestId, @Param(value = "stream_id") String streamId, CustomTag customTag) throws BitmovinException;
     

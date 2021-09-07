@@ -39,7 +39,7 @@ public class LiveInputStreamChangedApi {
     public static BitmovinApiBuilder<LiveInputStreamChangedApi> builder() {
         return new BitmovinApiBuilder<>(LiveInputStreamChangedApi.class);
     }
-    
+
     /**
      * Add Live Input Stream Changed Webhook Notification (All Encodings)
      * 
@@ -54,7 +54,7 @@ public class LiveInputStreamChangedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Add Live Input Stream Changed Webhook Notification (Specific Encoding)
      * 
@@ -70,7 +70,7 @@ public class LiveInputStreamChangedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Replace Live Input Stream Changed Webhook Notification
      * 
@@ -86,9 +86,9 @@ public class LiveInputStreamChangedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface LiveInputStreamChangedApiClient {
-    
+
         @RequestLine("POST /notifications/webhooks/encoding/encodings/live-input-stream-changed")
         ResponseEnvelope<WebhookNotificationWithStreamConditions> create(WebhookNotificationWithStreamConditionsRequest webhookNotificationWithStreamConditionsRequest) throws BitmovinException;
     

@@ -25,6 +25,6 @@ public class SubtitlesApi {
     public static BitmovinApiBuilder<SubtitlesApi> builder() {
         return new BitmovinApiBuilder<>(SubtitlesApi.class);
     }
-    
+
     
 }

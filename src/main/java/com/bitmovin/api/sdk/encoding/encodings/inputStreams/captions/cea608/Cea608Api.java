@@ -39,7 +39,7 @@ public class Cea608Api {
     public static BitmovinApiBuilder<Cea608Api> builder() {
         return new BitmovinApiBuilder<>(Cea608Api.class);
     }
-    
+
     /**
      * Add CEA 608 Input Stream
      * 
@@ -55,7 +55,7 @@ public class Cea608Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete CEA 608 Input Stream
      * 
@@ -71,7 +71,7 @@ public class Cea608Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * CEA 608 Input Stream Details
      * 
@@ -87,7 +87,7 @@ public class Cea608Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List CEA 608 Input Streams
      * 
@@ -102,6 +102,7 @@ public class Cea608Api {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List CEA 608 Input Streams
      * 
@@ -117,9 +118,9 @@ public class Cea608Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface Cea608ApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/input-streams/captions/cea608")
         ResponseEnvelope<Cea608CaptionInputStream> create(@Param(value = "encoding_id") String encodingId, Cea608CaptionInputStream cea608CaptionInputStream) throws BitmovinException;
     

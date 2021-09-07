@@ -39,7 +39,7 @@ public class TypeApi {
     public static BitmovinApiBuilder<TypeApi> builder() {
         return new BitmovinApiBuilder<>(TypeApi.class);
     }
-    
+
     /**
      * Get Codec Configuration Type
      * 
@@ -54,9 +54,9 @@ public class TypeApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface TypeApiClient {
-    
+
         @RequestLine("GET /encoding/configurations/{configuration_id}/type")
         ResponseEnvelope<CodecConfigTypeResponse> get(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
     }

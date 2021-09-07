@@ -28,6 +28,6 @@ public class OutputsApi {
     public static BitmovinApiBuilder<OutputsApi> builder() {
         return new BitmovinApiBuilder<>(OutputsApi.class);
     }
-    
+
     
 }

@@ -39,7 +39,7 @@ public class AdsApi {
     public static BitmovinApiBuilder<AdsApi> builder() {
         return new BitmovinApiBuilder<>(AdsApi.class);
     }
-    
+
     /**
      * Ads Impressions
      * 
@@ -55,9 +55,9 @@ public class AdsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface AdsApiClient {
-    
+
         @RequestLine("POST /analytics/impressions/{impression_id}/ads")
         ResponseEnvelope<AnalyticsAdsImpressionsResponse> create(@Param(value = "impression_id") String impressionId, AnalyticsLicenseKey analyticsLicenseKey) throws BitmovinException;
     }

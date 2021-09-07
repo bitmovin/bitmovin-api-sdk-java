@@ -69,7 +69,7 @@ public class InputStreamsApi {
     public static BitmovinApiBuilder<InputStreamsApi> builder() {
         return new BitmovinApiBuilder<>(InputStreamsApi.class);
     }
-    
+
     /**
      * Input Stream Details
      * 
@@ -85,7 +85,7 @@ public class InputStreamsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List All Input Streams
      * 
@@ -100,6 +100,7 @@ public class InputStreamsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List All Input Streams
      * 
@@ -115,9 +116,9 @@ public class InputStreamsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface InputStreamsApiClient {
-    
+
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/{input_stream_id}")
         ResponseEnvelope<InputStream> get(@Param(value = "encoding_id") String encodingId, @Param(value = "input_stream_id") String inputStreamId) throws BitmovinException;
     

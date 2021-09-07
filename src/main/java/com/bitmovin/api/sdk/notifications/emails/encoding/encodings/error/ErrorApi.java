@@ -39,7 +39,7 @@ public class ErrorApi {
     public static BitmovinApiBuilder<ErrorApi> builder() {
         return new BitmovinApiBuilder<>(ErrorApi.class);
     }
-    
+
     /**
      * Add Encoding Error Email Notification (All Encodings)
      * 
@@ -54,7 +54,7 @@ public class ErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Add Encoding Error Email Notification (Specific Encoding)
      * 
@@ -70,7 +70,7 @@ public class ErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Replace Encoding Error Email Notification
      * 
@@ -86,9 +86,9 @@ public class ErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ErrorApiClient {
-    
+
         @RequestLine("POST /notifications/emails/encoding/encodings/error")
         ResponseEnvelope<PaginationResponse<EncodingErrorEmailNotification>> create(EncodingErrorEmailNotification encodingErrorEmailNotification) throws BitmovinException;
     

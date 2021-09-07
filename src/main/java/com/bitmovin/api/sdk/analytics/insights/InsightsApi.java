@@ -22,6 +22,6 @@ public class InsightsApi {
     public static BitmovinApiBuilder<InsightsApi> builder() {
         return new BitmovinApiBuilder<>(InsightsApi.class);
     }
-    
+
     
 }

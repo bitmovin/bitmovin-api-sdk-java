@@ -39,7 +39,7 @@ public class TimecodeTrackApi {
     public static BitmovinApiBuilder<TimecodeTrackApi> builder() {
         return new BitmovinApiBuilder<>(TimecodeTrackApi.class);
     }
-    
+
     /**
      * Add Timecode Track Trimming Input Stream
      * 
@@ -55,7 +55,7 @@ public class TimecodeTrackApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Timecode Track Trimming Input Stream
      * 
@@ -71,7 +71,7 @@ public class TimecodeTrackApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Timecode Track Trimming Input Stream Details
      * 
@@ -87,7 +87,7 @@ public class TimecodeTrackApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Timecode Track Trimming Input Streams
      * 
@@ -102,6 +102,7 @@ public class TimecodeTrackApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Timecode Track Trimming Input Streams
      * 
@@ -117,9 +118,9 @@ public class TimecodeTrackApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface TimecodeTrackApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/input-streams/trimming/timecode-track")
         ResponseEnvelope<TimecodeTrackTrimmingInputStream> create(@Param(value = "encoding_id") String encodingId, TimecodeTrackTrimmingInputStream timecodeTrackTrimmingInputStream) throws BitmovinException;
     

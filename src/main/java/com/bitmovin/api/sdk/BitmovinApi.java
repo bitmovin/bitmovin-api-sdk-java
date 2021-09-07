@@ -37,6 +37,6 @@ public class BitmovinApi {
     public static BitmovinApiBuilder<BitmovinApi> builder() {
         return new BitmovinApiBuilder<>(BitmovinApi.class);
     }
-    
+
     
 }

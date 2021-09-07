@@ -39,7 +39,7 @@ public class ApiKeysApi {
     public static BitmovinApiBuilder<ApiKeysApi> builder() {
         return new BitmovinApiBuilder<>(ApiKeysApi.class);
     }
-    
+
     /**
      * Create Api Key
      * 
@@ -53,7 +53,7 @@ public class ApiKeysApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Api Key
      * 
@@ -68,7 +68,7 @@ public class ApiKeysApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Get Api Key
      * 
@@ -83,7 +83,7 @@ public class ApiKeysApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Api Keys
      * 
@@ -97,11 +97,9 @@ public class ApiKeysApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ApiKeysApiClient {
-    
-        @Headers("Content-Type: text/plain")
-        @Body(" ")
+
         @RequestLine("POST /account/api-keys")
         ResponseEnvelope<AccountApiKey> create() throws BitmovinException;
     

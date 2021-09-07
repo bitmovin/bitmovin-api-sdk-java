@@ -42,7 +42,7 @@ public class S3Api {
     public static BitmovinApiBuilder<S3Api> builder() {
         return new BitmovinApiBuilder<>(S3Api.class);
     }
-    
+
     /**
      * Create S3 Output
      * 
@@ -57,7 +57,7 @@ public class S3Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete S3 Output
      * 
@@ -72,7 +72,7 @@ public class S3Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * S3 Output Details
      * 
@@ -87,7 +87,7 @@ public class S3Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List S3 Outputs
      * 
@@ -101,6 +101,7 @@ public class S3Api {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List S3 Outputs
      * 
@@ -115,9 +116,9 @@ public class S3Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface S3ApiClient {
-    
+
         @RequestLine("POST /encoding/outputs/s3")
         ResponseEnvelope<S3Output> create(S3Output s3Output) throws BitmovinException;
     

@@ -39,7 +39,7 @@ public class CustomXmlElementsApi {
     public static BitmovinApiBuilder<CustomXmlElementsApi> builder() {
         return new BitmovinApiBuilder<>(CustomXmlElementsApi.class);
     }
-    
+
     /**
      * Add Custom XML Element to Period
      * 
@@ -56,7 +56,7 @@ public class CustomXmlElementsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Custom XML Element
      * 
@@ -73,7 +73,7 @@ public class CustomXmlElementsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Custom XML Element Details
      * 
@@ -90,7 +90,7 @@ public class CustomXmlElementsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all Custom XML Elements of Period
      * 
@@ -106,6 +106,7 @@ public class CustomXmlElementsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all Custom XML Elements of Period
      * 
@@ -122,9 +123,9 @@ public class CustomXmlElementsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface CustomXmlElementsApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/periods/{period_id}/custom-xml-elements")
         ResponseEnvelope<CustomXmlElement> create(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, CustomXmlElement customXmlElement) throws BitmovinException;
     

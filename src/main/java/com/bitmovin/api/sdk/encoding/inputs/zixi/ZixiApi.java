@@ -42,7 +42,7 @@ public class ZixiApi {
     public static BitmovinApiBuilder<ZixiApi> builder() {
         return new BitmovinApiBuilder<>(ZixiApi.class);
     }
-    
+
     /**
      * Create Zixi input
      * 
@@ -57,7 +57,7 @@ public class ZixiApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Zixi input
      * 
@@ -72,7 +72,7 @@ public class ZixiApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Zixi Input Details
      * 
@@ -87,7 +87,7 @@ public class ZixiApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Zixi inputs
      * 
@@ -101,6 +101,7 @@ public class ZixiApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Zixi inputs
      * 
@@ -115,9 +116,9 @@ public class ZixiApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ZixiApiClient {
-    
+
         @RequestLine("POST /encoding/inputs/zixi")
         ResponseEnvelope<ZixiInput> create(ZixiInput zixiInput) throws BitmovinException;
     

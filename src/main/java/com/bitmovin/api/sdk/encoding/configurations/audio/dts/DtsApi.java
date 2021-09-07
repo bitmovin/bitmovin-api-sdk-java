@@ -42,7 +42,7 @@ public class DtsApi {
     public static BitmovinApiBuilder<DtsApi> builder() {
         return new BitmovinApiBuilder<>(DtsApi.class);
     }
-    
+
     /**
      * Create DTS Codec Configuration
      * 
@@ -57,7 +57,7 @@ public class DtsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete DTS Codec Configuration
      * 
@@ -72,7 +72,7 @@ public class DtsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * DTS Codec Configuration Details
      * 
@@ -87,7 +87,7 @@ public class DtsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List DTS Codec Configurations
      * 
@@ -101,6 +101,7 @@ public class DtsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List DTS Codec Configurations
      * 
@@ -115,9 +116,9 @@ public class DtsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface DtsApiClient {
-    
+
         @RequestLine("POST /encoding/configurations/audio/dts")
         ResponseEnvelope<DtsAudioConfiguration> create(DtsAudioConfiguration dtsAudioConfiguration) throws BitmovinException;
     

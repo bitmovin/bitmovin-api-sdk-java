@@ -22,6 +22,6 @@ public class GeneralApi {
     public static BitmovinApiBuilder<GeneralApi> builder() {
         return new BitmovinApiBuilder<>(GeneralApi.class);
     }
-    
+
     
 }

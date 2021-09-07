@@ -42,7 +42,7 @@ public class TextApi {
     public static BitmovinApiBuilder<TextApi> builder() {
         return new BitmovinApiBuilder<>(TextApi.class);
     }
-    
+
     /**
      * Add Text muxing
      * 
@@ -58,7 +58,7 @@ public class TextApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Text muxing
      * 
@@ -74,7 +74,7 @@ public class TextApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Text muxing details
      * 
@@ -90,7 +90,7 @@ public class TextApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Text muxings
      * 
@@ -105,6 +105,7 @@ public class TextApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Text muxings
      * 
@@ -120,9 +121,9 @@ public class TextApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface TextApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/text")
         ResponseEnvelope<TextMuxing> create(@Param(value = "encoding_id") String encodingId, TextMuxing textMuxing) throws BitmovinException;
     

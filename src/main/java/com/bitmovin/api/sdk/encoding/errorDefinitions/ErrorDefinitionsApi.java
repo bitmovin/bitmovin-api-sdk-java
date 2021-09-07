@@ -39,7 +39,7 @@ public class ErrorDefinitionsApi {
     public static BitmovinApiBuilder<ErrorDefinitionsApi> builder() {
         return new BitmovinApiBuilder<>(ErrorDefinitionsApi.class);
     }
-    
+
     /**
      * List all possible encoding error definitions
      * 
@@ -53,6 +53,7 @@ public class ErrorDefinitionsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all possible encoding error definitions
      * 
@@ -67,9 +68,9 @@ public class ErrorDefinitionsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ErrorDefinitionsApiClient {
-    
+
         @RequestLine("GET /encoding/error-definitions")
         ResponseEnvelope<PaginationResponse<EncodingErrorDefinition>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

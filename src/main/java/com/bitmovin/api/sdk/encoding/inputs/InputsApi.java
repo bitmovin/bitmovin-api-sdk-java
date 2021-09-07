@@ -102,7 +102,7 @@ public class InputsApi {
     public static BitmovinApiBuilder<InputsApi> builder() {
         return new BitmovinApiBuilder<>(InputsApi.class);
     }
-    
+
     /**
      * Get Input Details
      * 
@@ -117,7 +117,7 @@ public class InputsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all Inputs
      * 
@@ -131,6 +131,7 @@ public class InputsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all Inputs
      * 
@@ -145,9 +146,9 @@ public class InputsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface InputsApiClient {
-    
+
         @RequestLine("GET /encoding/inputs/{input_id}")
         ResponseEnvelope<Input> get(@Param(value = "input_id") String inputId) throws BitmovinException;
     

@@ -42,7 +42,7 @@ public class DolbyDigitalPlusApi {
     public static BitmovinApiBuilder<DolbyDigitalPlusApi> builder() {
         return new BitmovinApiBuilder<>(DolbyDigitalPlusApi.class);
     }
-    
+
     /**
      * Create Dolby Digital Plus Codec Configuration
      * 
@@ -57,7 +57,7 @@ public class DolbyDigitalPlusApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Dolby Digital Plus Codec Configuration
      * 
@@ -72,7 +72,7 @@ public class DolbyDigitalPlusApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Dolby Digital Plus Codec Configuration Details
      * 
@@ -87,7 +87,7 @@ public class DolbyDigitalPlusApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Dolby Digital Plus Codec Configurations
      * 
@@ -101,6 +101,7 @@ public class DolbyDigitalPlusApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Dolby Digital Plus Codec Configurations
      * 
@@ -115,9 +116,9 @@ public class DolbyDigitalPlusApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface DolbyDigitalPlusApiClient {
-    
+
         @RequestLine("POST /encoding/configurations/audio/dolby-digital-plus")
         ResponseEnvelope<DolbyDigitalPlusAudioConfiguration> create(DolbyDigitalPlusAudioConfiguration dolbyDigitalPlusAudioConfiguration) throws BitmovinException;
     

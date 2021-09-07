@@ -22,6 +22,6 @@ public class WatermarkingApi {
     public static BitmovinApiBuilder<WatermarkingApi> builder() {
         return new BitmovinApiBuilder<>(WatermarkingApi.class);
     }
-    
+
     
 }

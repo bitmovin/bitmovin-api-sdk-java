@@ -48,7 +48,7 @@ public class WebApi {
     public static BitmovinApiBuilder<WebApi> builder() {
         return new BitmovinApiBuilder<>(WebApi.class);
     }
-    
+
     /**
      * Add Custom Web Player Build
      * 
@@ -63,7 +63,7 @@ public class WebApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Custom Web Player Build Details
      * 
@@ -78,7 +78,7 @@ public class WebApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Custom Web Player Builds
      * 
@@ -92,7 +92,7 @@ public class WebApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Start Custom Web Player Build
      * 
@@ -107,9 +107,9 @@ public class WebApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface WebApiClient {
-    
+
         @RequestLine("POST /player/custom-builds/web")
         ResponseEnvelope<CustomPlayerBuildDetails> create(CustomPlayerBuildDetails customPlayerBuildDetails) throws BitmovinException;
     
@@ -119,8 +119,6 @@ public class WebApi {
         @RequestLine("GET /player/custom-builds/web")
         ResponseEnvelope<PaginationResponse<CustomPlayerBuildDetails>> list() throws BitmovinException;
     
-        @Headers("Content-Type: text/plain")
-        @Body(" ")
         @RequestLine("POST /player/custom-builds/web/{custom_build_id}/start")
         ResponseEnvelope<BitmovinResponse> start(@Param(value = "custom_build_id") String customBuildId) throws BitmovinException;
     }

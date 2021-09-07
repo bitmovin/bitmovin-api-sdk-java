@@ -42,7 +42,7 @@ public class DtsxApi {
     public static BitmovinApiBuilder<DtsxApi> builder() {
         return new BitmovinApiBuilder<>(DtsxApi.class);
     }
-    
+
     /**
      * Create DTS:X Codec Configuration
      * 
@@ -57,7 +57,7 @@ public class DtsxApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete DTS:X Codec Configuration
      * 
@@ -72,7 +72,7 @@ public class DtsxApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * DTS:X Codec Configuration Details
      * 
@@ -87,7 +87,7 @@ public class DtsxApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List DTS:X Codec Configurations
      * 
@@ -101,6 +101,7 @@ public class DtsxApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List DTS:X Codec Configurations
      * 
@@ -115,9 +116,9 @@ public class DtsxApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface DtsxApiClient {
-    
+
         @RequestLine("POST /encoding/configurations/audio/dtsx")
         ResponseEnvelope<DtsXAudioConfiguration> create(DtsXAudioConfiguration dtsXAudioConfiguration) throws BitmovinException;
     

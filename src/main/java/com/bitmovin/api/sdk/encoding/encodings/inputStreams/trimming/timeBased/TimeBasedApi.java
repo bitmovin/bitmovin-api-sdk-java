@@ -39,7 +39,7 @@ public class TimeBasedApi {
     public static BitmovinApiBuilder<TimeBasedApi> builder() {
         return new BitmovinApiBuilder<>(TimeBasedApi.class);
     }
-    
+
     /**
      * Add Time-Based Trimming Input Stream
      * 
@@ -55,7 +55,7 @@ public class TimeBasedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Time-Based Trimming Input Stream
      * 
@@ -71,7 +71,7 @@ public class TimeBasedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Time-Based Trimming Input Stream Details
      * 
@@ -87,7 +87,7 @@ public class TimeBasedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Time-Based Trimming Input Streams
      * 
@@ -102,6 +102,7 @@ public class TimeBasedApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Time-Based Trimming Input Streams
      * 
@@ -117,9 +118,9 @@ public class TimeBasedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface TimeBasedApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/input-streams/trimming/time-based")
         ResponseEnvelope<TimeBasedTrimmingInputStream> create(@Param(value = "encoding_id") String encodingId, TimeBasedTrimmingInputStream timeBasedTrimmingInputStream) throws BitmovinException;
     

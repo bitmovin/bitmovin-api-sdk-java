@@ -42,7 +42,7 @@ public class LiveApi {
     public static BitmovinApiBuilder<LiveApi> builder() {
         return new BitmovinApiBuilder<>(LiveApi.class);
     }
-    
+
     /**
      * List Live Encoding Statistics
      * 
@@ -56,6 +56,7 @@ public class LiveApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Live Encoding Statistics
      * 
@@ -70,7 +71,7 @@ public class LiveApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List live encoding statistics within specific dates
      * 
@@ -86,6 +87,7 @@ public class LiveApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List live encoding statistics within specific dates
      * 
@@ -102,9 +104,9 @@ public class LiveApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface LiveApiClient {
-    
+
         @RequestLine("GET /encoding/statistics/encodings/live")
         ResponseEnvelope<PaginationResponse<EncodingStatisticsLive>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     

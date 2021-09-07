@@ -39,7 +39,7 @@ public class ClosedCaptionsApi {
     public static BitmovinApiBuilder<ClosedCaptionsApi> builder() {
         return new BitmovinApiBuilder<>(ClosedCaptionsApi.class);
     }
-    
+
     /**
      * Add Closed Captions Media
      * 
@@ -55,7 +55,7 @@ public class ClosedCaptionsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Closed Captions Media
      * 
@@ -71,7 +71,7 @@ public class ClosedCaptionsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Closed Captions Media Details
      * 
@@ -87,7 +87,7 @@ public class ClosedCaptionsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all Closed Captions Media
      * 
@@ -102,6 +102,7 @@ public class ClosedCaptionsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all Closed Captions Media
      * 
@@ -117,9 +118,9 @@ public class ClosedCaptionsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ClosedCaptionsApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/hls/{manifest_id}/media/closed-captions")
         ResponseEnvelope<ClosedCaptionsMediaInfo> create(@Param(value = "manifest_id") String manifestId, ClosedCaptionsMediaInfo closedCaptionsMediaInfo) throws BitmovinException;
     

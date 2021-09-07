@@ -42,7 +42,7 @@ public class MxfApi {
     public static BitmovinApiBuilder<MxfApi> builder() {
         return new BitmovinApiBuilder<>(MxfApi.class);
     }
-    
+
     /**
      * Add MXF muxing
      * 
@@ -58,7 +58,7 @@ public class MxfApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete MXF muxing
      * 
@@ -74,7 +74,7 @@ public class MxfApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * MXF muxing details
      * 
@@ -90,7 +90,7 @@ public class MxfApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List MXF muxings
      * 
@@ -105,6 +105,7 @@ public class MxfApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List MXF muxings
      * 
@@ -120,9 +121,9 @@ public class MxfApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface MxfApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/mxf")
         ResponseEnvelope<MxfMuxing> create(@Param(value = "encoding_id") String encodingId, MxfMuxing mxfMuxing) throws BitmovinException;
     

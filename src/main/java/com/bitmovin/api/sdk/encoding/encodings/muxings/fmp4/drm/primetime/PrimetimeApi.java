@@ -42,7 +42,7 @@ public class PrimetimeApi {
     public static BitmovinApiBuilder<PrimetimeApi> builder() {
         return new BitmovinApiBuilder<>(PrimetimeApi.class);
     }
-    
+
     /**
      * Add PrimeTime DRM to an fMP4 muxing
      * 
@@ -59,7 +59,7 @@ public class PrimetimeApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete PrimeTime DRM from an fMP4 muxing
      * 
@@ -76,7 +76,7 @@ public class PrimetimeApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * PrimeTime DRM Details of an fMP4 muxing
      * 
@@ -93,7 +93,7 @@ public class PrimetimeApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List PrimeTime DRMs of an fMP4 muxing
      * 
@@ -109,6 +109,7 @@ public class PrimetimeApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List PrimeTime DRMs of an fMP4 muxing
      * 
@@ -125,9 +126,9 @@ public class PrimetimeApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface PrimetimeApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/fmp4/{muxing_id}/drm/primetime")
         ResponseEnvelope<PrimeTimeDrm> create(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, PrimeTimeDrm primeTimeDrm) throws BitmovinException;
     

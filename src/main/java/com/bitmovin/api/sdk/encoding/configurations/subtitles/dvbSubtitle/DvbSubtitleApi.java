@@ -42,7 +42,7 @@ public class DvbSubtitleApi {
     public static BitmovinApiBuilder<DvbSubtitleApi> builder() {
         return new BitmovinApiBuilder<>(DvbSubtitleApi.class);
     }
-    
+
     /**
      * Create DVB-SUB subtitle configuration
      * 
@@ -57,7 +57,7 @@ public class DvbSubtitleApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete DVB-SUB subtitle configuration
      * 
@@ -72,7 +72,7 @@ public class DvbSubtitleApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * DVB-SUB subtitle configuration details
      * 
@@ -87,7 +87,7 @@ public class DvbSubtitleApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List DVB-SUB subtitle configurations
      * 
@@ -101,6 +101,7 @@ public class DvbSubtitleApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List DVB-SUB subtitle configurations
      * 
@@ -115,9 +116,9 @@ public class DvbSubtitleApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface DvbSubtitleApiClient {
-    
+
         @RequestLine("POST /encoding/configurations/subtitles/dvb-subtitle")
         ResponseEnvelope<DvbSubtitleConfiguration> create(DvbSubtitleConfiguration dvbSubtitleConfiguration) throws BitmovinException;
     

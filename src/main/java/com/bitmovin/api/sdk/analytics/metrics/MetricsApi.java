@@ -28,6 +28,6 @@ public class MetricsApi {
     public static BitmovinApiBuilder<MetricsApi> builder() {
         return new BitmovinApiBuilder<>(MetricsApi.class);
     }
-    
+
     
 }

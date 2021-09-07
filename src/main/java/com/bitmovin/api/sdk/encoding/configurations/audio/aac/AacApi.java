@@ -42,7 +42,7 @@ public class AacApi {
     public static BitmovinApiBuilder<AacApi> builder() {
         return new BitmovinApiBuilder<>(AacApi.class);
     }
-    
+
     /**
      * Create AAC Codec Configuration
      * 
@@ -57,7 +57,7 @@ public class AacApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete AAC Codec Configuration
      * 
@@ -72,7 +72,7 @@ public class AacApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * AAC Codec Configuration Details
      * 
@@ -87,7 +87,7 @@ public class AacApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List AAC Configurations
      * 
@@ -101,6 +101,7 @@ public class AacApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List AAC Configurations
      * 
@@ -115,9 +116,9 @@ public class AacApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface AacApiClient {
-    
+
         @RequestLine("POST /encoding/configurations/audio/aac")
         ResponseEnvelope<AacAudioConfiguration> create(AacAudioConfiguration aacAudioConfiguration) throws BitmovinException;
     

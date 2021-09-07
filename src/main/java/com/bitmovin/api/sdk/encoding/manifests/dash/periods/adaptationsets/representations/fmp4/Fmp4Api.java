@@ -45,7 +45,7 @@ public class Fmp4Api {
     public static BitmovinApiBuilder<Fmp4Api> builder() {
         return new BitmovinApiBuilder<>(Fmp4Api.class);
     }
-    
+
     /**
      * Add fMP4 Representation
      * 
@@ -63,7 +63,7 @@ public class Fmp4Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete fMP4 Representation
      * 
@@ -81,7 +81,7 @@ public class Fmp4Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * fMP4 Representation Details
      * 
@@ -99,7 +99,7 @@ public class Fmp4Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all fMP4 Representations
      * 
@@ -116,6 +116,7 @@ public class Fmp4Api {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all fMP4 Representations
      * 
@@ -133,9 +134,9 @@ public class Fmp4Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface Fmp4ApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/representations/fmp4")
         ResponseEnvelope<DashFmp4Representation> create(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, DashFmp4Representation dashFmp4Representation) throws BitmovinException;
     

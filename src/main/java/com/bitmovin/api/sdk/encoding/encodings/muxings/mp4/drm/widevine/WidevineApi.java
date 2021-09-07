@@ -42,7 +42,7 @@ public class WidevineApi {
     public static BitmovinApiBuilder<WidevineApi> builder() {
         return new BitmovinApiBuilder<>(WidevineApi.class);
     }
-    
+
     /**
      * Add Widevine DRM to an MP4 muxing
      * 
@@ -59,7 +59,7 @@ public class WidevineApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Widevine DRM from an MP4 muxing
      * 
@@ -76,7 +76,7 @@ public class WidevineApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Widevine DRM Details of an MP4 muxing
      * 
@@ -93,7 +93,7 @@ public class WidevineApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Widevine DRMs of an MP4 muxing
      * 
@@ -109,6 +109,7 @@ public class WidevineApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Widevine DRMs of an MP4 muxing
      * 
@@ -125,9 +126,9 @@ public class WidevineApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface WidevineApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/mp4/{muxing_id}/drm/widevine")
         ResponseEnvelope<WidevineDrm> create(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, WidevineDrm widevineDrm) throws BitmovinException;
     

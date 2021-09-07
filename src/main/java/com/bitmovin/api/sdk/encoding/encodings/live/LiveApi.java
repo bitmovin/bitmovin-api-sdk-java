@@ -45,7 +45,7 @@ public class LiveApi {
     public static BitmovinApiBuilder<LiveApi> builder() {
         return new BitmovinApiBuilder<>(LiveApi.class);
     }
-    
+
     /**
      * Live Encoding Details
      * 
@@ -60,7 +60,7 @@ public class LiveApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Live Encoding Start Details
      * 
@@ -75,7 +75,7 @@ public class LiveApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Re-Start Live Encoding
      * 
@@ -90,7 +90,7 @@ public class LiveApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Start Live Encoding
      * 
@@ -106,7 +106,7 @@ public class LiveApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Stop Live Encoding
      * 
@@ -121,25 +121,21 @@ public class LiveApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface LiveApiClient {
-    
+
         @RequestLine("GET /encoding/encodings/{encoding_id}/live")
         ResponseEnvelope<LiveEncoding> get(@Param(value = "encoding_id") String encodingId) throws BitmovinException;
     
         @RequestLine("GET /encoding/encodings/{encoding_id}/live/start")
         ResponseEnvelope<StartLiveEncodingRequest> getStartRequest(@Param(value = "encoding_id") String encodingId) throws BitmovinException;
     
-        @Headers("Content-Type: text/plain")
-        @Body(" ")
         @RequestLine("POST /encoding/encodings/{encoding_id}/live/restart")
         ResponseEnvelope<BitmovinResponse> restart(@Param(value = "encoding_id") String encodingId) throws BitmovinException;
     
         @RequestLine("POST /encoding/encodings/{encoding_id}/live/start")
         ResponseEnvelope<BitmovinResponse> start(@Param(value = "encoding_id") String encodingId, StartLiveEncodingRequest startLiveEncodingRequest) throws BitmovinException;
     
-        @Headers("Content-Type: text/plain")
-        @Body(" ")
         @RequestLine("POST /encoding/encodings/{encoding_id}/live/stop")
         ResponseEnvelope<BitmovinResponse> stop(@Param(value = "encoding_id") String encodingId) throws BitmovinException;
     }

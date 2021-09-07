@@ -39,7 +39,7 @@ public class ByTimestampApi {
     public static BitmovinApiBuilder<ByTimestampApi> builder() {
         return new BitmovinApiBuilder<>(ByTimestampApi.class);
     }
-    
+
     /**
      * List object detection results grouped by timestamp
      * 
@@ -55,6 +55,7 @@ public class ByTimestampApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List object detection results grouped by timestamp
      * 
@@ -71,9 +72,9 @@ public class ByTimestampApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ByTimestampApiClient {
-    
+
         @RequestLine("GET /encoding/encodings/{encoding_id}/machine-learning/object-detection/{object_detection_id}/results/by-timestamp")
         ResponseEnvelope<PaginationResponse<ObjectDetectionTimestampResult>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "object_detection_id") String objectDetectionId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

@@ -42,7 +42,7 @@ public class GcsApi {
     public static BitmovinApiBuilder<GcsApi> builder() {
         return new BitmovinApiBuilder<>(GcsApi.class);
     }
-    
+
     /**
      * Create GCS Output
      * 
@@ -57,7 +57,7 @@ public class GcsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete GCS Output
      * 
@@ -72,7 +72,7 @@ public class GcsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * GCS Output Details
      * 
@@ -87,7 +87,7 @@ public class GcsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List GCS Outputs
      * 
@@ -101,6 +101,7 @@ public class GcsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List GCS Outputs
      * 
@@ -115,9 +116,9 @@ public class GcsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface GcsApiClient {
-    
+
         @RequestLine("POST /encoding/outputs/gcs")
         ResponseEnvelope<GcsOutput> create(GcsOutput gcsOutput) throws BitmovinException;
     

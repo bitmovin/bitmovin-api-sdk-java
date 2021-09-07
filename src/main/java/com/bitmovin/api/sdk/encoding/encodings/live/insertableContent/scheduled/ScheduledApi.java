@@ -39,7 +39,7 @@ public class ScheduledApi {
     public static BitmovinApiBuilder<ScheduledApi> builder() {
         return new BitmovinApiBuilder<>(ScheduledApi.class);
     }
-    
+
     /**
      * List All Scheduled Insertable Content For A Live Encoding
      * 
@@ -54,6 +54,7 @@ public class ScheduledApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List All Scheduled Insertable Content For A Live Encoding
      * 
@@ -69,9 +70,9 @@ public class ScheduledApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ScheduledApiClient {
-    
+
         @RequestLine("GET /encoding/encodings/{encoding_id}/live/insertable-content/scheduled")
         ResponseEnvelope<PaginationResponse<ScheduledInsertableContent>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

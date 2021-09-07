@@ -39,7 +39,7 @@ public class CustomdataApi {
     public static BitmovinApiBuilder<CustomdataApi> builder() {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
-    
+
     /**
      * Smooth Streaming Manifest Custom Data
      * 
@@ -54,9 +54,9 @@ public class CustomdataApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface CustomdataApiClient {
-    
+
         @RequestLine("GET /encoding/manifests/smooth/{manifest_id}/customData")
         ResponseEnvelope<CustomData> getCustomData(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
     }

@@ -48,7 +48,7 @@ public class Id3Api {
     public static BitmovinApiBuilder<Id3Api> builder() {
         return new BitmovinApiBuilder<>(Id3Api.class);
     }
-    
+
     /**
      * List all ID3 Tags of a Progressive TS muxing
      * 
@@ -64,6 +64,7 @@ public class Id3Api {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all ID3 Tags of a Progressive TS muxing
      * 
@@ -80,9 +81,9 @@ public class Id3Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface Id3ApiClient {
-    
+
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/progressive-ts/{muxing_id}/id3")
         ResponseEnvelope<PaginationResponse<Id3Tag>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

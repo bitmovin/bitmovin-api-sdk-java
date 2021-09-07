@@ -28,6 +28,6 @@ public class TrimmingApi {
     public static BitmovinApiBuilder<TrimmingApi> builder() {
         return new BitmovinApiBuilder<>(TrimmingApi.class);
     }
-    
+
     
 }

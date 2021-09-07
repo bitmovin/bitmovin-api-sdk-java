@@ -39,7 +39,7 @@ public class CustomdataApi {
     public static BitmovinApiBuilder<CustomdataApi> builder() {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
-    
+
     /**
      * Deinterlace Filter Custom Data
      * 
@@ -54,9 +54,9 @@ public class CustomdataApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface CustomdataApiClient {
-    
+
         @RequestLine("GET /encoding/filters/deinterlace/{filter_id}/customData")
         ResponseEnvelope<CustomData> getCustomData(@Param(value = "filter_id") String filterId) throws BitmovinException;
     }

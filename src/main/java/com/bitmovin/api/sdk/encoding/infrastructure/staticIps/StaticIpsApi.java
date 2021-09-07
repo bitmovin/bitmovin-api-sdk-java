@@ -39,7 +39,7 @@ public class StaticIpsApi {
     public static BitmovinApiBuilder<StaticIpsApi> builder() {
         return new BitmovinApiBuilder<>(StaticIpsApi.class);
     }
-    
+
     /**
      * Add Static IP Address
      * 
@@ -54,7 +54,7 @@ public class StaticIpsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Static IP Address
      * 
@@ -69,7 +69,7 @@ public class StaticIpsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Static IP Address Details
      * 
@@ -84,7 +84,7 @@ public class StaticIpsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all Static IP Addresses
      * 
@@ -98,6 +98,7 @@ public class StaticIpsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all Static IP Addresses
      * 
@@ -112,9 +113,9 @@ public class StaticIpsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface StaticIpsApiClient {
-    
+
         @RequestLine("POST /encoding/infrastructure/static-ips")
         ResponseEnvelope<StaticIp> create(StaticIp staticIp) throws BitmovinException;
     

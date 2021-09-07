@@ -39,7 +39,7 @@ public class SrtApi {
     public static BitmovinApiBuilder<SrtApi> builder() {
         return new BitmovinApiBuilder<>(SrtApi.class);
     }
-    
+
     /**
      * Burn-In SRT Subtitle into Stream
      * 
@@ -56,7 +56,7 @@ public class SrtApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Burn-In SRT Subtitle from Stream
      * 
@@ -73,7 +73,7 @@ public class SrtApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Get Burn-In SRT Subtitle Details
      * 
@@ -90,7 +90,7 @@ public class SrtApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List the Burn-In SRT subtitles of a stream
      * 
@@ -106,6 +106,7 @@ public class SrtApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List the Burn-In SRT subtitles of a stream
      * 
@@ -122,9 +123,9 @@ public class SrtApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface SrtApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/streams/{stream_id}/burn-in-subtitles/srt")
         ResponseEnvelope<BurnInSubtitleSrt> create(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, BurnInSubtitleSrt burnInSubtitleSrt) throws BitmovinException;
     

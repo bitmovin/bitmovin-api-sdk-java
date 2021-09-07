@@ -39,7 +39,7 @@ public class ImageApi {
     public static BitmovinApiBuilder<ImageApi> builder() {
         return new BitmovinApiBuilder<>(ImageApi.class);
     }
-    
+
     /**
      * Add Image AdaptationSet
      * 
@@ -56,7 +56,7 @@ public class ImageApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Image AdaptationSet
      * 
@@ -73,7 +73,7 @@ public class ImageApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Image AdaptationSet Details
      * 
@@ -90,7 +90,7 @@ public class ImageApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all Image AdaptationSets
      * 
@@ -106,6 +106,7 @@ public class ImageApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all Image AdaptationSets
      * 
@@ -122,9 +123,9 @@ public class ImageApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ImageApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/image")
         ResponseEnvelope<ImageAdaptationSet> create(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, ImageAdaptationSet imageAdaptationSet) throws BitmovinException;
     

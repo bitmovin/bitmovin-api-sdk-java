@@ -39,7 +39,7 @@ public class ConcatenationApi {
     public static BitmovinApiBuilder<ConcatenationApi> builder() {
         return new BitmovinApiBuilder<>(ConcatenationApi.class);
     }
-    
+
     /**
      * Add Concatenation Input Stream
      * 
@@ -55,7 +55,7 @@ public class ConcatenationApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Concatenation Input Stream
      * 
@@ -71,7 +71,7 @@ public class ConcatenationApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Concatenation Input Stream Details
      * 
@@ -87,7 +87,7 @@ public class ConcatenationApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Concatenation Input Streams
      * 
@@ -102,6 +102,7 @@ public class ConcatenationApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Concatenation Input Streams
      * 
@@ -117,9 +118,9 @@ public class ConcatenationApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ConcatenationApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/input-streams/concatenation")
         ResponseEnvelope<ConcatenationInputStream> create(@Param(value = "encoding_id") String encodingId, ConcatenationInputStream concatenationInputStream) throws BitmovinException;
     

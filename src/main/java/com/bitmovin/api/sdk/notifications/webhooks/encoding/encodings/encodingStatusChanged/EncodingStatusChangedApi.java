@@ -39,7 +39,7 @@ public class EncodingStatusChangedApi {
     public static BitmovinApiBuilder<EncodingStatusChangedApi> builder() {
         return new BitmovinApiBuilder<>(EncodingStatusChangedApi.class);
     }
-    
+
     /**
      * Add Encoding Changed Webhook Notification (All Encodings)
      * 
@@ -54,7 +54,7 @@ public class EncodingStatusChangedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Add Encoding Changed Webhook Notification (Specific Encoding)
      * 
@@ -70,7 +70,7 @@ public class EncodingStatusChangedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Encoding Status Changed Webhook
      * 
@@ -85,7 +85,7 @@ public class EncodingStatusChangedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Replace Encoding Status Changed Webhook Notification
      * 
@@ -101,9 +101,9 @@ public class EncodingStatusChangedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface EncodingStatusChangedApiClient {
-    
+
         @RequestLine("POST /notifications/webhooks/encoding/encodings/encoding-status-changed")
         ResponseEnvelope<WebhookNotificationWithStreamConditions> create(WebhookNotificationWithStreamConditionsRequest webhookNotificationWithStreamConditionsRequest) throws BitmovinException;
     

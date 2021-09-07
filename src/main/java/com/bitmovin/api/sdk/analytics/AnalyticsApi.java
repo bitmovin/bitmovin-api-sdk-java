@@ -43,6 +43,6 @@ public class AnalyticsApi {
     public static BitmovinApiBuilder<AnalyticsApi> builder() {
         return new BitmovinApiBuilder<>(AnalyticsApi.class);
     }
-    
+
     
 }

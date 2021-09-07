@@ -42,7 +42,7 @@ public class CmafApi {
     public static BitmovinApiBuilder<CmafApi> builder() {
         return new BitmovinApiBuilder<>(CmafApi.class);
     }
-    
+
     /**
      * Add CMAF Representation
      * 
@@ -60,7 +60,7 @@ public class CmafApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete CMAF Representation
      * 
@@ -78,7 +78,7 @@ public class CmafApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * CMAF Representation Details
      * 
@@ -96,7 +96,7 @@ public class CmafApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all CMAF Representations
      * 
@@ -113,6 +113,7 @@ public class CmafApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all CMAF Representations
      * 
@@ -130,9 +131,9 @@ public class CmafApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface CmafApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/representations/cmaf")
         ResponseEnvelope<DashCmafRepresentation> create(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, DashCmafRepresentation dashCmafRepresentation) throws BitmovinException;
     

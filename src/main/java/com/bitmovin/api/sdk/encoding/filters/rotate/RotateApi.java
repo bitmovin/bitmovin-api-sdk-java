@@ -42,7 +42,7 @@ public class RotateApi {
     public static BitmovinApiBuilder<RotateApi> builder() {
         return new BitmovinApiBuilder<>(RotateApi.class);
     }
-    
+
     /**
      * Create Rotate Filter
      * 
@@ -57,7 +57,7 @@ public class RotateApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Rotate Filter
      * 
@@ -72,7 +72,7 @@ public class RotateApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Rotate Filter Details
      * 
@@ -87,7 +87,7 @@ public class RotateApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Rotate Filters
      * 
@@ -101,6 +101,7 @@ public class RotateApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Rotate Filters
      * 
@@ -115,9 +116,9 @@ public class RotateApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface RotateApiClient {
-    
+
         @RequestLine("POST /encoding/filters/rotate")
         ResponseEnvelope<RotateFilter> create(RotateFilter rotateFilter) throws BitmovinException;
     

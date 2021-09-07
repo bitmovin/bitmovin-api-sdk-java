@@ -39,7 +39,7 @@ public class DomainsApi {
     public static BitmovinApiBuilder<DomainsApi> builder() {
         return new BitmovinApiBuilder<>(DomainsApi.class);
     }
-    
+
     /**
      * Add Domain
      * 
@@ -54,7 +54,7 @@ public class DomainsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Domain
      * 
@@ -69,7 +69,7 @@ public class DomainsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Get Domain Details
      * 
@@ -84,7 +84,7 @@ public class DomainsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Domain Details
      * 
@@ -98,9 +98,9 @@ public class DomainsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface DomainsApiClient {
-    
+
         @RequestLine("POST /player/custom-builds/web/domains")
         ResponseEnvelope<CustomWebPlayerBuildDomain> create(CustomWebPlayerBuildDomain customWebPlayerBuildDomain) throws BitmovinException;
     

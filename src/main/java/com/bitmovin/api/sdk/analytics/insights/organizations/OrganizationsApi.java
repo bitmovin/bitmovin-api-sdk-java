@@ -22,6 +22,6 @@ public class OrganizationsApi {
     public static BitmovinApiBuilder<OrganizationsApi> builder() {
         return new BitmovinApiBuilder<>(OrganizationsApi.class);
     }
-    
+
     
 }

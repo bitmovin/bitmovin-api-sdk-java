@@ -67,6 +67,6 @@ public class AudioApi {
     public static BitmovinApiBuilder<AudioApi> builder() {
         return new BitmovinApiBuilder<>(AudioApi.class);
     }
-    
+
     
 }

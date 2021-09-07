@@ -42,7 +42,7 @@ public class ErrorApi {
     public static BitmovinApiBuilder<ErrorApi> builder() {
         return new BitmovinApiBuilder<>(ErrorApi.class);
     }
-    
+
     /**
      * Add Encoding Error Webhook
      * 
@@ -57,7 +57,7 @@ public class ErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Add Encoding Error Webhook for specific Encoding Resource. **Note:** A maximum number of 5 webhooks is allowed
      * 
@@ -73,7 +73,7 @@ public class ErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Encoding Error Webhook for specific Encoding Resource
      * 
@@ -89,7 +89,7 @@ public class ErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Encoding Error Webhook
      * 
@@ -104,7 +104,7 @@ public class ErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Encoding Error Webhook Details for specific Encoding Resource
      * 
@@ -120,7 +120,7 @@ public class ErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Encoding Error Webhook Details
      * 
@@ -135,7 +135,7 @@ public class ErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Encoding Error Webhooks
      * 
@@ -149,6 +149,7 @@ public class ErrorApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Encoding Error Webhooks
      * 
@@ -163,7 +164,7 @@ public class ErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Encoding Error Webhooks for specific Encoding Resource
      * 
@@ -178,6 +179,7 @@ public class ErrorApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Encoding Error Webhooks for specific Encoding Resource
      * 
@@ -193,9 +195,9 @@ public class ErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ErrorApiClient {
-    
+
         @RequestLine("POST /notifications/webhooks/encoding/encodings/error")
         ResponseEnvelope<Webhook> create(Webhook webhook) throws BitmovinException;
     

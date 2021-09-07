@@ -39,7 +39,7 @@ public class SchedulesApi {
     public static BitmovinApiBuilder<SchedulesApi> builder() {
         return new BitmovinApiBuilder<>(SchedulesApi.class);
     }
-    
+
     /**
      * Create prewarmed encoder pool schedule
      * 
@@ -55,7 +55,7 @@ public class SchedulesApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete prewarmed encoder pool schedule
      * 
@@ -71,7 +71,7 @@ public class SchedulesApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Prewarmed encoder pool schedule details
      * 
@@ -87,7 +87,7 @@ public class SchedulesApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List prewarmed encoder pool schedules
      * 
@@ -102,6 +102,7 @@ public class SchedulesApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List prewarmed encoder pool schedules
      * 
@@ -117,9 +118,9 @@ public class SchedulesApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface SchedulesApiClient {
-    
+
         @RequestLine("POST /encoding/infrastructure/prewarmed-encoder-pools/{pool_id}/schedules")
         ResponseEnvelope<PrewarmedEncoderPoolSchedule> create(@Param(value = "pool_id") String poolId, PrewarmedEncoderPoolSchedule prewarmedEncoderPoolSchedule) throws BitmovinException;
     

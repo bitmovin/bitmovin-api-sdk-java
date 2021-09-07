@@ -42,7 +42,7 @@ public class TextApi {
     public static BitmovinApiBuilder<TextApi> builder() {
         return new BitmovinApiBuilder<>(TextApi.class);
     }
-    
+
     /**
      * Create Text Filter
      * 
@@ -57,7 +57,7 @@ public class TextApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Text Filter
      * 
@@ -72,7 +72,7 @@ public class TextApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Text Filter Details
      * 
@@ -87,7 +87,7 @@ public class TextApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Text Filters
      * 
@@ -101,6 +101,7 @@ public class TextApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Text Filters
      * 
@@ -115,9 +116,9 @@ public class TextApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface TextApiClient {
-    
+
         @RequestLine("POST /encoding/filters/text")
         ResponseEnvelope<TextFilter> create(TextFilter textFilter) throws BitmovinException;
     

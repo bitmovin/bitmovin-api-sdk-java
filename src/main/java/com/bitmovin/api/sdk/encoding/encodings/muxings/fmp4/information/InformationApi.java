@@ -39,7 +39,7 @@ public class InformationApi {
     public static BitmovinApiBuilder<InformationApi> builder() {
         return new BitmovinApiBuilder<>(InformationApi.class);
     }
-    
+
     /**
      * Fmp4 muxing Information
      * 
@@ -55,9 +55,9 @@ public class InformationApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface InformationApiClient {
-    
+
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/fmp4/{muxing_id}/information")
         ResponseEnvelope<Fmp4MuxingInformation> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
     }

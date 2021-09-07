@@ -39,7 +39,7 @@ public class DailyApi {
     public static BitmovinApiBuilder<DailyApi> builder() {
         return new BitmovinApiBuilder<>(DailyApi.class);
     }
-    
+
     /**
      * List Daily Statistics
      * 
@@ -53,6 +53,7 @@ public class DailyApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Daily Statistics
      * 
@@ -67,7 +68,7 @@ public class DailyApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List daily statistics within specific dates
      * 
@@ -83,6 +84,7 @@ public class DailyApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List daily statistics within specific dates
      * 
@@ -99,9 +101,9 @@ public class DailyApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface DailyApiClient {
-    
+
         @RequestLine("GET /encoding/statistics/daily")
         ResponseEnvelope<PaginationResponse<DailyStatistics>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     

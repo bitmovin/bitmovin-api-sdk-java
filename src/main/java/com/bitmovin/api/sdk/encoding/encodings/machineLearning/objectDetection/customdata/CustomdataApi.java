@@ -39,7 +39,7 @@ public class CustomdataApi {
     public static BitmovinApiBuilder<CustomdataApi> builder() {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
-    
+
     /**
      * Get the custom data of an object detection configuration
      * 
@@ -55,9 +55,9 @@ public class CustomdataApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface CustomdataApiClient {
-    
+
         @RequestLine("GET /encoding/encodings/{encoding_id}/machine-learning/object-detection/{object_detection_id}/customData")
         ResponseEnvelope<CustomData> getCustomData(@Param(value = "encoding_id") String encodingId, @Param(value = "object_detection_id") String objectDetectionId) throws BitmovinException;
     }

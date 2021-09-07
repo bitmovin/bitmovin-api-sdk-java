@@ -39,7 +39,7 @@ public class CountApi {
     public static BitmovinApiBuilder<CountApi> builder() {
         return new BitmovinApiBuilder<>(CountApi.class);
     }
-    
+
     /**
      * Count
      * 
@@ -54,9 +54,9 @@ public class CountApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface CountApiClient {
-    
+
         @RequestLine("POST /analytics/queries/count")
         ResponseEnvelope<AnalyticsResponse> create(AnalyticsCountQueryRequest analyticsCountQueryRequest) throws BitmovinException;
     }

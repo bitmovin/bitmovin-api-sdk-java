@@ -48,7 +48,7 @@ public class DashApi {
     public static BitmovinApiBuilder<DashApi> builder() {
         return new BitmovinApiBuilder<>(DashApi.class);
     }
-    
+
     /**
      * Create DASH Manifest
      * 
@@ -63,7 +63,7 @@ public class DashApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete DASH Manifest
      * 
@@ -78,7 +78,7 @@ public class DashApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * DASH Manifest Details
      * 
@@ -93,7 +93,7 @@ public class DashApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List DASH Manifests
      * 
@@ -107,6 +107,7 @@ public class DashApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List DASH Manifests
      * 
@@ -121,7 +122,7 @@ public class DashApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Start DASH Manifest Creation
      * 
@@ -136,7 +137,23 @@ public class DashApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
+    /**
+     * Start DASH Manifest Creation
+     * 
+     * @param manifestId Id of the DASH manifest. (required)
+     * @param body Manifest Startup Options (optional)
+     * @return BitmovinResponse
+     * @throws BitmovinException if fails to make API call
+     */
+    public BitmovinResponse start(String manifestId, Object body) throws BitmovinException {
+        try {
+            return this.apiClient.start(manifestId, body).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
     /**
      * DASH Manifest Creation Status
      * 
@@ -151,7 +168,7 @@ public class DashApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Stop DASH Manifest Creation
      * 
@@ -166,9 +183,9 @@ public class DashApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface DashApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/dash")
         ResponseEnvelope<DashManifest> create(DashManifest dashManifest) throws BitmovinException;
     
@@ -181,16 +198,15 @@ public class DashApi {
         @RequestLine("GET /encoding/manifests/dash")
         ResponseEnvelope<PaginationResponse<DashManifest>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     
-        @Headers("Content-Type: text/plain")
-        @Body(" ")
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/start")
         ResponseEnvelope<BitmovinResponse> start(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
+
+        @RequestLine("POST /encoding/manifests/dash/{manifest_id}/start")
+        ResponseEnvelope<BitmovinResponse> start(@Param(value = "manifest_id") String manifestId, Object body) throws BitmovinException;
     
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/status")
         ResponseEnvelope<Task> status(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
     
-        @Headers("Content-Type: text/plain")
-        @Body(" ")
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/stop")
         ResponseEnvelope<BitmovinResponse> stop(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
     }

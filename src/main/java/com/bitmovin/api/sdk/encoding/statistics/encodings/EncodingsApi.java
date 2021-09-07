@@ -48,7 +48,7 @@ public class EncodingsApi {
     public static BitmovinApiBuilder<EncodingsApi> builder() {
         return new BitmovinApiBuilder<>(EncodingsApi.class);
     }
-    
+
     /**
      * Get Statistics from an Encoding
      * 
@@ -63,9 +63,9 @@ public class EncodingsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface EncodingsApiClient {
-    
+
         @RequestLine("GET /encoding/statistics/encodings/{encoding_id}")
         ResponseEnvelope<EncodingStats> get(@Param(value = "encoding_id") String encodingId) throws BitmovinException;
     }

@@ -34,6 +34,6 @@ public class InfrastructureApi {
     public static BitmovinApiBuilder<InfrastructureApi> builder() {
         return new BitmovinApiBuilder<>(InfrastructureApi.class);
     }
-    
+
     
 }

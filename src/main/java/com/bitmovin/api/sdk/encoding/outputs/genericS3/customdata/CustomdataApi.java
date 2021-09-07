@@ -39,7 +39,7 @@ public class CustomdataApi {
     public static BitmovinApiBuilder<CustomdataApi> builder() {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
-    
+
     /**
      * Generic S3 Output Custom Data
      * 
@@ -54,9 +54,9 @@ public class CustomdataApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface CustomdataApiClient {
-    
+
         @RequestLine("GET /encoding/outputs/generic-s3/{output_id}/customData")
         ResponseEnvelope<CustomData> getCustomData(@Param(value = "output_id") String outputId) throws BitmovinException;
     }

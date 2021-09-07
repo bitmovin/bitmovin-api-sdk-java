@@ -42,7 +42,7 @@ public class InterlaceApi {
     public static BitmovinApiBuilder<InterlaceApi> builder() {
         return new BitmovinApiBuilder<>(InterlaceApi.class);
     }
-    
+
     /**
      * Create Interlace Filter
      * 
@@ -57,7 +57,7 @@ public class InterlaceApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Interlace Filter
      * 
@@ -72,7 +72,7 @@ public class InterlaceApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Interlace Filter Details
      * 
@@ -87,7 +87,7 @@ public class InterlaceApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Interlace Filters
      * 
@@ -101,6 +101,7 @@ public class InterlaceApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Interlace Filters
      * 
@@ -115,9 +116,9 @@ public class InterlaceApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface InterlaceApiClient {
-    
+
         @RequestLine("POST /encoding/filters/interlace")
         ResponseEnvelope<InterlaceFilter> create(InterlaceFilter interlaceFilter) throws BitmovinException;
     

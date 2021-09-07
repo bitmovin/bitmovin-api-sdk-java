@@ -42,7 +42,7 @@ public class AzureApi {
     public static BitmovinApiBuilder<AzureApi> builder() {
         return new BitmovinApiBuilder<>(AzureApi.class);
     }
-    
+
     /**
      * Add Azure Account
      * 
@@ -57,7 +57,7 @@ public class AzureApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Azure Account
      * 
@@ -72,7 +72,7 @@ public class AzureApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Azure Account Details
      * 
@@ -87,7 +87,7 @@ public class AzureApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Azure Accounts
      * 
@@ -101,6 +101,7 @@ public class AzureApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Azure Accounts
      * 
@@ -115,9 +116,9 @@ public class AzureApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface AzureApiClient {
-    
+
         @RequestLine("POST /encoding/infrastructure/azure")
         ResponseEnvelope<AzureAccount> create(AzureAccount azureAccount) throws BitmovinException;
     

@@ -39,7 +39,7 @@ public class ContentprotectionApi {
     public static BitmovinApiBuilder<ContentprotectionApi> builder() {
         return new BitmovinApiBuilder<>(ContentprotectionApi.class);
     }
-    
+
     /**
      * Add Content Protection to AdaptationSet
      * 
@@ -57,7 +57,7 @@ public class ContentprotectionApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete AdaptationSet Content Protection
      * 
@@ -75,7 +75,7 @@ public class ContentprotectionApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * AdaptationSet Content Protection Details
      * 
@@ -93,7 +93,7 @@ public class ContentprotectionApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all AdaptationSet Content Protections
      * 
@@ -110,6 +110,7 @@ public class ContentprotectionApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all AdaptationSet Content Protections
      * 
@@ -127,9 +128,9 @@ public class ContentprotectionApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ContentprotectionApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/contentprotection")
         ResponseEnvelope<ContentProtection> create(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, ContentProtection contentProtection) throws BitmovinException;
     

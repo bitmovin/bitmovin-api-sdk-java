@@ -45,7 +45,7 @@ public class ObjectDetectionApi {
     public static BitmovinApiBuilder<ObjectDetectionApi> builder() {
         return new BitmovinApiBuilder<>(ObjectDetectionApi.class);
     }
-    
+
     /**
      * Add object detection configuration to an encoding
      * 
@@ -61,7 +61,7 @@ public class ObjectDetectionApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete object detection configuration
      * 
@@ -77,7 +77,7 @@ public class ObjectDetectionApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Get object detection configuration details
      * 
@@ -93,7 +93,7 @@ public class ObjectDetectionApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List object detection configurations of an encoding
      * 
@@ -108,6 +108,7 @@ public class ObjectDetectionApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List object detection configurations of an encoding
      * 
@@ -123,9 +124,9 @@ public class ObjectDetectionApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ObjectDetectionApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/machine-learning/object-detection")
         ResponseEnvelope<ObjectDetectionConfiguration> create(@Param(value = "encoding_id") String encodingId, ObjectDetectionConfiguration objectDetectionConfiguration) throws BitmovinException;
     

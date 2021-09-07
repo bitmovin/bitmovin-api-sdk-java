@@ -84,7 +84,7 @@ public class MuxingsApi {
     public static BitmovinApiBuilder<MuxingsApi> builder() {
         return new BitmovinApiBuilder<>(MuxingsApi.class);
     }
-    
+
     /**
      * Muxing Details
      * 
@@ -100,7 +100,7 @@ public class MuxingsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List All Muxings
      * 
@@ -115,6 +115,7 @@ public class MuxingsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List All Muxings
      * 
@@ -130,9 +131,9 @@ public class MuxingsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface MuxingsApiClient {
-    
+
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/{muxing_id}")
         ResponseEnvelope<Muxing> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
     

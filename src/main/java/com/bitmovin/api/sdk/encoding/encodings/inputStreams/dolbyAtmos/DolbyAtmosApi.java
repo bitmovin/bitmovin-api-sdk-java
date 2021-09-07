@@ -39,7 +39,7 @@ public class DolbyAtmosApi {
     public static BitmovinApiBuilder<DolbyAtmosApi> builder() {
         return new BitmovinApiBuilder<>(DolbyAtmosApi.class);
     }
-    
+
     /**
      * Add Dolby Atmos input stream
      * 
@@ -55,7 +55,7 @@ public class DolbyAtmosApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Dolby Atmos input stream
      * 
@@ -71,7 +71,7 @@ public class DolbyAtmosApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Dolby Atmos input stream details
      * 
@@ -87,7 +87,7 @@ public class DolbyAtmosApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Dolby Atmos input streams
      * 
@@ -102,6 +102,7 @@ public class DolbyAtmosApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Dolby Atmos input streams
      * 
@@ -117,9 +118,9 @@ public class DolbyAtmosApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface DolbyAtmosApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/input-streams/dolby-atmos")
         ResponseEnvelope<DolbyAtmosIngestInputStream> create(@Param(value = "encoding_id") String encodingId, DolbyAtmosIngestInputStream dolbyAtmosIngestInputStream) throws BitmovinException;
     

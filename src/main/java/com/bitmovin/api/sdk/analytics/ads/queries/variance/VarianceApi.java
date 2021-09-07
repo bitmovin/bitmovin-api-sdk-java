@@ -39,7 +39,7 @@ public class VarianceApi {
     public static BitmovinApiBuilder<VarianceApi> builder() {
         return new BitmovinApiBuilder<>(VarianceApi.class);
     }
-    
+
     /**
      * Variance
      * 
@@ -54,9 +54,9 @@ public class VarianceApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface VarianceApiClient {
-    
+
         @RequestLine("POST /analytics/ads/queries/variance")
         ResponseEnvelope<AnalyticsResponse> create(AdAnalyticsVarianceQueryRequest adAnalyticsVarianceQueryRequest) throws BitmovinException;
     }

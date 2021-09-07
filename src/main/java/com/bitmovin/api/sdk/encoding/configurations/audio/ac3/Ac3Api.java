@@ -42,7 +42,7 @@ public class Ac3Api {
     public static BitmovinApiBuilder<Ac3Api> builder() {
         return new BitmovinApiBuilder<>(Ac3Api.class);
     }
-    
+
     /**
      * Create AC3 Codec Configuration.  Deprecation notice: use Dolby Digital instead. For more information check out our tutorial here: https://bitmovin.com/docs/encoding/tutorials/how-to-create-dolby-digital-plus-encodings 
      * 
@@ -59,7 +59,7 @@ public class Ac3Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete AC3 Codec Configuration.  Deprecation notice: use Dolby Digital instead. For more information check out our tutorial here: https://bitmovin.com/docs/encoding/tutorials/how-to-create-dolby-digital-plus-encodings 
      * 
@@ -76,7 +76,7 @@ public class Ac3Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * AC3 Codec Configuration Details  Deprecation notice: use Dolby Digital instead. For more information check out our tutorial here: https://bitmovin.com/docs/encoding/tutorials/how-to-create-dolby-digital-plus-encodings 
      * 
@@ -93,7 +93,7 @@ public class Ac3Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List AC3 Configurations.  Deprecation notice: use Dolby Digital instead. For more information check out our tutorial here:  https://bitmovin.com/docs/encoding/tutorials/how-to-create-dolby-digital-plus-encodings 
      * 
@@ -109,6 +109,7 @@ public class Ac3Api {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List AC3 Configurations.  Deprecation notice: use Dolby Digital instead. For more information check out our tutorial here:  https://bitmovin.com/docs/encoding/tutorials/how-to-create-dolby-digital-plus-encodings 
      * 
@@ -125,9 +126,9 @@ public class Ac3Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface Ac3ApiClient {
-    
+
         @RequestLine("POST /encoding/configurations/audio/ac3")
         ResponseEnvelope<Ac3AudioConfiguration> create(Ac3AudioConfiguration ac3AudioConfiguration) throws BitmovinException;
     

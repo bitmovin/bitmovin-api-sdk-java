@@ -39,7 +39,7 @@ public class SpriteApi {
     public static BitmovinApiBuilder<SpriteApi> builder() {
         return new BitmovinApiBuilder<>(SpriteApi.class);
     }
-    
+
     /**
      * Add Sprite Representation
      * 
@@ -57,7 +57,7 @@ public class SpriteApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Sprite Representation
      * 
@@ -75,7 +75,7 @@ public class SpriteApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Sprite Representation Details
      * 
@@ -93,7 +93,7 @@ public class SpriteApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all Sprite Representations
      * 
@@ -110,6 +110,7 @@ public class SpriteApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all Sprite Representations
      * 
@@ -127,9 +128,9 @@ public class SpriteApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface SpriteApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/representations/sprite")
         ResponseEnvelope<SpriteRepresentation> create(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, SpriteRepresentation spriteRepresentation) throws BitmovinException;
     

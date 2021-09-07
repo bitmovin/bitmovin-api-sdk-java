@@ -42,7 +42,7 @@ public class AudioVolumeApi {
     public static BitmovinApiBuilder<AudioVolumeApi> builder() {
         return new BitmovinApiBuilder<>(AudioVolumeApi.class);
     }
-    
+
     /**
      * Create Audio Volume Filter
      * 
@@ -57,7 +57,7 @@ public class AudioVolumeApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Audio Volume Filter
      * 
@@ -72,7 +72,7 @@ public class AudioVolumeApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Audio Volume Filter Details
      * 
@@ -87,7 +87,7 @@ public class AudioVolumeApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Audio Volume Filters
      * 
@@ -101,6 +101,7 @@ public class AudioVolumeApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Audio Volume Filters
      * 
@@ -115,9 +116,9 @@ public class AudioVolumeApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface AudioVolumeApiClient {
-    
+
         @RequestLine("POST /encoding/filters/audio-volume")
         ResponseEnvelope<AudioVolumeFilter> create(AudioVolumeFilter audioVolumeFilter) throws BitmovinException;
     

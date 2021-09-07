@@ -42,7 +42,7 @@ public class ScaleApi {
     public static BitmovinApiBuilder<ScaleApi> builder() {
         return new BitmovinApiBuilder<>(ScaleApi.class);
     }
-    
+
     /**
      * Create Scale Filter
      * 
@@ -57,7 +57,7 @@ public class ScaleApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Scale Filter
      * 
@@ -72,7 +72,7 @@ public class ScaleApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Scale Filter Details
      * 
@@ -87,7 +87,7 @@ public class ScaleApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Scale Filters
      * 
@@ -101,6 +101,7 @@ public class ScaleApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Scale Filters
      * 
@@ -115,9 +116,9 @@ public class ScaleApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ScaleApiClient {
-    
+
         @RequestLine("POST /encoding/filters/scale")
         ResponseEnvelope<ScaleFilter> create(ScaleFilter scaleFilter) throws BitmovinException;
     

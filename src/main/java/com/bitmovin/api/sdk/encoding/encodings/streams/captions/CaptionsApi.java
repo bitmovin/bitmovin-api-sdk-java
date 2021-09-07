@@ -22,6 +22,6 @@ public class CaptionsApi {
     public static BitmovinApiBuilder<CaptionsApi> builder() {
         return new BitmovinApiBuilder<>(CaptionsApi.class);
     }
-    
+
     
 }

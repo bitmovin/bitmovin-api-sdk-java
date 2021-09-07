@@ -39,7 +39,7 @@ public class AudioApi {
     public static BitmovinApiBuilder<AudioApi> builder() {
         return new BitmovinApiBuilder<>(AudioApi.class);
     }
-    
+
     /**
      * Add Audio Media
      * 
@@ -55,7 +55,7 @@ public class AudioApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Audio Media
      * 
@@ -71,7 +71,7 @@ public class AudioApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Audio Media Details
      * 
@@ -87,7 +87,7 @@ public class AudioApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all Audio Media
      * 
@@ -102,6 +102,7 @@ public class AudioApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all Audio Media
      * 
@@ -117,9 +118,9 @@ public class AudioApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface AudioApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/hls/{manifest_id}/media/audio")
         ResponseEnvelope<AudioMediaInfo> create(@Param(value = "manifest_id") String manifestId, AudioMediaInfo audioMediaInfo) throws BitmovinException;
     

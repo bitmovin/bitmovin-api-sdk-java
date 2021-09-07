@@ -45,7 +45,7 @@ public class ProgressiveMovApi {
     public static BitmovinApiBuilder<ProgressiveMovApi> builder() {
         return new BitmovinApiBuilder<>(ProgressiveMovApi.class);
     }
-    
+
     /**
      * Add Progressive MOV muxing
      * 
@@ -61,7 +61,7 @@ public class ProgressiveMovApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Progressive MOV muxing
      * 
@@ -77,7 +77,7 @@ public class ProgressiveMovApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Progressive MOV muxing details
      * 
@@ -93,7 +93,7 @@ public class ProgressiveMovApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Progressive MOV muxings
      * 
@@ -108,6 +108,7 @@ public class ProgressiveMovApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Progressive MOV muxings
      * 
@@ -123,9 +124,9 @@ public class ProgressiveMovApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ProgressiveMovApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/progressive-mov")
         ResponseEnvelope<ProgressiveMovMuxing> create(@Param(value = "encoding_id") String encodingId, ProgressiveMovMuxing progressiveMovMuxing) throws BitmovinException;
     

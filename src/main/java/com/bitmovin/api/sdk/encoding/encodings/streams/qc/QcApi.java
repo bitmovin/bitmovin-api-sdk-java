@@ -22,6 +22,6 @@ public class QcApi {
     public static BitmovinApiBuilder<QcApi> builder() {
         return new BitmovinApiBuilder<>(QcApi.class);
     }
-    
+
     
 }

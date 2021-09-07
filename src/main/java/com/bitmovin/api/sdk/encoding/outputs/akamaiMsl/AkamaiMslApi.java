@@ -42,7 +42,7 @@ public class AkamaiMslApi {
     public static BitmovinApiBuilder<AkamaiMslApi> builder() {
         return new BitmovinApiBuilder<>(AkamaiMslApi.class);
     }
-    
+
     /**
      * Create Akamai MSL Output
      * 
@@ -57,7 +57,7 @@ public class AkamaiMslApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Akamai MSL Output
      * 
@@ -72,7 +72,7 @@ public class AkamaiMslApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Akamai MSL Output Details
      * 
@@ -87,7 +87,7 @@ public class AkamaiMslApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Akamai MSL Outputs
      * 
@@ -101,6 +101,7 @@ public class AkamaiMslApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Akamai MSL Outputs
      * 
@@ -115,9 +116,9 @@ public class AkamaiMslApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface AkamaiMslApiClient {
-    
+
         @RequestLine("POST /encoding/outputs/akamai-msl")
         ResponseEnvelope<AkamaiMslOutput> create(AkamaiMslOutput akamaiMslOutput) throws BitmovinException;
     

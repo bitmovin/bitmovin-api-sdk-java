@@ -48,7 +48,7 @@ public class GroupsApi {
     public static BitmovinApiBuilder<GroupsApi> builder() {
         return new BitmovinApiBuilder<>(GroupsApi.class);
     }
-    
+
     /**
      * Add Group
      * 
@@ -64,7 +64,7 @@ public class GroupsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Group
      * 
@@ -80,7 +80,7 @@ public class GroupsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Group Details
      * 
@@ -96,7 +96,7 @@ public class GroupsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Groups
      * 
@@ -111,9 +111,9 @@ public class GroupsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface GroupsApiClient {
-    
+
         @RequestLine("POST /account/organizations/{organization_id}/groups")
         ResponseEnvelope<Group> create(@Param(value = "organization_id") String organizationId, Group group) throws BitmovinException;
     

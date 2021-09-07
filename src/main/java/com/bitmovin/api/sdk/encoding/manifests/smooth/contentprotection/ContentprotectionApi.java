@@ -39,7 +39,7 @@ public class ContentprotectionApi {
     public static BitmovinApiBuilder<ContentprotectionApi> builder() {
         return new BitmovinApiBuilder<>(ContentprotectionApi.class);
     }
-    
+
     /**
      * Add Content Protection to Smooth Streaming
      * 
@@ -55,7 +55,7 @@ public class ContentprotectionApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Content Protection of Smooth Streaming
      * 
@@ -71,7 +71,7 @@ public class ContentprotectionApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Content Protection of Smooth Streaming Representation Details
      * 
@@ -87,7 +87,7 @@ public class ContentprotectionApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Content Protection of Smooth Streaming
      * 
@@ -102,6 +102,7 @@ public class ContentprotectionApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Content Protection of Smooth Streaming
      * 
@@ -117,9 +118,9 @@ public class ContentprotectionApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ContentprotectionApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/smooth/{manifest_id}/contentprotection")
         ResponseEnvelope<SmoothManifestContentProtection> create(@Param(value = "manifest_id") String manifestId, SmoothManifestContentProtection smoothManifestContentProtection) throws BitmovinException;
     

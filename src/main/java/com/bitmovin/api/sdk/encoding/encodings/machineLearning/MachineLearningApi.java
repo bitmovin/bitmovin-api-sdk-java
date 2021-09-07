@@ -22,6 +22,6 @@ public class MachineLearningApi {
     public static BitmovinApiBuilder<MachineLearningApi> builder() {
         return new BitmovinApiBuilder<>(MachineLearningApi.class);
     }
-    
+
     
 }

@@ -39,7 +39,7 @@ public class VideoApi {
     public static BitmovinApiBuilder<VideoApi> builder() {
         return new BitmovinApiBuilder<>(VideoApi.class);
     }
-    
+
     /**
      * Add Video Media
      * 
@@ -55,7 +55,7 @@ public class VideoApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Video Media
      * 
@@ -71,7 +71,7 @@ public class VideoApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Video Media Details
      * 
@@ -87,7 +87,7 @@ public class VideoApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all Video Media
      * 
@@ -102,6 +102,7 @@ public class VideoApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all Video Media
      * 
@@ -117,9 +118,9 @@ public class VideoApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface VideoApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/hls/{manifest_id}/media/video")
         ResponseEnvelope<VideoMediaInfo> create(@Param(value = "manifest_id") String manifestId, VideoMediaInfo videoMediaInfo) throws BitmovinException;
     

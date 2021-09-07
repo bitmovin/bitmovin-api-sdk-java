@@ -39,7 +39,7 @@ public class TransferRetriesApi {
     public static BitmovinApiBuilder<TransferRetriesApi> builder() {
         return new BitmovinApiBuilder<>(TransferRetriesApi.class);
     }
-    
+
     /**
      * Starts transfer retry. A transfer retry is only possible within 72 hours.
      * 
@@ -54,7 +54,7 @@ public class TransferRetriesApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Transfer retry Details
      * 
@@ -70,7 +70,7 @@ public class TransferRetriesApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List transfer-retries
      * 
@@ -85,6 +85,7 @@ public class TransferRetriesApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List transfer-retries
      * 
@@ -100,11 +101,9 @@ public class TransferRetriesApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface TransferRetriesApiClient {
-    
-        @Headers("Content-Type: text/plain")
-        @Body(" ")
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/transfer-retries")
         ResponseEnvelope<TransferRetry> create(@Param(value = "encoding_id") String encodingId) throws BitmovinException;
     

@@ -42,7 +42,7 @@ public class EnhancedWatermarkApi {
     public static BitmovinApiBuilder<EnhancedWatermarkApi> builder() {
         return new BitmovinApiBuilder<>(EnhancedWatermarkApi.class);
     }
-    
+
     /**
      * Create Enhanced Watermark Filter
      * 
@@ -57,7 +57,7 @@ public class EnhancedWatermarkApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Enhanced Watermark Filter
      * 
@@ -72,7 +72,7 @@ public class EnhancedWatermarkApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Enhanced Watermark Filter Details
      * 
@@ -87,7 +87,7 @@ public class EnhancedWatermarkApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Enhanced Watermark Filters
      * 
@@ -101,6 +101,7 @@ public class EnhancedWatermarkApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Enhanced Watermark Filters
      * 
@@ -115,9 +116,9 @@ public class EnhancedWatermarkApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface EnhancedWatermarkApiClient {
-    
+
         @RequestLine("POST /encoding/filters/enhanced-watermark")
         ResponseEnvelope<EnhancedWatermarkFilter> create(EnhancedWatermarkFilter enhancedWatermarkFilter) throws BitmovinException;
     

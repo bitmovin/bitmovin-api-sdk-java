@@ -34,6 +34,6 @@ public class EncodingsApi {
     public static BitmovinApiBuilder<EncodingsApi> builder() {
         return new BitmovinApiBuilder<>(EncodingsApi.class);
     }
-    
+
     
 }

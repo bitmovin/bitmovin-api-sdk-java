@@ -39,7 +39,7 @@ public class VttApi {
     public static BitmovinApiBuilder<VttApi> builder() {
         return new BitmovinApiBuilder<>(VttApi.class);
     }
-    
+
     /**
      * Add VTT Media
      * 
@@ -55,7 +55,7 @@ public class VttApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete VTT Media
      * 
@@ -71,7 +71,7 @@ public class VttApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * VTT Media Details
      * 
@@ -87,7 +87,7 @@ public class VttApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all VTT Media
      * 
@@ -102,6 +102,7 @@ public class VttApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all VTT Media
      * 
@@ -117,9 +118,9 @@ public class VttApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface VttApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/hls/{manifest_id}/media/vtt")
         ResponseEnvelope<VttMediaInfo> create(@Param(value = "manifest_id") String manifestId, VttMediaInfo vttMediaInfo) throws BitmovinException;
     

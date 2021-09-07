@@ -39,7 +39,7 @@ public class ImscApi {
     public static BitmovinApiBuilder<ImscApi> builder() {
         return new BitmovinApiBuilder<>(ImscApi.class);
     }
-    
+
     /**
      * Add IMSC Representation
      * 
@@ -57,7 +57,7 @@ public class ImscApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete IMSC Representation
      * 
@@ -75,7 +75,7 @@ public class ImscApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * IMSC Representation Details
      * 
@@ -93,7 +93,7 @@ public class ImscApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all IMSC Representations
      * 
@@ -110,6 +110,7 @@ public class ImscApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all IMSC Representations
      * 
@@ -127,9 +128,9 @@ public class ImscApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ImscApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/representations/imsc")
         ResponseEnvelope<DashImscRepresentation> create(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, DashImscRepresentation dashImscRepresentation) throws BitmovinException;
     

@@ -51,7 +51,7 @@ public class ConfigurationsApi {
     public static BitmovinApiBuilder<ConfigurationsApi> builder() {
         return new BitmovinApiBuilder<>(ConfigurationsApi.class);
     }
-    
+
     /**
      * Get Codec Configuration Details
      * 
@@ -66,7 +66,7 @@ public class ConfigurationsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all Codec Configurations
      * 
@@ -80,6 +80,7 @@ public class ConfigurationsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all Codec Configurations
      * 
@@ -94,9 +95,9 @@ public class ConfigurationsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ConfigurationsApiClient {
-    
+
         @RequestLine("GET /encoding/configurations/{configuration_id}")
         ResponseEnvelope<CodecConfiguration> get(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
     

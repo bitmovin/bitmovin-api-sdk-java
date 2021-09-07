@@ -22,6 +22,6 @@ public class DrmApi {
     public static BitmovinApiBuilder<DrmApi> builder() {
         return new BitmovinApiBuilder<>(DrmApi.class);
     }
-    
+
     
 }

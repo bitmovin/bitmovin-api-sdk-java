@@ -42,7 +42,7 @@ public class SccApi {
     public static BitmovinApiBuilder<SccApi> builder() {
         return new BitmovinApiBuilder<>(SccApi.class);
     }
-    
+
     /**
      * Convert SCC captions
      * 
@@ -58,7 +58,7 @@ public class SccApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Convert SCC captions
      * 
@@ -74,7 +74,7 @@ public class SccApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Convert SCC captions Details
      * 
@@ -90,7 +90,7 @@ public class SccApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Convert SCC captions
      * 
@@ -105,6 +105,7 @@ public class SccApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Convert SCC captions
      * 
@@ -120,9 +121,9 @@ public class SccApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface SccApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/captions/scc")
         ResponseEnvelope<ConvertSccCaption> create(@Param(value = "encoding_id") String encodingId, ConvertSccCaption convertSccCaption) throws BitmovinException;
     

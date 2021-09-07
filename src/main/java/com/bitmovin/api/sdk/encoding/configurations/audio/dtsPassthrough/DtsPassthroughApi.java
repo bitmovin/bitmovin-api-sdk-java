@@ -42,7 +42,7 @@ public class DtsPassthroughApi {
     public static BitmovinApiBuilder<DtsPassthroughApi> builder() {
         return new BitmovinApiBuilder<>(DtsPassthroughApi.class);
     }
-    
+
     /**
      * Create DTS Passthrough Configuration
      * 
@@ -57,7 +57,7 @@ public class DtsPassthroughApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete DTS Passthrough Codec Configuration
      * 
@@ -72,7 +72,7 @@ public class DtsPassthroughApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * DTS Passthrough Codec Configuration Details
      * 
@@ -87,7 +87,7 @@ public class DtsPassthroughApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List DTS Passthrough Configurations
      * 
@@ -101,6 +101,7 @@ public class DtsPassthroughApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List DTS Passthrough Configurations
      * 
@@ -115,9 +116,9 @@ public class DtsPassthroughApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface DtsPassthroughApiClient {
-    
+
         @RequestLine("POST /encoding/configurations/audio/dts-passthrough")
         ResponseEnvelope<DtsPassthroughAudioConfiguration> create(DtsPassthroughAudioConfiguration dtsPassthroughAudioConfiguration) throws BitmovinException;
     

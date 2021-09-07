@@ -75,7 +75,7 @@ public class StreamsApi {
     public static BitmovinApiBuilder<StreamsApi> builder() {
         return new BitmovinApiBuilder<>(StreamsApi.class);
     }
-    
+
     /**
      * Add Stream
      * 
@@ -91,7 +91,7 @@ public class StreamsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Stream
      * 
@@ -107,7 +107,7 @@ public class StreamsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Stream Details
      * 
@@ -123,7 +123,7 @@ public class StreamsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Streams
      * 
@@ -138,6 +138,7 @@ public class StreamsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Streams
      * 
@@ -153,9 +154,9 @@ public class StreamsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface StreamsApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/streams")
         ResponseEnvelope<Stream> create(@Param(value = "encoding_id") String encodingId, Stream stream) throws BitmovinException;
     

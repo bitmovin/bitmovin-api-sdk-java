@@ -42,7 +42,7 @@ public class AzureApi {
     public static BitmovinApiBuilder<AzureApi> builder() {
         return new BitmovinApiBuilder<>(AzureApi.class);
     }
-    
+
     /**
      * Create Azure Input
      * 
@@ -57,7 +57,7 @@ public class AzureApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Azure Input
      * 
@@ -72,7 +72,7 @@ public class AzureApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Azure Input Details
      * 
@@ -87,7 +87,7 @@ public class AzureApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Azure Inputs
      * 
@@ -101,6 +101,7 @@ public class AzureApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Azure Inputs
      * 
@@ -115,9 +116,9 @@ public class AzureApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface AzureApiClient {
-    
+
         @RequestLine("POST /encoding/inputs/azure")
         ResponseEnvelope<AzureInput> create(AzureInput azureInput) throws BitmovinException;
     

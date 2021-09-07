@@ -42,7 +42,7 @@ public class UnsharpApi {
     public static BitmovinApiBuilder<UnsharpApi> builder() {
         return new BitmovinApiBuilder<>(UnsharpApi.class);
     }
-    
+
     /**
      * Create Unsharp Filter
      * 
@@ -57,7 +57,7 @@ public class UnsharpApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Unsharp Filter
      * 
@@ -72,7 +72,7 @@ public class UnsharpApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Unsharp Filter Details
      * 
@@ -87,7 +87,7 @@ public class UnsharpApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Unsharp Filters
      * 
@@ -101,6 +101,7 @@ public class UnsharpApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Unsharp Filters
      * 
@@ -115,9 +116,9 @@ public class UnsharpApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface UnsharpApiClient {
-    
+
         @RequestLine("POST /encoding/filters/unsharp")
         ResponseEnvelope<UnsharpFilter> create(UnsharpFilter unsharpFilter) throws BitmovinException;
     

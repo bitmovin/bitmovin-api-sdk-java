@@ -78,7 +78,7 @@ public class OutputsApi {
     public static BitmovinApiBuilder<OutputsApi> builder() {
         return new BitmovinApiBuilder<>(OutputsApi.class);
     }
-    
+
     /**
      * Get Output Details
      * 
@@ -93,7 +93,7 @@ public class OutputsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all Outputs
      * 
@@ -107,6 +107,7 @@ public class OutputsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all Outputs
      * 
@@ -121,9 +122,9 @@ public class OutputsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface OutputsApiClient {
-    
+
         @RequestLine("GET /encoding/outputs/{output_id}")
         ResponseEnvelope<Output> get(@Param(value = "output_id") String outputId) throws BitmovinException;
     

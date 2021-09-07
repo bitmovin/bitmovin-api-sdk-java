@@ -42,7 +42,7 @@ public class MjpegApi {
     public static BitmovinApiBuilder<MjpegApi> builder() {
         return new BitmovinApiBuilder<>(MjpegApi.class);
     }
-    
+
     /**
      * Create MJPEG Codec Configuration
      * 
@@ -57,7 +57,7 @@ public class MjpegApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete MJPEG Codec Configuration
      * 
@@ -72,7 +72,7 @@ public class MjpegApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * MJPEG Codec Configuration Details
      * 
@@ -87,7 +87,7 @@ public class MjpegApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List MJPEG Configurations
      * 
@@ -101,6 +101,7 @@ public class MjpegApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List MJPEG Configurations
      * 
@@ -115,9 +116,9 @@ public class MjpegApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface MjpegApiClient {
-    
+
         @RequestLine("POST /encoding/configurations/video/mjpeg")
         ResponseEnvelope<MjpegVideoConfiguration> create(MjpegVideoConfiguration mjpegVideoConfiguration) throws BitmovinException;
     

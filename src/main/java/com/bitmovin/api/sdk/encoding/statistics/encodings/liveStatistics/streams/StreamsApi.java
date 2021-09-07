@@ -39,7 +39,7 @@ public class StreamsApi {
     public static BitmovinApiBuilder<StreamsApi> builder() {
         return new BitmovinApiBuilder<>(StreamsApi.class);
     }
-    
+
     /**
      * List Stream Infos of Live Statistics from an Encoding
      * 
@@ -54,6 +54,7 @@ public class StreamsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Stream Infos of Live Statistics from an Encoding
      * 
@@ -69,9 +70,9 @@ public class StreamsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface StreamsApiClient {
-    
+
         @RequestLine("GET /encoding/statistics/encodings/{encoding_id}/live-statistics/streams")
         ResponseEnvelope<PaginationResponse<StreamInfos>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

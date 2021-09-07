@@ -22,6 +22,6 @@ public class HdrApi {
     public static BitmovinApiBuilder<HdrApi> builder() {
         return new BitmovinApiBuilder<>(HdrApi.class);
     }
-    
+
     
 }

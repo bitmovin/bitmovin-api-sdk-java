@@ -39,7 +39,7 @@ public class DvbTeletextApi {
     public static BitmovinApiBuilder<DvbTeletextApi> builder() {
         return new BitmovinApiBuilder<>(DvbTeletextApi.class);
     }
-    
+
     /**
      * Add DVB-Teletext Input Stream
      * 
@@ -55,7 +55,7 @@ public class DvbTeletextApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete DVB-Teletext Input Stream
      * 
@@ -71,7 +71,7 @@ public class DvbTeletextApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * DVB-Teletext Input Stream Details
      * 
@@ -87,7 +87,7 @@ public class DvbTeletextApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List DVB-Teletext Input Streams
      * 
@@ -102,6 +102,7 @@ public class DvbTeletextApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List DVB-Teletext Input Streams
      * 
@@ -117,9 +118,9 @@ public class DvbTeletextApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface DvbTeletextApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/input-streams/subtitles/dvb-teletext")
         ResponseEnvelope<DvbTeletextInputStream> create(@Param(value = "encoding_id") String encodingId, DvbTeletextInputStream dvbTeletextInputStream) throws BitmovinException;
     

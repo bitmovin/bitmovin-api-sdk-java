@@ -42,7 +42,7 @@ public class Av1Api {
     public static BitmovinApiBuilder<Av1Api> builder() {
         return new BitmovinApiBuilder<>(Av1Api.class);
     }
-    
+
     /**
      * Create AV1 Codec Configuration
      * 
@@ -57,7 +57,7 @@ public class Av1Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete AV1 Codec Configuration
      * 
@@ -72,7 +72,7 @@ public class Av1Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * AV1 Codec Configuration Details
      * 
@@ -87,7 +87,7 @@ public class Av1Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List AV1 Codec Configurations
      * 
@@ -101,6 +101,7 @@ public class Av1Api {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List AV1 Codec Configurations
      * 
@@ -115,9 +116,9 @@ public class Av1Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface Av1ApiClient {
-    
+
         @RequestLine("POST /encoding/configurations/video/av1")
         ResponseEnvelope<Av1VideoConfiguration> create(Av1VideoConfiguration av1VideoConfiguration) throws BitmovinException;
     

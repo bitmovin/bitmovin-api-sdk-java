@@ -39,7 +39,7 @@ public class VttApi {
     public static BitmovinApiBuilder<VttApi> builder() {
         return new BitmovinApiBuilder<>(VttApi.class);
     }
-    
+
     /**
      * Add VTT Representation
      * 
@@ -57,7 +57,7 @@ public class VttApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete VTT Representation
      * 
@@ -75,7 +75,7 @@ public class VttApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * VTT Representation Details
      * 
@@ -93,7 +93,7 @@ public class VttApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all VTT Representations
      * 
@@ -110,6 +110,7 @@ public class VttApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all VTT Representations
      * 
@@ -127,9 +128,9 @@ public class VttApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface VttApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/representations/vtt")
         ResponseEnvelope<DashVttRepresentation> create(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, DashVttRepresentation dashVttRepresentation) throws BitmovinException;
     

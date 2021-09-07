@@ -42,7 +42,7 @@ public class GcsServiceAccountApi {
     public static BitmovinApiBuilder<GcsServiceAccountApi> builder() {
         return new BitmovinApiBuilder<>(GcsServiceAccountApi.class);
     }
-    
+
     /**
      * Create Service Account based GCS Input
      * 
@@ -57,7 +57,7 @@ public class GcsServiceAccountApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Service Account based GCS Input
      * 
@@ -72,7 +72,7 @@ public class GcsServiceAccountApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Service Account based GCS Input Details
      * 
@@ -87,7 +87,7 @@ public class GcsServiceAccountApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Service Account based GCS Inputs
      * 
@@ -101,6 +101,7 @@ public class GcsServiceAccountApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Service Account based GCS Inputs
      * 
@@ -115,9 +116,9 @@ public class GcsServiceAccountApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface GcsServiceAccountApiClient {
-    
+
         @RequestLine("POST /encoding/inputs/gcs-service-account")
         ResponseEnvelope<GcsServiceAccountInput> create(GcsServiceAccountInput gcsServiceAccountInput) throws BitmovinException;
     

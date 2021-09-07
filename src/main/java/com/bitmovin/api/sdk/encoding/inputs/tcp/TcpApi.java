@@ -39,7 +39,7 @@ public class TcpApi {
     public static BitmovinApiBuilder<TcpApi> builder() {
         return new BitmovinApiBuilder<>(TcpApi.class);
     }
-    
+
     /**
      * TCP Input Details
      * 
@@ -54,7 +54,7 @@ public class TcpApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List TCP inputs
      * 
@@ -68,6 +68,7 @@ public class TcpApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List TCP inputs
      * 
@@ -82,9 +83,9 @@ public class TcpApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface TcpApiClient {
-    
+
         @RequestLine("GET /encoding/inputs/tcp/{input_id}")
         ResponseEnvelope<TcpInput> get(@Param(value = "input_id") String inputId) throws BitmovinException;
     

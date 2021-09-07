@@ -45,7 +45,7 @@ public class WebmApi {
     public static BitmovinApiBuilder<WebmApi> builder() {
         return new BitmovinApiBuilder<>(WebmApi.class);
     }
-    
+
     /**
      * Add WebM muxing
      * 
@@ -61,7 +61,7 @@ public class WebmApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete WebM muxing
      * 
@@ -77,7 +77,7 @@ public class WebmApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * WebM muxing details
      * 
@@ -93,7 +93,7 @@ public class WebmApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List WebM muxings
      * 
@@ -108,6 +108,7 @@ public class WebmApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List WebM muxings
      * 
@@ -123,9 +124,9 @@ public class WebmApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface WebmApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/webm")
         ResponseEnvelope<WebmMuxing> create(@Param(value = "encoding_id") String encodingId, WebmMuxing webmMuxing) throws BitmovinException;
     

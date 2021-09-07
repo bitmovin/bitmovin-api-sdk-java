@@ -39,7 +39,7 @@ public class FiltersApi {
     public static BitmovinApiBuilder<FiltersApi> builder() {
         return new BitmovinApiBuilder<>(FiltersApi.class);
     }
-    
+
     /**
      * Add Filters to Stream
      * 
@@ -56,7 +56,7 @@ public class FiltersApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Specific Filter from Stream
      * 
@@ -73,7 +73,7 @@ public class FiltersApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete All Filters from Stream
      * 
@@ -89,7 +89,7 @@ public class FiltersApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List the filters of a stream
      * 
@@ -105,6 +105,7 @@ public class FiltersApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List the filters of a stream
      * 
@@ -121,9 +122,9 @@ public class FiltersApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface FiltersApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/streams/{stream_id}/filters")
         ResponseEnvelope<StreamFilterList> create(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, List<StreamFilter> streamFilter) throws BitmovinException;
     

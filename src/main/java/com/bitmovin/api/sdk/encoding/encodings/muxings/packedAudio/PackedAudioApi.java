@@ -48,7 +48,7 @@ public class PackedAudioApi {
     public static BitmovinApiBuilder<PackedAudioApi> builder() {
         return new BitmovinApiBuilder<>(PackedAudioApi.class);
     }
-    
+
     /**
      * Add Packed Audio muxing
      * 
@@ -64,7 +64,7 @@ public class PackedAudioApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Packed Audio muxing
      * 
@@ -80,7 +80,7 @@ public class PackedAudioApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Packed Audio muxing details
      * 
@@ -96,7 +96,7 @@ public class PackedAudioApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Packed Audio muxings
      * 
@@ -111,6 +111,7 @@ public class PackedAudioApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Packed Audio muxings
      * 
@@ -126,9 +127,9 @@ public class PackedAudioApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface PackedAudioApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/packed-audio")
         ResponseEnvelope<PackedAudioMuxing> create(@Param(value = "encoding_id") String encodingId, PackedAudioMuxing packedAudioMuxing) throws BitmovinException;
     

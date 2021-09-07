@@ -48,7 +48,7 @@ public class ProgressiveWebmApi {
     public static BitmovinApiBuilder<ProgressiveWebmApi> builder() {
         return new BitmovinApiBuilder<>(ProgressiveWebmApi.class);
     }
-    
+
     /**
      * Add Progressive WebM muxing
      * 
@@ -64,7 +64,7 @@ public class ProgressiveWebmApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Progressive WebM muxing
      * 
@@ -80,7 +80,7 @@ public class ProgressiveWebmApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Progressive WebM muxing details
      * 
@@ -96,7 +96,7 @@ public class ProgressiveWebmApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Progressive WebM muxings
      * 
@@ -111,6 +111,7 @@ public class ProgressiveWebmApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Progressive WebM muxings
      * 
@@ -126,9 +127,9 @@ public class ProgressiveWebmApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ProgressiveWebmApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/progressive-webm")
         ResponseEnvelope<ProgressiveWebmMuxing> create(@Param(value = "encoding_id") String encodingId, ProgressiveWebmMuxing progressiveWebmMuxing) throws BitmovinException;
     

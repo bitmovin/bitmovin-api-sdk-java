@@ -39,7 +39,7 @@ public class AudioMixApi {
     public static BitmovinApiBuilder<AudioMixApi> builder() {
         return new BitmovinApiBuilder<>(AudioMixApi.class);
     }
-    
+
     /**
      * Add audio mix input stream
      * 
@@ -55,7 +55,7 @@ public class AudioMixApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete audio mix input stream
      * 
@@ -71,7 +71,7 @@ public class AudioMixApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Audio mix input stream details
      * 
@@ -87,7 +87,7 @@ public class AudioMixApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List audio mix input stream
      * 
@@ -102,6 +102,7 @@ public class AudioMixApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List audio mix input stream
      * 
@@ -117,9 +118,9 @@ public class AudioMixApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface AudioMixApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/input-streams/audio-mix")
         ResponseEnvelope<AudioMixInputStream> create(@Param(value = "encoding_id") String encodingId, AudioMixInputStream audioMixInputStream) throws BitmovinException;
     

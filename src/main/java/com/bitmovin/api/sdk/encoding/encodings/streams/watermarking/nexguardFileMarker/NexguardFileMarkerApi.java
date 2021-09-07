@@ -42,7 +42,7 @@ public class NexguardFileMarkerApi {
     public static BitmovinApiBuilder<NexguardFileMarkerApi> builder() {
         return new BitmovinApiBuilder<>(NexguardFileMarkerApi.class);
     }
-    
+
     /**
      * Add a nexguard file marker watermarking configurations
      * Nexguard FileMarker watermarking has several restrictions on the shape of your streams and muxings. The supported muxings are currently fMP4, TS and WebM; segment naming must follow &#x60;&lt;filename&gt;_&lt;number&gt;.&lt;extension&gt;&#x60;; init segment naming must follow &#x60;&lt;filename&gt;_init.&lt;extension&gt;&#x60; Supported framerates:   * 23.976   * 24.000   * 25.000   * 29.970   * 30.000   * 48.000   * 50.000   * 59.940   * 60.000  Resolution:   * 320 &lt;&#x3D; width &lt;&#x3D; 5120   * 240 &lt;&#x3D; height &lt;&#x3D; 3200  And the GOP size has to be 2 or 2.002 seconds. Please note that our api requires the gop size to be in frames. 
@@ -59,7 +59,7 @@ public class NexguardFileMarkerApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete nexguard file marker watermarking configurations
      * 
@@ -76,7 +76,7 @@ public class NexguardFileMarkerApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Nexguard file marker watermarking configurations details
      * 
@@ -93,7 +93,7 @@ public class NexguardFileMarkerApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List nexguard file marker watermarking configurations
      * 
@@ -109,6 +109,7 @@ public class NexguardFileMarkerApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List nexguard file marker watermarking configurations
      * 
@@ -125,9 +126,9 @@ public class NexguardFileMarkerApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface NexguardFileMarkerApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/streams/{stream_id}/watermarking/nexguard-file-marker")
         ResponseEnvelope<NexGuardFileMarker> create(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, NexGuardFileMarker nexGuardFileMarker) throws BitmovinException;
     

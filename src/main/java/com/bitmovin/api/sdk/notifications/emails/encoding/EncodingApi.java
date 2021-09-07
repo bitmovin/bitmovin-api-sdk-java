@@ -42,7 +42,7 @@ public class EncodingApi {
     public static BitmovinApiBuilder<EncodingApi> builder() {
         return new BitmovinApiBuilder<>(EncodingApi.class);
     }
-    
+
     /**
      * List Email Notifications (All Encodings)
      * 
@@ -56,6 +56,7 @@ public class EncodingApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Email Notifications (All Encodings)
      * 
@@ -70,9 +71,9 @@ public class EncodingApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface EncodingApiClient {
-    
+
         @RequestLine("GET /notifications/emails/encoding")
         ResponseEnvelope<PaginationResponse<EmailNotification>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

@@ -42,7 +42,7 @@ public class DolbyAtmosApi {
     public static BitmovinApiBuilder<DolbyAtmosApi> builder() {
         return new BitmovinApiBuilder<>(DolbyAtmosApi.class);
     }
-    
+
     /**
      * Create Dolby Atmos Configuration
      * 
@@ -57,7 +57,7 @@ public class DolbyAtmosApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Dolby Atmos Codec Configuration
      * 
@@ -72,7 +72,7 @@ public class DolbyAtmosApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Dolby Atmos Codec Configuration Details
      * 
@@ -87,7 +87,7 @@ public class DolbyAtmosApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Dolby Atmos Configurations
      * 
@@ -101,6 +101,7 @@ public class DolbyAtmosApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Dolby Atmos Configurations
      * 
@@ -115,9 +116,9 @@ public class DolbyAtmosApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface DolbyAtmosApiClient {
-    
+
         @RequestLine("POST /encoding/configurations/audio/dolby-atmos")
         ResponseEnvelope<DolbyAtmosAudioConfiguration> create(DolbyAtmosAudioConfiguration dolbyAtmosAudioConfiguration) throws BitmovinException;
     

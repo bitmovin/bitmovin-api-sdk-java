@@ -39,7 +39,7 @@ public class FileApi {
     public static BitmovinApiBuilder<FileApi> builder() {
         return new BitmovinApiBuilder<>(FileApi.class);
     }
-    
+
     /**
      * Add File input stream
      * 
@@ -55,7 +55,7 @@ public class FileApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete File stream
      * 
@@ -71,7 +71,7 @@ public class FileApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * File input stream details
      * 
@@ -87,7 +87,7 @@ public class FileApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List File input stream
      * 
@@ -102,6 +102,7 @@ public class FileApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List File input stream
      * 
@@ -117,9 +118,9 @@ public class FileApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface FileApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/input-streams/file")
         ResponseEnvelope<FileInputStream> create(@Param(value = "encoding_id") String encodingId, FileInputStream fileInputStream) throws BitmovinException;
     

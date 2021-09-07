@@ -39,7 +39,7 @@ public class TypeApi {
     public static BitmovinApiBuilder<TypeApi> builder() {
         return new BitmovinApiBuilder<>(TypeApi.class);
     }
-    
+
     /**
      * Get Manifest Type
      * 
@@ -54,9 +54,9 @@ public class TypeApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface TypeApiClient {
-    
+
         @RequestLine("GET /encoding/manifests/{manifest_id}/type")
         ResponseEnvelope<ManifestTypeResponse> get(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
     }

@@ -39,7 +39,7 @@ public class ExportsApi {
     public static BitmovinApiBuilder<ExportsApi> builder() {
         return new BitmovinApiBuilder<>(ExportsApi.class);
     }
-    
+
     /**
      * Create Export Task
      * 
@@ -54,7 +54,7 @@ public class ExportsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Get export task
      * 
@@ -69,7 +69,7 @@ public class ExportsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Export Tasks
      * 
@@ -83,6 +83,7 @@ public class ExportsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Export Tasks
      * 
@@ -97,9 +98,9 @@ public class ExportsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ExportsApiClient {
-    
+
         @RequestLine("POST /analytics/exports")
         ResponseEnvelope<AnalyticsExportTask> create(AnalyticsExportTask analyticsExportTask) throws BitmovinException;
     

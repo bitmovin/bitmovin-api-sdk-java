@@ -45,7 +45,7 @@ public class PeriodsApi {
     public static BitmovinApiBuilder<PeriodsApi> builder() {
         return new BitmovinApiBuilder<>(PeriodsApi.class);
     }
-    
+
     /**
      * Add Period
      * 
@@ -61,7 +61,7 @@ public class PeriodsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Period
      * 
@@ -77,7 +77,7 @@ public class PeriodsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Period Details
      * 
@@ -93,7 +93,7 @@ public class PeriodsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all Periods
      * 
@@ -108,6 +108,7 @@ public class PeriodsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all Periods
      * 
@@ -123,9 +124,9 @@ public class PeriodsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface PeriodsApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/periods")
         ResponseEnvelope<Period> create(@Param(value = "manifest_id") String manifestId, Period period) throws BitmovinException;
     

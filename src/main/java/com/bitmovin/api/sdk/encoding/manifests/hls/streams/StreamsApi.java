@@ -45,7 +45,7 @@ public class StreamsApi {
     public static BitmovinApiBuilder<StreamsApi> builder() {
         return new BitmovinApiBuilder<>(StreamsApi.class);
     }
-    
+
     /**
      * Add Variant Stream
      * 
@@ -61,7 +61,7 @@ public class StreamsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Variant Stream
      * 
@@ -77,7 +77,7 @@ public class StreamsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Variant Stream Details
      * 
@@ -93,7 +93,7 @@ public class StreamsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all Variant Streams
      * 
@@ -108,6 +108,7 @@ public class StreamsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all Variant Streams
      * 
@@ -123,9 +124,9 @@ public class StreamsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface StreamsApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/hls/{manifest_id}/streams")
         ResponseEnvelope<StreamInfo> create(@Param(value = "manifest_id") String manifestId, StreamInfo streamInfo) throws BitmovinException;
     

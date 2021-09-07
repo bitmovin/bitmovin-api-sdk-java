@@ -45,7 +45,7 @@ public class OrganizationsApi {
     public static BitmovinApiBuilder<OrganizationsApi> builder() {
         return new BitmovinApiBuilder<>(OrganizationsApi.class);
     }
-    
+
     /**
      * Add Organization
      * 
@@ -60,7 +60,7 @@ public class OrganizationsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Organization Details
      * 
@@ -75,7 +75,7 @@ public class OrganizationsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Organizations
      * 
@@ -89,7 +89,7 @@ public class OrganizationsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Update Organization
      * 
@@ -105,9 +105,9 @@ public class OrganizationsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface OrganizationsApiClient {
-    
+
         @RequestLine("POST /account/organizations")
         ResponseEnvelope<Organization> create(Organization organization) throws BitmovinException;
     

@@ -39,7 +39,7 @@ public class RtmpApi {
     public static BitmovinApiBuilder<RtmpApi> builder() {
         return new BitmovinApiBuilder<>(RtmpApi.class);
     }
-    
+
     /**
      * RTMP Input Details
      * 
@@ -54,7 +54,7 @@ public class RtmpApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List RTMP Inputs
      * 
@@ -68,6 +68,7 @@ public class RtmpApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List RTMP Inputs
      * 
@@ -82,9 +83,9 @@ public class RtmpApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface RtmpApiClient {
-    
+
         @RequestLine("GET /encoding/inputs/rtmp/{input_id}")
         ResponseEnvelope<RtmpInput> get(@Param(value = "input_id") String inputId) throws BitmovinException;
     

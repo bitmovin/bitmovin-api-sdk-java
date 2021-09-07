@@ -39,7 +39,7 @@ public class VideoApi {
     public static BitmovinApiBuilder<VideoApi> builder() {
         return new BitmovinApiBuilder<>(VideoApi.class);
     }
-    
+
     /**
      * Add Video AdaptationSet
      * 
@@ -56,7 +56,7 @@ public class VideoApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Video AdaptationSet
      * 
@@ -73,7 +73,7 @@ public class VideoApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Video AdaptationSet Details
      * 
@@ -90,7 +90,7 @@ public class VideoApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all Video AdaptationSets
      * 
@@ -106,6 +106,7 @@ public class VideoApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all Video AdaptationSets
      * 
@@ -122,9 +123,9 @@ public class VideoApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface VideoApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/video")
         ResponseEnvelope<VideoAdaptationSet> create(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, VideoAdaptationSet videoAdaptationSet) throws BitmovinException;
     

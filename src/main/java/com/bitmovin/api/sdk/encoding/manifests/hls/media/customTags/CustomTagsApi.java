@@ -39,7 +39,7 @@ public class CustomTagsApi {
     public static BitmovinApiBuilder<CustomTagsApi> builder() {
         return new BitmovinApiBuilder<>(CustomTagsApi.class);
     }
-    
+
     /**
      * Add Custom Tag to Audio Media
      * 
@@ -56,7 +56,7 @@ public class CustomTagsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Custom Tag
      * 
@@ -73,7 +73,7 @@ public class CustomTagsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Custom Tag Details
      * 
@@ -90,7 +90,7 @@ public class CustomTagsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all Custom Tags of a Audio media
      * 
@@ -106,6 +106,7 @@ public class CustomTagsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all Custom Tags of a Audio media
      * 
@@ -122,9 +123,9 @@ public class CustomTagsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface CustomTagsApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/hls/{manifest_id}/media/{media_id}/custom-tags")
         ResponseEnvelope<CustomTag> create(@Param(value = "manifest_id") String manifestId, @Param(value = "media_id") String mediaId, CustomTag customTag) throws BitmovinException;
     

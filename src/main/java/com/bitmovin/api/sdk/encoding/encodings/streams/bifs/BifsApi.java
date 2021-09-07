@@ -42,7 +42,7 @@ public class BifsApi {
     public static BitmovinApiBuilder<BifsApi> builder() {
         return new BitmovinApiBuilder<>(BifsApi.class);
     }
-    
+
     /**
      * Add a Roku Bif file
      * 
@@ -59,7 +59,7 @@ public class BifsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Bif
      * 
@@ -76,7 +76,7 @@ public class BifsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Bif Details
      * 
@@ -93,7 +93,7 @@ public class BifsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Bifs
      * 
@@ -109,6 +109,7 @@ public class BifsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Bifs
      * 
@@ -125,9 +126,9 @@ public class BifsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface BifsApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/streams/{stream_id}/bifs")
         ResponseEnvelope<Bif> create(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, Bif bif) throws BitmovinException;
     

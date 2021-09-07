@@ -51,7 +51,7 @@ public class ManifestsApi {
     public static BitmovinApiBuilder<ManifestsApi> builder() {
         return new BitmovinApiBuilder<>(ManifestsApi.class);
     }
-    
+
     /**
      * List all Manifests
      * 
@@ -65,6 +65,7 @@ public class ManifestsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all Manifests
      * 
@@ -79,9 +80,9 @@ public class ManifestsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ManifestsApiClient {
-    
+
         @RequestLine("GET /encoding/manifests")
         ResponseEnvelope<PaginationResponse<Manifest>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

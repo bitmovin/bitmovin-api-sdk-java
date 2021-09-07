@@ -51,7 +51,7 @@ public class ProgressiveTsApi {
     public static BitmovinApiBuilder<ProgressiveTsApi> builder() {
         return new BitmovinApiBuilder<>(ProgressiveTsApi.class);
     }
-    
+
     /**
      * Add Progressive TS muxing
      * 
@@ -67,7 +67,7 @@ public class ProgressiveTsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Progressive TS muxing
      * 
@@ -83,7 +83,7 @@ public class ProgressiveTsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Progressive TS muxing details
      * 
@@ -99,7 +99,7 @@ public class ProgressiveTsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Progressive TS muxings
      * 
@@ -114,6 +114,7 @@ public class ProgressiveTsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Progressive TS muxings
      * 
@@ -129,9 +130,9 @@ public class ProgressiveTsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ProgressiveTsApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/progressive-ts")
         ResponseEnvelope<ProgressiveTsMuxing> create(@Param(value = "encoding_id") String encodingId, ProgressiveTsMuxing progressiveTsMuxing) throws BitmovinException;
     

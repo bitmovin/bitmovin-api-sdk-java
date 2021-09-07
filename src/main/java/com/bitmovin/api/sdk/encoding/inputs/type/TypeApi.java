@@ -39,7 +39,7 @@ public class TypeApi {
     public static BitmovinApiBuilder<TypeApi> builder() {
         return new BitmovinApiBuilder<>(TypeApi.class);
     }
-    
+
     /**
      * Get Input Type
      * 
@@ -54,9 +54,9 @@ public class TypeApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface TypeApiClient {
-    
+
         @RequestLine("GET /encoding/inputs/{input_id}/type")
         ResponseEnvelope<InputTypeResponse> get(@Param(value = "input_id") String inputId) throws BitmovinException;
     }

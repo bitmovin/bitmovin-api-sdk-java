@@ -42,7 +42,7 @@ public class CropApi {
     public static BitmovinApiBuilder<CropApi> builder() {
         return new BitmovinApiBuilder<>(CropApi.class);
     }
-    
+
     /**
      * Create Crop Filter
      * 
@@ -57,7 +57,7 @@ public class CropApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Crop Filter
      * 
@@ -72,7 +72,7 @@ public class CropApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Crop Filter Details
      * 
@@ -87,7 +87,7 @@ public class CropApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Crop Filters
      * 
@@ -101,6 +101,7 @@ public class CropApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Crop Filters
      * 
@@ -115,9 +116,9 @@ public class CropApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface CropApiClient {
-    
+
         @RequestLine("POST /encoding/filters/crop")
         ResponseEnvelope<CropFilter> create(CropFilter cropFilter) throws BitmovinException;
     

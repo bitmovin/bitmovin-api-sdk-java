@@ -42,7 +42,7 @@ public class LabelsApi {
     public static BitmovinApiBuilder<LabelsApi> builder() {
         return new BitmovinApiBuilder<>(LabelsApi.class);
     }
-    
+
     /**
      * Get Statistics per Label
      * 
@@ -56,6 +56,7 @@ public class LabelsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * Get Statistics per Label
      * 
@@ -70,7 +71,7 @@ public class LabelsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Get statistics per label within specific dates
      * 
@@ -86,6 +87,7 @@ public class LabelsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * Get statistics per label within specific dates
      * 
@@ -102,9 +104,9 @@ public class LabelsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface LabelsApiClient {
-    
+
         @RequestLine("GET /encoding/statistics/labels")
         ResponseEnvelope<PaginationResponse<StatisticsPerLabel>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     

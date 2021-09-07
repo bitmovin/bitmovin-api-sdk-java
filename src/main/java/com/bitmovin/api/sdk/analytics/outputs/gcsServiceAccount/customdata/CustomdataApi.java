@@ -39,7 +39,7 @@ public class CustomdataApi {
     public static BitmovinApiBuilder<CustomdataApi> builder() {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
-    
+
     /**
      * Service Account based GCS Output Custom Data
      * 
@@ -54,9 +54,9 @@ public class CustomdataApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface CustomdataApiClient {
-    
+
         @RequestLine("GET /analytics/outputs/gcs-service-account/{output_id}/customData")
         ResponseEnvelope<CustomData> getCustomData(@Param(value = "output_id") String outputId) throws BitmovinException;
     }

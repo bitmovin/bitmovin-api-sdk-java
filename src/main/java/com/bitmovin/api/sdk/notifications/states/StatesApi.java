@@ -39,7 +39,7 @@ public class StatesApi {
     public static BitmovinApiBuilder<StatesApi> builder() {
         return new BitmovinApiBuilder<>(StatesApi.class);
     }
-    
+
     /**
      * List Notification State History (Specific Resource)
      * 
@@ -55,6 +55,7 @@ public class StatesApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Notification State History (Specific Resource)
      * 
@@ -71,9 +72,9 @@ public class StatesApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface StatesApiClient {
-    
+
         @RequestLine("GET /notifications/{notification_id}/states/{resource_id}")
         ResponseEnvelope<PaginationResponse<NotificationStateEntry>> list(@Param(value = "notification_id") String notificationId, @Param(value = "resource_id") String resourceId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

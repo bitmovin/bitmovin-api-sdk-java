@@ -42,7 +42,7 @@ public class SftpApi {
     public static BitmovinApiBuilder<SftpApi> builder() {
         return new BitmovinApiBuilder<>(SftpApi.class);
     }
-    
+
     /**
      * Create SFTP Output
      * 
@@ -57,7 +57,7 @@ public class SftpApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete SFTP Output
      * 
@@ -72,7 +72,7 @@ public class SftpApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * SFTP Output Details
      * 
@@ -87,7 +87,7 @@ public class SftpApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List SFTP Outputs
      * 
@@ -101,6 +101,7 @@ public class SftpApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List SFTP Outputs
      * 
@@ -115,9 +116,9 @@ public class SftpApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface SftpApiClient {
-    
+
         @RequestLine("POST /encoding/outputs/sftp")
         ResponseEnvelope<SftpOutput> create(SftpOutput sftpOutput) throws BitmovinException;
     

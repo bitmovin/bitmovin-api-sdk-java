@@ -42,7 +42,7 @@ public class LicensesApi {
     public static BitmovinApiBuilder<LicensesApi> builder() {
         return new BitmovinApiBuilder<>(LicensesApi.class);
     }
-    
+
     /**
      * Create Analytics License
      * 
@@ -57,7 +57,7 @@ public class LicensesApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Get License
      * 
@@ -72,7 +72,7 @@ public class LicensesApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Analytics Licenses
      * 
@@ -86,7 +86,7 @@ public class LicensesApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Update Analytics License
      * 
@@ -102,9 +102,9 @@ public class LicensesApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface LicensesApiClient {
-    
+
         @RequestLine("POST /analytics/licenses")
         ResponseEnvelope<AnalyticsLicense> create(AnalyticsLicense analyticsLicense) throws BitmovinException;
     

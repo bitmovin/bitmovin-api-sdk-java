@@ -42,7 +42,7 @@ public class SccApi {
     public static BitmovinApiBuilder<SccApi> builder() {
         return new BitmovinApiBuilder<>(SccApi.class);
     }
-    
+
     /**
      * Embed SCC captions as 608/708 into Stream
      * 
@@ -59,7 +59,7 @@ public class SccApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete SCC captions as 608/708 from Stream
      * 
@@ -76,7 +76,7 @@ public class SccApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Embed SCC captions as 608/708 Details
      * 
@@ -93,7 +93,7 @@ public class SccApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List SCC captions as 608/708 from Stream
      * 
@@ -109,6 +109,7 @@ public class SccApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List SCC captions as 608/708 from Stream
      * 
@@ -125,9 +126,9 @@ public class SccApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface SccApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/streams/{stream_id}/captions/608-708/scc")
         ResponseEnvelope<SccCaption> create(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, SccCaption sccCaption) throws BitmovinException;
     

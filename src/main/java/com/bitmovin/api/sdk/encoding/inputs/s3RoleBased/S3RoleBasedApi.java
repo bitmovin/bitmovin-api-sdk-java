@@ -42,7 +42,7 @@ public class S3RoleBasedApi {
     public static BitmovinApiBuilder<S3RoleBasedApi> builder() {
         return new BitmovinApiBuilder<>(S3RoleBasedApi.class);
     }
-    
+
     /**
      * Create S3 Role-based Input
      * 
@@ -57,7 +57,7 @@ public class S3RoleBasedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete S3 Role-based Input
      * 
@@ -72,7 +72,7 @@ public class S3RoleBasedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * S3 Role-based Input Details
      * 
@@ -87,7 +87,7 @@ public class S3RoleBasedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List S3 Role-based Inputs
      * 
@@ -101,6 +101,7 @@ public class S3RoleBasedApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List S3 Role-based Inputs
      * 
@@ -115,9 +116,9 @@ public class S3RoleBasedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface S3RoleBasedApiClient {
-    
+
         @RequestLine("POST /encoding/inputs/s3-role-based")
         ResponseEnvelope<S3RoleBasedInput> create(S3RoleBasedInput s3RoleBasedInput) throws BitmovinException;
     

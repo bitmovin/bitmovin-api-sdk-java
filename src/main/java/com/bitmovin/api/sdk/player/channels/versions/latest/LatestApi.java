@@ -39,7 +39,7 @@ public class LatestApi {
     public static BitmovinApiBuilder<LatestApi> builder() {
         return new BitmovinApiBuilder<>(LatestApi.class);
     }
-    
+
     /**
      * Get Latest Player Version for Channel
      * 
@@ -54,9 +54,9 @@ public class LatestApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface LatestApiClient {
-    
+
         @RequestLine("GET /player/channels/{channel_name}/versions/latest")
         ResponseEnvelope<PlayerVersion> get(@Param(value = "channel_name") String channelName) throws BitmovinException;
     }

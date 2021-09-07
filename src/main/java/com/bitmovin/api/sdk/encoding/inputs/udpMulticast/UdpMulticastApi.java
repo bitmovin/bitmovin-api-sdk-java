@@ -42,7 +42,7 @@ public class UdpMulticastApi {
     public static BitmovinApiBuilder<UdpMulticastApi> builder() {
         return new BitmovinApiBuilder<>(UdpMulticastApi.class);
     }
-    
+
     /**
      * Create UDP multicast input
      * 
@@ -57,7 +57,7 @@ public class UdpMulticastApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete UDP multicast input
      * 
@@ -72,7 +72,7 @@ public class UdpMulticastApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * UDP multicast Input Details
      * 
@@ -87,7 +87,7 @@ public class UdpMulticastApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List UDP multicast inputs
      * 
@@ -101,6 +101,7 @@ public class UdpMulticastApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List UDP multicast inputs
      * 
@@ -115,9 +116,9 @@ public class UdpMulticastApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface UdpMulticastApiClient {
-    
+
         @RequestLine("POST /encoding/inputs/udp-multicast")
         ResponseEnvelope<UdpMulticastInput> create(UdpMulticastInput udpMulticastInput) throws BitmovinException;
     

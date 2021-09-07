@@ -37,6 +37,6 @@ public class AdaptationsetsApi {
     public static BitmovinApiBuilder<AdaptationsetsApi> builder() {
         return new BitmovinApiBuilder<>(AdaptationsetsApi.class);
     }
-    
+
     
 }

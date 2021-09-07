@@ -42,7 +42,7 @@ public class TransferErrorApi {
     public static BitmovinApiBuilder<TransferErrorApi> builder() {
         return new BitmovinApiBuilder<>(TransferErrorApi.class);
     }
-    
+
     /**
      * Add Encoding Transfer Error Webhook
      * 
@@ -57,7 +57,7 @@ public class TransferErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Add Encoding Transfer Error Webhook for specific Encoding Resource
      * 
@@ -73,7 +73,7 @@ public class TransferErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Encoding Transfer Error Webhook for specific Encoding Resource
      * 
@@ -89,7 +89,7 @@ public class TransferErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Encoding Transfer Error Webhook
      * 
@@ -104,7 +104,7 @@ public class TransferErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Encoding Transfer Error Webhook Details for specific Encoding Resource
      * 
@@ -120,7 +120,7 @@ public class TransferErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Encoding Transfer Error Webhook Details
      * 
@@ -135,7 +135,7 @@ public class TransferErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Encoding Transfer-Error Webhooks
      * 
@@ -149,6 +149,7 @@ public class TransferErrorApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Encoding Transfer-Error Webhooks
      * 
@@ -163,7 +164,7 @@ public class TransferErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Encoding Transfer Error Webhooks for specific Encoding Resource
      * 
@@ -178,6 +179,7 @@ public class TransferErrorApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Encoding Transfer Error Webhooks for specific Encoding Resource
      * 
@@ -193,9 +195,9 @@ public class TransferErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface TransferErrorApiClient {
-    
+
         @RequestLine("POST /notifications/webhooks/encoding/encodings/transfer-error")
         ResponseEnvelope<Webhook> create(Webhook webhook) throws BitmovinException;
     

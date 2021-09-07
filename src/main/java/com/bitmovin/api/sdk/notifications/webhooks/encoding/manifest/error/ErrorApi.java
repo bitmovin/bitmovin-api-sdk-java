@@ -39,7 +39,7 @@ public class ErrorApi {
     public static BitmovinApiBuilder<ErrorApi> builder() {
         return new BitmovinApiBuilder<>(ErrorApi.class);
     }
-    
+
     /**
      * Add Manifest Error Webhook (All Manifests)
      * 
@@ -54,7 +54,7 @@ public class ErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Add Manifest Error Webhook Notification (Specific Manifest)
      * 
@@ -70,7 +70,7 @@ public class ErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Manifest Error Webhook
      * 
@@ -85,7 +85,7 @@ public class ErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Replace Manifest Error Webhook Notification
      * 
@@ -101,9 +101,9 @@ public class ErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ErrorApiClient {
-    
+
         @RequestLine("POST /notifications/webhooks/encoding/manifest/error")
         ResponseEnvelope<Webhook> create(Webhook webhook) throws BitmovinException;
     

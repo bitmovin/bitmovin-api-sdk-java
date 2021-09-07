@@ -45,7 +45,7 @@ public class SidecarsApi {
     public static BitmovinApiBuilder<SidecarsApi> builder() {
         return new BitmovinApiBuilder<>(SidecarsApi.class);
     }
-    
+
     /**
      * Add Sidecar
      * 
@@ -61,7 +61,7 @@ public class SidecarsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Sidecar
      * 
@@ -77,7 +77,7 @@ public class SidecarsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Sidecar Details
      * 
@@ -93,7 +93,7 @@ public class SidecarsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Sidecars
      * 
@@ -108,6 +108,7 @@ public class SidecarsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Sidecars
      * 
@@ -123,9 +124,9 @@ public class SidecarsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface SidecarsApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/sidecars")
         ResponseEnvelope<SidecarFile> create(@Param(value = "encoding_id") String encodingId, SidecarFile sidecarFile) throws BitmovinException;
     

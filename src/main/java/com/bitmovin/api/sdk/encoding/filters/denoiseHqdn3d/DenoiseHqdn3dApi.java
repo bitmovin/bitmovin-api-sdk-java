@@ -42,7 +42,7 @@ public class DenoiseHqdn3dApi {
     public static BitmovinApiBuilder<DenoiseHqdn3dApi> builder() {
         return new BitmovinApiBuilder<>(DenoiseHqdn3dApi.class);
     }
-    
+
     /**
      * Create Denoise hqdn3d Filter
      * 
@@ -57,7 +57,7 @@ public class DenoiseHqdn3dApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Denoise hqdn3d Filter
      * 
@@ -72,7 +72,7 @@ public class DenoiseHqdn3dApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Denoise hqdn3d Filter Details
      * 
@@ -87,7 +87,7 @@ public class DenoiseHqdn3dApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Denoise hqdn3d Filters
      * 
@@ -101,6 +101,7 @@ public class DenoiseHqdn3dApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Denoise hqdn3d Filters
      * 
@@ -115,9 +116,9 @@ public class DenoiseHqdn3dApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface DenoiseHqdn3dApiClient {
-    
+
         @RequestLine("POST /encoding/filters/denoise-hqdn3d")
         ResponseEnvelope<DenoiseHqdn3dFilter> create(DenoiseHqdn3dFilter denoiseHqdn3dFilter) throws BitmovinException;
     

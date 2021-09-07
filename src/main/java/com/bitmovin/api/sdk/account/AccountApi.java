@@ -28,6 +28,6 @@ public class AccountApi {
     public static BitmovinApiBuilder<AccountApi> builder() {
         return new BitmovinApiBuilder<>(AccountApi.class);
     }
-    
+
     
 }

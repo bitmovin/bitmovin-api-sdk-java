@@ -42,7 +42,7 @@ public class Mp3Api {
     public static BitmovinApiBuilder<Mp3Api> builder() {
         return new BitmovinApiBuilder<>(Mp3Api.class);
     }
-    
+
     /**
      * Create MP3 Codec Configuration
      * 
@@ -57,7 +57,7 @@ public class Mp3Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete MP3 Codec Configuration
      * 
@@ -72,7 +72,7 @@ public class Mp3Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * MP3 Codec Configuration Details
      * 
@@ -87,7 +87,7 @@ public class Mp3Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List MP3 Configurations
      * 
@@ -101,6 +101,7 @@ public class Mp3Api {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List MP3 Configurations
      * 
@@ -115,9 +116,9 @@ public class Mp3Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface Mp3ApiClient {
-    
+
         @RequestLine("POST /encoding/configurations/audio/mp3")
         ResponseEnvelope<Mp3AudioConfiguration> create(Mp3AudioConfiguration mp3AudioConfiguration) throws BitmovinException;
     

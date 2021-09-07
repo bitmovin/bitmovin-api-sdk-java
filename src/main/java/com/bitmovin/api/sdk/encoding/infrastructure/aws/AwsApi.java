@@ -42,7 +42,7 @@ public class AwsApi {
     public static BitmovinApiBuilder<AwsApi> builder() {
         return new BitmovinApiBuilder<>(AwsApi.class);
     }
-    
+
     /**
      * Add AWS Account
      * 
@@ -57,7 +57,7 @@ public class AwsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete AWS Account
      * 
@@ -72,7 +72,7 @@ public class AwsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * AWS Account Details
      * 
@@ -87,7 +87,7 @@ public class AwsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List AWS Accounts
      * 
@@ -101,6 +101,7 @@ public class AwsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List AWS Accounts
      * 
@@ -115,9 +116,9 @@ public class AwsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface AwsApiClient {
-    
+
         @RequestLine("POST /encoding/infrastructure/aws")
         ResponseEnvelope<AwsAccount> create(AwsAccount awsAccount) throws BitmovinException;
     

@@ -45,7 +45,7 @@ public class BroadcastTsApi {
     public static BitmovinApiBuilder<BroadcastTsApi> builder() {
         return new BitmovinApiBuilder<>(BroadcastTsApi.class);
     }
-    
+
     /**
      * Add Broadcast TS muxing
      * 
@@ -61,7 +61,7 @@ public class BroadcastTsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Broadcast TS muxing
      * 
@@ -77,7 +77,7 @@ public class BroadcastTsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Broadcast TS muxing details
      * 
@@ -93,7 +93,7 @@ public class BroadcastTsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Broadcast TS muxings
      * 
@@ -108,6 +108,7 @@ public class BroadcastTsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Broadcast TS muxings
      * 
@@ -123,9 +124,9 @@ public class BroadcastTsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface BroadcastTsApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/broadcast-ts")
         ResponseEnvelope<BroadcastTsMuxing> create(@Param(value = "encoding_id") String encodingId, BroadcastTsMuxing broadcastTsMuxing) throws BitmovinException;
     

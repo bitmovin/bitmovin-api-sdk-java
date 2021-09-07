@@ -42,7 +42,7 @@ public class ResultsApi {
     public static BitmovinApiBuilder<ResultsApi> builder() {
         return new BitmovinApiBuilder<>(ResultsApi.class);
     }
-    
+
     /**
      * List object detection results
      * 
@@ -58,6 +58,7 @@ public class ResultsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List object detection results
      * 
@@ -74,9 +75,9 @@ public class ResultsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ResultsApiClient {
-    
+
         @RequestLine("GET /encoding/encodings/{encoding_id}/machine-learning/object-detection/{object_detection_id}/results")
         ResponseEnvelope<PaginationResponse<ObjectDetectionResult>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "object_detection_id") String objectDetectionId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

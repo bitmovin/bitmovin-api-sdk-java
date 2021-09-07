@@ -22,6 +22,6 @@ public class WebhooksApi {
     public static BitmovinApiBuilder<WebhooksApi> builder() {
         return new BitmovinApiBuilder<>(WebhooksApi.class);
     }
-    
+
     
 }

@@ -22,6 +22,6 @@ public class CeaApi {
     public static BitmovinApiBuilder<CeaApi> builder() {
         return new BitmovinApiBuilder<>(CeaApi.class);
     }
-    
+
     
 }

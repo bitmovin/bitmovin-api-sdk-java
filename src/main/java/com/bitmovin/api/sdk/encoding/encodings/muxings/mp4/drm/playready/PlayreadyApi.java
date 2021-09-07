@@ -42,7 +42,7 @@ public class PlayreadyApi {
     public static BitmovinApiBuilder<PlayreadyApi> builder() {
         return new BitmovinApiBuilder<>(PlayreadyApi.class);
     }
-    
+
     /**
      * Add PlayReady DRM to an MP4 muxing
      * 
@@ -59,7 +59,7 @@ public class PlayreadyApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete PlayReady DRM from an MP4 muxing
      * 
@@ -76,7 +76,7 @@ public class PlayreadyApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * PlayReady DRM Details of an MP4 muxing
      * 
@@ -93,7 +93,7 @@ public class PlayreadyApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List PlayReady DRMs of an MP4 muxing
      * 
@@ -109,6 +109,7 @@ public class PlayreadyApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List PlayReady DRMs of an MP4 muxing
      * 
@@ -125,9 +126,9 @@ public class PlayreadyApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface PlayreadyApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/mp4/{muxing_id}/drm/playready")
         ResponseEnvelope<PlayReadyDrm> create(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, PlayReadyDrm playReadyDrm) throws BitmovinException;
     

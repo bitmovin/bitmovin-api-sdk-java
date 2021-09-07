@@ -66,7 +66,7 @@ public class DrmApi {
     public static BitmovinApiBuilder<DrmApi> builder() {
         return new BitmovinApiBuilder<>(DrmApi.class);
     }
-    
+
     /**
      * DRM Details of an fMP4 muxing
      * 
@@ -83,7 +83,7 @@ public class DrmApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all DRMs of an fMP4 muxing
      * 
@@ -99,9 +99,9 @@ public class DrmApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface DrmApiClient {
-    
+
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/fmp4/{muxing_id}/drm/{drm_id}")
         ResponseEnvelope<Drm> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @Param(value = "drm_id") String drmId) throws BitmovinException;
     

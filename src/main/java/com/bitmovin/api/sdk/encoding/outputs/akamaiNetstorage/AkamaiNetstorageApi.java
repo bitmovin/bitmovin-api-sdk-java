@@ -42,7 +42,7 @@ public class AkamaiNetstorageApi {
     public static BitmovinApiBuilder<AkamaiNetstorageApi> builder() {
         return new BitmovinApiBuilder<>(AkamaiNetstorageApi.class);
     }
-    
+
     /**
      * Create Akamai NetStorage Output
      * 
@@ -57,7 +57,7 @@ public class AkamaiNetstorageApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Akamai NetStorage Output
      * 
@@ -72,7 +72,7 @@ public class AkamaiNetstorageApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Akamai NetStorage Output Details
      * 
@@ -87,7 +87,7 @@ public class AkamaiNetstorageApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Akamai NetStorage Outputs
      * 
@@ -101,6 +101,7 @@ public class AkamaiNetstorageApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Akamai NetStorage Outputs
      * 
@@ -115,9 +116,9 @@ public class AkamaiNetstorageApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface AkamaiNetstorageApiClient {
-    
+
         @RequestLine("POST /encoding/outputs/akamai-netstorage")
         ResponseEnvelope<AkamaiNetStorageOutput> create(AkamaiNetStorageOutput akamaiNetStorageOutput) throws BitmovinException;
     

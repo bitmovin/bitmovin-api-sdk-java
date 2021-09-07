@@ -42,7 +42,7 @@ public class LiveMediaIngestApi {
     public static BitmovinApiBuilder<LiveMediaIngestApi> builder() {
         return new BitmovinApiBuilder<>(LiveMediaIngestApi.class);
     }
-    
+
     /**
      * Create Live Media Ingest Output
      * 
@@ -57,7 +57,7 @@ public class LiveMediaIngestApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Live Media Ingest Output
      * 
@@ -72,7 +72,7 @@ public class LiveMediaIngestApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Live Media Ingest Output Details
      * 
@@ -87,7 +87,7 @@ public class LiveMediaIngestApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Live Media Ingest Outputs
      * 
@@ -101,6 +101,7 @@ public class LiveMediaIngestApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Live Media Ingest Outputs
      * 
@@ -115,9 +116,9 @@ public class LiveMediaIngestApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface LiveMediaIngestApiClient {
-    
+
         @RequestLine("POST /encoding/outputs/live-media-ingest")
         ResponseEnvelope<LiveMediaIngestOutput> create(LiveMediaIngestOutput liveMediaIngestOutput) throws BitmovinException;
     

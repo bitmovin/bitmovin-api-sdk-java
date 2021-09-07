@@ -42,7 +42,7 @@ public class WebvttApi {
     public static BitmovinApiBuilder<WebvttApi> builder() {
         return new BitmovinApiBuilder<>(WebvttApi.class);
     }
-    
+
     /**
      * Create WebVtt subtitle configuration
      * 
@@ -57,7 +57,7 @@ public class WebvttApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete WebVtt subtitle configuration
      * 
@@ -72,7 +72,7 @@ public class WebvttApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * WebVtt subtitle configuration details
      * 
@@ -87,7 +87,7 @@ public class WebvttApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List WebVtt subtitle configurations
      * 
@@ -101,6 +101,7 @@ public class WebvttApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List WebVtt subtitle configurations
      * 
@@ -115,9 +116,9 @@ public class WebvttApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface WebvttApiClient {
-    
+
         @RequestLine("POST /encoding/configurations/subtitles/webvtt")
         ResponseEnvelope<WebVttConfiguration> create(WebVttConfiguration webVttConfiguration) throws BitmovinException;
     

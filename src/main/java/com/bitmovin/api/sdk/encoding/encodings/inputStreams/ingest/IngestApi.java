@@ -39,7 +39,7 @@ public class IngestApi {
     public static BitmovinApiBuilder<IngestApi> builder() {
         return new BitmovinApiBuilder<>(IngestApi.class);
     }
-    
+
     /**
      * Add Ingest Input Stream
      * 
@@ -55,7 +55,7 @@ public class IngestApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Ingest Input Stream
      * 
@@ -71,7 +71,7 @@ public class IngestApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Ingest Input Stream Details
      * 
@@ -87,7 +87,7 @@ public class IngestApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Ingest Input Streams
      * 
@@ -102,6 +102,7 @@ public class IngestApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Ingest Input Streams
      * 
@@ -117,9 +118,9 @@ public class IngestApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface IngestApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/input-streams/ingest")
         ResponseEnvelope<IngestInputStream> create(@Param(value = "encoding_id") String encodingId, IngestInputStream ingestInputStream) throws BitmovinException;
     

@@ -42,7 +42,7 @@ public class ThumbnailsApi {
     public static BitmovinApiBuilder<ThumbnailsApi> builder() {
         return new BitmovinApiBuilder<>(ThumbnailsApi.class);
     }
-    
+
     /**
      * Add Thumbnail
      * 
@@ -59,7 +59,7 @@ public class ThumbnailsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Thumbnail
      * 
@@ -76,7 +76,7 @@ public class ThumbnailsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Thumbnail Details
      * 
@@ -93,7 +93,7 @@ public class ThumbnailsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Thumbnails
      * 
@@ -109,6 +109,7 @@ public class ThumbnailsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Thumbnails
      * 
@@ -125,9 +126,9 @@ public class ThumbnailsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ThumbnailsApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/streams/{stream_id}/thumbnails")
         ResponseEnvelope<Thumbnail> create(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, Thumbnail thumbnail) throws BitmovinException;
     

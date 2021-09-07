@@ -39,7 +39,7 @@ public class UdpApi {
     public static BitmovinApiBuilder<UdpApi> builder() {
         return new BitmovinApiBuilder<>(UdpApi.class);
     }
-    
+
     /**
      * UDP Input Details
      * 
@@ -54,7 +54,7 @@ public class UdpApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List UDP inputs
      * 
@@ -68,6 +68,7 @@ public class UdpApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List UDP inputs
      * 
@@ -82,9 +83,9 @@ public class UdpApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface UdpApiClient {
-    
+
         @RequestLine("GET /encoding/inputs/udp/{input_id}")
         ResponseEnvelope<UdpInput> get(@Param(value = "input_id") String inputId) throws BitmovinException;
     

@@ -42,7 +42,7 @@ public class SpekeApi {
     public static BitmovinApiBuilder<SpekeApi> builder() {
         return new BitmovinApiBuilder<>(SpekeApi.class);
     }
-    
+
     /**
      * Add SPEKE DRM key provider to a WebM muxing
      * 
@@ -59,7 +59,7 @@ public class SpekeApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete SPEKE DRM from a WebM muxing
      * 
@@ -76,7 +76,7 @@ public class SpekeApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * SPEKE DRM Details of a WebM muxing
      * 
@@ -93,7 +93,7 @@ public class SpekeApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List SPEKE DRM of a WebM muxing
      * 
@@ -109,6 +109,7 @@ public class SpekeApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List SPEKE DRM of a WebM muxing
      * 
@@ -125,9 +126,9 @@ public class SpekeApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface SpekeApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/webm/{muxing_id}/drm/speke")
         ResponseEnvelope<SpekeDrm> create(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, SpekeDrm spekeDrm) throws BitmovinException;
     

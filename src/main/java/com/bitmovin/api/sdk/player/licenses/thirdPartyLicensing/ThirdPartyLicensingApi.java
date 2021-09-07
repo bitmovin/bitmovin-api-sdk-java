@@ -39,7 +39,7 @@ public class ThirdPartyLicensingApi {
     public static BitmovinApiBuilder<ThirdPartyLicensingApi> builder() {
         return new BitmovinApiBuilder<>(ThirdPartyLicensingApi.class);
     }
-    
+
     /**
      * Enable Third Party Licensing
      * 
@@ -55,7 +55,7 @@ public class ThirdPartyLicensingApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Third Party Licensing Configuration
      * 
@@ -70,7 +70,7 @@ public class ThirdPartyLicensingApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Get Third Party Licensing Configuration
      * 
@@ -85,9 +85,9 @@ public class ThirdPartyLicensingApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ThirdPartyLicensingApiClient {
-    
+
         @RequestLine("POST /player/licenses/{license_id}/third-party-licensing")
         ResponseEnvelope<PlayerThirdPartyLicensing> create(@Param(value = "license_id") String licenseId, PlayerThirdPartyLicensing playerThirdPartyLicensing) throws BitmovinException;
     

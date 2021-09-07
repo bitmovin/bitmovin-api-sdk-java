@@ -69,7 +69,7 @@ public class EncodingsApi {
     public static BitmovinApiBuilder<EncodingsApi> builder() {
         return new BitmovinApiBuilder<>(EncodingsApi.class);
     }
-    
+
     /**
      * Create Encoding
      * 
@@ -84,7 +84,7 @@ public class EncodingsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Encoding
      * 
@@ -99,7 +99,7 @@ public class EncodingsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Encoding Details
      * 
@@ -114,7 +114,7 @@ public class EncodingsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Encoding Start Details
      * 
@@ -129,7 +129,7 @@ public class EncodingsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all Encodings
      * 
@@ -143,6 +143,7 @@ public class EncodingsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all Encodings
      * 
@@ -157,7 +158,7 @@ public class EncodingsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Reprioritize Encoding
      * 
@@ -173,7 +174,7 @@ public class EncodingsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Reschedule Encoding
      * 
@@ -189,7 +190,22 @@ public class EncodingsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
+    /**
+     * Start Encoding
+     * 
+     * @param encodingId Id of the encoding (required)
+     * @return BitmovinResponse
+     * @throws BitmovinException if fails to make API call
+     */
+    public BitmovinResponse start(String encodingId) throws BitmovinException {
+        try {
+            return this.apiClient.start(encodingId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
     /**
      * Start Encoding
      * 
@@ -205,7 +221,7 @@ public class EncodingsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Encoding Status
      * 
@@ -220,7 +236,7 @@ public class EncodingsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Stop Encoding
      * 
@@ -235,9 +251,9 @@ public class EncodingsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface EncodingsApiClient {
-    
+
         @RequestLine("POST /encoding/encodings")
         ResponseEnvelope<Encoding> create(Encoding encoding) throws BitmovinException;
     
@@ -260,13 +276,14 @@ public class EncodingsApi {
         ResponseEnvelope<BitmovinResponse> reschedule(@Param(value = "encoding_id") String encodingId, RescheduleEncodingRequest rescheduleEncodingRequest) throws BitmovinException;
     
         @RequestLine("POST /encoding/encodings/{encoding_id}/start")
+        ResponseEnvelope<BitmovinResponse> start(@Param(value = "encoding_id") String encodingId) throws BitmovinException;
+
+        @RequestLine("POST /encoding/encodings/{encoding_id}/start")
         ResponseEnvelope<BitmovinResponse> start(@Param(value = "encoding_id") String encodingId, StartEncodingRequest startEncodingRequest) throws BitmovinException;
     
         @RequestLine("GET /encoding/encodings/{encoding_id}/status")
         ResponseEnvelope<Task> status(@Param(value = "encoding_id") String encodingId) throws BitmovinException;
     
-        @Headers("Content-Type: text/plain")
-        @Body(" ")
         @RequestLine("POST /encoding/encodings/{encoding_id}/stop")
         ResponseEnvelope<BitmovinResponse> stop(@Param(value = "encoding_id") String encodingId) throws BitmovinException;
     }

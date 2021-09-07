@@ -22,6 +22,6 @@ public class RepresentationsApi {
     public static BitmovinApiBuilder<RepresentationsApi> builder() {
         return new BitmovinApiBuilder<>(RepresentationsApi.class);
     }
-    
+
     
 }

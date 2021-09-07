@@ -42,7 +42,7 @@ public class DeinterlaceApi {
     public static BitmovinApiBuilder<DeinterlaceApi> builder() {
         return new BitmovinApiBuilder<>(DeinterlaceApi.class);
     }
-    
+
     /**
      * Create Deinterlace Filter
      * 
@@ -57,7 +57,7 @@ public class DeinterlaceApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Deinterlace Filter
      * 
@@ -72,7 +72,7 @@ public class DeinterlaceApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Deinterlace Filter Details
      * 
@@ -87,7 +87,7 @@ public class DeinterlaceApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Deinterlace Filters
      * 
@@ -101,6 +101,7 @@ public class DeinterlaceApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Deinterlace Filters
      * 
@@ -115,9 +116,9 @@ public class DeinterlaceApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface DeinterlaceApiClient {
-    
+
         @RequestLine("POST /encoding/filters/deinterlace")
         ResponseEnvelope<DeinterlaceFilter> create(DeinterlaceFilter deinterlaceFilter) throws BitmovinException;
     

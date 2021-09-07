@@ -39,7 +39,7 @@ public class DrmApi {
     public static BitmovinApiBuilder<DrmApi> builder() {
         return new BitmovinApiBuilder<>(DrmApi.class);
     }
-    
+
     /**
      * Add DRM MP4 Representation
      * 
@@ -57,7 +57,7 @@ public class DrmApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete DRM MP4 Representation
      * 
@@ -75,7 +75,7 @@ public class DrmApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * DRM MP4 Representation Details
      * 
@@ -93,7 +93,7 @@ public class DrmApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all DRM MP4 Representations
      * 
@@ -110,6 +110,7 @@ public class DrmApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all DRM MP4 Representations
      * 
@@ -127,9 +128,9 @@ public class DrmApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface DrmApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/representations/mp4/drm")
         ResponseEnvelope<DashMp4DrmRepresentation> create(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, DashMp4DrmRepresentation dashMp4DrmRepresentation) throws BitmovinException;
     

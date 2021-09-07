@@ -42,7 +42,7 @@ public class FrameIdApi {
     public static BitmovinApiBuilder<FrameIdApi> builder() {
         return new BitmovinApiBuilder<>(FrameIdApi.class);
     }
-    
+
     /**
      * Add Frame ID ID3 Tag to a Progressive TS muxing
      * 
@@ -59,7 +59,7 @@ public class FrameIdApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Frame ID ID3 Tag of a Progressive TS muxing
      * 
@@ -76,7 +76,7 @@ public class FrameIdApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Frame ID ID3 Tag Details of a Progressive TS muxing
      * 
@@ -93,7 +93,7 @@ public class FrameIdApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Frame ID ID3 Tags of a Progressive TS muxing
      * 
@@ -109,6 +109,7 @@ public class FrameIdApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Frame ID ID3 Tags of a Progressive TS muxing
      * 
@@ -125,9 +126,9 @@ public class FrameIdApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface FrameIdApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/progressive-ts/{muxing_id}/id3/frame-id")
         ResponseEnvelope<FrameIdId3Tag> create(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, FrameIdId3Tag frameIdId3Tag) throws BitmovinException;
     

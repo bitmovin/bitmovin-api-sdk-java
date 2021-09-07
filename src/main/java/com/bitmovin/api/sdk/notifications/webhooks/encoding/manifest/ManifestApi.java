@@ -45,7 +45,7 @@ public class ManifestApi {
     public static BitmovinApiBuilder<ManifestApi> builder() {
         return new BitmovinApiBuilder<>(ManifestApi.class);
     }
-    
+
     /**
      * List Webhook Notifications (Specific Manifest)
      * 
@@ -60,6 +60,7 @@ public class ManifestApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Webhook Notifications (Specific Manifest)
      * 
@@ -75,9 +76,9 @@ public class ManifestApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ManifestApiClient {
-    
+
         @RequestLine("GET /notifications/webhooks/encoding/manifest/{manifest_id}")
         ResponseEnvelope<PaginationResponse<Notification>> list(@Param(value = "manifest_id") String manifestId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

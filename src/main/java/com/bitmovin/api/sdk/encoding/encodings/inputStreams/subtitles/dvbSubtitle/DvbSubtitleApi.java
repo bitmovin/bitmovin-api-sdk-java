@@ -39,7 +39,7 @@ public class DvbSubtitleApi {
     public static BitmovinApiBuilder<DvbSubtitleApi> builder() {
         return new BitmovinApiBuilder<>(DvbSubtitleApi.class);
     }
-    
+
     /**
      * Add DVB Subtitle Input Stream
      * 
@@ -55,7 +55,7 @@ public class DvbSubtitleApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete DVB Subtitle Input Stream
      * 
@@ -71,7 +71,7 @@ public class DvbSubtitleApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * DVB Subtitle Input Stream Details
      * 
@@ -87,7 +87,7 @@ public class DvbSubtitleApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List DVB Subtitle Input Streams
      * 
@@ -102,6 +102,7 @@ public class DvbSubtitleApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List DVB Subtitle Input Streams
      * 
@@ -117,9 +118,9 @@ public class DvbSubtitleApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface DvbSubtitleApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/input-streams/subtitles/dvb-subtitle")
         ResponseEnvelope<DvbSubtitleInputStream> create(@Param(value = "encoding_id") String encodingId, DvbSubtitleInputStream dvbSubtitleInputStream) throws BitmovinException;
     

@@ -39,7 +39,7 @@ public class SubtitlesApi {
     public static BitmovinApiBuilder<SubtitlesApi> builder() {
         return new BitmovinApiBuilder<>(SubtitlesApi.class);
     }
-    
+
     /**
      * Add Subtitles Media
      * 
@@ -55,7 +55,7 @@ public class SubtitlesApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Subtitles Media
      * 
@@ -71,7 +71,7 @@ public class SubtitlesApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Subtitles Media Details
      * 
@@ -87,7 +87,7 @@ public class SubtitlesApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all Subtitles Media
      * 
@@ -102,6 +102,7 @@ public class SubtitlesApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all Subtitles Media
      * 
@@ -117,9 +118,9 @@ public class SubtitlesApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface SubtitlesApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/hls/{manifest_id}/media/subtitles")
         ResponseEnvelope<SubtitlesMediaInfo> create(@Param(value = "manifest_id") String manifestId, SubtitlesMediaInfo subtitlesMediaInfo) throws BitmovinException;
     

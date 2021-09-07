@@ -39,7 +39,7 @@ public class AudioApi {
     public static BitmovinApiBuilder<AudioApi> builder() {
         return new BitmovinApiBuilder<>(AudioApi.class);
     }
-    
+
     /**
      * Add Audio AdaptationSet
      * 
@@ -56,7 +56,7 @@ public class AudioApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Audio AdaptationSet
      * 
@@ -73,7 +73,7 @@ public class AudioApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Audio AdaptationSet Details
      * 
@@ -90,7 +90,7 @@ public class AudioApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all Audio AdaptationSets
      * 
@@ -106,6 +106,7 @@ public class AudioApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all Audio AdaptationSets
      * 
@@ -122,9 +123,9 @@ public class AudioApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface AudioApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/audio")
         ResponseEnvelope<AudioAdaptationSet> create(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, AudioAdaptationSet audioAdaptationSet) throws BitmovinException;
     

@@ -42,7 +42,7 @@ public class HeAacV1Api {
     public static BitmovinApiBuilder<HeAacV1Api> builder() {
         return new BitmovinApiBuilder<>(HeAacV1Api.class);
     }
-    
+
     /**
      * Create HE-AAC v1 Codec Configuration
      * 
@@ -57,7 +57,7 @@ public class HeAacV1Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete HE-AAC v1 Codec Configuration
      * 
@@ -72,7 +72,7 @@ public class HeAacV1Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * HE-AAC v1 Codec Configuration Details
      * 
@@ -87,7 +87,7 @@ public class HeAacV1Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List HE-AAC v1 Configurations
      * 
@@ -101,6 +101,7 @@ public class HeAacV1Api {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List HE-AAC v1 Configurations
      * 
@@ -115,9 +116,9 @@ public class HeAacV1Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface HeAacV1ApiClient {
-    
+
         @RequestLine("POST /encoding/configurations/audio/he-aac-v1")
         ResponseEnvelope<HeAacV1AudioConfiguration> create(HeAacV1AudioConfiguration heAacV1AudioConfiguration) throws BitmovinException;
     

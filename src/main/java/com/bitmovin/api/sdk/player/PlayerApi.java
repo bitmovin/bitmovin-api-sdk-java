@@ -28,6 +28,6 @@ public class PlayerApi {
     public static BitmovinApiBuilder<PlayerApi> builder() {
         return new BitmovinApiBuilder<>(PlayerApi.class);
     }
-    
+
     
 }

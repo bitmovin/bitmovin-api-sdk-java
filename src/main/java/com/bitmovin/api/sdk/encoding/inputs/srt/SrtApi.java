@@ -42,7 +42,7 @@ public class SrtApi {
     public static BitmovinApiBuilder<SrtApi> builder() {
         return new BitmovinApiBuilder<>(SrtApi.class);
     }
-    
+
     /**
      * Create SRT input
      * 
@@ -57,7 +57,7 @@ public class SrtApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete SRT input
      * 
@@ -72,7 +72,7 @@ public class SrtApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * SRT Input Details
      * 
@@ -87,7 +87,7 @@ public class SrtApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List SRT inputs
      * 
@@ -101,6 +101,7 @@ public class SrtApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List SRT inputs
      * 
@@ -115,9 +116,9 @@ public class SrtApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface SrtApiClient {
-    
+
         @RequestLine("POST /encoding/inputs/srt")
         ResponseEnvelope<SrtInput> create(SrtInput srtInput) throws BitmovinException;
     

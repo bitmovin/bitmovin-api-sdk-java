@@ -22,6 +22,6 @@ public class AdsApi {
     public static BitmovinApiBuilder<AdsApi> builder() {
         return new BitmovinApiBuilder<>(AdsApi.class);
     }
-    
+
     
 }

@@ -39,7 +39,7 @@ public class ChunkedTextApi {
     public static BitmovinApiBuilder<ChunkedTextApi> builder() {
         return new BitmovinApiBuilder<>(ChunkedTextApi.class);
     }
-    
+
     /**
      * Add Chunked Text Representation
      * 
@@ -57,7 +57,7 @@ public class ChunkedTextApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Chunked Text Representation
      * 
@@ -75,7 +75,7 @@ public class ChunkedTextApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Chunked Text Representation Details
      * 
@@ -93,7 +93,7 @@ public class ChunkedTextApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all Chunked Text Representations
      * 
@@ -110,6 +110,7 @@ public class ChunkedTextApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all Chunked Text Representations
      * 
@@ -127,9 +128,9 @@ public class ChunkedTextApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ChunkedTextApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/representations/chunked-text")
         ResponseEnvelope<DashChunkedTextRepresentation> create(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, DashChunkedTextRepresentation dashChunkedTextRepresentation) throws BitmovinException;
     

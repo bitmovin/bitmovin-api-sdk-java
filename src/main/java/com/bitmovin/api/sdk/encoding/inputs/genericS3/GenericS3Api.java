@@ -42,7 +42,7 @@ public class GenericS3Api {
     public static BitmovinApiBuilder<GenericS3Api> builder() {
         return new BitmovinApiBuilder<>(GenericS3Api.class);
     }
-    
+
     /**
      * Create Generic S3 Input
      * 
@@ -57,7 +57,7 @@ public class GenericS3Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Generic S3 Input
      * 
@@ -72,7 +72,7 @@ public class GenericS3Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Generic S3 Input Details
      * 
@@ -87,7 +87,7 @@ public class GenericS3Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Generic S3 Inputs
      * 
@@ -101,6 +101,7 @@ public class GenericS3Api {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Generic S3 Inputs
      * 
@@ -115,9 +116,9 @@ public class GenericS3Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface GenericS3ApiClient {
-    
+
         @RequestLine("POST /encoding/inputs/generic-s3")
         ResponseEnvelope<GenericS3Input> create(GenericS3Input genericS3Input) throws BitmovinException;
     

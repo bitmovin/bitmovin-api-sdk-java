@@ -42,7 +42,7 @@ public class SpritesApi {
     public static BitmovinApiBuilder<SpritesApi> builder() {
         return new BitmovinApiBuilder<>(SpritesApi.class);
     }
-    
+
     /**
      * Add Sprite
      * 
@@ -59,7 +59,7 @@ public class SpritesApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Sprite
      * 
@@ -76,7 +76,7 @@ public class SpritesApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Sprite Details
      * 
@@ -93,7 +93,7 @@ public class SpritesApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Sprites
      * 
@@ -109,6 +109,7 @@ public class SpritesApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Sprites
      * 
@@ -125,9 +126,9 @@ public class SpritesApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface SpritesApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/streams/{stream_id}/sprites")
         ResponseEnvelope<Sprite> create(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, Sprite sprite) throws BitmovinException;
     

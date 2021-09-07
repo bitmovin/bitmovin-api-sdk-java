@@ -42,7 +42,7 @@ public class WebmApi {
     public static BitmovinApiBuilder<WebmApi> builder() {
         return new BitmovinApiBuilder<>(WebmApi.class);
     }
-    
+
     /**
      * Add WebM Representation
      * 
@@ -60,7 +60,7 @@ public class WebmApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete WebM Representation
      * 
@@ -78,7 +78,7 @@ public class WebmApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * WebM Representation Details
      * 
@@ -96,7 +96,7 @@ public class WebmApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all WebM Representations
      * 
@@ -113,6 +113,7 @@ public class WebmApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all WebM Representations
      * 
@@ -130,9 +131,9 @@ public class WebmApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface WebmApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/representations/webm")
         ResponseEnvelope<DashWebmRepresentation> create(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, DashWebmRepresentation dashWebmRepresentation) throws BitmovinException;
     

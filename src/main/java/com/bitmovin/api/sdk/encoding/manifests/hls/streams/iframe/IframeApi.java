@@ -39,7 +39,7 @@ public class IframeApi {
     public static BitmovinApiBuilder<IframeApi> builder() {
         return new BitmovinApiBuilder<>(IframeApi.class);
     }
-    
+
     /**
      * Add I-frame playlist to variant stream
      * 
@@ -56,7 +56,7 @@ public class IframeApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete I-frame playlist
      * 
@@ -73,7 +73,7 @@ public class IframeApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * I-frame playlist Details
      * 
@@ -90,7 +90,7 @@ public class IframeApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all I-frame playlists of a variant stream
      * 
@@ -106,6 +106,7 @@ public class IframeApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all I-frame playlists of a variant stream
      * 
@@ -122,9 +123,9 @@ public class IframeApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface IframeApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/hls/{manifest_id}/streams/{stream_id}/iframe")
         ResponseEnvelope<IFramePlaylist> create(@Param(value = "manifest_id") String manifestId, @Param(value = "stream_id") String streamId, IFramePlaylist iframePlaylist) throws BitmovinException;
     

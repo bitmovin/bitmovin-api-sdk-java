@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.DashEditionCompatibility;
 import com.bitmovin.api.sdk.model.DashManifest;
 import com.bitmovin.api.sdk.model.DashManifestDefaultVersion;
 import com.bitmovin.api.sdk.model.DashProfile;

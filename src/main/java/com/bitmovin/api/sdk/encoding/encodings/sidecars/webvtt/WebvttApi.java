@@ -39,7 +39,7 @@ public class WebvttApi {
     public static BitmovinApiBuilder<WebvttApi> builder() {
         return new BitmovinApiBuilder<>(WebvttApi.class);
     }
-    
+
     /**
      * Add WebVTT sidecar file
      * 
@@ -55,7 +55,7 @@ public class WebvttApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Sidecar
      * 
@@ -71,7 +71,7 @@ public class WebvttApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * WebVTT Sidecar Details
      * 
@@ -87,7 +87,7 @@ public class WebvttApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List WebVTT sidecar files
      * 
@@ -102,6 +102,7 @@ public class WebvttApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List WebVTT sidecar files
      * 
@@ -117,9 +118,9 @@ public class WebvttApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface WebvttApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/sidecars/webvtt")
         ResponseEnvelope<WebVttSidecarFile> create(@Param(value = "encoding_id") String encodingId, WebVttSidecarFile webVttSidecarFile) throws BitmovinException;
     

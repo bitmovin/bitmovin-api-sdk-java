@@ -42,7 +42,7 @@ public class H262Api {
     public static BitmovinApiBuilder<H262Api> builder() {
         return new BitmovinApiBuilder<>(H262Api.class);
     }
-    
+
     /**
      * Create H262 Codec Configuration
      * 
@@ -57,7 +57,7 @@ public class H262Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete H262 Codec Configuration
      * 
@@ -72,7 +72,7 @@ public class H262Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * H262 Codec Configuration Details
      * 
@@ -87,7 +87,7 @@ public class H262Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List H262 Codec Configurations
      * 
@@ -101,6 +101,7 @@ public class H262Api {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List H262 Codec Configurations
      * 
@@ -115,9 +116,9 @@ public class H262Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface H262ApiClient {
-    
+
         @RequestLine("POST /encoding/configurations/video/h262")
         ResponseEnvelope<H262VideoConfiguration> create(H262VideoConfiguration h262VideoConfiguration) throws BitmovinException;
     

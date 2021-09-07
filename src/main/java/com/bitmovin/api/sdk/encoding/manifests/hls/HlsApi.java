@@ -51,7 +51,7 @@ public class HlsApi {
     public static BitmovinApiBuilder<HlsApi> builder() {
         return new BitmovinApiBuilder<>(HlsApi.class);
     }
-    
+
     /**
      * Create HLS Manifest
      * 
@@ -66,7 +66,7 @@ public class HlsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete HLS Manifest
      * 
@@ -81,7 +81,7 @@ public class HlsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * HLS Manifest Details
      * 
@@ -96,7 +96,7 @@ public class HlsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List HLS Manifests
      * 
@@ -110,6 +110,7 @@ public class HlsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List HLS Manifests
      * 
@@ -124,7 +125,7 @@ public class HlsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Start HLS Manifest Creation
      * 
@@ -139,7 +140,23 @@ public class HlsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
+    /**
+     * Start HLS Manifest Creation
+     * 
+     * @param manifestId Id of the HLS manifest. (required)
+     * @param body Manifest Startup Options (optional)
+     * @return BitmovinResponse
+     * @throws BitmovinException if fails to make API call
+     */
+    public BitmovinResponse start(String manifestId, Object body) throws BitmovinException {
+        try {
+            return this.apiClient.start(manifestId, body).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
     /**
      * HLS Manifest Creation Status
      * 
@@ -154,7 +171,7 @@ public class HlsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Stop HLS Manifest Creation
      * 
@@ -169,9 +186,9 @@ public class HlsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface HlsApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/hls")
         ResponseEnvelope<HlsManifest> create(HlsManifest hlsManifest) throws BitmovinException;
     
@@ -184,16 +201,15 @@ public class HlsApi {
         @RequestLine("GET /encoding/manifests/hls")
         ResponseEnvelope<PaginationResponse<HlsManifest>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     
-        @Headers("Content-Type: text/plain")
-        @Body(" ")
         @RequestLine("POST /encoding/manifests/hls/{manifest_id}/start")
         ResponseEnvelope<BitmovinResponse> start(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
+
+        @RequestLine("POST /encoding/manifests/hls/{manifest_id}/start")
+        ResponseEnvelope<BitmovinResponse> start(@Param(value = "manifest_id") String manifestId, Object body) throws BitmovinException;
     
         @RequestLine("GET /encoding/manifests/hls/{manifest_id}/status")
         ResponseEnvelope<Task> status(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
     
-        @Headers("Content-Type: text/plain")
-        @Body(" ")
         @RequestLine("POST /encoding/manifests/hls/{manifest_id}/stop")
         ResponseEnvelope<BitmovinResponse> stop(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
     }

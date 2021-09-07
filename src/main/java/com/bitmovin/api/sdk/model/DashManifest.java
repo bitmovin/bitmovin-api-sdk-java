@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.DashEditionCompatibility;
 import com.bitmovin.api.sdk.model.DashProfile;
 import com.bitmovin.api.sdk.model.EncodingOutput;
 import com.bitmovin.api.sdk.model.Manifest;
@@ -36,6 +37,9 @@ public class DashManifest extends Manifest {
   @JsonProperty("utcTimings")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<UtcTiming> utcTimings = new ArrayList<UtcTiming>();
+
+  @JsonProperty("dashEditionCompatibility")
+  private DashEditionCompatibility dashEditionCompatibility;
 
 
   /**
@@ -123,6 +127,25 @@ public class DashManifest extends Manifest {
   }
 
 
+  /**
+   * The manifest compatibility with the standard DASH Edition.
+   * @return dashEditionCompatibility
+   */
+  public DashEditionCompatibility getDashEditionCompatibility() {
+    return dashEditionCompatibility;
+  }
+
+  /**
+   * The manifest compatibility with the standard DASH Edition.
+   *
+   * @param dashEditionCompatibility
+   *        The manifest compatibility with the standard DASH Edition.
+   */
+  public void setDashEditionCompatibility(DashEditionCompatibility dashEditionCompatibility) {
+    this.dashEditionCompatibility = dashEditionCompatibility;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -136,12 +159,13 @@ public class DashManifest extends Manifest {
         Objects.equals(this.manifestName, dashManifest.manifestName) &&
         Objects.equals(this.namespaces, dashManifest.namespaces) &&
         Objects.equals(this.utcTimings, dashManifest.utcTimings) &&
+        Objects.equals(this.dashEditionCompatibility, dashManifest.dashEditionCompatibility) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(profile, manifestName, namespaces, utcTimings, super.hashCode());
+    return Objects.hash(profile, manifestName, namespaces, utcTimings, dashEditionCompatibility, super.hashCode());
   }
 
   @Override
@@ -153,6 +177,7 @@ public class DashManifest extends Manifest {
     sb.append("    manifestName: ").append(toIndentedString(manifestName)).append("\n");
     sb.append("    namespaces: ").append(toIndentedString(namespaces)).append("\n");
     sb.append("    utcTimings: ").append(toIndentedString(utcTimings)).append("\n");
+    sb.append("    dashEditionCompatibility: ").append(toIndentedString(dashEditionCompatibility)).append("\n");
     sb.append("}");
     return sb.toString();
   }

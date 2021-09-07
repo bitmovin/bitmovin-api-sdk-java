@@ -48,7 +48,7 @@ public class StatisticsApi {
     public static BitmovinApiBuilder<StatisticsApi> builder() {
         return new BitmovinApiBuilder<>(StatisticsApi.class);
     }
-    
+
     /**
      * Show Overall Statistics
      * 
@@ -62,7 +62,7 @@ public class StatisticsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Show Overall Statistics Within Specific Dates
      * 
@@ -78,6 +78,7 @@ public class StatisticsApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * Show Overall Statistics Within Specific Dates
      * 
@@ -94,9 +95,9 @@ public class StatisticsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface StatisticsApiClient {
-    
+
         @RequestLine("GET /encoding/statistics")
         ResponseEnvelope<Statistics> get() throws BitmovinException;
     

@@ -39,7 +39,7 @@ public class DefaultApi {
     public static BitmovinApiBuilder<DefaultApi> builder() {
         return new BitmovinApiBuilder<>(DefaultApi.class);
     }
-    
+
     /**
      * Create HLS Manifest Default
      * 
@@ -54,9 +54,9 @@ public class DefaultApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface DefaultApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/hls/default")
         ResponseEnvelope<HlsManifestDefault> create(HlsManifestDefault hlsManifestDefault) throws BitmovinException;
     }

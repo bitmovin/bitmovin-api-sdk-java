@@ -42,7 +42,7 @@ public class Vp8Api {
     public static BitmovinApiBuilder<Vp8Api> builder() {
         return new BitmovinApiBuilder<>(Vp8Api.class);
     }
-    
+
     /**
      * Create VP8 Codec Configuration
      * 
@@ -57,7 +57,7 @@ public class Vp8Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete VP8 Codec Configuration
      * 
@@ -72,7 +72,7 @@ public class Vp8Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * VP8 Codec Configuration Details
      * 
@@ -87,7 +87,7 @@ public class Vp8Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * 
      * 
@@ -101,6 +101,7 @@ public class Vp8Api {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * 
      * 
@@ -115,9 +116,9 @@ public class Vp8Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface Vp8ApiClient {
-    
+
         @RequestLine("POST /encoding/configurations/video/vp8")
         ResponseEnvelope<Vp8VideoConfiguration> create(Vp8VideoConfiguration vp8VideoConfiguration) throws BitmovinException;
     

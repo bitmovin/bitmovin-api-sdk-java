@@ -39,7 +39,7 @@ public class FinishedApi {
     public static BitmovinApiBuilder<FinishedApi> builder() {
         return new BitmovinApiBuilder<>(FinishedApi.class);
     }
-    
+
     /**
      * Add Manifest Finished Successfully Webhook (All Manifests)
      * 
@@ -54,7 +54,7 @@ public class FinishedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Add Manifest Finished Successfully Webhook Notification (Specific Manifest)
      * 
@@ -70,7 +70,7 @@ public class FinishedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Manifest Finished Webhook
      * 
@@ -85,7 +85,7 @@ public class FinishedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Replace Manifest Finished Webhook Notification
      * 
@@ -101,9 +101,9 @@ public class FinishedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface FinishedApiClient {
-    
+
         @RequestLine("POST /notifications/webhooks/encoding/manifest/finished")
         ResponseEnvelope<Webhook> create(Webhook webhook) throws BitmovinException;
     

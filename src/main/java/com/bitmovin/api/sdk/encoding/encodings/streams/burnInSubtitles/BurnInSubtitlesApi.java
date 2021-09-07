@@ -25,6 +25,6 @@ public class BurnInSubtitlesApi {
     public static BitmovinApiBuilder<BurnInSubtitlesApi> builder() {
         return new BitmovinApiBuilder<>(BurnInSubtitlesApi.class);
     }
-    
+
     
 }

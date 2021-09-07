@@ -42,7 +42,7 @@ public class ChannelsApi {
     public static BitmovinApiBuilder<ChannelsApi> builder() {
         return new BitmovinApiBuilder<>(ChannelsApi.class);
     }
-    
+
     /**
      * List Player Channels
      * 
@@ -56,9 +56,9 @@ public class ChannelsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ChannelsApiClient {
-    
+
         @RequestLine("GET /player/channels")
         ResponseEnvelope<PaginationResponse<PlayerChannel>> list() throws BitmovinException;
     }

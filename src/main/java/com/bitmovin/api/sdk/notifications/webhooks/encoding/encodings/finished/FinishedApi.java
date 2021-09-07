@@ -42,7 +42,7 @@ public class FinishedApi {
     public static BitmovinApiBuilder<FinishedApi> builder() {
         return new BitmovinApiBuilder<>(FinishedApi.class);
     }
-    
+
     /**
      * Add Encoding Finished Webhook
      * 
@@ -57,7 +57,7 @@ public class FinishedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Add Encoding Finished Webhook for specific Encoding Resource.
      * 
@@ -73,7 +73,7 @@ public class FinishedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Encoding Finished Webhook for specific Encoding Resource
      * 
@@ -89,7 +89,7 @@ public class FinishedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Encoding Finished Webhook
      * 
@@ -104,7 +104,7 @@ public class FinishedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Encoding Finished Webhook Details for specific Encoding Resource
      * 
@@ -120,7 +120,7 @@ public class FinishedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Encoding Finished Webhook Details
      * 
@@ -135,7 +135,7 @@ public class FinishedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Encoding Finished Webhooks
      * 
@@ -149,6 +149,7 @@ public class FinishedApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Encoding Finished Webhooks
      * 
@@ -163,7 +164,7 @@ public class FinishedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Encoding Finished Webhooks for specific Encoding Resource
      * 
@@ -178,6 +179,7 @@ public class FinishedApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Encoding Finished Webhooks for specific Encoding Resource
      * 
@@ -193,9 +195,9 @@ public class FinishedApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface FinishedApiClient {
-    
+
         @RequestLine("POST /notifications/webhooks/encoding/encodings/finished")
         ResponseEnvelope<Webhook> create(Webhook webhook) throws BitmovinException;
     

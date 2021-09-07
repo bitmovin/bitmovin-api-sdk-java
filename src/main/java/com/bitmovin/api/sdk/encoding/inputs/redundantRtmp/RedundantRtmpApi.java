@@ -39,7 +39,7 @@ public class RedundantRtmpApi {
     public static BitmovinApiBuilder<RedundantRtmpApi> builder() {
         return new BitmovinApiBuilder<>(RedundantRtmpApi.class);
     }
-    
+
     /**
      * Create Redundant RTMP Input
      * 
@@ -54,7 +54,7 @@ public class RedundantRtmpApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Redundant RTMP Input
      * 
@@ -69,7 +69,7 @@ public class RedundantRtmpApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Redundant RTMP Input Details
      * 
@@ -84,7 +84,7 @@ public class RedundantRtmpApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Redundant RTMP Inputs
      * 
@@ -98,6 +98,7 @@ public class RedundantRtmpApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Redundant RTMP Inputs
      * 
@@ -112,9 +113,9 @@ public class RedundantRtmpApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface RedundantRtmpApiClient {
-    
+
         @RequestLine("POST /encoding/inputs/redundant-rtmp")
         ResponseEnvelope<RedundantRtmpInput> create(RedundantRtmpInput redundantRtmpInput) throws BitmovinException;
     

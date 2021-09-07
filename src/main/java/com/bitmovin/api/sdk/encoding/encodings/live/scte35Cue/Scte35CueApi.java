@@ -39,7 +39,7 @@ public class Scte35CueApi {
     public static BitmovinApiBuilder<Scte35CueApi> builder() {
         return new BitmovinApiBuilder<>(Scte35CueApi.class);
     }
-    
+
     /**
      * Insert cue duration
      * 
@@ -55,9 +55,9 @@ public class Scte35CueApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface Scte35CueApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/live/scte-35-cue")
         ResponseEnvelope<Scte35Cue> create(@Param(value = "encoding_id") String encodingId, Scte35Cue scte35Cue) throws BitmovinException;
     }

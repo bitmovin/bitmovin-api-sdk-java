@@ -42,7 +42,7 @@ public class WatermarkApi {
     public static BitmovinApiBuilder<WatermarkApi> builder() {
         return new BitmovinApiBuilder<>(WatermarkApi.class);
     }
-    
+
     /**
      * Create Watermark Filter
      * 
@@ -57,7 +57,7 @@ public class WatermarkApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Watermark Filter
      * 
@@ -72,7 +72,7 @@ public class WatermarkApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Watermark Filter Details
      * 
@@ -87,7 +87,7 @@ public class WatermarkApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Watermark Filters
      * 
@@ -101,6 +101,7 @@ public class WatermarkApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Watermark Filters
      * 
@@ -115,9 +116,9 @@ public class WatermarkApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface WatermarkApiClient {
-    
+
         @RequestLine("POST /encoding/filters/watermark")
         ResponseEnvelope<WatermarkFilter> create(WatermarkFilter watermarkFilter) throws BitmovinException;
     

@@ -42,7 +42,7 @@ public class H264Api {
     public static BitmovinApiBuilder<H264Api> builder() {
         return new BitmovinApiBuilder<>(H264Api.class);
     }
-    
+
     /**
      * Create H264/AVC Codec Configuration
      * 
@@ -57,7 +57,7 @@ public class H264Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete H264/AVC Codec Configuration
      * 
@@ -72,7 +72,7 @@ public class H264Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * H264/AVC Codec Configuration Details
      * 
@@ -87,7 +87,7 @@ public class H264Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List H264/AVC Codec Configurations
      * 
@@ -101,6 +101,7 @@ public class H264Api {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List H264/AVC Codec Configurations
      * 
@@ -115,9 +116,9 @@ public class H264Api {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface H264ApiClient {
-    
+
         @RequestLine("POST /encoding/configurations/video/h264")
         ResponseEnvelope<H264VideoConfiguration> create(H264VideoConfiguration h264VideoConfiguration) throws BitmovinException;
     

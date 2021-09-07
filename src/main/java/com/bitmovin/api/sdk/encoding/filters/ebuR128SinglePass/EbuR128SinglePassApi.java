@@ -42,7 +42,7 @@ public class EbuR128SinglePassApi {
     public static BitmovinApiBuilder<EbuR128SinglePassApi> builder() {
         return new BitmovinApiBuilder<>(EbuR128SinglePassApi.class);
     }
-    
+
     /**
      * Create EBU R128 Single Pass Filter
      * 
@@ -57,7 +57,7 @@ public class EbuR128SinglePassApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete EBU R128 Single Pass Filter
      * 
@@ -72,7 +72,7 @@ public class EbuR128SinglePassApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * EBU R128 Single Pass Filter Details
      * 
@@ -87,7 +87,7 @@ public class EbuR128SinglePassApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List EBU R128 Single Pass Filters
      * 
@@ -101,6 +101,7 @@ public class EbuR128SinglePassApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List EBU R128 Single Pass Filters
      * 
@@ -115,9 +116,9 @@ public class EbuR128SinglePassApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface EbuR128SinglePassApiClient {
-    
+
         @RequestLine("POST /encoding/filters/ebu-r128-single-pass")
         ResponseEnvelope<EbuR128SinglePassFilter> create(EbuR128SinglePassFilter ebuR128SinglePassFilter) throws BitmovinException;
     

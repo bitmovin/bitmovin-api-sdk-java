@@ -39,7 +39,7 @@ public class ProgressiveWebmApi {
     public static BitmovinApiBuilder<ProgressiveWebmApi> builder() {
         return new BitmovinApiBuilder<>(ProgressiveWebmApi.class);
     }
-    
+
     /**
      * Add Progressive WebM Representation
      * 
@@ -57,7 +57,7 @@ public class ProgressiveWebmApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Progressive WebM Representation
      * 
@@ -75,7 +75,7 @@ public class ProgressiveWebmApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Progressive WebM Representation Details
      * 
@@ -93,7 +93,7 @@ public class ProgressiveWebmApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List all Progressive WebM Representations
      * 
@@ -110,6 +110,7 @@ public class ProgressiveWebmApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List all Progressive WebM Representations
      * 
@@ -127,9 +128,9 @@ public class ProgressiveWebmApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface ProgressiveWebmApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/representations/progressive-webm")
         ResponseEnvelope<DashProgressiveWebmRepresentation> create(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, DashProgressiveWebmRepresentation dashProgressiveWebmRepresentation) throws BitmovinException;
     

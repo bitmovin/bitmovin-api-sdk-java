@@ -48,7 +48,7 @@ public class LiveStatisticsApi {
     public static BitmovinApiBuilder<LiveStatisticsApi> builder() {
         return new BitmovinApiBuilder<>(LiveStatisticsApi.class);
     }
-    
+
     /**
      * List Live Statistics from an Encoding
      * 
@@ -63,9 +63,9 @@ public class LiveStatisticsApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface LiveStatisticsApiClient {
-    
+
         @RequestLine("GET /encoding/statistics/encodings/{encoding_id}/live-statistics")
         ResponseEnvelope<LiveEncodingStats> get(@Param(value = "encoding_id") String encodingId) throws BitmovinException;
     }

@@ -39,7 +39,7 @@ public class SrtApi {
     public static BitmovinApiBuilder<SrtApi> builder() {
         return new BitmovinApiBuilder<>(SrtApi.class);
     }
-    
+
     /**
      * List Stream Infos of Live Statistics from an Encoding
      * 
@@ -54,6 +54,7 @@ public class SrtApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Stream Infos of Live Statistics from an Encoding
      * 
@@ -69,7 +70,7 @@ public class SrtApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Statistics For SRT Live Stream Input
      * 
@@ -85,6 +86,7 @@ public class SrtApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Statistics For SRT Live Stream Input
      * 
@@ -101,9 +103,9 @@ public class SrtApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface SrtApiClient {
-    
+
         @RequestLine("GET /encoding/statistics/encodings/{encoding_id}/live-statistics/srt")
         ResponseEnvelope<PaginationResponse<SrtStatistics>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     

@@ -51,7 +51,7 @@ public class SmoothApi {
     public static BitmovinApiBuilder<SmoothApi> builder() {
         return new BitmovinApiBuilder<>(SmoothApi.class);
     }
-    
+
     /**
      * Create Smooth Streaming Manifest
      * 
@@ -66,7 +66,7 @@ public class SmoothApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Smooth Streaming Manifest
      * 
@@ -81,7 +81,7 @@ public class SmoothApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Smooth Streaming Manifest Details
      * 
@@ -96,7 +96,7 @@ public class SmoothApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Smooth Streaming Manifests
      * 
@@ -110,6 +110,7 @@ public class SmoothApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Smooth Streaming Manifests
      * 
@@ -124,7 +125,7 @@ public class SmoothApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Start Smooth Streaming Manifest Creation
      * 
@@ -139,7 +140,23 @@ public class SmoothApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
+    /**
+     * Start Smooth Streaming Manifest Creation
+     * 
+     * @param manifestId Id of the Smooth Streaming manifest. (required)
+     * @param body Manifest Startup Options (optional)
+     * @return BitmovinResponse
+     * @throws BitmovinException if fails to make API call
+     */
+    public BitmovinResponse start(String manifestId, Object body) throws BitmovinException {
+        try {
+            return this.apiClient.start(manifestId, body).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
     /**
      * Smooth Streaming Manifest Creation Status
      * 
@@ -154,7 +171,7 @@ public class SmoothApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Stop Smooth Streaming Manifest Creation
      * 
@@ -169,9 +186,9 @@ public class SmoothApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface SmoothApiClient {
-    
+
         @RequestLine("POST /encoding/manifests/smooth")
         ResponseEnvelope<SmoothStreamingManifest> create(SmoothStreamingManifest smoothStreamingManifest) throws BitmovinException;
     
@@ -184,16 +201,15 @@ public class SmoothApi {
         @RequestLine("GET /encoding/manifests/smooth")
         ResponseEnvelope<PaginationResponse<SmoothStreamingManifest>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     
-        @Headers("Content-Type: text/plain")
-        @Body(" ")
         @RequestLine("POST /encoding/manifests/smooth/{manifest_id}/start")
         ResponseEnvelope<BitmovinResponse> start(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
+
+        @RequestLine("POST /encoding/manifests/smooth/{manifest_id}/start")
+        ResponseEnvelope<BitmovinResponse> start(@Param(value = "manifest_id") String manifestId, Object body) throws BitmovinException;
     
         @RequestLine("GET /encoding/manifests/smooth/{manifest_id}/status")
         ResponseEnvelope<Task> status(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
     
-        @Headers("Content-Type: text/plain")
-        @Body(" ")
         @RequestLine("POST /encoding/manifests/smooth/{manifest_id}/stop")
         ResponseEnvelope<BitmovinResponse> stop(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
     }

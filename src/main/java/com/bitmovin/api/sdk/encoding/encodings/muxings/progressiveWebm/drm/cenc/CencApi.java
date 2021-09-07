@@ -42,7 +42,7 @@ public class CencApi {
     public static BitmovinApiBuilder<CencApi> builder() {
         return new BitmovinApiBuilder<>(CencApi.class);
     }
-    
+
     /**
      * Add CENC DRM to a Progressive WebM muxing
      * 
@@ -59,7 +59,7 @@ public class CencApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete CENC DRM from a Progressive WebM muxing
      * 
@@ -76,7 +76,7 @@ public class CencApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * CENC DRM Details of a Progressive WebM muxing
      * 
@@ -93,7 +93,7 @@ public class CencApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List CENC DRM configurations of Progressive WebM muxing
      * 
@@ -109,6 +109,7 @@ public class CencApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List CENC DRM configurations of Progressive WebM muxing
      * 
@@ -125,9 +126,9 @@ public class CencApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface CencApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/progressive-webm/{muxing_id}/drm/cenc")
         ResponseEnvelope<CencDrm> create(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, CencDrm cencDrm) throws BitmovinException;
     

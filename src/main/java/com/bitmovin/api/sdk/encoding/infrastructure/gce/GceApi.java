@@ -42,7 +42,7 @@ public class GceApi {
     public static BitmovinApiBuilder<GceApi> builder() {
         return new BitmovinApiBuilder<>(GceApi.class);
     }
-    
+
     /**
      * Add GCE Account
      * 
@@ -57,7 +57,7 @@ public class GceApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete GCE Account
      * 
@@ -72,7 +72,7 @@ public class GceApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * GCE Account Details
      * 
@@ -87,7 +87,7 @@ public class GceApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List GCE Accounts
      * 
@@ -101,6 +101,7 @@ public class GceApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List GCE Accounts
      * 
@@ -115,9 +116,9 @@ public class GceApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface GceApiClient {
-    
+
         @RequestLine("POST /encoding/infrastructure/gce")
         ResponseEnvelope<GceAccount> create(GceAccount gceAccount) throws BitmovinException;
     

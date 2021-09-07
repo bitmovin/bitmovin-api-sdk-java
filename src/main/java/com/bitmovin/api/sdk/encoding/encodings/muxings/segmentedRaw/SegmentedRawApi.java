@@ -42,7 +42,7 @@ public class SegmentedRawApi {
     public static BitmovinApiBuilder<SegmentedRawApi> builder() {
         return new BitmovinApiBuilder<>(SegmentedRawApi.class);
     }
-    
+
     /**
      * Add Segmented RAW muxing
      * 
@@ -58,7 +58,7 @@ public class SegmentedRawApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Delete Segmented RAW muxing
      * 
@@ -74,7 +74,7 @@ public class SegmentedRawApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * Segmented RAW muxing details
      * 
@@ -90,7 +90,7 @@ public class SegmentedRawApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     /**
      * List Segmented RAW muxings
      * 
@@ -105,6 +105,7 @@ public class SegmentedRawApi {
             throw buildBitmovinException(ex);
         }
     }
+
     /**
      * List Segmented RAW muxings
      * 
@@ -120,9 +121,9 @@ public class SegmentedRawApi {
             throw buildBitmovinException(ex);
         }
     }
-    
+
     interface SegmentedRawApiClient {
-    
+
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/segmented-raw")
         ResponseEnvelope<SegmentedRawMuxing> create(@Param(value = "encoding_id") String encodingId, SegmentedRawMuxing segmentedRawMuxing) throws BitmovinException;
     
