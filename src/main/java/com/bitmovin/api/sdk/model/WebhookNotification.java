@@ -4,6 +4,8 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.Notification;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;

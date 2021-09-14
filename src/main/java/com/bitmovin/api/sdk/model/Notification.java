@@ -4,6 +4,9 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.BitmovinResponse;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -37,6 +40,10 @@ public class Notification extends BitmovinResponse {
 
   @JsonProperty("muted")
   private Boolean muted;
+
+  @JsonProperty("customData")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private Map<String, Object> customData = new HashMap<String, Object>();
 
 
   /**
@@ -175,6 +182,30 @@ public class Notification extends BitmovinResponse {
   }
 
 
+  public Notification putCustomDataItem(String key, Object customDataItem) {
+    this.customData.put(key, customDataItem);
+    return this;
+  }
+
+  /**
+   * User-specific meta data. This can hold anything.
+   * @return customData
+   */
+  public Map<String, Object> getCustomData() {
+    return customData;
+  }
+
+  /**
+   * User-specific meta data. This can hold anything.
+   *
+   * @param customData
+   *        User-specific meta data. This can hold anything.
+   */
+  public void setCustomData(Map<String, Object> customData) {
+    this.customData = customData;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -192,12 +223,13 @@ public class Notification extends BitmovinResponse {
         Objects.equals(this.category, notification.category) &&
         Objects.equals(this.resourceType, notification.resourceType) &&
         Objects.equals(this.muted, notification.muted) &&
+        Objects.equals(this.customData, notification.customData) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(resolve, resourceId, triggeredAt, type, eventType, category, resourceType, muted, super.hashCode());
+    return Objects.hash(resolve, resourceId, triggeredAt, type, eventType, category, resourceType, muted, customData, super.hashCode());
   }
 
   @Override
@@ -213,6 +245,7 @@ public class Notification extends BitmovinResponse {
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
     sb.append("    muted: ").append(toIndentedString(muted)).append("\n");
+    sb.append("    customData: ").append(toIndentedString(customData)).append("\n");
     sb.append("}");
     return sb.toString();
   }

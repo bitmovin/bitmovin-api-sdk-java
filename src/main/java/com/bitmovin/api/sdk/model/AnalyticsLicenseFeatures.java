@@ -2,20 +2,38 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.EmailNotification;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import com.bitmovin.api.sdk.model.AnalyticsLicenseErrorDetailsConfig;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * EncodingErrorEmailNotification
+ * AnalyticsLicenseFeatures
  */
 
-public class EncodingErrorEmailNotification extends EmailNotification {
+public class AnalyticsLicenseFeatures {
+  @JsonProperty("errorDetails")
+  private AnalyticsLicenseErrorDetailsConfig errorDetails;
+
+
+  /**
+   * Get errorDetails
+   * @return errorDetails
+   */
+  public AnalyticsLicenseErrorDetailsConfig getErrorDetails() {
+    return errorDetails;
+  }
+
+  /**
+   * Set errorDetails
+   *
+   * @param errorDetails
+   */
+  public void setErrorDetails(AnalyticsLicenseErrorDetailsConfig errorDetails) {
+    this.errorDetails = errorDetails;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -25,19 +43,21 @@ public class EncodingErrorEmailNotification extends EmailNotification {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return super.equals(o);
+    AnalyticsLicenseFeatures analyticsLicenseFeatures = (AnalyticsLicenseFeatures) o;
+    return Objects.equals(this.errorDetails, analyticsLicenseFeatures.errorDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode());
+    return Objects.hash(errorDetails);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class EncodingErrorEmailNotification {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("class AnalyticsLicenseFeatures {\n");
+    
+    sb.append("    errorDetails: ").append(toIndentedString(errorDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -49,7 +49,23 @@ public class SubOrganizationsApi {
      */
     public PaginationResponse<Organization> list(String organizationId) throws BitmovinException {
         try {
-            return this.apiClient.list(organizationId).getData().getResult();
+            return this.apiClient.list(organizationId, new QueryMapWrapper()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
+    /**
+     * Organizations under given parent organization
+     * 
+     * @param organizationId ID of the parent organization (required)
+     * @param queryParams The query parameters for sorting, filtering and paging options (optional)
+     * @return List&lt;Organization&gt;
+     * @throws BitmovinException if fails to make API call
+     */
+    public PaginationResponse<Organization> list(String organizationId, OrganizationListQueryParams queryParams) throws BitmovinException {
+        try {
+            return this.apiClient.list(organizationId, new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -58,6 +74,6 @@ public class SubOrganizationsApi {
     interface SubOrganizationsApiClient {
 
         @RequestLine("GET /account/organizations/{organization_id}/sub-organizations")
-        ResponseEnvelope<PaginationResponse<Organization>> list(@Param(value = "organization_id") String organizationId) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<Organization>> list(@Param(value = "organization_id") String organizationId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

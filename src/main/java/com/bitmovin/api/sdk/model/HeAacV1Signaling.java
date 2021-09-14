@@ -13,24 +13,19 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum HeAacV1Signaling {
   
   /**
-   * Choose signaling implicitly (explicit hierarchical by default, implicit if global header is disabled).
-   */
-  DEFAULT("DEFAULT"),
-  
-  /**
    * Implicit backwards compatible signaling.
    */
   IMPLICIT("IMPLICIT"),
   
   /**
-   * Explicit SBR, implicit PS signaling.
+   * Explicit SBR signaling. This is backwards compatible.
    */
   EXPLICIT_SBR("EXPLICIT_SBR"),
   
   /**
-   * Explicit hierarchical signaling.
+   * Explicit hierarchical signaling. This is not backwards compatible.
    */
-  EXPLICIT_HIERACHICAL("EXPLICIT_HIERACHICAL");
+  EXPLICIT_HIERARCHICAL("EXPLICIT_HIERARCHICAL");
 
   private String value;
 

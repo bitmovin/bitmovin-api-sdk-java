@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AutoRestartConfiguration;
 import com.bitmovin.api.sdk.model.EncodingMode;
+import com.bitmovin.api.sdk.model.LiveAutoShutdownConfiguration;
 import com.bitmovin.api.sdk.model.LiveDashManifest;
 import com.bitmovin.api.sdk.model.LiveHlsManifest;
 import com.bitmovin.api.sdk.model.ManifestGenerator;
@@ -42,6 +43,9 @@ public class StartLiveEncodingRequest {
 
   @JsonProperty("autoRestartConfiguration")
   private AutoRestartConfiguration autoRestartConfiguration;
+
+  @JsonProperty("autoShutdownConfiguration")
+  private LiveAutoShutdownConfiguration autoShutdownConfiguration;
 
 
   /**
@@ -187,6 +191,25 @@ public class StartLiveEncodingRequest {
   }
 
 
+  /**
+   * Configuration for auto shutdown of the live encoding
+   * @return autoShutdownConfiguration
+   */
+  public LiveAutoShutdownConfiguration getAutoShutdownConfiguration() {
+    return autoShutdownConfiguration;
+  }
+
+  /**
+   * Configuration for auto shutdown of the live encoding
+   *
+   * @param autoShutdownConfiguration
+   *        Configuration for auto shutdown of the live encoding
+   */
+  public void setAutoShutdownConfiguration(LiveAutoShutdownConfiguration autoShutdownConfiguration) {
+    this.autoShutdownConfiguration = autoShutdownConfiguration;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -202,12 +225,13 @@ public class StartLiveEncodingRequest {
         Objects.equals(this.liveEncodingMode, startLiveEncodingRequest.liveEncodingMode) &&
         Objects.equals(this.reuploadSettings, startLiveEncodingRequest.reuploadSettings) &&
         Objects.equals(this.manifestGenerator, startLiveEncodingRequest.manifestGenerator) &&
-        Objects.equals(this.autoRestartConfiguration, startLiveEncodingRequest.autoRestartConfiguration);
+        Objects.equals(this.autoRestartConfiguration, startLiveEncodingRequest.autoRestartConfiguration) &&
+        Objects.equals(this.autoShutdownConfiguration, startLiveEncodingRequest.autoShutdownConfiguration);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(streamKey, hlsManifests, dashManifests, liveEncodingMode, reuploadSettings, manifestGenerator, autoRestartConfiguration);
+    return Objects.hash(streamKey, hlsManifests, dashManifests, liveEncodingMode, reuploadSettings, manifestGenerator, autoRestartConfiguration, autoShutdownConfiguration);
   }
 
   @Override
@@ -222,6 +246,7 @@ public class StartLiveEncodingRequest {
     sb.append("    reuploadSettings: ").append(toIndentedString(reuploadSettings)).append("\n");
     sb.append("    manifestGenerator: ").append(toIndentedString(manifestGenerator)).append("\n");
     sb.append("    autoRestartConfiguration: ").append(toIndentedString(autoRestartConfiguration)).append("\n");
+    sb.append("    autoShutdownConfiguration: ").append(toIndentedString(autoShutdownConfiguration)).append("\n");
     sb.append("}");
     return sb.toString();
   }

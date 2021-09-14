@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AnalyticsLicenseCustomDataFieldLabels;
 import com.bitmovin.api.sdk.model.AnalyticsLicenseDomain;
+import com.bitmovin.api.sdk.model.AnalyticsLicenseFeatures;
 import com.bitmovin.api.sdk.model.BitmovinResponse;
 import java.util.ArrayList;
 import java.util.Date;
@@ -45,6 +46,9 @@ public class AnalyticsLicense extends BitmovinResponse {
 
   @JsonProperty("customDataFieldLabels")
   private AnalyticsLicenseCustomDataFieldLabels customDataFieldLabels;
+
+  @JsonProperty("features")
+  private AnalyticsLicenseFeatures features;
 
 
   /**
@@ -141,6 +145,24 @@ public class AnalyticsLicense extends BitmovinResponse {
   }
 
 
+  /**
+   * Get features
+   * @return features
+   */
+  public AnalyticsLicenseFeatures getFeatures() {
+    return features;
+  }
+
+  /**
+   * Set features
+   *
+   * @param features
+   */
+  public void setFeatures(AnalyticsLicenseFeatures features) {
+    this.features = features;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -159,12 +181,13 @@ public class AnalyticsLicense extends BitmovinResponse {
         Objects.equals(this.ignoreDNT, analyticsLicense.ignoreDNT) &&
         Objects.equals(this.timeZone, analyticsLicense.timeZone) &&
         Objects.equals(this.customDataFieldLabels, analyticsLicense.customDataFieldLabels) &&
+        Objects.equals(this.features, analyticsLicense.features) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, licenseKey, createdAt, maxImpressions, impressions, domains, ignoreDNT, timeZone, customDataFieldLabels, super.hashCode());
+    return Objects.hash(name, licenseKey, createdAt, maxImpressions, impressions, domains, ignoreDNT, timeZone, customDataFieldLabels, features, super.hashCode());
   }
 
   @Override
@@ -181,6 +204,7 @@ public class AnalyticsLicense extends BitmovinResponse {
     sb.append("    ignoreDNT: ").append(toIndentedString(ignoreDNT)).append("\n");
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    customDataFieldLabels: ").append(toIndentedString(customDataFieldLabels)).append("\n");
+    sb.append("    features: ").append(toIndentedString(features)).append("\n");
     sb.append("}");
     return sb.toString();
   }

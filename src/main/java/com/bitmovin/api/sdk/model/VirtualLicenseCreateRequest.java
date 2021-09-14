@@ -2,20 +2,19 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.EmailNotification;
-import java.util.Date;
+import com.bitmovin.api.sdk.model.VirtualLicense;
+import com.bitmovin.api.sdk.model.VirtualLicenseLicensesListItem;
 import java.util.List;
-import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * EncodingErrorEmailNotification
+ * VirtualLicenseCreateRequest
  */
 
-public class EncodingErrorEmailNotification extends EmailNotification {
+public class VirtualLicenseCreateRequest extends VirtualLicense {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -36,7 +35,7 @@ public class EncodingErrorEmailNotification extends EmailNotification {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class EncodingErrorEmailNotification {\n");
+    sb.append("class VirtualLicenseCreateRequest {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();
