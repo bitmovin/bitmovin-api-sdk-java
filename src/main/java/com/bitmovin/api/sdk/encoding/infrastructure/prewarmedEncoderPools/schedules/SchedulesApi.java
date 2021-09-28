@@ -92,10 +92,10 @@ public class SchedulesApi {
      * List prewarmed encoder pool schedules
      * 
      * @param poolId Id of the scheduled encoder pool (required)
-     * @return List&lt;PrewarmedEncoderPool&gt;
+     * @return List&lt;PrewarmedEncoderPoolSchedule&gt;
      * @throws BitmovinException if fails to make API call
      */
-    public PaginationResponse<PrewarmedEncoderPool> list(String poolId) throws BitmovinException {
+    public PaginationResponse<PrewarmedEncoderPoolSchedule> list(String poolId) throws BitmovinException {
         try {
             return this.apiClient.list(poolId, new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
@@ -108,10 +108,10 @@ public class SchedulesApi {
      * 
      * @param poolId Id of the scheduled encoder pool (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
-     * @return List&lt;PrewarmedEncoderPool&gt;
+     * @return List&lt;PrewarmedEncoderPoolSchedule&gt;
      * @throws BitmovinException if fails to make API call
      */
-    public PaginationResponse<PrewarmedEncoderPool> list(String poolId, PrewarmedEncoderPoolListQueryParams queryParams) throws BitmovinException {
+    public PaginationResponse<PrewarmedEncoderPoolSchedule> list(String poolId, PrewarmedEncoderPoolScheduleListQueryParams queryParams) throws BitmovinException {
         try {
             return this.apiClient.list(poolId, new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
@@ -131,6 +131,6 @@ public class SchedulesApi {
         ResponseEnvelope<PrewarmedEncoderPoolSchedule> get(@Param(value = "pool_id") String poolId, @Param(value = "schedule_id") String scheduleId) throws BitmovinException;
     
         @RequestLine("GET /encoding/infrastructure/prewarmed-encoder-pools/{pool_id}/schedules")
-        ResponseEnvelope<PaginationResponse<PrewarmedEncoderPool>> list(@Param(value = "pool_id") String poolId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<PrewarmedEncoderPoolSchedule>> list(@Param(value = "pool_id") String poolId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

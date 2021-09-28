@@ -1,10 +1,10 @@
-package com.bitmovin.api.sdk.encoding.infrastructure.prewarmedEncoderPools.schedules;
+package com.bitmovin.api.sdk.analytics.virtualLicenses;
 
 import java.util.Date;
 import java.util.HashMap;
 import com.bitmovin.api.sdk.model.*;
 
-public class PrewarmedEncoderPoolListQueryParams extends HashMap<String, Object> {
+public class AnalyticsVirtualLicenseListQueryParams extends HashMap<String, Object> {
 
     public Integer getOffset() {
         return (Integer) this.get("offset");

@@ -41,15 +41,75 @@ public class VirtualLicensesApi {
     }
 
     /**
-     * Create Virtual License
+     * Create Analytics Virtual License
      * 
-     * @param virtualLicenseCreateRequest Virtual License to be created (required)
-     * @return VirtualLicense
+     * @param analyticsVirtualLicenseRequest Analytics Virtual License to be created (required)
+     * @return AnalyticsVirtualLicense
      * @throws BitmovinException if fails to make API call
      */
-    public VirtualLicense create(VirtualLicenseCreateRequest virtualLicenseCreateRequest) throws BitmovinException {
+    public AnalyticsVirtualLicense create(AnalyticsVirtualLicenseRequest analyticsVirtualLicenseRequest) throws BitmovinException {
         try {
-            return this.apiClient.create(virtualLicenseCreateRequest).getData().getResult();
+            return this.apiClient.create(analyticsVirtualLicenseRequest).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
+    /**
+     * Delete Analytics Virtual License
+     * 
+     * @param virtualLicenseId Virtual License id (required)
+     * @return BitmovinResponse
+     * @throws BitmovinException if fails to make API call
+     */
+    public BitmovinResponse delete(String virtualLicenseId) throws BitmovinException {
+        try {
+            return this.apiClient.delete(virtualLicenseId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
+    /**
+     * List Analytics Virtual Licenses
+     * 
+     * @return List&lt;AnalyticsVirtualLicense&gt;
+     * @throws BitmovinException if fails to make API call
+     */
+    public PaginationResponse<AnalyticsVirtualLicense> list() throws BitmovinException {
+        try {
+            return this.apiClient.list(new QueryMapWrapper()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
+    /**
+     * List Analytics Virtual Licenses
+     * 
+     * @param queryParams The query parameters for sorting, filtering and paging options (optional)
+     * @return List&lt;AnalyticsVirtualLicense&gt;
+     * @throws BitmovinException if fails to make API call
+     */
+    public PaginationResponse<AnalyticsVirtualLicense> list(AnalyticsVirtualLicenseListQueryParams queryParams) throws BitmovinException {
+        try {
+            return this.apiClient.list(new QueryMapWrapper(queryParams)).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
+    /**
+     * Update Analytics Virtual License
+     * 
+     * @param virtualLicenseId Virtual license id (required)
+     * @param analyticsVirtualLicenseRequest Analytics Virtual License details to be updated (required)
+     * @return AnalyticsVirtualLicense
+     * @throws BitmovinException if fails to make API call
+     */
+    public AnalyticsVirtualLicense update(String virtualLicenseId, AnalyticsVirtualLicenseRequest analyticsVirtualLicenseRequest) throws BitmovinException {
+        try {
+            return this.apiClient.update(virtualLicenseId, analyticsVirtualLicenseRequest).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -58,6 +118,15 @@ public class VirtualLicensesApi {
     interface VirtualLicensesApiClient {
 
         @RequestLine("POST /analytics/virtual-licenses")
-        ResponseEnvelope<VirtualLicense> create(VirtualLicenseCreateRequest virtualLicenseCreateRequest) throws BitmovinException;
+        ResponseEnvelope<AnalyticsVirtualLicense> create(AnalyticsVirtualLicenseRequest analyticsVirtualLicenseRequest) throws BitmovinException;
+    
+        @RequestLine("DELETE /analytics/virtual-licenses/{virtual_license_id}")
+        ResponseEnvelope<BitmovinResponse> delete(@Param(value = "virtual_license_id") String virtualLicenseId) throws BitmovinException;
+    
+        @RequestLine("GET /analytics/virtual-licenses")
+        ResponseEnvelope<PaginationResponse<AnalyticsVirtualLicense>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
+    
+        @RequestLine("PUT /analytics/virtual-licenses/{virtual_license_id}")
+        ResponseEnvelope<AnalyticsVirtualLicense> update(@Param(value = "virtual_license_id") String virtualLicenseId, AnalyticsVirtualLicenseRequest analyticsVirtualLicenseRequest) throws BitmovinException;
     }
 }

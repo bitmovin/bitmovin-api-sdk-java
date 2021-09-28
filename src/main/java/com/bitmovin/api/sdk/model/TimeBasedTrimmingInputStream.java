@@ -68,7 +68,7 @@ public class TimeBasedTrimmingInputStream extends InputStream {
 
 
   /**
-   * Defines how many seconds of the input will be encoded
+   * Defines how many seconds of the input will be encoded. Not defining or setting it to null indicates that the remaining input (considering offset) will be encoded.
    * minimum: 0
    * @return duration
    */
@@ -77,11 +77,11 @@ public class TimeBasedTrimmingInputStream extends InputStream {
   }
 
   /**
-   * Defines how many seconds of the input will be encoded
+   * Defines how many seconds of the input will be encoded. Not defining or setting it to null indicates that the remaining input (considering offset) will be encoded.
    * minimum: 0
    *
    * @param duration
-   *        Defines how many seconds of the input will be encoded
+   *        Defines how many seconds of the input will be encoded. Not defining or setting it to null indicates that the remaining input (considering offset) will be encoded.
    *        minimum: 0
    */
   public void setDuration(Double duration) {

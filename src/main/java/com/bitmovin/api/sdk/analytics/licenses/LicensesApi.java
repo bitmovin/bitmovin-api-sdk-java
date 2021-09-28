@@ -81,7 +81,22 @@ public class LicensesApi {
      */
     public PaginationResponse<AnalyticsLicense> list() throws BitmovinException {
         try {
-            return this.apiClient.list().getData().getResult();
+            return this.apiClient.list(new QueryMapWrapper()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
+    /**
+     * List Analytics Licenses
+     * 
+     * @param queryParams The query parameters for sorting, filtering and paging options (optional)
+     * @return List&lt;AnalyticsLicense&gt;
+     * @throws BitmovinException if fails to make API call
+     */
+    public PaginationResponse<AnalyticsLicense> list(AnalyticsLicenseListQueryParams queryParams) throws BitmovinException {
+        try {
+            return this.apiClient.list(new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -112,7 +127,7 @@ public class LicensesApi {
         ResponseEnvelope<AnalyticsLicense> get(@Param(value = "license_id") String licenseId) throws BitmovinException;
     
         @RequestLine("GET /analytics/licenses")
-        ResponseEnvelope<PaginationResponse<AnalyticsLicense>> list() throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<AnalyticsLicense>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     
         @RequestLine("PUT /analytics/licenses/{license_id}")
         ResponseEnvelope<AnalyticsLicense> update(@Param(value = "license_id") String licenseId, AnalyticsLicenseUpdateRequest analyticsLicenseUpdateRequest) throws BitmovinException;

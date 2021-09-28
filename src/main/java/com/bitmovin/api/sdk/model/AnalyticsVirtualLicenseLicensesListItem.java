@@ -8,10 +8,10 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * VirtualLicenseLicensesListItem
+ * AnalyticsVirtualLicenseLicensesListItem
  */
 
-public class VirtualLicenseLicensesListItem {
+public class AnalyticsVirtualLicenseLicensesListItem {
   @JsonProperty("id")
   private String id;
 
@@ -20,6 +20,9 @@ public class VirtualLicenseLicensesListItem {
 
   @JsonProperty("orgId")
   private String orgId;
+
+  @JsonProperty("name")
+  private String name;
 
   /**
    * Analytics License Id
@@ -67,6 +70,14 @@ public class VirtualLicenseLicensesListItem {
     this.orgId = orgId;
   }
 
+  /**
+   * Analytics License name
+   * @return name
+   */
+  public String getName() {
+    return name;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -76,25 +87,27 @@ public class VirtualLicenseLicensesListItem {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    VirtualLicenseLicensesListItem virtualLicenseLicensesListItem = (VirtualLicenseLicensesListItem) o;
-    return Objects.equals(this.id, virtualLicenseLicensesListItem.id) &&
-        Objects.equals(this.licenseKey, virtualLicenseLicensesListItem.licenseKey) &&
-        Objects.equals(this.orgId, virtualLicenseLicensesListItem.orgId);
+    AnalyticsVirtualLicenseLicensesListItem analyticsVirtualLicenseLicensesListItem = (AnalyticsVirtualLicenseLicensesListItem) o;
+    return Objects.equals(this.id, analyticsVirtualLicenseLicensesListItem.id) &&
+        Objects.equals(this.licenseKey, analyticsVirtualLicenseLicensesListItem.licenseKey) &&
+        Objects.equals(this.orgId, analyticsVirtualLicenseLicensesListItem.orgId) &&
+        Objects.equals(this.name, analyticsVirtualLicenseLicensesListItem.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, licenseKey, orgId);
+    return Objects.hash(id, licenseKey, orgId, name);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class VirtualLicenseLicensesListItem {\n");
+    sb.append("class AnalyticsVirtualLicenseLicensesListItem {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    licenseKey: ").append(toIndentedString(licenseKey)).append("\n");
     sb.append("    orgId: ").append(toIndentedString(orgId)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -2,8 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.BitmovinResponse;
-import com.bitmovin.api.sdk.model.VirtualLicenseLicensesListItem;
+import com.bitmovin.api.sdk.model.AnalyticsVirtualLicenseLicensesListItem;
 import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -12,10 +11,13 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * VirtualLicense
+ * AnalyticsVirtualLicense
  */
 
-public class VirtualLicense extends BitmovinResponse {
+public class AnalyticsVirtualLicense {
+  @JsonProperty("id")
+  private String id;
+
   @JsonProperty("name")
   private String name;
 
@@ -24,11 +26,19 @@ public class VirtualLicense extends BitmovinResponse {
 
   @JsonProperty("licenses")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
-  private List<VirtualLicenseLicensesListItem> licenses = new ArrayList<VirtualLicenseLicensesListItem>();
+  private List<AnalyticsVirtualLicenseLicensesListItem> licenses = new ArrayList<AnalyticsVirtualLicenseLicensesListItem>();
+
+  /**
+   * Analytics Virtual License Key/Id
+   * @return id
+   */
+  public String getId() {
+    return id;
+  }
 
 
   /**
-   * Name of the Virtual License
+   * Name of the Analytics Virtual License
    * @return name
    */
   public String getName() {
@@ -36,10 +46,10 @@ public class VirtualLicense extends BitmovinResponse {
   }
 
   /**
-   * Name of the Virtual License
+   * Name of the Analytics Virtual License
    *
    * @param name
-   *        Name of the Virtual License
+   *        Name of the Analytics Virtual License
    */
   public void setName(String name) {
     this.name = name;
@@ -47,7 +57,7 @@ public class VirtualLicense extends BitmovinResponse {
 
 
   /**
-   * The timezone of the Virtual License
+   * The timezone of the Analytics Virtual License
    * @return timezone
    */
   public String getTimezone() {
@@ -55,17 +65,17 @@ public class VirtualLicense extends BitmovinResponse {
   }
 
   /**
-   * The timezone of the Virtual License
+   * The timezone of the Analytics Virtual License
    *
    * @param timezone
-   *        The timezone of the Virtual License
+   *        The timezone of the Analytics Virtual License
    */
   public void setTimezone(String timezone) {
     this.timezone = timezone;
   }
 
 
-  public VirtualLicense addLicensesItem(VirtualLicenseLicensesListItem licensesItem) {
+  public AnalyticsVirtualLicense addLicensesItem(AnalyticsVirtualLicenseLicensesListItem licensesItem) {
     this.licenses.add(licensesItem);
     return this;
   }
@@ -74,7 +84,7 @@ public class VirtualLicense extends BitmovinResponse {
    * List of Analytics Licenses
    * @return licenses
    */
-  public List<VirtualLicenseLicensesListItem> getLicenses() {
+  public List<AnalyticsVirtualLicenseLicensesListItem> getLicenses() {
     return licenses;
   }
 
@@ -84,7 +94,7 @@ public class VirtualLicense extends BitmovinResponse {
    * @param licenses
    *        List of Analytics Licenses
    */
-  public void setLicenses(List<VirtualLicenseLicensesListItem> licenses) {
+  public void setLicenses(List<AnalyticsVirtualLicenseLicensesListItem> licenses) {
     this.licenses = licenses;
   }
 
@@ -97,23 +107,24 @@ public class VirtualLicense extends BitmovinResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    VirtualLicense virtualLicense = (VirtualLicense) o;
-    return Objects.equals(this.name, virtualLicense.name) &&
-        Objects.equals(this.timezone, virtualLicense.timezone) &&
-        Objects.equals(this.licenses, virtualLicense.licenses) &&
-        super.equals(o);
+    AnalyticsVirtualLicense analyticsVirtualLicense = (AnalyticsVirtualLicense) o;
+    return Objects.equals(this.id, analyticsVirtualLicense.id) &&
+        Objects.equals(this.name, analyticsVirtualLicense.name) &&
+        Objects.equals(this.timezone, analyticsVirtualLicense.timezone) &&
+        Objects.equals(this.licenses, analyticsVirtualLicense.licenses);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, timezone, licenses, super.hashCode());
+    return Objects.hash(id, name, timezone, licenses);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class VirtualLicense {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("class AnalyticsVirtualLicense {\n");
+    
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
     sb.append("    licenses: ").append(toIndentedString(licenses)).append("\n");
