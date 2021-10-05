@@ -9,6 +9,7 @@ import com.bitmovin.api.sdk.model.ColorConfig;
 import com.bitmovin.api.sdk.model.DisplayAspectRatio;
 import com.bitmovin.api.sdk.model.EncodingMode;
 import com.bitmovin.api.sdk.model.ForceFlushMode;
+import com.bitmovin.api.sdk.model.H265DynamicRangeFormat;
 import com.bitmovin.api.sdk.model.LevelH265;
 import com.bitmovin.api.sdk.model.LimitReferences;
 import com.bitmovin.api.sdk.model.LimitTransformUnitDepthRecursionMode;
@@ -42,6 +43,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 public class H265VideoConfiguration extends VideoConfiguration {
   @JsonProperty("presetConfiguration")
   private PresetConfiguration presetConfiguration;
+
+  @JsonProperty("dynamicRangeFormat")
+  private H265DynamicRangeFormat dynamicRangeFormat;
 
   @JsonProperty("crf")
   private Double crf;
@@ -342,6 +346,25 @@ public class H265VideoConfiguration extends VideoConfiguration {
    */
   public void setPresetConfiguration(PresetConfiguration presetConfiguration) {
     this.presetConfiguration = presetConfiguration;
+  }
+
+
+  /**
+   * Automatically configures the H265 Video Codec to be compatible with the given SDR/HDR format. Bitmovin recommends to use the dynamic range format together with a preset configuration to achieve good results. Explicitly configured properties will take precedence over dynamic range format settings, which in turn will take precedence over preset configurations.
+   * @return dynamicRangeFormat
+   */
+  public H265DynamicRangeFormat getDynamicRangeFormat() {
+    return dynamicRangeFormat;
+  }
+
+  /**
+   * Automatically configures the H265 Video Codec to be compatible with the given SDR/HDR format. Bitmovin recommends to use the dynamic range format together with a preset configuration to achieve good results. Explicitly configured properties will take precedence over dynamic range format settings, which in turn will take precedence over preset configurations.
+   *
+   * @param dynamicRangeFormat
+   *        Automatically configures the H265 Video Codec to be compatible with the given SDR/HDR format. Bitmovin recommends to use the dynamic range format together with a preset configuration to achieve good results. Explicitly configured properties will take precedence over dynamic range format settings, which in turn will take precedence over preset configurations.
+   */
+  public void setDynamicRangeFormat(H265DynamicRangeFormat dynamicRangeFormat) {
+    this.dynamicRangeFormat = dynamicRangeFormat;
   }
 
 
@@ -2246,6 +2269,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
     }
     H265VideoConfiguration h265VideoConfiguration = (H265VideoConfiguration) o;
     return Objects.equals(this.presetConfiguration, h265VideoConfiguration.presetConfiguration) &&
+        Objects.equals(this.dynamicRangeFormat, h265VideoConfiguration.dynamicRangeFormat) &&
         Objects.equals(this.crf, h265VideoConfiguration.crf) &&
         Objects.equals(this.profile, h265VideoConfiguration.profile) &&
         Objects.equals(this.bframes, h265VideoConfiguration.bframes) &&
@@ -2345,7 +2369,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
 
   @Override
   public int hashCode() {
-    return Objects.hash(presetConfiguration, crf, profile, bframes, refFrames, qp, maxBitrate, minBitrate, bufsize, minGop, maxGop, openGop, minKeyframeInterval, maxKeyframeInterval, level, rcLookahead, bAdapt, maxCTUSize, tuIntraDepth, tuInterDepth, motionSearch, subMe, motionSearchRange, weightPredictionOnPSlice, weightPredictionOnBSlice, sao, masterDisplay, maxContentLightLevel, maxPictureAverageLightLevel, hdr, sceneCutThreshold, adaptiveQuantizationMode, enableHlgSignaling, videoFormat, psyRateDistortionOptimization, psyRateDistortionOptimizedQuantization, enableHrdSignaling, cutree, minCodingUnitSize, lookaheadSlices, limitReferences, rectangularMotionPartitionsAnalysis, asymetricMotionPartitionsAnalysis, limitModes, maxMerge, earlySkip, recursionSkip, fastSearchForAngularIntraPredictions, evaluationOfIntraModesInBSlices, signHide, rateDistortionLevelForModeDecision, rateDistortionLevelForQuantization, qpMin, qpMax, wavefrontParallelProcessing, slices, copyPicture, levelHighTier, skipSplitRateDistortionAnalysis, codingUnitLossless, transformSkip, refineRateDistortionCost, limitTransformUnitDepthRecursion, noiseReductionIntra, noiseReductionInter, rateDistortionPenalty, maximumTransformUnitSize, dynamicRateDistortionStrength, ssimRateDistortionOptimization, temporalMotionVectorPredictors, analyzeSourceFramePixels, strongIntraSmoothing, constrainedIntraPrediction, scenecutBias, allowedRADLBeforeIDR, gopLookahead, bframeBias, forceFlush, adaptiveQuantizationStrength, adaptiveQuantizationMotion, quantizationGroupSize, strictCbr, qpOffsetChromaCb, qpOffsetChromaCr, ipRatio, pbRatio, quantizerCurveCompressionFactor, qpStep, grainOptimizedRateControl, blurQuants, blurComplexity, saoNonDeblock, limitSao, lowpassDct, cea608708SubtitleConfig, super.hashCode());
+    return Objects.hash(presetConfiguration, dynamicRangeFormat, crf, profile, bframes, refFrames, qp, maxBitrate, minBitrate, bufsize, minGop, maxGop, openGop, minKeyframeInterval, maxKeyframeInterval, level, rcLookahead, bAdapt, maxCTUSize, tuIntraDepth, tuInterDepth, motionSearch, subMe, motionSearchRange, weightPredictionOnPSlice, weightPredictionOnBSlice, sao, masterDisplay, maxContentLightLevel, maxPictureAverageLightLevel, hdr, sceneCutThreshold, adaptiveQuantizationMode, enableHlgSignaling, videoFormat, psyRateDistortionOptimization, psyRateDistortionOptimizedQuantization, enableHrdSignaling, cutree, minCodingUnitSize, lookaheadSlices, limitReferences, rectangularMotionPartitionsAnalysis, asymetricMotionPartitionsAnalysis, limitModes, maxMerge, earlySkip, recursionSkip, fastSearchForAngularIntraPredictions, evaluationOfIntraModesInBSlices, signHide, rateDistortionLevelForModeDecision, rateDistortionLevelForQuantization, qpMin, qpMax, wavefrontParallelProcessing, slices, copyPicture, levelHighTier, skipSplitRateDistortionAnalysis, codingUnitLossless, transformSkip, refineRateDistortionCost, limitTransformUnitDepthRecursion, noiseReductionIntra, noiseReductionInter, rateDistortionPenalty, maximumTransformUnitSize, dynamicRateDistortionStrength, ssimRateDistortionOptimization, temporalMotionVectorPredictors, analyzeSourceFramePixels, strongIntraSmoothing, constrainedIntraPrediction, scenecutBias, allowedRADLBeforeIDR, gopLookahead, bframeBias, forceFlush, adaptiveQuantizationStrength, adaptiveQuantizationMotion, quantizationGroupSize, strictCbr, qpOffsetChromaCb, qpOffsetChromaCr, ipRatio, pbRatio, quantizerCurveCompressionFactor, qpStep, grainOptimizedRateControl, blurQuants, blurComplexity, saoNonDeblock, limitSao, lowpassDct, cea608708SubtitleConfig, super.hashCode());
   }
 
   @Override
@@ -2354,6 +2378,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
     sb.append("class H265VideoConfiguration {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    presetConfiguration: ").append(toIndentedString(presetConfiguration)).append("\n");
+    sb.append("    dynamicRangeFormat: ").append(toIndentedString(dynamicRangeFormat)).append("\n");
     sb.append("    crf: ").append(toIndentedString(crf)).append("\n");
     sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
     sb.append("    bframes: ").append(toIndentedString(bframes)).append("\n");

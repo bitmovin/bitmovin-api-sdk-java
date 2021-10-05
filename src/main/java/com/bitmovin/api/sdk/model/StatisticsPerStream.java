@@ -99,6 +99,18 @@ public class StatisticsPerStream {
   @JsonProperty("enhancedDeinterlaceMultiplicator")
   private Double enhancedDeinterlaceMultiplicator;
 
+  @JsonProperty("dolbyVisionToHdr")
+  private Boolean dolbyVisionToHdr;
+
+  @JsonProperty("dolbyVisionToHdrMultiplicator")
+  private Double dolbyVisionToHdrMultiplicator;
+
+  @JsonProperty("dolbyVisionToSdr")
+  private Boolean dolbyVisionToSdr;
+
+  @JsonProperty("dolbyVisionToSdrMultiplicator")
+  private Double dolbyVisionToSdrMultiplicator;
+
   @JsonProperty("nexGuardABWatermarkingType")
   private NexGuardABWatermarkingFeature nexGuardABWatermarkingType;
 
@@ -382,6 +394,38 @@ public class StatisticsPerStream {
     return enhancedDeinterlaceMultiplicator;
   }
 
+  /**
+   * Indicates if the conversion from Dolby Vision to HDR was triggered.
+   * @return dolbyVisionToHdr
+   */
+  public Boolean getDolbyVisionToHdr() {
+    return dolbyVisionToHdr;
+  }
+
+  /**
+   * The output minutes multiplicator for streams using the conversion from Dolby Vision to HDR.
+   * @return dolbyVisionToHdrMultiplicator
+   */
+  public Double getDolbyVisionToHdrMultiplicator() {
+    return dolbyVisionToHdrMultiplicator;
+  }
+
+  /**
+   * Indicates if the conversion from Dolby Vision to SDR was triggered.
+   * @return dolbyVisionToSdr
+   */
+  public Boolean getDolbyVisionToSdr() {
+    return dolbyVisionToSdr;
+  }
+
+  /**
+   * The output minutes multiplicator for streams using the conversion from Dolby Vision to SDR.
+   * @return dolbyVisionToSdrMultiplicator
+   */
+  public Double getDolbyVisionToSdrMultiplicator() {
+    return dolbyVisionToSdrMultiplicator;
+  }
+
 
   /**
    * Get nexGuardABWatermarkingType
@@ -488,6 +532,10 @@ public class StatisticsPerStream {
         Objects.equals(this.liveMultiplicator, statisticsPerStream.liveMultiplicator) &&
         Objects.equals(this.enhancedDeinterlace, statisticsPerStream.enhancedDeinterlace) &&
         Objects.equals(this.enhancedDeinterlaceMultiplicator, statisticsPerStream.enhancedDeinterlaceMultiplicator) &&
+        Objects.equals(this.dolbyVisionToHdr, statisticsPerStream.dolbyVisionToHdr) &&
+        Objects.equals(this.dolbyVisionToHdrMultiplicator, statisticsPerStream.dolbyVisionToHdrMultiplicator) &&
+        Objects.equals(this.dolbyVisionToSdr, statisticsPerStream.dolbyVisionToSdr) &&
+        Objects.equals(this.dolbyVisionToSdrMultiplicator, statisticsPerStream.dolbyVisionToSdrMultiplicator) &&
         Objects.equals(this.nexGuardABWatermarkingType, statisticsPerStream.nexGuardABWatermarkingType) &&
         Objects.equals(this.nexGuardABWatermarkingMultiplicator, statisticsPerStream.nexGuardABWatermarkingMultiplicator) &&
         Objects.equals(this.pixelFormatBitDepth, statisticsPerStream.pixelFormatBitDepth) &&
@@ -497,7 +545,7 @@ public class StatisticsPerStream {
 
   @Override
   public int hashCode() {
-    return Objects.hash(streamId, codecConfigId, multiplicator, encodedBytes, encodedSeconds, billableMinutes, width, height, rate, bitrate, codec, resolution, encodingMode, encodingModeMultiplicator, perTitleResultStream, perTitleMultiplicator, psnrMode, psnrMultiplicator, dolbyVisionMode, dolbyVisionMultiplicator, preset, presetMultiplicator, live, liveMultiplicator, enhancedDeinterlace, enhancedDeinterlaceMultiplicator, nexGuardABWatermarkingType, nexGuardABWatermarkingMultiplicator, pixelFormatBitDepth, pixelFormatMultiplicator, inputFactor);
+    return Objects.hash(streamId, codecConfigId, multiplicator, encodedBytes, encodedSeconds, billableMinutes, width, height, rate, bitrate, codec, resolution, encodingMode, encodingModeMultiplicator, perTitleResultStream, perTitleMultiplicator, psnrMode, psnrMultiplicator, dolbyVisionMode, dolbyVisionMultiplicator, preset, presetMultiplicator, live, liveMultiplicator, enhancedDeinterlace, enhancedDeinterlaceMultiplicator, dolbyVisionToHdr, dolbyVisionToHdrMultiplicator, dolbyVisionToSdr, dolbyVisionToSdrMultiplicator, nexGuardABWatermarkingType, nexGuardABWatermarkingMultiplicator, pixelFormatBitDepth, pixelFormatMultiplicator, inputFactor);
   }
 
   @Override
@@ -531,6 +579,10 @@ public class StatisticsPerStream {
     sb.append("    liveMultiplicator: ").append(toIndentedString(liveMultiplicator)).append("\n");
     sb.append("    enhancedDeinterlace: ").append(toIndentedString(enhancedDeinterlace)).append("\n");
     sb.append("    enhancedDeinterlaceMultiplicator: ").append(toIndentedString(enhancedDeinterlaceMultiplicator)).append("\n");
+    sb.append("    dolbyVisionToHdr: ").append(toIndentedString(dolbyVisionToHdr)).append("\n");
+    sb.append("    dolbyVisionToHdrMultiplicator: ").append(toIndentedString(dolbyVisionToHdrMultiplicator)).append("\n");
+    sb.append("    dolbyVisionToSdr: ").append(toIndentedString(dolbyVisionToSdr)).append("\n");
+    sb.append("    dolbyVisionToSdrMultiplicator: ").append(toIndentedString(dolbyVisionToSdrMultiplicator)).append("\n");
     sb.append("    nexGuardABWatermarkingType: ").append(toIndentedString(nexGuardABWatermarkingType)).append("\n");
     sb.append("    nexGuardABWatermarkingMultiplicator: ").append(toIndentedString(nexGuardABWatermarkingMultiplicator)).append("\n");
     sb.append("    pixelFormatBitDepth: ").append(toIndentedString(pixelFormatBitDepth)).append("\n");

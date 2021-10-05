@@ -49,7 +49,10 @@ public enum InputStreamType {
   DVB_TELETEXT("DVB_TELETEXT"),
   
   
-  DOLBY_ATMOS("DOLBY_ATMOS");
+  DOLBY_ATMOS("DOLBY_ATMOS"),
+  
+  
+  DOLBY_VISION("DOLBY_VISION");
 
   private String value;
 

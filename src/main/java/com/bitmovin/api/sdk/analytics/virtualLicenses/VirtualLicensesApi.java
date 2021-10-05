@@ -71,6 +71,21 @@ public class VirtualLicensesApi {
     }
 
     /**
+     * Analytics Virtual License
+     * 
+     * @param virtualLicenseId Virtual license id (required)
+     * @return AnalyticsVirtualLicense
+     * @throws BitmovinException if fails to make API call
+     */
+    public AnalyticsVirtualLicense get(String virtualLicenseId) throws BitmovinException {
+        try {
+            return this.apiClient.get(virtualLicenseId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
+    /**
      * List Analytics Virtual Licenses
      * 
      * @return List&lt;AnalyticsVirtualLicense&gt;
@@ -122,6 +137,9 @@ public class VirtualLicensesApi {
     
         @RequestLine("DELETE /analytics/virtual-licenses/{virtual_license_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "virtual_license_id") String virtualLicenseId) throws BitmovinException;
+    
+        @RequestLine("GET /analytics/virtual-licenses/{virtual_license_id}")
+        ResponseEnvelope<AnalyticsVirtualLicense> get(@Param(value = "virtual_license_id") String virtualLicenseId) throws BitmovinException;
     
         @RequestLine("GET /analytics/virtual-licenses")
         ResponseEnvelope<PaginationResponse<AnalyticsVirtualLicense>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
