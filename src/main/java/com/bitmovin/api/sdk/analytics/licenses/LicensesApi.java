@@ -106,13 +106,13 @@ public class LicensesApi {
      * Update Analytics License
      * 
      * @param licenseId License id (required)
-     * @param analyticsLicenseUpdateRequest Analytics License details to be updated (required)
+     * @param analyticsLicense Analytics License details to be updated (required)
      * @return AnalyticsLicense
      * @throws BitmovinException if fails to make API call
      */
-    public AnalyticsLicense update(String licenseId, AnalyticsLicenseUpdateRequest analyticsLicenseUpdateRequest) throws BitmovinException {
+    public AnalyticsLicense update(String licenseId, AnalyticsLicense analyticsLicense) throws BitmovinException {
         try {
-            return this.apiClient.update(licenseId, analyticsLicenseUpdateRequest).getData().getResult();
+            return this.apiClient.update(licenseId, analyticsLicense).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -130,6 +130,6 @@ public class LicensesApi {
         ResponseEnvelope<PaginationResponse<AnalyticsLicense>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     
         @RequestLine("PUT /analytics/licenses/{license_id}")
-        ResponseEnvelope<AnalyticsLicense> update(@Param(value = "license_id") String licenseId, AnalyticsLicenseUpdateRequest analyticsLicenseUpdateRequest) throws BitmovinException;
+        ResponseEnvelope<AnalyticsLicense> update(@Param(value = "license_id") String licenseId, AnalyticsLicense analyticsLicense) throws BitmovinException;
     }
 }

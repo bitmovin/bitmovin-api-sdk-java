@@ -5,10 +5,11 @@ import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AnalyticsLicenseCustomDataFieldLabels;
 import com.bitmovin.api.sdk.model.AnalyticsLicenseDomain;
 import com.bitmovin.api.sdk.model.AnalyticsLicenseFeatures;
-import com.bitmovin.api.sdk.model.BitmovinResponse;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -18,37 +19,97 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  * AnalyticsLicense
  */
 
-public class AnalyticsLicense extends BitmovinResponse {
-  @JsonProperty("name")
-  private String name;
-
-  @JsonProperty("licenseKey")
-  private String licenseKey;
+public class AnalyticsLicense {
+  @JsonProperty("id")
+  private String id;
 
   @JsonProperty("createdAt")
   private Date createdAt;
 
-  @JsonProperty("maxImpressions")
-  private Long maxImpressions;
+  @JsonProperty("customData")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private Map<String, Object> customData = new HashMap<String, Object>();
+
+  @JsonProperty("licenseKey")
+  private String licenseKey;
+
+  @JsonProperty("name")
+  private String name;
+
+  @JsonProperty("industry")
+  private String industry;
+
+  @JsonProperty("subIndustry")
+  private String subIndustry;
+
+  @JsonProperty("ignoreDNT")
+  private Boolean ignoreDNT;
 
   @JsonProperty("impressions")
   private Long impressions;
+
+  @JsonProperty("maxImpressions")
+  private Long maxImpressions;
+
+  @JsonProperty("timeZone")
+  private String timeZone;
+
+  @JsonProperty("retentionTime")
+  private String retentionTime;
 
   @JsonProperty("domains")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<AnalyticsLicenseDomain> domains = new ArrayList<AnalyticsLicenseDomain>();
 
-  @JsonProperty("ignoreDNT")
-  private Boolean ignoreDNT;
-
-  @JsonProperty("timeZone")
-  private String timeZone;
+  @JsonProperty("includeInInsights")
+  private Boolean includeInInsights;
 
   @JsonProperty("customDataFieldLabels")
   private AnalyticsLicenseCustomDataFieldLabels customDataFieldLabels;
 
+  @JsonProperty("customDataFieldsCount")
+  private Integer customDataFieldsCount;
+
+  @JsonProperty("orderIndex")
+  private Integer orderIndex;
+
+  @JsonProperty("rateLimit")
+  private String rateLimit;
+
   @JsonProperty("features")
   private AnalyticsLicenseFeatures features;
+
+  /**
+   * Id of the Analytics License
+   * @return id
+   */
+  public String getId() {
+    return id;
+  }
+
+  /**
+   * Creation date of the Analytics License in UTC format
+   * @return createdAt
+   */
+  public Date getCreatedAt() {
+    return createdAt;
+  }
+
+  /**
+   * User-specific meta data. This can hold anything.
+   * @return customData
+   */
+  public Map<String, Object> getCustomData() {
+    return customData;
+  }
+
+  /**
+   * License Key
+   * @return licenseKey
+   */
+  public String getLicenseKey() {
+    return licenseKey;
+  }
 
 
   /**
@@ -70,27 +131,38 @@ public class AnalyticsLicense extends BitmovinResponse {
   }
 
   /**
-   * License Key
-   * @return licenseKey
+   * The industry of the organization associated with the Analytics License
+   * @return industry
    */
-  public String getLicenseKey() {
-    return licenseKey;
+  public String getIndustry() {
+    return industry;
   }
 
   /**
-   * Creation date of the Analytics License in UTC format
-   * @return createdAt
+   * The subindustry of the organization associated with the Analytics License
+   * @return subIndustry
    */
-  public Date getCreatedAt() {
-    return createdAt;
+  public String getSubIndustry() {
+    return subIndustry;
+  }
+
+
+  /**
+   * Whether the Do Not Track request from the browser should be ignored
+   * @return ignoreDNT
+   */
+  public Boolean getIgnoreDNT() {
+    return ignoreDNT;
   }
 
   /**
-   * Maximum number of impressions
-   * @return maxImpressions
+   * Whether the Do Not Track request from the browser should be ignored
+   *
+   * @param ignoreDNT
+   *        Whether the Do Not Track request from the browser should be ignored
    */
-  public Long getMaxImpressions() {
-    return maxImpressions;
+  public void setIgnoreDNT(Boolean ignoreDNT) {
+    this.ignoreDNT = ignoreDNT;
   }
 
   /**
@@ -102,6 +174,41 @@ public class AnalyticsLicense extends BitmovinResponse {
   }
 
   /**
+   * Maximum number of impressions
+   * @return maxImpressions
+   */
+  public Long getMaxImpressions() {
+    return maxImpressions;
+  }
+
+
+  /**
+   * The timezone of the Analytics License
+   * @return timeZone
+   */
+  public String getTimeZone() {
+    return timeZone;
+  }
+
+  /**
+   * The timezone of the Analytics License
+   *
+   * @param timeZone
+   *        The timezone of the Analytics License
+   */
+  public void setTimeZone(String timeZone) {
+    this.timeZone = timeZone;
+  }
+
+  /**
+   * Retention time of impressions, returned as ISO 8601 duration format: P(n)Y(n)M(n)DT(n)H(n)M(n)S
+   * @return retentionTime
+   */
+  public String getRetentionTime() {
+    return retentionTime;
+  }
+
+  /**
    * Whitelisted domains
    * @return domains
    */
@@ -110,19 +217,11 @@ public class AnalyticsLicense extends BitmovinResponse {
   }
 
   /**
-   * Whether the Do Not Track request from the browser should be ignored
-   * @return ignoreDNT
+   * Whether the data of this license should be included in the industry insights or not
+   * @return includeInInsights
    */
-  public Boolean getIgnoreDNT() {
-    return ignoreDNT;
-  }
-
-  /**
-   * The timezone of the Analytics License
-   * @return timeZone
-   */
-  public String getTimeZone() {
-    return timeZone;
+  public Boolean getIncludeInInsights() {
+    return includeInInsights;
   }
 
 
@@ -142,6 +241,41 @@ public class AnalyticsLicense extends BitmovinResponse {
    */
   public void setCustomDataFieldLabels(AnalyticsLicenseCustomDataFieldLabels customDataFieldLabels) {
     this.customDataFieldLabels = customDataFieldLabels;
+  }
+
+  /**
+   * The number of customData fields available
+   * @return customDataFieldsCount
+   */
+  public Integer getCustomDataFieldsCount() {
+    return customDataFieldsCount;
+  }
+
+  /**
+   * Order index of license
+   * @return orderIndex
+   */
+  public Integer getOrderIndex() {
+    return orderIndex;
+  }
+
+
+  /**
+   * The rate limit of this license
+   * @return rateLimit
+   */
+  public String getRateLimit() {
+    return rateLimit;
+  }
+
+  /**
+   * The rate limit of this license
+   *
+   * @param rateLimit
+   *        The rate limit of this license
+   */
+  public void setRateLimit(String rateLimit) {
+    this.rateLimit = rateLimit;
   }
 
 
@@ -172,38 +306,55 @@ public class AnalyticsLicense extends BitmovinResponse {
       return false;
     }
     AnalyticsLicense analyticsLicense = (AnalyticsLicense) o;
-    return Objects.equals(this.name, analyticsLicense.name) &&
-        Objects.equals(this.licenseKey, analyticsLicense.licenseKey) &&
+    return Objects.equals(this.id, analyticsLicense.id) &&
         Objects.equals(this.createdAt, analyticsLicense.createdAt) &&
-        Objects.equals(this.maxImpressions, analyticsLicense.maxImpressions) &&
-        Objects.equals(this.impressions, analyticsLicense.impressions) &&
-        Objects.equals(this.domains, analyticsLicense.domains) &&
+        Objects.equals(this.customData, analyticsLicense.customData) &&
+        Objects.equals(this.licenseKey, analyticsLicense.licenseKey) &&
+        Objects.equals(this.name, analyticsLicense.name) &&
+        Objects.equals(this.industry, analyticsLicense.industry) &&
+        Objects.equals(this.subIndustry, analyticsLicense.subIndustry) &&
         Objects.equals(this.ignoreDNT, analyticsLicense.ignoreDNT) &&
+        Objects.equals(this.impressions, analyticsLicense.impressions) &&
+        Objects.equals(this.maxImpressions, analyticsLicense.maxImpressions) &&
         Objects.equals(this.timeZone, analyticsLicense.timeZone) &&
+        Objects.equals(this.retentionTime, analyticsLicense.retentionTime) &&
+        Objects.equals(this.domains, analyticsLicense.domains) &&
+        Objects.equals(this.includeInInsights, analyticsLicense.includeInInsights) &&
         Objects.equals(this.customDataFieldLabels, analyticsLicense.customDataFieldLabels) &&
-        Objects.equals(this.features, analyticsLicense.features) &&
-        super.equals(o);
+        Objects.equals(this.customDataFieldsCount, analyticsLicense.customDataFieldsCount) &&
+        Objects.equals(this.orderIndex, analyticsLicense.orderIndex) &&
+        Objects.equals(this.rateLimit, analyticsLicense.rateLimit) &&
+        Objects.equals(this.features, analyticsLicense.features);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, licenseKey, createdAt, maxImpressions, impressions, domains, ignoreDNT, timeZone, customDataFieldLabels, features, super.hashCode());
+    return Objects.hash(id, createdAt, customData, licenseKey, name, industry, subIndustry, ignoreDNT, impressions, maxImpressions, timeZone, retentionTime, domains, includeInInsights, customDataFieldLabels, customDataFieldsCount, orderIndex, rateLimit, features);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AnalyticsLicense {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    licenseKey: ").append(toIndentedString(licenseKey)).append("\n");
+    
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-    sb.append("    maxImpressions: ").append(toIndentedString(maxImpressions)).append("\n");
-    sb.append("    impressions: ").append(toIndentedString(impressions)).append("\n");
-    sb.append("    domains: ").append(toIndentedString(domains)).append("\n");
+    sb.append("    customData: ").append(toIndentedString(customData)).append("\n");
+    sb.append("    licenseKey: ").append(toIndentedString(licenseKey)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    industry: ").append(toIndentedString(industry)).append("\n");
+    sb.append("    subIndustry: ").append(toIndentedString(subIndustry)).append("\n");
     sb.append("    ignoreDNT: ").append(toIndentedString(ignoreDNT)).append("\n");
+    sb.append("    impressions: ").append(toIndentedString(impressions)).append("\n");
+    sb.append("    maxImpressions: ").append(toIndentedString(maxImpressions)).append("\n");
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
+    sb.append("    retentionTime: ").append(toIndentedString(retentionTime)).append("\n");
+    sb.append("    domains: ").append(toIndentedString(domains)).append("\n");
+    sb.append("    includeInInsights: ").append(toIndentedString(includeInInsights)).append("\n");
     sb.append("    customDataFieldLabels: ").append(toIndentedString(customDataFieldLabels)).append("\n");
+    sb.append("    customDataFieldsCount: ").append(toIndentedString(customDataFieldsCount)).append("\n");
+    sb.append("    orderIndex: ").append(toIndentedString(orderIndex)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    features: ").append(toIndentedString(features)).append("\n");
     sb.append("}");
     return sb.toString();
