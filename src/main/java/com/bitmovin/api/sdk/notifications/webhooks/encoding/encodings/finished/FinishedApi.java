@@ -44,9 +44,9 @@ public class FinishedApi {
     }
 
     /**
-     * Add Encoding Finished Webhook
+     * Add &#39;Encoding Finished&#39; Webhook
      * 
-     * @param webhook The Encoding Finished Webhook to be added. **Note:** A maximum number of 5 webhooks is allowed (required)
+     * @param webhook The &#39;Encoding Finished&#39; Webhook to be added. A maximum number of 5 webhooks is allowed (required)
      * @return Webhook
      * @throws BitmovinException if fails to make API call
      */
@@ -59,10 +59,10 @@ public class FinishedApi {
     }
 
     /**
-     * Add Encoding Finished Webhook for specific Encoding Resource.
+     * Add &#39;Encoding Finished&#39; Webhook for a specific Encoding
      * 
      * @param encodingId Id of the encoding (required)
-     * @param webhook The Encoding Finished Webhook to be added. **Note:** A maximum number of 5 webhooks is allowed (required)
+     * @param webhook The &#39;Encoding Finished&#39; Webhook to be added. A maximum number of 5 webhooks per Encoding is allowed (required)
      * @return Webhook
      * @throws BitmovinException if fails to make API call
      */
@@ -75,7 +75,7 @@ public class FinishedApi {
     }
 
     /**
-     * Delete Encoding Finished Webhook for specific Encoding Resource
+     * Delete &#39;Encoding Finished&#39; Webhook for a specific Encoding
      * 
      * @param encodingId Id of the encoding (required)
      * @param webhookId Id of the webhook (required)
@@ -91,7 +91,7 @@ public class FinishedApi {
     }
 
     /**
-     * Delete Encoding Finished Webhook
+     * Delete &#39;Encoding Finished&#39; Webhook
      * 
      * @param webhookId Id of the webhook (required)
      * @return BitmovinResponse
@@ -106,7 +106,7 @@ public class FinishedApi {
     }
 
     /**
-     * Encoding Finished Webhook Details for specific Encoding Resource
+     * &#39;Encoding Finished&#39; Webhook Details for a specific Encoding
      * 
      * @param encodingId Id of the encoding (required)
      * @param webhookId Id of the webhook (required)
@@ -122,7 +122,7 @@ public class FinishedApi {
     }
 
     /**
-     * Encoding Finished Webhook Details
+     * &#39;Encoding Finished&#39; Webhook Details
      * 
      * @param webhookId Id of the webhook (required)
      * @return Webhook
@@ -137,7 +137,7 @@ public class FinishedApi {
     }
 
     /**
-     * List Encoding Finished Webhooks
+     * List &#39;Encoding Finished&#39; Webhooks
      * 
      * @return List&lt;Webhook&gt;
      * @throws BitmovinException if fails to make API call
@@ -151,7 +151,7 @@ public class FinishedApi {
     }
 
     /**
-     * List Encoding Finished Webhooks
+     * List &#39;Encoding Finished&#39; Webhooks
      * 
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;Webhook&gt;
@@ -166,7 +166,7 @@ public class FinishedApi {
     }
 
     /**
-     * List Encoding Finished Webhooks for specific Encoding Resource
+     * List &#39;Encoding Finished&#39; Webhooks for a specific Encoding
      * 
      * @param encodingId Id of the encoding (required)
      * @return List&lt;Webhook&gt;
@@ -181,7 +181,7 @@ public class FinishedApi {
     }
 
     /**
-     * List Encoding Finished Webhooks for specific Encoding Resource
+     * List &#39;Encoding Finished&#39; Webhooks for a specific Encoding
      * 
      * @param encodingId Id of the encoding (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

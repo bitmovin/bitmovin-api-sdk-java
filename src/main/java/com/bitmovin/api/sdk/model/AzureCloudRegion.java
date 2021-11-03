@@ -27,7 +27,9 @@ public enum AzureCloudRegion {
    */
   US_CENTRAL("US_CENTRAL"),
   
-  
+  /**
+   * Virginia
+   */
   US_EAST("US_EAST"),
   
   /**
@@ -66,6 +68,11 @@ public enum AzureCloudRegion {
   BRAZIL_SOUTH("BRAZIL_SOUTH"),
   
   /**
+   * Rio de Janeiro - Reserved for Brazil South customers requiring scenario-based in-country disaster recovery
+   */
+  BRAZIL_SOUTHEAST("BRAZIL_SOUTHEAST"),
+  
+  /**
    * Ireland
    */
   EUROPE_NORTH("EUROPE_NORTH"),
@@ -84,6 +91,46 @@ public enum AzureCloudRegion {
    * Cardiff
    */
   UK_WEST("UK_WEST"),
+  
+  /**
+   * Paris
+   */
+  FRANCE_CENTRAL("FRANCE_CENTRAL"),
+  
+  /**
+   * Marseille - Reserved for France Central customers requiring in-country disaster recovery
+   */
+  FRANCE_SOUTH("FRANCE_SOUTH"),
+  
+  /**
+   * Zürich
+   */
+  SWITZERLAND_NORTH("SWITZERLAND_NORTH"),
+  
+  /**
+   * Geneva - Reserved for Switzerland North customers requiring in-country disaster recovery
+   */
+  SWITZERLAND_WEST("SWITZERLAND_WEST"),
+  
+  /**
+   * Berlin - Reserved for Germany West Central customers requiring in-country disaster recovery
+   */
+  GERMANY_NORTH("GERMANY_NORTH"),
+  
+  /**
+   * Frankfurt
+   */
+  GERMANY_WESTCENTRAL("GERMANY_WESTCENTRAL"),
+  
+  /**
+   * Stavanger - Reserved for Norway East customers requiring in-country diaster recovery
+   */
+  NORWAY_WEST("NORWAY_WEST"),
+  
+  /**
+   * Oslo
+   */
+  NORWAY_EAST("NORWAY_EAST"),
   
   /**
    * Hong Kong
@@ -116,6 +163,16 @@ public enum AzureCloudRegion {
   AUSTRALIA_SOUTHEAST("AUSTRALIA_SOUTHEAST"),
   
   /**
+   * Canberra
+   */
+  AUSTRALIA_CENTRAL("AUSTRALIA_CENTRAL"),
+  
+  /**
+   * Canberra - Reserved for Australia Central customers requiring in-country disaster recovery
+   */
+  AUSTRALIA_CENTRAL2("AUSTRALIA_CENTRAL2"),
+  
+  /**
    * Pune
    */
   INDIA_CENTRAL("INDIA_CENTRAL"),
@@ -141,6 +198,26 @@ public enum AzureCloudRegion {
   KOREA_SOUTH("KOREA_SOUTH"),
   
   /**
+   * Abu Dhabi - Reserved for UAE North customers requiring in-country disaster recovery
+   */
+  UAE_CENTRAL("UAE_CENTRAL"),
+  
+  /**
+   * Dubai
+   */
+  UAE_NORTH("UAE_NORTH"),
+  
+  /**
+   * Johannesburg
+   */
+  SOUTHAFRICA_NORTH("SOUTHAFRICA_NORTH"),
+  
+  /**
+   * Cape Town - Reserved for South Africa North customers requiring in-country disaster recovery
+   */
+  SOUTHAFRICA_WEST("SOUTHAFRICA_WEST"),
+  
+  /**
    * Beijing
    */
   CHINA_NORTH("CHINA_NORTH"),
@@ -151,24 +228,54 @@ public enum AzureCloudRegion {
   CHINA_EAST("CHINA_EAST"),
   
   /**
-   * Frankfurt
+   * Beijing
+   */
+  CHINA_NORTH2("CHINA_NORTH2"),
+  
+  /**
+   * Shanghai
+   */
+  CHINA_EAST2("CHINA_EAST2"),
+  
+  /**
+   * Frankfurt - No longer listed by https://azure.microsoft.com/en-us/global-infrastructure/data-residency
    */
   GERMANY_CENTRAL("GERMANY_CENTRAL"),
   
   /**
-   * Magdeburg
+   * Magdeburg - No longer listed by https://azure.microsoft.com/en-us/global-infrastructure/data-residency
    */
   GERMANY_NORTHEAST("GERMANY_NORTHEAST"),
   
   /**
-   * Virginia
+   * US Government Virginia - Reserved for US government entities and their partners only
    */
   GOV_US_VIRGINIA("GOV_US_VIRGINIA"),
   
   /**
-   * Iowa
+   * US Government Iowa - Reserved for US government entities and their partners only
    */
-  GOV_US_IOWA("GOV_US_IOWA");
+  GOV_US_IOWA("GOV_US_IOWA"),
+  
+  /**
+   * US Government Arizona - Reserved for US government entities and their partners only
+   */
+  GOV_US_ARIZONA("GOV_US_ARIZONA"),
+  
+  /**
+   * US Government Texas - Reserved for US government entities and their partners only
+   */
+  GOV_US_TEXAS("GOV_US_TEXAS"),
+  
+  /**
+   * Virginia - Reserved for exclusive use by the Department of Defense
+   */
+  GOV_US_DOD_EAST("GOV_US_DOD_EAST"),
+  
+  /**
+   * Iowa - Reserved for exclusive use by the Department of Defense
+   */
+  GOV_US_DOD_CENTRAL("GOV_US_DOD_CENTRAL");
 
   private String value;
 

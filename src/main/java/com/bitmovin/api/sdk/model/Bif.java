@@ -78,7 +78,8 @@ public class Bif extends BitmovinResource {
 
 
   /**
-   * Distance in seconds between a screenshot
+   * Distance in seconds between a screenshot (required)
+   * minimum: 0
    * @return distance
    */
   public Double getDistance() {
@@ -86,10 +87,12 @@ public class Bif extends BitmovinResource {
   }
 
   /**
-   * Distance in seconds between a screenshot
+   * Distance in seconds between a screenshot (required)
+   * minimum: 0
    *
    * @param distance
-   *        Distance in seconds between a screenshot
+   *        Distance in seconds between a screenshot (required)
+   *        minimum: 0
    */
   public void setDistance(Double distance) {
     this.distance = distance;

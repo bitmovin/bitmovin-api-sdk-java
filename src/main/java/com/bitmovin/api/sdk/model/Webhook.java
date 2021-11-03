@@ -35,7 +35,7 @@ public class Webhook extends BitmovinResource {
 
 
   /**
-   * Webhook url (required)
+   * Webhook URL (required)
    * @return url
    */
   public String getUrl() {
@@ -43,10 +43,10 @@ public class Webhook extends BitmovinResource {
   }
 
   /**
-   * Webhook url (required)
+   * Webhook URL (required)
    *
    * @param url
-   *        Webhook url (required)
+   *        Webhook URL (required)
    */
   public void setUrl(String url) {
     this.url = url;
@@ -73,7 +73,7 @@ public class Webhook extends BitmovinResource {
 
 
   /**
-   * Whether to skip SSL certification verification or not
+   * Skip verification of the SSL certificate
    * @return insecureSsl
    */
   public Boolean getInsecureSsl() {
@@ -81,10 +81,10 @@ public class Webhook extends BitmovinResource {
   }
 
   /**
-   * Whether to skip SSL certification verification or not
+   * Skip verification of the SSL certificate
    *
    * @param insecureSsl
-   *        Whether to skip SSL certification verification or not
+   *        Skip verification of the SSL certificate
    */
   public void setInsecureSsl(Boolean insecureSsl) {
     this.insecureSsl = insecureSsl;
@@ -110,7 +110,7 @@ public class Webhook extends BitmovinResource {
   }
 
   /**
-   * The json schema of the data that is send as webhook payload
+   * JSON schema of the webhook payload
    * @return schema
    */
   public Object getSchema() {

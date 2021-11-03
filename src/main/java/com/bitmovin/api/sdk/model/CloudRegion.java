@@ -177,20 +177,50 @@ public enum CloudRegion {
    */
   GOOGLE_US_WEST_2("GOOGLE_US_WEST_2"),
   
-  
+  /**
+   * Azure Netherlands
+   */
   AZURE_EUROPE_WEST("AZURE_EUROPE_WEST"),
   
+  /**
+   * Azure Ireland
+   */
+  AZURE_EUROPE_NORTH("AZURE_EUROPE_NORTH"),
   
+  /**
+   * Azure Washington, USA
+   */
   AZURE_US_WEST2("AZURE_US_WEST2"),
   
-  
+  /**
+   * Azure Virginia, USA
+   */
   AZURE_US_EAST("AZURE_US_EAST"),
   
-  
+  /**
+   * Azure Victoria, Australia
+   */
   AZURE_AUSTRALIA_SOUTHEAST("AZURE_AUSTRALIA_SOUTHEAST"),
   
-  
+  /**
+   * Azure New South Wales, Australia
+   */
   AZURE_AUSTRALIA_EAST("AZURE_AUSTRALIA_EAST"),
+  
+  /**
+   * Azure Frankfurt, Germany
+   */
+  AZURE_GERMANY_WESTCENTRAL("AZURE_GERMANY_WESTCENTRAL"),
+  
+  /**
+   * Azure Abu Dhabi, United Arab Emirates - Reserved for UAE North customers requiring in-country disaster recovery
+   */
+  AZURE_UAE_CENTRAL("AZURE_UAE_CENTRAL"),
+  
+  /**
+   * Azure Dubai, United Arab Emirates
+   */
+  AZURE_UAE_NORTH("AZURE_UAE_NORTH"),
   
   
   NORTH_AMERICA("NORTH_AMERICA"),

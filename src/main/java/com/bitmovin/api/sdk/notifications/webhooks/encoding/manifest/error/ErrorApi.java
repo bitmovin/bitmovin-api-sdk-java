@@ -41,9 +41,9 @@ public class ErrorApi {
     }
 
     /**
-     * Add Manifest Error Webhook (All Manifests)
+     * Add &#39;Manifest Error&#39; Webhook (All Manifests)
      * 
-     * @param webhook Add a new webhook notification if a manifest creation failed with an error. **Note:** A maximum number of 5 webhooks is allowed (required)
+     * @param webhook Add a new webhook notification if a manifest creation failed with an error. A maximum number of 5 webhooks is allowed (required)
      * @return Webhook
      * @throws BitmovinException if fails to make API call
      */
@@ -56,10 +56,10 @@ public class ErrorApi {
     }
 
     /**
-     * Add Manifest Error Webhook Notification (Specific Manifest)
+     * Add &#39;Manifest Error&#39; Webhook Notification (Specific Manifest)
      * 
      * @param manifestId Id of the manifest resource (required)
-     * @param webhook The webhook notifications object. **Note:** A maximum number of 5 webhooks is allowed (required)
+     * @param webhook The webhook notifications object. A maximum number of 5 webhooks per Manifest is allowed (required)
      * @return Webhook
      * @throws BitmovinException if fails to make API call
      */
@@ -72,7 +72,7 @@ public class ErrorApi {
     }
 
     /**
-     * Delete Manifest Error Webhook
+     * Delete &#39;Manifest Error&#39; Webhook
      * 
      * @param notificationId Id of the webhook notification (required)
      * @return BitmovinResponse
@@ -87,7 +87,7 @@ public class ErrorApi {
     }
 
     /**
-     * Replace Manifest Error Webhook Notification
+     * Replace &#39;Manifest Error&#39; Webhook Notification
      * 
      * @param notificationId Id of the webhook notification (required)
      * @param webhook The webhook notification with the updated values (required)

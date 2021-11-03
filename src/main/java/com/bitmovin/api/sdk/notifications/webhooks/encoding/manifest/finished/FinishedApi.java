@@ -41,9 +41,9 @@ public class FinishedApi {
     }
 
     /**
-     * Add Manifest Finished Successfully Webhook (All Manifests)
+     * Add &#39;Manifest Finished Successfully&#39; Webhook (All Manifests)
      * 
-     * @param webhook Add a new webhook notification if a manifest creation finished successfully. **Note:** A maximum number of 5 webhooks is allowed (required)
+     * @param webhook Add a new webhook notification if a manifest creation finished successfully. A maximum number of 5 webhooks is allowed (required)
      * @return Webhook
      * @throws BitmovinException if fails to make API call
      */
@@ -56,10 +56,10 @@ public class FinishedApi {
     }
 
     /**
-     * Add Manifest Finished Successfully Webhook Notification (Specific Manifest)
+     * Add &#39;Manifest Finished Successfully&#39; Webhook Notification (Specific Manifest)
      * 
      * @param manifestId Id of the manifest resource (required)
-     * @param webhook The webhook notifications object. **Note:** A maximum number of 5 webhooks is allowed (required)
+     * @param webhook The webhook notifications object. A maximum number of 5 webhooks per Manifest is allowed (required)
      * @return Webhook
      * @throws BitmovinException if fails to make API call
      */

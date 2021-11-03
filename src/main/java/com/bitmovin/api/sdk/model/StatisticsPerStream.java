@@ -111,6 +111,12 @@ public class StatisticsPerStream {
   @JsonProperty("dolbyVisionToSdrMultiplicator")
   private Double dolbyVisionToSdrMultiplicator;
 
+  @JsonProperty("hdrHlgToSdr")
+  private Boolean hdrHlgToSdr;
+
+  @JsonProperty("hdrHlgToSdrMultiplicator")
+  private Double hdrHlgToSdrMultiplicator;
+
   @JsonProperty("nexGuardABWatermarkingType")
   private NexGuardABWatermarkingFeature nexGuardABWatermarkingType;
 
@@ -426,6 +432,22 @@ public class StatisticsPerStream {
     return dolbyVisionToSdrMultiplicator;
   }
 
+  /**
+   * Indicates if the conversion from HDR10/HLG to SDR was triggered.
+   * @return hdrHlgToSdr
+   */
+  public Boolean getHdrHlgToSdr() {
+    return hdrHlgToSdr;
+  }
+
+  /**
+   * The output minutes multiplicator for streams using the conversion from HDR10/HLG to SDR.
+   * @return hdrHlgToSdrMultiplicator
+   */
+  public Double getHdrHlgToSdrMultiplicator() {
+    return hdrHlgToSdrMultiplicator;
+  }
+
 
   /**
    * Get nexGuardABWatermarkingType
@@ -536,6 +558,8 @@ public class StatisticsPerStream {
         Objects.equals(this.dolbyVisionToHdrMultiplicator, statisticsPerStream.dolbyVisionToHdrMultiplicator) &&
         Objects.equals(this.dolbyVisionToSdr, statisticsPerStream.dolbyVisionToSdr) &&
         Objects.equals(this.dolbyVisionToSdrMultiplicator, statisticsPerStream.dolbyVisionToSdrMultiplicator) &&
+        Objects.equals(this.hdrHlgToSdr, statisticsPerStream.hdrHlgToSdr) &&
+        Objects.equals(this.hdrHlgToSdrMultiplicator, statisticsPerStream.hdrHlgToSdrMultiplicator) &&
         Objects.equals(this.nexGuardABWatermarkingType, statisticsPerStream.nexGuardABWatermarkingType) &&
         Objects.equals(this.nexGuardABWatermarkingMultiplicator, statisticsPerStream.nexGuardABWatermarkingMultiplicator) &&
         Objects.equals(this.pixelFormatBitDepth, statisticsPerStream.pixelFormatBitDepth) &&
@@ -545,7 +569,7 @@ public class StatisticsPerStream {
 
   @Override
   public int hashCode() {
-    return Objects.hash(streamId, codecConfigId, multiplicator, encodedBytes, encodedSeconds, billableMinutes, width, height, rate, bitrate, codec, resolution, encodingMode, encodingModeMultiplicator, perTitleResultStream, perTitleMultiplicator, psnrMode, psnrMultiplicator, dolbyVisionMode, dolbyVisionMultiplicator, preset, presetMultiplicator, live, liveMultiplicator, enhancedDeinterlace, enhancedDeinterlaceMultiplicator, dolbyVisionToHdr, dolbyVisionToHdrMultiplicator, dolbyVisionToSdr, dolbyVisionToSdrMultiplicator, nexGuardABWatermarkingType, nexGuardABWatermarkingMultiplicator, pixelFormatBitDepth, pixelFormatMultiplicator, inputFactor);
+    return Objects.hash(streamId, codecConfigId, multiplicator, encodedBytes, encodedSeconds, billableMinutes, width, height, rate, bitrate, codec, resolution, encodingMode, encodingModeMultiplicator, perTitleResultStream, perTitleMultiplicator, psnrMode, psnrMultiplicator, dolbyVisionMode, dolbyVisionMultiplicator, preset, presetMultiplicator, live, liveMultiplicator, enhancedDeinterlace, enhancedDeinterlaceMultiplicator, dolbyVisionToHdr, dolbyVisionToHdrMultiplicator, dolbyVisionToSdr, dolbyVisionToSdrMultiplicator, hdrHlgToSdr, hdrHlgToSdrMultiplicator, nexGuardABWatermarkingType, nexGuardABWatermarkingMultiplicator, pixelFormatBitDepth, pixelFormatMultiplicator, inputFactor);
   }
 
   @Override
@@ -583,6 +607,8 @@ public class StatisticsPerStream {
     sb.append("    dolbyVisionToHdrMultiplicator: ").append(toIndentedString(dolbyVisionToHdrMultiplicator)).append("\n");
     sb.append("    dolbyVisionToSdr: ").append(toIndentedString(dolbyVisionToSdr)).append("\n");
     sb.append("    dolbyVisionToSdrMultiplicator: ").append(toIndentedString(dolbyVisionToSdrMultiplicator)).append("\n");
+    sb.append("    hdrHlgToSdr: ").append(toIndentedString(hdrHlgToSdr)).append("\n");
+    sb.append("    hdrHlgToSdrMultiplicator: ").append(toIndentedString(hdrHlgToSdrMultiplicator)).append("\n");
     sb.append("    nexGuardABWatermarkingType: ").append(toIndentedString(nexGuardABWatermarkingType)).append("\n");
     sb.append("    nexGuardABWatermarkingMultiplicator: ").append(toIndentedString(nexGuardABWatermarkingMultiplicator)).append("\n");
     sb.append("    pixelFormatBitDepth: ").append(toIndentedString(pixelFormatBitDepth)).append("\n");
