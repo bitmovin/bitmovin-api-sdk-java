@@ -9,6 +9,7 @@ import com.bitmovin.api.sdk.model.ColorConfig;
 import com.bitmovin.api.sdk.model.DisplayAspectRatio;
 import com.bitmovin.api.sdk.model.EncodingMode;
 import com.bitmovin.api.sdk.model.H264BPyramid;
+import com.bitmovin.api.sdk.model.H264DynamicRangeFormat;
 import com.bitmovin.api.sdk.model.H264InterlaceMode;
 import com.bitmovin.api.sdk.model.H264MotionEstimationMethod;
 import com.bitmovin.api.sdk.model.H264NalHrd;
@@ -38,6 +39,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 public class H264VideoConfiguration extends VideoConfiguration {
   @JsonProperty("presetConfiguration")
   private PresetConfiguration presetConfiguration;
+
+  @JsonProperty("dynamicRangeFormat")
+  private H264DynamicRangeFormat dynamicRangeFormat;
 
   @JsonProperty("crf")
   private Double crf;
@@ -186,6 +190,25 @@ public class H264VideoConfiguration extends VideoConfiguration {
    */
   public void setPresetConfiguration(PresetConfiguration presetConfiguration) {
     this.presetConfiguration = presetConfiguration;
+  }
+
+
+  /**
+   * Automatically configures the H264 Video Codec to be compatible with the given SDR format. Bitmovin recommends to use the dynamic range format together with a preset configuration to achieve good results. Explicitly configured properties will take precedence over dynamic range format settings, which in turn will take precedence over preset configurations.
+   * @return dynamicRangeFormat
+   */
+  public H264DynamicRangeFormat getDynamicRangeFormat() {
+    return dynamicRangeFormat;
+  }
+
+  /**
+   * Automatically configures the H264 Video Codec to be compatible with the given SDR format. Bitmovin recommends to use the dynamic range format together with a preset configuration to achieve good results. Explicitly configured properties will take precedence over dynamic range format settings, which in turn will take precedence over preset configurations.
+   *
+   * @param dynamicRangeFormat
+   *        Automatically configures the H264 Video Codec to be compatible with the given SDR format. Bitmovin recommends to use the dynamic range format together with a preset configuration to achieve good results. Explicitly configured properties will take precedence over dynamic range format settings, which in turn will take precedence over preset configurations.
+   */
+  public void setDynamicRangeFormat(H264DynamicRangeFormat dynamicRangeFormat) {
+    this.dynamicRangeFormat = dynamicRangeFormat;
   }
 
 
@@ -1072,6 +1095,7 @@ public class H264VideoConfiguration extends VideoConfiguration {
     }
     H264VideoConfiguration h264VideoConfiguration = (H264VideoConfiguration) o;
     return Objects.equals(this.presetConfiguration, h264VideoConfiguration.presetConfiguration) &&
+        Objects.equals(this.dynamicRangeFormat, h264VideoConfiguration.dynamicRangeFormat) &&
         Objects.equals(this.crf, h264VideoConfiguration.crf) &&
         Objects.equals(this.profile, h264VideoConfiguration.profile) &&
         Objects.equals(this.bframes, h264VideoConfiguration.bframes) &&
@@ -1120,7 +1144,7 @@ public class H264VideoConfiguration extends VideoConfiguration {
 
   @Override
   public int hashCode() {
-    return Objects.hash(presetConfiguration, crf, profile, bframes, refFrames, qpMin, qpMax, mvPredictionMode, mvSearchRangeMax, cabac, maxBitrate, minBitrate, bufsize, minGop, maxGop, openGop, minKeyframeInterval, maxKeyframeInterval, level, bAdaptiveStrategy, motionEstimationMethod, rcLookahead, subMe, trellis, partitions, slices, interlaceMode, sceneCutThreshold, nalHrd, bPyramid, cea608708SubtitleConfig, deblockAlpha, deblockBeta, adaptiveQuantizationMode, adaptiveQuantizationStrength, mixedReferences, adaptiveSpatialTransform, fastSkipDetectionPFrames, weightedPredictionBFrames, weightedPredictionPFrames, macroblockTreeRatecontrol, quantizerCurveCompression, psyRateDistortionOptimization, psyTrellis, super.hashCode());
+    return Objects.hash(presetConfiguration, dynamicRangeFormat, crf, profile, bframes, refFrames, qpMin, qpMax, mvPredictionMode, mvSearchRangeMax, cabac, maxBitrate, minBitrate, bufsize, minGop, maxGop, openGop, minKeyframeInterval, maxKeyframeInterval, level, bAdaptiveStrategy, motionEstimationMethod, rcLookahead, subMe, trellis, partitions, slices, interlaceMode, sceneCutThreshold, nalHrd, bPyramid, cea608708SubtitleConfig, deblockAlpha, deblockBeta, adaptiveQuantizationMode, adaptiveQuantizationStrength, mixedReferences, adaptiveSpatialTransform, fastSkipDetectionPFrames, weightedPredictionBFrames, weightedPredictionPFrames, macroblockTreeRatecontrol, quantizerCurveCompression, psyRateDistortionOptimization, psyTrellis, super.hashCode());
   }
 
   @Override
@@ -1129,6 +1153,7 @@ public class H264VideoConfiguration extends VideoConfiguration {
     sb.append("class H264VideoConfiguration {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    presetConfiguration: ").append(toIndentedString(presetConfiguration)).append("\n");
+    sb.append("    dynamicRangeFormat: ").append(toIndentedString(dynamicRangeFormat)).append("\n");
     sb.append("    crf: ").append(toIndentedString(crf)).append("\n");
     sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
     sb.append("    bframes: ").append(toIndentedString(bframes)).append("\n");

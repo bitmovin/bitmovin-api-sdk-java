@@ -10,6 +10,7 @@ import com.bitmovin.api.sdk.model.PresetConfiguration;
 import com.bitmovin.api.sdk.model.VideoConfiguration;
 import com.bitmovin.api.sdk.model.Vp9AqMode;
 import com.bitmovin.api.sdk.model.Vp9ArnrType;
+import com.bitmovin.api.sdk.model.Vp9DynamicRangeFormat;
 import com.bitmovin.api.sdk.model.Vp9Quality;
 import java.util.Date;
 import java.util.List;
@@ -26,6 +27,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 public class Vp9VideoConfiguration extends VideoConfiguration {
   @JsonProperty("presetConfiguration")
   private PresetConfiguration presetConfiguration;
+
+  @JsonProperty("dynamicRangeFormat")
+  private Vp9DynamicRangeFormat dynamicRangeFormat;
 
   @JsonProperty("crf")
   private Integer crf;
@@ -137,6 +141,25 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
    */
   public void setPresetConfiguration(PresetConfiguration presetConfiguration) {
     this.presetConfiguration = presetConfiguration;
+  }
+
+
+  /**
+   * Automatically configures the VP9 Video Codec to be compatible with the given SDR/HLG format. Bitmovin recommends to use the dynamic range format together with a preset configuration to achieve good results. Explicitly configured properties will take precedence over dynamic range format settings, which in turn will take precedence over preset configurations.
+   * @return dynamicRangeFormat
+   */
+  public Vp9DynamicRangeFormat getDynamicRangeFormat() {
+    return dynamicRangeFormat;
+  }
+
+  /**
+   * Automatically configures the VP9 Video Codec to be compatible with the given SDR/HLG format. Bitmovin recommends to use the dynamic range format together with a preset configuration to achieve good results. Explicitly configured properties will take precedence over dynamic range format settings, which in turn will take precedence over preset configurations.
+   *
+   * @param dynamicRangeFormat
+   *        Automatically configures the VP9 Video Codec to be compatible with the given SDR/HLG format. Bitmovin recommends to use the dynamic range format together with a preset configuration to achieve good results. Explicitly configured properties will take precedence over dynamic range format settings, which in turn will take precedence over preset configurations.
+   */
+  public void setDynamicRangeFormat(Vp9DynamicRangeFormat dynamicRangeFormat) {
+    this.dynamicRangeFormat = dynamicRangeFormat;
   }
 
 
@@ -829,6 +852,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     }
     Vp9VideoConfiguration vp9VideoConfiguration = (Vp9VideoConfiguration) o;
     return Objects.equals(this.presetConfiguration, vp9VideoConfiguration.presetConfiguration) &&
+        Objects.equals(this.dynamicRangeFormat, vp9VideoConfiguration.dynamicRangeFormat) &&
         Objects.equals(this.crf, vp9VideoConfiguration.crf) &&
         Objects.equals(this.lagInFrames, vp9VideoConfiguration.lagInFrames) &&
         Objects.equals(this.errorResiliencyEnabled, vp9VideoConfiguration.errorResiliencyEnabled) &&
@@ -865,7 +889,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
 
   @Override
   public int hashCode() {
-    return Objects.hash(presetConfiguration, crf, lagInFrames, errorResiliencyEnabled, tileColumns, tileRows, frameParallel, maxIntraRate, qpMin, qpMax, rateUndershootPct, rateOvershootPct, clientBufferSize, clientInitialBufferSize, biasPct, noiseSensitivity, cpuUsed, automaticAltRefFramesEnabled, targetLevel, rowMultiThreadingEnabled, sharpness, minGop, maxGop, minKeyframeInterval, maxKeyframeInterval, quality, lossless, staticThresh, aqMode, arnrMaxFrames, arnrStrength, arnrType, super.hashCode());
+    return Objects.hash(presetConfiguration, dynamicRangeFormat, crf, lagInFrames, errorResiliencyEnabled, tileColumns, tileRows, frameParallel, maxIntraRate, qpMin, qpMax, rateUndershootPct, rateOvershootPct, clientBufferSize, clientInitialBufferSize, biasPct, noiseSensitivity, cpuUsed, automaticAltRefFramesEnabled, targetLevel, rowMultiThreadingEnabled, sharpness, minGop, maxGop, minKeyframeInterval, maxKeyframeInterval, quality, lossless, staticThresh, aqMode, arnrMaxFrames, arnrStrength, arnrType, super.hashCode());
   }
 
   @Override
@@ -874,6 +898,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     sb.append("class Vp9VideoConfiguration {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    presetConfiguration: ").append(toIndentedString(presetConfiguration)).append("\n");
+    sb.append("    dynamicRangeFormat: ").append(toIndentedString(dynamicRangeFormat)).append("\n");
     sb.append("    crf: ").append(toIndentedString(crf)).append("\n");
     sb.append("    lagInFrames: ").append(toIndentedString(lagInFrames)).append("\n");
     sb.append("    errorResiliencyEnabled: ").append(toIndentedString(errorResiliencyEnabled)).append("\n");

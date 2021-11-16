@@ -101,7 +101,24 @@ public class TenantsApi {
      */
     public PaginationResponse<Tenant> list(String organizationId, String groupId) throws BitmovinException {
         try {
-            return this.apiClient.list(organizationId, groupId).getData().getResult();
+            return this.apiClient.list(organizationId, groupId, new QueryMapWrapper()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
+    /**
+     * List Tenants
+     * 
+     * @param organizationId Id of the organization (required)
+     * @param groupId Id of the group (required)
+     * @param queryParams The query parameters for sorting, filtering and paging options (optional)
+     * @return List&lt;Tenant&gt;
+     * @throws BitmovinException if fails to make API call
+     */
+    public PaginationResponse<Tenant> list(String organizationId, String groupId, TenantListQueryParams queryParams) throws BitmovinException {
+        try {
+            return this.apiClient.list(organizationId, groupId, new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -119,6 +136,6 @@ public class TenantsApi {
         ResponseEnvelope<Tenant> get(@Param(value = "organization_id") String organizationId, @Param(value = "group_id") String groupId, @Param(value = "tenant_id") String tenantId) throws BitmovinException;
     
         @RequestLine("GET /account/organizations/{organization_id}/groups/{group_id}/tenants")
-        ResponseEnvelope<PaginationResponse<Tenant>> list(@Param(value = "organization_id") String organizationId, @Param(value = "group_id") String groupId) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<Tenant>> list(@Param(value = "organization_id") String organizationId, @Param(value = "group_id") String groupId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

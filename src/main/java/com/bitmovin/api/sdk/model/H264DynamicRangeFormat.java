@@ -10,26 +10,16 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum Av1KeyPlacementMode {
+public enum H264DynamicRangeFormat {
   
   /**
-   * Specifies whether keyframes should be placed at fixed intervals or the encoder may determine optimal placement automatically
+   * Ouput should be in Standard Definition Range (SDR).
    */
-  AUTO("AUTO"),
-  
-  /**
-   * Specifies whether keyframes should be placed at fixed intervals or the encoder may determine optimal placement automatically
-   */
-  FIXED("FIXED"),
-  
-  /**
-   * Specifies whether keyframes should be placed at fixed intervals or the encoder may determine optimal placement automatically
-   */
-  DISABLED("DISABLED");
+  SDR("SDR");
 
   private String value;
 
-  Av1KeyPlacementMode(String value) {
+  H264DynamicRangeFormat(String value) {
     this.value = value;
   }
 
@@ -44,8 +34,8 @@ public enum Av1KeyPlacementMode {
   }
 
   @JsonCreator
-  public static Av1KeyPlacementMode fromValue(String text) {
-    for (Av1KeyPlacementMode b : Av1KeyPlacementMode.values()) {
+  public static H264DynamicRangeFormat fromValue(String text) {
+    for (H264DynamicRangeFormat b : H264DynamicRangeFormat.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
