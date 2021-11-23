@@ -6,6 +6,7 @@ import com.bitmovin.api.sdk.model.Accessibility;
 import com.bitmovin.api.sdk.model.AdaptationSetRole;
 import com.bitmovin.api.sdk.model.BitmovinResponse;
 import com.bitmovin.api.sdk.model.CustomAttribute;
+import com.bitmovin.api.sdk.model.Label;
 import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -29,6 +30,10 @@ public class AdaptationSet extends BitmovinResponse {
   @JsonProperty("accessibilities")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<Accessibility> accessibilities = new ArrayList<Accessibility>();
+
+  @JsonProperty("labels")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<Label> labels = new ArrayList<Label>();
 
 
   public AdaptationSet addCustomAttributesItem(CustomAttribute customAttributesItem) {
@@ -103,6 +108,30 @@ public class AdaptationSet extends BitmovinResponse {
   }
 
 
+  public AdaptationSet addLabelsItem(Label labelsItem) {
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+  /**
+   * List of labels
+   * @return labels
+   */
+  public List<Label> getLabels() {
+    return labels;
+  }
+
+  /**
+   * List of labels
+   *
+   * @param labels
+   *        List of labels
+   */
+  public void setLabels(List<Label> labels) {
+    this.labels = labels;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -115,12 +144,13 @@ public class AdaptationSet extends BitmovinResponse {
     return Objects.equals(this.customAttributes, adaptationSet.customAttributes) &&
         Objects.equals(this.roles, adaptationSet.roles) &&
         Objects.equals(this.accessibilities, adaptationSet.accessibilities) &&
+        Objects.equals(this.labels, adaptationSet.labels) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(customAttributes, roles, accessibilities, super.hashCode());
+    return Objects.hash(customAttributes, roles, accessibilities, labels, super.hashCode());
   }
 
   @Override
@@ -131,6 +161,7 @@ public class AdaptationSet extends BitmovinResponse {
     sb.append("    customAttributes: ").append(toIndentedString(customAttributes)).append("\n");
     sb.append("    roles: ").append(toIndentedString(roles)).append("\n");
     sb.append("    accessibilities: ").append(toIndentedString(accessibilities)).append("\n");
+    sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
     sb.append("}");
     return sb.toString();
   }

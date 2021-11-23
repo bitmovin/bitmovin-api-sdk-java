@@ -213,11 +213,6 @@ public enum CloudRegion {
   AZURE_GERMANY_WESTCENTRAL("AZURE_GERMANY_WESTCENTRAL"),
   
   /**
-   * Azure Abu Dhabi, United Arab Emirates - Reserved for UAE North customers requiring in-country disaster recovery
-   */
-  AZURE_UAE_CENTRAL("AZURE_UAE_CENTRAL"),
-  
-  /**
    * Azure Dubai, United Arab Emirates
    */
   AZURE_UAE_NORTH("AZURE_UAE_NORTH"),

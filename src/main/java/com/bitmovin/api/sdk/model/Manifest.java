@@ -62,23 +62,12 @@ public class Manifest extends BitmovinResource {
     this.outputs = outputs;
   }
 
-
   /**
    * Current status
    * @return status
    */
   public Status getStatus() {
     return status;
-  }
-
-  /**
-   * Current status
-   *
-   * @param status
-   *        Current status
-   */
-  public void setStatus(Status status) {
-    this.status = status;
   }
 
 

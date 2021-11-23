@@ -29,6 +29,9 @@ public class ChunkedTextMuxing extends Muxing {
   @JsonProperty("segmentNamingTemplate")
   private String segmentNamingTemplate;
 
+  @JsonProperty("startOffset")
+  private Integer startOffset;
+
   @JsonProperty("segmentsMuxed")
   private Integer segmentsMuxed;
 
@@ -89,6 +92,25 @@ public class ChunkedTextMuxing extends Muxing {
     this.segmentNamingTemplate = segmentNamingTemplate;
   }
 
+
+  /**
+   * Offset of MPEG-TS timestamps in seconds. This only affects streams with [WebVttConfiguration](#/Encoding/PostEncodingConfigurationsSubtitlesWebVtt). If set, the X-TIMESTAMP-MAP will be added as described in the [HLS specification](https://datatracker.ietf.org/doc/html/rfc8216#section-3.5). For example, if set to 10 seconds, *X-TIMESTAMP-MAP&#x3D;MPEGTS:900000,LOCAL:00:00:00.000* will be added after each *WEBVTT* header. The default for ChunkedTextMuxing is that the X-TIMESTAMP-MAP will not be written. Important to note is that the default for &#x60;startOffset&#x60; for [TsMuxings](#/Encoding/PostEncodingEncodingsMuxingsTsByEncodingId) and [ProgressiveTsMuxings](#/Encoding/PostEncodingEncodingsMuxingsProgressiveTsByEncodingId) is 10 seconds. If the output of this muxing is used for HLS together with video/audio streams using TsMuxings and ProgressiveTsMuxings, this value should be set to the same &#x60;startOffset&#x60;.
+   * @return startOffset
+   */
+  public Integer getStartOffset() {
+    return startOffset;
+  }
+
+  /**
+   * Offset of MPEG-TS timestamps in seconds. This only affects streams with [WebVttConfiguration](#/Encoding/PostEncodingConfigurationsSubtitlesWebVtt). If set, the X-TIMESTAMP-MAP will be added as described in the [HLS specification](https://datatracker.ietf.org/doc/html/rfc8216#section-3.5). For example, if set to 10 seconds, *X-TIMESTAMP-MAP&#x3D;MPEGTS:900000,LOCAL:00:00:00.000* will be added after each *WEBVTT* header. The default for ChunkedTextMuxing is that the X-TIMESTAMP-MAP will not be written. Important to note is that the default for &#x60;startOffset&#x60; for [TsMuxings](#/Encoding/PostEncodingEncodingsMuxingsTsByEncodingId) and [ProgressiveTsMuxings](#/Encoding/PostEncodingEncodingsMuxingsProgressiveTsByEncodingId) is 10 seconds. If the output of this muxing is used for HLS together with video/audio streams using TsMuxings and ProgressiveTsMuxings, this value should be set to the same &#x60;startOffset&#x60;.
+   *
+   * @param startOffset
+   *        Offset of MPEG-TS timestamps in seconds. This only affects streams with [WebVttConfiguration](#/Encoding/PostEncodingConfigurationsSubtitlesWebVtt). If set, the X-TIMESTAMP-MAP will be added as described in the [HLS specification](https://datatracker.ietf.org/doc/html/rfc8216#section-3.5). For example, if set to 10 seconds, *X-TIMESTAMP-MAP&#x3D;MPEGTS:900000,LOCAL:00:00:00.000* will be added after each *WEBVTT* header. The default for ChunkedTextMuxing is that the X-TIMESTAMP-MAP will not be written. Important to note is that the default for &#x60;startOffset&#x60; for [TsMuxings](#/Encoding/PostEncodingEncodingsMuxingsTsByEncodingId) and [ProgressiveTsMuxings](#/Encoding/PostEncodingEncodingsMuxingsProgressiveTsByEncodingId) is 10 seconds. If the output of this muxing is used for HLS together with video/audio streams using TsMuxings and ProgressiveTsMuxings, this value should be set to the same &#x60;startOffset&#x60;.
+   */
+  public void setStartOffset(Integer startOffset) {
+    this.startOffset = startOffset;
+  }
+
   /**
    * Number of segments which have been encoded
    * @return segmentsMuxed
@@ -110,13 +132,14 @@ public class ChunkedTextMuxing extends Muxing {
     return Objects.equals(this.segmentLength, chunkedTextMuxing.segmentLength) &&
         Objects.equals(this.segmentNaming, chunkedTextMuxing.segmentNaming) &&
         Objects.equals(this.segmentNamingTemplate, chunkedTextMuxing.segmentNamingTemplate) &&
+        Objects.equals(this.startOffset, chunkedTextMuxing.startOffset) &&
         Objects.equals(this.segmentsMuxed, chunkedTextMuxing.segmentsMuxed) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(segmentLength, segmentNaming, segmentNamingTemplate, segmentsMuxed, super.hashCode());
+    return Objects.hash(segmentLength, segmentNaming, segmentNamingTemplate, startOffset, segmentsMuxed, super.hashCode());
   }
 
   @Override
@@ -127,6 +150,7 @@ public class ChunkedTextMuxing extends Muxing {
     sb.append("    segmentLength: ").append(toIndentedString(segmentLength)).append("\n");
     sb.append("    segmentNaming: ").append(toIndentedString(segmentNaming)).append("\n");
     sb.append("    segmentNamingTemplate: ").append(toIndentedString(segmentNamingTemplate)).append("\n");
+    sb.append("    startOffset: ").append(toIndentedString(startOffset)).append("\n");
     sb.append("    segmentsMuxed: ").append(toIndentedString(segmentsMuxed)).append("\n");
     sb.append("}");
     return sb.toString();

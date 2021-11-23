@@ -6,6 +6,7 @@ import com.bitmovin.api.sdk.model.Accessibility;
 import com.bitmovin.api.sdk.model.AdaptationSet;
 import com.bitmovin.api.sdk.model.AdaptationSetRole;
 import com.bitmovin.api.sdk.model.CustomAttribute;
+import com.bitmovin.api.sdk.model.Label;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

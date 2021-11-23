@@ -41,10 +41,10 @@ public class CustomTagsApi {
     }
 
     /**
-     * Add Custom Tag to Audio Media
+     * Add Custom Tag to a Audio Media or a Subtitle media
      * 
      * @param manifestId Id of the hls manifest. (required)
-     * @param mediaId Id of the audio media. (required)
+     * @param mediaId Id of the media. (required)
      * @param customTag The Custom Tag to be added (required)
      * @return CustomTag
      * @throws BitmovinException if fails to make API call
@@ -61,7 +61,7 @@ public class CustomTagsApi {
      * Delete Custom Tag
      * 
      * @param manifestId Id of the hls manifest. (required)
-     * @param mediaId Id of the audio media. (required)
+     * @param mediaId Id of the media. (required)
      * @param customTagId Id of the custom tag. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
@@ -78,7 +78,7 @@ public class CustomTagsApi {
      * Custom Tag Details
      * 
      * @param manifestId Id of the hls manifest. (required)
-     * @param mediaId Id of the audio media (required)
+     * @param mediaId Id of the media (required)
      * @param customTagId Id of the custom tag. (required)
      * @return CustomTag
      * @throws BitmovinException if fails to make API call
@@ -92,10 +92,10 @@ public class CustomTagsApi {
     }
 
     /**
-     * List all Custom Tags of a Audio media
+     * List all Custom Tags of a Audio media or a Subtitle media
      * 
      * @param manifestId Id of the hls manifest. (required)
-     * @param mediaId Id of the audio media. (required)
+     * @param mediaId Id of the media. (required)
      * @return List&lt;CustomTag&gt;
      * @throws BitmovinException if fails to make API call
      */
@@ -108,10 +108,10 @@ public class CustomTagsApi {
     }
 
     /**
-     * List all Custom Tags of a Audio media
+     * List all Custom Tags of a Audio media or a Subtitle media
      * 
      * @param manifestId Id of the hls manifest. (required)
-     * @param mediaId Id of the audio media. (required)
+     * @param mediaId Id of the media. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;CustomTag&gt;
      * @throws BitmovinException if fails to make API call
