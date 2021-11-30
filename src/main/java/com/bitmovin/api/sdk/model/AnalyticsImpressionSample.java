@@ -84,6 +84,60 @@ public class AnalyticsImpressionSample {
   @JsonProperty("custom_data_7")
   private String customData7;
 
+  @JsonProperty("custom_data_8")
+  private String customData8;
+
+  @JsonProperty("custom_data_9")
+  private String customData9;
+
+  @JsonProperty("custom_data_10")
+  private String customData10;
+
+  @JsonProperty("custom_data_11")
+  private String customData11;
+
+  @JsonProperty("custom_data_12")
+  private String customData12;
+
+  @JsonProperty("custom_data_13")
+  private String customData13;
+
+  @JsonProperty("custom_data_14")
+  private String customData14;
+
+  @JsonProperty("custom_data_15")
+  private String customData15;
+
+  @JsonProperty("custom_data_16")
+  private String customData16;
+
+  @JsonProperty("custom_data_17")
+  private String customData17;
+
+  @JsonProperty("custom_data_18")
+  private String customData18;
+
+  @JsonProperty("custom_data_19")
+  private String customData19;
+
+  @JsonProperty("custom_data_20")
+  private String customData20;
+
+  @JsonProperty("custom_data_21")
+  private String customData21;
+
+  @JsonProperty("custom_data_22")
+  private String customData22;
+
+  @JsonProperty("custom_data_23")
+  private String customData23;
+
+  @JsonProperty("custom_data_24")
+  private String customData24;
+
+  @JsonProperty("custom_data_25")
+  private String customData25;
+
   @JsonProperty("device_class")
   private String deviceClass;
 
@@ -718,6 +772,348 @@ public class AnalyticsImpressionSample {
    */
   public void setCustomData7(String customData7) {
     this.customData7 = customData7;
+  }
+
+
+  /**
+   * Free form data set via the customData8 field in the analytics collector configuration
+   * @return customData8
+   */
+  public String getCustomData8() {
+    return customData8;
+  }
+
+  /**
+   * Free form data set via the customData8 field in the analytics collector configuration
+   *
+   * @param customData8
+   *        Free form data set via the customData8 field in the analytics collector configuration
+   */
+  public void setCustomData8(String customData8) {
+    this.customData8 = customData8;
+  }
+
+
+  /**
+   * Free form data set via the customData9 field in the analytics collector configuration
+   * @return customData9
+   */
+  public String getCustomData9() {
+    return customData9;
+  }
+
+  /**
+   * Free form data set via the customData9 field in the analytics collector configuration
+   *
+   * @param customData9
+   *        Free form data set via the customData9 field in the analytics collector configuration
+   */
+  public void setCustomData9(String customData9) {
+    this.customData9 = customData9;
+  }
+
+
+  /**
+   * Free form data set via the customData10 field in the analytics collector configuration
+   * @return customData10
+   */
+  public String getCustomData10() {
+    return customData10;
+  }
+
+  /**
+   * Free form data set via the customData10 field in the analytics collector configuration
+   *
+   * @param customData10
+   *        Free form data set via the customData10 field in the analytics collector configuration
+   */
+  public void setCustomData10(String customData10) {
+    this.customData10 = customData10;
+  }
+
+
+  /**
+   * Free form data set via the customData11 field in the analytics collector configuration
+   * @return customData11
+   */
+  public String getCustomData11() {
+    return customData11;
+  }
+
+  /**
+   * Free form data set via the customData11 field in the analytics collector configuration
+   *
+   * @param customData11
+   *        Free form data set via the customData11 field in the analytics collector configuration
+   */
+  public void setCustomData11(String customData11) {
+    this.customData11 = customData11;
+  }
+
+
+  /**
+   * Free form data set via the customData12 field in the analytics collector configuration
+   * @return customData12
+   */
+  public String getCustomData12() {
+    return customData12;
+  }
+
+  /**
+   * Free form data set via the customData12 field in the analytics collector configuration
+   *
+   * @param customData12
+   *        Free form data set via the customData12 field in the analytics collector configuration
+   */
+  public void setCustomData12(String customData12) {
+    this.customData12 = customData12;
+  }
+
+
+  /**
+   * Free form data set via the customData13 field in the analytics collector configuration
+   * @return customData13
+   */
+  public String getCustomData13() {
+    return customData13;
+  }
+
+  /**
+   * Free form data set via the customData13 field in the analytics collector configuration
+   *
+   * @param customData13
+   *        Free form data set via the customData13 field in the analytics collector configuration
+   */
+  public void setCustomData13(String customData13) {
+    this.customData13 = customData13;
+  }
+
+
+  /**
+   * Free form data set via the customData14 field in the analytics collector configuration
+   * @return customData14
+   */
+  public String getCustomData14() {
+    return customData14;
+  }
+
+  /**
+   * Free form data set via the customData14 field in the analytics collector configuration
+   *
+   * @param customData14
+   *        Free form data set via the customData14 field in the analytics collector configuration
+   */
+  public void setCustomData14(String customData14) {
+    this.customData14 = customData14;
+  }
+
+
+  /**
+   * Free form data set via the customData15 field in the analytics collector configuration
+   * @return customData15
+   */
+  public String getCustomData15() {
+    return customData15;
+  }
+
+  /**
+   * Free form data set via the customData15 field in the analytics collector configuration
+   *
+   * @param customData15
+   *        Free form data set via the customData15 field in the analytics collector configuration
+   */
+  public void setCustomData15(String customData15) {
+    this.customData15 = customData15;
+  }
+
+
+  /**
+   * Free form data set via the customData16 field in the analytics collector configuration
+   * @return customData16
+   */
+  public String getCustomData16() {
+    return customData16;
+  }
+
+  /**
+   * Free form data set via the customData16 field in the analytics collector configuration
+   *
+   * @param customData16
+   *        Free form data set via the customData16 field in the analytics collector configuration
+   */
+  public void setCustomData16(String customData16) {
+    this.customData16 = customData16;
+  }
+
+
+  /**
+   * Free form data set via the customData17 field in the analytics collector configuration
+   * @return customData17
+   */
+  public String getCustomData17() {
+    return customData17;
+  }
+
+  /**
+   * Free form data set via the customData17 field in the analytics collector configuration
+   *
+   * @param customData17
+   *        Free form data set via the customData17 field in the analytics collector configuration
+   */
+  public void setCustomData17(String customData17) {
+    this.customData17 = customData17;
+  }
+
+
+  /**
+   * Free form data set via the customData18 field in the analytics collector configuration
+   * @return customData18
+   */
+  public String getCustomData18() {
+    return customData18;
+  }
+
+  /**
+   * Free form data set via the customData18 field in the analytics collector configuration
+   *
+   * @param customData18
+   *        Free form data set via the customData18 field in the analytics collector configuration
+   */
+  public void setCustomData18(String customData18) {
+    this.customData18 = customData18;
+  }
+
+
+  /**
+   * Free form data set via the customData19 field in the analytics collector configuration
+   * @return customData19
+   */
+  public String getCustomData19() {
+    return customData19;
+  }
+
+  /**
+   * Free form data set via the customData19 field in the analytics collector configuration
+   *
+   * @param customData19
+   *        Free form data set via the customData19 field in the analytics collector configuration
+   */
+  public void setCustomData19(String customData19) {
+    this.customData19 = customData19;
+  }
+
+
+  /**
+   * Free form data set via the customData20 field in the analytics collector configuration
+   * @return customData20
+   */
+  public String getCustomData20() {
+    return customData20;
+  }
+
+  /**
+   * Free form data set via the customData20 field in the analytics collector configuration
+   *
+   * @param customData20
+   *        Free form data set via the customData20 field in the analytics collector configuration
+   */
+  public void setCustomData20(String customData20) {
+    this.customData20 = customData20;
+  }
+
+
+  /**
+   * Free form data set via the customData21 field in the analytics collector configuration
+   * @return customData21
+   */
+  public String getCustomData21() {
+    return customData21;
+  }
+
+  /**
+   * Free form data set via the customData21 field in the analytics collector configuration
+   *
+   * @param customData21
+   *        Free form data set via the customData21 field in the analytics collector configuration
+   */
+  public void setCustomData21(String customData21) {
+    this.customData21 = customData21;
+  }
+
+
+  /**
+   * Free form data set via the customData22 field in the analytics collector configuration
+   * @return customData22
+   */
+  public String getCustomData22() {
+    return customData22;
+  }
+
+  /**
+   * Free form data set via the customData22 field in the analytics collector configuration
+   *
+   * @param customData22
+   *        Free form data set via the customData22 field in the analytics collector configuration
+   */
+  public void setCustomData22(String customData22) {
+    this.customData22 = customData22;
+  }
+
+
+  /**
+   * Free form data set via the customData23 field in the analytics collector configuration
+   * @return customData23
+   */
+  public String getCustomData23() {
+    return customData23;
+  }
+
+  /**
+   * Free form data set via the customData23 field in the analytics collector configuration
+   *
+   * @param customData23
+   *        Free form data set via the customData23 field in the analytics collector configuration
+   */
+  public void setCustomData23(String customData23) {
+    this.customData23 = customData23;
+  }
+
+
+  /**
+   * Free form data set via the customData24 field in the analytics collector configuration
+   * @return customData24
+   */
+  public String getCustomData24() {
+    return customData24;
+  }
+
+  /**
+   * Free form data set via the customData24 field in the analytics collector configuration
+   *
+   * @param customData24
+   *        Free form data set via the customData24 field in the analytics collector configuration
+   */
+  public void setCustomData24(String customData24) {
+    this.customData24 = customData24;
+  }
+
+
+  /**
+   * Free form data set via the customData25 field in the analytics collector configuration
+   * @return customData25
+   */
+  public String getCustomData25() {
+    return customData25;
+  }
+
+  /**
+   * Free form data set via the customData25 field in the analytics collector configuration
+   *
+   * @param customData25
+   *        Free form data set via the customData25 field in the analytics collector configuration
+   */
+  public void setCustomData25(String customData25) {
+    this.customData25 = customData25;
   }
 
 
@@ -2012,6 +2408,24 @@ public class AnalyticsImpressionSample {
         Objects.equals(this.customData5, analyticsImpressionSample.customData5) &&
         Objects.equals(this.customData6, analyticsImpressionSample.customData6) &&
         Objects.equals(this.customData7, analyticsImpressionSample.customData7) &&
+        Objects.equals(this.customData8, analyticsImpressionSample.customData8) &&
+        Objects.equals(this.customData9, analyticsImpressionSample.customData9) &&
+        Objects.equals(this.customData10, analyticsImpressionSample.customData10) &&
+        Objects.equals(this.customData11, analyticsImpressionSample.customData11) &&
+        Objects.equals(this.customData12, analyticsImpressionSample.customData12) &&
+        Objects.equals(this.customData13, analyticsImpressionSample.customData13) &&
+        Objects.equals(this.customData14, analyticsImpressionSample.customData14) &&
+        Objects.equals(this.customData15, analyticsImpressionSample.customData15) &&
+        Objects.equals(this.customData16, analyticsImpressionSample.customData16) &&
+        Objects.equals(this.customData17, analyticsImpressionSample.customData17) &&
+        Objects.equals(this.customData18, analyticsImpressionSample.customData18) &&
+        Objects.equals(this.customData19, analyticsImpressionSample.customData19) &&
+        Objects.equals(this.customData20, analyticsImpressionSample.customData20) &&
+        Objects.equals(this.customData21, analyticsImpressionSample.customData21) &&
+        Objects.equals(this.customData22, analyticsImpressionSample.customData22) &&
+        Objects.equals(this.customData23, analyticsImpressionSample.customData23) &&
+        Objects.equals(this.customData24, analyticsImpressionSample.customData24) &&
+        Objects.equals(this.customData25, analyticsImpressionSample.customData25) &&
         Objects.equals(this.deviceClass, analyticsImpressionSample.deviceClass) &&
         Objects.equals(this.deviceType, analyticsImpressionSample.deviceType) &&
         Objects.equals(this.domain, analyticsImpressionSample.domain) &&
@@ -2082,7 +2496,7 @@ public class AnalyticsImpressionSample {
 
   @Override
   public int hashCode() {
-    return Objects.hash(ad, analyticsVersion, audioBitrate, audioCodec, audioLanguage, autoplay, browser, browserVersionMajor, browserVersionMinor, buffered, cdnProvider, castTech, city, clientTime, country, customUserId, customData1, customData2, customData3, customData4, customData5, customData6, customData7, deviceClass, deviceType, domain, drmLoadTime, drmType, droppedFrames, duration, errorCode, errorMessage, experimentName, impressionId, ipAddress, isCasting, isLive, isMuted, isp, language, licenseKey, m3u8Url, mpdUrl, operatingsystem, operatingsystemVersionMajor, operatingsystemVersionMinor, pageLoadTime, pageLoadType, path, paused, platform, played, player, playerKey, playerStartuptime, playerTech, playerVersion, progUrl, region, screenHeight, screenWidth, seeked, segmentDownloadCount, segmentDownloadSize, segmentDownloadTime, sequenceNumber, size, startuptime, state, streamFormat, subtitleEnabled, subtitleLanguage, supportedVideoCodes, time, userId, videoBitrate, videoCodec, videoDuration, videoId, videoTitle, videoPlaybackHeight, videoPlaybackWidth, videoStartuptime, videotimeEnd, videotimeStart, videoWindowHeight, videoWindowWidth, videostartFailed, videostartFailedReason);
+    return Objects.hash(ad, analyticsVersion, audioBitrate, audioCodec, audioLanguage, autoplay, browser, browserVersionMajor, browserVersionMinor, buffered, cdnProvider, castTech, city, clientTime, country, customUserId, customData1, customData2, customData3, customData4, customData5, customData6, customData7, customData8, customData9, customData10, customData11, customData12, customData13, customData14, customData15, customData16, customData17, customData18, customData19, customData20, customData21, customData22, customData23, customData24, customData25, deviceClass, deviceType, domain, drmLoadTime, drmType, droppedFrames, duration, errorCode, errorMessage, experimentName, impressionId, ipAddress, isCasting, isLive, isMuted, isp, language, licenseKey, m3u8Url, mpdUrl, operatingsystem, operatingsystemVersionMajor, operatingsystemVersionMinor, pageLoadTime, pageLoadType, path, paused, platform, played, player, playerKey, playerStartuptime, playerTech, playerVersion, progUrl, region, screenHeight, screenWidth, seeked, segmentDownloadCount, segmentDownloadSize, segmentDownloadTime, sequenceNumber, size, startuptime, state, streamFormat, subtitleEnabled, subtitleLanguage, supportedVideoCodes, time, userId, videoBitrate, videoCodec, videoDuration, videoId, videoTitle, videoPlaybackHeight, videoPlaybackWidth, videoStartuptime, videotimeEnd, videotimeStart, videoWindowHeight, videoWindowWidth, videostartFailed, videostartFailedReason);
   }
 
   @Override
@@ -2113,6 +2527,24 @@ public class AnalyticsImpressionSample {
     sb.append("    customData5: ").append(toIndentedString(customData5)).append("\n");
     sb.append("    customData6: ").append(toIndentedString(customData6)).append("\n");
     sb.append("    customData7: ").append(toIndentedString(customData7)).append("\n");
+    sb.append("    customData8: ").append(toIndentedString(customData8)).append("\n");
+    sb.append("    customData9: ").append(toIndentedString(customData9)).append("\n");
+    sb.append("    customData10: ").append(toIndentedString(customData10)).append("\n");
+    sb.append("    customData11: ").append(toIndentedString(customData11)).append("\n");
+    sb.append("    customData12: ").append(toIndentedString(customData12)).append("\n");
+    sb.append("    customData13: ").append(toIndentedString(customData13)).append("\n");
+    sb.append("    customData14: ").append(toIndentedString(customData14)).append("\n");
+    sb.append("    customData15: ").append(toIndentedString(customData15)).append("\n");
+    sb.append("    customData16: ").append(toIndentedString(customData16)).append("\n");
+    sb.append("    customData17: ").append(toIndentedString(customData17)).append("\n");
+    sb.append("    customData18: ").append(toIndentedString(customData18)).append("\n");
+    sb.append("    customData19: ").append(toIndentedString(customData19)).append("\n");
+    sb.append("    customData20: ").append(toIndentedString(customData20)).append("\n");
+    sb.append("    customData21: ").append(toIndentedString(customData21)).append("\n");
+    sb.append("    customData22: ").append(toIndentedString(customData22)).append("\n");
+    sb.append("    customData23: ").append(toIndentedString(customData23)).append("\n");
+    sb.append("    customData24: ").append(toIndentedString(customData24)).append("\n");
+    sb.append("    customData25: ").append(toIndentedString(customData25)).append("\n");
     sb.append("    deviceClass: ").append(toIndentedString(deviceClass)).append("\n");
     sb.append("    deviceType: ").append(toIndentedString(deviceType)).append("\n");
     sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
