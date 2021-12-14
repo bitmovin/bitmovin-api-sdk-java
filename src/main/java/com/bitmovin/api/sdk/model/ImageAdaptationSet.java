@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * ImageAdaptationSet
  */
-
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = ImageAdaptationSet.class)
 public class ImageAdaptationSet extends AdaptationSet {
 
   @Override

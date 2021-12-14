@@ -2,22 +2,39 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.Accessibility;
-import com.bitmovin.api.sdk.model.AdaptationSet;
-import com.bitmovin.api.sdk.model.AdaptationSetRole;
-import com.bitmovin.api.sdk.model.CustomAttribute;
-import com.bitmovin.api.sdk.model.Label;
-import java.util.List;
+import com.bitmovin.api.sdk.model.AdaptationSetType;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * VideoAdaptationSet
+ * AdaptationSetTypeResponse
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = VideoAdaptationSet.class)
-public class VideoAdaptationSet extends AdaptationSet {
+
+public class AdaptationSetTypeResponse {
+  @JsonProperty("type")
+  private AdaptationSetType type;
+
+
+  /**
+   * The type of the adaptation set
+   * @return type
+   */
+  public AdaptationSetType getType() {
+    return type;
+  }
+
+  /**
+   * The type of the adaptation set
+   *
+   * @param type
+   *        The type of the adaptation set
+   */
+  public void setType(AdaptationSetType type) {
+    this.type = type;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -27,19 +44,21 @@ public class VideoAdaptationSet extends AdaptationSet {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return super.equals(o);
+    AdaptationSetTypeResponse adaptationSetTypeResponse = (AdaptationSetTypeResponse) o;
+    return Objects.equals(this.type, adaptationSetTypeResponse.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode());
+    return Objects.hash(type);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class VideoAdaptationSet {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("class AdaptationSetTypeResponse {\n");
+    
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }

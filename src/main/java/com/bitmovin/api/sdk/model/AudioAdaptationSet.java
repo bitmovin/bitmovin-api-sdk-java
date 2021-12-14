@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * AudioAdaptationSet
  */
-
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = AudioAdaptationSet.class)
 public class AudioAdaptationSet extends AdaptationSet {
   @JsonProperty("lang")
   private String lang;

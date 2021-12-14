@@ -2,22 +2,39 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.Accessibility;
-import com.bitmovin.api.sdk.model.AdaptationSet;
-import com.bitmovin.api.sdk.model.AdaptationSetRole;
-import com.bitmovin.api.sdk.model.CustomAttribute;
-import com.bitmovin.api.sdk.model.Label;
-import java.util.List;
+import com.bitmovin.api.sdk.model.SimpleEncodingVodJobCredentials;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * VideoAdaptationSet
+ * SimpleEncodingVodJobAzureCredentials
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = VideoAdaptationSet.class)
-public class VideoAdaptationSet extends AdaptationSet {
+
+public class SimpleEncodingVodJobAzureCredentials extends SimpleEncodingVodJobCredentials {
+  @JsonProperty("key")
+  private String key;
+
+
+  /**
+   * Azure Account Key used for authentication (required)
+   * @return key
+   */
+  public String getKey() {
+    return key;
+  }
+
+  /**
+   * Azure Account Key used for authentication (required)
+   *
+   * @param key
+   *        Azure Account Key used for authentication (required)
+   */
+  public void setKey(String key) {
+    this.key = key;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -27,19 +44,22 @@ public class VideoAdaptationSet extends AdaptationSet {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return super.equals(o);
+    SimpleEncodingVodJobAzureCredentials simpleEncodingVodJobAzureCredentials = (SimpleEncodingVodJobAzureCredentials) o;
+    return Objects.equals(this.key, simpleEncodingVodJobAzureCredentials.key) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode());
+    return Objects.hash(key, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class VideoAdaptationSet {\n");
+    sb.append("class SimpleEncodingVodJobAzureCredentials {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.AnalyticsLicenseCustomDataFieldLabels;
 import com.bitmovin.api.sdk.model.AnalyticsVirtualLicenseLicensesListItem;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +28,12 @@ public class AnalyticsVirtualLicense {
   @JsonProperty("licenses")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<AnalyticsVirtualLicenseLicensesListItem> licenses = new ArrayList<AnalyticsVirtualLicenseLicensesListItem>();
+
+  @JsonProperty("customDataFieldsCount")
+  private Integer customDataFieldsCount;
+
+  @JsonProperty("customDataFieldLabels")
+  private AnalyticsLicenseCustomDataFieldLabels customDataFieldLabels;
 
   /**
    * Analytics Virtual License Key/Id
@@ -98,6 +105,33 @@ public class AnalyticsVirtualLicense {
     this.licenses = licenses;
   }
 
+  /**
+   * The number of customData fields available
+   * @return customDataFieldsCount
+   */
+  public Integer getCustomDataFieldsCount() {
+    return customDataFieldsCount;
+  }
+
+
+  /**
+   * Labels for Custom Data fields
+   * @return customDataFieldLabels
+   */
+  public AnalyticsLicenseCustomDataFieldLabels getCustomDataFieldLabels() {
+    return customDataFieldLabels;
+  }
+
+  /**
+   * Labels for Custom Data fields
+   *
+   * @param customDataFieldLabels
+   *        Labels for Custom Data fields
+   */
+  public void setCustomDataFieldLabels(AnalyticsLicenseCustomDataFieldLabels customDataFieldLabels) {
+    this.customDataFieldLabels = customDataFieldLabels;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -111,12 +145,14 @@ public class AnalyticsVirtualLicense {
     return Objects.equals(this.id, analyticsVirtualLicense.id) &&
         Objects.equals(this.name, analyticsVirtualLicense.name) &&
         Objects.equals(this.timezone, analyticsVirtualLicense.timezone) &&
-        Objects.equals(this.licenses, analyticsVirtualLicense.licenses);
+        Objects.equals(this.licenses, analyticsVirtualLicense.licenses) &&
+        Objects.equals(this.customDataFieldsCount, analyticsVirtualLicense.customDataFieldsCount) &&
+        Objects.equals(this.customDataFieldLabels, analyticsVirtualLicense.customDataFieldLabels);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, timezone, licenses);
+    return Objects.hash(id, name, timezone, licenses, customDataFieldsCount, customDataFieldLabels);
   }
 
   @Override
@@ -128,6 +164,8 @@ public class AnalyticsVirtualLicense {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
     sb.append("    licenses: ").append(toIndentedString(licenses)).append("\n");
+    sb.append("    customDataFieldsCount: ").append(toIndentedString(customDataFieldsCount)).append("\n");
+    sb.append("    customDataFieldLabels: ").append(toIndentedString(customDataFieldLabels)).append("\n");
     sb.append("}");
     return sb.toString();
   }

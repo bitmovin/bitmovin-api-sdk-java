@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * SubtitleAdaptationSet
  */
-
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = SubtitleAdaptationSet.class)
 public class SubtitleAdaptationSet extends AdaptationSet {
   @JsonProperty("lang")
   private String lang;

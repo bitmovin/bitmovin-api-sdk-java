@@ -17,6 +17,13 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * AdaptationSet
  */
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = AdaptationSet.class)
+@JsonSubTypes({
+  @JsonSubTypes.Type(value = VideoAdaptationSet.class, name = "VIDEO"),
+  @JsonSubTypes.Type(value = AudioAdaptationSet.class, name = "AUDIO"),
+  @JsonSubTypes.Type(value = ImageAdaptationSet.class, name = "IMAGE"),
+  @JsonSubTypes.Type(value = SubtitleAdaptationSet.class, name = "SUBTITLE"),
+})
 
 public class AdaptationSet extends BitmovinResponse {
   @JsonProperty("customAttributes")
