@@ -2,19 +2,39 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.DashRepresentationType;
-import com.bitmovin.api.sdk.model.DashRepresentationTypeMode;
-import com.bitmovin.api.sdk.model.DashSegmentedRepresentation;
+import com.bitmovin.api.sdk.model.MuxingType;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * DashChunkedTextRepresentation
+ * MuxingTypeResponse
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "typeDiscriminator", visible = false, defaultImpl = DashChunkedTextRepresentation.class)
-public class DashChunkedTextRepresentation extends DashSegmentedRepresentation {
+
+public class MuxingTypeResponse {
+  @JsonProperty("type")
+  private MuxingType type;
+
+
+  /**
+   * The type of the Muxing
+   * @return type
+   */
+  public MuxingType getType() {
+    return type;
+  }
+
+  /**
+   * The type of the Muxing
+   *
+   * @param type
+   *        The type of the Muxing
+   */
+  public void setType(MuxingType type) {
+    this.type = type;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -24,19 +44,21 @@ public class DashChunkedTextRepresentation extends DashSegmentedRepresentation {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return super.equals(o);
+    MuxingTypeResponse muxingTypeResponse = (MuxingTypeResponse) o;
+    return Objects.equals(this.type, muxingTypeResponse.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode());
+    return Objects.hash(type);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DashChunkedTextRepresentation {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("class MuxingTypeResponse {\n");
+    
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }

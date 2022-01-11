@@ -64,8 +64,8 @@ public class AdaptationsetsApi {
     /**
      * List all AdaptationSets
      * 
-     * @param manifestId Id of the manifest (required)
-     * @param periodId Id of the adaptation set (required)
+     * @param manifestId Id of the Manifest (required)
+     * @param periodId Id of the Period (required)
      * @return List&lt;AdaptationSet&gt;
      * @throws BitmovinException if fails to make API call
      */
@@ -80,8 +80,8 @@ public class AdaptationsetsApi {
     /**
      * List all AdaptationSets
      * 
-     * @param manifestId Id of the manifest (required)
-     * @param periodId Id of the adaptation set (required)
+     * @param manifestId Id of the Manifest (required)
+     * @param periodId Id of the Period (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;AdaptationSet&gt;
      * @throws BitmovinException if fails to make API call

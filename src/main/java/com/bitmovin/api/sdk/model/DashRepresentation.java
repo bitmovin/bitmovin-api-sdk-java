@@ -11,74 +11,23 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * DashRepresentation
  */
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "typeDiscriminator", visible = false, defaultImpl = DashRepresentation.class)
+@JsonSubTypes({
+  @JsonSubTypes.Type(value = DashFmp4DrmRepresentation.class, name = "DRM_FMP4"),
+  @JsonSubTypes.Type(value = DashFmp4Representation.class, name = "FMP4"),
+  @JsonSubTypes.Type(value = DashWebmRepresentation.class, name = "WEBM"),
+  @JsonSubTypes.Type(value = DashCmafRepresentation.class, name = "CMAF"),
+  @JsonSubTypes.Type(value = DashChunkedTextRepresentation.class, name = "CHUNKED_TEXT"),
+  @JsonSubTypes.Type(value = DashMp4Representation.class, name = "MP4"),
+  @JsonSubTypes.Type(value = DashMp4DrmRepresentation.class, name = "DRM_MP4"),
+  @JsonSubTypes.Type(value = DashProgressiveWebmRepresentation.class, name = "PROGRESSIVE_WEBM"),
+  @JsonSubTypes.Type(value = DashVttRepresentation.class, name = "VTT"),
+  @JsonSubTypes.Type(value = SpriteRepresentation.class, name = "SPRITE"),
+  @JsonSubTypes.Type(value = DashImscRepresentation.class, name = "IMSC"),
+  @JsonSubTypes.Type(value = ContentProtection.class, name = "CONTENT_PROTECTION"),
+})
 
 public class DashRepresentation extends BitmovinResponse {
-  @JsonProperty("encodingId")
-  private String encodingId;
-
-  @JsonProperty("muxingId")
-  private String muxingId;
-
-  @JsonProperty("dependencyId")
-  private String dependencyId;
-
-
-  /**
-   * UUID of an encoding (required)
-   * @return encodingId
-   */
-  public String getEncodingId() {
-    return encodingId;
-  }
-
-  /**
-   * UUID of an encoding (required)
-   *
-   * @param encodingId
-   *        UUID of an encoding (required)
-   */
-  public void setEncodingId(String encodingId) {
-    this.encodingId = encodingId;
-  }
-
-
-  /**
-   * UUID of a muxing (required)
-   * @return muxingId
-   */
-  public String getMuxingId() {
-    return muxingId;
-  }
-
-  /**
-   * UUID of a muxing (required)
-   *
-   * @param muxingId
-   *        UUID of a muxing (required)
-   */
-  public void setMuxingId(String muxingId) {
-    this.muxingId = muxingId;
-  }
-
-
-  /**
-   * Used to signal a dependency with another representation. The representation may belong to a different adaptation set
-   * @return dependencyId
-   */
-  public String getDependencyId() {
-    return dependencyId;
-  }
-
-  /**
-   * Used to signal a dependency with another representation. The representation may belong to a different adaptation set
-   *
-   * @param dependencyId
-   *        Used to signal a dependency with another representation. The representation may belong to a different adaptation set
-   */
-  public void setDependencyId(String dependencyId) {
-    this.dependencyId = dependencyId;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -88,16 +37,12 @@ public class DashRepresentation extends BitmovinResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DashRepresentation dashRepresentation = (DashRepresentation) o;
-    return Objects.equals(this.encodingId, dashRepresentation.encodingId) &&
-        Objects.equals(this.muxingId, dashRepresentation.muxingId) &&
-        Objects.equals(this.dependencyId, dashRepresentation.dependencyId) &&
-        super.equals(o);
+    return super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(encodingId, muxingId, dependencyId, super.hashCode());
+    return Objects.hash(super.hashCode());
   }
 
   @Override
@@ -105,9 +50,6 @@ public class DashRepresentation extends BitmovinResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class DashRepresentation {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    encodingId: ").append(toIndentedString(encodingId)).append("\n");
-    sb.append("    muxingId: ").append(toIndentedString(muxingId)).append("\n");
-    sb.append("    dependencyId: ").append(toIndentedString(dependencyId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

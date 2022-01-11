@@ -2,7 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.DashRepresentation;
+import com.bitmovin.api.sdk.model.DashMuxingRepresentation;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * ContentProtection
  */
-
-public class ContentProtection extends DashRepresentation {
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "typeDiscriminator", visible = false, defaultImpl = ContentProtection.class)
+public class ContentProtection extends DashMuxingRepresentation {
   @JsonProperty("drmId")
   private String drmId;
 

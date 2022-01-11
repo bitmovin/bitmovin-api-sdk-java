@@ -2,7 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.BitmovinResponse;
+import com.bitmovin.api.sdk.model.DashRepresentation;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * SpriteRepresentation
  */
-
-public class SpriteRepresentation extends BitmovinResponse {
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "typeDiscriminator", visible = false, defaultImpl = SpriteRepresentation.class)
+public class SpriteRepresentation extends DashRepresentation {
   @JsonProperty("encodingId")
   private String encodingId;
 

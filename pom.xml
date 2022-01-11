@@ -5,7 +5,7 @@
     <artifactId>bitmovin-api-sdk</artifactId>
     <packaging>jar</packaging>
     <name>bitmovin-api-sdk</name>
-    <version>1.99.0</version>
+    <version>1.100.0</version>
     <url>https://github.com/bitmovin/bitmovin-api-sdk-java</url>
     <description>Bitmovin Java API SDK</description>
     <scm>

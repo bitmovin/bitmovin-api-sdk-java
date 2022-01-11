@@ -10,21 +10,16 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum DashRepresentationTypeMode {
+public enum PTSAlignMode {
   
   /**
-   * Generates representations containing segment templates.
+   * Align the initial PTS to zero using negative CTS offsets. This is achieved by using &#x60;trun&#x60; version 1 boxes in the mp4 fragments.
    */
-  TEMPLATE_REPRESENTATION("TEMPLATE_REPRESENTATION"),
-  
-  /**
-   * Generates segment templates in the adaption sets. The representations will not contain any segment templates anymore.
-   */
-  TEMPLATE_ADAPTATION_SET("TEMPLATE_ADAPTATION_SET");
+  ALIGN_ZERO_NEGATIVE_CTO("ALIGN_ZERO_NEGATIVE_CTO");
 
   private String value;
 
-  DashRepresentationTypeMode(String value) {
+  PTSAlignMode(String value) {
     this.value = value;
   }
 
@@ -39,8 +34,8 @@ public enum DashRepresentationTypeMode {
   }
 
   @JsonCreator
-  public static DashRepresentationTypeMode fromValue(String text) {
-    for (DashRepresentationTypeMode b : DashRepresentationTypeMode.values()) {
+  public static PTSAlignMode fromValue(String text) {
+    for (PTSAlignMode b : PTSAlignMode.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

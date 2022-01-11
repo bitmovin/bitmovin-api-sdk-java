@@ -2,7 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.DashRepresentation;
+import com.bitmovin.api.sdk.model.DashMuxingRepresentation;
 import com.bitmovin.api.sdk.model.DashRepresentationType;
 import com.bitmovin.api.sdk.model.DashRepresentationTypeMode;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  * DashSegmentedRepresentation
  */
 
-public class DashSegmentedRepresentation extends DashRepresentation {
+public class DashSegmentedRepresentation extends DashMuxingRepresentation {
   @JsonProperty("type")
   private DashRepresentationType type;
 

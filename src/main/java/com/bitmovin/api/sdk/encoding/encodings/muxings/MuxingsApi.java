@@ -18,6 +18,7 @@ import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
+import com.bitmovin.api.sdk.encoding.encodings.muxings.type.TypeApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.fmp4.Fmp4Api;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.chunkedText.ChunkedTextApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.cmaf.CmafApi;
@@ -35,6 +36,7 @@ import com.bitmovin.api.sdk.encoding.encodings.muxings.progressiveWebm.Progressi
 import com.bitmovin.api.sdk.encoding.encodings.muxings.progressiveMov.ProgressiveMovApi;
 
 public class MuxingsApi {
+    public final TypeApi type;
     public final Fmp4Api fmp4;
     public final ChunkedTextApi chunkedText;
     public final CmafApi cmaf;
@@ -61,6 +63,7 @@ public class MuxingsApi {
 
         this.apiClient = clientFactory.createApiClient(MuxingsApiClient.class);
 
+        this.type = new TypeApi(clientFactory);
         this.fmp4 = new Fmp4Api(clientFactory);
         this.chunkedText = new ChunkedTextApi(clientFactory);
         this.cmaf = new CmafApi(clientFactory);

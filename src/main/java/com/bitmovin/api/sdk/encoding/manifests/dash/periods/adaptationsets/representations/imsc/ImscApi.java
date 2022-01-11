@@ -45,8 +45,8 @@ public class ImscApi {
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
-     * @param adaptationsetId Id of the adaptation set (required)
-     * @param dashImscRepresentation The IMSC representation to be added to the adaptation set (required)
+     * @param adaptationsetId Id of the subtitle adaptation set (required)
+     * @param dashImscRepresentation The IMSC representation to be added to the adaptation set. Note that the adaptation set has to be a subtitle adaptation set.  (required)
      * @return DashImscRepresentation
      * @throws BitmovinException if fails to make API call
      */

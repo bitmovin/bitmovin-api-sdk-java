@@ -1,4 +1,4 @@
-package com.bitmovin.api.sdk.encoding.manifests.dash.periods.adaptationsets.type;
+package com.bitmovin.api.sdk.encoding.encodings.muxings.type;
 
 import java.util.Date;
 import java.util.List;
@@ -41,17 +41,16 @@ public class TypeApi {
     }
 
     /**
-     * Get adaptation set type
+     * Get Muxing type
      * 
-     * @param manifestId Id of the manifest (required)
-     * @param periodId Id of the period (required)
-     * @param adaptationsetId Id of the adaptation set (required)
-     * @return AdaptationSetTypeResponse
+     * @param encodingId Id of the encoding. (required)
+     * @param muxingId Id of the muxing. (required)
+     * @return MuxingTypeResponse
      * @throws BitmovinException if fails to make API call
      */
-    public AdaptationSetTypeResponse get(String manifestId, String periodId, String adaptationsetId) throws BitmovinException {
+    public MuxingTypeResponse get(String encodingId, String muxingId) throws BitmovinException {
         try {
-            return this.apiClient.get(manifestId, periodId, adaptationsetId).getData().getResult();
+            return this.apiClient.get(encodingId, muxingId).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -59,7 +58,7 @@ public class TypeApi {
 
     interface TypeApiClient {
 
-        @RequestLine("GET /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/type")
-        ResponseEnvelope<AdaptationSetTypeResponse> get(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId) throws BitmovinException;
+        @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/{muxing_id}/type")
+        ResponseEnvelope<MuxingTypeResponse> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
     }
 }

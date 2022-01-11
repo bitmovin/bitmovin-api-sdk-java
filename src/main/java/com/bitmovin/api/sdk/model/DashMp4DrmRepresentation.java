@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * DashMp4DrmRepresentation
  */
-
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "typeDiscriminator", visible = false, defaultImpl = DashMp4DrmRepresentation.class)
 public class DashMp4DrmRepresentation extends DashMp4Representation {
   @JsonProperty("drmId")
   private String drmId;

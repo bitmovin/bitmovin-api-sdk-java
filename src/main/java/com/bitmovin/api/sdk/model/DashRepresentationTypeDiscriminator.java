@@ -10,21 +10,47 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum DashRepresentationTypeMode {
+public enum DashRepresentationTypeDiscriminator {
   
-  /**
-   * Generates representations containing segment templates.
-   */
-  TEMPLATE_REPRESENTATION("TEMPLATE_REPRESENTATION"),
   
-  /**
-   * Generates segment templates in the adaption sets. The representations will not contain any segment templates anymore.
-   */
-  TEMPLATE_ADAPTATION_SET("TEMPLATE_ADAPTATION_SET");
+  DRM_FMP4("DRM_FMP4"),
+  
+  
+  FMP4("FMP4"),
+  
+  
+  WEBM("WEBM"),
+  
+  
+  CMAF("CMAF"),
+  
+  
+  CHUNKED_TEXT("CHUNKED_TEXT"),
+  
+  
+  MP4("MP4"),
+  
+  
+  DRM_MP4("DRM_MP4"),
+  
+  
+  PROGRESSIVE_WEBM("PROGRESSIVE_WEBM"),
+  
+  
+  VTT("VTT"),
+  
+  
+  SPRITE("SPRITE"),
+  
+  
+  IMSC("IMSC"),
+  
+  
+  CONTENT_PROTECTION("CONTENT_PROTECTION");
 
   private String value;
 
-  DashRepresentationTypeMode(String value) {
+  DashRepresentationTypeDiscriminator(String value) {
     this.value = value;
   }
 
@@ -39,8 +65,8 @@ public enum DashRepresentationTypeMode {
   }
 
   @JsonCreator
-  public static DashRepresentationTypeMode fromValue(String text) {
-    for (DashRepresentationTypeMode b : DashRepresentationTypeMode.values()) {
+  public static DashRepresentationTypeDiscriminator fromValue(String text) {
+    for (DashRepresentationTypeDiscriminator b : DashRepresentationTypeDiscriminator.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

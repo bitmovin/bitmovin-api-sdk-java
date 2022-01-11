@@ -6,6 +6,7 @@ import com.bitmovin.api.sdk.model.EncodingOutput;
 import com.bitmovin.api.sdk.model.Ignoring;
 import com.bitmovin.api.sdk.model.Muxing;
 import com.bitmovin.api.sdk.model.MuxingStream;
+import com.bitmovin.api.sdk.model.PTSAlignMode;
 import com.bitmovin.api.sdk.model.StreamConditionsMode;
 import java.util.Date;
 import java.util.List;
@@ -40,6 +41,9 @@ public class Fmp4Muxing extends Muxing {
 
   @JsonProperty("segmentsMuxed")
   private Integer segmentsMuxed;
+
+  @JsonProperty("ptsAlignMode")
+  private PTSAlignMode ptsAlignMode;
 
 
   /**
@@ -164,6 +168,25 @@ public class Fmp4Muxing extends Muxing {
   }
 
 
+  /**
+   * Alignment mode for composition / presentation timestamps (CTS/PTS). Only applies to h.264 and h.265
+   * @return ptsAlignMode
+   */
+  public PTSAlignMode getPtsAlignMode() {
+    return ptsAlignMode;
+  }
+
+  /**
+   * Alignment mode for composition / presentation timestamps (CTS/PTS). Only applies to h.264 and h.265
+   *
+   * @param ptsAlignMode
+   *        Alignment mode for composition / presentation timestamps (CTS/PTS). Only applies to h.264 and h.265
+   */
+  public void setPtsAlignMode(PTSAlignMode ptsAlignMode) {
+    this.ptsAlignMode = ptsAlignMode;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -180,12 +203,13 @@ public class Fmp4Muxing extends Muxing {
         Objects.equals(this.initSegmentNameTemplate, fmp4Muxing.initSegmentNameTemplate) &&
         Objects.equals(this.writeDurationPerSample, fmp4Muxing.writeDurationPerSample) &&
         Objects.equals(this.segmentsMuxed, fmp4Muxing.segmentsMuxed) &&
+        Objects.equals(this.ptsAlignMode, fmp4Muxing.ptsAlignMode) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(segmentLength, segmentNaming, segmentNamingTemplate, initSegmentName, initSegmentNameTemplate, writeDurationPerSample, segmentsMuxed, super.hashCode());
+    return Objects.hash(segmentLength, segmentNaming, segmentNamingTemplate, initSegmentName, initSegmentNameTemplate, writeDurationPerSample, segmentsMuxed, ptsAlignMode, super.hashCode());
   }
 
   @Override
@@ -200,6 +224,7 @@ public class Fmp4Muxing extends Muxing {
     sb.append("    initSegmentNameTemplate: ").append(toIndentedString(initSegmentNameTemplate)).append("\n");
     sb.append("    writeDurationPerSample: ").append(toIndentedString(writeDurationPerSample)).append("\n");
     sb.append("    segmentsMuxed: ").append(toIndentedString(segmentsMuxed)).append("\n");
+    sb.append("    ptsAlignMode: ").append(toIndentedString(ptsAlignMode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

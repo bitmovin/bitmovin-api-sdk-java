@@ -2,7 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.DashRepresentation;
+import com.bitmovin.api.sdk.model.DashMuxingRepresentation;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * DashProgressiveWebmRepresentation
  */
-
-public class DashProgressiveWebmRepresentation extends DashRepresentation {
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "typeDiscriminator", visible = false, defaultImpl = DashProgressiveWebmRepresentation.class)
+public class DashProgressiveWebmRepresentation extends DashMuxingRepresentation {
   @JsonProperty("filePath")
   private String filePath;
 

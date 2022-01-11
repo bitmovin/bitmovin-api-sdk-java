@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * DashWebmRepresentation
  */
-
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "typeDiscriminator", visible = false, defaultImpl = DashWebmRepresentation.class)
 public class DashWebmRepresentation extends DashSegmentedRepresentation {
 
   @Override

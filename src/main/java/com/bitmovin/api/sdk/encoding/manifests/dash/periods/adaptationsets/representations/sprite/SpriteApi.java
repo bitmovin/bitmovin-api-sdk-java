@@ -45,7 +45,7 @@ public class SpriteApi {
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
-     * @param adaptationsetId Id of the adaptation set (required)
+     * @param adaptationsetId Id of the image adaptation set (required)
      * @param spriteRepresentation The Sprite representation to be added to the adaptation set. Note that the adaptation set has to be an image adaptation set.  Only supported for sprites generated with encoder version &#x60;2.76.0&#x60; or above.  (required)
      * @return SpriteRepresentation
      * @throws BitmovinException if fails to make API call
