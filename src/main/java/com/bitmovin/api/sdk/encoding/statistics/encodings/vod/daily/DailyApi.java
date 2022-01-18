@@ -1,4 +1,4 @@
-package com.bitmovin.api.sdk.encoding.statistics.encodings.live.daily;
+package com.bitmovin.api.sdk.encoding.statistics.encodings.vod.daily;
 
 import java.util.Date;
 import java.util.List;
@@ -41,14 +41,14 @@ public class DailyApi {
     }
 
     /**
-     * List daily live encoding statistics within specific dates
+     * List daily VoD encoding statistics within specific dates
      * 
      * @param from Start date, format: yyyy-MM-dd (required)
      * @param to End date, format: yyyy-MM-dd (required)
-     * @return List&lt;EncodingStatisticsLive&gt;
+     * @return List&lt;EncodingStatistics&gt;
      * @throws BitmovinException if fails to make API call
      */
-    public PaginationResponse<EncodingStatisticsLive> listByDateRange(Date from, Date to) throws BitmovinException {
+    public PaginationResponse<EncodingStatistics> listByDateRange(Date from, Date to) throws BitmovinException {
         try {
             return this.apiClient.listByDateRange(from, to).getData().getResult();
         } catch (Exception ex) {
@@ -58,7 +58,7 @@ public class DailyApi {
 
     interface DailyApiClient {
 
-        @RequestLine("GET /encoding/statistics/encodings/live/daily/{from}/{to}")
-        ResponseEnvelope<PaginationResponse<EncodingStatisticsLive>> listByDateRange(@Param(value = "from", expander = BitmovinDateExpander.class) Date from, @Param(value = "to", expander = BitmovinDateExpander.class) Date to) throws BitmovinException;
+        @RequestLine("GET /encoding/statistics/encodings/vod/daily/{from}/{to}")
+        ResponseEnvelope<PaginationResponse<EncodingStatistics>> listByDateRange(@Param(value = "from", expander = BitmovinDateExpander.class) Date from, @Param(value = "to", expander = BitmovinDateExpander.class) Date to) throws BitmovinException;
     }
 }

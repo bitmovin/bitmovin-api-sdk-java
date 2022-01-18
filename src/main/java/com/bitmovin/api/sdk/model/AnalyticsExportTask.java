@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.AnalyticsExportFileFormat;
 import com.bitmovin.api.sdk.model.AnalyticsExportStatus;
 import com.bitmovin.api.sdk.model.AnalyticsExportTaskOutputTarget;
 import com.bitmovin.api.sdk.model.AnalyticsExportType;
@@ -55,6 +56,9 @@ public class AnalyticsExportTask extends BitmovinResponse {
   @JsonProperty("columns")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<String> columns = new ArrayList<String>();
+
+  @JsonProperty("fileFormat")
+  private AnalyticsExportFileFormat fileFormat;
 
 
   /**
@@ -243,6 +247,25 @@ public class AnalyticsExportTask extends BitmovinResponse {
   }
 
 
+  /**
+   * File format of export file
+   * @return fileFormat
+   */
+  public AnalyticsExportFileFormat getFileFormat() {
+    return fileFormat;
+  }
+
+  /**
+   * File format of export file
+   *
+   * @param fileFormat
+   *        File format of export file
+   */
+  public void setFileFormat(AnalyticsExportFileFormat fileFormat) {
+    this.fileFormat = fileFormat;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -264,12 +287,13 @@ public class AnalyticsExportTask extends BitmovinResponse {
         Objects.equals(this.finishedAt, analyticsExportTask.finishedAt) &&
         Objects.equals(this.type, analyticsExportTask.type) &&
         Objects.equals(this.columns, analyticsExportTask.columns) &&
+        Objects.equals(this.fileFormat, analyticsExportTask.fileFormat) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startTime, endTime, name, description, licenseKey, output, progress, status, startedAt, finishedAt, type, columns, super.hashCode());
+    return Objects.hash(startTime, endTime, name, description, licenseKey, output, progress, status, startedAt, finishedAt, type, columns, fileFormat, super.hashCode());
   }
 
   @Override
@@ -289,6 +313,7 @@ public class AnalyticsExportTask extends BitmovinResponse {
     sb.append("    finishedAt: ").append(toIndentedString(finishedAt)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    columns: ").append(toIndentedString(columns)).append("\n");
+    sb.append("    fileFormat: ").append(toIndentedString(fileFormat)).append("\n");
     sb.append("}");
     return sb.toString();
   }

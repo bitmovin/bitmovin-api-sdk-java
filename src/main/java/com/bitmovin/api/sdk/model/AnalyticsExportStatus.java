@@ -12,16 +12,24 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum AnalyticsExportStatus {
   
-  
+  /**
+   * Export has started
+   */
   STARTED("STARTED"),
   
-  
+  /**
+   * Export has finished
+   */
   FINISHED("FINISHED"),
   
-  
+  /**
+   * Export is queued and will be stared soon
+   */
   QUEUED("QUEUED"),
   
-  
+  /**
+   * Error has happened during export
+   */
   ERROR("ERROR");
 
   private String value;

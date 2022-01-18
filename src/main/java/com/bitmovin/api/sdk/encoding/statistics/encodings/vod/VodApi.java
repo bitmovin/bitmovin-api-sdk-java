@@ -18,8 +18,10 @@ import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
+import com.bitmovin.api.sdk.encoding.statistics.encodings.vod.daily.DailyApi;
 
 public class VodApi {
+    public final DailyApi daily;
 
     private final VodApiClient apiClient;
 
@@ -31,6 +33,7 @@ public class VodApi {
 
         this.apiClient = clientFactory.createApiClient(VodApiClient.class);
 
+        this.daily = new DailyApi(clientFactory);
     }
 
     /**

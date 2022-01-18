@@ -79,24 +79,7 @@ public class DailyApi {
      */
     public PaginationResponse<DailyStatistics> listByDateRange(Date from, Date to) throws BitmovinException {
         try {
-            return this.apiClient.listByDateRange(from, to, new QueryMapWrapper()).getData().getResult();
-        } catch (Exception ex) {
-            throw buildBitmovinException(ex);
-        }
-    }
-
-    /**
-     * List daily statistics within specific dates
-     * 
-     * @param from Start date, format: yyyy-MM-dd (required)
-     * @param to End date, format: yyyy-MM-dd (required)
-     * @param queryParams The query parameters for sorting, filtering and paging options (optional)
-     * @return List&lt;DailyStatistics&gt;
-     * @throws BitmovinException if fails to make API call
-     */
-    public PaginationResponse<DailyStatistics> listByDateRange(Date from, Date to, DailyStatisticsListByDateRangeQueryParams queryParams) throws BitmovinException {
-        try {
-            return this.apiClient.listByDateRange(from, to, new QueryMapWrapper(queryParams)).getData().getResult();
+            return this.apiClient.listByDateRange(from, to).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -108,6 +91,6 @@ public class DailyApi {
         ResponseEnvelope<PaginationResponse<DailyStatistics>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     
         @RequestLine("GET /encoding/statistics/daily/{from}/{to}")
-        ResponseEnvelope<PaginationResponse<DailyStatistics>> listByDateRange(@Param(value = "from", expander = BitmovinDateExpander.class) Date from, @Param(value = "to", expander = BitmovinDateExpander.class) Date to, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<DailyStatistics>> listByDateRange(@Param(value = "from", expander = BitmovinDateExpander.class) Date from, @Param(value = "to", expander = BitmovinDateExpander.class) Date to) throws BitmovinException;
     }
 }

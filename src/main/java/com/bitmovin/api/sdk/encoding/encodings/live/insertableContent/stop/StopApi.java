@@ -41,7 +41,7 @@ public class StopApi {
     }
 
     /**
-     * Stops Currently Running Inserted Content
+     * Stops currently running Inserted Content
      * 
      * @param encodingId Id of the encoding. (required)
      * @throws BitmovinException if fails to make API call

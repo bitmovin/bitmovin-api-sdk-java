@@ -10,21 +10,21 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum AnalyticsExportType {
+public enum AnalyticsExportFileFormat {
   
   /**
-   * Export ads sessions
+   * Export file will be in CSV format
    */
-  ADS("ADS"),
+  CSV("CSV"),
   
   /**
-   * Export sessions
+   * Export file will be in PARQUET format
    */
-  SESSIONS("SESSIONS");
+  PARQUET("PARQUET");
 
   private String value;
 
-  AnalyticsExportType(String value) {
+  AnalyticsExportFileFormat(String value) {
     this.value = value;
   }
 
@@ -39,8 +39,8 @@ public enum AnalyticsExportType {
   }
 
   @JsonCreator
-  public static AnalyticsExportType fromValue(String text) {
-    for (AnalyticsExportType b : AnalyticsExportType.values()) {
+  public static AnalyticsExportFileFormat fromValue(String text) {
+    for (AnalyticsExportFileFormat b : AnalyticsExportFileFormat.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
