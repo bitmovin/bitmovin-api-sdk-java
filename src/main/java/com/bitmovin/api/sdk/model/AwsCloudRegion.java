@@ -33,12 +33,12 @@ public enum AwsCloudRegion {
   US_WEST_2("US_WEST_2"),
   
   /**
-   * EU (Ireland)
+   * Europe (Ireland)
    */
   EU_WEST_1("EU_WEST_1"),
   
   /**
-   * EU (Frankfurt)
+   * Europe (Frankfurt)
    */
   EU_CENTRAL_1("EU_CENTRAL_1"),
   
@@ -73,19 +73,24 @@ public enum AwsCloudRegion {
   SA_EAST_1("SA_EAST_1"),
   
   /**
-   * EU (London)
+   * Europe (London)
    */
   EU_WEST_2("EU_WEST_2"),
   
   /**
-   * EU (Paris)
+   * Europe (Paris)
    */
   EU_WEST_3("EU_WEST_3"),
   
   /**
    * Canada (Central)
    */
-  CA_CENTRAL_1("CA_CENTRAL_1");
+  CA_CENTRAL_1("CA_CENTRAL_1"),
+  
+  /**
+   * Europe (Stockholm)
+   */
+  EU_NORTH_1("EU_NORTH_1");
 
   private String value;
 

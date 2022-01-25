@@ -33,12 +33,12 @@ public enum CloudRegion {
   AWS_US_WEST_2("AWS_US_WEST_2"),
   
   /**
-   * AWS EU (Ireland)
+   * AWS Europe (Ireland)
    */
   AWS_EU_WEST_1("AWS_EU_WEST_1"),
   
   /**
-   * AWS EU (Frankfurt)
+   * AWS Europe (Frankfurt)
    */
   AWS_EU_CENTRAL_1("AWS_EU_CENTRAL_1"),
   
@@ -73,12 +73,12 @@ public enum CloudRegion {
   AWS_SA_EAST_1("AWS_SA_EAST_1"),
   
   /**
-   * AWS EU (London)
+   * AWS Europe (London)
    */
   AWS_EU_WEST_2("AWS_EU_WEST_2"),
   
   /**
-   * AWS EU (Paris)
+   * AWS Europe (Paris)
    */
   AWS_EU_WEST_3("AWS_EU_WEST_3"),
   
@@ -86,6 +86,11 @@ public enum CloudRegion {
    * AWS Canada (Central)
    */
   AWS_CA_CENTRAL_1("AWS_CA_CENTRAL_1"),
+  
+  /**
+   * AWS Europe (Stockholm)
+   */
+  AWS_EU_NORTH_1("AWS_EU_NORTH_1"),
   
   /**
    * Google Council Bluffs, Iowa, USA
