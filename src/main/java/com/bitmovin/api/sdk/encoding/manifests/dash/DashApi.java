@@ -142,13 +142,13 @@ public class DashApi {
      * Start DASH Manifest Creation
      * 
      * @param manifestId Id of the DASH manifest. (required)
-     * @param body Manifest Startup Options (optional)
+     * @param startManifestRequest Manifest Startup Options (optional)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */
-    public BitmovinResponse start(String manifestId, Object body) throws BitmovinException {
+    public BitmovinResponse start(String manifestId, StartManifestRequest startManifestRequest) throws BitmovinException {
         try {
-            return this.apiClient.start(manifestId, body).getData().getResult();
+            return this.apiClient.start(manifestId, startManifestRequest).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -202,7 +202,7 @@ public class DashApi {
         ResponseEnvelope<BitmovinResponse> start(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
 
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/start")
-        ResponseEnvelope<BitmovinResponse> start(@Param(value = "manifest_id") String manifestId, Object body) throws BitmovinException;
+        ResponseEnvelope<BitmovinResponse> start(@Param(value = "manifest_id") String manifestId, StartManifestRequest startManifestRequest) throws BitmovinException;
     
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/status")
         ResponseEnvelope<Task> status(@Param(value = "manifest_id") String manifestId) throws BitmovinException;

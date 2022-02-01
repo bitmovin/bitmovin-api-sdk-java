@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.ManifestGenerator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -12,6 +13,28 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 
 public class StartManifestRequest {
+  @JsonProperty("manifestGenerator")
+  private ManifestGenerator manifestGenerator;
+
+
+  /**
+   * Sets the version of the manifest generation engine. The &#x60;V2&#x60; option is currently only supported for manifests including resources from a single encoding and is only valid in combination with encoder versions &gt;&#x3D;  &#x60;2.108.0&#x60;.
+   * @return manifestGenerator
+   */
+  public ManifestGenerator getManifestGenerator() {
+    return manifestGenerator;
+  }
+
+  /**
+   * Sets the version of the manifest generation engine. The &#x60;V2&#x60; option is currently only supported for manifests including resources from a single encoding and is only valid in combination with encoder versions &gt;&#x3D;  &#x60;2.108.0&#x60;.
+   *
+   * @param manifestGenerator
+   *        Sets the version of the manifest generation engine. The &#x60;V2&#x60; option is currently only supported for manifests including resources from a single encoding and is only valid in combination with encoder versions &gt;&#x3D;  &#x60;2.108.0&#x60;.
+   */
+  public void setManifestGenerator(ManifestGenerator manifestGenerator) {
+    this.manifestGenerator = manifestGenerator;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -21,12 +44,13 @@ public class StartManifestRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return true;
+    StartManifestRequest startManifestRequest = (StartManifestRequest) o;
+    return Objects.equals(this.manifestGenerator, startManifestRequest.manifestGenerator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash();
+    return Objects.hash(manifestGenerator);
   }
 
   @Override
@@ -34,6 +58,7 @@ public class StartManifestRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class StartManifestRequest {\n");
     
+    sb.append("    manifestGenerator: ").append(toIndentedString(manifestGenerator)).append("\n");
     sb.append("}");
     return sb.toString();
   }
