@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.EncodingTemplate;
 import com.bitmovin.api.sdk.model.SimpleEncodingVodJobUrlInput;
 import com.bitmovin.api.sdk.model.SimpleEncodingVodJobUrlOutput;
 import java.util.ArrayList;
@@ -16,6 +17,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 
 public class SimpleEncodingVodJobRequest {
+  @JsonProperty("encodingTemplate")
+  private EncodingTemplate encodingTemplate;
+
   @JsonProperty("inputs")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<SimpleEncodingVodJobUrlInput> inputs = new ArrayList<SimpleEncodingVodJobUrlInput>();
@@ -26,6 +30,25 @@ public class SimpleEncodingVodJobRequest {
 
   @JsonProperty("name")
   private String name;
+
+
+  /**
+   * The template that will be used for the encoding.
+   * @return encodingTemplate
+   */
+  public EncodingTemplate getEncodingTemplate() {
+    return encodingTemplate;
+  }
+
+  /**
+   * The template that will be used for the encoding.
+   *
+   * @param encodingTemplate
+   *        The template that will be used for the encoding.
+   */
+  public void setEncodingTemplate(EncodingTemplate encodingTemplate) {
+    this.encodingTemplate = encodingTemplate;
+  }
 
 
   public SimpleEncodingVodJobRequest addInputsItem(SimpleEncodingVodJobUrlInput inputsItem) {
@@ -102,14 +125,15 @@ public class SimpleEncodingVodJobRequest {
       return false;
     }
     SimpleEncodingVodJobRequest simpleEncodingVodJobRequest = (SimpleEncodingVodJobRequest) o;
-    return Objects.equals(this.inputs, simpleEncodingVodJobRequest.inputs) &&
+    return Objects.equals(this.encodingTemplate, simpleEncodingVodJobRequest.encodingTemplate) &&
+        Objects.equals(this.inputs, simpleEncodingVodJobRequest.inputs) &&
         Objects.equals(this.outputs, simpleEncodingVodJobRequest.outputs) &&
         Objects.equals(this.name, simpleEncodingVodJobRequest.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(inputs, outputs, name);
+    return Objects.hash(encodingTemplate, inputs, outputs, name);
   }
 
   @Override
@@ -117,6 +141,7 @@ public class SimpleEncodingVodJobRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class SimpleEncodingVodJobRequest {\n");
     
+    sb.append("    encodingTemplate: ").append(toIndentedString(encodingTemplate)).append("\n");
     sb.append("    inputs: ").append(toIndentedString(inputs)).append("\n");
     sb.append("    outputs: ").append(toIndentedString(outputs)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
