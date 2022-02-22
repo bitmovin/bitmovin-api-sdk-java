@@ -36,6 +36,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
   @JsonSubTypes.Type(value = ZixiInput.class, name = "ZIXI"),
   @JsonSubTypes.Type(value = SrtInput.class, name = "SRT"),
   @JsonSubTypes.Type(value = GcsServiceAccountInput.class, name = "GCS_SERVICE_ACCOUNT"),
+  @JsonSubTypes.Type(value = DirectFileUploadInput.class, name = "DIRECT_FILE_UPLOAD"),
 })
 
 public class Input extends BitmovinResource {

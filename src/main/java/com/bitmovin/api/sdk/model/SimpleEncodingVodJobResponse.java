@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.EncodingTemplate;
 import com.bitmovin.api.sdk.model.SimpleEncodingVodJobErrors;
 import com.bitmovin.api.sdk.model.SimpleEncodingVodJobStatus;
 import com.bitmovin.api.sdk.model.SimpleEncodingVodJobUrlInput;
@@ -24,6 +25,9 @@ public class SimpleEncodingVodJobResponse {
 
   @JsonProperty("status")
   private SimpleEncodingVodJobStatus status;
+
+  @JsonProperty("encodingTemplate")
+  private EncodingTemplate encodingTemplate;
 
   @JsonProperty("encodingId")
   private String encodingId;
@@ -63,6 +67,25 @@ public class SimpleEncodingVodJobResponse {
    */
   public SimpleEncodingVodJobStatus getStatus() {
     return status;
+  }
+
+
+  /**
+   * The template that has been used for the encoding.
+   * @return encodingTemplate
+   */
+  public EncodingTemplate getEncodingTemplate() {
+    return encodingTemplate;
+  }
+
+  /**
+   * The template that has been used for the encoding.
+   *
+   * @param encodingTemplate
+   *        The template that has been used for the encoding.
+   */
+  public void setEncodingTemplate(EncodingTemplate encodingTemplate) {
+    this.encodingTemplate = encodingTemplate;
   }
 
   /**
@@ -212,6 +235,7 @@ public class SimpleEncodingVodJobResponse {
     SimpleEncodingVodJobResponse simpleEncodingVodJobResponse = (SimpleEncodingVodJobResponse) o;
     return Objects.equals(this.id, simpleEncodingVodJobResponse.id) &&
         Objects.equals(this.status, simpleEncodingVodJobResponse.status) &&
+        Objects.equals(this.encodingTemplate, simpleEncodingVodJobResponse.encodingTemplate) &&
         Objects.equals(this.encodingId, simpleEncodingVodJobResponse.encodingId) &&
         Objects.equals(this.inputs, simpleEncodingVodJobResponse.inputs) &&
         Objects.equals(this.outputs, simpleEncodingVodJobResponse.outputs) &&
@@ -223,7 +247,7 @@ public class SimpleEncodingVodJobResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, status, encodingId, inputs, outputs, errors, createdAt, modifiedAt, name);
+    return Objects.hash(id, status, encodingTemplate, encodingId, inputs, outputs, errors, createdAt, modifiedAt, name);
   }
 
   @Override
@@ -233,6 +257,7 @@ public class SimpleEncodingVodJobResponse {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    encodingTemplate: ").append(toIndentedString(encodingTemplate)).append("\n");
     sb.append("    encodingId: ").append(toIndentedString(encodingId)).append("\n");
     sb.append("    inputs: ").append(toIndentedString(inputs)).append("\n");
     sb.append("    outputs: ").append(toIndentedString(outputs)).append("\n");

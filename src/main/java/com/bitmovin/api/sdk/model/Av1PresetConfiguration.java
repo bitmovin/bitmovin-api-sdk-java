@@ -10,74 +10,20 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum InputType {
+public enum Av1PresetConfiguration {
   
   
-  AKAMAI_NETSTORAGE("AKAMAI_NETSTORAGE"),
+  VOD_QUALITY("VOD_QUALITY"),
   
   
-  ASPERA("ASPERA"),
+  VOD_STANDARD("VOD_STANDARD"),
   
   
-  AZURE("AZURE"),
-  
-  
-  REDUNDANT_RTMP("REDUNDANT_RTMP"),
-  
-  
-  FTP("FTP"),
-  
-  
-  GENERIC_S3("GENERIC_S3"),
-  
-  
-  GCS("GCS"),
-  
-  
-  HTTP("HTTP"),
-  
-  
-  HTTPS("HTTPS"),
-  
-  
-  LOCAL("LOCAL"),
-  
-  
-  RTMP("RTMP"),
-  
-  
-  S3("S3"),
-  
-  
-  S3_ROLE_BASED("S3_ROLE_BASED"),
-  
-  
-  SFTP("SFTP"),
-  
-  
-  TCP("TCP"),
-  
-  
-  UDP("UDP"),
-  
-  
-  UDP_MULTICAST("UDP_MULTICAST"),
-  
-  
-  ZIXI("ZIXI"),
-  
-  
-  SRT("SRT"),
-  
-  
-  GCS_SERVICE_ACCOUNT("GCS_SERVICE_ACCOUNT"),
-  
-  
-  DIRECT_FILE_UPLOAD("DIRECT_FILE_UPLOAD");
+  VOD_SPEED("VOD_SPEED");
 
   private String value;
 
-  InputType(String value) {
+  Av1PresetConfiguration(String value) {
     this.value = value;
   }
 
@@ -92,8 +38,8 @@ public enum InputType {
   }
 
   @JsonCreator
-  public static InputType fromValue(String text) {
-    for (InputType b : InputType.values()) {
+  public static Av1PresetConfiguration fromValue(String text) {
+    for (Av1PresetConfiguration b : Av1PresetConfiguration.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

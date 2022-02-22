@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.Av1PresetConfiguration;
 import com.bitmovin.api.sdk.model.ColorConfig;
 import com.bitmovin.api.sdk.model.DisplayAspectRatio;
 import com.bitmovin.api.sdk.model.EncodingMode;
@@ -20,6 +21,28 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = Av1VideoConfiguration.class)
 public class Av1VideoConfiguration extends VideoConfiguration {
+  @JsonProperty("presetConfiguration")
+  private Av1PresetConfiguration presetConfiguration;
+
+
+  /**
+   * Use a set of well defined configurations preset to support certain use cases. Can be overwritten with more specific values.
+   * @return presetConfiguration
+   */
+  public Av1PresetConfiguration getPresetConfiguration() {
+    return presetConfiguration;
+  }
+
+  /**
+   * Use a set of well defined configurations preset to support certain use cases. Can be overwritten with more specific values.
+   *
+   * @param presetConfiguration
+   *        Use a set of well defined configurations preset to support certain use cases. Can be overwritten with more specific values.
+   */
+  public void setPresetConfiguration(Av1PresetConfiguration presetConfiguration) {
+    this.presetConfiguration = presetConfiguration;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -29,12 +52,14 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return super.equals(o);
+    Av1VideoConfiguration av1VideoConfiguration = (Av1VideoConfiguration) o;
+    return Objects.equals(this.presetConfiguration, av1VideoConfiguration.presetConfiguration) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode());
+    return Objects.hash(presetConfiguration, super.hashCode());
   }
 
   @Override
@@ -42,6 +67,7 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     StringBuilder sb = new StringBuilder();
     sb.append("class Av1VideoConfiguration {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    presetConfiguration: ").append(toIndentedString(presetConfiguration)).append("\n");
     sb.append("}");
     return sb.toString();
   }
