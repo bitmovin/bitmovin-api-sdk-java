@@ -390,23 +390,11 @@ public class AnalyticsAdsImpressionSample {
   @JsonProperty("time")
   private Long time;
 
-  @JsonProperty("time_from_content")
-  private Long timeFromContent;
-
-  @JsonProperty("time_hovered")
-  private Long timeHovered;
-
   @JsonProperty("time_in_viewport")
   private Long timeInViewport;
 
   @JsonProperty("time_played")
   private Long timePlayed;
-
-  @JsonProperty("time_to_content")
-  private Long timeToContent;
-
-  @JsonProperty("time_to_hover")
-  private Long timeToHover;
 
   @JsonProperty("universal_ad_id_registry")
   private String universalAdIdRegistry;
@@ -2831,44 +2819,6 @@ public class AnalyticsAdsImpressionSample {
 
 
   /**
-   * Time from content
-   * @return timeFromContent
-   */
-  public Long getTimeFromContent() {
-    return timeFromContent;
-  }
-
-  /**
-   * Time from content
-   *
-   * @param timeFromContent
-   *        Time from content
-   */
-  public void setTimeFromContent(Long timeFromContent) {
-    this.timeFromContent = timeFromContent;
-  }
-
-
-  /**
-   * Time hovered
-   * @return timeHovered
-   */
-  public Long getTimeHovered() {
-    return timeHovered;
-  }
-
-  /**
-   * Time hovered
-   *
-   * @param timeHovered
-   *        Time hovered
-   */
-  public void setTimeHovered(Long timeHovered) {
-    this.timeHovered = timeHovered;
-  }
-
-
-  /**
    * Time in viewport
    * @return timeInViewport
    */
@@ -2903,44 +2853,6 @@ public class AnalyticsAdsImpressionSample {
    */
   public void setTimePlayed(Long timePlayed) {
     this.timePlayed = timePlayed;
-  }
-
-
-  /**
-   * Time to content
-   * @return timeToContent
-   */
-  public Long getTimeToContent() {
-    return timeToContent;
-  }
-
-  /**
-   * Time to content
-   *
-   * @param timeToContent
-   *        Time to content
-   */
-  public void setTimeToContent(Long timeToContent) {
-    this.timeToContent = timeToContent;
-  }
-
-
-  /**
-   * Time to hover
-   * @return timeToHover
-   */
-  public Long getTimeToHover() {
-    return timeToHover;
-  }
-
-  /**
-   * Time to hover
-   *
-   * @param timeToHover
-   *        Time to hover
-   */
-  public void setTimeToHover(Long timeToHover) {
-    this.timeToHover = timeToHover;
   }
 
 
@@ -3250,12 +3162,8 @@ public class AnalyticsAdsImpressionSample {
         Objects.equals(this.streamFormat, analyticsAdsImpressionSample.streamFormat) &&
         Objects.equals(this.surveyUrl, analyticsAdsImpressionSample.surveyUrl) &&
         Objects.equals(this.time, analyticsAdsImpressionSample.time) &&
-        Objects.equals(this.timeFromContent, analyticsAdsImpressionSample.timeFromContent) &&
-        Objects.equals(this.timeHovered, analyticsAdsImpressionSample.timeHovered) &&
         Objects.equals(this.timeInViewport, analyticsAdsImpressionSample.timeInViewport) &&
         Objects.equals(this.timePlayed, analyticsAdsImpressionSample.timePlayed) &&
-        Objects.equals(this.timeToContent, analyticsAdsImpressionSample.timeToContent) &&
-        Objects.equals(this.timeToHover, analyticsAdsImpressionSample.timeToHover) &&
         Objects.equals(this.universalAdIdRegistry, analyticsAdsImpressionSample.universalAdIdRegistry) &&
         Objects.equals(this.universalAdIdValue, analyticsAdsImpressionSample.universalAdIdValue) &&
         Objects.equals(this.userId, analyticsAdsImpressionSample.userId) &&
@@ -3269,7 +3177,7 @@ public class AnalyticsAdsImpressionSample {
 
   @Override
   public int hashCode() {
-    return Objects.hash(adClickthroughUrl, adDescription, adDuration, adFallbackIndex, adId, adIdPlayer, adImpressionId, adIsPersistent, adModule, adModuleVersion, adOffset, adPlaybackHeight, adPlaybackWidth, adPodPosition, adPosition, adPreloadOffset, adReplaceContentDuration, adScheduleTime, adSkipAfter, adSkippable, adStartupTime, adSystem, adTagPath, adTagServer, adTagType, adTagUrl, adTitle, adWrapperAdsCount, advertiserName, analyticsVersion, apiFramework, apiorgId, apiuserId, audioBitrate, autoplay, browser, browserIsBot, browserVersionMajor, browserVersionMinor, cdnProvider, city, clickPercentage, clickPosition, clicked, clientTime, closePercentage, closePosition, closed, completed, country, creativeAdId, creativeId, customData1, customData2, customData3, customData4, customData5, customData6, customData7, customData8, customData9, customData10, customData11, customData12, customData13, customData14, customData15, customData16, customData17, customData18, customData19, customData20, customData21, customData22, customData23, customData24, customData25, customUserId, dealId, deviceClass, deviceType, domain, errorCode, errorData, errorMessage, errorPercentage, errorPosition, exitPosition, experimentName, ipAddress, isp, language, licenseKey, manifestDownloadTime, mediaPath, mediaServer, mediaUrl, midpoint, minSuggestedDuration, operatingsystem, operatingsystemVersionMajor, operatingsystemVersionMinor, pageLoadTime, pageLoadType, path, percentageInViewport, platform, player, playerKey, playerStartuptime, playerTech, playerVersion, playPercentage, quartile1, quartile3, region, screenHeight, screenWidth, size, skipPercentage, skipPosition, skipped, started, streamFormat, surveyUrl, time, timeFromContent, timeHovered, timeInViewport, timePlayed, timeToContent, timeToHover, universalAdIdRegistry, universalAdIdValue, userId, videoBitrate, videoId, videoImpressionId, videoTitle, videoWindowHeight, videoWindowWidth);
+    return Objects.hash(adClickthroughUrl, adDescription, adDuration, adFallbackIndex, adId, adIdPlayer, adImpressionId, adIsPersistent, adModule, adModuleVersion, adOffset, adPlaybackHeight, adPlaybackWidth, adPodPosition, adPosition, adPreloadOffset, adReplaceContentDuration, adScheduleTime, adSkipAfter, adSkippable, adStartupTime, adSystem, adTagPath, adTagServer, adTagType, adTagUrl, adTitle, adWrapperAdsCount, advertiserName, analyticsVersion, apiFramework, apiorgId, apiuserId, audioBitrate, autoplay, browser, browserIsBot, browserVersionMajor, browserVersionMinor, cdnProvider, city, clickPercentage, clickPosition, clicked, clientTime, closePercentage, closePosition, closed, completed, country, creativeAdId, creativeId, customData1, customData2, customData3, customData4, customData5, customData6, customData7, customData8, customData9, customData10, customData11, customData12, customData13, customData14, customData15, customData16, customData17, customData18, customData19, customData20, customData21, customData22, customData23, customData24, customData25, customUserId, dealId, deviceClass, deviceType, domain, errorCode, errorData, errorMessage, errorPercentage, errorPosition, exitPosition, experimentName, ipAddress, isp, language, licenseKey, manifestDownloadTime, mediaPath, mediaServer, mediaUrl, midpoint, minSuggestedDuration, operatingsystem, operatingsystemVersionMajor, operatingsystemVersionMinor, pageLoadTime, pageLoadType, path, percentageInViewport, platform, player, playerKey, playerStartuptime, playerTech, playerVersion, playPercentage, quartile1, quartile3, region, screenHeight, screenWidth, size, skipPercentage, skipPosition, skipped, started, streamFormat, surveyUrl, time, timeInViewport, timePlayed, universalAdIdRegistry, universalAdIdValue, userId, videoBitrate, videoId, videoImpressionId, videoTitle, videoWindowHeight, videoWindowWidth);
   }
 
   @Override
@@ -3403,12 +3311,8 @@ public class AnalyticsAdsImpressionSample {
     sb.append("    streamFormat: ").append(toIndentedString(streamFormat)).append("\n");
     sb.append("    surveyUrl: ").append(toIndentedString(surveyUrl)).append("\n");
     sb.append("    time: ").append(toIndentedString(time)).append("\n");
-    sb.append("    timeFromContent: ").append(toIndentedString(timeFromContent)).append("\n");
-    sb.append("    timeHovered: ").append(toIndentedString(timeHovered)).append("\n");
     sb.append("    timeInViewport: ").append(toIndentedString(timeInViewport)).append("\n");
     sb.append("    timePlayed: ").append(toIndentedString(timePlayed)).append("\n");
-    sb.append("    timeToContent: ").append(toIndentedString(timeToContent)).append("\n");
-    sb.append("    timeToHover: ").append(toIndentedString(timeToHover)).append("\n");
     sb.append("    universalAdIdRegistry: ").append(toIndentedString(universalAdIdRegistry)).append("\n");
     sb.append("    universalAdIdValue: ").append(toIndentedString(universalAdIdValue)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
