@@ -3,9 +3,11 @@ package com.bitmovin.api.sdk.encoding.simple.jobs;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.simple.jobs.vod.VodApi;
+import com.bitmovin.api.sdk.encoding.simple.jobs.live.LiveApi;
 
 public class JobsApi {
     public final VodApi vod;
+    public final LiveApi live;
 
     public JobsApi(BitmovinApiClientFactory clientFactory) {
         if (clientFactory == null)
@@ -14,6 +16,7 @@ public class JobsApi {
         }
 
         this.vod = new VodApi(clientFactory);
+        this.live = new LiveApi(clientFactory);
     }
 
     /**
