@@ -232,6 +232,21 @@ public enum AdAnalyticsAttribute {
   CUSTOM_DATA_25("CUSTOM_DATA_25"),
   
   
+  CUSTOM_DATA_26("CUSTOM_DATA_26"),
+  
+  
+  CUSTOM_DATA_27("CUSTOM_DATA_27"),
+  
+  
+  CUSTOM_DATA_28("CUSTOM_DATA_28"),
+  
+  
+  CUSTOM_DATA_29("CUSTOM_DATA_29"),
+  
+  
+  CUSTOM_DATA_30("CUSTOM_DATA_30"),
+  
+  
   CUSTOM_USER_ID("CUSTOM_USER_ID"),
   
   

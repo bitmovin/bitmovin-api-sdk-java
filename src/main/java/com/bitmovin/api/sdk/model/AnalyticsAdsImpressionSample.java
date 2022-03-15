@@ -243,6 +243,21 @@ public class AnalyticsAdsImpressionSample {
   @JsonProperty("custom_data_25")
   private String customData25;
 
+  @JsonProperty("custom_data_26")
+  private String customData26;
+
+  @JsonProperty("custom_data_27")
+  private String customData27;
+
+  @JsonProperty("custom_data_28")
+  private String customData28;
+
+  @JsonProperty("custom_data_29")
+  private String customData29;
+
+  @JsonProperty("custom_data_30")
+  private String customData30;
+
   @JsonProperty("custom_user_id")
   private String customUserId;
 
@@ -1888,6 +1903,101 @@ public class AnalyticsAdsImpressionSample {
 
 
   /**
+   * Free form data set via the customData26 field in the analytics collector configuration
+   * @return customData26
+   */
+  public String getCustomData26() {
+    return customData26;
+  }
+
+  /**
+   * Free form data set via the customData26 field in the analytics collector configuration
+   *
+   * @param customData26
+   *        Free form data set via the customData26 field in the analytics collector configuration
+   */
+  public void setCustomData26(String customData26) {
+    this.customData26 = customData26;
+  }
+
+
+  /**
+   * Free form data set via the customData27 field in the analytics collector configuration
+   * @return customData27
+   */
+  public String getCustomData27() {
+    return customData27;
+  }
+
+  /**
+   * Free form data set via the customData27 field in the analytics collector configuration
+   *
+   * @param customData27
+   *        Free form data set via the customData27 field in the analytics collector configuration
+   */
+  public void setCustomData27(String customData27) {
+    this.customData27 = customData27;
+  }
+
+
+  /**
+   * Free form data set via the customData28 field in the analytics collector configuration
+   * @return customData28
+   */
+  public String getCustomData28() {
+    return customData28;
+  }
+
+  /**
+   * Free form data set via the customData28 field in the analytics collector configuration
+   *
+   * @param customData28
+   *        Free form data set via the customData28 field in the analytics collector configuration
+   */
+  public void setCustomData28(String customData28) {
+    this.customData28 = customData28;
+  }
+
+
+  /**
+   * Free form data set via the customData29 field in the analytics collector configuration
+   * @return customData29
+   */
+  public String getCustomData29() {
+    return customData29;
+  }
+
+  /**
+   * Free form data set via the customData29 field in the analytics collector configuration
+   *
+   * @param customData29
+   *        Free form data set via the customData29 field in the analytics collector configuration
+   */
+  public void setCustomData29(String customData29) {
+    this.customData29 = customData29;
+  }
+
+
+  /**
+   * Free form data set via the customData30 field in the analytics collector configuration
+   * @return customData30
+   */
+  public String getCustomData30() {
+    return customData30;
+  }
+
+  /**
+   * Free form data set via the customData30 field in the analytics collector configuration
+   *
+   * @param customData30
+   *        Free form data set via the customData30 field in the analytics collector configuration
+   */
+  public void setCustomData30(String customData30) {
+    this.customData30 = customData30;
+  }
+
+
+  /**
    * Custom user ID
    * @return customUserId
    */
@@ -3113,6 +3223,11 @@ public class AnalyticsAdsImpressionSample {
         Objects.equals(this.customData23, analyticsAdsImpressionSample.customData23) &&
         Objects.equals(this.customData24, analyticsAdsImpressionSample.customData24) &&
         Objects.equals(this.customData25, analyticsAdsImpressionSample.customData25) &&
+        Objects.equals(this.customData26, analyticsAdsImpressionSample.customData26) &&
+        Objects.equals(this.customData27, analyticsAdsImpressionSample.customData27) &&
+        Objects.equals(this.customData28, analyticsAdsImpressionSample.customData28) &&
+        Objects.equals(this.customData29, analyticsAdsImpressionSample.customData29) &&
+        Objects.equals(this.customData30, analyticsAdsImpressionSample.customData30) &&
         Objects.equals(this.customUserId, analyticsAdsImpressionSample.customUserId) &&
         Objects.equals(this.dealId, analyticsAdsImpressionSample.dealId) &&
         Objects.equals(this.deviceClass, analyticsAdsImpressionSample.deviceClass) &&
@@ -3177,7 +3292,7 @@ public class AnalyticsAdsImpressionSample {
 
   @Override
   public int hashCode() {
-    return Objects.hash(adClickthroughUrl, adDescription, adDuration, adFallbackIndex, adId, adIdPlayer, adImpressionId, adIsPersistent, adModule, adModuleVersion, adOffset, adPlaybackHeight, adPlaybackWidth, adPodPosition, adPosition, adPreloadOffset, adReplaceContentDuration, adScheduleTime, adSkipAfter, adSkippable, adStartupTime, adSystem, adTagPath, adTagServer, adTagType, adTagUrl, adTitle, adWrapperAdsCount, advertiserName, analyticsVersion, apiFramework, apiorgId, apiuserId, audioBitrate, autoplay, browser, browserIsBot, browserVersionMajor, browserVersionMinor, cdnProvider, city, clickPercentage, clickPosition, clicked, clientTime, closePercentage, closePosition, closed, completed, country, creativeAdId, creativeId, customData1, customData2, customData3, customData4, customData5, customData6, customData7, customData8, customData9, customData10, customData11, customData12, customData13, customData14, customData15, customData16, customData17, customData18, customData19, customData20, customData21, customData22, customData23, customData24, customData25, customUserId, dealId, deviceClass, deviceType, domain, errorCode, errorData, errorMessage, errorPercentage, errorPosition, exitPosition, experimentName, ipAddress, isp, language, licenseKey, manifestDownloadTime, mediaPath, mediaServer, mediaUrl, midpoint, minSuggestedDuration, operatingsystem, operatingsystemVersionMajor, operatingsystemVersionMinor, pageLoadTime, pageLoadType, path, percentageInViewport, platform, player, playerKey, playerStartuptime, playerTech, playerVersion, playPercentage, quartile1, quartile3, region, screenHeight, screenWidth, size, skipPercentage, skipPosition, skipped, started, streamFormat, surveyUrl, time, timeInViewport, timePlayed, universalAdIdRegistry, universalAdIdValue, userId, videoBitrate, videoId, videoImpressionId, videoTitle, videoWindowHeight, videoWindowWidth);
+    return Objects.hash(adClickthroughUrl, adDescription, adDuration, adFallbackIndex, adId, adIdPlayer, adImpressionId, adIsPersistent, adModule, adModuleVersion, adOffset, adPlaybackHeight, adPlaybackWidth, adPodPosition, adPosition, adPreloadOffset, adReplaceContentDuration, adScheduleTime, adSkipAfter, adSkippable, adStartupTime, adSystem, adTagPath, adTagServer, adTagType, adTagUrl, adTitle, adWrapperAdsCount, advertiserName, analyticsVersion, apiFramework, apiorgId, apiuserId, audioBitrate, autoplay, browser, browserIsBot, browserVersionMajor, browserVersionMinor, cdnProvider, city, clickPercentage, clickPosition, clicked, clientTime, closePercentage, closePosition, closed, completed, country, creativeAdId, creativeId, customData1, customData2, customData3, customData4, customData5, customData6, customData7, customData8, customData9, customData10, customData11, customData12, customData13, customData14, customData15, customData16, customData17, customData18, customData19, customData20, customData21, customData22, customData23, customData24, customData25, customData26, customData27, customData28, customData29, customData30, customUserId, dealId, deviceClass, deviceType, domain, errorCode, errorData, errorMessage, errorPercentage, errorPosition, exitPosition, experimentName, ipAddress, isp, language, licenseKey, manifestDownloadTime, mediaPath, mediaServer, mediaUrl, midpoint, minSuggestedDuration, operatingsystem, operatingsystemVersionMajor, operatingsystemVersionMinor, pageLoadTime, pageLoadType, path, percentageInViewport, platform, player, playerKey, playerStartuptime, playerTech, playerVersion, playPercentage, quartile1, quartile3, region, screenHeight, screenWidth, size, skipPercentage, skipPosition, skipped, started, streamFormat, surveyUrl, time, timeInViewport, timePlayed, universalAdIdRegistry, universalAdIdValue, userId, videoBitrate, videoId, videoImpressionId, videoTitle, videoWindowHeight, videoWindowWidth);
   }
 
   @Override
@@ -3262,6 +3377,11 @@ public class AnalyticsAdsImpressionSample {
     sb.append("    customData23: ").append(toIndentedString(customData23)).append("\n");
     sb.append("    customData24: ").append(toIndentedString(customData24)).append("\n");
     sb.append("    customData25: ").append(toIndentedString(customData25)).append("\n");
+    sb.append("    customData26: ").append(toIndentedString(customData26)).append("\n");
+    sb.append("    customData27: ").append(toIndentedString(customData27)).append("\n");
+    sb.append("    customData28: ").append(toIndentedString(customData28)).append("\n");
+    sb.append("    customData29: ").append(toIndentedString(customData29)).append("\n");
+    sb.append("    customData30: ").append(toIndentedString(customData30)).append("\n");
     sb.append("    customUserId: ").append(toIndentedString(customUserId)).append("\n");
     sb.append("    dealId: ").append(toIndentedString(dealId)).append("\n");
     sb.append("    deviceClass: ").append(toIndentedString(deviceClass)).append("\n");

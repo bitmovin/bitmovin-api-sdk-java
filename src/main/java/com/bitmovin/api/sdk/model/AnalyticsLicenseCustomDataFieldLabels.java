@@ -87,6 +87,21 @@ public class AnalyticsLicenseCustomDataFieldLabels {
   @JsonProperty("customData25")
   private String customData25;
 
+  @JsonProperty("customData26")
+  private String customData26;
+
+  @JsonProperty("customData27")
+  private String customData27;
+
+  @JsonProperty("customData28")
+  private String customData28;
+
+  @JsonProperty("customData29")
+  private String customData29;
+
+  @JsonProperty("customData30")
+  private String customData30;
+
 
   /**
    * Label for field Custom Data 1
@@ -563,6 +578,101 @@ public class AnalyticsLicenseCustomDataFieldLabels {
   }
 
 
+  /**
+   * Label for field Custom Data 26
+   * @return customData26
+   */
+  public String getCustomData26() {
+    return customData26;
+  }
+
+  /**
+   * Label for field Custom Data 26
+   *
+   * @param customData26
+   *        Label for field Custom Data 26
+   */
+  public void setCustomData26(String customData26) {
+    this.customData26 = customData26;
+  }
+
+
+  /**
+   * Label for field Custom Data 27
+   * @return customData27
+   */
+  public String getCustomData27() {
+    return customData27;
+  }
+
+  /**
+   * Label for field Custom Data 27
+   *
+   * @param customData27
+   *        Label for field Custom Data 27
+   */
+  public void setCustomData27(String customData27) {
+    this.customData27 = customData27;
+  }
+
+
+  /**
+   * Label for field Custom Data 28
+   * @return customData28
+   */
+  public String getCustomData28() {
+    return customData28;
+  }
+
+  /**
+   * Label for field Custom Data 28
+   *
+   * @param customData28
+   *        Label for field Custom Data 28
+   */
+  public void setCustomData28(String customData28) {
+    this.customData28 = customData28;
+  }
+
+
+  /**
+   * Label for field Custom Data 29
+   * @return customData29
+   */
+  public String getCustomData29() {
+    return customData29;
+  }
+
+  /**
+   * Label for field Custom Data 29
+   *
+   * @param customData29
+   *        Label for field Custom Data 29
+   */
+  public void setCustomData29(String customData29) {
+    this.customData29 = customData29;
+  }
+
+
+  /**
+   * Label for field Custom Data 30
+   * @return customData30
+   */
+  public String getCustomData30() {
+    return customData30;
+  }
+
+  /**
+   * Label for field Custom Data 30
+   *
+   * @param customData30
+   *        Label for field Custom Data 30
+   */
+  public void setCustomData30(String customData30) {
+    this.customData30 = customData30;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -596,12 +706,17 @@ public class AnalyticsLicenseCustomDataFieldLabels {
         Objects.equals(this.customData22, analyticsLicenseCustomDataFieldLabels.customData22) &&
         Objects.equals(this.customData23, analyticsLicenseCustomDataFieldLabels.customData23) &&
         Objects.equals(this.customData24, analyticsLicenseCustomDataFieldLabels.customData24) &&
-        Objects.equals(this.customData25, analyticsLicenseCustomDataFieldLabels.customData25);
+        Objects.equals(this.customData25, analyticsLicenseCustomDataFieldLabels.customData25) &&
+        Objects.equals(this.customData26, analyticsLicenseCustomDataFieldLabels.customData26) &&
+        Objects.equals(this.customData27, analyticsLicenseCustomDataFieldLabels.customData27) &&
+        Objects.equals(this.customData28, analyticsLicenseCustomDataFieldLabels.customData28) &&
+        Objects.equals(this.customData29, analyticsLicenseCustomDataFieldLabels.customData29) &&
+        Objects.equals(this.customData30, analyticsLicenseCustomDataFieldLabels.customData30);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(customData1, customData2, customData3, customData4, customData5, customData6, customData7, customData8, customData9, customData10, customData11, customData12, customData13, customData14, customData15, customData16, customData17, customData18, customData19, customData20, customData21, customData22, customData23, customData24, customData25);
+    return Objects.hash(customData1, customData2, customData3, customData4, customData5, customData6, customData7, customData8, customData9, customData10, customData11, customData12, customData13, customData14, customData15, customData16, customData17, customData18, customData19, customData20, customData21, customData22, customData23, customData24, customData25, customData26, customData27, customData28, customData29, customData30);
   }
 
   @Override
@@ -634,6 +749,11 @@ public class AnalyticsLicenseCustomDataFieldLabels {
     sb.append("    customData23: ").append(toIndentedString(customData23)).append("\n");
     sb.append("    customData24: ").append(toIndentedString(customData24)).append("\n");
     sb.append("    customData25: ").append(toIndentedString(customData25)).append("\n");
+    sb.append("    customData26: ").append(toIndentedString(customData26)).append("\n");
+    sb.append("    customData27: ").append(toIndentedString(customData27)).append("\n");
+    sb.append("    customData28: ").append(toIndentedString(customData28)).append("\n");
+    sb.append("    customData29: ").append(toIndentedString(customData29)).append("\n");
+    sb.append("    customData30: ").append(toIndentedString(customData30)).append("\n");
     sb.append("}");
     return sb.toString();
   }
