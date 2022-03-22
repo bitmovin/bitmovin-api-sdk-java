@@ -146,7 +146,7 @@ public class SimpleEncodingLiveJobResponse {
   }
 
   /**
-   * Describes all the errors in cases the status of the job is &#39;error&#39;.   TODO right now this is the same for VOD and LIVE? maybe rename the schema and use the same for both? 
+   * Describes all the errors in cases the status of the job is &#39;error&#39;. 
    * @return errors
    */
   public List<SimpleEncodingVodJobErrors> getErrors() {
@@ -154,10 +154,10 @@ public class SimpleEncodingLiveJobResponse {
   }
 
   /**
-   * Describes all the errors in cases the status of the job is &#39;error&#39;.   TODO right now this is the same for VOD and LIVE? maybe rename the schema and use the same for both? 
+   * Describes all the errors in cases the status of the job is &#39;error&#39;. 
    *
    * @param errors
-   *        Describes all the errors in cases the status of the job is &#39;error&#39;.   TODO right now this is the same for VOD and LIVE? maybe rename the schema and use the same for both? 
+   *        Describes all the errors in cases the status of the job is &#39;error&#39;. 
    */
   public void setErrors(List<SimpleEncodingVodJobErrors> errors) {
     this.errors = errors;

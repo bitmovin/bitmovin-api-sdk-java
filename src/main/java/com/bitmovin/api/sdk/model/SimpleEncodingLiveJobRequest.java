@@ -27,6 +27,9 @@ public class SimpleEncodingLiveJobRequest {
   @JsonProperty("cloudRegion")
   private SimpleEncodingLiveCloudRegion cloudRegion;
 
+  @JsonProperty("name")
+  private String name;
+
 
   /**
    * Get input
@@ -89,6 +92,25 @@ public class SimpleEncodingLiveJobRequest {
   }
 
 
+  /**
+   * This property will be used for naming the encoding.
+   * @return name
+   */
+  public String getName() {
+    return name;
+  }
+
+  /**
+   * This property will be used for naming the encoding.
+   *
+   * @param name
+   *        This property will be used for naming the encoding.
+   */
+  public void setName(String name) {
+    this.name = name;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -100,12 +122,13 @@ public class SimpleEncodingLiveJobRequest {
     SimpleEncodingLiveJobRequest simpleEncodingLiveJobRequest = (SimpleEncodingLiveJobRequest) o;
     return Objects.equals(this.input, simpleEncodingLiveJobRequest.input) &&
         Objects.equals(this.outputs, simpleEncodingLiveJobRequest.outputs) &&
-        Objects.equals(this.cloudRegion, simpleEncodingLiveJobRequest.cloudRegion);
+        Objects.equals(this.cloudRegion, simpleEncodingLiveJobRequest.cloudRegion) &&
+        Objects.equals(this.name, simpleEncodingLiveJobRequest.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(input, outputs, cloudRegion);
+    return Objects.hash(input, outputs, cloudRegion, name);
   }
 
   @Override
@@ -116,6 +139,7 @@ public class SimpleEncodingLiveJobRequest {
     sb.append("    input: ").append(toIndentedString(input)).append("\n");
     sb.append("    outputs: ").append(toIndentedString(outputs)).append("\n");
     sb.append("    cloudRegion: ").append(toIndentedString(cloudRegion)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }
