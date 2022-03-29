@@ -3,8 +3,8 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.EncodingTemplate;
+import com.bitmovin.api.sdk.model.SimpleEncodingVodJobOutput;
 import com.bitmovin.api.sdk.model.SimpleEncodingVodJobUrlInput;
-import com.bitmovin.api.sdk.model.SimpleEncodingVodJobUrlOutput;
 import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -26,7 +26,7 @@ public class SimpleEncodingVodJobRequest {
 
   @JsonProperty("outputs")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
-  private List<SimpleEncodingVodJobUrlOutput> outputs = new ArrayList<SimpleEncodingVodJobUrlOutput>();
+  private List<SimpleEncodingVodJobOutput> outputs = new ArrayList<SimpleEncodingVodJobOutput>();
 
   @JsonProperty("name")
   private String name;
@@ -74,25 +74,26 @@ public class SimpleEncodingVodJobRequest {
   }
 
 
-  public SimpleEncodingVodJobRequest addOutputsItem(SimpleEncodingVodJobUrlOutput outputsItem) {
+  public SimpleEncodingVodJobRequest addOutputsItem(SimpleEncodingVodJobOutput outputsItem) {
     this.outputs.add(outputsItem);
     return this;
   }
 
   /**
-   * Get outputs
+   * Please take a look at the [documentation](https://bitmovin.com/docs/encoding/articles/simple-encoding-api) (required)
    * @return outputs
    */
-  public List<SimpleEncodingVodJobUrlOutput> getOutputs() {
+  public List<SimpleEncodingVodJobOutput> getOutputs() {
     return outputs;
   }
 
   /**
-   * Set outputs
+   * Please take a look at the [documentation](https://bitmovin.com/docs/encoding/articles/simple-encoding-api) (required)
    *
    * @param outputs
+   *        Please take a look at the [documentation](https://bitmovin.com/docs/encoding/articles/simple-encoding-api) (required)
    */
-  public void setOutputs(List<SimpleEncodingVodJobUrlOutput> outputs) {
+  public void setOutputs(List<SimpleEncodingVodJobOutput> outputs) {
     this.outputs = outputs;
   }
 

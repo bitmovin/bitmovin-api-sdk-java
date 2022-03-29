@@ -3,6 +3,7 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.SimpleEncodingVodJobCredentials;
+import com.bitmovin.api.sdk.model.SimpleEncodingVodJobOutput;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -11,8 +12,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * SimpleEncodingVodJobUrlOutput
  */
-
-public class SimpleEncodingVodJobUrlOutput {
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = SimpleEncodingVodJobUrlOutput.class)
+public class SimpleEncodingVodJobUrlOutput extends SimpleEncodingVodJobOutput {
   @JsonProperty("url")
   private String url;
 
@@ -91,19 +92,20 @@ public class SimpleEncodingVodJobUrlOutput {
     SimpleEncodingVodJobUrlOutput simpleEncodingVodJobUrlOutput = (SimpleEncodingVodJobUrlOutput) o;
     return Objects.equals(this.url, simpleEncodingVodJobUrlOutput.url) &&
         Objects.equals(this.credentials, simpleEncodingVodJobUrlOutput.credentials) &&
-        Objects.equals(this.makePublic, simpleEncodingVodJobUrlOutput.makePublic);
+        Objects.equals(this.makePublic, simpleEncodingVodJobUrlOutput.makePublic) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(url, credentials, makePublic);
+    return Objects.hash(url, credentials, makePublic, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SimpleEncodingVodJobUrlOutput {\n");
-    
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    credentials: ").append(toIndentedString(credentials)).append("\n");
     sb.append("    makePublic: ").append(toIndentedString(makePublic)).append("\n");

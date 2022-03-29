@@ -4,9 +4,9 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.EncodingTemplate;
 import com.bitmovin.api.sdk.model.SimpleEncodingVodJobErrors;
+import com.bitmovin.api.sdk.model.SimpleEncodingVodJobOutput;
 import com.bitmovin.api.sdk.model.SimpleEncodingVodJobStatus;
 import com.bitmovin.api.sdk.model.SimpleEncodingVodJobUrlInput;
-import com.bitmovin.api.sdk.model.SimpleEncodingVodJobUrlOutput;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -38,7 +38,7 @@ public class SimpleEncodingVodJobResponse {
 
   @JsonProperty("outputs")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
-  private List<SimpleEncodingVodJobUrlOutput> outputs = new ArrayList<SimpleEncodingVodJobUrlOutput>();
+  private List<SimpleEncodingVodJobOutput> outputs = new ArrayList<SimpleEncodingVodJobOutput>();
 
   @JsonProperty("errors")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -120,7 +120,7 @@ public class SimpleEncodingVodJobResponse {
   }
 
 
-  public SimpleEncodingVodJobResponse addOutputsItem(SimpleEncodingVodJobUrlOutput outputsItem) {
+  public SimpleEncodingVodJobResponse addOutputsItem(SimpleEncodingVodJobOutput outputsItem) {
     this.outputs.add(outputsItem);
     return this;
   }
@@ -129,7 +129,7 @@ public class SimpleEncodingVodJobResponse {
    * Get outputs
    * @return outputs
    */
-  public List<SimpleEncodingVodJobUrlOutput> getOutputs() {
+  public List<SimpleEncodingVodJobOutput> getOutputs() {
     return outputs;
   }
 
@@ -138,7 +138,7 @@ public class SimpleEncodingVodJobResponse {
    *
    * @param outputs
    */
-  public void setOutputs(List<SimpleEncodingVodJobUrlOutput> outputs) {
+  public void setOutputs(List<SimpleEncodingVodJobOutput> outputs) {
     this.outputs = outputs;
   }
 
