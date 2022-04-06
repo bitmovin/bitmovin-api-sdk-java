@@ -37,8 +37,8 @@ public class AccountInformation extends BitmovinResource {
   @JsonProperty("company")
   private String company;
 
-  @JsonProperty("isVerified")
-  private Boolean isVerified;
+  @JsonProperty("verified")
+  private Boolean verified;
 
   /**
    * Email address of the account. (required)
@@ -133,11 +133,11 @@ public class AccountInformation extends BitmovinResource {
   }
 
   /**
-   * Get isVerified
-   * @return isVerified
+   * Get verified
+   * @return verified
    */
-  public Boolean getIsVerified() {
-    return isVerified;
+  public Boolean getVerified() {
+    return verified;
   }
 
 
@@ -156,13 +156,13 @@ public class AccountInformation extends BitmovinResource {
         Objects.equals(this.lastName, accountInformation.lastName) &&
         Objects.equals(this.phone, accountInformation.phone) &&
         Objects.equals(this.company, accountInformation.company) &&
-        Objects.equals(this.isVerified, accountInformation.isVerified) &&
+        Objects.equals(this.verified, accountInformation.verified) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(email, apiKeys, firstName, lastName, phone, company, isVerified, super.hashCode());
+    return Objects.hash(email, apiKeys, firstName, lastName, phone, company, verified, super.hashCode());
   }
 
   @Override
@@ -176,7 +176,7 @@ public class AccountInformation extends BitmovinResource {
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    company: ").append(toIndentedString(company)).append("\n");
-    sb.append("    isVerified: ").append(toIndentedString(isVerified)).append("\n");
+    sb.append("    verified: ").append(toIndentedString(verified)).append("\n");
     sb.append("}");
     return sb.toString();
   }

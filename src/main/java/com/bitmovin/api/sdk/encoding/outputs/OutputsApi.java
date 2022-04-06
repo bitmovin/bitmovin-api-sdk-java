@@ -31,6 +31,7 @@ import com.bitmovin.api.sdk.encoding.outputs.sftp.SftpApi;
 import com.bitmovin.api.sdk.encoding.outputs.akamaiMsl.AkamaiMslApi;
 import com.bitmovin.api.sdk.encoding.outputs.akamaiNetstorage.AkamaiNetstorageApi;
 import com.bitmovin.api.sdk.encoding.outputs.liveMediaIngest.LiveMediaIngestApi;
+import com.bitmovin.api.sdk.encoding.outputs.cdn.CdnApi;
 
 public class OutputsApi {
     public final TypeApi type;
@@ -46,6 +47,7 @@ public class OutputsApi {
     public final AkamaiMslApi akamaiMsl;
     public final AkamaiNetstorageApi akamaiNetstorage;
     public final LiveMediaIngestApi liveMediaIngest;
+    public final CdnApi cdn;
 
     private final OutputsApiClient apiClient;
 
@@ -70,6 +72,7 @@ public class OutputsApi {
         this.akamaiMsl = new AkamaiMslApi(clientFactory);
         this.akamaiNetstorage = new AkamaiNetstorageApi(clientFactory);
         this.liveMediaIngest = new LiveMediaIngestApi(clientFactory);
+        this.cdn = new CdnApi(clientFactory);
     }
 
     /**

@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonSubTypes({
   @JsonSubTypes.Type(value = AkamaiNetStorageOutput.class, name = "AKAMAI_NETSTORAGE"),
   @JsonSubTypes.Type(value = AzureOutput.class, name = "AZURE"),
+  @JsonSubTypes.Type(value = CdnOutput.class, name = "CDN"),
   @JsonSubTypes.Type(value = GenericS3Output.class, name = "GENERIC_S3"),
   @JsonSubTypes.Type(value = GcsOutput.class, name = "GCS"),
   @JsonSubTypes.Type(value = FtpOutput.class, name = "FTP"),

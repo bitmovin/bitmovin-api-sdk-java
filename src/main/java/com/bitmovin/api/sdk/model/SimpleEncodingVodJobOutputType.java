@@ -15,7 +15,12 @@ public enum SimpleEncodingVodJobOutputType {
   /**
    * Output type
    */
-  URL("URL");
+  URL("URL"),
+  
+  /**
+   * Output type
+   */
+  CDN("CDN");
 
   private String value;
 
