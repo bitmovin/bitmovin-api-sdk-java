@@ -25,6 +25,9 @@ public class AnalyticsVirtualLicense {
   @JsonProperty("timezone")
   private String timezone;
 
+  @JsonProperty("retentionTime")
+  private String retentionTime;
+
   @JsonProperty("licenses")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<AnalyticsVirtualLicenseLicensesListItem> licenses = new ArrayList<AnalyticsVirtualLicenseLicensesListItem>();
@@ -79,6 +82,14 @@ public class AnalyticsVirtualLicense {
    */
   public void setTimezone(String timezone) {
     this.timezone = timezone;
+  }
+
+  /**
+   * Retention time of impressions, returned as ISO 8601 duration format: P(n)Y(n)M(n)DT(n)H(n)M(n)S
+   * @return retentionTime
+   */
+  public String getRetentionTime() {
+    return retentionTime;
   }
 
 
@@ -145,6 +156,7 @@ public class AnalyticsVirtualLicense {
     return Objects.equals(this.id, analyticsVirtualLicense.id) &&
         Objects.equals(this.name, analyticsVirtualLicense.name) &&
         Objects.equals(this.timezone, analyticsVirtualLicense.timezone) &&
+        Objects.equals(this.retentionTime, analyticsVirtualLicense.retentionTime) &&
         Objects.equals(this.licenses, analyticsVirtualLicense.licenses) &&
         Objects.equals(this.customDataFieldsCount, analyticsVirtualLicense.customDataFieldsCount) &&
         Objects.equals(this.customDataFieldLabels, analyticsVirtualLicense.customDataFieldLabels);
@@ -152,7 +164,7 @@ public class AnalyticsVirtualLicense {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, timezone, licenses, customDataFieldsCount, customDataFieldLabels);
+    return Objects.hash(id, name, timezone, retentionTime, licenses, customDataFieldsCount, customDataFieldLabels);
   }
 
   @Override
@@ -163,6 +175,7 @@ public class AnalyticsVirtualLicense {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
+    sb.append("    retentionTime: ").append(toIndentedString(retentionTime)).append("\n");
     sb.append("    licenses: ").append(toIndentedString(licenses)).append("\n");
     sb.append("    customDataFieldsCount: ").append(toIndentedString(customDataFieldsCount)).append("\n");
     sb.append("    customDataFieldLabels: ").append(toIndentedString(customDataFieldLabels)).append("\n");
