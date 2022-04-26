@@ -43,7 +43,7 @@ public class LiveApi {
     /**
      * Create a Simple Encoding Live Job
      * 
-     * @param simpleEncodingLiveJobRequest The Simple Encoding Live Job to be created.  (required)
+     * @param simpleEncodingLiveJobRequest The Simple Encoding Live Job to be created.  Check out our [Simple Encoding API Live Documentation](https://bitmovin.com/docs/encoding/articles/simple-encoding-api-live) for additional information about the Simple Encoding API Live.  (required)
      * @return SimpleEncodingLiveJobResponse
      * @throws BitmovinException if fails to make API call
      */
@@ -57,7 +57,7 @@ public class LiveApi {
 
     /**
      * Simple Encoding Live Job details
-     * Get the details of a Simple Encoding Live Job. 
+     * Get the details of a Simple Live Encoding Job.  Check out our [Simple Encoding API Live Documentation](https://bitmovin.com/docs/encoding/articles/simple-encoding-api-live) for additional information about the Simple Encoding API Live. 
      * @param simpleEncodingJobId Id of the Simple Encoding Live Job (required)
      * @return SimpleEncodingLiveJobResponse
      * @throws BitmovinException if fails to make API call

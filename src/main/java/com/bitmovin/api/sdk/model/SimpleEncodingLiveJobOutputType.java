@@ -10,36 +10,21 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum SimpleEncodingLiveInputAspectRatio {
+public enum SimpleEncodingLiveJobOutputType {
   
   /**
-   * Widescreen 16:9 aspect ratio
+   * Output type
    */
-  WIDE_16_9("WIDE_16_9"),
+  URL("URL"),
   
   /**
-   * Widescreen 16:10 aspect ratio
+   * Output type
    */
-  WIDE_16_10("WIDE_16_10"),
-  
-  /**
-   * Vertical 9:16 aspect ratio. Also known as portrait mode
-   */
-  VERTICAL_9_16("VERTICAL_9_16"),
-  
-  /**
-   * Standard 4:3 aspect ratio
-   */
-  STANDARD_4_3("STANDARD_4_3"),
-  
-  /**
-   * Ultrawide 21:9 aspect ratio
-   */
-  ULTRA_WIDE_21_9("ULTRA_WIDE_21_9");
+  CDN("CDN");
 
   private String value;
 
-  SimpleEncodingLiveInputAspectRatio(String value) {
+  SimpleEncodingLiveJobOutputType(String value) {
     this.value = value;
   }
 
@@ -54,8 +39,8 @@ public enum SimpleEncodingLiveInputAspectRatio {
   }
 
   @JsonCreator
-  public static SimpleEncodingLiveInputAspectRatio fromValue(String text) {
-    for (SimpleEncodingLiveInputAspectRatio b : SimpleEncodingLiveInputAspectRatio.values()) {
+  public static SimpleEncodingLiveJobOutputType fromValue(String text) {
+    for (SimpleEncodingLiveJobOutputType b : SimpleEncodingLiveJobOutputType.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

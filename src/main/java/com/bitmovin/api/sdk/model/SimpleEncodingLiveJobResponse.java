@@ -4,8 +4,8 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.SimpleEncodingLiveCloudRegion;
 import com.bitmovin.api.sdk.model.SimpleEncodingLiveJobInput;
+import com.bitmovin.api.sdk.model.SimpleEncodingLiveJobOutput;
 import com.bitmovin.api.sdk.model.SimpleEncodingLiveJobStatus;
-import com.bitmovin.api.sdk.model.SimpleEncodingLiveJobUrlOutput;
 import com.bitmovin.api.sdk.model.SimpleEncodingVodJobErrors;
 import java.util.ArrayList;
 import java.util.Date;
@@ -40,7 +40,7 @@ public class SimpleEncodingLiveJobResponse {
 
   @JsonProperty("outputs")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
-  private List<SimpleEncodingLiveJobUrlOutput> outputs = new ArrayList<SimpleEncodingLiveJobUrlOutput>();
+  private List<SimpleEncodingLiveJobOutput> outputs = new ArrayList<SimpleEncodingLiveJobOutput>();
 
   @JsonProperty("errors")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -117,7 +117,7 @@ public class SimpleEncodingLiveJobResponse {
   }
 
 
-  public SimpleEncodingLiveJobResponse addOutputsItem(SimpleEncodingLiveJobUrlOutput outputsItem) {
+  public SimpleEncodingLiveJobResponse addOutputsItem(SimpleEncodingLiveJobOutput outputsItem) {
     this.outputs.add(outputsItem);
     return this;
   }
@@ -126,7 +126,7 @@ public class SimpleEncodingLiveJobResponse {
    * Get outputs
    * @return outputs
    */
-  public List<SimpleEncodingLiveJobUrlOutput> getOutputs() {
+  public List<SimpleEncodingLiveJobOutput> getOutputs() {
     return outputs;
   }
 
@@ -135,7 +135,7 @@ public class SimpleEncodingLiveJobResponse {
    *
    * @param outputs
    */
-  public void setOutputs(List<SimpleEncodingLiveJobUrlOutput> outputs) {
+  public void setOutputs(List<SimpleEncodingLiveJobOutput> outputs) {
     this.outputs = outputs;
   }
 

@@ -3,17 +3,21 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.SimpleEncodingLiveMaxResolution;
-import com.bitmovin.api.sdk.model.SimpleEncodingVodJobOutput;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * SimpleEncodingVodJobCdnOutput
+ * SimpleEncodingLiveJobOutput
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = SimpleEncodingVodJobCdnOutput.class)
-public class SimpleEncodingVodJobCdnOutput extends SimpleEncodingVodJobOutput {
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = SimpleEncodingLiveJobOutput.class)
+@JsonSubTypes({
+  @JsonSubTypes.Type(value = SimpleEncodingLiveJobUrlOutput.class, name = "URL"),
+  @JsonSubTypes.Type(value = SimpleEncodingLiveJobCdnOutput.class, name = "CDN"),
+})
+
+public class SimpleEncodingLiveJobOutput {
   @JsonProperty("maxResolution")
   private SimpleEncodingLiveMaxResolution maxResolution;
 
@@ -45,21 +49,20 @@ public class SimpleEncodingVodJobCdnOutput extends SimpleEncodingVodJobOutput {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SimpleEncodingVodJobCdnOutput simpleEncodingVodJobCdnOutput = (SimpleEncodingVodJobCdnOutput) o;
-    return Objects.equals(this.maxResolution, simpleEncodingVodJobCdnOutput.maxResolution) &&
-        super.equals(o);
+    SimpleEncodingLiveJobOutput simpleEncodingLiveJobOutput = (SimpleEncodingLiveJobOutput) o;
+    return Objects.equals(this.maxResolution, simpleEncodingLiveJobOutput.maxResolution);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(maxResolution, super.hashCode());
+    return Objects.hash(maxResolution);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SimpleEncodingVodJobCdnOutput {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("class SimpleEncodingLiveJobOutput {\n");
+    
     sb.append("    maxResolution: ").append(toIndentedString(maxResolution)).append("\n");
     sb.append("}");
     return sb.toString();

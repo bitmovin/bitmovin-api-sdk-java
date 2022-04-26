@@ -4,7 +4,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.SimpleEncodingLiveCloudRegion;
 import com.bitmovin.api.sdk.model.SimpleEncodingLiveJobInput;
-import com.bitmovin.api.sdk.model.SimpleEncodingLiveJobUrlOutput;
+import com.bitmovin.api.sdk.model.SimpleEncodingLiveJobOutput;
 import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -22,7 +22,7 @@ public class SimpleEncodingLiveJobRequest {
 
   @JsonProperty("outputs")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
-  private List<SimpleEncodingLiveJobUrlOutput> outputs = new ArrayList<SimpleEncodingLiveJobUrlOutput>();
+  private List<SimpleEncodingLiveJobOutput> outputs = new ArrayList<SimpleEncodingLiveJobOutput>();
 
   @JsonProperty("cloudRegion")
   private SimpleEncodingLiveCloudRegion cloudRegion;
@@ -49,26 +49,26 @@ public class SimpleEncodingLiveJobRequest {
   }
 
 
-  public SimpleEncodingLiveJobRequest addOutputsItem(SimpleEncodingLiveJobUrlOutput outputsItem) {
+  public SimpleEncodingLiveJobRequest addOutputsItem(SimpleEncodingLiveJobOutput outputsItem) {
     this.outputs.add(outputsItem);
     return this;
   }
 
   /**
-   * output of the live encoding job (required)
+   * Please take a look at the [documentation](https://bitmovin.com/docs/encoding/articles/simple-encoding-api-live#outputs) (required)
    * @return outputs
    */
-  public List<SimpleEncodingLiveJobUrlOutput> getOutputs() {
+  public List<SimpleEncodingLiveJobOutput> getOutputs() {
     return outputs;
   }
 
   /**
-   * output of the live encoding job (required)
+   * Please take a look at the [documentation](https://bitmovin.com/docs/encoding/articles/simple-encoding-api-live#outputs) (required)
    *
    * @param outputs
-   *        output of the live encoding job (required)
+   *        Please take a look at the [documentation](https://bitmovin.com/docs/encoding/articles/simple-encoding-api-live#outputs) (required)
    */
-  public void setOutputs(List<SimpleEncodingLiveJobUrlOutput> outputs) {
+  public void setOutputs(List<SimpleEncodingLiveJobOutput> outputs) {
     this.outputs = outputs;
   }
 

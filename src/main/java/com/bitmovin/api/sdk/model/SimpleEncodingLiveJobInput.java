@@ -2,7 +2,6 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.SimpleEncodingLiveInputAspectRatio;
 import com.bitmovin.api.sdk.model.SimpleEncodingLiveJobInputType;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -16,9 +15,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 public class SimpleEncodingLiveJobInput {
   @JsonProperty("inputType")
   private SimpleEncodingLiveJobInputType inputType;
-
-  @JsonProperty("inputAspectRatio")
-  private SimpleEncodingLiveInputAspectRatio inputAspectRatio;
 
 
   /**
@@ -40,25 +36,6 @@ public class SimpleEncodingLiveJobInput {
   }
 
 
-  /**
-   * The aspect ratio of the input video stream
-   * @return inputAspectRatio
-   */
-  public SimpleEncodingLiveInputAspectRatio getInputAspectRatio() {
-    return inputAspectRatio;
-  }
-
-  /**
-   * The aspect ratio of the input video stream
-   *
-   * @param inputAspectRatio
-   *        The aspect ratio of the input video stream
-   */
-  public void setInputAspectRatio(SimpleEncodingLiveInputAspectRatio inputAspectRatio) {
-    this.inputAspectRatio = inputAspectRatio;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -68,13 +45,12 @@ public class SimpleEncodingLiveJobInput {
       return false;
     }
     SimpleEncodingLiveJobInput simpleEncodingLiveJobInput = (SimpleEncodingLiveJobInput) o;
-    return Objects.equals(this.inputType, simpleEncodingLiveJobInput.inputType) &&
-        Objects.equals(this.inputAspectRatio, simpleEncodingLiveJobInput.inputAspectRatio);
+    return Objects.equals(this.inputType, simpleEncodingLiveJobInput.inputType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(inputType, inputAspectRatio);
+    return Objects.hash(inputType);
   }
 
   @Override
@@ -83,7 +59,6 @@ public class SimpleEncodingLiveJobInput {
     sb.append("class SimpleEncodingLiveJobInput {\n");
     
     sb.append("    inputType: ").append(toIndentedString(inputType)).append("\n");
-    sb.append("    inputAspectRatio: ").append(toIndentedString(inputAspectRatio)).append("\n");
     sb.append("}");
     return sb.toString();
   }
