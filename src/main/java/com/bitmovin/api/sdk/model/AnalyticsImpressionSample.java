@@ -1418,7 +1418,7 @@ public class AnalyticsImpressionSample {
 
 
   /**
-   * Random UUID that is used to identify a sessions (required)
+   * Random UUID that is used to identify a session (required)
    * @return impressionId
    */
   public String getImpressionId() {
@@ -1426,10 +1426,10 @@ public class AnalyticsImpressionSample {
   }
 
   /**
-   * Random UUID that is used to identify a sessions (required)
+   * Random UUID that is used to identify a session (required)
    *
    * @param impressionId
-   *        Random UUID that is used to identify a sessions (required)
+   *        Random UUID that is used to identify a session (required)
    */
   public void setImpressionId(String impressionId) {
     this.impressionId = impressionId;

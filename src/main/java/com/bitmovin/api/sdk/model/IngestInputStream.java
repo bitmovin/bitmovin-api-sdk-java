@@ -31,7 +31,7 @@ public class IngestInputStream extends InputStream {
 
 
   /**
-   * Id of input
+   * ID of an Input resource defining the input storage (required)
    * @return inputId
    */
   public String getInputId() {
@@ -39,10 +39,10 @@ public class IngestInputStream extends InputStream {
   }
 
   /**
-   * Id of input
+   * ID of an Input resource defining the input storage (required)
    *
    * @param inputId
-   *        Id of input
+   *        ID of an Input resource defining the input storage (required)
    */
   public void setInputId(String inputId) {
     this.inputId = inputId;
@@ -50,7 +50,7 @@ public class IngestInputStream extends InputStream {
 
 
   /**
-   * Path to media file
+   * Path to an input media file (required)
    * @return inputPath
    */
   public String getInputPath() {
@@ -58,10 +58,10 @@ public class IngestInputStream extends InputStream {
   }
 
   /**
-   * Path to media file
+   * Path to an input media file (required)
    *
    * @param inputPath
-   *        Path to media file
+   *        Path to an input media file (required)
    */
   public void setInputPath(String inputPath) {
     this.inputPath = inputPath;
@@ -69,7 +69,7 @@ public class IngestInputStream extends InputStream {
 
 
   /**
-   * Specifies the algorithm how the stream in the input file will be selected
+   * Specifies the strategy for selecting a stream from the input file
    * @return selectionMode
    */
   public StreamSelectionMode getSelectionMode() {
@@ -77,10 +77,10 @@ public class IngestInputStream extends InputStream {
   }
 
   /**
-   * Specifies the algorithm how the stream in the input file will be selected
+   * Specifies the strategy for selecting a stream from the input file
    *
    * @param selectionMode
-   *        Specifies the algorithm how the stream in the input file will be selected
+   *        Specifies the strategy for selecting a stream from the input file
    */
   public void setSelectionMode(StreamSelectionMode selectionMode) {
     this.selectionMode = selectionMode;
@@ -88,7 +88,7 @@ public class IngestInputStream extends InputStream {
 
 
   /**
-   * Position of the stream, starting from 0.
+   * Position of the stream to be selected from the input file (zero-based). Must not be set in combination with selectionMode &#39;AUTO&#39;, defaults to 0 for any other selectionMode.
    * minimum: 0
    * @return position
    */
@@ -97,11 +97,11 @@ public class IngestInputStream extends InputStream {
   }
 
   /**
-   * Position of the stream, starting from 0.
+   * Position of the stream to be selected from the input file (zero-based). Must not be set in combination with selectionMode &#39;AUTO&#39;, defaults to 0 for any other selectionMode.
    * minimum: 0
    *
    * @param position
-   *        Position of the stream, starting from 0.
+   *        Position of the stream to be selected from the input file (zero-based). Must not be set in combination with selectionMode &#39;AUTO&#39;, defaults to 0 for any other selectionMode.
    *        minimum: 0
    */
   public void setPosition(Integer position) {

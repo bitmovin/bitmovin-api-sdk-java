@@ -31,7 +31,7 @@ public class DvbSubtitleInputStream extends InputStream {
 
 
   /**
-   * Id of input
+   * ID of an Input resource defining the input storage
    * @return inputId
    */
   public String getInputId() {
@@ -39,10 +39,10 @@ public class DvbSubtitleInputStream extends InputStream {
   }
 
   /**
-   * Id of input
+   * ID of an Input resource defining the input storage
    *
    * @param inputId
-   *        Id of input
+   *        ID of an Input resource defining the input storage
    */
   public void setInputId(String inputId) {
     this.inputId = inputId;
@@ -50,7 +50,7 @@ public class DvbSubtitleInputStream extends InputStream {
 
 
   /**
-   * Path to media file
+   * Path to an input media file
    * @return inputPath
    */
   public String getInputPath() {
@@ -58,10 +58,10 @@ public class DvbSubtitleInputStream extends InputStream {
   }
 
   /**
-   * Path to media file
+   * Path to an input media file
    *
    * @param inputPath
-   *        Path to media file
+   *        Path to an input media file
    */
   public void setInputPath(String inputPath) {
     this.inputPath = inputPath;
@@ -69,7 +69,7 @@ public class DvbSubtitleInputStream extends InputStream {
 
 
   /**
-   * Specifies the algorithm for selecting a stream from the input file. Supported values for VOD encodings: AUTO, POSITION_ABSOLUTE, SUBTITLE_RELATIVE. Supported values for LIVE encodings: POSITION_ABSOLUTE
+   * Specifies the strategy for selecting a stream from the input file. Supported values for VOD encodings: AUTO, POSITION_ABSOLUTE, SUBTITLE_RELATIVE. Supported values for LIVE encodings: POSITION_ABSOLUTE
    * @return selectionMode
    */
   public StreamSelectionMode getSelectionMode() {
@@ -77,10 +77,10 @@ public class DvbSubtitleInputStream extends InputStream {
   }
 
   /**
-   * Specifies the algorithm for selecting a stream from the input file. Supported values for VOD encodings: AUTO, POSITION_ABSOLUTE, SUBTITLE_RELATIVE. Supported values for LIVE encodings: POSITION_ABSOLUTE
+   * Specifies the strategy for selecting a stream from the input file. Supported values for VOD encodings: AUTO, POSITION_ABSOLUTE, SUBTITLE_RELATIVE. Supported values for LIVE encodings: POSITION_ABSOLUTE
    *
    * @param selectionMode
-   *        Specifies the algorithm for selecting a stream from the input file. Supported values for VOD encodings: AUTO, POSITION_ABSOLUTE, SUBTITLE_RELATIVE. Supported values for LIVE encodings: POSITION_ABSOLUTE
+   *        Specifies the strategy for selecting a stream from the input file. Supported values for VOD encodings: AUTO, POSITION_ABSOLUTE, SUBTITLE_RELATIVE. Supported values for LIVE encodings: POSITION_ABSOLUTE
    */
   public void setSelectionMode(StreamSelectionMode selectionMode) {
     this.selectionMode = selectionMode;
@@ -88,7 +88,7 @@ public class DvbSubtitleInputStream extends InputStream {
 
 
   /**
-   * Position of the stream, starting from 0.
+   * Position of the stream to be selected from the input file (zero-based). Must not be set in combination with selectionMode &#39;AUTO&#39;, defaults to 0 for any other selectionMode.
    * minimum: 0
    * @return position
    */
@@ -97,11 +97,11 @@ public class DvbSubtitleInputStream extends InputStream {
   }
 
   /**
-   * Position of the stream, starting from 0.
+   * Position of the stream to be selected from the input file (zero-based). Must not be set in combination with selectionMode &#39;AUTO&#39;, defaults to 0 for any other selectionMode.
    * minimum: 0
    *
    * @param position
-   *        Position of the stream, starting from 0.
+   *        Position of the stream to be selected from the input file (zero-based). Must not be set in combination with selectionMode &#39;AUTO&#39;, defaults to 0 for any other selectionMode.
    *        minimum: 0
    */
   public void setPosition(Integer position) {

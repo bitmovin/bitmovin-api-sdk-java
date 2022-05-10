@@ -34,7 +34,7 @@ public class StreamInput {
 
 
   /**
-   * Id of input
+   * ID of an Input resource defining the input storage. Required if &#39;inputStreamId&#39; is not set.
    * @return inputId
    */
   public String getInputId() {
@@ -42,10 +42,10 @@ public class StreamInput {
   }
 
   /**
-   * Id of input
+   * ID of an Input resource defining the input storage. Required if &#39;inputStreamId&#39; is not set.
    *
    * @param inputId
-   *        Id of input
+   *        ID of an Input resource defining the input storage. Required if &#39;inputStreamId&#39; is not set.
    */
   public void setInputId(String inputId) {
     this.inputId = inputId;
@@ -53,7 +53,7 @@ public class StreamInput {
 
 
   /**
-   * Path to media file
+   * Path to an input media file. Required if &#39;inputStreamId&#39; is not set.
    * @return inputPath
    */
   public String getInputPath() {
@@ -61,10 +61,10 @@ public class StreamInput {
   }
 
   /**
-   * Path to media file
+   * Path to an input media file. Required if &#39;inputStreamId&#39; is not set.
    *
    * @param inputPath
-   *        Path to media file
+   *        Path to an input media file. Required if &#39;inputStreamId&#39; is not set.
    */
   public void setInputPath(String inputPath) {
     this.inputPath = inputPath;
@@ -72,7 +72,7 @@ public class StreamInput {
 
 
   /**
-   * Specifies the algorithm how the stream in the input file will be selected
+   * Specifies the strategy for selecting a stream from the input file. Must not be set when &#39;inputStreamId&#39; is set.
    * @return selectionMode
    */
   public StreamSelectionMode getSelectionMode() {
@@ -80,10 +80,10 @@ public class StreamInput {
   }
 
   /**
-   * Specifies the algorithm how the stream in the input file will be selected
+   * Specifies the strategy for selecting a stream from the input file. Must not be set when &#39;inputStreamId&#39; is set.
    *
    * @param selectionMode
-   *        Specifies the algorithm how the stream in the input file will be selected
+   *        Specifies the strategy for selecting a stream from the input file. Must not be set when &#39;inputStreamId&#39; is set.
    */
   public void setSelectionMode(StreamSelectionMode selectionMode) {
     this.selectionMode = selectionMode;
@@ -91,7 +91,7 @@ public class StreamInput {
 
 
   /**
-   * Position of the stream, starting from 0.
+   * Position of the stream to be selected from the input file (zero-based). Must not be set in combination with selectionMode &#39;AUTO&#39;, defaults to 0 for any other selectionMode.
    * minimum: 0
    * @return position
    */
@@ -100,11 +100,11 @@ public class StreamInput {
   }
 
   /**
-   * Position of the stream, starting from 0.
+   * Position of the stream to be selected from the input file (zero-based). Must not be set in combination with selectionMode &#39;AUTO&#39;, defaults to 0 for any other selectionMode.
    * minimum: 0
    *
    * @param position
-   *        Position of the stream, starting from 0.
+   *        Position of the stream to be selected from the input file (zero-based). Must not be set in combination with selectionMode &#39;AUTO&#39;, defaults to 0 for any other selectionMode.
    *        minimum: 0
    */
   public void setPosition(Integer position) {
@@ -113,7 +113,7 @@ public class StreamInput {
 
 
   /**
-   * Set this property instead of all others to reference an ingest, trimming or concatenation input stream
+   * Set this property instead of all others to reference an InputStream resource (e.g. an Ingest-, Trimming- or ConcatenationInputStream)
    * @return inputStreamId
    */
   public String getInputStreamId() {
@@ -121,10 +121,10 @@ public class StreamInput {
   }
 
   /**
-   * Set this property instead of all others to reference an ingest, trimming or concatenation input stream
+   * Set this property instead of all others to reference an InputStream resource (e.g. an Ingest-, Trimming- or ConcatenationInputStream)
    *
    * @param inputStreamId
-   *        Set this property instead of all others to reference an ingest, trimming or concatenation input stream
+   *        Set this property instead of all others to reference an InputStream resource (e.g. an Ingest-, Trimming- or ConcatenationInputStream)
    */
   public void setInputStreamId(String inputStreamId) {
     this.inputStreamId = inputStreamId;

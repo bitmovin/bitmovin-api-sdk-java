@@ -34,7 +34,7 @@ public class DvbTeletextInputStream extends InputStream {
 
 
   /**
-   * Id of input
+   * ID of an Input resource defining the input storage
    * @return inputId
    */
   public String getInputId() {
@@ -42,10 +42,10 @@ public class DvbTeletextInputStream extends InputStream {
   }
 
   /**
-   * Id of input
+   * ID of an Input resource defining the input storage
    *
    * @param inputId
-   *        Id of input
+   *        ID of an Input resource defining the input storage
    */
   public void setInputId(String inputId) {
     this.inputId = inputId;
@@ -53,7 +53,7 @@ public class DvbTeletextInputStream extends InputStream {
 
 
   /**
-   * Path to media file
+   * Path to an input media file
    * @return inputPath
    */
   public String getInputPath() {
@@ -61,10 +61,10 @@ public class DvbTeletextInputStream extends InputStream {
   }
 
   /**
-   * Path to media file
+   * Path to an input media file
    *
    * @param inputPath
-   *        Path to media file
+   *        Path to an input media file
    */
   public void setInputPath(String inputPath) {
     this.inputPath = inputPath;
@@ -72,7 +72,7 @@ public class DvbTeletextInputStream extends InputStream {
 
 
   /**
-   * Specifies the algorithm how the stream in the input file will be selected
+   * Specifies the strategy for selecting a stream from the input file
    * @return selectionMode
    */
   public StreamSelectionMode getSelectionMode() {
@@ -80,10 +80,10 @@ public class DvbTeletextInputStream extends InputStream {
   }
 
   /**
-   * Specifies the algorithm how the stream in the input file will be selected
+   * Specifies the strategy for selecting a stream from the input file
    *
    * @param selectionMode
-   *        Specifies the algorithm how the stream in the input file will be selected
+   *        Specifies the strategy for selecting a stream from the input file
    */
   public void setSelectionMode(StreamSelectionMode selectionMode) {
     this.selectionMode = selectionMode;
@@ -91,7 +91,7 @@ public class DvbTeletextInputStream extends InputStream {
 
 
   /**
-   * Position of the stream, starting from 0.
+   * Position of the stream to be selected from the input file (zero-based). Must not be set in combination with selectionMode &#39;AUTO&#39;, defaults to 0 for any other selectionMode.
    * minimum: 0
    * @return position
    */
@@ -100,11 +100,11 @@ public class DvbTeletextInputStream extends InputStream {
   }
 
   /**
-   * Position of the stream, starting from 0.
+   * Position of the stream to be selected from the input file (zero-based). Must not be set in combination with selectionMode &#39;AUTO&#39;, defaults to 0 for any other selectionMode.
    * minimum: 0
    *
    * @param position
-   *        Position of the stream, starting from 0.
+   *        Position of the stream to be selected from the input file (zero-based). Must not be set in combination with selectionMode &#39;AUTO&#39;, defaults to 0 for any other selectionMode.
    *        minimum: 0
    */
   public void setPosition(Integer position) {
