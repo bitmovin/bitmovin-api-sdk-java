@@ -35,9 +35,6 @@ import com.bitmovin.api.sdk.encoding.inputs.https.HttpsApi;
 import com.bitmovin.api.sdk.encoding.inputs.aspera.AsperaApi;
 import com.bitmovin.api.sdk.encoding.inputs.akamaiNetstorage.AkamaiNetstorageApi;
 import com.bitmovin.api.sdk.encoding.inputs.srt.SrtApi;
-import com.bitmovin.api.sdk.encoding.inputs.tcp.TcpApi;
-import com.bitmovin.api.sdk.encoding.inputs.udp.UdpApi;
-import com.bitmovin.api.sdk.encoding.inputs.udpMulticast.UdpMulticastApi;
 import com.bitmovin.api.sdk.encoding.inputs.zixi.ZixiApi;
 
 public class InputsApi {
@@ -58,9 +55,6 @@ public class InputsApi {
     public final AsperaApi aspera;
     public final AkamaiNetstorageApi akamaiNetstorage;
     public final SrtApi srt;
-    public final TcpApi tcp;
-    public final UdpApi udp;
-    public final UdpMulticastApi udpMulticast;
     public final ZixiApi zixi;
 
     private final InputsApiClient apiClient;
@@ -90,9 +84,6 @@ public class InputsApi {
         this.aspera = new AsperaApi(clientFactory);
         this.akamaiNetstorage = new AkamaiNetstorageApi(clientFactory);
         this.srt = new SrtApi(clientFactory);
-        this.tcp = new TcpApi(clientFactory);
-        this.udp = new UdpApi(clientFactory);
-        this.udpMulticast = new UdpMulticastApi(clientFactory);
         this.zixi = new ZixiApi(clientFactory);
     }
 

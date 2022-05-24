@@ -55,15 +55,6 @@ public enum InputType {
   SFTP("SFTP"),
   
   
-  TCP("TCP"),
-  
-  
-  UDP("UDP"),
-  
-  
-  UDP_MULTICAST("UDP_MULTICAST"),
-  
-  
   ZIXI("ZIXI"),
   
   
