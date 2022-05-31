@@ -30,6 +30,7 @@ public class Trimming {
 
   /**
    * Defines the offset in seconds from which the encoding should start, beginning at 0.
+   * minimum: 0
    * @return offset
    */
   public Double getOffset() {
@@ -38,9 +39,11 @@ public class Trimming {
 
   /**
    * Defines the offset in seconds from which the encoding should start, beginning at 0.
+   * minimum: 0
    *
    * @param offset
    *        Defines the offset in seconds from which the encoding should start, beginning at 0.
+   *        minimum: 0
    */
   public void setOffset(Double offset) {
     this.offset = offset;
@@ -48,7 +51,8 @@ public class Trimming {
 
 
   /**
-   * Defines how many seconds from the input will be encoded.
+   * Defines how many seconds from the input will be encoded. If not set, the input will be encoded until its end.
+   * minimum: 0
    * @return duration
    */
   public Double getDuration() {
@@ -56,10 +60,12 @@ public class Trimming {
   }
 
   /**
-   * Defines how many seconds from the input will be encoded.
+   * Defines how many seconds from the input will be encoded. If not set, the input will be encoded until its end.
+   * minimum: 0
    *
    * @param duration
-   *        Defines how many seconds from the input will be encoded.
+   *        Defines how many seconds from the input will be encoded. If not set, the input will be encoded until its end.
+   *        minimum: 0
    */
   public void setDuration(Double duration) {
     this.duration = duration;
@@ -67,7 +73,7 @@ public class Trimming {
 
 
   /**
-   * If set, \&quot;duration\&quot; will be interpreted as a maximum and not cause an error if the input is too short
+   * When true, \&quot;duration\&quot; will be interpreted as a maximum and not cause an error if the input is too short
    * @return ignoreDurationIfInputTooShort
    */
   public Boolean getIgnoreDurationIfInputTooShort() {
@@ -75,10 +81,10 @@ public class Trimming {
   }
 
   /**
-   * If set, \&quot;duration\&quot; will be interpreted as a maximum and not cause an error if the input is too short
+   * When true, \&quot;duration\&quot; will be interpreted as a maximum and not cause an error if the input is too short
    *
    * @param ignoreDurationIfInputTooShort
-   *        If set, \&quot;duration\&quot; will be interpreted as a maximum and not cause an error if the input is too short
+   *        When true, \&quot;duration\&quot; will be interpreted as a maximum and not cause an error if the input is too short
    */
   public void setIgnoreDurationIfInputTooShort(Boolean ignoreDurationIfInputTooShort) {
     this.ignoreDurationIfInputTooShort = ignoreDurationIfInputTooShort;

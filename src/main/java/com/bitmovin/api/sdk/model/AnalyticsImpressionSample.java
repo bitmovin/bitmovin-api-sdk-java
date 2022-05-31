@@ -2026,7 +2026,7 @@ public class AnalyticsImpressionSample {
 
 
   /**
-   * Sequence number of the sample in which it occured in the session
+   * Sequence number of the sample in which it occurred in the session
    * @return sequenceNumber
    */
   public Long getSequenceNumber() {
@@ -2034,10 +2034,10 @@ public class AnalyticsImpressionSample {
   }
 
   /**
-   * Sequence number of the sample in which it occured in the session
+   * Sequence number of the sample in which it occurred in the session
    *
    * @param sequenceNumber
-   *        Sequence number of the sample in which it occured in the session
+   *        Sequence number of the sample in which it occurred in the session
    */
   public void setSequenceNumber(Long sequenceNumber) {
     this.sequenceNumber = sequenceNumber;

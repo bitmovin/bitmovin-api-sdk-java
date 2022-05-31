@@ -341,7 +341,7 @@ public class TextFilter extends Filter {
 
 
   /**
-   * If set, the timecode representation in \&quot;hh:mm:ss[:;.]ff\&quot; format will be applied
+   * If set, the timecode representation in \&quot;hh:mm:ss[:;.]ff\&quot; format will be applied. Drop-frame timecodes (containing \&quot;;\&quot; or \&quot;.\&quot;) must only be used with video frame rates of 29.97, 30, 59.94 or 60 FPS, according to the SMPTE standard
    * @return timecode
    */
   public String getTimecode() {
@@ -349,10 +349,10 @@ public class TextFilter extends Filter {
   }
 
   /**
-   * If set, the timecode representation in \&quot;hh:mm:ss[:;.]ff\&quot; format will be applied
+   * If set, the timecode representation in \&quot;hh:mm:ss[:;.]ff\&quot; format will be applied. Drop-frame timecodes (containing \&quot;;\&quot; or \&quot;.\&quot;) must only be used with video frame rates of 29.97, 30, 59.94 or 60 FPS, according to the SMPTE standard
    *
    * @param timecode
-   *        If set, the timecode representation in \&quot;hh:mm:ss[:;.]ff\&quot; format will be applied
+   *        If set, the timecode representation in \&quot;hh:mm:ss[:;.]ff\&quot; format will be applied. Drop-frame timecodes (containing \&quot;;\&quot; or \&quot;.\&quot;) must only be used with video frame rates of 29.97, 30, 59.94 or 60 FPS, according to the SMPTE standard
    */
   public void setTimecode(String timecode) {
     this.timecode = timecode;
@@ -417,7 +417,7 @@ public class TextFilter extends Filter {
 
 
   /**
-   * Get rate
+   * Video frame rate
    * @return rate
    */
   public String getRate() {
@@ -425,9 +425,10 @@ public class TextFilter extends Filter {
   }
 
   /**
-   * Set rate
+   * Video frame rate
    *
    * @param rate
+   *        Video frame rate
    */
   public void setRate(String rate) {
     this.rate = rate;
