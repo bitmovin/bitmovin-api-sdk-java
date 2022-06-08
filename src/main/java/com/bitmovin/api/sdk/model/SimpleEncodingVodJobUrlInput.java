@@ -3,6 +3,7 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.SimpleEncodingVodJobCredentials;
+import com.bitmovin.api.sdk.model.SimpleEncodingVodJobInput;
 import com.bitmovin.api.sdk.model.SimpleEncodingVodJobInputType;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -12,8 +13,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * SimpleEncodingVodJobUrlInput
  */
-
-public class SimpleEncodingVodJobUrlInput {
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = SimpleEncodingVodJobUrlInput.class)
+public class SimpleEncodingVodJobUrlInput extends SimpleEncodingVodJobInput {
   @JsonProperty("url")
   private String url;
 
@@ -115,19 +116,20 @@ public class SimpleEncodingVodJobUrlInput {
     return Objects.equals(this.url, simpleEncodingVodJobUrlInput.url) &&
         Objects.equals(this.credentials, simpleEncodingVodJobUrlInput.credentials) &&
         Objects.equals(this.inputType, simpleEncodingVodJobUrlInput.inputType) &&
-        Objects.equals(this.language, simpleEncodingVodJobUrlInput.language);
+        Objects.equals(this.language, simpleEncodingVodJobUrlInput.language) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(url, credentials, inputType, language);
+    return Objects.hash(url, credentials, inputType, language, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SimpleEncodingVodJobUrlInput {\n");
-    
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    credentials: ").append(toIndentedString(credentials)).append("\n");
     sb.append("    inputType: ").append(toIndentedString(inputType)).append("\n");

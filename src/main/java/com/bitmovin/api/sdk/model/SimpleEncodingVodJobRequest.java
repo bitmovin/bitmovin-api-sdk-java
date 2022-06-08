@@ -3,8 +3,8 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.EncodingTemplate;
+import com.bitmovin.api.sdk.model.SimpleEncodingVodJobInput;
 import com.bitmovin.api.sdk.model.SimpleEncodingVodJobOutput;
-import com.bitmovin.api.sdk.model.SimpleEncodingVodJobUrlInput;
 import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -22,7 +22,7 @@ public class SimpleEncodingVodJobRequest {
 
   @JsonProperty("inputs")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
-  private List<SimpleEncodingVodJobUrlInput> inputs = new ArrayList<SimpleEncodingVodJobUrlInput>();
+  private List<SimpleEncodingVodJobInput> inputs = new ArrayList<SimpleEncodingVodJobInput>();
 
   @JsonProperty("outputs")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -51,7 +51,7 @@ public class SimpleEncodingVodJobRequest {
   }
 
 
-  public SimpleEncodingVodJobRequest addInputsItem(SimpleEncodingVodJobUrlInput inputsItem) {
+  public SimpleEncodingVodJobRequest addInputsItem(SimpleEncodingVodJobInput inputsItem) {
     this.inputs.add(inputsItem);
     return this;
   }
@@ -60,7 +60,7 @@ public class SimpleEncodingVodJobRequest {
    * Get inputs
    * @return inputs
    */
-  public List<SimpleEncodingVodJobUrlInput> getInputs() {
+  public List<SimpleEncodingVodJobInput> getInputs() {
     return inputs;
   }
 
@@ -69,7 +69,7 @@ public class SimpleEncodingVodJobRequest {
    *
    * @param inputs
    */
-  public void setInputs(List<SimpleEncodingVodJobUrlInput> inputs) {
+  public void setInputs(List<SimpleEncodingVodJobInput> inputs) {
     this.inputs = inputs;
   }
 
