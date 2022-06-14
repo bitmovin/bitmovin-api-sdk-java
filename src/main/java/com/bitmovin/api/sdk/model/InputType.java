@@ -61,7 +61,10 @@ public enum InputType {
   SRT("SRT"),
   
   
-  GCS_SERVICE_ACCOUNT("GCS_SERVICE_ACCOUNT");
+  GCS_SERVICE_ACCOUNT("GCS_SERVICE_ACCOUNT"),
+  
+  
+  DIRECT_FILE_UPLOAD("DIRECT_FILE_UPLOAD");
 
   private String value;
 

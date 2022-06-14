@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = SimpleEncodingVodJobInput.class)
 @JsonSubTypes({
   @JsonSubTypes.Type(value = SimpleEncodingVodJobUrlInput.class, name = "URL"),
+  @JsonSubTypes.Type(value = SimpleEncodingVodJobDirectFileUploadInput.class, name = "DIRECT_FILE_UPLOAD"),
 })
 
 public class SimpleEncodingVodJobInput {

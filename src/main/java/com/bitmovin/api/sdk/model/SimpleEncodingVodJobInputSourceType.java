@@ -15,7 +15,12 @@ public enum SimpleEncodingVodJobInputSourceType {
   /**
    * Input source type
    */
-  URL("URL");
+  URL("URL"),
+  
+  /**
+   * Input source type
+   */
+  DIRECT_FILE_UPLOAD("DIRECT_FILE_UPLOAD");
 
   private String value;
 

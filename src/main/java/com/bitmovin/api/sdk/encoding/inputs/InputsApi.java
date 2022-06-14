@@ -36,6 +36,7 @@ import com.bitmovin.api.sdk.encoding.inputs.aspera.AsperaApi;
 import com.bitmovin.api.sdk.encoding.inputs.akamaiNetstorage.AkamaiNetstorageApi;
 import com.bitmovin.api.sdk.encoding.inputs.srt.SrtApi;
 import com.bitmovin.api.sdk.encoding.inputs.zixi.ZixiApi;
+import com.bitmovin.api.sdk.encoding.inputs.directFileUpload.DirectFileUploadApi;
 
 public class InputsApi {
     public final TypeApi type;
@@ -56,6 +57,7 @@ public class InputsApi {
     public final AkamaiNetstorageApi akamaiNetstorage;
     public final SrtApi srt;
     public final ZixiApi zixi;
+    public final DirectFileUploadApi directFileUpload;
 
     private final InputsApiClient apiClient;
 
@@ -85,6 +87,7 @@ public class InputsApi {
         this.akamaiNetstorage = new AkamaiNetstorageApi(clientFactory);
         this.srt = new SrtApi(clientFactory);
         this.zixi = new ZixiApi(clientFactory);
+        this.directFileUpload = new DirectFileUploadApi(clientFactory);
     }
 
     /**
