@@ -73,7 +73,7 @@ public class AdAnalyticsQueryRequest extends AnalyticsQueryTimeframe {
   }
 
   /**
-   * Get filters
+   * Analytics Query Filters  Each filter requires 3 properties: name, operator and value.   Valid operators are [IN, EQ, NE, LT, LTE, GT, GTE, CONTAINS, NOTCONTAINS] 
    * @return filters
    */
   public List<AdAnalyticsAbstractFilter> getFilters() {
@@ -81,9 +81,10 @@ public class AdAnalyticsQueryRequest extends AnalyticsQueryTimeframe {
   }
 
   /**
-   * Set filters
+   * Analytics Query Filters  Each filter requires 3 properties: name, operator and value.   Valid operators are [IN, EQ, NE, LT, LTE, GT, GTE, CONTAINS, NOTCONTAINS] 
    *
    * @param filters
+   *        Analytics Query Filters  Each filter requires 3 properties: name, operator and value.   Valid operators are [IN, EQ, NE, LT, LTE, GT, GTE, CONTAINS, NOTCONTAINS] 
    */
   public void setFilters(List<AdAnalyticsAbstractFilter> filters) {
     this.filters = filters;

@@ -24,7 +24,7 @@ public class AdAnalyticsPercentileQueryRequest extends AdAnalyticsQueryRequest {
 
 
   /**
-   * The percentage (0-99) used for percentile queries.
+   * The percentage (0-99) used for percentile queries. (required)
    * @return percentile
    */
   public Long getPercentile() {
@@ -32,10 +32,10 @@ public class AdAnalyticsPercentileQueryRequest extends AdAnalyticsQueryRequest {
   }
 
   /**
-   * The percentage (0-99) used for percentile queries.
+   * The percentage (0-99) used for percentile queries. (required)
    *
    * @param percentile
-   *        The percentage (0-99) used for percentile queries.
+   *        The percentage (0-99) used for percentile queries. (required)
    */
   public void setPercentile(Long percentile) {
     this.percentile = percentile;

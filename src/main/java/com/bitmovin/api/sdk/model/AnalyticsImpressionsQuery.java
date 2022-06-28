@@ -29,7 +29,7 @@ public class AnalyticsImpressionsQuery extends AnalyticsQueryTimeframe {
 
 
   /**
-   * Analytics license key
+   * Analytics license key (required)
    * @return licenseKey
    */
   public String getLicenseKey() {
@@ -37,10 +37,10 @@ public class AnalyticsImpressionsQuery extends AnalyticsQueryTimeframe {
   }
 
   /**
-   * Analytics license key
+   * Analytics license key (required)
    *
    * @param licenseKey
-   *        Analytics license key
+   *        Analytics license key (required)
    */
   public void setLicenseKey(String licenseKey) {
     this.licenseKey = licenseKey;
@@ -53,7 +53,7 @@ public class AnalyticsImpressionsQuery extends AnalyticsQueryTimeframe {
   }
 
   /**
-   * Get filters
+   * Analytics Query Filters  Each filter requires 3 properties: name, operator and value.  Valid operators are [IN, EQ, NE, LT, LTE, GT, GTE, CONTAINS, NOTCONTAINS] 
    * @return filters
    */
   public List<AnalyticsAbstractFilter> getFilters() {
@@ -61,9 +61,10 @@ public class AnalyticsImpressionsQuery extends AnalyticsQueryTimeframe {
   }
 
   /**
-   * Set filters
+   * Analytics Query Filters  Each filter requires 3 properties: name, operator and value.  Valid operators are [IN, EQ, NE, LT, LTE, GT, GTE, CONTAINS, NOTCONTAINS] 
    *
    * @param filters
+   *        Analytics Query Filters  Each filter requires 3 properties: name, operator and value.  Valid operators are [IN, EQ, NE, LT, LTE, GT, GTE, CONTAINS, NOTCONTAINS] 
    */
   public void setFilters(List<AnalyticsAbstractFilter> filters) {
     this.filters = filters;

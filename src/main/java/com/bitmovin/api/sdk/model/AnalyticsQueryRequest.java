@@ -76,7 +76,7 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
   }
 
   /**
-   * Get filters
+   * Analytics Query Filters  Each filter requires 3 properties: name, operator and value.   Valid operators are [IN, EQ, NE, LT, LTE, GT, GTE, CONTAINS, NOTCONTAINS] 
    * @return filters
    */
   public List<AnalyticsAbstractFilter> getFilters() {
@@ -84,9 +84,10 @@ public class AnalyticsQueryRequest extends AnalyticsQueryTimeframe {
   }
 
   /**
-   * Set filters
+   * Analytics Query Filters  Each filter requires 3 properties: name, operator and value.   Valid operators are [IN, EQ, NE, LT, LTE, GT, GTE, CONTAINS, NOTCONTAINS] 
    *
    * @param filters
+   *        Analytics Query Filters  Each filter requires 3 properties: name, operator and value.   Valid operators are [IN, EQ, NE, LT, LTE, GT, GTE, CONTAINS, NOTCONTAINS] 
    */
   public void setFilters(List<AnalyticsAbstractFilter> filters) {
     this.filters = filters;
