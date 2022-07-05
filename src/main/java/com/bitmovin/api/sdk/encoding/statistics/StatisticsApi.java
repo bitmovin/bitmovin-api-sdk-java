@@ -18,11 +18,13 @@ import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
+import com.bitmovin.api.sdk.encoding.statistics.cdn.CdnApi;
 import com.bitmovin.api.sdk.encoding.statistics.daily.DailyApi;
 import com.bitmovin.api.sdk.encoding.statistics.encodings.EncodingsApi;
 import com.bitmovin.api.sdk.encoding.statistics.labels.LabelsApi;
 
 public class StatisticsApi {
+    public final CdnApi cdn;
     public final DailyApi daily;
     public final EncodingsApi encodings;
     public final LabelsApi labels;
@@ -37,6 +39,7 @@ public class StatisticsApi {
 
         this.apiClient = clientFactory.createApiClient(StatisticsApiClient.class);
 
+        this.cdn = new CdnApi(clientFactory);
         this.daily = new DailyApi(clientFactory);
         this.encodings = new EncodingsApi(clientFactory);
         this.labels = new LabelsApi(clientFactory);

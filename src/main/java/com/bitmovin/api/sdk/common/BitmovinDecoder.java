@@ -25,7 +25,7 @@ public class BitmovinDecoder implements Decoder {
         return jsonNode.get("status") != null && jsonNode.get("status").asText().equals("SUCCESS");
     }
 
-    public Object decode(Response response, Type type) throws IOException, DecodeException, FeignException
+    public Object decode(Response response, Type type) throws IOException
     {
         if (response.body() == null)
         {
@@ -52,20 +52,20 @@ public class BitmovinDecoder implements Decoder {
             JsonNode jsonNode = this.mapper.readValue(reader, JsonNode.class);
 
             if (jsonNode == null) {
-                throw new DecodeException("Response does not contain valid json data");
+                decodeException("Response does not contain valid json data", response);
             }
 
             if (!this.checkIsSuccessResponse(jsonNode)) {
-                throw new DecodeException("Got non success response");
+                decodeException("Got non success response", response);
             }
 
             if (jsonNode.get("data") == null) {
-                throw new DecodeException("Could not deserialize data object from response");
+                decodeException("Could not deserialize data object from response", response);
             }
 
             JsonNode resultDataJson = jsonNode.get("data").get("result");
             if (resultDataJson == null) {
-                throw new DecodeException("Could not deserialize result object from response");
+                decodeException("Could not deserialize result object from response", response);
             }
 
             return mapper.convertValue(jsonNode, javaType);
@@ -78,5 +78,10 @@ public class BitmovinDecoder implements Decoder {
             }
             throw e;
         }
+    }
+
+    public void decodeException(String message, Response response)
+    {
+      throw new DecodeException(response.status(), message, response.request());
     }
 }

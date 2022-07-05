@@ -5,7 +5,7 @@
     <artifactId>bitmovin-api-sdk</artifactId>
     <packaging>jar</packaging>
     <name>bitmovin-api-sdk</name>
-    <version>1.121.0</version>
+    <version>1.122.0</version>
     <url>https://github.com/bitmovin/bitmovin-api-sdk-java</url>
     <description>Bitmovin Java API SDK</description>
     <scm>
@@ -196,7 +196,7 @@
         <dependency>
             <groupId>io.github.openfeign</groupId>
             <artifactId>feign-jackson</artifactId>
-            <version>9.7.0</version>
+            <version>11.9</version>
         </dependency>
 
         <!-- test dependencies -->
@@ -209,25 +209,25 @@
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.12.2</version>
+            <version>3.23.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.26</version>
+            <version>1.7.36</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.26</version>
+            <version>1.7.36</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.github.openfeign</groupId>
             <artifactId>feign-slf4j</artifactId>
-            <version>9.7.0</version>
+            <version>11.9</version>
         </dependency>
 
     </dependencies>
