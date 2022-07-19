@@ -181,28 +181,12 @@ public class Stream extends BitmovinResource {
     this.conditions = conditions;
   }
 
-
-  public Stream addIgnoredByItem(Ignoring ignoredByItem) {
-    this.ignoredBy.add(ignoredByItem);
-    return this;
-  }
-
   /**
    * If this is set and contains objects, then this stream has been ignored during the encoding process
    * @return ignoredBy
    */
   public List<Ignoring> getIgnoredBy() {
     return ignoredBy;
-  }
-
-  /**
-   * If this is set and contains objects, then this stream has been ignored during the encoding process
-   *
-   * @param ignoredBy
-   *        If this is set and contains objects, then this stream has been ignored during the encoding process
-   */
-  public void setIgnoredBy(List<Ignoring> ignoredBy) {
-    this.ignoredBy = ignoredBy;
   }
 
 

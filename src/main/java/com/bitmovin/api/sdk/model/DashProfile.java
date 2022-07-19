@@ -13,12 +13,12 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum DashProfile {
   
   /**
-   * LIVE can only use fMP4 muxing
+   * The profile to be used for fMP4 muxings
    */
   LIVE("LIVE"),
   
   /**
-   * ON_DEMAND can only use MP4 muxing
+   * The profile to be used for MP4 muxings
    */
   ON_DEMAND("ON_DEMAND");
 
