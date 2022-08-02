@@ -10,21 +10,50 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum StreamConditionsMode {
+public enum InputColorPrimaries {
   
-  /**
-   * The whole muxing will be ignored if at least one of its Streams is ignored
-   */
-  DROP_MUXING("DROP_MUXING"),
   
-  /**
-   * Ignored Streams will be omitted from the muxing. The muxing will only be ignored if all of its Streams are ignored
-   */
-  DROP_STREAM("DROP_STREAM");
+  UNSPECIFIED("UNSPECIFIED"),
+  
+  
+  BT709("BT709"),
+  
+  
+  BT470M("BT470M"),
+  
+  
+  BT470BG("BT470BG"),
+  
+  
+  SMPTE170M("SMPTE170M"),
+  
+  
+  SMPTE240M("SMPTE240M"),
+  
+  
+  FILM("FILM"),
+  
+  
+  BT2020("BT2020"),
+  
+  
+  SMPTE428("SMPTE428"),
+  
+  
+  SMPTEST428_1("SMPTEST428_1"),
+  
+  
+  SMPTE431("SMPTE431"),
+  
+  
+  SMPTE432("SMPTE432"),
+  
+  
+  JEDEC_P22("JEDEC_P22");
 
   private String value;
 
-  StreamConditionsMode(String value) {
+  InputColorPrimaries(String value) {
     this.value = value;
   }
 
@@ -39,8 +68,8 @@ public enum StreamConditionsMode {
   }
 
   @JsonCreator
-  public static StreamConditionsMode fromValue(String text) {
-    for (StreamConditionsMode b : StreamConditionsMode.values()) {
+  public static InputColorPrimaries fromValue(String text) {
+    for (InputColorPrimaries b : InputColorPrimaries.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

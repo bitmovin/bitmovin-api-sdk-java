@@ -7,8 +7,10 @@ import com.bitmovin.api.sdk.model.ColorPrimaries;
 import com.bitmovin.api.sdk.model.ColorRange;
 import com.bitmovin.api.sdk.model.ColorSpace;
 import com.bitmovin.api.sdk.model.ColorTransfer;
+import com.bitmovin.api.sdk.model.InputColorPrimaries;
 import com.bitmovin.api.sdk.model.InputColorRange;
 import com.bitmovin.api.sdk.model.InputColorSpace;
+import com.bitmovin.api.sdk.model.InputColorTransfer;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -54,6 +56,12 @@ public class ColorConfig {
 
   @JsonProperty("inputColorRange")
   private InputColorRange inputColorRange;
+
+  @JsonProperty("inputColorPrimaries")
+  private InputColorPrimaries inputColorPrimaries;
+
+  @JsonProperty("inputColorTransfer")
+  private InputColorTransfer inputColorTransfer;
 
 
   /**
@@ -284,6 +292,44 @@ public class ColorConfig {
   }
 
 
+  /**
+   * Override the color primaries detected in the input file. If not set the input color primaries will be automatically detected if possible.
+   * @return inputColorPrimaries
+   */
+  public InputColorPrimaries getInputColorPrimaries() {
+    return inputColorPrimaries;
+  }
+
+  /**
+   * Override the color primaries detected in the input file. If not set the input color primaries will be automatically detected if possible.
+   *
+   * @param inputColorPrimaries
+   *        Override the color primaries detected in the input file. If not set the input color primaries will be automatically detected if possible.
+   */
+  public void setInputColorPrimaries(InputColorPrimaries inputColorPrimaries) {
+    this.inputColorPrimaries = inputColorPrimaries;
+  }
+
+
+  /**
+   * Override the color transfer detected in the input file. If not set the input color transfer will be automatically detected if possible.
+   * @return inputColorTransfer
+   */
+  public InputColorTransfer getInputColorTransfer() {
+    return inputColorTransfer;
+  }
+
+  /**
+   * Override the color transfer detected in the input file. If not set the input color transfer will be automatically detected if possible.
+   *
+   * @param inputColorTransfer
+   *        Override the color transfer detected in the input file. If not set the input color transfer will be automatically detected if possible.
+   */
+  public void setInputColorTransfer(InputColorTransfer inputColorTransfer) {
+    this.inputColorTransfer = inputColorTransfer;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -304,12 +350,14 @@ public class ColorConfig {
         Objects.equals(this.colorRange, colorConfig.colorRange) &&
         Objects.equals(this.colorTransfer, colorConfig.colorTransfer) &&
         Objects.equals(this.inputColorSpace, colorConfig.inputColorSpace) &&
-        Objects.equals(this.inputColorRange, colorConfig.inputColorRange);
+        Objects.equals(this.inputColorRange, colorConfig.inputColorRange) &&
+        Objects.equals(this.inputColorPrimaries, colorConfig.inputColorPrimaries) &&
+        Objects.equals(this.inputColorTransfer, colorConfig.inputColorTransfer);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(copyChromaLocationFlag, copyColorSpaceFlag, copyColorPrimariesFlag, copyColorRangeFlag, copyColorTransferFlag, chromaLocation, colorSpace, colorPrimaries, colorRange, colorTransfer, inputColorSpace, inputColorRange);
+    return Objects.hash(copyChromaLocationFlag, copyColorSpaceFlag, copyColorPrimariesFlag, copyColorRangeFlag, copyColorTransferFlag, chromaLocation, colorSpace, colorPrimaries, colorRange, colorTransfer, inputColorSpace, inputColorRange, inputColorPrimaries, inputColorTransfer);
   }
 
   @Override
@@ -329,6 +377,8 @@ public class ColorConfig {
     sb.append("    colorTransfer: ").append(toIndentedString(colorTransfer)).append("\n");
     sb.append("    inputColorSpace: ").append(toIndentedString(inputColorSpace)).append("\n");
     sb.append("    inputColorRange: ").append(toIndentedString(inputColorRange)).append("\n");
+    sb.append("    inputColorPrimaries: ").append(toIndentedString(inputColorPrimaries)).append("\n");
+    sb.append("    inputColorTransfer: ").append(toIndentedString(inputColorTransfer)).append("\n");
     sb.append("}");
     return sb.toString();
   }

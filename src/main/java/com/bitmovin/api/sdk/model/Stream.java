@@ -164,7 +164,7 @@ public class Stream extends BitmovinResource {
 
 
   /**
-   * Conditions to evaluate before creating the stream. If this evaluation fails, the stream won&#39;t be created. All muxings that depend on the stream will also not be created.
+   * Defines a condition that is evaluated against the input of the Stream. If the condition is not fulfilled, the Stream will be ignored during the encoding process. The &#39;streamConditionMode&#39; of a Muxing allows to control how ignored Streams affect the Muxing. When retrieving the resource after the analysis step of the encoding has finished, &#39;ignoredBy&#39; will indicate if and why it has been ignored. See [Stream Conditions](https://bitmovin.com/docs/encoding/articles/stream-conditions) for more information
    * @return conditions
    */
   public AbstractCondition getConditions() {
@@ -172,17 +172,17 @@ public class Stream extends BitmovinResource {
   }
 
   /**
-   * Conditions to evaluate before creating the stream. If this evaluation fails, the stream won&#39;t be created. All muxings that depend on the stream will also not be created.
+   * Defines a condition that is evaluated against the input of the Stream. If the condition is not fulfilled, the Stream will be ignored during the encoding process. The &#39;streamConditionMode&#39; of a Muxing allows to control how ignored Streams affect the Muxing. When retrieving the resource after the analysis step of the encoding has finished, &#39;ignoredBy&#39; will indicate if and why it has been ignored. See [Stream Conditions](https://bitmovin.com/docs/encoding/articles/stream-conditions) for more information
    *
    * @param conditions
-   *        Conditions to evaluate before creating the stream. If this evaluation fails, the stream won&#39;t be created. All muxings that depend on the stream will also not be created.
+   *        Defines a condition that is evaluated against the input of the Stream. If the condition is not fulfilled, the Stream will be ignored during the encoding process. The &#39;streamConditionMode&#39; of a Muxing allows to control how ignored Streams affect the Muxing. When retrieving the resource after the analysis step of the encoding has finished, &#39;ignoredBy&#39; will indicate if and why it has been ignored. See [Stream Conditions](https://bitmovin.com/docs/encoding/articles/stream-conditions) for more information
    */
   public void setConditions(AbstractCondition conditions) {
     this.conditions = conditions;
   }
 
   /**
-   * If this is set and contains objects, then this stream has been ignored during the encoding process
+   * This read-only property is set during the analysis step of the encoding. If it contains items, the Stream has been ignored during the encoding process due to its &#39;conditions&#39;
    * @return ignoredBy
    */
   public List<Ignoring> getIgnoredBy() {
