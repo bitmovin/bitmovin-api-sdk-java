@@ -39,6 +39,17 @@ public class InputListQueryParams extends HashMap<String, Object> {
         this.put("name", name);
     }
 
+    public String getType() {
+        return (String) this.get("type");
+    }
+
+    /**
+    * @param type Filter inputs by type (optional)
+    */
+    public void setType(String type) {
+        this.put("type", type);
+    }
+
     public String getSort() {
         return (String) this.get("sort");
     }
