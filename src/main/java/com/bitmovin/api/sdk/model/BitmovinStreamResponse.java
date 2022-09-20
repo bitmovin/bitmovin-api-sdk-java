@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.BitmovinStreamEncodingTask;
 import com.bitmovin.api.sdk.model.BitmovinStreamQuality;
 import com.bitmovin.api.sdk.model.BitmovinStreamStatus;
 import java.util.ArrayList;
@@ -41,6 +42,10 @@ public class BitmovinStreamResponse {
   @JsonProperty("availableQualities")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<BitmovinStreamQuality> availableQualities = new ArrayList<BitmovinStreamQuality>();
+
+  @JsonProperty("encodingTasks")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<BitmovinStreamEncodingTask> encodingTasks = new ArrayList<BitmovinStreamEncodingTask>();
 
   /**
    * The identifier of the Stream
@@ -91,7 +96,7 @@ public class BitmovinStreamResponse {
   }
 
   /**
-   * The target quality of the Stream
+   * The target quality of the Stream (OBSOLETE!)
    * @return targetQuality
    */
   public BitmovinStreamQuality getTargetQuality() {
@@ -99,11 +104,19 @@ public class BitmovinStreamResponse {
   }
 
   /**
-   * List of available stream qualities
+   * List of available stream qualities (OBSOLETE!)
    * @return availableQualities
    */
   public List<BitmovinStreamQuality> getAvailableQualities() {
     return availableQualities;
+  }
+
+  /**
+   * List of encoding status information
+   * @return encodingTasks
+   */
+  public List<BitmovinStreamEncodingTask> getEncodingTasks() {
+    return encodingTasks;
   }
 
 
@@ -123,12 +136,13 @@ public class BitmovinStreamResponse {
         Objects.equals(this.createdAt, bitmovinStreamResponse.createdAt) &&
         Objects.equals(this.status, bitmovinStreamResponse.status) &&
         Objects.equals(this.targetQuality, bitmovinStreamResponse.targetQuality) &&
-        Objects.equals(this.availableQualities, bitmovinStreamResponse.availableQualities);
+        Objects.equals(this.availableQualities, bitmovinStreamResponse.availableQualities) &&
+        Objects.equals(this.encodingTasks, bitmovinStreamResponse.encodingTasks);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, assetUrl, title, description, createdAt, status, targetQuality, availableQualities);
+    return Objects.hash(id, assetUrl, title, description, createdAt, status, targetQuality, availableQualities, encodingTasks);
   }
 
   @Override
@@ -144,6 +158,7 @@ public class BitmovinStreamResponse {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    targetQuality: ").append(toIndentedString(targetQuality)).append("\n");
     sb.append("    availableQualities: ").append(toIndentedString(availableQualities)).append("\n");
+    sb.append("    encodingTasks: ").append(toIndentedString(encodingTasks)).append("\n");
     sb.append("}");
     return sb.toString();
   }
