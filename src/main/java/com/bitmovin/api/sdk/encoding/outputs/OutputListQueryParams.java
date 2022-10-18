@@ -33,9 +33,20 @@ public class OutputListQueryParams extends HashMap<String, Object> {
     }
 
     /**
-    * @param name Filter output by name (optional)
+    * @param name Filter outputs by name (optional)
     */
     public void setName(String name) {
         this.put("name", name);
+    }
+
+    public OutputType getType() {
+        return (OutputType) this.get("type");
+    }
+
+    /**
+    * @param type Filter outputs by type (optional, default to null)
+    */
+    public void setType(OutputType type) {
+        this.put("type", type);
     }
 }
