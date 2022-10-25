@@ -5,6 +5,7 @@ import java.util.Arrays;
 import com.bitmovin.api.sdk.model.SimpleEncodingLiveCloudRegion;
 import com.bitmovin.api.sdk.model.SimpleEncodingLiveJobInput;
 import com.bitmovin.api.sdk.model.SimpleEncodingLiveJobOutput;
+import com.bitmovin.api.sdk.model.SimpleEncodingLiveProfile;
 import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -17,6 +18,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 
 public class SimpleEncodingLiveJobRequest {
+  @JsonProperty("encodingProfile")
+  private SimpleEncodingLiveProfile encodingProfile;
+
   @JsonProperty("input")
   private SimpleEncodingLiveJobInput input;
 
@@ -29,6 +33,25 @@ public class SimpleEncodingLiveJobRequest {
 
   @JsonProperty("name")
   private String name;
+
+
+  /**
+   * The profile that will be used for the live encoding.
+   * @return encodingProfile
+   */
+  public SimpleEncodingLiveProfile getEncodingProfile() {
+    return encodingProfile;
+  }
+
+  /**
+   * The profile that will be used for the live encoding.
+   *
+   * @param encodingProfile
+   *        The profile that will be used for the live encoding.
+   */
+  public void setEncodingProfile(SimpleEncodingLiveProfile encodingProfile) {
+    this.encodingProfile = encodingProfile;
+  }
 
 
   /**
@@ -120,7 +143,8 @@ public class SimpleEncodingLiveJobRequest {
       return false;
     }
     SimpleEncodingLiveJobRequest simpleEncodingLiveJobRequest = (SimpleEncodingLiveJobRequest) o;
-    return Objects.equals(this.input, simpleEncodingLiveJobRequest.input) &&
+    return Objects.equals(this.encodingProfile, simpleEncodingLiveJobRequest.encodingProfile) &&
+        Objects.equals(this.input, simpleEncodingLiveJobRequest.input) &&
         Objects.equals(this.outputs, simpleEncodingLiveJobRequest.outputs) &&
         Objects.equals(this.cloudRegion, simpleEncodingLiveJobRequest.cloudRegion) &&
         Objects.equals(this.name, simpleEncodingLiveJobRequest.name);
@@ -128,7 +152,7 @@ public class SimpleEncodingLiveJobRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(input, outputs, cloudRegion, name);
+    return Objects.hash(encodingProfile, input, outputs, cloudRegion, name);
   }
 
   @Override
@@ -136,6 +160,7 @@ public class SimpleEncodingLiveJobRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class SimpleEncodingLiveJobRequest {\n");
     
+    sb.append("    encodingProfile: ").append(toIndentedString(encodingProfile)).append("\n");
     sb.append("    input: ").append(toIndentedString(input)).append("\n");
     sb.append("    outputs: ").append(toIndentedString(outputs)).append("\n");
     sb.append("    cloudRegion: ").append(toIndentedString(cloudRegion)).append("\n");

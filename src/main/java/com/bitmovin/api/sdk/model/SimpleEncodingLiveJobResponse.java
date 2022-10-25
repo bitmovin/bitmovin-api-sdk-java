@@ -6,6 +6,7 @@ import com.bitmovin.api.sdk.model.SimpleEncodingLiveCloudRegion;
 import com.bitmovin.api.sdk.model.SimpleEncodingLiveJobInput;
 import com.bitmovin.api.sdk.model.SimpleEncodingLiveJobOutput;
 import com.bitmovin.api.sdk.model.SimpleEncodingLiveJobStatus;
+import com.bitmovin.api.sdk.model.SimpleEncodingLiveProfile;
 import com.bitmovin.api.sdk.model.SimpleEncodingVodJobErrors;
 import java.util.ArrayList;
 import java.util.Date;
@@ -57,6 +58,9 @@ public class SimpleEncodingLiveJobResponse {
 
   @JsonProperty("cloudRegion")
   private SimpleEncodingLiveCloudRegion cloudRegion;
+
+  @JsonProperty("encodingProfile")
+  private SimpleEncodingLiveProfile encodingProfile;
 
   /**
    * The identifier of the Simple Encoding Live Job
@@ -240,6 +244,25 @@ public class SimpleEncodingLiveJobResponse {
   }
 
 
+  /**
+   * The profile that will be used for the live encoding.
+   * @return encodingProfile
+   */
+  public SimpleEncodingLiveProfile getEncodingProfile() {
+    return encodingProfile;
+  }
+
+  /**
+   * The profile that will be used for the live encoding.
+   *
+   * @param encodingProfile
+   *        The profile that will be used for the live encoding.
+   */
+  public void setEncodingProfile(SimpleEncodingLiveProfile encodingProfile) {
+    this.encodingProfile = encodingProfile;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -260,12 +283,13 @@ public class SimpleEncodingLiveJobResponse {
         Objects.equals(this.createdAt, simpleEncodingLiveJobResponse.createdAt) &&
         Objects.equals(this.modifiedAt, simpleEncodingLiveJobResponse.modifiedAt) &&
         Objects.equals(this.name, simpleEncodingLiveJobResponse.name) &&
-        Objects.equals(this.cloudRegion, simpleEncodingLiveJobResponse.cloudRegion);
+        Objects.equals(this.cloudRegion, simpleEncodingLiveJobResponse.cloudRegion) &&
+        Objects.equals(this.encodingProfile, simpleEncodingLiveJobResponse.encodingProfile);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, status, encodingId, encoderIp, streamKey, input, outputs, errors, createdAt, modifiedAt, name, cloudRegion);
+    return Objects.hash(id, status, encodingId, encoderIp, streamKey, input, outputs, errors, createdAt, modifiedAt, name, cloudRegion, encodingProfile);
   }
 
   @Override
@@ -285,6 +309,7 @@ public class SimpleEncodingLiveJobResponse {
     sb.append("    modifiedAt: ").append(toIndentedString(modifiedAt)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    cloudRegion: ").append(toIndentedString(cloudRegion)).append("\n");
+    sb.append("    encodingProfile: ").append(toIndentedString(encodingProfile)).append("\n");
     sb.append("}");
     return sb.toString();
   }
