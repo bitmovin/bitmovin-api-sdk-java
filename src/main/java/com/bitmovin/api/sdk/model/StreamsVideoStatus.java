@@ -10,21 +10,21 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum BitmovinStreamStatus {
+public enum StreamsVideoStatus {
   
   /**
-   * The Stream is published and can be accessed
+   * The stream is published and can be accessed
    */
   PUBLISHED("PUBLISHED"),
   
   /**
-   * The Stream can&#39;t be accessed
+   * The stream cannot be accessed
    */
   UNPUBLISHED("UNPUBLISHED");
 
   private String value;
 
-  BitmovinStreamStatus(String value) {
+  StreamsVideoStatus(String value) {
     this.value = value;
   }
 
@@ -39,8 +39,8 @@ public enum BitmovinStreamStatus {
   }
 
   @JsonCreator
-  public static BitmovinStreamStatus fromValue(String text) {
-    for (BitmovinStreamStatus b : BitmovinStreamStatus.values()) {
+  public static StreamsVideoStatus fromValue(String text) {
+    for (StreamsVideoStatus b : StreamsVideoStatus.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

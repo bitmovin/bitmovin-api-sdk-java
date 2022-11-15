@@ -2,9 +2,8 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.BitmovinStreamEncodingTask;
-import com.bitmovin.api.sdk.model.BitmovinStreamQuality;
-import com.bitmovin.api.sdk.model.BitmovinStreamStatus;
+import com.bitmovin.api.sdk.model.StreamsVideoEncodingTask;
+import com.bitmovin.api.sdk.model.StreamsVideoStatus;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -14,10 +13,10 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * BitmovinStreamResponse
+ * StreamsVideoResponse
  */
 
-public class BitmovinStreamResponse {
+public class StreamsVideoResponse {
   @JsonProperty("id")
   private String id;
 
@@ -34,21 +33,14 @@ public class BitmovinStreamResponse {
   private Date createdAt;
 
   @JsonProperty("status")
-  private BitmovinStreamStatus status;
-
-  @JsonProperty("targetQuality")
-  private BitmovinStreamQuality targetQuality;
-
-  @JsonProperty("availableQualities")
-  @JsonInclude(JsonInclude.Include.NON_EMPTY)
-  private List<BitmovinStreamQuality> availableQualities = new ArrayList<BitmovinStreamQuality>();
+  private StreamsVideoStatus status;
 
   @JsonProperty("encodingTasks")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
-  private List<BitmovinStreamEncodingTask> encodingTasks = new ArrayList<BitmovinStreamEncodingTask>();
+  private List<StreamsVideoEncodingTask> encodingTasks = new ArrayList<StreamsVideoEncodingTask>();
 
   /**
-   * The identifier of the Stream
+   * The identifier of the stream
    * @return id
    */
   public String getId() {
@@ -56,7 +48,7 @@ public class BitmovinStreamResponse {
   }
 
   /**
-   * The asset URL of the Stream
+   * The asset URL of the stream
    * @return assetUrl
    */
   public String getAssetUrl() {
@@ -64,7 +56,7 @@ public class BitmovinStreamResponse {
   }
 
   /**
-   * The title of the Stream
+   * The title of the stream
    * @return title
    */
   public String getTitle() {
@@ -72,7 +64,7 @@ public class BitmovinStreamResponse {
   }
 
   /**
-   * The description of the Stream
+   * The description of the stream
    * @return description
    */
   public String getDescription() {
@@ -88,34 +80,18 @@ public class BitmovinStreamResponse {
   }
 
   /**
-   * The status of the Stream
+   * The status of the stream
    * @return status
    */
-  public BitmovinStreamStatus getStatus() {
+  public StreamsVideoStatus getStatus() {
     return status;
-  }
-
-  /**
-   * The target quality of the Stream (OBSOLETE!)
-   * @return targetQuality
-   */
-  public BitmovinStreamQuality getTargetQuality() {
-    return targetQuality;
-  }
-
-  /**
-   * List of available stream qualities (OBSOLETE!)
-   * @return availableQualities
-   */
-  public List<BitmovinStreamQuality> getAvailableQualities() {
-    return availableQualities;
   }
 
   /**
    * List of encoding status information
    * @return encodingTasks
    */
-  public List<BitmovinStreamEncodingTask> getEncodingTasks() {
+  public List<StreamsVideoEncodingTask> getEncodingTasks() {
     return encodingTasks;
   }
 
@@ -128,27 +104,25 @@ public class BitmovinStreamResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BitmovinStreamResponse bitmovinStreamResponse = (BitmovinStreamResponse) o;
-    return Objects.equals(this.id, bitmovinStreamResponse.id) &&
-        Objects.equals(this.assetUrl, bitmovinStreamResponse.assetUrl) &&
-        Objects.equals(this.title, bitmovinStreamResponse.title) &&
-        Objects.equals(this.description, bitmovinStreamResponse.description) &&
-        Objects.equals(this.createdAt, bitmovinStreamResponse.createdAt) &&
-        Objects.equals(this.status, bitmovinStreamResponse.status) &&
-        Objects.equals(this.targetQuality, bitmovinStreamResponse.targetQuality) &&
-        Objects.equals(this.availableQualities, bitmovinStreamResponse.availableQualities) &&
-        Objects.equals(this.encodingTasks, bitmovinStreamResponse.encodingTasks);
+    StreamsVideoResponse streamsVideoResponse = (StreamsVideoResponse) o;
+    return Objects.equals(this.id, streamsVideoResponse.id) &&
+        Objects.equals(this.assetUrl, streamsVideoResponse.assetUrl) &&
+        Objects.equals(this.title, streamsVideoResponse.title) &&
+        Objects.equals(this.description, streamsVideoResponse.description) &&
+        Objects.equals(this.createdAt, streamsVideoResponse.createdAt) &&
+        Objects.equals(this.status, streamsVideoResponse.status) &&
+        Objects.equals(this.encodingTasks, streamsVideoResponse.encodingTasks);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, assetUrl, title, description, createdAt, status, targetQuality, availableQualities, encodingTasks);
+    return Objects.hash(id, assetUrl, title, description, createdAt, status, encodingTasks);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BitmovinStreamResponse {\n");
+    sb.append("class StreamsVideoResponse {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    assetUrl: ").append(toIndentedString(assetUrl)).append("\n");
@@ -156,8 +130,6 @@ public class BitmovinStreamResponse {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    targetQuality: ").append(toIndentedString(targetQuality)).append("\n");
-    sb.append("    availableQualities: ").append(toIndentedString(availableQualities)).append("\n");
     sb.append("    encodingTasks: ").append(toIndentedString(encodingTasks)).append("\n");
     sb.append("}");
     return sb.toString();

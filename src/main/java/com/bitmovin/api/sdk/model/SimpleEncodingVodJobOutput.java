@@ -2,6 +2,9 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.SimpleEncodingVodJobOutputArtifact;
+import java.util.ArrayList;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -17,6 +20,18 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 })
 
 public class SimpleEncodingVodJobOutput {
+  @JsonProperty("artifacts")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<SimpleEncodingVodJobOutputArtifact> artifacts = new ArrayList<SimpleEncodingVodJobOutputArtifact>();
+
+  /**
+   * List of artifacts created by the encoding job. Artifacts are files essential for playback of the generated content, e.g. manifests. 
+   * @return artifacts
+   */
+  public List<SimpleEncodingVodJobOutputArtifact> getArtifacts() {
+    return artifacts;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -26,12 +41,13 @@ public class SimpleEncodingVodJobOutput {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return true;
+    SimpleEncodingVodJobOutput simpleEncodingVodJobOutput = (SimpleEncodingVodJobOutput) o;
+    return Objects.equals(this.artifacts, simpleEncodingVodJobOutput.artifacts);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash();
+    return Objects.hash(artifacts);
   }
 
   @Override
@@ -39,6 +55,7 @@ public class SimpleEncodingVodJobOutput {
     StringBuilder sb = new StringBuilder();
     sb.append("class SimpleEncodingVodJobOutput {\n");
     
+    sb.append("    artifacts: ").append(toIndentedString(artifacts)).append("\n");
     sb.append("}");
     return sb.toString();
   }

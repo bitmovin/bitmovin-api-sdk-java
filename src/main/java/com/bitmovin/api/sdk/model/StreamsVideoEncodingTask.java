@@ -2,29 +2,29 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.BitmovinStreamEncodingStatus;
-import com.bitmovin.api.sdk.model.BitmovinStreamQuality;
+import com.bitmovin.api.sdk.model.StreamsVideoEncodingStatus;
+import com.bitmovin.api.sdk.model.StreamsVideoQuality;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * BitmovinStreamEncodingTask
+ * StreamsVideoEncodingTask
  */
 
-public class BitmovinStreamEncodingTask {
+public class StreamsVideoEncodingTask {
   @JsonProperty("quality")
-  private BitmovinStreamQuality quality;
+  private StreamsVideoQuality quality;
 
   @JsonProperty("status")
-  private BitmovinStreamEncodingStatus status;
+  private StreamsVideoEncodingStatus status;
 
   /**
    * Quality of the encoding
    * @return quality
    */
-  public BitmovinStreamQuality getQuality() {
+  public StreamsVideoQuality getQuality() {
     return quality;
   }
 
@@ -32,7 +32,7 @@ public class BitmovinStreamEncodingTask {
    * Current state of the encoding
    * @return status
    */
-  public BitmovinStreamEncodingStatus getStatus() {
+  public StreamsVideoEncodingStatus getStatus() {
     return status;
   }
 
@@ -45,9 +45,9 @@ public class BitmovinStreamEncodingTask {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BitmovinStreamEncodingTask bitmovinStreamEncodingTask = (BitmovinStreamEncodingTask) o;
-    return Objects.equals(this.quality, bitmovinStreamEncodingTask.quality) &&
-        Objects.equals(this.status, bitmovinStreamEncodingTask.status);
+    StreamsVideoEncodingTask streamsVideoEncodingTask = (StreamsVideoEncodingTask) o;
+    return Objects.equals(this.quality, streamsVideoEncodingTask.quality) &&
+        Objects.equals(this.status, streamsVideoEncodingTask.status);
   }
 
   @Override
@@ -58,7 +58,7 @@ public class BitmovinStreamEncodingTask {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BitmovinStreamEncodingTask {\n");
+    sb.append("class StreamsVideoEncodingTask {\n");
     
     sb.append("    quality: ").append(toIndentedString(quality)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");

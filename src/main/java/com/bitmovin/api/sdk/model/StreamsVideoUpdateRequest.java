@@ -2,18 +2,19 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.StreamsVideoStatus;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * CreateBitmovinStreamRequest
+ * StreamsVideoUpdateRequest
  */
 
-public class CreateBitmovinStreamRequest {
-  @JsonProperty("assetUrl")
-  private String assetUrl;
+public class StreamsVideoUpdateRequest {
+  @JsonProperty("status")
+  private StreamsVideoStatus status;
 
   @JsonProperty("title")
   private String title;
@@ -23,26 +24,26 @@ public class CreateBitmovinStreamRequest {
 
 
   /**
-   * The Streams input asset URL
-   * @return assetUrl
+   * The new status of the stream
+   * @return status
    */
-  public String getAssetUrl() {
-    return assetUrl;
+  public StreamsVideoStatus getStatus() {
+    return status;
   }
 
   /**
-   * The Streams input asset URL
+   * The new status of the stream
    *
-   * @param assetUrl
-   *        The Streams input asset URL
+   * @param status
+   *        The new status of the stream
    */
-  public void setAssetUrl(String assetUrl) {
-    this.assetUrl = assetUrl;
+  public void setStatus(StreamsVideoStatus status) {
+    this.status = status;
   }
 
 
   /**
-   * Title of the Stream
+   * The new title of the stream
    * @return title
    */
   public String getTitle() {
@@ -50,10 +51,10 @@ public class CreateBitmovinStreamRequest {
   }
 
   /**
-   * Title of the Stream
+   * The new title of the stream
    *
    * @param title
-   *        Title of the Stream
+   *        The new title of the stream
    */
   public void setTitle(String title) {
     this.title = title;
@@ -61,7 +62,7 @@ public class CreateBitmovinStreamRequest {
 
 
   /**
-   * Description of the Stream
+   * The new description of the stream
    * @return description
    */
   public String getDescription() {
@@ -69,10 +70,10 @@ public class CreateBitmovinStreamRequest {
   }
 
   /**
-   * Description of the Stream
+   * The new description of the stream
    *
    * @param description
-   *        Description of the Stream
+   *        The new description of the stream
    */
   public void setDescription(String description) {
     this.description = description;
@@ -87,23 +88,23 @@ public class CreateBitmovinStreamRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CreateBitmovinStreamRequest createBitmovinStreamRequest = (CreateBitmovinStreamRequest) o;
-    return Objects.equals(this.assetUrl, createBitmovinStreamRequest.assetUrl) &&
-        Objects.equals(this.title, createBitmovinStreamRequest.title) &&
-        Objects.equals(this.description, createBitmovinStreamRequest.description);
+    StreamsVideoUpdateRequest streamsVideoUpdateRequest = (StreamsVideoUpdateRequest) o;
+    return Objects.equals(this.status, streamsVideoUpdateRequest.status) &&
+        Objects.equals(this.title, streamsVideoUpdateRequest.title) &&
+        Objects.equals(this.description, streamsVideoUpdateRequest.description);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(assetUrl, title, description);
+    return Objects.hash(status, title, description);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CreateBitmovinStreamRequest {\n");
+    sb.append("class StreamsVideoUpdateRequest {\n");
     
-    sb.append("    assetUrl: ").append(toIndentedString(assetUrl)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("}");

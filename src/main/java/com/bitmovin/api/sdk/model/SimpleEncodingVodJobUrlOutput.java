@@ -4,6 +4,8 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.SimpleEncodingVodJobCredentials;
 import com.bitmovin.api.sdk.model.SimpleEncodingVodJobOutput;
+import com.bitmovin.api.sdk.model.SimpleEncodingVodJobOutputArtifact;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;

@@ -10,26 +10,26 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum BitmovinStreamEncodingStatus {
+public enum StreamsVideoQuality {
   
   /**
-   * The encoding has been started and is in progress
+   * The loading placeholder displayed until the first encoding is done
    */
-  STARTED("STARTED"),
+  NONE("NONE"),
   
   /**
-   * The encoding did not succeed
+   * A lower quality preview encoding
    */
-  ERROR("ERROR"),
+  PREVIEW("PREVIEW"),
   
   /**
-   * The encoding finished successfully
+   * The default Per-title encoding
    */
-  FINISHED("FINISHED");
+  DEFAULT("DEFAULT");
 
   private String value;
 
-  BitmovinStreamEncodingStatus(String value) {
+  StreamsVideoQuality(String value) {
     this.value = value;
   }
 
@@ -44,8 +44,8 @@ public enum BitmovinStreamEncodingStatus {
   }
 
   @JsonCreator
-  public static BitmovinStreamEncodingStatus fromValue(String text) {
-    for (BitmovinStreamEncodingStatus b : BitmovinStreamEncodingStatus.values()) {
+  public static StreamsVideoQuality fromValue(String text) {
+    for (StreamsVideoQuality b : StreamsVideoQuality.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

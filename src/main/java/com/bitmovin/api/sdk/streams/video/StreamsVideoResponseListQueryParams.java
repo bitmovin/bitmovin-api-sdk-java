@@ -1,10 +1,10 @@
-package com.bitmovin.api.sdk.streams;
+package com.bitmovin.api.sdk.streams.video;
 
 import java.util.Date;
 import java.util.HashMap;
 import com.bitmovin.api.sdk.model.*;
 
-public class BitmovinStreamResponseListQueryParams extends HashMap<String, Object> {
+public class StreamsVideoResponseListQueryParams extends HashMap<String, Object> {
 
     public Integer getOffset() {
         return (Integer) this.get("offset");
