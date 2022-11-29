@@ -45,7 +45,7 @@ public class Output extends BitmovinResource {
   }
 
   /**
-   * Get acl
+   * Deprecation notice: This property does not have any effect and will not be returned by GET endpoints
    * @return acl
    */
   public List<AclEntry> getAcl() {
@@ -53,9 +53,10 @@ public class Output extends BitmovinResource {
   }
 
   /**
-   * Set acl
+   * Deprecation notice: This property does not have any effect and will not be returned by GET endpoints
    *
    * @param acl
+   *        Deprecation notice: This property does not have any effect and will not be returned by GET endpoints
    */
   public void setAcl(List<AclEntry> acl) {
     this.acl = acl;
