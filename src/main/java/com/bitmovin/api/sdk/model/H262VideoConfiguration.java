@@ -91,7 +91,7 @@ public class H262VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Sets the amount of b frames.
+   * Amount of b frames.
    * minimum: 0
    * maximum: 16
    * @return bframes
@@ -101,12 +101,12 @@ public class H262VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Sets the amount of b frames.
+   * Amount of b frames.
    * minimum: 0
    * maximum: 16
    *
    * @param bframes
-   *        Sets the amount of b frames.
+   *        Amount of b frames.
    *        minimum: 0
    *        maximum: 16
    */

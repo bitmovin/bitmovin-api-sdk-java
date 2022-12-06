@@ -23,7 +23,7 @@ public class SimpleEncodingLiveJobOutput {
 
 
   /**
-   * This sets the maximum output resolution that will be generated.
+   * The maximum output resolution to be generated
    * @return maxResolution
    */
   public SimpleEncodingLiveMaxResolution getMaxResolution() {
@@ -31,10 +31,10 @@ public class SimpleEncodingLiveJobOutput {
   }
 
   /**
-   * This sets the maximum output resolution that will be generated.
+   * The maximum output resolution to be generated
    *
    * @param maxResolution
-   *        This sets the maximum output resolution that will be generated.
+   *        The maximum output resolution to be generated
    */
   public void setMaxResolution(SimpleEncodingLiveMaxResolution maxResolution) {
     this.maxResolution = maxResolution;

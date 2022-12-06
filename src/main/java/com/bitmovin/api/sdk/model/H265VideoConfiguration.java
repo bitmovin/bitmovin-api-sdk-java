@@ -369,7 +369,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Sets the constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
+   * Constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
    * minimum: 0
    * maximum: 51
    * @return crf
@@ -379,12 +379,12 @@ public class H265VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Sets the constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
+   * Constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
    * minimum: 0
    * maximum: 51
    *
    * @param crf
-   *        Sets the constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
+   *        Constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
    *        minimum: 0
    *        maximum: 51
    */
@@ -412,7 +412,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Sets the amount of b frames
+   * Amount of b frames
    * minimum: 0
    * maximum: 16
    * @return bframes
@@ -422,12 +422,12 @@ public class H265VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Sets the amount of b frames
+   * Amount of b frames
    * minimum: 0
    * maximum: 16
    *
    * @param bframes
-   *        Sets the amount of b frames
+   *        Amount of b frames
    *        minimum: 0
    *        maximum: 16
    */
@@ -437,7 +437,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Sets the amount of reference frames
+   * Amount of reference frames
    * minimum: 0
    * maximum: 16
    * @return refFrames
@@ -447,12 +447,12 @@ public class H265VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Sets the amount of reference frames
+   * Amount of reference frames
    * minimum: 0
    * maximum: 16
    *
    * @param refFrames
-   *        Sets the amount of reference frames
+   *        Amount of reference frames
    *        minimum: 0
    *        maximum: 16
    */
@@ -462,7 +462,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Sets the quantization factor
+   * Quantization factor
    * minimum: 0
    * maximum: 51
    * @return qp
@@ -472,12 +472,12 @@ public class H265VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Sets the quantization factor
+   * Quantization factor
    * minimum: 0
    * maximum: 51
    *
    * @param qp
-   *        Sets the quantization factor
+   *        Quantization factor
    *        minimum: 0
    *        maximum: 51
    */
@@ -1389,7 +1389,9 @@ public class H265VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Sets the minimum of quantization factor. Valid value range: 0 - 69
+   * Minimum quantization factor. Valid value range: 0 - 69
+   * minimum: 0
+   * maximum: 69
    * @return qpMin
    */
   public Integer getQpMin() {
@@ -1397,10 +1399,14 @@ public class H265VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Sets the minimum of quantization factor. Valid value range: 0 - 69
+   * Minimum quantization factor. Valid value range: 0 - 69
+   * minimum: 0
+   * maximum: 69
    *
    * @param qpMin
-   *        Sets the minimum of quantization factor. Valid value range: 0 - 69
+   *        Minimum quantization factor. Valid value range: 0 - 69
+   *        minimum: 0
+   *        maximum: 69
    */
   public void setQpMin(Integer qpMin) {
     this.qpMin = qpMin;
@@ -1408,7 +1414,9 @@ public class H265VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Sets the maximum of quantization factor. Valid value range: 0 - 69
+   * Maximum quantization factor. Valid value range: 0 - 69
+   * minimum: 0
+   * maximum: 69
    * @return qpMax
    */
   public Integer getQpMax() {
@@ -1416,10 +1424,14 @@ public class H265VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Sets the maximum of quantization factor. Valid value range: 0 - 69
+   * Maximum quantization factor. Valid value range: 0 - 69
+   * minimum: 0
+   * maximum: 69
    *
    * @param qpMax
-   *        Sets the maximum of quantization factor. Valid value range: 0 - 69
+   *        Maximum quantization factor. Valid value range: 0 - 69
+   *        minimum: 0
+   *        maximum: 69
    */
   public void setQpMax(Integer qpMax) {
     this.qpMax = qpMax;
@@ -2083,7 +2095,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Sets the quantizer curve compression factor. It weights the frame quantizer based on the complexity of residual (measured by lookahead). Default 0.6
+   * Quantizer curve compression factor. It weights the frame quantizer based on the complexity of residual (measured by lookahead). Default 0.6
    * minimum: 0.5
    * maximum: 1
    * @return quantizerCurveCompressionFactor
@@ -2093,12 +2105,12 @@ public class H265VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Sets the quantizer curve compression factor. It weights the frame quantizer based on the complexity of residual (measured by lookahead). Default 0.6
+   * Quantizer curve compression factor. It weights the frame quantizer based on the complexity of residual (measured by lookahead). Default 0.6
    * minimum: 0.5
    * maximum: 1
    *
    * @param quantizerCurveCompressionFactor
-   *        Sets the quantizer curve compression factor. It weights the frame quantizer based on the complexity of residual (measured by lookahead). Default 0.6
+   *        Quantizer curve compression factor. It weights the frame quantizer based on the complexity of residual (measured by lookahead). Default 0.6
    *        minimum: 0.5
    *        maximum: 1
    */

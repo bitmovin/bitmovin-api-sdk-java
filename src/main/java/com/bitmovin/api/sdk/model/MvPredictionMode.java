@@ -13,22 +13,22 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum MvPredictionMode {
   
   /**
-   * Sets the Motion Vector Prediction Mode.
+   * Motion vector prediction mode
    */
   NONE("NONE"),
   
   /**
-   * Sets the Motion Vector Prediction Mode.
+   * Motion vector prediction mode
    */
   SPATIAL("SPATIAL"),
   
   /**
-   * Sets the Motion Vector Prediction Mode.
+   * Motion vector prediction mode
    */
   TEMPORAL("TEMPORAL"),
   
   /**
-   * Sets the Motion Vector Prediction Mode.
+   * Motion vector prediction mode
    */
   AUTO("AUTO");
 

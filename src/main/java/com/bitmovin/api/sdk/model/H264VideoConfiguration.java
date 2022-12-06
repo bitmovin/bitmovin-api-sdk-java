@@ -213,7 +213,7 @@ public class H264VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Sets the constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
+   * Constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
    * minimum: 0
    * maximum: 51
    * @return crf
@@ -223,12 +223,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Sets the constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
+   * Constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
    * minimum: 0
    * maximum: 51
    *
    * @param crf
-   *        Sets the constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
+   *        Constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
    *        minimum: 0
    *        maximum: 51
    */
@@ -257,7 +257,7 @@ public class H264VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Sets the amount of b frames.
+   * Amount of b frames
    * minimum: 0
    * maximum: 16
    * @return bframes
@@ -267,12 +267,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Sets the amount of b frames.
+   * Amount of b frames
    * minimum: 0
    * maximum: 16
    *
    * @param bframes
-   *        Sets the amount of b frames.
+   *        Amount of b frames
    *        minimum: 0
    *        maximum: 16
    */
@@ -282,7 +282,7 @@ public class H264VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Sets the amount of reference frames.
+   * Amount of reference frames.
    * minimum: 1
    * maximum: 16
    * @return refFrames
@@ -292,12 +292,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Sets the amount of reference frames.
+   * Amount of reference frames.
    * minimum: 1
    * maximum: 16
    *
    * @param refFrames
-   *        Sets the amount of reference frames.
+   *        Amount of reference frames.
    *        minimum: 1
    *        maximum: 16
    */
@@ -307,7 +307,7 @@ public class H264VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Sets the minimum of quantization factor.
+   * Minimum quantization factor
    * minimum: 0
    * maximum: 69
    * @return qpMin
@@ -317,12 +317,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Sets the minimum of quantization factor.
+   * Minimum quantization factor
    * minimum: 0
    * maximum: 69
    *
    * @param qpMin
-   *        Sets the minimum of quantization factor.
+   *        Minimum quantization factor
    *        minimum: 0
    *        maximum: 69
    */
@@ -332,7 +332,7 @@ public class H264VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Sets the maximum of quantization factor.
+   * Maximum quantization factor
    * minimum: 0
    * maximum: 69
    * @return qpMax
@@ -342,12 +342,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Sets the maximum of quantization factor.
+   * Maximum quantization factor
    * minimum: 0
    * maximum: 69
    *
    * @param qpMax
-   *        Sets the maximum of quantization factor.
+   *        Maximum quantization factor
    *        minimum: 0
    *        maximum: 69
    */
@@ -375,7 +375,7 @@ public class H264VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Sets the maximum Motion-Vector-Search-Range
+   * Maximum motion vector search range
    * minimum: 16
    * maximum: 24
    * @return mvSearchRangeMax
@@ -385,12 +385,12 @@ public class H264VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Sets the maximum Motion-Vector-Search-Range
+   * Maximum motion vector search range
    * minimum: 16
    * maximum: 24
    *
    * @param mvSearchRangeMax
-   *        Sets the maximum Motion-Vector-Search-Range
+   *        Maximum motion vector search range
    *        minimum: 16
    *        maximum: 24
    */

@@ -45,7 +45,7 @@ public class HeAacV1AudioConfiguration extends AudioConfiguration {
 
 
   /**
-   * Sets the Spectral Band Replication (SBR) and Parameteric Stereo (PS) signaling style.
+   * Spectral Band Replication (SBR) and Parameteric Stereo (PS) signaling style.
    * @return signaling
    */
   public HeAacV1Signaling getSignaling() {
@@ -53,10 +53,10 @@ public class HeAacV1AudioConfiguration extends AudioConfiguration {
   }
 
   /**
-   * Sets the Spectral Band Replication (SBR) and Parameteric Stereo (PS) signaling style.
+   * Spectral Band Replication (SBR) and Parameteric Stereo (PS) signaling style.
    *
    * @param signaling
-   *        Sets the Spectral Band Replication (SBR) and Parameteric Stereo (PS) signaling style.
+   *        Spectral Band Replication (SBR) and Parameteric Stereo (PS) signaling style.
    */
   public void setSignaling(HeAacV1Signaling signaling) {
     this.signaling = signaling;

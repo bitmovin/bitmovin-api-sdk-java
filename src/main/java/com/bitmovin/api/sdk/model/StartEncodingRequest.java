@@ -83,7 +83,7 @@ public class StartEncodingRequest {
 
 
   /**
-   * Set scheduling parameters of the encoding.
+   * Scheduling parameters of the encoding.
    * @return scheduling
    */
   public Scheduling getScheduling() {
@@ -91,10 +91,10 @@ public class StartEncodingRequest {
   }
 
   /**
-   * Set scheduling parameters of the encoding.
+   * Scheduling parameters of the encoding.
    *
    * @param scheduling
-   *        Set scheduling parameters of the encoding.
+   *        Scheduling parameters of the encoding.
    */
   public void setScheduling(Scheduling scheduling) {
     this.scheduling = scheduling;
@@ -102,7 +102,7 @@ public class StartEncodingRequest {
 
 
   /**
-   * Set special tweaks for your encoding job.
+   * Special tweaks for your encoding job.
    * @return tweaks
    */
   public Tweaks getTweaks() {
@@ -110,10 +110,10 @@ public class StartEncodingRequest {
   }
 
   /**
-   * Set special tweaks for your encoding job.
+   * Special tweaks for your encoding job.
    *
    * @param tweaks
-   *        Set special tweaks for your encoding job.
+   *        Special tweaks for your encoding job.
    */
   public void setTweaks(Tweaks tweaks) {
     this.tweaks = tweaks;
@@ -279,7 +279,7 @@ public class StartEncodingRequest {
 
 
   /**
-   * Sets the version of the manifest generation engine
+   * Version of the manifest generation engine to be used
    * @return manifestGenerator
    */
   public ManifestGenerator getManifestGenerator() {
@@ -287,10 +287,10 @@ public class StartEncodingRequest {
   }
 
   /**
-   * Sets the version of the manifest generation engine
+   * Version of the manifest generation engine to be used
    *
    * @param manifestGenerator
-   *        Sets the version of the manifest generation engine
+   *        Version of the manifest generation engine to be used
    */
   public void setManifestGenerator(ManifestGenerator manifestGenerator) {
     this.manifestGenerator = manifestGenerator;

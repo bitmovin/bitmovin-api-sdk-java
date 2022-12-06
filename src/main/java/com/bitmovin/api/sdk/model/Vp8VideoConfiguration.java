@@ -82,7 +82,7 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Sets the constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
+   * Constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
    * minimum: 0
    * maximum: 63
    * @return crf
@@ -92,12 +92,12 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Sets the constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
+   * Constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
    * minimum: 0
    * maximum: 63
    *
    * @param crf
-   *        Sets the constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
+   *        Constant rate factor for quality-based variable bitrate. Either bitrate or crf is required.
    *        minimum: 0
    *        maximum: 63
    */
@@ -151,7 +151,7 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Sets the minimum of quantization factor.
+   * Minimum quantization factor.
    * minimum: 0
    * maximum: 63
    * @return qpMin
@@ -161,12 +161,12 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Sets the minimum of quantization factor.
+   * Minimum quantization factor.
    * minimum: 0
    * maximum: 63
    *
    * @param qpMin
-   *        Sets the minimum of quantization factor.
+   *        Minimum quantization factor.
    *        minimum: 0
    *        maximum: 63
    */
@@ -176,7 +176,7 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Sets the maximum of quantization factor.
+   * Maximum quantization factor.
    * minimum: 0
    * maximum: 63
    * @return qpMax
@@ -186,12 +186,12 @@ public class Vp8VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Sets the maximum of quantization factor.
+   * Maximum quantization factor.
    * minimum: 0
    * maximum: 63
    *
    * @param qpMax
-   *        Sets the maximum of quantization factor.
+   *        Maximum quantization factor.
    *        minimum: 0
    *        maximum: 63
    */

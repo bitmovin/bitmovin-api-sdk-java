@@ -154,7 +154,7 @@ public class StartLiveEncodingRequest {
 
 
   /**
-   * Sets the version of the manifest generation engine
+   * Version of the manifest generation engine to be used
    * @return manifestGenerator
    */
   public ManifestGenerator getManifestGenerator() {
@@ -162,10 +162,10 @@ public class StartLiveEncodingRequest {
   }
 
   /**
-   * Sets the version of the manifest generation engine
+   * Version of the manifest generation engine to be used
    *
    * @param manifestGenerator
-   *        Sets the version of the manifest generation engine
+   *        Version of the manifest generation engine to be used
    */
   public void setManifestGenerator(ManifestGenerator manifestGenerator) {
     this.manifestGenerator = manifestGenerator;

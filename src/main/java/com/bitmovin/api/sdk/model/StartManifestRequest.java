@@ -18,7 +18,7 @@ public class StartManifestRequest {
 
 
   /**
-   * Sets the version of the manifest generation engine. The &#x60;V2&#x60; option is currently only supported for manifests including resources from a single encoding and is only valid in combination with encoder versions &gt;&#x3D;  &#x60;2.108.0&#x60;.
+   * Version of the manifest generation engine to be used. The &#x60;V2&#x60; option is currently only supported for manifests including resources from a single encoding and is only valid in combination with encoder versions &gt;&#x3D;  &#x60;2.108.0&#x60;.
    * @return manifestGenerator
    */
   public ManifestGenerator getManifestGenerator() {
@@ -26,10 +26,10 @@ public class StartManifestRequest {
   }
 
   /**
-   * Sets the version of the manifest generation engine. The &#x60;V2&#x60; option is currently only supported for manifests including resources from a single encoding and is only valid in combination with encoder versions &gt;&#x3D;  &#x60;2.108.0&#x60;.
+   * Version of the manifest generation engine to be used. The &#x60;V2&#x60; option is currently only supported for manifests including resources from a single encoding and is only valid in combination with encoder versions &gt;&#x3D;  &#x60;2.108.0&#x60;.
    *
    * @param manifestGenerator
-   *        Sets the version of the manifest generation engine. The &#x60;V2&#x60; option is currently only supported for manifests including resources from a single encoding and is only valid in combination with encoder versions &gt;&#x3D;  &#x60;2.108.0&#x60;.
+   *        Version of the manifest generation engine to be used. The &#x60;V2&#x60; option is currently only supported for manifests including resources from a single encoding and is only valid in combination with encoder versions &gt;&#x3D;  &#x60;2.108.0&#x60;.
    */
   public void setManifestGenerator(ManifestGenerator manifestGenerator) {
     this.manifestGenerator = manifestGenerator;
