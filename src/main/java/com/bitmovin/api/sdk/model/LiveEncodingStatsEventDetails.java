@@ -13,91 +13,25 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 
 public class LiveEncodingStatsEventDetails {
-  @JsonProperty("eventName")
-  private LiveEncodingEventName eventName;
-
-  @JsonProperty("avDriftInSeconds")
-  private Integer avDriftInSeconds;
-
-  @JsonProperty("idleDurationInSeconds")
-  private Integer idleDurationInSeconds;
-
-  @JsonProperty("errorMessage")
-  private String errorMessage;
+  @JsonProperty("eventType")
+  private LiveEncodingEventName eventType;
 
 
   /**
-   * Get eventName
-   * @return eventName
+   * Get eventType
+   * @return eventType
    */
-  public LiveEncodingEventName getEventName() {
-    return eventName;
+  public LiveEncodingEventName getEventType() {
+    return eventType;
   }
 
   /**
-   * Set eventName
+   * Set eventType
    *
-   * @param eventName
+   * @param eventType
    */
-  public void setEventName(LiveEncodingEventName eventName) {
-    this.eventName = eventName;
-  }
-
-
-  /**
-   * The Audio/Video Drift in seconds. The drift was corrected by the RESYNCING event (occurs at event: RESYNCING)
-   * @return avDriftInSeconds
-   */
-  public Integer getAvDriftInSeconds() {
-    return avDriftInSeconds;
-  }
-
-  /**
-   * The Audio/Video Drift in seconds. The drift was corrected by the RESYNCING event (occurs at event: RESYNCING)
-   *
-   * @param avDriftInSeconds
-   *        The Audio/Video Drift in seconds. The drift was corrected by the RESYNCING event (occurs at event: RESYNCING)
-   */
-  public void setAvDriftInSeconds(Integer avDriftInSeconds) {
-    this.avDriftInSeconds = avDriftInSeconds;
-  }
-
-
-  /**
-   * The time the stream was in idle state in seconds (occurs at event: IDLE)
-   * @return idleDurationInSeconds
-   */
-  public Integer getIdleDurationInSeconds() {
-    return idleDurationInSeconds;
-  }
-
-  /**
-   * The time the stream was in idle state in seconds (occurs at event: IDLE)
-   *
-   * @param idleDurationInSeconds
-   *        The time the stream was in idle state in seconds (occurs at event: IDLE)
-   */
-  public void setIdleDurationInSeconds(Integer idleDurationInSeconds) {
-    this.idleDurationInSeconds = idleDurationInSeconds;
-  }
-
-
-  /**
-   * An optional error message, when the event is in error state (occurs at event: ERROR)
-   * @return errorMessage
-   */
-  public String getErrorMessage() {
-    return errorMessage;
-  }
-
-  /**
-   * An optional error message, when the event is in error state (occurs at event: ERROR)
-   *
-   * @param errorMessage
-   *        An optional error message, when the event is in error state (occurs at event: ERROR)
-   */
-  public void setErrorMessage(String errorMessage) {
-    this.errorMessage = errorMessage;
+  public void setEventType(LiveEncodingEventName eventType) {
+    this.eventType = eventType;
   }
 
 
@@ -110,15 +44,12 @@ public class LiveEncodingStatsEventDetails {
       return false;
     }
     LiveEncodingStatsEventDetails liveEncodingStatsEventDetails = (LiveEncodingStatsEventDetails) o;
-    return Objects.equals(this.eventName, liveEncodingStatsEventDetails.eventName) &&
-        Objects.equals(this.avDriftInSeconds, liveEncodingStatsEventDetails.avDriftInSeconds) &&
-        Objects.equals(this.idleDurationInSeconds, liveEncodingStatsEventDetails.idleDurationInSeconds) &&
-        Objects.equals(this.errorMessage, liveEncodingStatsEventDetails.errorMessage);
+    return Objects.equals(this.eventType, liveEncodingStatsEventDetails.eventType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventName, avDriftInSeconds, idleDurationInSeconds, errorMessage);
+    return Objects.hash(eventType);
   }
 
   @Override
@@ -126,10 +57,7 @@ public class LiveEncodingStatsEventDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class LiveEncodingStatsEventDetails {\n");
     
-    sb.append("    eventName: ").append(toIndentedString(eventName)).append("\n");
-    sb.append("    avDriftInSeconds: ").append(toIndentedString(avDriftInSeconds)).append("\n");
-    sb.append("    idleDurationInSeconds: ").append(toIndentedString(idleDurationInSeconds)).append("\n");
-    sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
+    sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
