@@ -79,7 +79,7 @@ public class LiveApi {
     /**
      * Re-Start Live Encoding
      * 
-     * @param encodingId Id of the encoding (required)
+     * @param encodingId Id of the encoding.  **Important:** Only live encodings with the status &#x60;RUNNING&#x60;, &#x60;FINISHED&#x60;, &#x60;CANCELED&#x60; or &#x60;ERROR&#x60; can be restarted.  (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */

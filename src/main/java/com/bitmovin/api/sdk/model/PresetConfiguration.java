@@ -28,7 +28,7 @@ public enum PresetConfiguration {
   LIVE_HIGH_QUALITY("LIVE_HIGH_QUALITY"),
   
   /**
-   * supported for H264
+   * supported for H264, H265
    */
   LIVE_STANDARD("LIVE_STANDARD"),
   
