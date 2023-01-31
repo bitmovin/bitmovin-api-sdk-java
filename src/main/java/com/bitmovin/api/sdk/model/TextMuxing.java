@@ -28,7 +28,7 @@ public class TextMuxing extends Muxing {
 
 
   /**
-   * The output file name (required)
+   * Name of the output file (required)
    * @return filename
    */
   public String getFilename() {
@@ -36,10 +36,10 @@ public class TextMuxing extends Muxing {
   }
 
   /**
-   * The output file name (required)
+   * Name of the output file (required)
    *
    * @param filename
-   *        The output file name (required)
+   *        Name of the output file (required)
    */
   public void setFilename(String filename) {
     this.filename = filename;

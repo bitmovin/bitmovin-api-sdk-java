@@ -139,7 +139,7 @@ public class Message extends BitmovinResponse {
 
 
   /**
-   * Timestamp when the message occured
+   * Timestamp when the message occurred
    * @return date
    */
   public Date getDate() {
@@ -147,10 +147,10 @@ public class Message extends BitmovinResponse {
   }
 
   /**
-   * Timestamp when the message occured
+   * Timestamp when the message occurred
    *
    * @param date
-   *        Timestamp when the message occured
+   *        Timestamp when the message occurred
    */
   public void setDate(Date date) {
     this.date = date;

@@ -25,7 +25,7 @@ public class ProgressiveMovMuxing extends Muxing {
 
 
   /**
-   * The output file name
+   * Name of the output file
    * @return filename
    */
   public String getFilename() {
@@ -33,10 +33,10 @@ public class ProgressiveMovMuxing extends Muxing {
   }
 
   /**
-   * The output file name
+   * Name of the output file
    *
    * @param filename
-   *        The output file name
+   *        Name of the output file
    */
   public void setFilename(String filename) {
     this.filename = filename;

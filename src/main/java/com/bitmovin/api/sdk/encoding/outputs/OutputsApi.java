@@ -83,6 +83,37 @@ public class OutputsApi {
     }
 
     /**
+     * Check output permissions (S3 only)
+     * 
+     * @param outputId Id of the output to be checked. Currently limited to S3 outputs. The access credentials that have been provided for this Output still need to be valid, otherwise the request will fail. If they are not valid any more, create a new Output with new credentials (resources are immutable). (required)
+     * @return CheckOutputPermissionsResponse
+     * @throws BitmovinException if fails to make API call
+     */
+    public CheckOutputPermissionsResponse checkPermissions(String outputId) throws BitmovinException {
+        try {
+            return this.apiClient.checkPermissions(outputId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
+    /**
+     * Check output permissions (S3 only)
+     * 
+     * @param outputId Id of the output to be checked. Currently limited to S3 outputs. The access credentials that have been provided for this Output still need to be valid, otherwise the request will fail. If they are not valid any more, create a new Output with new credentials (resources are immutable). (required)
+     * @param checkOutputPermissionsRequest Additional parameters for the permissions check (optional)
+     * @return CheckOutputPermissionsResponse
+     * @throws BitmovinException if fails to make API call
+     */
+    public CheckOutputPermissionsResponse checkPermissions(String outputId, CheckOutputPermissionsRequest checkOutputPermissionsRequest) throws BitmovinException {
+        try {
+            return this.apiClient.checkPermissions(outputId, checkOutputPermissionsRequest).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
+    /**
      * Get Output Details
      * 
      * @param outputId Id of the wanted output (required)
@@ -128,6 +159,12 @@ public class OutputsApi {
 
     interface OutputsApiClient {
 
+        @RequestLine("POST /encoding/outputs/{output_id}/check-permissions")
+        ResponseEnvelope<CheckOutputPermissionsResponse> checkPermissions(@Param(value = "output_id") String outputId) throws BitmovinException;
+
+        @RequestLine("POST /encoding/outputs/{output_id}/check-permissions")
+        ResponseEnvelope<CheckOutputPermissionsResponse> checkPermissions(@Param(value = "output_id") String outputId, CheckOutputPermissionsRequest checkOutputPermissionsRequest) throws BitmovinException;
+    
         @RequestLine("GET /encoding/outputs/{output_id}")
         ResponseEnvelope<Output> get(@Param(value = "output_id") String outputId) throws BitmovinException;
     

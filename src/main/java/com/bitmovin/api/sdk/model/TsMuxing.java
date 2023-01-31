@@ -41,7 +41,7 @@ public class TsMuxing extends Muxing {
 
 
   /**
-   * Length of the fragments in seconds (required)
+   * Length of the fragments in seconds
    * @return segmentLength
    */
   public Double getSegmentLength() {
@@ -49,10 +49,10 @@ public class TsMuxing extends Muxing {
   }
 
   /**
-   * Length of the fragments in seconds (required)
+   * Length of the fragments in seconds
    *
    * @param segmentLength
-   *        Length of the fragments in seconds (required)
+   *        Length of the fragments in seconds
    */
   public void setSegmentLength(Double segmentLength) {
     this.segmentLength = segmentLength;

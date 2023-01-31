@@ -32,7 +32,7 @@ public class ProgressiveWebmMuxing extends Muxing {
 
 
   /**
-   * Name of the new Video
+   * Name of the output file
    * @return filename
    */
   public String getFilename() {
@@ -40,10 +40,10 @@ public class ProgressiveWebmMuxing extends Muxing {
   }
 
   /**
-   * Name of the new Video
+   * Name of the output file
    *
    * @param filename
-   *        Name of the new Video
+   *        Name of the output file
    */
   public void setFilename(String filename) {
     this.filename = filename;

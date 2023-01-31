@@ -56,7 +56,7 @@ public class ChunkedTextMuxing extends Muxing {
 
 
   /**
-   * Segment naming template
+   * Segment naming policy
    * @return segmentNaming
    */
   public String getSegmentNaming() {
@@ -64,10 +64,10 @@ public class ChunkedTextMuxing extends Muxing {
   }
 
   /**
-   * Segment naming template
+   * Segment naming policy
    *
    * @param segmentNaming
-   *        Segment naming template
+   *        Segment naming policy
    */
   public void setSegmentNaming(String segmentNaming) {
     this.segmentNaming = segmentNaming;
