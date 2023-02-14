@@ -41,7 +41,7 @@ public class LiveApi {
     }
 
     /**
-     * Update stream by id
+     * Update live stream by id
      * 
      * @param streamId Id of the stream. (required)
      * @param streamsLiveUpdateRequest Stream fields to update. (required)

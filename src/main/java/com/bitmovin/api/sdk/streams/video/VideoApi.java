@@ -41,7 +41,7 @@ public class VideoApi {
     }
 
     /**
-     * Create new Stream
+     * Create new Streams video
      * 
      * @param streamsVideoCreateRequest Create a new stream. (required)
      * @return StreamsVideoResponse
@@ -56,7 +56,7 @@ public class VideoApi {
     }
 
     /**
-     * Get stream by id
+     * Get Streams video by id
      * 
      * @param streamId Id of the stream. (required)
      * @return StreamsVideoResponse
@@ -71,7 +71,7 @@ public class VideoApi {
     }
 
     /**
-     * Get paginated list of streams
+     * Get paginated list of Streams videos
      * 
      * @return List&lt;StreamsVideoResponse&gt;
      * @throws BitmovinException if fails to make API call
@@ -85,7 +85,7 @@ public class VideoApi {
     }
 
     /**
-     * Get paginated list of streams
+     * Get paginated list of Streams videos
      * 
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;StreamsVideoResponse&gt;
@@ -100,7 +100,7 @@ public class VideoApi {
     }
 
     /**
-     * Update stream by id
+     * Update Streams video by id
      * 
      * @param streamId Id of the stream. (required)
      * @param streamsVideoUpdateRequest Stream fields to update. (required)
