@@ -13,12 +13,12 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum DashProfile {
   
   /**
-   * The profile to be used for fMP4 muxings
+   * Profile that supports segmented representations/muxings (FMP4, CMAF, WEBM, CHUNKED_TEXT)
    */
   LIVE("LIVE"),
   
   /**
-   * The profile to be used for MP4 muxings
+   * Profile that supports progressive representations/muxings (MP4, PROGRESSIVE_WEBM)
    */
   ON_DEMAND("ON_DEMAND");
 

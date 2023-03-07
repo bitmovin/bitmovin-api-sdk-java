@@ -57,7 +57,7 @@ public class SimpleEncodingVodJobRequest {
   }
 
   /**
-   * Get inputs
+   * Please take a look at the [documentation](https://bitmovin.com/docs/encoding/articles/simple-encoding-api#inputs-outputs) (required)
    * @return inputs
    */
   public List<SimpleEncodingVodJobInput> getInputs() {
@@ -65,9 +65,10 @@ public class SimpleEncodingVodJobRequest {
   }
 
   /**
-   * Set inputs
+   * Please take a look at the [documentation](https://bitmovin.com/docs/encoding/articles/simple-encoding-api#inputs-outputs) (required)
    *
    * @param inputs
+   *        Please take a look at the [documentation](https://bitmovin.com/docs/encoding/articles/simple-encoding-api#inputs-outputs) (required)
    */
   public void setInputs(List<SimpleEncodingVodJobInput> inputs) {
     this.inputs = inputs;

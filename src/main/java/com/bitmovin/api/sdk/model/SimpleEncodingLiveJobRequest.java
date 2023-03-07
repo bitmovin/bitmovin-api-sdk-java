@@ -55,7 +55,7 @@ public class SimpleEncodingLiveJobRequest {
 
 
   /**
-   * Get input
+   * Please take a look at the [documentation](https://bitmovin.com/docs/encoding/articles/simple-encoding-api-live#inputs) (required)
    * @return input
    */
   public SimpleEncodingLiveJobInput getInput() {
@@ -63,9 +63,10 @@ public class SimpleEncodingLiveJobRequest {
   }
 
   /**
-   * Set input
+   * Please take a look at the [documentation](https://bitmovin.com/docs/encoding/articles/simple-encoding-api-live#inputs) (required)
    *
    * @param input
+   *        Please take a look at the [documentation](https://bitmovin.com/docs/encoding/articles/simple-encoding-api-live#inputs) (required)
    */
   public void setInput(SimpleEncodingLiveJobInput input) {
     this.input = input;

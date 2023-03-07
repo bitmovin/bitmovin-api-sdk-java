@@ -43,7 +43,7 @@ public class DashManifest extends Manifest {
 
 
   /**
-   * Get profile
+   * Determines if segmented or progressive representations can appear in the manifest
    * @return profile
    */
   public DashProfile getProfile() {
@@ -51,9 +51,10 @@ public class DashManifest extends Manifest {
   }
 
   /**
-   * Set profile
+   * Determines if segmented or progressive representations can appear in the manifest
    *
    * @param profile
+   *        Determines if segmented or progressive representations can appear in the manifest
    */
   public void setProfile(DashProfile profile) {
     this.profile = profile;
