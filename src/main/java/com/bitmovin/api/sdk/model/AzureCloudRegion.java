@@ -13,14 +13,14 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum AzureCloudRegion {
   
   /**
-   * Washington
+   * New South Wales
    */
-  US_WEST2("AUSTRALIA_EAST"),
+  AUSTRALIA_EAST("AUSTRALIA_EAST"),
   
   /**
-   * Virginia
+   * Victoria
    */
-  US_EAST("AUSTRALIA_SOUTHEAST"),
+  AUSTRALIA_SOUTHEAST("AUSTRALIA_SOUTHEAST"),
   
   /**
    * Ireland
@@ -38,19 +38,19 @@ public enum AzureCloudRegion {
   GERMANY_WESTCENTRAL("GERMANY_WESTCENTRAL"),
   
   /**
-   * New South Wales
-   */
-  AUSTRALIA_EAST("UAE_NORTH"),
-  
-  /**
-   * Victoria
-   */
-  AUSTRALIA_SOUTHEAST("US_EAST"),
-  
-  /**
    * Dubai
    */
-  UAE_NORTH("US_WEST2");
+  UAE_NORTH("UAE_NORTH"),
+  
+  /**
+   * Virginia
+   */
+  US_EAST("US_EAST"),
+  
+  /**
+   * Washington
+   */
+  US_WEST2("US_WEST2");
 
   private String value;
 

@@ -21,7 +21,7 @@ public class AclEntry {
 
 
   /**
-   * Get scope
+   * Deprecation notice: The value of this property is not being used. It can be chosen arbitrarily or not set at all
    * @return scope
    */
   public String getScope() {
@@ -29,9 +29,10 @@ public class AclEntry {
   }
 
   /**
-   * Set scope
+   * Deprecation notice: The value of this property is not being used. It can be chosen arbitrarily or not set at all
    *
    * @param scope
+   *        Deprecation notice: The value of this property is not being used. It can be chosen arbitrarily or not set at all
    */
   public void setScope(String scope) {
     this.scope = scope;

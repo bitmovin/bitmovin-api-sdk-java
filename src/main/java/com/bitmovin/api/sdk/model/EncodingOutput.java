@@ -70,7 +70,7 @@ public class EncodingOutput {
   }
 
   /**
-   * Get acl
+   * Determines accessibility of files written to this output. Only applies to output types that support ACLs. Defaults to PUBLIC_READ if the list is empty. The destination (e.g. cloud storage bucket) needs to allow the configured ACL
    * @return acl
    */
   public List<AclEntry> getAcl() {
@@ -78,9 +78,10 @@ public class EncodingOutput {
   }
 
   /**
-   * Set acl
+   * Determines accessibility of files written to this output. Only applies to output types that support ACLs. Defaults to PUBLIC_READ if the list is empty. The destination (e.g. cloud storage bucket) needs to allow the configured ACL
    *
    * @param acl
+   *        Determines accessibility of files written to this output. Only applies to output types that support ACLs. Defaults to PUBLIC_READ if the list is empty. The destination (e.g. cloud storage bucket) needs to allow the configured ACL
    */
   public void setAcl(List<AclEntry> acl) {
     this.acl = acl;
