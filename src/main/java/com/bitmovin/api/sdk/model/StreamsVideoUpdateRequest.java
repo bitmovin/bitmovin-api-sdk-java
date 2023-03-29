@@ -22,6 +22,9 @@ public class StreamsVideoUpdateRequest {
   @JsonProperty("description")
   private String description;
 
+  @JsonProperty("configId")
+  private String configId;
+
 
   /**
    * The new status of the stream
@@ -80,6 +83,25 @@ public class StreamsVideoUpdateRequest {
   }
 
 
+  /**
+   * Id of the stream config to use
+   * @return configId
+   */
+  public String getConfigId() {
+    return configId;
+  }
+
+  /**
+   * Id of the stream config to use
+   *
+   * @param configId
+   *        Id of the stream config to use
+   */
+  public void setConfigId(String configId) {
+    this.configId = configId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -91,12 +113,13 @@ public class StreamsVideoUpdateRequest {
     StreamsVideoUpdateRequest streamsVideoUpdateRequest = (StreamsVideoUpdateRequest) o;
     return Objects.equals(this.status, streamsVideoUpdateRequest.status) &&
         Objects.equals(this.title, streamsVideoUpdateRequest.title) &&
-        Objects.equals(this.description, streamsVideoUpdateRequest.description);
+        Objects.equals(this.description, streamsVideoUpdateRequest.description) &&
+        Objects.equals(this.configId, streamsVideoUpdateRequest.configId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, title, description);
+    return Objects.hash(status, title, description, configId);
   }
 
   @Override
@@ -107,6 +130,7 @@ public class StreamsVideoUpdateRequest {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    configId: ").append(toIndentedString(configId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.StreamsConfigResponse;
 import com.bitmovin.api.sdk.model.StreamsVideoEncodingTask;
 import com.bitmovin.api.sdk.model.StreamsVideoStatus;
 import java.util.ArrayList;
@@ -34,6 +35,9 @@ public class StreamsVideoResponse {
 
   @JsonProperty("status")
   private StreamsVideoStatus status;
+
+  @JsonProperty("config")
+  private StreamsConfigResponse config;
 
   @JsonProperty("encodingTasks")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -87,6 +91,24 @@ public class StreamsVideoResponse {
     return status;
   }
 
+
+  /**
+   * Get config
+   * @return config
+   */
+  public StreamsConfigResponse getConfig() {
+    return config;
+  }
+
+  /**
+   * Set config
+   *
+   * @param config
+   */
+  public void setConfig(StreamsConfigResponse config) {
+    this.config = config;
+  }
+
   /**
    * List of encoding status information
    * @return encodingTasks
@@ -111,12 +133,13 @@ public class StreamsVideoResponse {
         Objects.equals(this.description, streamsVideoResponse.description) &&
         Objects.equals(this.createdAt, streamsVideoResponse.createdAt) &&
         Objects.equals(this.status, streamsVideoResponse.status) &&
+        Objects.equals(this.config, streamsVideoResponse.config) &&
         Objects.equals(this.encodingTasks, streamsVideoResponse.encodingTasks);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, assetUrl, title, description, createdAt, status, encodingTasks);
+    return Objects.hash(id, assetUrl, title, description, createdAt, status, config, encodingTasks);
   }
 
   @Override
@@ -130,6 +153,7 @@ public class StreamsVideoResponse {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("    encodingTasks: ").append(toIndentedString(encodingTasks)).append("\n");
     sb.append("}");
     return sb.toString();
