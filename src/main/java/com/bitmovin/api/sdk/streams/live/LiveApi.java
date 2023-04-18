@@ -18,8 +18,12 @@ import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
+import com.bitmovin.api.sdk.streams.live.stop.StopApi;
+import com.bitmovin.api.sdk.streams.live.start.StartApi;
 
 public class LiveApi {
+    public final StopApi stop;
+    public final StartApi start;
 
     private final LiveApiClient apiClient;
 
@@ -31,6 +35,8 @@ public class LiveApi {
 
         this.apiClient = clientFactory.createApiClient(LiveApiClient.class);
 
+        this.stop = new StopApi(clientFactory);
+        this.start = new StartApi(clientFactory);
     }
 
     /**
@@ -38,6 +44,65 @@ public class LiveApi {
      */
     public static BitmovinApiBuilder<LiveApi> builder() {
         return new BitmovinApiBuilder<>(LiveApi.class);
+    }
+
+    /**
+     * Create new live stream
+     * 
+     * @param streamsLiveCreateRequest Create a new stream. (required)
+     * @return StreamsLiveResponse
+     * @throws BitmovinException if fails to make API call
+     */
+    public StreamsLiveResponse create(StreamsLiveCreateRequest streamsLiveCreateRequest) throws BitmovinException {
+        try {
+            return this.apiClient.create(streamsLiveCreateRequest).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
+    /**
+     * Get live stream by id
+     * 
+     * @param streamId Id of the stream. (required)
+     * @return StreamsLiveResponse
+     * @throws BitmovinException if fails to make API call
+     */
+    public StreamsLiveResponse get(String streamId) throws BitmovinException {
+        try {
+            return this.apiClient.get(streamId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
+    /**
+     * Get paginated list of live streams
+     * 
+     * @return List&lt;StreamsLiveResponse&gt;
+     * @throws BitmovinException if fails to make API call
+     */
+    public PaginationResponse<StreamsLiveResponse> list() throws BitmovinException {
+        try {
+            return this.apiClient.list(new QueryMapWrapper()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
+    /**
+     * Get paginated list of live streams
+     * 
+     * @param queryParams The query parameters for sorting, filtering and paging options (optional)
+     * @return List&lt;StreamsLiveResponse&gt;
+     * @throws BitmovinException if fails to make API call
+     */
+    public PaginationResponse<StreamsLiveResponse> list(StreamsLiveResponseListQueryParams queryParams) throws BitmovinException {
+        try {
+            return this.apiClient.list(new QueryMapWrapper(queryParams)).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
     }
 
     /**
@@ -58,6 +123,15 @@ public class LiveApi {
 
     interface LiveApiClient {
 
+        @RequestLine("POST /streams/live")
+        ResponseEnvelope<StreamsLiveResponse> create(StreamsLiveCreateRequest streamsLiveCreateRequest) throws BitmovinException;
+    
+        @RequestLine("GET /streams/live/{stream_id}")
+        ResponseEnvelope<StreamsLiveResponse> get(@Param(value = "stream_id") String streamId) throws BitmovinException;
+    
+        @RequestLine("GET /streams/live")
+        ResponseEnvelope<PaginationResponse<StreamsLiveResponse>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
+    
         @RequestLine("PATCH /streams/live/{stream_id}")
         ResponseEnvelope<StreamsLiveUpdateRequest> patchStreamsLive(@Param(value = "stream_id") String streamId, StreamsLiveUpdateRequest streamsLiveUpdateRequest) throws BitmovinException;
     }

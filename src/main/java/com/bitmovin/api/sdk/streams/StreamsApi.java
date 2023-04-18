@@ -2,12 +2,10 @@ package com.bitmovin.api.sdk.streams;
 
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
-import com.bitmovin.api.sdk.streams.configs.ConfigsApi;
 import com.bitmovin.api.sdk.streams.video.VideoApi;
 import com.bitmovin.api.sdk.streams.live.LiveApi;
 
 public class StreamsApi {
-    public final ConfigsApi configs;
     public final VideoApi video;
     public final LiveApi live;
 
@@ -17,7 +15,6 @@ public class StreamsApi {
             throw new IllegalArgumentException("Parameter 'clientFactory' may not be null.");
         }
 
-        this.configs = new ConfigsApi(clientFactory);
         this.video = new VideoApi(clientFactory);
         this.live = new LiveApi(clientFactory);
     }
