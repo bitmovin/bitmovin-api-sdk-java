@@ -21,6 +21,12 @@ public class StreamsConfigResponse {
   @JsonProperty("playerStyle")
   private Object playerStyle;
 
+  @JsonProperty("watermarkUrl")
+  private String watermarkUrl;
+
+  @JsonProperty("watermarkTargetLink")
+  private String watermarkTargetLink;
+
   /**
    * The identifier of the stream config
    * @return id
@@ -68,6 +74,44 @@ public class StreamsConfigResponse {
   }
 
 
+  /**
+   * URL of the watermark image
+   * @return watermarkUrl
+   */
+  public String getWatermarkUrl() {
+    return watermarkUrl;
+  }
+
+  /**
+   * URL of the watermark image
+   *
+   * @param watermarkUrl
+   *        URL of the watermark image
+   */
+  public void setWatermarkUrl(String watermarkUrl) {
+    this.watermarkUrl = watermarkUrl;
+  }
+
+
+  /**
+   * Target link of the watermark image
+   * @return watermarkTargetLink
+   */
+  public String getWatermarkTargetLink() {
+    return watermarkTargetLink;
+  }
+
+  /**
+   * Target link of the watermark image
+   *
+   * @param watermarkTargetLink
+   *        Target link of the watermark image
+   */
+  public void setWatermarkTargetLink(String watermarkTargetLink) {
+    this.watermarkTargetLink = watermarkTargetLink;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -79,12 +123,14 @@ public class StreamsConfigResponse {
     StreamsConfigResponse streamsConfigResponse = (StreamsConfigResponse) o;
     return Objects.equals(this.id, streamsConfigResponse.id) &&
         Objects.equals(this.orgId, streamsConfigResponse.orgId) &&
-        Objects.equals(this.playerStyle, streamsConfigResponse.playerStyle);
+        Objects.equals(this.playerStyle, streamsConfigResponse.playerStyle) &&
+        Objects.equals(this.watermarkUrl, streamsConfigResponse.watermarkUrl) &&
+        Objects.equals(this.watermarkTargetLink, streamsConfigResponse.watermarkTargetLink);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, orgId, playerStyle);
+    return Objects.hash(id, orgId, playerStyle, watermarkUrl, watermarkTargetLink);
   }
 
   @Override
@@ -95,6 +141,8 @@ public class StreamsConfigResponse {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    orgId: ").append(toIndentedString(orgId)).append("\n");
     sb.append("    playerStyle: ").append(toIndentedString(playerStyle)).append("\n");
+    sb.append("    watermarkUrl: ").append(toIndentedString(watermarkUrl)).append("\n");
+    sb.append("    watermarkTargetLink: ").append(toIndentedString(watermarkTargetLink)).append("\n");
     sb.append("}");
     return sb.toString();
   }
