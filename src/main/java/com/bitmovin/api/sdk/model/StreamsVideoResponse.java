@@ -43,6 +43,9 @@ public class StreamsVideoResponse {
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<StreamsVideoEncodingTask> encodingTasks = new ArrayList<StreamsVideoEncodingTask>();
 
+  @JsonProperty("posterUrl")
+  private String posterUrl;
+
   /**
    * The identifier of the stream
    * @return id
@@ -117,6 +120,14 @@ public class StreamsVideoResponse {
     return encodingTasks;
   }
 
+  /**
+   * Poster URL
+   * @return posterUrl
+   */
+  public String getPosterUrl() {
+    return posterUrl;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -134,12 +145,13 @@ public class StreamsVideoResponse {
         Objects.equals(this.createdAt, streamsVideoResponse.createdAt) &&
         Objects.equals(this.status, streamsVideoResponse.status) &&
         Objects.equals(this.config, streamsVideoResponse.config) &&
-        Objects.equals(this.encodingTasks, streamsVideoResponse.encodingTasks);
+        Objects.equals(this.encodingTasks, streamsVideoResponse.encodingTasks) &&
+        Objects.equals(this.posterUrl, streamsVideoResponse.posterUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, assetUrl, title, description, createdAt, status, config, encodingTasks);
+    return Objects.hash(id, assetUrl, title, description, createdAt, status, config, encodingTasks, posterUrl);
   }
 
   @Override
@@ -155,6 +167,7 @@ public class StreamsVideoResponse {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("    encodingTasks: ").append(toIndentedString(encodingTasks)).append("\n");
+    sb.append("    posterUrl: ").append(toIndentedString(posterUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

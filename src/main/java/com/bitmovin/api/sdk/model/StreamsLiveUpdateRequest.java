@@ -21,6 +21,9 @@ public class StreamsLiveUpdateRequest {
   @JsonProperty("configId")
   private String configId;
 
+  @JsonProperty("posterUrl")
+  private String posterUrl;
+
 
   /**
    * The new title of the stream
@@ -79,6 +82,25 @@ public class StreamsLiveUpdateRequest {
   }
 
 
+  /**
+   * URL to hosted poster image
+   * @return posterUrl
+   */
+  public String getPosterUrl() {
+    return posterUrl;
+  }
+
+  /**
+   * URL to hosted poster image
+   *
+   * @param posterUrl
+   *        URL to hosted poster image
+   */
+  public void setPosterUrl(String posterUrl) {
+    this.posterUrl = posterUrl;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -90,12 +112,13 @@ public class StreamsLiveUpdateRequest {
     StreamsLiveUpdateRequest streamsLiveUpdateRequest = (StreamsLiveUpdateRequest) o;
     return Objects.equals(this.title, streamsLiveUpdateRequest.title) &&
         Objects.equals(this.description, streamsLiveUpdateRequest.description) &&
-        Objects.equals(this.configId, streamsLiveUpdateRequest.configId);
+        Objects.equals(this.configId, streamsLiveUpdateRequest.configId) &&
+        Objects.equals(this.posterUrl, streamsLiveUpdateRequest.posterUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, description, configId);
+    return Objects.hash(title, description, configId, posterUrl);
   }
 
   @Override
@@ -106,6 +129,7 @@ public class StreamsLiveUpdateRequest {
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    configId: ").append(toIndentedString(configId)).append("\n");
+    sb.append("    posterUrl: ").append(toIndentedString(posterUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -3,6 +3,7 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AdaptiveQuantMode;
+import com.bitmovin.api.sdk.model.AutoLevelSetup;
 import com.bitmovin.api.sdk.model.BAdapt;
 import com.bitmovin.api.sdk.model.Cea608708SubtitleConfiguration;
 import com.bitmovin.api.sdk.model.ColorConfig;
@@ -328,6 +329,9 @@ public class H265VideoConfiguration extends VideoConfiguration {
 
   @JsonProperty("cea608708SubtitleConfig")
   private Cea608708SubtitleConfiguration cea608708SubtitleConfig;
+
+  @JsonProperty("autoLevelSetup")
+  private AutoLevelSetup autoLevelSetup;
 
 
   /**
@@ -2271,6 +2275,25 @@ public class H265VideoConfiguration extends VideoConfiguration {
   }
 
 
+  /**
+   * Enable/disable automatic calculation of level, maxBitrate, and bufsize based on the least level that satisfies maximum property values for picture resolution, frame rate, and bit rate. Explicitly setting level, maxBitrate, or bufsize properties will automatically disable the calculation.
+   * @return autoLevelSetup
+   */
+  public AutoLevelSetup getAutoLevelSetup() {
+    return autoLevelSetup;
+  }
+
+  /**
+   * Enable/disable automatic calculation of level, maxBitrate, and bufsize based on the least level that satisfies maximum property values for picture resolution, frame rate, and bit rate. Explicitly setting level, maxBitrate, or bufsize properties will automatically disable the calculation.
+   *
+   * @param autoLevelSetup
+   *        Enable/disable automatic calculation of level, maxBitrate, and bufsize based on the least level that satisfies maximum property values for picture resolution, frame rate, and bit rate. Explicitly setting level, maxBitrate, or bufsize properties will automatically disable the calculation.
+   */
+  public void setAutoLevelSetup(AutoLevelSetup autoLevelSetup) {
+    this.autoLevelSetup = autoLevelSetup;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -2376,12 +2399,13 @@ public class H265VideoConfiguration extends VideoConfiguration {
         Objects.equals(this.limitSao, h265VideoConfiguration.limitSao) &&
         Objects.equals(this.lowpassDct, h265VideoConfiguration.lowpassDct) &&
         Objects.equals(this.cea608708SubtitleConfig, h265VideoConfiguration.cea608708SubtitleConfig) &&
+        Objects.equals(this.autoLevelSetup, h265VideoConfiguration.autoLevelSetup) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(presetConfiguration, dynamicRangeFormat, crf, profile, bframes, refFrames, qp, maxBitrate, minBitrate, bufsize, minGop, maxGop, openGop, minKeyframeInterval, maxKeyframeInterval, level, rcLookahead, bAdapt, maxCTUSize, tuIntraDepth, tuInterDepth, motionSearch, subMe, motionSearchRange, weightPredictionOnPSlice, weightPredictionOnBSlice, sao, masterDisplay, maxContentLightLevel, maxPictureAverageLightLevel, hdr, sceneCutThreshold, adaptiveQuantizationMode, enableHlgSignaling, videoFormat, psyRateDistortionOptimization, psyRateDistortionOptimizedQuantization, enableHrdSignaling, cutree, minCodingUnitSize, lookaheadSlices, limitReferences, rectangularMotionPartitionsAnalysis, asymetricMotionPartitionsAnalysis, limitModes, maxMerge, earlySkip, recursionSkip, fastSearchForAngularIntraPredictions, evaluationOfIntraModesInBSlices, signHide, rateDistortionLevelForModeDecision, rateDistortionLevelForQuantization, qpMin, qpMax, wavefrontParallelProcessing, slices, copyPicture, levelHighTier, skipSplitRateDistortionAnalysis, codingUnitLossless, transformSkip, refineRateDistortionCost, limitTransformUnitDepthRecursion, noiseReductionIntra, noiseReductionInter, rateDistortionPenalty, maximumTransformUnitSize, dynamicRateDistortionStrength, ssimRateDistortionOptimization, temporalMotionVectorPredictors, analyzeSourceFramePixels, strongIntraSmoothing, constrainedIntraPrediction, scenecutBias, allowedRADLBeforeIDR, gopLookahead, bframeBias, forceFlush, adaptiveQuantizationStrength, adaptiveQuantizationMotion, quantizationGroupSize, strictCbr, qpOffsetChromaCb, qpOffsetChromaCr, ipRatio, pbRatio, quantizerCurveCompressionFactor, qpStep, grainOptimizedRateControl, blurQuants, blurComplexity, saoNonDeblock, limitSao, lowpassDct, cea608708SubtitleConfig, super.hashCode());
+    return Objects.hash(presetConfiguration, dynamicRangeFormat, crf, profile, bframes, refFrames, qp, maxBitrate, minBitrate, bufsize, minGop, maxGop, openGop, minKeyframeInterval, maxKeyframeInterval, level, rcLookahead, bAdapt, maxCTUSize, tuIntraDepth, tuInterDepth, motionSearch, subMe, motionSearchRange, weightPredictionOnPSlice, weightPredictionOnBSlice, sao, masterDisplay, maxContentLightLevel, maxPictureAverageLightLevel, hdr, sceneCutThreshold, adaptiveQuantizationMode, enableHlgSignaling, videoFormat, psyRateDistortionOptimization, psyRateDistortionOptimizedQuantization, enableHrdSignaling, cutree, minCodingUnitSize, lookaheadSlices, limitReferences, rectangularMotionPartitionsAnalysis, asymetricMotionPartitionsAnalysis, limitModes, maxMerge, earlySkip, recursionSkip, fastSearchForAngularIntraPredictions, evaluationOfIntraModesInBSlices, signHide, rateDistortionLevelForModeDecision, rateDistortionLevelForQuantization, qpMin, qpMax, wavefrontParallelProcessing, slices, copyPicture, levelHighTier, skipSplitRateDistortionAnalysis, codingUnitLossless, transformSkip, refineRateDistortionCost, limitTransformUnitDepthRecursion, noiseReductionIntra, noiseReductionInter, rateDistortionPenalty, maximumTransformUnitSize, dynamicRateDistortionStrength, ssimRateDistortionOptimization, temporalMotionVectorPredictors, analyzeSourceFramePixels, strongIntraSmoothing, constrainedIntraPrediction, scenecutBias, allowedRADLBeforeIDR, gopLookahead, bframeBias, forceFlush, adaptiveQuantizationStrength, adaptiveQuantizationMotion, quantizationGroupSize, strictCbr, qpOffsetChromaCb, qpOffsetChromaCr, ipRatio, pbRatio, quantizerCurveCompressionFactor, qpStep, grainOptimizedRateControl, blurQuants, blurComplexity, saoNonDeblock, limitSao, lowpassDct, cea608708SubtitleConfig, autoLevelSetup, super.hashCode());
   }
 
   @Override
@@ -2485,6 +2509,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
     sb.append("    limitSao: ").append(toIndentedString(limitSao)).append("\n");
     sb.append("    lowpassDct: ").append(toIndentedString(lowpassDct)).append("\n");
     sb.append("    cea608708SubtitleConfig: ").append(toIndentedString(cea608708SubtitleConfig)).append("\n");
+    sb.append("    autoLevelSetup: ").append(toIndentedString(autoLevelSetup)).append("\n");
     sb.append("}");
     return sb.toString();
   }

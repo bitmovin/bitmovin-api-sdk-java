@@ -3,6 +3,7 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AdaptiveQuantMode;
+import com.bitmovin.api.sdk.model.AutoLevelSetup;
 import com.bitmovin.api.sdk.model.BAdapt;
 import com.bitmovin.api.sdk.model.Cea608708SubtitleConfiguration;
 import com.bitmovin.api.sdk.model.ColorConfig;
@@ -172,6 +173,9 @@ public class H264VideoConfiguration extends VideoConfiguration {
 
   @JsonProperty("psyTrellis")
   private Double psyTrellis;
+
+  @JsonProperty("autoLevelSetup")
+  private AutoLevelSetup autoLevelSetup;
 
 
   /**
@@ -1085,6 +1089,25 @@ public class H264VideoConfiguration extends VideoConfiguration {
   }
 
 
+  /**
+   * Enable/disable automatic calculation of level, maxBitrate, and bufsize based on the least level that satisfies maximum property values for picture resolution, frame rate, and bit rate. Explicitly setting level, maxBitrate, or bufsize properties will automatically disable the calculation.
+   * @return autoLevelSetup
+   */
+  public AutoLevelSetup getAutoLevelSetup() {
+    return autoLevelSetup;
+  }
+
+  /**
+   * Enable/disable automatic calculation of level, maxBitrate, and bufsize based on the least level that satisfies maximum property values for picture resolution, frame rate, and bit rate. Explicitly setting level, maxBitrate, or bufsize properties will automatically disable the calculation.
+   *
+   * @param autoLevelSetup
+   *        Enable/disable automatic calculation of level, maxBitrate, and bufsize based on the least level that satisfies maximum property values for picture resolution, frame rate, and bit rate. Explicitly setting level, maxBitrate, or bufsize properties will automatically disable the calculation.
+   */
+  public void setAutoLevelSetup(AutoLevelSetup autoLevelSetup) {
+    this.autoLevelSetup = autoLevelSetup;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1139,12 +1162,13 @@ public class H264VideoConfiguration extends VideoConfiguration {
         Objects.equals(this.quantizerCurveCompression, h264VideoConfiguration.quantizerCurveCompression) &&
         Objects.equals(this.psyRateDistortionOptimization, h264VideoConfiguration.psyRateDistortionOptimization) &&
         Objects.equals(this.psyTrellis, h264VideoConfiguration.psyTrellis) &&
+        Objects.equals(this.autoLevelSetup, h264VideoConfiguration.autoLevelSetup) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(presetConfiguration, dynamicRangeFormat, crf, profile, bframes, refFrames, qpMin, qpMax, mvPredictionMode, mvSearchRangeMax, cabac, maxBitrate, minBitrate, bufsize, minGop, maxGop, openGop, minKeyframeInterval, maxKeyframeInterval, level, bAdaptiveStrategy, motionEstimationMethod, rcLookahead, subMe, trellis, partitions, slices, interlaceMode, sceneCutThreshold, nalHrd, bPyramid, cea608708SubtitleConfig, deblockAlpha, deblockBeta, adaptiveQuantizationMode, adaptiveQuantizationStrength, mixedReferences, adaptiveSpatialTransform, fastSkipDetectionPFrames, weightedPredictionBFrames, weightedPredictionPFrames, macroblockTreeRatecontrol, quantizerCurveCompression, psyRateDistortionOptimization, psyTrellis, super.hashCode());
+    return Objects.hash(presetConfiguration, dynamicRangeFormat, crf, profile, bframes, refFrames, qpMin, qpMax, mvPredictionMode, mvSearchRangeMax, cabac, maxBitrate, minBitrate, bufsize, minGop, maxGop, openGop, minKeyframeInterval, maxKeyframeInterval, level, bAdaptiveStrategy, motionEstimationMethod, rcLookahead, subMe, trellis, partitions, slices, interlaceMode, sceneCutThreshold, nalHrd, bPyramid, cea608708SubtitleConfig, deblockAlpha, deblockBeta, adaptiveQuantizationMode, adaptiveQuantizationStrength, mixedReferences, adaptiveSpatialTransform, fastSkipDetectionPFrames, weightedPredictionBFrames, weightedPredictionPFrames, macroblockTreeRatecontrol, quantizerCurveCompression, psyRateDistortionOptimization, psyTrellis, autoLevelSetup, super.hashCode());
   }
 
   @Override
@@ -1197,6 +1221,7 @@ public class H264VideoConfiguration extends VideoConfiguration {
     sb.append("    quantizerCurveCompression: ").append(toIndentedString(quantizerCurveCompression)).append("\n");
     sb.append("    psyRateDistortionOptimization: ").append(toIndentedString(psyRateDistortionOptimization)).append("\n");
     sb.append("    psyTrellis: ").append(toIndentedString(psyTrellis)).append("\n");
+    sb.append("    autoLevelSetup: ").append(toIndentedString(autoLevelSetup)).append("\n");
     sb.append("}");
     return sb.toString();
   }

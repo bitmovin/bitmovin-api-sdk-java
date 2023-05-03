@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.AutoLevelSetup;
 import com.bitmovin.api.sdk.model.ColorConfig;
 import com.bitmovin.api.sdk.model.DisplayAspectRatio;
 import com.bitmovin.api.sdk.model.EncodingMode;
@@ -123,6 +124,9 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
 
   @JsonProperty("arnrType")
   private Vp9ArnrType arnrType;
+
+  @JsonProperty("autoLevelSetup")
+  private AutoLevelSetup autoLevelSetup;
 
 
   /**
@@ -842,6 +846,25 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
   }
 
 
+  /**
+   * Enable/disable automatic calculation of level, maxBitrate, and bufsize based on the least level that satisfies maximum property values for picture resolution, frame rate, and bit rate. Explicitly setting targetLevel, rateOvershootPct, or clientBufferSize properties will automatically disable the calculation.
+   * @return autoLevelSetup
+   */
+  public AutoLevelSetup getAutoLevelSetup() {
+    return autoLevelSetup;
+  }
+
+  /**
+   * Enable/disable automatic calculation of level, maxBitrate, and bufsize based on the least level that satisfies maximum property values for picture resolution, frame rate, and bit rate. Explicitly setting targetLevel, rateOvershootPct, or clientBufferSize properties will automatically disable the calculation.
+   *
+   * @param autoLevelSetup
+   *        Enable/disable automatic calculation of level, maxBitrate, and bufsize based on the least level that satisfies maximum property values for picture resolution, frame rate, and bit rate. Explicitly setting targetLevel, rateOvershootPct, or clientBufferSize properties will automatically disable the calculation.
+   */
+  public void setAutoLevelSetup(AutoLevelSetup autoLevelSetup) {
+    this.autoLevelSetup = autoLevelSetup;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -884,12 +907,13 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
         Objects.equals(this.arnrMaxFrames, vp9VideoConfiguration.arnrMaxFrames) &&
         Objects.equals(this.arnrStrength, vp9VideoConfiguration.arnrStrength) &&
         Objects.equals(this.arnrType, vp9VideoConfiguration.arnrType) &&
+        Objects.equals(this.autoLevelSetup, vp9VideoConfiguration.autoLevelSetup) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(presetConfiguration, dynamicRangeFormat, crf, lagInFrames, errorResiliencyEnabled, tileColumns, tileRows, frameParallel, maxIntraRate, qpMin, qpMax, rateUndershootPct, rateOvershootPct, clientBufferSize, clientInitialBufferSize, biasPct, noiseSensitivity, cpuUsed, automaticAltRefFramesEnabled, targetLevel, rowMultiThreadingEnabled, sharpness, minGop, maxGop, minKeyframeInterval, maxKeyframeInterval, quality, lossless, staticThresh, aqMode, arnrMaxFrames, arnrStrength, arnrType, super.hashCode());
+    return Objects.hash(presetConfiguration, dynamicRangeFormat, crf, lagInFrames, errorResiliencyEnabled, tileColumns, tileRows, frameParallel, maxIntraRate, qpMin, qpMax, rateUndershootPct, rateOvershootPct, clientBufferSize, clientInitialBufferSize, biasPct, noiseSensitivity, cpuUsed, automaticAltRefFramesEnabled, targetLevel, rowMultiThreadingEnabled, sharpness, minGop, maxGop, minKeyframeInterval, maxKeyframeInterval, quality, lossless, staticThresh, aqMode, arnrMaxFrames, arnrStrength, arnrType, autoLevelSetup, super.hashCode());
   }
 
   @Override
@@ -930,6 +954,7 @@ public class Vp9VideoConfiguration extends VideoConfiguration {
     sb.append("    arnrMaxFrames: ").append(toIndentedString(arnrMaxFrames)).append("\n");
     sb.append("    arnrStrength: ").append(toIndentedString(arnrStrength)).append("\n");
     sb.append("    arnrType: ").append(toIndentedString(arnrType)).append("\n");
+    sb.append("    autoLevelSetup: ").append(toIndentedString(autoLevelSetup)).append("\n");
     sb.append("}");
     return sb.toString();
   }

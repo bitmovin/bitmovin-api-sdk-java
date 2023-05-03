@@ -36,6 +36,9 @@ public class StreamsLiveResponse {
   @JsonProperty("config")
   private StreamsConfigResponse config;
 
+  @JsonProperty("posterUrl")
+  private String posterUrl;
+
   /**
    * The identifier of the stream
    * @return id
@@ -102,6 +105,14 @@ public class StreamsLiveResponse {
     this.config = config;
   }
 
+  /**
+   * Poster URL
+   * @return posterUrl
+   */
+  public String getPosterUrl() {
+    return posterUrl;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -118,12 +129,13 @@ public class StreamsLiveResponse {
         Objects.equals(this.description, streamsLiveResponse.description) &&
         Objects.equals(this.createdAt, streamsLiveResponse.createdAt) &&
         Objects.equals(this.lifeCycle, streamsLiveResponse.lifeCycle) &&
-        Objects.equals(this.config, streamsLiveResponse.config);
+        Objects.equals(this.config, streamsLiveResponse.config) &&
+        Objects.equals(this.posterUrl, streamsLiveResponse.posterUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, streamKey, title, description, createdAt, lifeCycle, config);
+    return Objects.hash(id, streamKey, title, description, createdAt, lifeCycle, config, posterUrl);
   }
 
   @Override
@@ -138,6 +150,7 @@ public class StreamsLiveResponse {
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    lifeCycle: ").append(toIndentedString(lifeCycle)).append("\n");
     sb.append("    config: ").append(toIndentedString(config)).append("\n");
+    sb.append("    posterUrl: ").append(toIndentedString(posterUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }
