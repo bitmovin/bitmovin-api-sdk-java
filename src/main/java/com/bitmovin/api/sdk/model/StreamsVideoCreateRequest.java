@@ -24,6 +24,9 @@ public class StreamsVideoCreateRequest {
   @JsonProperty("configId")
   private String configId;
 
+  @JsonProperty("adConfigId")
+  private String adConfigId;
+
 
   /**
    * The streams input asset URL
@@ -101,6 +104,25 @@ public class StreamsVideoCreateRequest {
   }
 
 
+  /**
+   * Id of the advertisement config to use
+   * @return adConfigId
+   */
+  public String getAdConfigId() {
+    return adConfigId;
+  }
+
+  /**
+   * Id of the advertisement config to use
+   *
+   * @param adConfigId
+   *        Id of the advertisement config to use
+   */
+  public void setAdConfigId(String adConfigId) {
+    this.adConfigId = adConfigId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -113,12 +135,13 @@ public class StreamsVideoCreateRequest {
     return Objects.equals(this.assetUrl, streamsVideoCreateRequest.assetUrl) &&
         Objects.equals(this.title, streamsVideoCreateRequest.title) &&
         Objects.equals(this.description, streamsVideoCreateRequest.description) &&
-        Objects.equals(this.configId, streamsVideoCreateRequest.configId);
+        Objects.equals(this.configId, streamsVideoCreateRequest.configId) &&
+        Objects.equals(this.adConfigId, streamsVideoCreateRequest.adConfigId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(assetUrl, title, description, configId);
+    return Objects.hash(assetUrl, title, description, configId, adConfigId);
   }
 
   @Override
@@ -130,6 +153,7 @@ public class StreamsVideoCreateRequest {
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    configId: ").append(toIndentedString(configId)).append("\n");
+    sb.append("    adConfigId: ").append(toIndentedString(adConfigId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

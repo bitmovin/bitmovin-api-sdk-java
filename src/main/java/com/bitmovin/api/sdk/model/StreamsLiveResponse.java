@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.StreamsAdConfigResponse;
 import com.bitmovin.api.sdk.model.StreamsConfigResponse;
 import com.bitmovin.api.sdk.model.StreamsLiveLifeCycle;
 import java.util.Date;
@@ -38,6 +39,9 @@ public class StreamsLiveResponse {
 
   @JsonProperty("posterUrl")
   private String posterUrl;
+
+  @JsonProperty("adConfig")
+  private StreamsAdConfigResponse adConfig;
 
   /**
    * The identifier of the stream
@@ -114,6 +118,24 @@ public class StreamsLiveResponse {
   }
 
 
+  /**
+   * Get adConfig
+   * @return adConfig
+   */
+  public StreamsAdConfigResponse getAdConfig() {
+    return adConfig;
+  }
+
+  /**
+   * Set adConfig
+   *
+   * @param adConfig
+   */
+  public void setAdConfig(StreamsAdConfigResponse adConfig) {
+    this.adConfig = adConfig;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -130,12 +152,13 @@ public class StreamsLiveResponse {
         Objects.equals(this.createdAt, streamsLiveResponse.createdAt) &&
         Objects.equals(this.lifeCycle, streamsLiveResponse.lifeCycle) &&
         Objects.equals(this.config, streamsLiveResponse.config) &&
-        Objects.equals(this.posterUrl, streamsLiveResponse.posterUrl);
+        Objects.equals(this.posterUrl, streamsLiveResponse.posterUrl) &&
+        Objects.equals(this.adConfig, streamsLiveResponse.adConfig);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, streamKey, title, description, createdAt, lifeCycle, config, posterUrl);
+    return Objects.hash(id, streamKey, title, description, createdAt, lifeCycle, config, posterUrl, adConfig);
   }
 
   @Override
@@ -151,6 +174,7 @@ public class StreamsLiveResponse {
     sb.append("    lifeCycle: ").append(toIndentedString(lifeCycle)).append("\n");
     sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("    posterUrl: ").append(toIndentedString(posterUrl)).append("\n");
+    sb.append("    adConfig: ").append(toIndentedString(adConfig)).append("\n");
     sb.append("}");
     return sb.toString();
   }

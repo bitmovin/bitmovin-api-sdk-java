@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.ProgramDateTimeSettings;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -23,6 +24,9 @@ public class LiveHlsManifest {
 
   @JsonProperty("insertProgramDateTime")
   private Boolean insertProgramDateTime;
+
+  @JsonProperty("programDateTimeSettings")
+  private ProgramDateTimeSettings programDateTimeSettings;
 
 
   /**
@@ -101,6 +105,25 @@ public class LiveHlsManifest {
   }
 
 
+  /**
+   * Configuration for the EXT-X-PROGRAM-DATETIME tag
+   * @return programDateTimeSettings
+   */
+  public ProgramDateTimeSettings getProgramDateTimeSettings() {
+    return programDateTimeSettings;
+  }
+
+  /**
+   * Configuration for the EXT-X-PROGRAM-DATETIME tag
+   *
+   * @param programDateTimeSettings
+   *        Configuration for the EXT-X-PROGRAM-DATETIME tag
+   */
+  public void setProgramDateTimeSettings(ProgramDateTimeSettings programDateTimeSettings) {
+    this.programDateTimeSettings = programDateTimeSettings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -113,12 +136,13 @@ public class LiveHlsManifest {
     return Objects.equals(this.manifestId, liveHlsManifest.manifestId) &&
         Objects.equals(this.timeshift, liveHlsManifest.timeshift) &&
         Objects.equals(this.liveEdgeOffset, liveHlsManifest.liveEdgeOffset) &&
-        Objects.equals(this.insertProgramDateTime, liveHlsManifest.insertProgramDateTime);
+        Objects.equals(this.insertProgramDateTime, liveHlsManifest.insertProgramDateTime) &&
+        Objects.equals(this.programDateTimeSettings, liveHlsManifest.programDateTimeSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(manifestId, timeshift, liveEdgeOffset, insertProgramDateTime);
+    return Objects.hash(manifestId, timeshift, liveEdgeOffset, insertProgramDateTime, programDateTimeSettings);
   }
 
   @Override
@@ -130,6 +154,7 @@ public class LiveHlsManifest {
     sb.append("    timeshift: ").append(toIndentedString(timeshift)).append("\n");
     sb.append("    liveEdgeOffset: ").append(toIndentedString(liveEdgeOffset)).append("\n");
     sb.append("    insertProgramDateTime: ").append(toIndentedString(insertProgramDateTime)).append("\n");
+    sb.append("    programDateTimeSettings: ").append(toIndentedString(programDateTimeSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.StreamsAdConfigResponse;
 import com.bitmovin.api.sdk.model.StreamsConfigResponse;
 import com.bitmovin.api.sdk.model.StreamsVideoEncodingTask;
 import com.bitmovin.api.sdk.model.StreamsVideoStatus;
@@ -45,6 +46,9 @@ public class StreamsVideoResponse {
 
   @JsonProperty("posterUrl")
   private String posterUrl;
+
+  @JsonProperty("adConfig")
+  private StreamsAdConfigResponse adConfig;
 
   /**
    * The identifier of the stream
@@ -129,6 +133,24 @@ public class StreamsVideoResponse {
   }
 
 
+  /**
+   * Get adConfig
+   * @return adConfig
+   */
+  public StreamsAdConfigResponse getAdConfig() {
+    return adConfig;
+  }
+
+  /**
+   * Set adConfig
+   *
+   * @param adConfig
+   */
+  public void setAdConfig(StreamsAdConfigResponse adConfig) {
+    this.adConfig = adConfig;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -146,12 +168,13 @@ public class StreamsVideoResponse {
         Objects.equals(this.status, streamsVideoResponse.status) &&
         Objects.equals(this.config, streamsVideoResponse.config) &&
         Objects.equals(this.encodingTasks, streamsVideoResponse.encodingTasks) &&
-        Objects.equals(this.posterUrl, streamsVideoResponse.posterUrl);
+        Objects.equals(this.posterUrl, streamsVideoResponse.posterUrl) &&
+        Objects.equals(this.adConfig, streamsVideoResponse.adConfig);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, assetUrl, title, description, createdAt, status, config, encodingTasks, posterUrl);
+    return Objects.hash(id, assetUrl, title, description, createdAt, status, config, encodingTasks, posterUrl, adConfig);
   }
 
   @Override
@@ -168,6 +191,7 @@ public class StreamsVideoResponse {
     sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("    encodingTasks: ").append(toIndentedString(encodingTasks)).append("\n");
     sb.append("    posterUrl: ").append(toIndentedString(posterUrl)).append("\n");
+    sb.append("    adConfig: ").append(toIndentedString(adConfig)).append("\n");
     sb.append("}");
     return sb.toString();
   }

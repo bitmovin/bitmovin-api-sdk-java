@@ -24,6 +24,9 @@ public class StreamsLiveUpdateRequest {
   @JsonProperty("posterUrl")
   private String posterUrl;
 
+  @JsonProperty("adConfigId")
+  private String adConfigId;
+
 
   /**
    * The new title of the stream
@@ -101,6 +104,25 @@ public class StreamsLiveUpdateRequest {
   }
 
 
+  /**
+   * Id of the advertisement config to use
+   * @return adConfigId
+   */
+  public String getAdConfigId() {
+    return adConfigId;
+  }
+
+  /**
+   * Id of the advertisement config to use
+   *
+   * @param adConfigId
+   *        Id of the advertisement config to use
+   */
+  public void setAdConfigId(String adConfigId) {
+    this.adConfigId = adConfigId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -113,12 +135,13 @@ public class StreamsLiveUpdateRequest {
     return Objects.equals(this.title, streamsLiveUpdateRequest.title) &&
         Objects.equals(this.description, streamsLiveUpdateRequest.description) &&
         Objects.equals(this.configId, streamsLiveUpdateRequest.configId) &&
-        Objects.equals(this.posterUrl, streamsLiveUpdateRequest.posterUrl);
+        Objects.equals(this.posterUrl, streamsLiveUpdateRequest.posterUrl) &&
+        Objects.equals(this.adConfigId, streamsLiveUpdateRequest.adConfigId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, description, configId, posterUrl);
+    return Objects.hash(title, description, configId, posterUrl, adConfigId);
   }
 
   @Override
@@ -130,6 +153,7 @@ public class StreamsLiveUpdateRequest {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    configId: ").append(toIndentedString(configId)).append("\n");
     sb.append("    posterUrl: ").append(toIndentedString(posterUrl)).append("\n");
+    sb.append("    adConfigId: ").append(toIndentedString(adConfigId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
