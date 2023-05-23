@@ -110,10 +110,10 @@ public class LiveApi {
      * 
      * @param streamId Id of the stream. (required)
      * @param streamsLiveUpdateRequest Stream fields to update. (required)
-     * @return StreamsLiveUpdateRequest
+     * @return StreamsLiveResponse
      * @throws BitmovinException if fails to make API call
      */
-    public StreamsLiveUpdateRequest patchStreamsLive(String streamId, StreamsLiveUpdateRequest streamsLiveUpdateRequest) throws BitmovinException {
+    public StreamsLiveResponse patchStreamsLive(String streamId, StreamsLiveUpdateRequest streamsLiveUpdateRequest) throws BitmovinException {
         try {
             return this.apiClient.patchStreamsLive(streamId, streamsLiveUpdateRequest).getData().getResult();
         } catch (Exception ex) {
@@ -126,10 +126,10 @@ public class LiveApi {
      * 
      * @param streamId Id of the stream. (required)
      * @param streamsLiveUpdateRequest The updated stream config object. (required)
-     * @return StreamsLiveUpdateRequest
+     * @return StreamsLiveResponse
      * @throws BitmovinException if fails to make API call
      */
-    public StreamsLiveUpdateRequest update(String streamId, StreamsLiveUpdateRequest streamsLiveUpdateRequest) throws BitmovinException {
+    public StreamsLiveResponse update(String streamId, StreamsLiveUpdateRequest streamsLiveUpdateRequest) throws BitmovinException {
         try {
             return this.apiClient.update(streamId, streamsLiveUpdateRequest).getData().getResult();
         } catch (Exception ex) {
@@ -149,9 +149,9 @@ public class LiveApi {
         ResponseEnvelope<PaginationResponse<StreamsLiveResponse>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     
         @RequestLine("PATCH /streams/live/{stream_id}")
-        ResponseEnvelope<StreamsLiveUpdateRequest> patchStreamsLive(@Param(value = "stream_id") String streamId, StreamsLiveUpdateRequest streamsLiveUpdateRequest) throws BitmovinException;
+        ResponseEnvelope<StreamsLiveResponse> patchStreamsLive(@Param(value = "stream_id") String streamId, StreamsLiveUpdateRequest streamsLiveUpdateRequest) throws BitmovinException;
     
         @RequestLine("PUT /streams/live/{stream_id}")
-        ResponseEnvelope<StreamsLiveUpdateRequest> update(@Param(value = "stream_id") String streamId, StreamsLiveUpdateRequest streamsLiveUpdateRequest) throws BitmovinException;
+        ResponseEnvelope<StreamsLiveResponse> update(@Param(value = "stream_id") String streamId, StreamsLiveUpdateRequest streamsLiveUpdateRequest) throws BitmovinException;
     }
 }

@@ -1,4 +1,4 @@
-package com.bitmovin.api.sdk.encoding.encodings;
+package com.bitmovin.api.sdk.encoding.history.encodings;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -26,17 +26,6 @@ public class EncodingListQueryParams extends HashMap<String, Object> {
     */
     public void setLimit(Integer limit) {
         this.put("limit", limit);
-    }
-
-    public Boolean getIncludeTotalCount() {
-        return (Boolean) this.get("includeTotalCount");
-    }
-
-    /**
-    * @param includeTotalCount A boolean indicating whether the total count should be returned as well. Default is true (optional)
-    */
-    public void setIncludeTotalCount(Boolean includeTotalCount) {
-        this.put("includeTotalCount", includeTotalCount);
     }
 
     public String getSort() {
