@@ -28,6 +28,17 @@ public class EncodingListQueryParams extends HashMap<String, Object> {
         this.put("limit", limit);
     }
 
+    public Boolean getIncludeTotalCount() {
+        return (Boolean) this.get("includeTotalCount");
+    }
+
+    /**
+    * @param includeTotalCount A boolean indicating whether the total count should be returned as well. Default is false (optional)
+    */
+    public void setIncludeTotalCount(Boolean includeTotalCount) {
+        this.put("includeTotalCount", includeTotalCount);
+    }
+
     public String getSort() {
         return (String) this.get("sort");
     }

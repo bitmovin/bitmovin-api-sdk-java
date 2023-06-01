@@ -5,6 +5,7 @@ import java.util.Arrays;
 import com.bitmovin.api.sdk.model.EncodingTemplate;
 import com.bitmovin.api.sdk.model.SimpleEncodingVodJobErrors;
 import com.bitmovin.api.sdk.model.SimpleEncodingVodJobInput;
+import com.bitmovin.api.sdk.model.SimpleEncodingVodJobOptions;
 import com.bitmovin.api.sdk.model.SimpleEncodingVodJobOutput;
 import com.bitmovin.api.sdk.model.SimpleEncodingVodJobStatus;
 import java.util.ArrayList;
@@ -39,6 +40,9 @@ public class SimpleEncodingVodJobResponse {
   @JsonProperty("outputs")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<SimpleEncodingVodJobOutput> outputs = new ArrayList<SimpleEncodingVodJobOutput>();
+
+  @JsonProperty("options")
+  private SimpleEncodingVodJobOptions options;
 
   @JsonProperty("errors")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -143,6 +147,25 @@ public class SimpleEncodingVodJobResponse {
   }
 
 
+  /**
+   * Options to customize the Simple Encoding Job
+   * @return options
+   */
+  public SimpleEncodingVodJobOptions getOptions() {
+    return options;
+  }
+
+  /**
+   * Options to customize the Simple Encoding Job
+   *
+   * @param options
+   *        Options to customize the Simple Encoding Job
+   */
+  public void setOptions(SimpleEncodingVodJobOptions options) {
+    this.options = options;
+  }
+
+
   public SimpleEncodingVodJobResponse addErrorsItem(SimpleEncodingVodJobErrors errorsItem) {
     this.errors.add(errorsItem);
     return this;
@@ -239,6 +262,7 @@ public class SimpleEncodingVodJobResponse {
         Objects.equals(this.encodingId, simpleEncodingVodJobResponse.encodingId) &&
         Objects.equals(this.inputs, simpleEncodingVodJobResponse.inputs) &&
         Objects.equals(this.outputs, simpleEncodingVodJobResponse.outputs) &&
+        Objects.equals(this.options, simpleEncodingVodJobResponse.options) &&
         Objects.equals(this.errors, simpleEncodingVodJobResponse.errors) &&
         Objects.equals(this.createdAt, simpleEncodingVodJobResponse.createdAt) &&
         Objects.equals(this.modifiedAt, simpleEncodingVodJobResponse.modifiedAt) &&
@@ -247,7 +271,7 @@ public class SimpleEncodingVodJobResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, status, encodingTemplate, encodingId, inputs, outputs, errors, createdAt, modifiedAt, name);
+    return Objects.hash(id, status, encodingTemplate, encodingId, inputs, outputs, options, errors, createdAt, modifiedAt, name);
   }
 
   @Override
@@ -261,6 +285,7 @@ public class SimpleEncodingVodJobResponse {
     sb.append("    encodingId: ").append(toIndentedString(encodingId)).append("\n");
     sb.append("    inputs: ").append(toIndentedString(inputs)).append("\n");
     sb.append("    outputs: ").append(toIndentedString(outputs)).append("\n");
+    sb.append("    options: ").append(toIndentedString(options)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    modifiedAt: ").append(toIndentedString(modifiedAt)).append("\n");

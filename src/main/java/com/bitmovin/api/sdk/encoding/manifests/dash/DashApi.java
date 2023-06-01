@@ -50,9 +50,9 @@ public class DashApi {
     }
 
     /**
-     * Create DASH Manifest
+     * Create Custom DASH Manifest
      * 
-     * @param dashManifest The DASH manifest to be created (required)
+     * @param dashManifest A Custom DASH Manifest gives you full control over its contents. Add Periods, Adaptation Sets, Representations, Content Protections or Custom XML Elements via the respective endpoints. If you need a simpler solution, create a Default Manifest instead. See TODO: link (required)
      * @return DashManifest
      * @throws BitmovinException if fails to make API call
      */
@@ -67,7 +67,7 @@ public class DashApi {
     /**
      * Delete DASH Manifest
      * 
-     * @param manifestId UUID of the DASH manifest to be deleted (required)
+     * @param manifestId UUID of the DASH Manifest to be deleted (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */
@@ -82,13 +82,28 @@ public class DashApi {
     /**
      * DASH Manifest Details
      * 
-     * @param manifestId UUID of the dash manifest (required)
+     * @param manifestId UUID of the DASH Manifest (required)
      * @return DashManifest
      * @throws BitmovinException if fails to make API call
      */
     public DashManifest get(String manifestId) throws BitmovinException {
         try {
             return this.apiClient.get(manifestId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
+    /**
+     * Manifest Start Details
+     * 
+     * @param manifestId Id of the manifest (required)
+     * @return StartManifestRequest
+     * @throws BitmovinException if fails to make API call
+     */
+    public StartManifestRequest getStartRequest(String manifestId) throws BitmovinException {
+        try {
+            return this.apiClient.getStartRequest(manifestId).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -126,7 +141,7 @@ public class DashApi {
     /**
      * Start DASH Manifest Creation
      * 
-     * @param manifestId Id of the DASH manifest. (required)
+     * @param manifestId Id of the DASH Manifest. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */
@@ -141,7 +156,7 @@ public class DashApi {
     /**
      * Start DASH Manifest Creation
      * 
-     * @param manifestId Id of the DASH manifest. (required)
+     * @param manifestId Id of the DASH Manifest. (required)
      * @param startManifestRequest Manifest Startup Options (optional)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
@@ -157,7 +172,7 @@ public class DashApi {
     /**
      * DASH Manifest Creation Status
      * 
-     * @param manifestId Id of the DASH manifest. (required)
+     * @param manifestId Id of the DASH Manifest. (required)
      * @return Task
      * @throws BitmovinException if fails to make API call
      */
@@ -172,7 +187,7 @@ public class DashApi {
     /**
      * Stop DASH Manifest Creation
      * 
-     * @param manifestId Id of the DASH manifest. (required)
+     * @param manifestId Id of the DASH Manifest. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */
@@ -194,6 +209,9 @@ public class DashApi {
     
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}")
         ResponseEnvelope<DashManifest> get(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
+    
+        @RequestLine("GET /encoding/manifests/dash/{manifest_id}/start")
+        ResponseEnvelope<StartManifestRequest> getStartRequest(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
     
         @RequestLine("GET /encoding/manifests/dash")
         ResponseEnvelope<PaginationResponse<DashManifest>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;

@@ -131,7 +131,7 @@ public class SmoothStreamingRepresentation extends BitmovinResource {
 
 
   /**
-   * Specify the priority of this representation. Representations with higher priority will be listed first in the manifest.
+   * Specifies the priority of this representation. In the manifest, representations will appear ordered by descending priority values.
    * @return priority
    */
   public Integer getPriority() {
@@ -139,10 +139,10 @@ public class SmoothStreamingRepresentation extends BitmovinResource {
   }
 
   /**
-   * Specify the priority of this representation. Representations with higher priority will be listed first in the manifest.
+   * Specifies the priority of this representation. In the manifest, representations will appear ordered by descending priority values.
    *
    * @param priority
-   *        Specify the priority of this representation. Representations with higher priority will be listed first in the manifest.
+   *        Specifies the priority of this representation. In the manifest, representations will appear ordered by descending priority values.
    */
   public void setPriority(Integer priority) {
     this.priority = priority;

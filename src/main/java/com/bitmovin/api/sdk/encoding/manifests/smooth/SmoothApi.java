@@ -55,7 +55,7 @@ public class SmoothApi {
     /**
      * Create Smooth Streaming Manifest
      * 
-     * @param smoothStreamingManifest The Smooth Streaming Manifest to be created (required)
+     * @param smoothStreamingManifest A Custom Smooth Streaming Manifest gives you full control over its contents. Add Representations and Content Protections via the respective endpoints. If you need a simpler solution, create a Default Manifest instead. See TODO: link (required)
      * @return SmoothStreamingManifest
      * @throws BitmovinException if fails to make API call
      */
@@ -70,7 +70,7 @@ public class SmoothApi {
     /**
      * Delete Smooth Streaming Manifest
      * 
-     * @param manifestId Id of the Smooth Streaming manifest. (required)
+     * @param manifestId Id of the Smooth Streaming Manifest. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */
@@ -85,13 +85,28 @@ public class SmoothApi {
     /**
      * Smooth Streaming Manifest Details
      * 
-     * @param manifestId Id of the Smooth Streaming manifest. (required)
+     * @param manifestId Id of the Smooth Streaming Manifest. (required)
      * @return SmoothStreamingManifest
      * @throws BitmovinException if fails to make API call
      */
     public SmoothStreamingManifest get(String manifestId) throws BitmovinException {
         try {
             return this.apiClient.get(manifestId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
+    /**
+     * Manifest Start Details
+     * 
+     * @param manifestId Id of the manifest (required)
+     * @return StartManifestRequest
+     * @throws BitmovinException if fails to make API call
+     */
+    public StartManifestRequest getStartRequest(String manifestId) throws BitmovinException {
+        try {
+            return this.apiClient.getStartRequest(manifestId).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -129,7 +144,7 @@ public class SmoothApi {
     /**
      * Start Smooth Streaming Manifest Creation
      * 
-     * @param manifestId Id of the Smooth Streaming manifest. (required)
+     * @param manifestId Id of the Smooth Streaming Manifest. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */
@@ -144,7 +159,7 @@ public class SmoothApi {
     /**
      * Start Smooth Streaming Manifest Creation
      * 
-     * @param manifestId Id of the Smooth Streaming manifest. (required)
+     * @param manifestId Id of the Smooth Streaming Manifest. (required)
      * @param startManifestRequest Manifest Startup Options (optional)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
@@ -160,7 +175,7 @@ public class SmoothApi {
     /**
      * Smooth Streaming Manifest Creation Status
      * 
-     * @param manifestId Id of the Smooth Streaming manifest. (required)
+     * @param manifestId Id of the Smooth Streaming Manifest. (required)
      * @return Task
      * @throws BitmovinException if fails to make API call
      */
@@ -175,7 +190,7 @@ public class SmoothApi {
     /**
      * Stop Smooth Streaming Manifest Creation
      * 
-     * @param manifestId Id of the Smooth Streaming manifest. (required)
+     * @param manifestId Id of the Smooth Streaming Manifest. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */
@@ -197,6 +212,9 @@ public class SmoothApi {
     
         @RequestLine("GET /encoding/manifests/smooth/{manifest_id}")
         ResponseEnvelope<SmoothStreamingManifest> get(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
+    
+        @RequestLine("GET /encoding/manifests/smooth/{manifest_id}/start")
+        ResponseEnvelope<StartManifestRequest> getStartRequest(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
     
         @RequestLine("GET /encoding/manifests/smooth")
         ResponseEnvelope<PaginationResponse<SmoothStreamingManifest>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;

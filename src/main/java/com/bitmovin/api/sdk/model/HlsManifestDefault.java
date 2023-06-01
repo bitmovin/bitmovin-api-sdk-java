@@ -50,7 +50,7 @@ public class HlsManifestDefault extends HlsManifest {
 
 
   /**
-   * The version of the default manifest generator
+   * Specifies the algorithm that determines which output of the given encoding is included into the manifest. Note that this is not related to the \&quot;manifestGenerator\&quot; version of the \&quot;Start\&quot; request.
    * @return version
    */
   public HlsManifestDefaultVersion getVersion() {
@@ -58,10 +58,10 @@ public class HlsManifestDefault extends HlsManifest {
   }
 
   /**
-   * The version of the default manifest generator
+   * Specifies the algorithm that determines which output of the given encoding is included into the manifest. Note that this is not related to the \&quot;manifestGenerator\&quot; version of the \&quot;Start\&quot; request.
    *
    * @param version
-   *        The version of the default manifest generator
+   *        Specifies the algorithm that determines which output of the given encoding is included into the manifest. Note that this is not related to the \&quot;manifestGenerator\&quot; version of the \&quot;Start\&quot; request.
    */
   public void setVersion(HlsManifestDefaultVersion version) {
     this.version = version;

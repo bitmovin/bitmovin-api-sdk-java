@@ -53,9 +53,9 @@ public class HlsApi {
     }
 
     /**
-     * Create HLS Manifest
+     * Create Custom HLS Manifest
      * 
-     * @param hlsManifest The HLS Manifest to be created (required)
+     * @param hlsManifest A Custom HLS Manifest gives you full control over its contents. Add Variant Streams and Media elements via the respective endpoints. If you need a simpler solution, create a Default Manifest instead. See TODO: link (required)
      * @return HlsManifest
      * @throws BitmovinException if fails to make API call
      */
@@ -70,7 +70,7 @@ public class HlsApi {
     /**
      * Delete HLS Manifest
      * 
-     * @param manifestId Id of the hls manifest. (required)
+     * @param manifestId Id of the HLS Manifest. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */
@@ -85,13 +85,28 @@ public class HlsApi {
     /**
      * HLS Manifest Details
      * 
-     * @param manifestId Id of the hls manifest. (required)
+     * @param manifestId Id of the HLS Manifest. (required)
      * @return HlsManifest
      * @throws BitmovinException if fails to make API call
      */
     public HlsManifest get(String manifestId) throws BitmovinException {
         try {
             return this.apiClient.get(manifestId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
+    /**
+     * Manifest Start Details
+     * 
+     * @param manifestId ID of the manifest (required)
+     * @return StartManifestRequest
+     * @throws BitmovinException if fails to make API call
+     */
+    public StartManifestRequest getStartRequest(String manifestId) throws BitmovinException {
+        try {
+            return this.apiClient.getStartRequest(manifestId).getData().getResult();
         } catch (Exception ex) {
             throw buildBitmovinException(ex);
         }
@@ -129,7 +144,7 @@ public class HlsApi {
     /**
      * Start HLS Manifest Creation
      * 
-     * @param manifestId Id of the HLS manifest. (required)
+     * @param manifestId Id of the HLS Manifest. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */
@@ -144,7 +159,7 @@ public class HlsApi {
     /**
      * Start HLS Manifest Creation
      * 
-     * @param manifestId Id of the HLS manifest. (required)
+     * @param manifestId Id of the HLS Manifest. (required)
      * @param startManifestRequest Manifest Startup Options (optional)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
@@ -160,7 +175,7 @@ public class HlsApi {
     /**
      * HLS Manifest Creation Status
      * 
-     * @param manifestId Id of the HLS manifest. (required)
+     * @param manifestId Id of the HLS Manifest. (required)
      * @return Task
      * @throws BitmovinException if fails to make API call
      */
@@ -175,7 +190,7 @@ public class HlsApi {
     /**
      * Stop HLS Manifest Creation
      * 
-     * @param manifestId Id of the HLS manifest. (required)
+     * @param manifestId Id of the HLS Manifest. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call
      */
@@ -197,6 +212,9 @@ public class HlsApi {
     
         @RequestLine("GET /encoding/manifests/hls/{manifest_id}")
         ResponseEnvelope<HlsManifest> get(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
+    
+        @RequestLine("GET /encoding/manifests/hls/{manifest_id}/start")
+        ResponseEnvelope<StartManifestRequest> getStartRequest(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
     
         @RequestLine("GET /encoding/manifests/hls")
         ResponseEnvelope<PaginationResponse<HlsManifest>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;

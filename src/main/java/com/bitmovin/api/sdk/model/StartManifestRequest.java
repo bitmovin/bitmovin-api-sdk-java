@@ -18,7 +18,7 @@ public class StartManifestRequest {
 
 
   /**
-   * Version of the manifest generation engine to be used. The &#x60;V2&#x60; option is currently only supported for manifests including resources from a single encoding and is only valid in combination with encoder versions &gt;&#x3D;  &#x60;2.108.0&#x60;.
+   * Major version of the manifest generator to be used. &#x60;V2&#x60; is the recommended option and requires the following minimum encoder versions: 2.121.0 for DASH, 2.111.0 for HLS, 2.108.0 for SMOOTH. The default value depends on the sign-up date of your organization. 
    * @return manifestGenerator
    */
   public ManifestGenerator getManifestGenerator() {
@@ -26,10 +26,10 @@ public class StartManifestRequest {
   }
 
   /**
-   * Version of the manifest generation engine to be used. The &#x60;V2&#x60; option is currently only supported for manifests including resources from a single encoding and is only valid in combination with encoder versions &gt;&#x3D;  &#x60;2.108.0&#x60;.
+   * Major version of the manifest generator to be used. &#x60;V2&#x60; is the recommended option and requires the following minimum encoder versions: 2.121.0 for DASH, 2.111.0 for HLS, 2.108.0 for SMOOTH. The default value depends on the sign-up date of your organization. 
    *
    * @param manifestGenerator
-   *        Version of the manifest generation engine to be used. The &#x60;V2&#x60; option is currently only supported for manifests including resources from a single encoding and is only valid in combination with encoder versions &gt;&#x3D;  &#x60;2.108.0&#x60;.
+   *        Major version of the manifest generator to be used. &#x60;V2&#x60; is the recommended option and requires the following minimum encoder versions: 2.121.0 for DASH, 2.111.0 for HLS, 2.108.0 for SMOOTH. The default value depends on the sign-up date of your organization. 
    */
   public void setManifestGenerator(ManifestGenerator manifestGenerator) {
     this.manifestGenerator = manifestGenerator;

@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * V2 of the default dash manifest is an experimental feature and might be subject to change in the future. 
+ * DashManifestDefault
  */
 
 public class DashManifestDefault extends DashManifest {
@@ -38,7 +38,7 @@ public class DashManifestDefault extends DashManifest {
 
 
   /**
-   * The id of the encoding to create a default manifest from. Required: encodingId or periods
+   * The id of the encoding to create a default manifest from. Either \&quot;encodingId\&quot; or \&quot;periods\&quot; is required.
    * @return encodingId
    */
   public String getEncodingId() {
@@ -46,10 +46,10 @@ public class DashManifestDefault extends DashManifest {
   }
 
   /**
-   * The id of the encoding to create a default manifest from. Required: encodingId or periods
+   * The id of the encoding to create a default manifest from. Either \&quot;encodingId\&quot; or \&quot;periods\&quot; is required.
    *
    * @param encodingId
-   *        The id of the encoding to create a default manifest from. Required: encodingId or periods
+   *        The id of the encoding to create a default manifest from. Either \&quot;encodingId\&quot; or \&quot;periods\&quot; is required.
    */
   public void setEncodingId(String encodingId) {
     this.encodingId = encodingId;
@@ -57,7 +57,7 @@ public class DashManifestDefault extends DashManifest {
 
 
   /**
-   * The version of the default manifest generator
+   * Specifies the algorithm that determines which output of the given encoding is included into the manifest. Note that this is not related to the \&quot;manifestGenerator\&quot; version of the \&quot;Start\&quot; request.
    * @return version
    */
   public DashManifestDefaultVersion getVersion() {
@@ -65,10 +65,10 @@ public class DashManifestDefault extends DashManifest {
   }
 
   /**
-   * The version of the default manifest generator
+   * Specifies the algorithm that determines which output of the given encoding is included into the manifest. Note that this is not related to the \&quot;manifestGenerator\&quot; version of the \&quot;Start\&quot; request.
    *
    * @param version
-   *        The version of the default manifest generator
+   *        Specifies the algorithm that determines which output of the given encoding is included into the manifest. Note that this is not related to the \&quot;manifestGenerator\&quot; version of the \&quot;Start\&quot; request.
    */
   public void setVersion(DashManifestDefaultVersion version) {
     this.version = version;
@@ -81,7 +81,7 @@ public class DashManifestDefault extends DashManifest {
   }
 
   /**
-   * Adds a period for every item. Required: encodingId or periods
+   * Adds a period for every item. Either \&quot;periods\&quot; or \&quot;encodingId\&quot; is required.
    * @return periods
    */
   public List<DefaultDashManifestPeriod> getPeriods() {
@@ -89,10 +89,10 @@ public class DashManifestDefault extends DashManifest {
   }
 
   /**
-   * Adds a period for every item. Required: encodingId or periods
+   * Adds a period for every item. Either \&quot;periods\&quot; or \&quot;encodingId\&quot; is required.
    *
    * @param periods
-   *        Adds a period for every item. Required: encodingId or periods
+   *        Adds a period for every item. Either \&quot;periods\&quot; or \&quot;encodingId\&quot; is required.
    */
   public void setPeriods(List<DefaultDashManifestPeriod> periods) {
     this.periods = periods;

@@ -41,9 +41,9 @@ public class DefaultApi {
     }
 
     /**
-     * Create Smooth Streaming Manifest Default
+     * Create Default Smooth Streaming Manifest
      * 
-     * @param smoothManifestDefault The Smooth Streaming Default Manifest to be created (required)
+     * @param smoothManifestDefault A Default Manifest is the easiest way to create a manifest file. Its contents will be configured automatically, depending on what output your encoding creates (muxings, thumbnails, sprites, subtitles, DRM information). If you need more control, create a Custom Manifest instead. See TODO: link (required)
      * @return SmoothManifestDefault
      * @throws BitmovinException if fails to make API call
      */
