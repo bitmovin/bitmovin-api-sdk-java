@@ -18,7 +18,7 @@ public class StartManifestRequest {
 
 
   /**
-   * Major version of the manifest generator to be used. &#x60;V2&#x60; is the recommended option and requires the following minimum encoder versions: 2.121.0 for DASH, 2.111.0 for HLS, 2.108.0 for SMOOTH. The default value depends on the sign-up date of your organization. 
+   * Major version of the manifest generator to be used. &#x60;V2&#x60; is the recommended option and requires the following minimum encoder versions: 2.121.0 for DASH, 2.111.0 for HLS, 2.108.0 for SMOOTH. The default value depends on the sign-up date of your organization. See [documentation](https://developer.bitmovin.com/encoding/docs/manifest-generator-v2) page for a detailed explanation. 
    * @return manifestGenerator
    */
   public ManifestGenerator getManifestGenerator() {
@@ -26,10 +26,10 @@ public class StartManifestRequest {
   }
 
   /**
-   * Major version of the manifest generator to be used. &#x60;V2&#x60; is the recommended option and requires the following minimum encoder versions: 2.121.0 for DASH, 2.111.0 for HLS, 2.108.0 for SMOOTH. The default value depends on the sign-up date of your organization. 
+   * Major version of the manifest generator to be used. &#x60;V2&#x60; is the recommended option and requires the following minimum encoder versions: 2.121.0 for DASH, 2.111.0 for HLS, 2.108.0 for SMOOTH. The default value depends on the sign-up date of your organization. See [documentation](https://developer.bitmovin.com/encoding/docs/manifest-generator-v2) page for a detailed explanation. 
    *
    * @param manifestGenerator
-   *        Major version of the manifest generator to be used. &#x60;V2&#x60; is the recommended option and requires the following minimum encoder versions: 2.121.0 for DASH, 2.111.0 for HLS, 2.108.0 for SMOOTH. The default value depends on the sign-up date of your organization. 
+   *        Major version of the manifest generator to be used. &#x60;V2&#x60; is the recommended option and requires the following minimum encoder versions: 2.121.0 for DASH, 2.111.0 for HLS, 2.108.0 for SMOOTH. The default value depends on the sign-up date of your organization. See [documentation](https://developer.bitmovin.com/encoding/docs/manifest-generator-v2) page for a detailed explanation. 
    */
   public void setManifestGenerator(ManifestGenerator manifestGenerator) {
     this.manifestGenerator = manifestGenerator;

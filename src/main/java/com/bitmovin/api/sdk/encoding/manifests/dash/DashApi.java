@@ -52,7 +52,7 @@ public class DashApi {
     /**
      * Create Custom DASH Manifest
      * 
-     * @param dashManifest A Custom DASH Manifest gives you full control over its contents. Add Periods, Adaptation Sets, Representations, Content Protections or Custom XML Elements via the respective endpoints. If you need a simpler solution, create a Default Manifest instead. See TODO: link (required)
+     * @param dashManifest A Custom DASH Manifest gives you full control over its contents. Add Periods, Adaptation Sets, Representations, Content Protections or Custom XML Elements via the respective endpoints. If you need a simpler solution, create a Default Manifest resource instead. See [documentation](https://developer.bitmovin.com/encoding/docs/default-vs-custom-manifest) page for a comparison (required)
      * @return DashManifest
      * @throws BitmovinException if fails to make API call
      */
