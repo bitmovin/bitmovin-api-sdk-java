@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.StreamsConfigPlayerStyle;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -19,7 +20,7 @@ public class StreamsConfigResponse {
   private String orgId;
 
   @JsonProperty("playerStyle")
-  private Object playerStyle;
+  private StreamsConfigPlayerStyle playerStyle;
 
   @JsonProperty("watermarkUrl")
   private String watermarkUrl;
@@ -56,20 +57,19 @@ public class StreamsConfigResponse {
 
 
   /**
-   * Player style config
+   * Get playerStyle
    * @return playerStyle
    */
-  public Object getPlayerStyle() {
+  public StreamsConfigPlayerStyle getPlayerStyle() {
     return playerStyle;
   }
 
   /**
-   * Player style config
+   * Set playerStyle
    *
    * @param playerStyle
-   *        Player style config
    */
-  public void setPlayerStyle(Object playerStyle) {
+  public void setPlayerStyle(StreamsConfigPlayerStyle playerStyle) {
     this.playerStyle = playerStyle;
   }
 

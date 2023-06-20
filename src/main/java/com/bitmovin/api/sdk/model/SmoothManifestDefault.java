@@ -28,7 +28,7 @@ public class SmoothManifestDefault extends SmoothStreamingManifest {
 
 
   /**
-   * The id of the encoding to create a default manifest from. (required)
+   * The id of the encoding to create a default manifest for (required)
    * @return encodingId
    */
   public String getEncodingId() {
@@ -36,10 +36,10 @@ public class SmoothManifestDefault extends SmoothStreamingManifest {
   }
 
   /**
-   * The id of the encoding to create a default manifest from. (required)
+   * The id of the encoding to create a default manifest for (required)
    *
    * @param encodingId
-   *        The id of the encoding to create a default manifest from. (required)
+   *        The id of the encoding to create a default manifest for (required)
    */
   public void setEncodingId(String encodingId) {
     this.encodingId = encodingId;
@@ -47,7 +47,7 @@ public class SmoothManifestDefault extends SmoothStreamingManifest {
 
 
   /**
-   * Specifies the algorithm that determines which output of the given encoding is included into the manifest. Note that this is not related to the \&quot;manifestGenerator\&quot; version of the \&quot;Start\&quot; request.
+   * Currently not in use
    * @return version
    */
   public SmoothManifestDefaultVersion getVersion() {
@@ -55,10 +55,10 @@ public class SmoothManifestDefault extends SmoothStreamingManifest {
   }
 
   /**
-   * Specifies the algorithm that determines which output of the given encoding is included into the manifest. Note that this is not related to the \&quot;manifestGenerator\&quot; version of the \&quot;Start\&quot; request.
+   * Currently not in use
    *
    * @param version
-   *        Specifies the algorithm that determines which output of the given encoding is included into the manifest. Note that this is not related to the \&quot;manifestGenerator\&quot; version of the \&quot;Start\&quot; request.
+   *        Currently not in use
    */
   public void setVersion(SmoothManifestDefaultVersion version) {
     this.version = version;

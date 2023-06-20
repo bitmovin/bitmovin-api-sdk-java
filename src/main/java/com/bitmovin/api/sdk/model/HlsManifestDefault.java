@@ -31,7 +31,7 @@ public class HlsManifestDefault extends HlsManifest {
 
 
   /**
-   * The id of the encoding to create a default manifest from. (required)
+   * The id of the encoding to create a default manifest for (required)
    * @return encodingId
    */
   public String getEncodingId() {
@@ -39,10 +39,10 @@ public class HlsManifestDefault extends HlsManifest {
   }
 
   /**
-   * The id of the encoding to create a default manifest from. (required)
+   * The id of the encoding to create a default manifest for (required)
    *
    * @param encodingId
-   *        The id of the encoding to create a default manifest from. (required)
+   *        The id of the encoding to create a default manifest for (required)
    */
   public void setEncodingId(String encodingId) {
     this.encodingId = encodingId;
@@ -50,7 +50,7 @@ public class HlsManifestDefault extends HlsManifest {
 
 
   /**
-   * Specifies the algorithm that determines which output of the given encoding is included into the manifest. Note that this is not related to the \&quot;manifestGenerator\&quot; version of the \&quot;Start\&quot; request.
+   * Currently not in use
    * @return version
    */
   public HlsManifestDefaultVersion getVersion() {
@@ -58,10 +58,10 @@ public class HlsManifestDefault extends HlsManifest {
   }
 
   /**
-   * Specifies the algorithm that determines which output of the given encoding is included into the manifest. Note that this is not related to the \&quot;manifestGenerator\&quot; version of the \&quot;Start\&quot; request.
+   * Currently not in use
    *
    * @param version
-   *        Specifies the algorithm that determines which output of the given encoding is included into the manifest. Note that this is not related to the \&quot;manifestGenerator\&quot; version of the \&quot;Start\&quot; request.
+   *        Currently not in use
    */
   public void setVersion(HlsManifestDefaultVersion version) {
     this.version = version;

@@ -142,7 +142,7 @@ public class HlsApi {
     }
 
     /**
-     * Start HLS Manifest Creation
+     * Start HLS manifest generation
      * 
      * @param manifestId Id of the HLS Manifest. (required)
      * @return BitmovinResponse
@@ -157,7 +157,7 @@ public class HlsApi {
     }
 
     /**
-     * Start HLS Manifest Creation
+     * Start HLS manifest generation
      * 
      * @param manifestId Id of the HLS Manifest. (required)
      * @param startManifestRequest Manifest Startup Options (optional)
@@ -173,7 +173,7 @@ public class HlsApi {
     }
 
     /**
-     * HLS Manifest Creation Status
+     * HLS manifest generation status
      * 
      * @param manifestId Id of the HLS Manifest. (required)
      * @return Task
@@ -188,7 +188,7 @@ public class HlsApi {
     }
 
     /**
-     * Stop HLS Manifest Creation
+     * Stop HLS manifest generation
      * 
      * @param manifestId Id of the HLS Manifest. (required)
      * @return BitmovinResponse

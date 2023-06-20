@@ -73,7 +73,7 @@ public class StartLiveEncodingRequest {
   }
 
   /**
-   * List of Hls manifests to use for this live encoding
+   * HLS manifests to be generated during the encoding. See [documentation](https://developer.bitmovin.com/encoding/docs/how-to-create-manifests-for-your-encodings#just-in-time-jit)
    * @return hlsManifests
    */
   public List<LiveHlsManifest> getHlsManifests() {
@@ -81,10 +81,10 @@ public class StartLiveEncodingRequest {
   }
 
   /**
-   * List of Hls manifests to use for this live encoding
+   * HLS manifests to be generated during the encoding. See [documentation](https://developer.bitmovin.com/encoding/docs/how-to-create-manifests-for-your-encodings#just-in-time-jit)
    *
    * @param hlsManifests
-   *        List of Hls manifests to use for this live encoding
+   *        HLS manifests to be generated during the encoding. See [documentation](https://developer.bitmovin.com/encoding/docs/how-to-create-manifests-for-your-encodings#just-in-time-jit)
    */
   public void setHlsManifests(List<LiveHlsManifest> hlsManifests) {
     this.hlsManifests = hlsManifests;
@@ -97,7 +97,7 @@ public class StartLiveEncodingRequest {
   }
 
   /**
-   * List of Dash manifests to use for this live encoding
+   * DASH manifests to be generated during the encoding. See [documentation](https://developer.bitmovin.com/encoding/docs/how-to-create-manifests-for-your-encodings#just-in-time-jit)
    * @return dashManifests
    */
   public List<LiveDashManifest> getDashManifests() {
@@ -105,10 +105,10 @@ public class StartLiveEncodingRequest {
   }
 
   /**
-   * List of Dash manifests to use for this live encoding
+   * DASH manifests to be generated during the encoding. See [documentation](https://developer.bitmovin.com/encoding/docs/how-to-create-manifests-for-your-encodings#just-in-time-jit)
    *
    * @param dashManifests
-   *        List of Dash manifests to use for this live encoding
+   *        DASH manifests to be generated during the encoding. See [documentation](https://developer.bitmovin.com/encoding/docs/how-to-create-manifests-for-your-encodings#just-in-time-jit)
    */
   public void setDashManifests(List<LiveDashManifest> dashManifests) {
     this.dashManifests = dashManifests;

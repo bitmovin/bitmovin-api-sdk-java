@@ -164,7 +164,7 @@ public class StartEncodingRequest {
   }
 
   /**
-   * List of preview DASH manifests to be created
+   * DASH manifests to be generated for previewing while the encoding is still running. See [documentation](https://developer.bitmovin.com/encoding/docs/how-to-create-manifests-for-your-encodings#just-in-time-jit)
    * @return previewDashManifests
    */
   public List<ManifestResource> getPreviewDashManifests() {
@@ -172,10 +172,10 @@ public class StartEncodingRequest {
   }
 
   /**
-   * List of preview DASH manifests to be created
+   * DASH manifests to be generated for previewing while the encoding is still running. See [documentation](https://developer.bitmovin.com/encoding/docs/how-to-create-manifests-for-your-encodings#just-in-time-jit)
    *
    * @param previewDashManifests
-   *        List of preview DASH manifests to be created
+   *        DASH manifests to be generated for previewing while the encoding is still running. See [documentation](https://developer.bitmovin.com/encoding/docs/how-to-create-manifests-for-your-encodings#just-in-time-jit)
    */
   public void setPreviewDashManifests(List<ManifestResource> previewDashManifests) {
     this.previewDashManifests = previewDashManifests;
@@ -188,7 +188,7 @@ public class StartEncodingRequest {
   }
 
   /**
-   * List of preview HLS manifests to be created
+   * HLS manifests to be generated for previewing while the encoding is still running. See [documentation](https://developer.bitmovin.com/encoding/docs/how-to-create-manifests-for-your-encodings#just-in-time-jit)
    * @return previewHlsManifests
    */
   public List<ManifestResource> getPreviewHlsManifests() {
@@ -196,10 +196,10 @@ public class StartEncodingRequest {
   }
 
   /**
-   * List of preview HLS manifests to be created
+   * HLS manifests to be generated for previewing while the encoding is still running. See [documentation](https://developer.bitmovin.com/encoding/docs/how-to-create-manifests-for-your-encodings#just-in-time-jit)
    *
    * @param previewHlsManifests
-   *        List of preview HLS manifests to be created
+   *        HLS manifests to be generated for previewing while the encoding is still running. See [documentation](https://developer.bitmovin.com/encoding/docs/how-to-create-manifests-for-your-encodings#just-in-time-jit)
    */
   public void setPreviewHlsManifests(List<ManifestResource> previewHlsManifests) {
     this.previewHlsManifests = previewHlsManifests;
@@ -212,7 +212,7 @@ public class StartEncodingRequest {
   }
 
   /**
-   * List of VoD DASH manifests to be created after encoding finished successfully
+   * DASH manifests to be generated right after encoding (just-in-time). See [documentation](https://developer.bitmovin.com/encoding/docs/how-to-create-manifests-for-your-encodings#just-in-time-jit)
    * @return vodDashManifests
    */
   public List<ManifestResource> getVodDashManifests() {
@@ -220,10 +220,10 @@ public class StartEncodingRequest {
   }
 
   /**
-   * List of VoD DASH manifests to be created after encoding finished successfully
+   * DASH manifests to be generated right after encoding (just-in-time). See [documentation](https://developer.bitmovin.com/encoding/docs/how-to-create-manifests-for-your-encodings#just-in-time-jit)
    *
    * @param vodDashManifests
-   *        List of VoD DASH manifests to be created after encoding finished successfully
+   *        DASH manifests to be generated right after encoding (just-in-time). See [documentation](https://developer.bitmovin.com/encoding/docs/how-to-create-manifests-for-your-encodings#just-in-time-jit)
    */
   public void setVodDashManifests(List<ManifestResource> vodDashManifests) {
     this.vodDashManifests = vodDashManifests;
@@ -236,7 +236,7 @@ public class StartEncodingRequest {
   }
 
   /**
-   * List of VoD HLS manifests to be created after encoding finished successfully
+   * HLS manifests to be generated right after encoding (just-in-time). See [documentation](https://developer.bitmovin.com/encoding/docs/how-to-create-manifests-for-your-encodings#just-in-time-jit)
    * @return vodHlsManifests
    */
   public List<ManifestResource> getVodHlsManifests() {
@@ -244,10 +244,10 @@ public class StartEncodingRequest {
   }
 
   /**
-   * List of VoD HLS manifests to be created after encoding finished successfully
+   * HLS manifests to be generated right after encoding (just-in-time). See [documentation](https://developer.bitmovin.com/encoding/docs/how-to-create-manifests-for-your-encodings#just-in-time-jit)
    *
    * @param vodHlsManifests
-   *        List of VoD HLS manifests to be created after encoding finished successfully
+   *        HLS manifests to be generated right after encoding (just-in-time). See [documentation](https://developer.bitmovin.com/encoding/docs/how-to-create-manifests-for-your-encodings#just-in-time-jit)
    */
   public void setVodHlsManifests(List<ManifestResource> vodHlsManifests) {
     this.vodHlsManifests = vodHlsManifests;
@@ -260,7 +260,7 @@ public class StartEncodingRequest {
   }
 
   /**
-   * List of VoD SMOOTH manifests to be created after encoding finished successfully
+   * Smooth Streaming manifests to be generated right after encoding (just-in-time). See [documentation](https://developer.bitmovin.com/encoding/docs/how-to-create-manifests-for-your-encodings#just-in-time-jit)
    * @return vodSmoothManifests
    */
   public List<ManifestResource> getVodSmoothManifests() {
@@ -268,10 +268,10 @@ public class StartEncodingRequest {
   }
 
   /**
-   * List of VoD SMOOTH manifests to be created after encoding finished successfully
+   * Smooth Streaming manifests to be generated right after encoding (just-in-time). See [documentation](https://developer.bitmovin.com/encoding/docs/how-to-create-manifests-for-your-encodings#just-in-time-jit)
    *
    * @param vodSmoothManifests
-   *        List of VoD SMOOTH manifests to be created after encoding finished successfully
+   *        Smooth Streaming manifests to be generated right after encoding (just-in-time). See [documentation](https://developer.bitmovin.com/encoding/docs/how-to-create-manifests-for-your-encodings#just-in-time-jit)
    */
   public void setVodSmoothManifests(List<ManifestResource> vodSmoothManifests) {
     this.vodSmoothManifests = vodSmoothManifests;

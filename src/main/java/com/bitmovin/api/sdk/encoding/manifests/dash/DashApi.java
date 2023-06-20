@@ -139,7 +139,7 @@ public class DashApi {
     }
 
     /**
-     * Start DASH Manifest Creation
+     * Start DASH manifest generation
      * 
      * @param manifestId Id of the DASH Manifest. (required)
      * @return BitmovinResponse
@@ -154,7 +154,7 @@ public class DashApi {
     }
 
     /**
-     * Start DASH Manifest Creation
+     * Start DASH manifest generation
      * 
      * @param manifestId Id of the DASH Manifest. (required)
      * @param startManifestRequest Manifest Startup Options (optional)
@@ -170,7 +170,7 @@ public class DashApi {
     }
 
     /**
-     * DASH Manifest Creation Status
+     * DASH manifest generation status
      * 
      * @param manifestId Id of the DASH Manifest. (required)
      * @return Task
@@ -185,7 +185,7 @@ public class DashApi {
     }
 
     /**
-     * Stop DASH Manifest Creation
+     * Stop DASH manifest generation
      * 
      * @param manifestId Id of the DASH Manifest. (required)
      * @return BitmovinResponse

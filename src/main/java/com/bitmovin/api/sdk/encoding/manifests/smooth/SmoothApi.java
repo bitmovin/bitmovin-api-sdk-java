@@ -142,7 +142,7 @@ public class SmoothApi {
     }
 
     /**
-     * Start Smooth Streaming Manifest Creation
+     * Start Smooth Streaming manifest generation
      * 
      * @param manifestId Id of the Smooth Streaming Manifest. (required)
      * @return BitmovinResponse
@@ -157,7 +157,7 @@ public class SmoothApi {
     }
 
     /**
-     * Start Smooth Streaming Manifest Creation
+     * Start Smooth Streaming manifest generation
      * 
      * @param manifestId Id of the Smooth Streaming Manifest. (required)
      * @param startManifestRequest Manifest Startup Options (optional)
@@ -173,7 +173,7 @@ public class SmoothApi {
     }
 
     /**
-     * Smooth Streaming Manifest Creation Status
+     * Smooth Streaming manifest generation status
      * 
      * @param manifestId Id of the Smooth Streaming Manifest. (required)
      * @return Task
@@ -188,7 +188,7 @@ public class SmoothApi {
     }
 
     /**
-     * Stop Smooth Streaming Manifest Creation
+     * Stop Smooth Streaming manifest generation
      * 
      * @param manifestId Id of the Smooth Streaming Manifest. (required)
      * @return BitmovinResponse
