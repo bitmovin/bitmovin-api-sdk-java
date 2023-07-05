@@ -90,7 +90,12 @@ public enum PresetConfiguration {
   /**
    * supported for H264, H265
    */
-  VOD_ULTRAHIGH_SPEED("VOD_ULTRAHIGH_SPEED");
+  VOD_ULTRAHIGH_SPEED("VOD_ULTRAHIGH_SPEED"),
+  
+  /**
+   * supported for H264, H265
+   */
+  VOD_HARDWARE_SHORTFORM("VOD_HARDWARE_SHORTFORM");
 
   private String value;
 

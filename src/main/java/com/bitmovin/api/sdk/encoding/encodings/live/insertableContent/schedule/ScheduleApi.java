@@ -41,8 +41,8 @@ public class ScheduleApi {
     }
 
     /**
-     * Schedule Insertable Content For a Live Encoding
-     * 
+     * Schedule Insertable Content
+     * Schedule Insertable Content for a live encoding
      * @param encodingId Id of the encoding. (required)
      * @param contentId Id of the insertable content. (required)
      * @param scheduledInsertableContent The scheduled insertable content to be created (required)

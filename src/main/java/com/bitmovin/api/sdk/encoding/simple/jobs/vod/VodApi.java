@@ -42,8 +42,8 @@ public class VodApi {
 
     /**
      * Create a Simple Encoding VOD Job
-     * 
-     * @param simpleEncodingVodJobRequest The Simple Encoding VOD Job to be created.  Check out our [Simple Encoding API Documentation](https://bitmovin.com/docs/encoding/articles/simple-encoding-api) for additional information about the Simple Encoding API.  (required)
+     * Check out our [Simple Encoding API Documentation](https://bitmovin.com/docs/encoding/articles/simple-encoding-api) for additional information about the Simple Encoding API. 
+     * @param simpleEncodingVodJobRequest The Simple Encoding VOD Job to be created. (required)
      * @return SimpleEncodingVodJobResponse
      * @throws BitmovinException if fails to make API call
      */
@@ -57,7 +57,7 @@ public class VodApi {
 
     /**
      * Simple Encoding VOD Job details
-     * Get the details of a Simple Encoding VOD Job.  Check out our [Simple Encoding API Documentation](https://bitmovin.com/docs/encoding/articles/simple-encoding-api) for additional information about the Simple Encoding API. 
+     * Get the details of a Simple VOD Encoding Job.  Check out our [Simple Encoding API Documentation](https://bitmovin.com/docs/encoding/articles/simple-encoding-api) for additional information about the Simple Encoding API. 
      * @param simpleEncodingJobId Id of the Simple Encoding VOD Job (required)
      * @return SimpleEncodingVodJobResponse
      * @throws BitmovinException if fails to make API call

@@ -24,6 +24,9 @@ public class StreamsContentProtectionResponse {
   @JsonProperty("allowNoReferer")
   private Boolean allowNoReferer;
 
+  @JsonProperty("allowShare")
+  private Boolean allowShare;
+
   /**
    * The identifier of the streams content protection entity
    * @return id
@@ -76,6 +79,25 @@ public class StreamsContentProtectionResponse {
   }
 
 
+  /**
+   * Controls if Stream is accessible via sharing URL or not
+   * @return allowShare
+   */
+  public Boolean getAllowShare() {
+    return allowShare;
+  }
+
+  /**
+   * Controls if Stream is accessible via sharing URL or not
+   *
+   * @param allowShare
+   *        Controls if Stream is accessible via sharing URL or not
+   */
+  public void setAllowShare(Boolean allowShare) {
+    this.allowShare = allowShare;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -87,12 +109,13 @@ public class StreamsContentProtectionResponse {
     StreamsContentProtectionResponse streamsContentProtectionResponse = (StreamsContentProtectionResponse) o;
     return Objects.equals(this.id, streamsContentProtectionResponse.id) &&
         Objects.equals(this.allowedDomains, streamsContentProtectionResponse.allowedDomains) &&
-        Objects.equals(this.allowNoReferer, streamsContentProtectionResponse.allowNoReferer);
+        Objects.equals(this.allowNoReferer, streamsContentProtectionResponse.allowNoReferer) &&
+        Objects.equals(this.allowShare, streamsContentProtectionResponse.allowShare);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, allowedDomains, allowNoReferer);
+    return Objects.hash(id, allowedDomains, allowNoReferer, allowShare);
   }
 
   @Override
@@ -103,6 +126,7 @@ public class StreamsContentProtectionResponse {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    allowedDomains: ").append(toIndentedString(allowedDomains)).append("\n");
     sb.append("    allowNoReferer: ").append(toIndentedString(allowNoReferer)).append("\n");
+    sb.append("    allowShare: ").append(toIndentedString(allowShare)).append("\n");
     sb.append("}");
     return sb.toString();
   }

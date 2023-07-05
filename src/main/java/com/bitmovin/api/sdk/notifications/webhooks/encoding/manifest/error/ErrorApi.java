@@ -42,8 +42,8 @@ public class ErrorApi {
 
     /**
      * Add &#39;Manifest Error&#39; Webhook (All Manifests)
-     * 
-     * @param webhook Add a new webhook notification if a manifest generation failed with an error. A maximum number of 5 webhooks is allowed (required)
+     * Add a new webhook notification that triggers if a manifest generation fails. A maximum number of 5 webhooks is allowed
+     * @param webhook The &#39;Manifest Error&#39; Webhook to be added. (required)
      * @return Webhook
      * @throws BitmovinException if fails to make API call
      */

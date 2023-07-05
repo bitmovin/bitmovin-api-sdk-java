@@ -41,8 +41,8 @@ public class ScheduledApi {
     }
 
     /**
-     * List All Scheduled Insertable Content For A Live Encoding
-     * 
+     * List Scheduled Insertable Content
+     * List all Scheduled Insertable Content for a live encoding
      * @param encodingId Id of the encoding. (required)
      * @return List&lt;ScheduledInsertableContent&gt;
      * @throws BitmovinException if fails to make API call
@@ -56,8 +56,8 @@ public class ScheduledApi {
     }
 
     /**
-     * List All Scheduled Insertable Content For A Live Encoding
-     * 
+     * List Scheduled Insertable Content
+     * List all Scheduled Insertable Content for a live encoding
      * @param encodingId Id of the encoding. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;ScheduledInsertableContent&gt;

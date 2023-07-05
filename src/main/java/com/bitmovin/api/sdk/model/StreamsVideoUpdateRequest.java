@@ -31,6 +31,9 @@ public class StreamsVideoUpdateRequest {
   @JsonProperty("adConfigId")
   private String adConfigId;
 
+  @JsonProperty("contentProtectionId")
+  private String contentProtectionId;
+
 
   /**
    * The new status of the stream
@@ -146,6 +149,25 @@ public class StreamsVideoUpdateRequest {
   }
 
 
+  /**
+   * Id of the content protection config to use
+   * @return contentProtectionId
+   */
+  public String getContentProtectionId() {
+    return contentProtectionId;
+  }
+
+  /**
+   * Id of the content protection config to use
+   *
+   * @param contentProtectionId
+   *        Id of the content protection config to use
+   */
+  public void setContentProtectionId(String contentProtectionId) {
+    this.contentProtectionId = contentProtectionId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -160,12 +182,13 @@ public class StreamsVideoUpdateRequest {
         Objects.equals(this.description, streamsVideoUpdateRequest.description) &&
         Objects.equals(this.configId, streamsVideoUpdateRequest.configId) &&
         Objects.equals(this.posterUrl, streamsVideoUpdateRequest.posterUrl) &&
-        Objects.equals(this.adConfigId, streamsVideoUpdateRequest.adConfigId);
+        Objects.equals(this.adConfigId, streamsVideoUpdateRequest.adConfigId) &&
+        Objects.equals(this.contentProtectionId, streamsVideoUpdateRequest.contentProtectionId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, title, description, configId, posterUrl, adConfigId);
+    return Objects.hash(status, title, description, configId, posterUrl, adConfigId, contentProtectionId);
   }
 
   @Override
@@ -179,6 +202,7 @@ public class StreamsVideoUpdateRequest {
     sb.append("    configId: ").append(toIndentedString(configId)).append("\n");
     sb.append("    posterUrl: ").append(toIndentedString(posterUrl)).append("\n");
     sb.append("    adConfigId: ").append(toIndentedString(adConfigId)).append("\n");
+    sb.append("    contentProtectionId: ").append(toIndentedString(contentProtectionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

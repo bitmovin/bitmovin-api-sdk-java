@@ -45,8 +45,8 @@ public class ErrorApi {
 
     /**
      * Add &#39;Encoding Error&#39; Webhook
-     * 
-     * @param webhook The &#39;Encoding Error&#39; Webhook to be added. A maximum number of 5 webhooks is allowed (required)
+     * Add a new webhook notification that triggers if an encoding fails. A maximum number of 5 webhooks is allowed
+     * @param webhook The &#39;Encoding Error&#39; Webhook to be added. (required)
      * @return Webhook
      * @throws BitmovinException if fails to make API call
      */

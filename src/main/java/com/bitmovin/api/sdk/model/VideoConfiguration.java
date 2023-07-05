@@ -222,7 +222,7 @@ public class VideoConfiguration extends CodecConfiguration {
 
 
   /**
-   * The mode of the encoding
+   * The mode of the encoding. When this is set, &#x60;encodingMode&#x60; (&#x60;liveEncodingMode&#x60;) must not be set in the (live) encoding start request.
    * @return encodingMode
    */
   public EncodingMode getEncodingMode() {
@@ -230,10 +230,10 @@ public class VideoConfiguration extends CodecConfiguration {
   }
 
   /**
-   * The mode of the encoding
+   * The mode of the encoding. When this is set, &#x60;encodingMode&#x60; (&#x60;liveEncodingMode&#x60;) must not be set in the (live) encoding start request.
    *
    * @param encodingMode
-   *        The mode of the encoding
+   *        The mode of the encoding. When this is set, &#x60;encodingMode&#x60; (&#x60;liveEncodingMode&#x60;) must not be set in the (live) encoding start request.
    */
   public void setEncodingMode(EncodingMode encodingMode) {
     this.encodingMode = encodingMode;

@@ -41,8 +41,8 @@ public class TransferRetriesApi {
     }
 
     /**
-     * Starts transfer retry. A transfer retry is only possible within 72 hours.
-     * 
+     * Transfer retry
+     * Triggers a retry attempt for a failed transfer. This is possible within 72 hours after the initial failure.
      * @param encodingId Id of the encoding. (required)
      * @return TransferRetry
      * @throws BitmovinException if fails to make API call

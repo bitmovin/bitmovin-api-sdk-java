@@ -7,6 +7,7 @@ import com.bitmovin.api.sdk.model.CloudRegion;
 import com.bitmovin.api.sdk.model.EncodingMode;
 import com.bitmovin.api.sdk.model.EncodingType;
 import com.bitmovin.api.sdk.model.InfrastructureSettings;
+import com.bitmovin.api.sdk.model.LiveOptionsType;
 import com.bitmovin.api.sdk.model.Status;
 import java.util.ArrayList;
 import java.util.Date;
@@ -74,6 +75,9 @@ public class Encoding extends BitmovinResource {
   @JsonProperty("labels")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<String> labels = new ArrayList<String>();
+
+  @JsonProperty("liveOptionsType")
+  private LiveOptionsType liveOptionsType;
 
   /**
    * Type of the encoding
@@ -238,7 +242,7 @@ public class Encoding extends BitmovinResource {
   }
 
   /**
-   * After the encoding has been started, this will contain the encoding mode that was actually used. Especially useful when starting an encoding with encoding mode STANDARD.
+   * After the encoding has been started, this will contain the encoding mode that was actually used. Especially useful when &#x60;encodingMode&#x60; was not set explicitly or set to STANDARD (which translates to one of the other possible values on encoding start).
    * @return selectedEncodingMode
    */
   public EncodingMode getSelectedEncodingMode() {
@@ -285,6 +289,14 @@ public class Encoding extends BitmovinResource {
     this.labels = labels;
   }
 
+  /**
+   * The chosen live option type of the live encoding
+   * @return liveOptionsType
+   */
+  public LiveOptionsType getLiveOptionsType() {
+    return liveOptionsType;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -312,12 +324,13 @@ public class Encoding extends BitmovinResource {
         Objects.equals(this.selectedCloudRegion, encoding.selectedCloudRegion) &&
         Objects.equals(this.status, encoding.status) &&
         Objects.equals(this.labels, encoding.labels) &&
+        Objects.equals(this.liveOptionsType, encoding.liveOptionsType) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, startedAt, queuedAt, runningAt, finishedAt, errorAt, progress, cloudRegion, fallbackCloudRegions, encoderVersion, infrastructure, staticIpId, selectedEncoderVersion, selectedEncodingMode, selectedCloudRegion, status, labels, super.hashCode());
+    return Objects.hash(type, startedAt, queuedAt, runningAt, finishedAt, errorAt, progress, cloudRegion, fallbackCloudRegions, encoderVersion, infrastructure, staticIpId, selectedEncoderVersion, selectedEncodingMode, selectedCloudRegion, status, labels, liveOptionsType, super.hashCode());
   }
 
   @Override
@@ -342,6 +355,7 @@ public class Encoding extends BitmovinResource {
     sb.append("    selectedCloudRegion: ").append(toIndentedString(selectedCloudRegion)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
+    sb.append("    liveOptionsType: ").append(toIndentedString(liveOptionsType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

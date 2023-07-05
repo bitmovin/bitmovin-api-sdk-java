@@ -54,8 +54,8 @@ public class HlsApi {
 
     /**
      * Create Custom HLS Manifest
-     * 
-     * @param hlsManifest A Custom HLS Manifest gives you full control over its contents. Add Variant Streams and Media elements via the respective endpoints. If you need a simpler solution, create a Default Manifest resource instead. See [documentation](https://developer.bitmovin.com/encoding/docs/default-vs-custom-manifest) page for a comparison (required)
+     * A Custom HLS Manifest gives you full control over its contents. Add Variant Streams and Media elements via the respective endpoints. If you need a simpler solution, create a Default Manifest resource instead. See [documentation](https://developer.bitmovin.com/encoding/docs/default-vs-custom-manifest) page for a comparison
+     * @param hlsManifest The Custom HLS Manifest to be created. (required)
      * @return HlsManifest
      * @throws BitmovinException if fails to make API call
      */

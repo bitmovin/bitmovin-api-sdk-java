@@ -50,8 +50,8 @@ public class InsertableContentApi {
     }
 
     /**
-     * Make Insertable Content Available For A Live Encoding
-     * 
+     * Create Insertable Content
+     * Make Insertable Content available for a live encoding
      * @param encodingId Id of the encoding. (required)
      * @param insertableContent The insertable content to be created (required)
      * @return InsertableContent
@@ -66,8 +66,8 @@ public class InsertableContentApi {
     }
 
     /**
-     * List All Insertable Content Available For A Live Encoding
-     * 
+     * List Insertable Content
+     * List all Insertable Content available for a live encoding
      * @param encodingId Id of the encoding. (required)
      * @return List&lt;InsertableContent&gt;
      * @throws BitmovinException if fails to make API call
@@ -81,8 +81,8 @@ public class InsertableContentApi {
     }
 
     /**
-     * List All Insertable Content Available For A Live Encoding
-     * 
+     * List Insertable Content
+     * List all Insertable Content available for a live encoding
      * @param encodingId Id of the encoding. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;InsertableContent&gt;

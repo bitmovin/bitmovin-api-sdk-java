@@ -27,6 +27,9 @@ public class StreamsLiveUpdateRequest {
   @JsonProperty("adConfigId")
   private String adConfigId;
 
+  @JsonProperty("contentProtectionId")
+  private String contentProtectionId;
+
 
   /**
    * The new title of the stream
@@ -123,6 +126,25 @@ public class StreamsLiveUpdateRequest {
   }
 
 
+  /**
+   * Id of the content protection config to use
+   * @return contentProtectionId
+   */
+  public String getContentProtectionId() {
+    return contentProtectionId;
+  }
+
+  /**
+   * Id of the content protection config to use
+   *
+   * @param contentProtectionId
+   *        Id of the content protection config to use
+   */
+  public void setContentProtectionId(String contentProtectionId) {
+    this.contentProtectionId = contentProtectionId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -136,12 +158,13 @@ public class StreamsLiveUpdateRequest {
         Objects.equals(this.description, streamsLiveUpdateRequest.description) &&
         Objects.equals(this.configId, streamsLiveUpdateRequest.configId) &&
         Objects.equals(this.posterUrl, streamsLiveUpdateRequest.posterUrl) &&
-        Objects.equals(this.adConfigId, streamsLiveUpdateRequest.adConfigId);
+        Objects.equals(this.adConfigId, streamsLiveUpdateRequest.adConfigId) &&
+        Objects.equals(this.contentProtectionId, streamsLiveUpdateRequest.contentProtectionId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, description, configId, posterUrl, adConfigId);
+    return Objects.hash(title, description, configId, posterUrl, adConfigId, contentProtectionId);
   }
 
   @Override
@@ -154,6 +177,7 @@ public class StreamsLiveUpdateRequest {
     sb.append("    configId: ").append(toIndentedString(configId)).append("\n");
     sb.append("    posterUrl: ").append(toIndentedString(posterUrl)).append("\n");
     sb.append("    adConfigId: ").append(toIndentedString(adConfigId)).append("\n");
+    sb.append("    contentProtectionId: ").append(toIndentedString(contentProtectionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

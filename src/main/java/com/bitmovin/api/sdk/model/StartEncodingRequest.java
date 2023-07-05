@@ -140,7 +140,7 @@ public class StartEncodingRequest {
 
 
   /**
-   * The pass mode of the encoding
+   * The pass mode of the encoding. Must only be set when &#x60;encodingMode&#x60; is not set on any codec configuration used by this encoding.
    * @return encodingMode
    */
   public EncodingMode getEncodingMode() {
@@ -148,10 +148,10 @@ public class StartEncodingRequest {
   }
 
   /**
-   * The pass mode of the encoding
+   * The pass mode of the encoding. Must only be set when &#x60;encodingMode&#x60; is not set on any codec configuration used by this encoding.
    *
    * @param encodingMode
-   *        The pass mode of the encoding
+   *        The pass mode of the encoding. Must only be set when &#x60;encodingMode&#x60; is not set on any codec configuration used by this encoding.
    */
   public void setEncodingMode(EncodingMode encodingMode) {
     this.encodingMode = encodingMode;

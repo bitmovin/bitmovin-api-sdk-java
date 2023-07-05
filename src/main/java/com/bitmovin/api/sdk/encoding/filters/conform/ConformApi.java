@@ -44,8 +44,8 @@ public class ConformApi {
     }
 
     /**
-     * Create Conform Filter. Keeps all the frames of the input. The playback time of the output will be slower or faster.
-     * 
+     * Create Conform Filter
+     * Retains all frames of the input. The playback speed of the output will be slower or faster.
      * @param conformFilter The Conform Filter to be created (required)
      * @return ConformFilter
      * @throws BitmovinException if fails to make API call

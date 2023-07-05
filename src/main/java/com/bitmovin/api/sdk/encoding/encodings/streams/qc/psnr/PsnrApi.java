@@ -41,8 +41,8 @@ public class PsnrApi {
     }
 
     /**
-     * Activate PSNR quality metrics for the selected stream
-     * 
+     * PSNR quality metrics
+     * Activates PSNR quality metrics for the selected stream
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
      * @return BitmovinResponse

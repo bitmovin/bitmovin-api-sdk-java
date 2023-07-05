@@ -22,6 +22,9 @@ public class SpekeDrmProvider {
   @JsonProperty("password")
   private String password;
 
+  @JsonProperty("apiKey")
+  private String apiKey;
+
   @JsonProperty("roleArn")
   private String roleArn;
 
@@ -89,6 +92,25 @@ public class SpekeDrmProvider {
    */
   public void setPassword(String password) {
     this.password = password;
+  }
+
+
+  /**
+   * Your API key for authentication via X-API-Key HTTP Header
+   * @return apiKey
+   */
+  public String getApiKey() {
+    return apiKey;
+  }
+
+  /**
+   * Your API key for authentication via X-API-Key HTTP Header
+   *
+   * @param apiKey
+   *        Your API key for authentication via X-API-Key HTTP Header
+   */
+  public void setApiKey(String apiKey) {
+    this.apiKey = apiKey;
   }
 
 
@@ -179,6 +201,7 @@ public class SpekeDrmProvider {
     return Objects.equals(this.url, spekeDrmProvider.url) &&
         Objects.equals(this.username, spekeDrmProvider.username) &&
         Objects.equals(this.password, spekeDrmProvider.password) &&
+        Objects.equals(this.apiKey, spekeDrmProvider.apiKey) &&
         Objects.equals(this.roleArn, spekeDrmProvider.roleArn) &&
         Objects.equals(this.externalId, spekeDrmProvider.externalId) &&
         Objects.equals(this.externalIdMode, spekeDrmProvider.externalIdMode) &&
@@ -187,7 +210,7 @@ public class SpekeDrmProvider {
 
   @Override
   public int hashCode() {
-    return Objects.hash(url, username, password, roleArn, externalId, externalIdMode, gatewayRegion);
+    return Objects.hash(url, username, password, apiKey, roleArn, externalId, externalIdMode, gatewayRegion);
   }
 
   @Override
@@ -198,6 +221,7 @@ public class SpekeDrmProvider {
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    sb.append("    apiKey: ").append(toIndentedString(apiKey)).append("\n");
     sb.append("    roleArn: ").append(toIndentedString(roleArn)).append("\n");
     sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    externalIdMode: ").append(toIndentedString(externalIdMode)).append("\n");
