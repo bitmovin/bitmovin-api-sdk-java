@@ -3,9 +3,9 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.StreamsAdConfigResponse;
-import com.bitmovin.api.sdk.model.StreamsConfigResponse;
 import com.bitmovin.api.sdk.model.StreamsContentProtectionResponse;
 import com.bitmovin.api.sdk.model.StreamsLiveLifeCycle;
+import com.bitmovin.api.sdk.model.StreamsStyleConfigResponse;
 import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -35,8 +35,8 @@ public class StreamsLiveResponse {
   @JsonProperty("lifeCycle")
   private StreamsLiveLifeCycle lifeCycle;
 
-  @JsonProperty("config")
-  private StreamsConfigResponse config;
+  @JsonProperty("styleConfig")
+  private StreamsStyleConfigResponse styleConfig;
 
   @JsonProperty("posterUrl")
   private String posterUrl;
@@ -97,20 +97,20 @@ public class StreamsLiveResponse {
 
 
   /**
-   * Get config
-   * @return config
+   * Get styleConfig
+   * @return styleConfig
    */
-  public StreamsConfigResponse getConfig() {
-    return config;
+  public StreamsStyleConfigResponse getStyleConfig() {
+    return styleConfig;
   }
 
   /**
-   * Set config
+   * Set styleConfig
    *
-   * @param config
+   * @param styleConfig
    */
-  public void setConfig(StreamsConfigResponse config) {
-    this.config = config;
+  public void setStyleConfig(StreamsStyleConfigResponse styleConfig) {
+    this.styleConfig = styleConfig;
   }
 
   /**
@@ -173,7 +173,7 @@ public class StreamsLiveResponse {
         Objects.equals(this.description, streamsLiveResponse.description) &&
         Objects.equals(this.createdAt, streamsLiveResponse.createdAt) &&
         Objects.equals(this.lifeCycle, streamsLiveResponse.lifeCycle) &&
-        Objects.equals(this.config, streamsLiveResponse.config) &&
+        Objects.equals(this.styleConfig, streamsLiveResponse.styleConfig) &&
         Objects.equals(this.posterUrl, streamsLiveResponse.posterUrl) &&
         Objects.equals(this.adConfig, streamsLiveResponse.adConfig) &&
         Objects.equals(this.contentProtection, streamsLiveResponse.contentProtection);
@@ -181,7 +181,7 @@ public class StreamsLiveResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, streamKey, title, description, createdAt, lifeCycle, config, posterUrl, adConfig, contentProtection);
+    return Objects.hash(id, streamKey, title, description, createdAt, lifeCycle, styleConfig, posterUrl, adConfig, contentProtection);
   }
 
   @Override
@@ -195,7 +195,7 @@ public class StreamsLiveResponse {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    lifeCycle: ").append(toIndentedString(lifeCycle)).append("\n");
-    sb.append("    config: ").append(toIndentedString(config)).append("\n");
+    sb.append("    styleConfig: ").append(toIndentedString(styleConfig)).append("\n");
     sb.append("    posterUrl: ").append(toIndentedString(posterUrl)).append("\n");
     sb.append("    adConfig: ").append(toIndentedString(adConfig)).append("\n");
     sb.append("    contentProtection: ").append(toIndentedString(contentProtection)).append("\n");

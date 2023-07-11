@@ -18,8 +18,8 @@ public class StreamsLiveUpdateRequest {
   @JsonProperty("description")
   private String description;
 
-  @JsonProperty("configId")
-  private String configId;
+  @JsonProperty("styleConfigId")
+  private String styleConfigId;
 
   @JsonProperty("posterUrl")
   private String posterUrl;
@@ -70,21 +70,21 @@ public class StreamsLiveUpdateRequest {
 
 
   /**
-   * Id of the stream config to use
-   * @return configId
+   * Id of the style config to use
+   * @return styleConfigId
    */
-  public String getConfigId() {
-    return configId;
+  public String getStyleConfigId() {
+    return styleConfigId;
   }
 
   /**
-   * Id of the stream config to use
+   * Id of the style config to use
    *
-   * @param configId
-   *        Id of the stream config to use
+   * @param styleConfigId
+   *        Id of the style config to use
    */
-  public void setConfigId(String configId) {
-    this.configId = configId;
+  public void setStyleConfigId(String styleConfigId) {
+    this.styleConfigId = styleConfigId;
   }
 
 
@@ -156,7 +156,7 @@ public class StreamsLiveUpdateRequest {
     StreamsLiveUpdateRequest streamsLiveUpdateRequest = (StreamsLiveUpdateRequest) o;
     return Objects.equals(this.title, streamsLiveUpdateRequest.title) &&
         Objects.equals(this.description, streamsLiveUpdateRequest.description) &&
-        Objects.equals(this.configId, streamsLiveUpdateRequest.configId) &&
+        Objects.equals(this.styleConfigId, streamsLiveUpdateRequest.styleConfigId) &&
         Objects.equals(this.posterUrl, streamsLiveUpdateRequest.posterUrl) &&
         Objects.equals(this.adConfigId, streamsLiveUpdateRequest.adConfigId) &&
         Objects.equals(this.contentProtectionId, streamsLiveUpdateRequest.contentProtectionId);
@@ -164,7 +164,7 @@ public class StreamsLiveUpdateRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, description, configId, posterUrl, adConfigId, contentProtectionId);
+    return Objects.hash(title, description, styleConfigId, posterUrl, adConfigId, contentProtectionId);
   }
 
   @Override
@@ -174,7 +174,7 @@ public class StreamsLiveUpdateRequest {
     
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    configId: ").append(toIndentedString(configId)).append("\n");
+    sb.append("    styleConfigId: ").append(toIndentedString(styleConfigId)).append("\n");
     sb.append("    posterUrl: ").append(toIndentedString(posterUrl)).append("\n");
     sb.append("    adConfigId: ").append(toIndentedString(adConfigId)).append("\n");
     sb.append("    contentProtectionId: ").append(toIndentedString(contentProtectionId)).append("\n");

@@ -3,8 +3,8 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.StreamsAdConfigResponse;
-import com.bitmovin.api.sdk.model.StreamsConfigResponse;
 import com.bitmovin.api.sdk.model.StreamsContentProtectionResponse;
+import com.bitmovin.api.sdk.model.StreamsStyleConfigResponse;
 import com.bitmovin.api.sdk.model.StreamsVideoEncodingTask;
 import com.bitmovin.api.sdk.model.StreamsVideoStatus;
 import java.util.ArrayList;
@@ -38,8 +38,8 @@ public class StreamsVideoResponse {
   @JsonProperty("status")
   private StreamsVideoStatus status;
 
-  @JsonProperty("config")
-  private StreamsConfigResponse config;
+  @JsonProperty("styleConfig")
+  private StreamsStyleConfigResponse styleConfig;
 
   @JsonProperty("encodingTasks")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -104,20 +104,20 @@ public class StreamsVideoResponse {
 
 
   /**
-   * Get config
-   * @return config
+   * Get styleConfig
+   * @return styleConfig
    */
-  public StreamsConfigResponse getConfig() {
-    return config;
+  public StreamsStyleConfigResponse getStyleConfig() {
+    return styleConfig;
   }
 
   /**
-   * Set config
+   * Set styleConfig
    *
-   * @param config
+   * @param styleConfig
    */
-  public void setConfig(StreamsConfigResponse config) {
-    this.config = config;
+  public void setStyleConfig(StreamsStyleConfigResponse styleConfig) {
+    this.styleConfig = styleConfig;
   }
 
   /**
@@ -188,7 +188,7 @@ public class StreamsVideoResponse {
         Objects.equals(this.description, streamsVideoResponse.description) &&
         Objects.equals(this.createdAt, streamsVideoResponse.createdAt) &&
         Objects.equals(this.status, streamsVideoResponse.status) &&
-        Objects.equals(this.config, streamsVideoResponse.config) &&
+        Objects.equals(this.styleConfig, streamsVideoResponse.styleConfig) &&
         Objects.equals(this.encodingTasks, streamsVideoResponse.encodingTasks) &&
         Objects.equals(this.posterUrl, streamsVideoResponse.posterUrl) &&
         Objects.equals(this.adConfig, streamsVideoResponse.adConfig) &&
@@ -197,7 +197,7 @@ public class StreamsVideoResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, assetUrl, title, description, createdAt, status, config, encodingTasks, posterUrl, adConfig, contentProtection);
+    return Objects.hash(id, assetUrl, title, description, createdAt, status, styleConfig, encodingTasks, posterUrl, adConfig, contentProtection);
   }
 
   @Override
@@ -211,7 +211,7 @@ public class StreamsVideoResponse {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    config: ").append(toIndentedString(config)).append("\n");
+    sb.append("    styleConfig: ").append(toIndentedString(styleConfig)).append("\n");
     sb.append("    encodingTasks: ").append(toIndentedString(encodingTasks)).append("\n");
     sb.append("    posterUrl: ").append(toIndentedString(posterUrl)).append("\n");
     sb.append("    adConfig: ").append(toIndentedString(adConfig)).append("\n");

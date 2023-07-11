@@ -100,7 +100,7 @@ public class VideoApi {
     }
 
     /**
-     * Partially update stream config by id
+     * Partially update video stream by id
      * 
      * @param streamId Id of the stream. (required)
      * @param streamsVideoUpdateRequest Stream fields to update. (required)

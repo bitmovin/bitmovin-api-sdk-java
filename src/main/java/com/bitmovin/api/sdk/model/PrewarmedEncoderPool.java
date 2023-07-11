@@ -34,6 +34,9 @@ public class PrewarmedEncoderPool extends BitmovinResource {
   @JsonProperty("targetPoolSize")
   private Integer targetPoolSize;
 
+  @JsonProperty("gpuEnabled")
+  private Boolean gpuEnabled;
+
   @JsonProperty("status")
   private PrewarmedEncoderPoolStatus status;
 
@@ -135,6 +138,25 @@ public class PrewarmedEncoderPool extends BitmovinResource {
     this.targetPoolSize = targetPoolSize;
   }
 
+
+  /**
+   * Create pool with GPU instances for hardware encoding presets (e.g., VOD_HARDWARE_SHORTFORM).
+   * @return gpuEnabled
+   */
+  public Boolean getGpuEnabled() {
+    return gpuEnabled;
+  }
+
+  /**
+   * Create pool with GPU instances for hardware encoding presets (e.g., VOD_HARDWARE_SHORTFORM).
+   *
+   * @param gpuEnabled
+   *        Create pool with GPU instances for hardware encoding presets (e.g., VOD_HARDWARE_SHORTFORM).
+   */
+  public void setGpuEnabled(Boolean gpuEnabled) {
+    this.gpuEnabled = gpuEnabled;
+  }
+
   /**
    * Current status of the pool.
    * @return status
@@ -158,13 +180,14 @@ public class PrewarmedEncoderPool extends BitmovinResource {
         Objects.equals(this.infrastructureId, prewarmedEncoderPool.infrastructureId) &&
         Objects.equals(this.diskSize, prewarmedEncoderPool.diskSize) &&
         Objects.equals(this.targetPoolSize, prewarmedEncoderPool.targetPoolSize) &&
+        Objects.equals(this.gpuEnabled, prewarmedEncoderPool.gpuEnabled) &&
         Objects.equals(this.status, prewarmedEncoderPool.status) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(encoderVersion, cloudRegion, infrastructureId, diskSize, targetPoolSize, status, super.hashCode());
+    return Objects.hash(encoderVersion, cloudRegion, infrastructureId, diskSize, targetPoolSize, gpuEnabled, status, super.hashCode());
   }
 
   @Override
@@ -177,6 +200,7 @@ public class PrewarmedEncoderPool extends BitmovinResource {
     sb.append("    infrastructureId: ").append(toIndentedString(infrastructureId)).append("\n");
     sb.append("    diskSize: ").append(toIndentedString(diskSize)).append("\n");
     sb.append("    targetPoolSize: ").append(toIndentedString(targetPoolSize)).append("\n");
+    sb.append("    gpuEnabled: ").append(toIndentedString(gpuEnabled)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();

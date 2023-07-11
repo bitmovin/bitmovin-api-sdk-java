@@ -5,6 +5,7 @@ import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AnalyticsLicenseCustomDataFieldLabels;
 import com.bitmovin.api.sdk.model.AnalyticsVirtualLicenseLicensesListItem;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -37,6 +38,9 @@ public class AnalyticsVirtualLicense {
 
   @JsonProperty("customDataFieldLabels")
   private AnalyticsLicenseCustomDataFieldLabels customDataFieldLabels;
+
+  @JsonProperty("planExpiredAt")
+  private Date planExpiredAt;
 
   /**
    * Analytics Virtual License Key/Id
@@ -143,6 +147,14 @@ public class AnalyticsVirtualLicense {
     this.customDataFieldLabels = customDataFieldLabels;
   }
 
+  /**
+   * The expiration date of the license if applicable, returned as ISO 8601 date-time format
+   * @return planExpiredAt
+   */
+  public Date getPlanExpiredAt() {
+    return planExpiredAt;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -159,12 +171,13 @@ public class AnalyticsVirtualLicense {
         Objects.equals(this.retentionTime, analyticsVirtualLicense.retentionTime) &&
         Objects.equals(this.licenses, analyticsVirtualLicense.licenses) &&
         Objects.equals(this.customDataFieldsCount, analyticsVirtualLicense.customDataFieldsCount) &&
-        Objects.equals(this.customDataFieldLabels, analyticsVirtualLicense.customDataFieldLabels);
+        Objects.equals(this.customDataFieldLabels, analyticsVirtualLicense.customDataFieldLabels) &&
+        Objects.equals(this.planExpiredAt, analyticsVirtualLicense.planExpiredAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, timezone, retentionTime, licenses, customDataFieldsCount, customDataFieldLabels);
+    return Objects.hash(id, name, timezone, retentionTime, licenses, customDataFieldsCount, customDataFieldLabels, planExpiredAt);
   }
 
   @Override
@@ -179,6 +192,7 @@ public class AnalyticsVirtualLicense {
     sb.append("    licenses: ").append(toIndentedString(licenses)).append("\n");
     sb.append("    customDataFieldsCount: ").append(toIndentedString(customDataFieldsCount)).append("\n");
     sb.append("    customDataFieldLabels: ").append(toIndentedString(customDataFieldLabels)).append("\n");
+    sb.append("    planExpiredAt: ").append(toIndentedString(planExpiredAt)).append("\n");
     sb.append("}");
     return sb.toString();
   }

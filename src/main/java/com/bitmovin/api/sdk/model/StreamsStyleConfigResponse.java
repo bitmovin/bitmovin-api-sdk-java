@@ -2,17 +2,17 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.StreamsConfigPlayerStyle;
+import com.bitmovin.api.sdk.model.StreamsStyleConfigPlayerStyle;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * StreamsConfigResponse
+ * StreamsStyleConfigResponse
  */
 
-public class StreamsConfigResponse {
+public class StreamsStyleConfigResponse {
   @JsonProperty("id")
   private String id;
 
@@ -20,7 +20,7 @@ public class StreamsConfigResponse {
   private String orgId;
 
   @JsonProperty("playerStyle")
-  private StreamsConfigPlayerStyle playerStyle;
+  private StreamsStyleConfigPlayerStyle playerStyle;
 
   @JsonProperty("watermarkUrl")
   private String watermarkUrl;
@@ -29,7 +29,7 @@ public class StreamsConfigResponse {
   private String watermarkTargetLink;
 
   /**
-   * The identifier of the stream config
+   * The identifier of the style config
    * @return id
    */
   public String getId() {
@@ -60,7 +60,7 @@ public class StreamsConfigResponse {
    * Get playerStyle
    * @return playerStyle
    */
-  public StreamsConfigPlayerStyle getPlayerStyle() {
+  public StreamsStyleConfigPlayerStyle getPlayerStyle() {
     return playerStyle;
   }
 
@@ -69,7 +69,7 @@ public class StreamsConfigResponse {
    *
    * @param playerStyle
    */
-  public void setPlayerStyle(StreamsConfigPlayerStyle playerStyle) {
+  public void setPlayerStyle(StreamsStyleConfigPlayerStyle playerStyle) {
     this.playerStyle = playerStyle;
   }
 
@@ -120,12 +120,12 @@ public class StreamsConfigResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    StreamsConfigResponse streamsConfigResponse = (StreamsConfigResponse) o;
-    return Objects.equals(this.id, streamsConfigResponse.id) &&
-        Objects.equals(this.orgId, streamsConfigResponse.orgId) &&
-        Objects.equals(this.playerStyle, streamsConfigResponse.playerStyle) &&
-        Objects.equals(this.watermarkUrl, streamsConfigResponse.watermarkUrl) &&
-        Objects.equals(this.watermarkTargetLink, streamsConfigResponse.watermarkTargetLink);
+    StreamsStyleConfigResponse streamsStyleConfigResponse = (StreamsStyleConfigResponse) o;
+    return Objects.equals(this.id, streamsStyleConfigResponse.id) &&
+        Objects.equals(this.orgId, streamsStyleConfigResponse.orgId) &&
+        Objects.equals(this.playerStyle, streamsStyleConfigResponse.playerStyle) &&
+        Objects.equals(this.watermarkUrl, streamsStyleConfigResponse.watermarkUrl) &&
+        Objects.equals(this.watermarkTargetLink, streamsStyleConfigResponse.watermarkTargetLink);
   }
 
   @Override
@@ -136,7 +136,7 @@ public class StreamsConfigResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StreamsConfigResponse {\n");
+    sb.append("class StreamsStyleConfigResponse {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    orgId: ").append(toIndentedString(orgId)).append("\n");

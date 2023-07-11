@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  * Player style config
  */
 
-public class StreamsConfigPlayerStyle {
+public class StreamsStyleConfigPlayerStyle {
   @JsonProperty("playbackMarkerBgColor")
   private String playbackMarkerBgColor;
 
@@ -175,14 +175,14 @@ public class StreamsConfigPlayerStyle {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    StreamsConfigPlayerStyle streamsConfigPlayerStyle = (StreamsConfigPlayerStyle) o;
-    return Objects.equals(this.playbackMarkerBgColor, streamsConfigPlayerStyle.playbackMarkerBgColor) &&
-        Objects.equals(this.playbackMarkerBorderColor, streamsConfigPlayerStyle.playbackMarkerBorderColor) &&
-        Objects.equals(this.playbackTrackPlayedColor, streamsConfigPlayerStyle.playbackTrackPlayedColor) &&
-        Objects.equals(this.playbackTrackBufferedColor, streamsConfigPlayerStyle.playbackTrackBufferedColor) &&
-        Objects.equals(this.playbackTrackBgColor, streamsConfigPlayerStyle.playbackTrackBgColor) &&
-        Objects.equals(this.textColor, streamsConfigPlayerStyle.textColor) &&
-        Objects.equals(this.backgroundColor, streamsConfigPlayerStyle.backgroundColor);
+    StreamsStyleConfigPlayerStyle streamsStyleConfigPlayerStyle = (StreamsStyleConfigPlayerStyle) o;
+    return Objects.equals(this.playbackMarkerBgColor, streamsStyleConfigPlayerStyle.playbackMarkerBgColor) &&
+        Objects.equals(this.playbackMarkerBorderColor, streamsStyleConfigPlayerStyle.playbackMarkerBorderColor) &&
+        Objects.equals(this.playbackTrackPlayedColor, streamsStyleConfigPlayerStyle.playbackTrackPlayedColor) &&
+        Objects.equals(this.playbackTrackBufferedColor, streamsStyleConfigPlayerStyle.playbackTrackBufferedColor) &&
+        Objects.equals(this.playbackTrackBgColor, streamsStyleConfigPlayerStyle.playbackTrackBgColor) &&
+        Objects.equals(this.textColor, streamsStyleConfigPlayerStyle.textColor) &&
+        Objects.equals(this.backgroundColor, streamsStyleConfigPlayerStyle.backgroundColor);
   }
 
   @Override
@@ -193,7 +193,7 @@ public class StreamsConfigPlayerStyle {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StreamsConfigPlayerStyle {\n");
+    sb.append("class StreamsStyleConfigPlayerStyle {\n");
     
     sb.append("    playbackMarkerBgColor: ").append(toIndentedString(playbackMarkerBgColor)).append("\n");
     sb.append("    playbackMarkerBorderColor: ").append(toIndentedString(playbackMarkerBorderColor)).append("\n");

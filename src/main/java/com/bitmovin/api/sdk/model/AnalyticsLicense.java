@@ -79,6 +79,9 @@ public class AnalyticsLicense {
   @JsonProperty("features")
   private AnalyticsLicenseFeatures features;
 
+  @JsonProperty("planExpiredAt")
+  private Date planExpiredAt;
+
   /**
    * Id of the Analytics License
    * @return id
@@ -88,7 +91,7 @@ public class AnalyticsLicense {
   }
 
   /**
-   * Creation date of the Analytics License in UTC format
+   * Creation date of the Analytics License, returned as ISO 8601 date-time format
    * @return createdAt
    */
   public Date getCreatedAt() {
@@ -296,6 +299,14 @@ public class AnalyticsLicense {
     this.features = features;
   }
 
+  /**
+   * The expiration date of the license if applicable, returned as ISO 8601 date-time format
+   * @return planExpiredAt
+   */
+  public Date getPlanExpiredAt() {
+    return planExpiredAt;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -324,12 +335,13 @@ public class AnalyticsLicense {
         Objects.equals(this.customDataFieldsCount, analyticsLicense.customDataFieldsCount) &&
         Objects.equals(this.orderIndex, analyticsLicense.orderIndex) &&
         Objects.equals(this.rateLimit, analyticsLicense.rateLimit) &&
-        Objects.equals(this.features, analyticsLicense.features);
+        Objects.equals(this.features, analyticsLicense.features) &&
+        Objects.equals(this.planExpiredAt, analyticsLicense.planExpiredAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, customData, licenseKey, name, industry, subIndustry, ignoreDNT, impressions, maxImpressions, timeZone, retentionTime, domains, includeInInsights, customDataFieldLabels, customDataFieldsCount, orderIndex, rateLimit, features);
+    return Objects.hash(id, createdAt, customData, licenseKey, name, industry, subIndustry, ignoreDNT, impressions, maxImpressions, timeZone, retentionTime, domains, includeInInsights, customDataFieldLabels, customDataFieldsCount, orderIndex, rateLimit, features, planExpiredAt);
   }
 
   @Override
@@ -356,6 +368,7 @@ public class AnalyticsLicense {
     sb.append("    orderIndex: ").append(toIndentedString(orderIndex)).append("\n");
     sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    features: ").append(toIndentedString(features)).append("\n");
+    sb.append("    planExpiredAt: ").append(toIndentedString(planExpiredAt)).append("\n");
     sb.append("}");
     return sb.toString();
   }

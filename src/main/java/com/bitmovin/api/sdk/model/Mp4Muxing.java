@@ -40,7 +40,7 @@ public class Mp4Muxing extends Muxing {
 
 
   /**
-   * Name of the output file
+   * Name of the output file (either &#x60;filename&#x60; or &#x60;name&#x60; is required, prefer &#x60;filename&#x60;)
    * @return filename
    */
   public String getFilename() {
@@ -48,10 +48,10 @@ public class Mp4Muxing extends Muxing {
   }
 
   /**
-   * Name of the output file
+   * Name of the output file (either &#x60;filename&#x60; or &#x60;name&#x60; is required, prefer &#x60;filename&#x60;)
    *
    * @param filename
-   *        Name of the output file
+   *        Name of the output file (either &#x60;filename&#x60; or &#x60;name&#x60; is required, prefer &#x60;filename&#x60;)
    */
   public void setFilename(String filename) {
     this.filename = filename;

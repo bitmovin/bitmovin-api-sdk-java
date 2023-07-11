@@ -125,7 +125,7 @@ public class LiveApi {
      * Update live stream by id
      * 
      * @param streamId Id of the stream. (required)
-     * @param streamsLiveUpdateRequest The updated stream config object. (required)
+     * @param streamsLiveUpdateRequest The updated Streams live object. (required)
      * @return StreamsLiveResponse
      * @throws BitmovinException if fails to make API call
      */
