@@ -381,6 +381,9 @@ public class AnalyticsAdsImpressionSample {
   @JsonProperty("screen_width")
   private Integer screenWidth;
 
+  @JsonProperty("screen_orientation")
+  private String screenOrientation;
+
   @JsonProperty("size")
   private String size;
 
@@ -2777,6 +2780,25 @@ public class AnalyticsAdsImpressionSample {
 
 
   /**
+   * Screen orientation (PORTRAIT, LANDSCAPE OR UNKNOWN)
+   * @return screenOrientation
+   */
+  public String getScreenOrientation() {
+    return screenOrientation;
+  }
+
+  /**
+   * Screen orientation (PORTRAIT, LANDSCAPE OR UNKNOWN)
+   *
+   * @param screenOrientation
+   *        Screen orientation (PORTRAIT, LANDSCAPE OR UNKNOWN)
+   */
+  public void setScreenOrientation(String screenOrientation) {
+    this.screenOrientation = screenOrientation;
+  }
+
+
+  /**
    * Video size (FULLSCREEN or WINDOW)
    * @return size
    */
@@ -3269,6 +3291,7 @@ public class AnalyticsAdsImpressionSample {
         Objects.equals(this.region, analyticsAdsImpressionSample.region) &&
         Objects.equals(this.screenHeight, analyticsAdsImpressionSample.screenHeight) &&
         Objects.equals(this.screenWidth, analyticsAdsImpressionSample.screenWidth) &&
+        Objects.equals(this.screenOrientation, analyticsAdsImpressionSample.screenOrientation) &&
         Objects.equals(this.size, analyticsAdsImpressionSample.size) &&
         Objects.equals(this.skipPercentage, analyticsAdsImpressionSample.skipPercentage) &&
         Objects.equals(this.skipPosition, analyticsAdsImpressionSample.skipPosition) &&
@@ -3292,7 +3315,7 @@ public class AnalyticsAdsImpressionSample {
 
   @Override
   public int hashCode() {
-    return Objects.hash(adClickthroughUrl, adDescription, adDuration, adFallbackIndex, adId, adIdPlayer, adImpressionId, adIsPersistent, adModule, adModuleVersion, adOffset, adPlaybackHeight, adPlaybackWidth, adPodPosition, adPosition, adPreloadOffset, adReplaceContentDuration, adScheduleTime, adSkipAfter, adSkippable, adStartupTime, adSystem, adTagPath, adTagServer, adTagType, adTagUrl, adTitle, adWrapperAdsCount, advertiserName, analyticsVersion, apiFramework, apiorgId, apiuserId, audioBitrate, autoplay, browser, browserIsBot, browserVersionMajor, browserVersionMinor, cdnProvider, city, clickPercentage, clickPosition, clicked, clientTime, closePercentage, closePosition, closed, completed, country, creativeAdId, creativeId, customData1, customData2, customData3, customData4, customData5, customData6, customData7, customData8, customData9, customData10, customData11, customData12, customData13, customData14, customData15, customData16, customData17, customData18, customData19, customData20, customData21, customData22, customData23, customData24, customData25, customData26, customData27, customData28, customData29, customData30, customUserId, dealId, deviceClass, deviceType, domain, errorCode, errorData, errorMessage, errorPercentage, errorPosition, exitPosition, experimentName, ipAddress, isp, language, licenseKey, manifestDownloadTime, mediaPath, mediaServer, mediaUrl, midpoint, minSuggestedDuration, operatingsystem, operatingsystemVersionMajor, operatingsystemVersionMinor, pageLoadTime, pageLoadType, path, percentageInViewport, platform, player, playerKey, playerStartuptime, playerTech, playerVersion, playPercentage, quartile1, quartile3, region, screenHeight, screenWidth, size, skipPercentage, skipPosition, skipped, started, streamFormat, surveyUrl, time, timeInViewport, timePlayed, universalAdIdRegistry, universalAdIdValue, userId, videoBitrate, videoId, videoImpressionId, videoTitle, videoWindowHeight, videoWindowWidth);
+    return Objects.hash(adClickthroughUrl, adDescription, adDuration, adFallbackIndex, adId, adIdPlayer, adImpressionId, adIsPersistent, adModule, adModuleVersion, adOffset, adPlaybackHeight, adPlaybackWidth, adPodPosition, adPosition, adPreloadOffset, adReplaceContentDuration, adScheduleTime, adSkipAfter, adSkippable, adStartupTime, adSystem, adTagPath, adTagServer, adTagType, adTagUrl, adTitle, adWrapperAdsCount, advertiserName, analyticsVersion, apiFramework, apiorgId, apiuserId, audioBitrate, autoplay, browser, browserIsBot, browserVersionMajor, browserVersionMinor, cdnProvider, city, clickPercentage, clickPosition, clicked, clientTime, closePercentage, closePosition, closed, completed, country, creativeAdId, creativeId, customData1, customData2, customData3, customData4, customData5, customData6, customData7, customData8, customData9, customData10, customData11, customData12, customData13, customData14, customData15, customData16, customData17, customData18, customData19, customData20, customData21, customData22, customData23, customData24, customData25, customData26, customData27, customData28, customData29, customData30, customUserId, dealId, deviceClass, deviceType, domain, errorCode, errorData, errorMessage, errorPercentage, errorPosition, exitPosition, experimentName, ipAddress, isp, language, licenseKey, manifestDownloadTime, mediaPath, mediaServer, mediaUrl, midpoint, minSuggestedDuration, operatingsystem, operatingsystemVersionMajor, operatingsystemVersionMinor, pageLoadTime, pageLoadType, path, percentageInViewport, platform, player, playerKey, playerStartuptime, playerTech, playerVersion, playPercentage, quartile1, quartile3, region, screenHeight, screenWidth, screenOrientation, size, skipPercentage, skipPosition, skipped, started, streamFormat, surveyUrl, time, timeInViewport, timePlayed, universalAdIdRegistry, universalAdIdValue, userId, videoBitrate, videoId, videoImpressionId, videoTitle, videoWindowHeight, videoWindowWidth);
   }
 
   @Override
@@ -3423,6 +3446,7 @@ public class AnalyticsAdsImpressionSample {
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    screenHeight: ").append(toIndentedString(screenHeight)).append("\n");
     sb.append("    screenWidth: ").append(toIndentedString(screenWidth)).append("\n");
+    sb.append("    screenOrientation: ").append(toIndentedString(screenOrientation)).append("\n");
     sb.append("    size: ").append(toIndentedString(size)).append("\n");
     sb.append("    skipPercentage: ").append(toIndentedString(skipPercentage)).append("\n");
     sb.append("    skipPosition: ").append(toIndentedString(skipPosition)).append("\n");

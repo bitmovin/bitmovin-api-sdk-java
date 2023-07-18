@@ -267,6 +267,9 @@ public class AnalyticsImpressionSample {
   @JsonProperty("screen_width")
   private Integer screenWidth;
 
+  @JsonProperty("screen_orientation")
+  private String screenOrientation;
+
   @JsonProperty("seeked")
   private Long seeked;
 
@@ -1950,6 +1953,25 @@ public class AnalyticsImpressionSample {
 
 
   /**
+   * Screen orientation (PORTRAIT, LANDSCAPE OR UNKNOWN)
+   * @return screenOrientation
+   */
+  public String getScreenOrientation() {
+    return screenOrientation;
+  }
+
+  /**
+   * Screen orientation (PORTRAIT, LANDSCAPE OR UNKNOWN)
+   *
+   * @param screenOrientation
+   *        Screen orientation (PORTRAIT, LANDSCAPE OR UNKNOWN)
+   */
+  public void setScreenOrientation(String screenOrientation) {
+    this.screenOrientation = screenOrientation;
+  }
+
+
+  /**
    * Milliseconds it took the player to seek
    * @return seeked
    */
@@ -2579,6 +2601,7 @@ public class AnalyticsImpressionSample {
         Objects.equals(this.region, analyticsImpressionSample.region) &&
         Objects.equals(this.screenHeight, analyticsImpressionSample.screenHeight) &&
         Objects.equals(this.screenWidth, analyticsImpressionSample.screenWidth) &&
+        Objects.equals(this.screenOrientation, analyticsImpressionSample.screenOrientation) &&
         Objects.equals(this.seeked, analyticsImpressionSample.seeked) &&
         Objects.equals(this.segmentDownloadCount, analyticsImpressionSample.segmentDownloadCount) &&
         Objects.equals(this.segmentDownloadSize, analyticsImpressionSample.segmentDownloadSize) &&
@@ -2611,7 +2634,7 @@ public class AnalyticsImpressionSample {
 
   @Override
   public int hashCode() {
-    return Objects.hash(ad, analyticsVersion, audioBitrate, audioCodec, audioLanguage, autoplay, browser, browserVersionMajor, browserVersionMinor, buffered, cdnProvider, castTech, city, clientTime, country, customUserId, customData1, customData2, customData3, customData4, customData5, customData6, customData7, customData8, customData9, customData10, customData11, customData12, customData13, customData14, customData15, customData16, customData17, customData18, customData19, customData20, customData21, customData22, customData23, customData24, customData25, customData26, customData27, customData28, customData29, customData30, deviceClass, deviceType, domain, drmLoadTime, drmType, droppedFrames, duration, errorCode, errorMessage, experimentName, impressionId, ipAddress, isCasting, isLive, isMuted, isp, language, licenseKey, m3u8Url, mpdUrl, operatingsystem, operatingsystemVersionMajor, operatingsystemVersionMinor, pageLoadTime, pageLoadType, path, paused, platform, played, player, playerKey, playerStartuptime, playerTech, playerVersion, progUrl, region, screenHeight, screenWidth, seeked, segmentDownloadCount, segmentDownloadSize, segmentDownloadTime, sequenceNumber, size, startuptime, state, streamFormat, subtitleEnabled, subtitleLanguage, supportedVideoCodes, time, userId, videoBitrate, videoCodec, videoDuration, videoId, videoTitle, videoPlaybackHeight, videoPlaybackWidth, videoStartuptime, videotimeEnd, videotimeStart, videoWindowHeight, videoWindowWidth, videostartFailed, videostartFailedReason);
+    return Objects.hash(ad, analyticsVersion, audioBitrate, audioCodec, audioLanguage, autoplay, browser, browserVersionMajor, browserVersionMinor, buffered, cdnProvider, castTech, city, clientTime, country, customUserId, customData1, customData2, customData3, customData4, customData5, customData6, customData7, customData8, customData9, customData10, customData11, customData12, customData13, customData14, customData15, customData16, customData17, customData18, customData19, customData20, customData21, customData22, customData23, customData24, customData25, customData26, customData27, customData28, customData29, customData30, deviceClass, deviceType, domain, drmLoadTime, drmType, droppedFrames, duration, errorCode, errorMessage, experimentName, impressionId, ipAddress, isCasting, isLive, isMuted, isp, language, licenseKey, m3u8Url, mpdUrl, operatingsystem, operatingsystemVersionMajor, operatingsystemVersionMinor, pageLoadTime, pageLoadType, path, paused, platform, played, player, playerKey, playerStartuptime, playerTech, playerVersion, progUrl, region, screenHeight, screenWidth, screenOrientation, seeked, segmentDownloadCount, segmentDownloadSize, segmentDownloadTime, sequenceNumber, size, startuptime, state, streamFormat, subtitleEnabled, subtitleLanguage, supportedVideoCodes, time, userId, videoBitrate, videoCodec, videoDuration, videoId, videoTitle, videoPlaybackHeight, videoPlaybackWidth, videoStartuptime, videotimeEnd, videotimeStart, videoWindowHeight, videoWindowWidth, videostartFailed, videostartFailedReason);
   }
 
   @Override
@@ -2703,6 +2726,7 @@ public class AnalyticsImpressionSample {
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    screenHeight: ").append(toIndentedString(screenHeight)).append("\n");
     sb.append("    screenWidth: ").append(toIndentedString(screenWidth)).append("\n");
+    sb.append("    screenOrientation: ").append(toIndentedString(screenOrientation)).append("\n");
     sb.append("    seeked: ").append(toIndentedString(seeked)).append("\n");
     sb.append("    segmentDownloadCount: ").append(toIndentedString(segmentDownloadCount)).append("\n");
     sb.append("    segmentDownloadSize: ").append(toIndentedString(segmentDownloadSize)).append("\n");

@@ -19,9 +19,11 @@ import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.statistics.encodings.live.daily.DailyApi;
+import com.bitmovin.api.sdk.encoding.statistics.encodings.live.options.OptionsApi;
 
 public class LiveApi {
     public final DailyApi daily;
+    public final OptionsApi options;
 
     private final LiveApiClient apiClient;
 
@@ -34,6 +36,7 @@ public class LiveApi {
         this.apiClient = clientFactory.createApiClient(LiveApiClient.class);
 
         this.daily = new DailyApi(clientFactory);
+        this.options = new OptionsApi(clientFactory);
     }
 
     /**

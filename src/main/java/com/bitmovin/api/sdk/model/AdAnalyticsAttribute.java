@@ -379,6 +379,9 @@ public enum AdAnalyticsAttribute {
   SCREEN_WIDTH("SCREEN_WIDTH"),
   
   
+  SCREEN_ORIENTATION("SCREEN_ORIENTATION"),
+  
+  
   SIZE("SIZE"),
   
   
