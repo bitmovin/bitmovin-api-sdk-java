@@ -55,9 +55,28 @@ public class HdApi {
         }
     }
 
+    /**
+     * Start Live Encoding
+     * 
+     * @param encodingId Id of the encoding (required)
+     * @param startLiveChannelEncodingRequest Live Encoding startup options (required)
+     * @return BitmovinResponse
+     * @throws BitmovinException if fails to make API call
+     */
+    public BitmovinResponse start(String encodingId, StartLiveChannelEncodingRequest startLiveChannelEncodingRequest) throws BitmovinException {
+        try {
+            return this.apiClient.start(encodingId, startLiveChannelEncodingRequest).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
     interface HdApiClient {
 
         @RequestLine("GET /encoding/encodings/{encoding_id}/live/hd/start")
         ResponseEnvelope<StartLiveChannelEncodingRequest> getStartRequest(@Param(value = "encoding_id") String encodingId) throws BitmovinException;
+    
+        @RequestLine("POST /encoding/encodings/{encoding_id}/live/hd/start")
+        ResponseEnvelope<BitmovinResponse> start(@Param(value = "encoding_id") String encodingId, StartLiveChannelEncodingRequest startLiveChannelEncodingRequest) throws BitmovinException;
     }
 }
