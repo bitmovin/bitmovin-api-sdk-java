@@ -56,7 +56,7 @@ public class HdApi {
     }
 
     /**
-     * Start Live Encoding
+     * Start HD Options Live Encoding
      * 
      * @param encodingId Id of the encoding (required)
      * @param startLiveChannelEncodingRequest Live Encoding startup options (required)

@@ -10,31 +10,17 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum StreamsVideoQuality {
+public enum StreamsType {
   
-  /**
-   * The loading placeholder displayed until the first encoding is done
-   */
-  NONE("NONE"),
   
-  /**
-   * A lower quality preview encoding
-   */
-  PREVIEW("PREVIEW"),
+  VIDEO("VIDEO"),
   
-  /**
-   * The default Per-title encoding
-   */
-  DEFAULT("DEFAULT"),
   
-  /**
-   * The trimmed Video
-   */
-  TRIMMED("TRIMMED");
+  LIVE("LIVE");
 
   private String value;
 
-  StreamsVideoQuality(String value) {
+  StreamsType(String value) {
     this.value = value;
   }
 
@@ -49,8 +35,8 @@ public enum StreamsVideoQuality {
   }
 
   @JsonCreator
-  public static StreamsVideoQuality fromValue(String text) {
-    for (StreamsVideoQuality b : StreamsVideoQuality.values()) {
+  public static StreamsType fromValue(String text) {
+    for (StreamsType b : StreamsType.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
