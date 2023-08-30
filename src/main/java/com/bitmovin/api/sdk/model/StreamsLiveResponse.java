@@ -6,6 +6,7 @@ import com.bitmovin.api.sdk.model.StreamsAdConfigResponse;
 import com.bitmovin.api.sdk.model.StreamsContentProtectionResponse;
 import com.bitmovin.api.sdk.model.StreamsLiveLifeCycle;
 import com.bitmovin.api.sdk.model.StreamsStyleConfigResponse;
+import com.bitmovin.api.sdk.model.StreamsTrimmingStatus;
 import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -46,6 +47,9 @@ public class StreamsLiveResponse {
 
   @JsonProperty("contentProtection")
   private StreamsContentProtectionResponse contentProtection;
+
+  @JsonProperty("trimming")
+  private StreamsTrimmingStatus trimming;
 
   /**
    * The identifier of the stream
@@ -157,6 +161,14 @@ public class StreamsLiveResponse {
     this.contentProtection = contentProtection;
   }
 
+  /**
+   * Stream trimming information
+   * @return trimming
+   */
+  public StreamsTrimmingStatus getTrimming() {
+    return trimming;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -176,12 +188,13 @@ public class StreamsLiveResponse {
         Objects.equals(this.styleConfig, streamsLiveResponse.styleConfig) &&
         Objects.equals(this.posterUrl, streamsLiveResponse.posterUrl) &&
         Objects.equals(this.adConfig, streamsLiveResponse.adConfig) &&
-        Objects.equals(this.contentProtection, streamsLiveResponse.contentProtection);
+        Objects.equals(this.contentProtection, streamsLiveResponse.contentProtection) &&
+        Objects.equals(this.trimming, streamsLiveResponse.trimming);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, streamKey, title, description, createdAt, lifeCycle, styleConfig, posterUrl, adConfig, contentProtection);
+    return Objects.hash(id, streamKey, title, description, createdAt, lifeCycle, styleConfig, posterUrl, adConfig, contentProtection, trimming);
   }
 
   @Override
@@ -199,6 +212,7 @@ public class StreamsLiveResponse {
     sb.append("    posterUrl: ").append(toIndentedString(posterUrl)).append("\n");
     sb.append("    adConfig: ").append(toIndentedString(adConfig)).append("\n");
     sb.append("    contentProtection: ").append(toIndentedString(contentProtection)).append("\n");
+    sb.append("    trimming: ").append(toIndentedString(trimming)).append("\n");
     sb.append("}");
     return sb.toString();
   }

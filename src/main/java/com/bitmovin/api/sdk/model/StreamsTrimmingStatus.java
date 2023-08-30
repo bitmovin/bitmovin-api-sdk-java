@@ -10,26 +10,36 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum StreamsVideoQuality {
+public enum StreamsTrimmingStatus {
   
   /**
-   * The loading placeholder displayed until the first encoding is done
+   * Trimming is unavailable
    */
-  NONE("NONE"),
+  UNAVAILABLE("UNAVAILABLE"),
   
   /**
-   * A lower quality preview encoding
+   * Trimming is available
    */
-  PREVIEW("PREVIEW"),
+  AVAILABLE("AVAILABLE"),
   
   /**
-   * The default Per-title encoding
+   * The trimming started
    */
-  DEFAULT("DEFAULT");
+  STARTED("STARTED"),
+  
+  /**
+   * The trimming failed
+   */
+  ERROR("ERROR"),
+  
+  /**
+   * The trimming succeeded
+   */
+  FINISHED("FINISHED");
 
   private String value;
 
-  StreamsVideoQuality(String value) {
+  StreamsTrimmingStatus(String value) {
     this.value = value;
   }
 
@@ -44,8 +54,8 @@ public enum StreamsVideoQuality {
   }
 
   @JsonCreator
-  public static StreamsVideoQuality fromValue(String text) {
-    for (StreamsVideoQuality b : StreamsVideoQuality.values()) {
+  public static StreamsTrimmingStatus fromValue(String text) {
+    for (StreamsTrimmingStatus b : StreamsTrimmingStatus.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

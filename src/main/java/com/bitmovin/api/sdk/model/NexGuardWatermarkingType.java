@@ -13,12 +13,12 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum NexGuardWatermarkingType {
   
   /**
-   * A/B watermarking
+   * A/B watermarking (for video streams only)
    */
   OTT("OTT"),
   
   /**
-   * Required for Audio to duplicate the stream
+   * Stream duplication to match A/B video streams in CDN delivery (for audio streams only)
    */
   DUPLICATED("DUPLICATED");
 
