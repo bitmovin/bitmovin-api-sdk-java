@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AccountApiKey;
 import com.bitmovin.api.sdk.model.BitmovinResource;
+import com.bitmovin.api.sdk.model.Marketplace;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -39,6 +40,9 @@ public class AccountInformation extends BitmovinResource {
 
   @JsonProperty("verified")
   private Boolean verified;
+
+  @JsonProperty("marketplace")
+  private Marketplace marketplace;
 
   /**
    * Email address of the account. (required)
@@ -140,6 +144,14 @@ public class AccountInformation extends BitmovinResource {
     return verified;
   }
 
+  /**
+   * Get marketplace
+   * @return marketplace
+   */
+  public Marketplace getMarketplace() {
+    return marketplace;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -157,12 +169,13 @@ public class AccountInformation extends BitmovinResource {
         Objects.equals(this.phone, accountInformation.phone) &&
         Objects.equals(this.company, accountInformation.company) &&
         Objects.equals(this.verified, accountInformation.verified) &&
+        Objects.equals(this.marketplace, accountInformation.marketplace) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(email, apiKeys, firstName, lastName, phone, company, verified, super.hashCode());
+    return Objects.hash(email, apiKeys, firstName, lastName, phone, company, verified, marketplace, super.hashCode());
   }
 
   @Override
@@ -177,6 +190,7 @@ public class AccountInformation extends BitmovinResource {
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    company: ").append(toIndentedString(company)).append("\n");
     sb.append("    verified: ").append(toIndentedString(verified)).append("\n");
+    sb.append("    marketplace: ").append(toIndentedString(marketplace)).append("\n");
     sb.append("}");
     return sb.toString();
   }

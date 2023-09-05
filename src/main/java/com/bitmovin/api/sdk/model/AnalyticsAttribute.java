@@ -187,6 +187,9 @@ public enum AnalyticsAttribute {
   ERROR_RATE("ERROR_RATE"),
   
   
+  ERROR_PERCENTAGE("ERROR_PERCENTAGE"),
+  
+  
   EXPERIMENT_NAME("EXPERIMENT_NAME"),
   
   
