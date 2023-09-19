@@ -62,6 +62,20 @@ public class LiveApi {
     }
 
     /**
+     * Delete Stream
+     * 
+     * @param streamId Id of the stream. (required)
+     * @throws BitmovinException if fails to make API call
+     */
+    public void delete(String streamId) throws BitmovinException {
+        try {
+            this.apiClient.delete(streamId);
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
+    /**
      * Get live stream by id
      * 
      * @param streamId Id of the stream. (required)
@@ -141,6 +155,9 @@ public class LiveApi {
 
         @RequestLine("POST /streams/live")
         ResponseEnvelope<StreamsLiveResponse> create(StreamsLiveCreateRequest streamsLiveCreateRequest) throws BitmovinException;
+    
+        @RequestLine("DELETE /streams/live/{stream_id}")
+        void delete(@Param(value = "stream_id") String streamId) throws BitmovinException;
     
         @RequestLine("GET /streams/live/{stream_id}")
         ResponseEnvelope<StreamsLiveResponse> get(@Param(value = "stream_id") String streamId) throws BitmovinException;

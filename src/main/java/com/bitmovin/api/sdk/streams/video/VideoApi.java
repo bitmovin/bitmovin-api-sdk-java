@@ -56,6 +56,20 @@ public class VideoApi {
     }
 
     /**
+     * Delete Stream
+     * 
+     * @param streamId Id of the stream. (required)
+     * @throws BitmovinException if fails to make API call
+     */
+    public void delete(String streamId) throws BitmovinException {
+        try {
+            this.apiClient.delete(streamId);
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
+    /**
      * Get Streams video by id
      * 
      * @param streamId Id of the stream. (required)
@@ -119,6 +133,9 @@ public class VideoApi {
 
         @RequestLine("POST /streams/video")
         ResponseEnvelope<StreamsVideoResponse> create(StreamsVideoCreateRequest streamsVideoCreateRequest) throws BitmovinException;
+    
+        @RequestLine("DELETE /streams/video/{stream_id}")
+        void delete(@Param(value = "stream_id") String streamId) throws BitmovinException;
     
         @RequestLine("GET /streams/video/{stream_id}")
         ResponseEnvelope<StreamsVideoResponse> get(@Param(value = "stream_id") String streamId) throws BitmovinException;
