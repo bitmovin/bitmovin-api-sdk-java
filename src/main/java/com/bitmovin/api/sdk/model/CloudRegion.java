@@ -183,44 +183,114 @@ public enum CloudRegion {
   GOOGLE_US_WEST_2("GOOGLE_US_WEST_2"),
   
   /**
-   * Azure Netherlands
+   * Azure East Asia, Hong Kong
    */
-  AZURE_EUROPE_WEST("AZURE_EUROPE_WEST"),
+  AZURE_ASIA_EAST("AZURE_ASIA_EAST"),
   
   /**
-   * Azure Ireland
+   * Azure Southeast Asia, Singapore
    */
-  AZURE_EUROPE_NORTH("AZURE_EUROPE_NORTH"),
+  AZURE_ASIA_SOUTHEAST("AZURE_ASIA_SOUTHEAST"),
   
   /**
-   * Azure Washington, USA
-   */
-  AZURE_US_WEST2("AZURE_US_WEST2"),
-  
-  /**
-   * Azure Virginia, USA
-   */
-  AZURE_US_EAST("AZURE_US_EAST"),
-  
-  /**
-   * Azure Victoria, Australia
-   */
-  AZURE_AUSTRALIA_SOUTHEAST("AZURE_AUSTRALIA_SOUTHEAST"),
-  
-  /**
-   * Azure New South Wales, Australia
+   * Azure Australia East, Canberra
    */
   AZURE_AUSTRALIA_EAST("AZURE_AUSTRALIA_EAST"),
   
   /**
-   * Azure Frankfurt, Germany
+   * Azure Australia Southeast, Victoria
+   */
+  AZURE_AUSTRALIA_SOUTHEAST("AZURE_AUSTRALIA_SOUTHEAST"),
+  
+  /**
+   * Azure Brazil South, São Paulo
+   */
+  AZURE_BRAZIL_SOUTH("AZURE_BRAZIL_SOUTH"),
+  
+  /**
+   * Azure Canada Central, Toronto
+   */
+  AZURE_CANADA_CENTRAL("AZURE_CANADA_CENTRAL"),
+  
+  /**
+   * Azure North Europe, Ireland
+   */
+  AZURE_EUROPE_NORTH("AZURE_EUROPE_NORTH"),
+  
+  /**
+   * Azure West Europe, Netherlands
+   */
+  AZURE_EUROPE_WEST("AZURE_EUROPE_WEST"),
+  
+  /**
+   * Azure France Central, Paris
+   */
+  AZURE_FRANCE_CENTRAL("AZURE_FRANCE_CENTRAL"),
+  
+  /**
+   * Azure Germany West Central, Frankfurt
    */
   AZURE_GERMANY_WESTCENTRAL("AZURE_GERMANY_WESTCENTRAL"),
   
   /**
-   * Azure Dubai, United Arab Emirates
+   * Azure Central India, Pune
+   */
+  AZURE_INDIA_CENTRAL("AZURE_INDIA_CENTRAL"),
+  
+  /**
+   * Azure South India, Chennai
+   */
+  AZURE_INDIA_SOUTH("AZURE_INDIA_SOUTH"),
+  
+  /**
+   * Azure Japan East, Tokyo, Saitama
+   */
+  AZURE_JAPAN_EAST("AZURE_JAPAN_EAST"),
+  
+  /**
+   * Azure Japan West, Osaka
+   */
+  AZURE_JAPAN_WEST("AZURE_JAPAN_WEST"),
+  
+  /**
+   * Azure Korea Central, Seoul
+   */
+  AZURE_KOREA_CENTRAL("AZURE_KOREA_CENTRAL"),
+  
+  /**
+   * Azure UAE North, Dubai, United Arab Emirates
    */
   AZURE_UAE_NORTH("AZURE_UAE_NORTH"),
+  
+  /**
+   * Azure Central US, Iowa, USA
+   */
+  AZURE_US_CENTRAL("AZURE_US_CENTRAL"),
+  
+  /**
+   * Azure East US, Virginia, USA
+   */
+  AZURE_US_EAST("AZURE_US_EAST"),
+  
+  /**
+   * Azure East US 2, Virginia, USA
+   */
+  AZURE_US_EAST2("AZURE_US_EAST2"),
+  
+  /**
+   * Azure West US, California, USA
+   */
+  AZURE_US_WEST("AZURE_US_WEST"),
+  
+  /**
+   * Azure West US 2, Washington, USA
+   */
+  AZURE_US_WEST2("AZURE_US_WEST2"),
+  
+  /**
+   * Azure South Central US, Texas, USA
+   */
+  AZURE_US_SOUTH_CENTRAL("AZURE_US_SOUTH_CENTRAL"),
   
   
   NORTH_AMERICA("NORTH_AMERICA"),
