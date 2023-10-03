@@ -1,0 +1,47 @@
+package com.bitmovin.api.sdk.model;
+
+import java.util.Objects;
+import java.util.Arrays;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+
+public enum StreamsEncodingProfile {
+  
+  
+  PER_TITLE("PER_TITLE"),
+  
+  
+  FIXED_RESOLUTIONS("FIXED_RESOLUTIONS");
+
+  private String value;
+
+  StreamsEncodingProfile(String value) {
+    this.value = value;
+  }
+
+  @JsonValue
+  public String getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  @JsonCreator
+  public static StreamsEncodingProfile fromValue(String text) {
+    for (StreamsEncodingProfile b : StreamsEncodingProfile.values()) {
+      if (String.valueOf(b.value).equals(text)) {
+        return b;
+      }
+    }
+    return null;
+  }
+}
+

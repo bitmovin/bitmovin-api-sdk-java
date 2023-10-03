@@ -23,8 +23,8 @@ public class EncodingStatisticsVod extends EncodingStatistics {
   @JsonProperty("timeEnqueued")
   private Long timeEnqueued;
 
-  @JsonProperty("realTimeFactor")
-  private Double realTimeFactor;
+  @JsonProperty("realtimeFactor")
+  private Double realtimeFactor;
 
 
   /**
@@ -48,20 +48,20 @@ public class EncodingStatisticsVod extends EncodingStatistics {
 
   /**
    * The realtime factor. (required)
-   * @return realTimeFactor
+   * @return realtimeFactor
    */
-  public Double getRealTimeFactor() {
-    return realTimeFactor;
+  public Double getRealtimeFactor() {
+    return realtimeFactor;
   }
 
   /**
    * The realtime factor. (required)
    *
-   * @param realTimeFactor
+   * @param realtimeFactor
    *        The realtime factor. (required)
    */
-  public void setRealTimeFactor(Double realTimeFactor) {
-    this.realTimeFactor = realTimeFactor;
+  public void setRealtimeFactor(Double realtimeFactor) {
+    this.realtimeFactor = realtimeFactor;
   }
 
 
@@ -75,13 +75,13 @@ public class EncodingStatisticsVod extends EncodingStatistics {
     }
     EncodingStatisticsVod encodingStatisticsVod = (EncodingStatisticsVod) o;
     return Objects.equals(this.timeEnqueued, encodingStatisticsVod.timeEnqueued) &&
-        Objects.equals(this.realTimeFactor, encodingStatisticsVod.realTimeFactor) &&
+        Objects.equals(this.realtimeFactor, encodingStatisticsVod.realtimeFactor) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(timeEnqueued, realTimeFactor, super.hashCode());
+    return Objects.hash(timeEnqueued, realtimeFactor, super.hashCode());
   }
 
   @Override
@@ -90,7 +90,7 @@ public class EncodingStatisticsVod extends EncodingStatistics {
     sb.append("class EncodingStatisticsVod {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    timeEnqueued: ").append(toIndentedString(timeEnqueued)).append("\n");
-    sb.append("    realTimeFactor: ").append(toIndentedString(realTimeFactor)).append("\n");
+    sb.append("    realtimeFactor: ").append(toIndentedString(realtimeFactor)).append("\n");
     sb.append("}");
     return sb.toString();
   }

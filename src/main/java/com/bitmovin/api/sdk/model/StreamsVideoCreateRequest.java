@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.StreamsEncodingProfile;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -26,6 +27,9 @@ public class StreamsVideoCreateRequest {
 
   @JsonProperty("adConfigId")
   private String adConfigId;
+
+  @JsonProperty("encodingProfile")
+  private StreamsEncodingProfile encodingProfile;
 
 
   /**
@@ -123,6 +127,25 @@ public class StreamsVideoCreateRequest {
   }
 
 
+  /**
+   * Profile to be used in encoding
+   * @return encodingProfile
+   */
+  public StreamsEncodingProfile getEncodingProfile() {
+    return encodingProfile;
+  }
+
+  /**
+   * Profile to be used in encoding
+   *
+   * @param encodingProfile
+   *        Profile to be used in encoding
+   */
+  public void setEncodingProfile(StreamsEncodingProfile encodingProfile) {
+    this.encodingProfile = encodingProfile;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -136,12 +159,13 @@ public class StreamsVideoCreateRequest {
         Objects.equals(this.title, streamsVideoCreateRequest.title) &&
         Objects.equals(this.description, streamsVideoCreateRequest.description) &&
         Objects.equals(this.styleConfigId, streamsVideoCreateRequest.styleConfigId) &&
-        Objects.equals(this.adConfigId, streamsVideoCreateRequest.adConfigId);
+        Objects.equals(this.adConfigId, streamsVideoCreateRequest.adConfigId) &&
+        Objects.equals(this.encodingProfile, streamsVideoCreateRequest.encodingProfile);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(assetUrl, title, description, styleConfigId, adConfigId);
+    return Objects.hash(assetUrl, title, description, styleConfigId, adConfigId, encodingProfile);
   }
 
   @Override
@@ -154,6 +178,7 @@ public class StreamsVideoCreateRequest {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    styleConfigId: ").append(toIndentedString(styleConfigId)).append("\n");
     sb.append("    adConfigId: ").append(toIndentedString(adConfigId)).append("\n");
+    sb.append("    encodingProfile: ").append(toIndentedString(encodingProfile)).append("\n");
     sb.append("}");
     return sb.toString();
   }

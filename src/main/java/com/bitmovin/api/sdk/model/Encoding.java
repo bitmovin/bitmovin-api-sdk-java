@@ -69,6 +69,10 @@ public class Encoding extends BitmovinResource {
   @JsonProperty("selectedCloudRegion")
   private CloudRegion selectedCloudRegion;
 
+  @JsonProperty("selectedFallbackCloudRegions")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<CloudRegion> selectedFallbackCloudRegions = new ArrayList<CloudRegion>();
+
   @JsonProperty("status")
   private Status status;
 
@@ -258,6 +262,14 @@ public class Encoding extends BitmovinResource {
   }
 
   /**
+   * After the encoding has been started, this will contain the fallback cloud regions that were actually used. This will differ from fallbackCloudRegions if any of the fallbackCloudRegions were set to an unspecific region (e.g. &#39;AUTO&#39;)
+   * @return selectedFallbackCloudRegions
+   */
+  public List<CloudRegion> getSelectedFallbackCloudRegions() {
+    return selectedFallbackCloudRegions;
+  }
+
+  /**
    * The current status of the encoding.
    * @return status
    */
@@ -322,6 +334,7 @@ public class Encoding extends BitmovinResource {
         Objects.equals(this.selectedEncoderVersion, encoding.selectedEncoderVersion) &&
         Objects.equals(this.selectedEncodingMode, encoding.selectedEncodingMode) &&
         Objects.equals(this.selectedCloudRegion, encoding.selectedCloudRegion) &&
+        Objects.equals(this.selectedFallbackCloudRegions, encoding.selectedFallbackCloudRegions) &&
         Objects.equals(this.status, encoding.status) &&
         Objects.equals(this.labels, encoding.labels) &&
         Objects.equals(this.liveOptionsType, encoding.liveOptionsType) &&
@@ -330,7 +343,7 @@ public class Encoding extends BitmovinResource {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, startedAt, queuedAt, runningAt, finishedAt, errorAt, progress, cloudRegion, fallbackCloudRegions, encoderVersion, infrastructure, staticIpId, selectedEncoderVersion, selectedEncodingMode, selectedCloudRegion, status, labels, liveOptionsType, super.hashCode());
+    return Objects.hash(type, startedAt, queuedAt, runningAt, finishedAt, errorAt, progress, cloudRegion, fallbackCloudRegions, encoderVersion, infrastructure, staticIpId, selectedEncoderVersion, selectedEncodingMode, selectedCloudRegion, selectedFallbackCloudRegions, status, labels, liveOptionsType, super.hashCode());
   }
 
   @Override
@@ -353,6 +366,7 @@ public class Encoding extends BitmovinResource {
     sb.append("    selectedEncoderVersion: ").append(toIndentedString(selectedEncoderVersion)).append("\n");
     sb.append("    selectedEncodingMode: ").append(toIndentedString(selectedEncodingMode)).append("\n");
     sb.append("    selectedCloudRegion: ").append(toIndentedString(selectedCloudRegion)).append("\n");
+    sb.append("    selectedFallbackCloudRegions: ").append(toIndentedString(selectedFallbackCloudRegions)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
     sb.append("    liveOptionsType: ").append(toIndentedString(liveOptionsType)).append("\n");
