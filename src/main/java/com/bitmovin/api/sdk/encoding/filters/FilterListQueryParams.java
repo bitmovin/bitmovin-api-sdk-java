@@ -33,9 +33,31 @@ public class FilterListQueryParams extends HashMap<String, Object> {
     }
 
     /**
-    * @param name Filter filters by name (optional)
+    * @param name Filter filters by name. Multiple names are separated with a &#x60;,&#x60; (optional)
     */
     public void setName(String name) {
         this.put("name", name);
+    }
+
+    public String getSort() {
+        return (String) this.get("sort");
+    }
+
+    /**
+    * @param sort Order list result according to a filter resource attribute. The fields that can be used for sorting are: + &#x60;id&#x60; + &#x60;createdAt&#x60; + &#x60;modifiedAt&#x60; + &#x60;type&#x60; + &#x60;name&#x60;  (optional)
+    */
+    public void setSort(String sort) {
+        this.put("sort", sort);
+    }
+
+    public String getType() {
+        return (String) this.get("type");
+    }
+
+    /**
+    * @param type Filter filters by type. Multiple types are separated with a &#x60;,&#x60; (optional)
+    */
+    public void setType(String type) {
+        this.put("type", type);
     }
 }

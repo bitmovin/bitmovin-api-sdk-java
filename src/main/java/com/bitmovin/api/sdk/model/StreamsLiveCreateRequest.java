@@ -18,12 +18,6 @@ public class StreamsLiveCreateRequest {
   @JsonProperty("description")
   private String description;
 
-  @JsonProperty("styleConfigId")
-  private String styleConfigId;
-
-  @JsonProperty("adConfigId")
-  private String adConfigId;
-
 
   /**
    * Title of the stream
@@ -63,44 +57,6 @@ public class StreamsLiveCreateRequest {
   }
 
 
-  /**
-   * Id of the style config to use
-   * @return styleConfigId
-   */
-  public String getStyleConfigId() {
-    return styleConfigId;
-  }
-
-  /**
-   * Id of the style config to use
-   *
-   * @param styleConfigId
-   *        Id of the style config to use
-   */
-  public void setStyleConfigId(String styleConfigId) {
-    this.styleConfigId = styleConfigId;
-  }
-
-
-  /**
-   * Id of the advertisement config to use
-   * @return adConfigId
-   */
-  public String getAdConfigId() {
-    return adConfigId;
-  }
-
-  /**
-   * Id of the advertisement config to use
-   *
-   * @param adConfigId
-   *        Id of the advertisement config to use
-   */
-  public void setAdConfigId(String adConfigId) {
-    this.adConfigId = adConfigId;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -111,14 +67,12 @@ public class StreamsLiveCreateRequest {
     }
     StreamsLiveCreateRequest streamsLiveCreateRequest = (StreamsLiveCreateRequest) o;
     return Objects.equals(this.title, streamsLiveCreateRequest.title) &&
-        Objects.equals(this.description, streamsLiveCreateRequest.description) &&
-        Objects.equals(this.styleConfigId, streamsLiveCreateRequest.styleConfigId) &&
-        Objects.equals(this.adConfigId, streamsLiveCreateRequest.adConfigId);
+        Objects.equals(this.description, streamsLiveCreateRequest.description);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, description, styleConfigId, adConfigId);
+    return Objects.hash(title, description);
   }
 
   @Override
@@ -128,8 +82,6 @@ public class StreamsLiveCreateRequest {
     
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    styleConfigId: ").append(toIndentedString(styleConfigId)).append("\n");
-    sb.append("    adConfigId: ").append(toIndentedString(adConfigId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

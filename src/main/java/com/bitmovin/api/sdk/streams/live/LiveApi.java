@@ -135,22 +135,6 @@ public class LiveApi {
         }
     }
 
-    /**
-     * Update live stream by id
-     * 
-     * @param streamId Id of the stream. (required)
-     * @param streamsLiveUpdateRequest The updated Streams live object. (required)
-     * @return StreamsLiveResponse
-     * @throws BitmovinException if fails to make API call
-     */
-    public StreamsLiveResponse update(String streamId, StreamsLiveUpdateRequest streamsLiveUpdateRequest) throws BitmovinException {
-        try {
-            return this.apiClient.update(streamId, streamsLiveUpdateRequest).getData().getResult();
-        } catch (Exception ex) {
-            throw buildBitmovinException(ex);
-        }
-    }
-
     interface LiveApiClient {
 
         @RequestLine("POST /streams/live")
@@ -167,8 +151,5 @@ public class LiveApi {
     
         @RequestLine("PATCH /streams/live/{stream_id}")
         ResponseEnvelope<StreamsLiveResponse> patchStreamsLive(@Param(value = "stream_id") String streamId, StreamsLiveUpdateRequest streamsLiveUpdateRequest) throws BitmovinException;
-    
-        @RequestLine("PUT /streams/live/{stream_id}")
-        ResponseEnvelope<StreamsLiveResponse> update(@Param(value = "stream_id") String streamId, StreamsLiveUpdateRequest streamsLiveUpdateRequest) throws BitmovinException;
     }
 }

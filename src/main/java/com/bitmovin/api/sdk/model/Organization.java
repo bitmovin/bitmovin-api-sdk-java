@@ -5,6 +5,7 @@ import java.util.Arrays;
 import com.bitmovin.api.sdk.model.BitmovinResource;
 import com.bitmovin.api.sdk.model.OrganizationType;
 import com.bitmovin.api.sdk.model.ResourceLimitContainer;
+import com.bitmovin.api.sdk.model.SignupSource;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -31,6 +32,9 @@ public class Organization extends BitmovinResource {
   @JsonProperty("limitsPerResource")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<ResourceLimitContainer> limitsPerResource = new ArrayList<ResourceLimitContainer>();
+
+  @JsonProperty("signupSource")
+  private SignupSource signupSource;
 
 
   /**
@@ -101,6 +105,14 @@ public class Organization extends BitmovinResource {
     this.limitsPerResource = limitsPerResource;
   }
 
+  /**
+   * which platform initiated organisation creation
+   * @return signupSource
+   */
+  public SignupSource getSignupSource() {
+    return signupSource;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -115,12 +127,13 @@ public class Organization extends BitmovinResource {
         Objects.equals(this.parentId, organization.parentId) &&
         Objects.equals(this.labelColor, organization.labelColor) &&
         Objects.equals(this.limitsPerResource, organization.limitsPerResource) &&
+        Objects.equals(this.signupSource, organization.signupSource) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, parentId, labelColor, limitsPerResource, super.hashCode());
+    return Objects.hash(type, parentId, labelColor, limitsPerResource, signupSource, super.hashCode());
   }
 
   @Override
@@ -132,6 +145,7 @@ public class Organization extends BitmovinResource {
     sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
     sb.append("    labelColor: ").append(toIndentedString(labelColor)).append("\n");
     sb.append("    limitsPerResource: ").append(toIndentedString(limitsPerResource)).append("\n");
+    sb.append("    signupSource: ").append(toIndentedString(signupSource)).append("\n");
     sb.append("}");
     return sb.toString();
   }

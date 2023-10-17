@@ -22,12 +22,6 @@ public class StreamsVideoCreateRequest {
   @JsonProperty("description")
   private String description;
 
-  @JsonProperty("styleConfigId")
-  private String styleConfigId;
-
-  @JsonProperty("adConfigId")
-  private String adConfigId;
-
   @JsonProperty("encodingProfile")
   private StreamsEncodingProfile encodingProfile;
 
@@ -90,44 +84,6 @@ public class StreamsVideoCreateRequest {
 
 
   /**
-   * Id of the style config to use
-   * @return styleConfigId
-   */
-  public String getStyleConfigId() {
-    return styleConfigId;
-  }
-
-  /**
-   * Id of the style config to use
-   *
-   * @param styleConfigId
-   *        Id of the style config to use
-   */
-  public void setStyleConfigId(String styleConfigId) {
-    this.styleConfigId = styleConfigId;
-  }
-
-
-  /**
-   * Id of the advertisement config to use
-   * @return adConfigId
-   */
-  public String getAdConfigId() {
-    return adConfigId;
-  }
-
-  /**
-   * Id of the advertisement config to use
-   *
-   * @param adConfigId
-   *        Id of the advertisement config to use
-   */
-  public void setAdConfigId(String adConfigId) {
-    this.adConfigId = adConfigId;
-  }
-
-
-  /**
    * Profile to be used in encoding
    * @return encodingProfile
    */
@@ -158,14 +114,12 @@ public class StreamsVideoCreateRequest {
     return Objects.equals(this.assetUrl, streamsVideoCreateRequest.assetUrl) &&
         Objects.equals(this.title, streamsVideoCreateRequest.title) &&
         Objects.equals(this.description, streamsVideoCreateRequest.description) &&
-        Objects.equals(this.styleConfigId, streamsVideoCreateRequest.styleConfigId) &&
-        Objects.equals(this.adConfigId, streamsVideoCreateRequest.adConfigId) &&
         Objects.equals(this.encodingProfile, streamsVideoCreateRequest.encodingProfile);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(assetUrl, title, description, styleConfigId, adConfigId, encodingProfile);
+    return Objects.hash(assetUrl, title, description, encodingProfile);
   }
 
   @Override
@@ -176,8 +130,6 @@ public class StreamsVideoCreateRequest {
     sb.append("    assetUrl: ").append(toIndentedString(assetUrl)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    styleConfigId: ").append(toIndentedString(styleConfigId)).append("\n");
-    sb.append("    adConfigId: ").append(toIndentedString(adConfigId)).append("\n");
     sb.append("    encodingProfile: ").append(toIndentedString(encodingProfile)).append("\n");
     sb.append("}");
     return sb.toString();

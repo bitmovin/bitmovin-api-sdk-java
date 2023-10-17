@@ -18,17 +18,8 @@ public class StreamsLiveUpdateRequest {
   @JsonProperty("description")
   private String description;
 
-  @JsonProperty("styleConfigId")
-  private String styleConfigId;
-
   @JsonProperty("posterUrl")
   private String posterUrl;
-
-  @JsonProperty("adConfigId")
-  private String adConfigId;
-
-  @JsonProperty("contentProtectionId")
-  private String contentProtectionId;
 
 
   /**
@@ -70,25 +61,6 @@ public class StreamsLiveUpdateRequest {
 
 
   /**
-   * Id of the style config to use
-   * @return styleConfigId
-   */
-  public String getStyleConfigId() {
-    return styleConfigId;
-  }
-
-  /**
-   * Id of the style config to use
-   *
-   * @param styleConfigId
-   *        Id of the style config to use
-   */
-  public void setStyleConfigId(String styleConfigId) {
-    this.styleConfigId = styleConfigId;
-  }
-
-
-  /**
    * URL to hosted poster image
    * @return posterUrl
    */
@@ -107,44 +79,6 @@ public class StreamsLiveUpdateRequest {
   }
 
 
-  /**
-   * Id of the advertisement config to use
-   * @return adConfigId
-   */
-  public String getAdConfigId() {
-    return adConfigId;
-  }
-
-  /**
-   * Id of the advertisement config to use
-   *
-   * @param adConfigId
-   *        Id of the advertisement config to use
-   */
-  public void setAdConfigId(String adConfigId) {
-    this.adConfigId = adConfigId;
-  }
-
-
-  /**
-   * Id of the content protection config to use
-   * @return contentProtectionId
-   */
-  public String getContentProtectionId() {
-    return contentProtectionId;
-  }
-
-  /**
-   * Id of the content protection config to use
-   *
-   * @param contentProtectionId
-   *        Id of the content protection config to use
-   */
-  public void setContentProtectionId(String contentProtectionId) {
-    this.contentProtectionId = contentProtectionId;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -156,15 +90,12 @@ public class StreamsLiveUpdateRequest {
     StreamsLiveUpdateRequest streamsLiveUpdateRequest = (StreamsLiveUpdateRequest) o;
     return Objects.equals(this.title, streamsLiveUpdateRequest.title) &&
         Objects.equals(this.description, streamsLiveUpdateRequest.description) &&
-        Objects.equals(this.styleConfigId, streamsLiveUpdateRequest.styleConfigId) &&
-        Objects.equals(this.posterUrl, streamsLiveUpdateRequest.posterUrl) &&
-        Objects.equals(this.adConfigId, streamsLiveUpdateRequest.adConfigId) &&
-        Objects.equals(this.contentProtectionId, streamsLiveUpdateRequest.contentProtectionId);
+        Objects.equals(this.posterUrl, streamsLiveUpdateRequest.posterUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, description, styleConfigId, posterUrl, adConfigId, contentProtectionId);
+    return Objects.hash(title, description, posterUrl);
   }
 
   @Override
@@ -174,10 +105,7 @@ public class StreamsLiveUpdateRequest {
     
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    styleConfigId: ").append(toIndentedString(styleConfigId)).append("\n");
     sb.append("    posterUrl: ").append(toIndentedString(posterUrl)).append("\n");
-    sb.append("    adConfigId: ").append(toIndentedString(adConfigId)).append("\n");
-    sb.append("    contentProtectionId: ").append(toIndentedString(contentProtectionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
