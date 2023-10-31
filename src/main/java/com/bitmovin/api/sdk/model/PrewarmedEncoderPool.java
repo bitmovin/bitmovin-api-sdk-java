@@ -34,6 +34,9 @@ public class PrewarmedEncoderPool extends BitmovinResource {
   @JsonProperty("targetPoolSize")
   private Integer targetPoolSize;
 
+  @JsonProperty("dynamicPool")
+  private Boolean dynamicPool;
+
   @JsonProperty("gpuEnabled")
   private Boolean gpuEnabled;
 
@@ -140,6 +143,25 @@ public class PrewarmedEncoderPool extends BitmovinResource {
 
 
   /**
+   * Activate dynamic pool behaviour. Pool will increase/decrease based on usage. Minimum pool size is set by targetPoolSize.
+   * @return dynamicPool
+   */
+  public Boolean getDynamicPool() {
+    return dynamicPool;
+  }
+
+  /**
+   * Activate dynamic pool behaviour. Pool will increase/decrease based on usage. Minimum pool size is set by targetPoolSize.
+   *
+   * @param dynamicPool
+   *        Activate dynamic pool behaviour. Pool will increase/decrease based on usage. Minimum pool size is set by targetPoolSize.
+   */
+  public void setDynamicPool(Boolean dynamicPool) {
+    this.dynamicPool = dynamicPool;
+  }
+
+
+  /**
    * Create pool with GPU instances for hardware encoding presets (e.g., VOD_HARDWARE_SHORTFORM).
    * @return gpuEnabled
    */
@@ -180,6 +202,7 @@ public class PrewarmedEncoderPool extends BitmovinResource {
         Objects.equals(this.infrastructureId, prewarmedEncoderPool.infrastructureId) &&
         Objects.equals(this.diskSize, prewarmedEncoderPool.diskSize) &&
         Objects.equals(this.targetPoolSize, prewarmedEncoderPool.targetPoolSize) &&
+        Objects.equals(this.dynamicPool, prewarmedEncoderPool.dynamicPool) &&
         Objects.equals(this.gpuEnabled, prewarmedEncoderPool.gpuEnabled) &&
         Objects.equals(this.status, prewarmedEncoderPool.status) &&
         super.equals(o);
@@ -187,7 +210,7 @@ public class PrewarmedEncoderPool extends BitmovinResource {
 
   @Override
   public int hashCode() {
-    return Objects.hash(encoderVersion, cloudRegion, infrastructureId, diskSize, targetPoolSize, gpuEnabled, status, super.hashCode());
+    return Objects.hash(encoderVersion, cloudRegion, infrastructureId, diskSize, targetPoolSize, dynamicPool, gpuEnabled, status, super.hashCode());
   }
 
   @Override
@@ -200,6 +223,7 @@ public class PrewarmedEncoderPool extends BitmovinResource {
     sb.append("    infrastructureId: ").append(toIndentedString(infrastructureId)).append("\n");
     sb.append("    diskSize: ").append(toIndentedString(diskSize)).append("\n");
     sb.append("    targetPoolSize: ").append(toIndentedString(targetPoolSize)).append("\n");
+    sb.append("    dynamicPool: ").append(toIndentedString(dynamicPool)).append("\n");
     sb.append("    gpuEnabled: ").append(toIndentedString(gpuEnabled)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");

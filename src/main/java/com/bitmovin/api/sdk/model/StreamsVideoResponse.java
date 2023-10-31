@@ -58,6 +58,9 @@ public class StreamsVideoResponse {
   @JsonProperty("trimming")
   private StreamsTrimmingStatus trimming;
 
+  @JsonProperty("downloadUrl")
+  private String downloadUrl;
+
   /**
    * The identifier of the stream
    * @return id
@@ -184,6 +187,14 @@ public class StreamsVideoResponse {
     return trimming;
   }
 
+  /**
+   * Single-file download URL of the unaltered video in the best available quality
+   * @return downloadUrl
+   */
+  public String getDownloadUrl() {
+    return downloadUrl;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -205,12 +216,13 @@ public class StreamsVideoResponse {
         Objects.equals(this.posterUrl, streamsVideoResponse.posterUrl) &&
         Objects.equals(this.adConfig, streamsVideoResponse.adConfig) &&
         Objects.equals(this.contentProtection, streamsVideoResponse.contentProtection) &&
-        Objects.equals(this.trimming, streamsVideoResponse.trimming);
+        Objects.equals(this.trimming, streamsVideoResponse.trimming) &&
+        Objects.equals(this.downloadUrl, streamsVideoResponse.downloadUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, assetUrl, title, description, createdAt, status, styleConfig, encodingTasks, posterUrl, adConfig, contentProtection, trimming);
+    return Objects.hash(id, assetUrl, title, description, createdAt, status, styleConfig, encodingTasks, posterUrl, adConfig, contentProtection, trimming, downloadUrl);
   }
 
   @Override
@@ -230,6 +242,7 @@ public class StreamsVideoResponse {
     sb.append("    adConfig: ").append(toIndentedString(adConfig)).append("\n");
     sb.append("    contentProtection: ").append(toIndentedString(contentProtection)).append("\n");
     sb.append("    trimming: ").append(toIndentedString(trimming)).append("\n");
+    sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }
