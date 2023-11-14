@@ -25,6 +25,9 @@ public class StreamsVideoCreateRequest {
   @JsonProperty("encodingProfile")
   private StreamsEncodingProfile encodingProfile;
 
+  @JsonProperty("signed")
+  private Boolean signed;
+
 
   /**
    * The streams input asset URL
@@ -102,6 +105,25 @@ public class StreamsVideoCreateRequest {
   }
 
 
+  /**
+   * If set to true the Stream is only accessible via a token
+   * @return signed
+   */
+  public Boolean getSigned() {
+    return signed;
+  }
+
+  /**
+   * If set to true the Stream is only accessible via a token
+   *
+   * @param signed
+   *        If set to true the Stream is only accessible via a token
+   */
+  public void setSigned(Boolean signed) {
+    this.signed = signed;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -114,12 +136,13 @@ public class StreamsVideoCreateRequest {
     return Objects.equals(this.assetUrl, streamsVideoCreateRequest.assetUrl) &&
         Objects.equals(this.title, streamsVideoCreateRequest.title) &&
         Objects.equals(this.description, streamsVideoCreateRequest.description) &&
-        Objects.equals(this.encodingProfile, streamsVideoCreateRequest.encodingProfile);
+        Objects.equals(this.encodingProfile, streamsVideoCreateRequest.encodingProfile) &&
+        Objects.equals(this.signed, streamsVideoCreateRequest.signed);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(assetUrl, title, description, encodingProfile);
+    return Objects.hash(assetUrl, title, description, encodingProfile, signed);
   }
 
   @Override
@@ -131,6 +154,7 @@ public class StreamsVideoCreateRequest {
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    encodingProfile: ").append(toIndentedString(encodingProfile)).append("\n");
+    sb.append("    signed: ").append(toIndentedString(signed)).append("\n");
     sb.append("}");
     return sb.toString();
   }

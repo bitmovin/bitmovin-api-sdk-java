@@ -5,11 +5,13 @@ import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.streams.search.SearchApi;
 import com.bitmovin.api.sdk.streams.video.VideoApi;
 import com.bitmovin.api.sdk.streams.live.LiveApi;
+import com.bitmovin.api.sdk.streams.signingKeys.SigningKeysApi;
 
 public class StreamsApi {
     public final SearchApi search;
     public final VideoApi video;
     public final LiveApi live;
+    public final SigningKeysApi signingKeys;
 
     public StreamsApi(BitmovinApiClientFactory clientFactory) {
         if (clientFactory == null)
@@ -20,6 +22,7 @@ public class StreamsApi {
         this.search = new SearchApi(clientFactory);
         this.video = new VideoApi(clientFactory);
         this.live = new LiveApi(clientFactory);
+        this.signingKeys = new SigningKeysApi(clientFactory);
     }
 
     /**

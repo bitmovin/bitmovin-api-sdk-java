@@ -61,6 +61,9 @@ public class StreamsVideoResponse {
   @JsonProperty("downloadUrl")
   private String downloadUrl;
 
+  @JsonProperty("signed")
+  private Boolean signed;
+
   /**
    * The identifier of the stream
    * @return id
@@ -195,6 +198,14 @@ public class StreamsVideoResponse {
     return downloadUrl;
   }
 
+  /**
+   * True if the stream is signature protected
+   * @return signed
+   */
+  public Boolean getSigned() {
+    return signed;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -217,12 +228,13 @@ public class StreamsVideoResponse {
         Objects.equals(this.adConfig, streamsVideoResponse.adConfig) &&
         Objects.equals(this.contentProtection, streamsVideoResponse.contentProtection) &&
         Objects.equals(this.trimming, streamsVideoResponse.trimming) &&
-        Objects.equals(this.downloadUrl, streamsVideoResponse.downloadUrl);
+        Objects.equals(this.downloadUrl, streamsVideoResponse.downloadUrl) &&
+        Objects.equals(this.signed, streamsVideoResponse.signed);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, assetUrl, title, description, createdAt, status, styleConfig, encodingTasks, posterUrl, adConfig, contentProtection, trimming, downloadUrl);
+    return Objects.hash(id, assetUrl, title, description, createdAt, status, styleConfig, encodingTasks, posterUrl, adConfig, contentProtection, trimming, downloadUrl, signed);
   }
 
   @Override
@@ -243,6 +255,7 @@ public class StreamsVideoResponse {
     sb.append("    contentProtection: ").append(toIndentedString(contentProtection)).append("\n");
     sb.append("    trimming: ").append(toIndentedString(trimming)).append("\n");
     sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
+    sb.append("    signed: ").append(toIndentedString(signed)).append("\n");
     sb.append("}");
     return sb.toString();
   }

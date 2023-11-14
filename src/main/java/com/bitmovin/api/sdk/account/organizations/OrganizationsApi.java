@@ -19,10 +19,12 @@ import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.account.organizations.subOrganizations.SubOrganizationsApi;
+import com.bitmovin.api.sdk.account.organizations.tenants.TenantsApi;
 import com.bitmovin.api.sdk.account.organizations.groups.GroupsApi;
 
 public class OrganizationsApi {
     public final SubOrganizationsApi subOrganizations;
+    public final TenantsApi tenants;
     public final GroupsApi groups;
 
     private final OrganizationsApiClient apiClient;
@@ -36,6 +38,7 @@ public class OrganizationsApi {
         this.apiClient = clientFactory.createApiClient(OrganizationsApiClient.class);
 
         this.subOrganizations = new SubOrganizationsApi(clientFactory);
+        this.tenants = new TenantsApi(clientFactory);
         this.groups = new GroupsApi(clientFactory);
     }
 

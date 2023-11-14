@@ -44,6 +44,9 @@ public class AccountInformation extends BitmovinResource {
   @JsonProperty("marketplace")
   private Marketplace marketplace;
 
+  @JsonProperty("mfaEnabled")
+  private Boolean mfaEnabled;
+
   /**
    * Email address of the account. (required)
    * @return email
@@ -152,6 +155,14 @@ public class AccountInformation extends BitmovinResource {
     return marketplace;
   }
 
+  /**
+   * Get mfaEnabled
+   * @return mfaEnabled
+   */
+  public Boolean getMfaEnabled() {
+    return mfaEnabled;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -170,12 +181,13 @@ public class AccountInformation extends BitmovinResource {
         Objects.equals(this.company, accountInformation.company) &&
         Objects.equals(this.verified, accountInformation.verified) &&
         Objects.equals(this.marketplace, accountInformation.marketplace) &&
+        Objects.equals(this.mfaEnabled, accountInformation.mfaEnabled) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(email, apiKeys, firstName, lastName, phone, company, verified, marketplace, super.hashCode());
+    return Objects.hash(email, apiKeys, firstName, lastName, phone, company, verified, marketplace, mfaEnabled, super.hashCode());
   }
 
   @Override
@@ -191,6 +203,7 @@ public class AccountInformation extends BitmovinResource {
     sb.append("    company: ").append(toIndentedString(company)).append("\n");
     sb.append("    verified: ").append(toIndentedString(verified)).append("\n");
     sb.append("    marketplace: ").append(toIndentedString(marketplace)).append("\n");
+    sb.append("    mfaEnabled: ").append(toIndentedString(mfaEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }
