@@ -39,6 +39,17 @@ public class OutputListQueryParams extends HashMap<String, Object> {
         this.put("name", name);
     }
 
+    public String getSort() {
+        return (String) this.get("sort");
+    }
+
+    /**
+    * @param sort Order list result according to a output resource attribute. The fields that can be used for sorting are: + &#x60;id&#x60; + &#x60;createdAt&#x60; + &#x60;modifiedAt&#x60; + &#x60;type&#x60; + &#x60;name&#x60;  (optional)
+    */
+    public void setSort(String sort) {
+        this.put("sort", sort);
+    }
+
     public OutputType getType() {
         return (OutputType) this.get("type");
     }

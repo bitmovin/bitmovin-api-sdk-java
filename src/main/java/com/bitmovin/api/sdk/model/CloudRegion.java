@@ -292,6 +292,26 @@ public enum CloudRegion {
    */
   AZURE_US_SOUTH_CENTRAL("AZURE_US_SOUTH_CENTRAL"),
   
+  /**
+   * Akamai São Paulo, Brazil
+   */
+  AKAMAI_BR_GRU("AKAMAI_BR_GRU"),
+  
+  /**
+   * Akamai Paris, France
+   */
+  AKAMAI_FR_PAR("AKAMAI_FR_PAR"),
+  
+  /**
+   * Akamai Osaka, Japan
+   */
+  AKAMAI_JP_OSA("AKAMAI_JP_OSA"),
+  
+  /**
+   * Akamai Seattle, USA
+   */
+  AKAMAI_US_SEA("AKAMAI_US_SEA"),
+  
   
   NORTH_AMERICA("NORTH_AMERICA"),
   

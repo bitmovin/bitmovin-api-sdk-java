@@ -25,7 +25,12 @@ public enum ProfileH264 {
   /**
    * High profile
    */
-  HIGH("HIGH");
+  HIGH("HIGH"),
+  
+  /**
+   * High profile 422
+   */
+  HIGH422("HIGH422");
 
   private String value;
 

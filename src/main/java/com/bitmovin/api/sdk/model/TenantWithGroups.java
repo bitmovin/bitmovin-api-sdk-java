@@ -2,7 +2,6 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.InvitationStatus;
 import com.bitmovin.api.sdk.model.TenantGroupDetail;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,16 +21,13 @@ public class TenantWithGroups {
   @JsonProperty("email")
   private String email;
 
-  @JsonProperty("invitationStatus")
-  private InvitationStatus invitationStatus;
-
   @JsonProperty("groups")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<TenantGroupDetail> groups = new ArrayList<TenantGroupDetail>();
 
 
   /**
-   * Id of Tenant
+   * Id of Tenant (required)
    * @return id
    */
   public String getId() {
@@ -39,10 +35,10 @@ public class TenantWithGroups {
   }
 
   /**
-   * Id of Tenant
+   * Id of Tenant (required)
    *
    * @param id
-   *        Id of Tenant
+   *        Id of Tenant (required)
    */
   public void setId(String id) {
     this.id = id;
@@ -50,7 +46,7 @@ public class TenantWithGroups {
 
 
   /**
-   * Email of Tenant
+   * Email of Tenant (required)
    * @return email
    */
   public String getEmail() {
@@ -58,31 +54,13 @@ public class TenantWithGroups {
   }
 
   /**
-   * Email of Tenant
+   * Email of Tenant (required)
    *
    * @param email
-   *        Email of Tenant
+   *        Email of Tenant (required)
    */
   public void setEmail(String email) {
     this.email = email;
-  }
-
-
-  /**
-   * Get invitationStatus
-   * @return invitationStatus
-   */
-  public InvitationStatus getInvitationStatus() {
-    return invitationStatus;
-  }
-
-  /**
-   * Set invitationStatus
-   *
-   * @param invitationStatus
-   */
-  public void setInvitationStatus(InvitationStatus invitationStatus) {
-    this.invitationStatus = invitationStatus;
   }
 
 
@@ -92,7 +70,7 @@ public class TenantWithGroups {
   }
 
   /**
-   * List of all groups of Tenant
+   * List of all groups of Tenant (required)
    * @return groups
    */
   public List<TenantGroupDetail> getGroups() {
@@ -100,10 +78,10 @@ public class TenantWithGroups {
   }
 
   /**
-   * List of all groups of Tenant
+   * List of all groups of Tenant (required)
    *
    * @param groups
-   *        List of all groups of Tenant
+   *        List of all groups of Tenant (required)
    */
   public void setGroups(List<TenantGroupDetail> groups) {
     this.groups = groups;
@@ -121,13 +99,12 @@ public class TenantWithGroups {
     TenantWithGroups tenantWithGroups = (TenantWithGroups) o;
     return Objects.equals(this.id, tenantWithGroups.id) &&
         Objects.equals(this.email, tenantWithGroups.email) &&
-        Objects.equals(this.invitationStatus, tenantWithGroups.invitationStatus) &&
         Objects.equals(this.groups, tenantWithGroups.groups);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, email, invitationStatus, groups);
+    return Objects.hash(id, email, groups);
   }
 
   @Override
@@ -137,7 +114,6 @@ public class TenantWithGroups {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    invitationStatus: ").append(toIndentedString(invitationStatus)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("}");
     return sb.toString();
