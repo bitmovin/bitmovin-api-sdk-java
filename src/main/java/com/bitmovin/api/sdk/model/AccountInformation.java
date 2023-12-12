@@ -47,6 +47,9 @@ public class AccountInformation extends BitmovinResource {
   @JsonProperty("mfaEnabled")
   private Boolean mfaEnabled;
 
+  @JsonProperty("intercomIdVerification")
+  private String intercomIdVerification;
+
   /**
    * Email address of the account. (required)
    * @return email
@@ -163,6 +166,14 @@ public class AccountInformation extends BitmovinResource {
     return mfaEnabled;
   }
 
+  /**
+   * Get intercomIdVerification
+   * @return intercomIdVerification
+   */
+  public String getIntercomIdVerification() {
+    return intercomIdVerification;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -182,12 +193,13 @@ public class AccountInformation extends BitmovinResource {
         Objects.equals(this.verified, accountInformation.verified) &&
         Objects.equals(this.marketplace, accountInformation.marketplace) &&
         Objects.equals(this.mfaEnabled, accountInformation.mfaEnabled) &&
+        Objects.equals(this.intercomIdVerification, accountInformation.intercomIdVerification) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(email, apiKeys, firstName, lastName, phone, company, verified, marketplace, mfaEnabled, super.hashCode());
+    return Objects.hash(email, apiKeys, firstName, lastName, phone, company, verified, marketplace, mfaEnabled, intercomIdVerification, super.hashCode());
   }
 
   @Override
@@ -204,6 +216,7 @@ public class AccountInformation extends BitmovinResource {
     sb.append("    verified: ").append(toIndentedString(verified)).append("\n");
     sb.append("    marketplace: ").append(toIndentedString(marketplace)).append("\n");
     sb.append("    mfaEnabled: ").append(toIndentedString(mfaEnabled)).append("\n");
+    sb.append("    intercomIdVerification: ").append(toIndentedString(intercomIdVerification)).append("\n");
     sb.append("}");
     return sb.toString();
   }
