@@ -43,10 +43,10 @@ public class SearchApi {
     /**
      * Get paginated search results of VOD and Live streams
      * 
-     * @return List&lt;StreamsSearchResponse&gt;
+     * @return List&lt;StreamsResponse&gt;
      * @throws BitmovinException if fails to make API call
      */
-    public PaginationResponse<StreamsSearchResponse> list() throws BitmovinException {
+    public PaginationResponse<StreamsResponse> list() throws BitmovinException {
         try {
             return this.apiClient.list(new QueryMapWrapper()).getData().getResult();
         } catch (Exception ex) {
@@ -58,10 +58,10 @@ public class SearchApi {
      * Get paginated search results of VOD and Live streams
      * 
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
-     * @return List&lt;StreamsSearchResponse&gt;
+     * @return List&lt;StreamsResponse&gt;
      * @throws BitmovinException if fails to make API call
      */
-    public PaginationResponse<StreamsSearchResponse> list(StreamsSearchResponseListQueryParams queryParams) throws BitmovinException {
+    public PaginationResponse<StreamsResponse> list(StreamsResponseListQueryParams queryParams) throws BitmovinException {
         try {
             return this.apiClient.list(new QueryMapWrapper(queryParams)).getData().getResult();
         } catch (Exception ex) {
@@ -72,6 +72,6 @@ public class SearchApi {
     interface SearchApiClient {
 
         @RequestLine("GET /streams/search")
-        ResponseEnvelope<PaginationResponse<StreamsSearchResponse>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
+        ResponseEnvelope<PaginationResponse<StreamsResponse>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }
 }

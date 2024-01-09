@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.HlsManifestAdMarkerSettings;
 import com.bitmovin.api.sdk.model.ProgramDateTimeSettings;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -27,6 +28,9 @@ public class LiveHlsManifest {
 
   @JsonProperty("programDateTimeSettings")
   private ProgramDateTimeSettings programDateTimeSettings;
+
+  @JsonProperty("adMarkerSettings")
+  private HlsManifestAdMarkerSettings adMarkerSettings;
 
 
   /**
@@ -124,6 +128,25 @@ public class LiveHlsManifest {
   }
 
 
+  /**
+   * Configuration for tags related to ad markers (e.g. Scte35)
+   * @return adMarkerSettings
+   */
+  public HlsManifestAdMarkerSettings getAdMarkerSettings() {
+    return adMarkerSettings;
+  }
+
+  /**
+   * Configuration for tags related to ad markers (e.g. Scte35)
+   *
+   * @param adMarkerSettings
+   *        Configuration for tags related to ad markers (e.g. Scte35)
+   */
+  public void setAdMarkerSettings(HlsManifestAdMarkerSettings adMarkerSettings) {
+    this.adMarkerSettings = adMarkerSettings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -137,12 +160,13 @@ public class LiveHlsManifest {
         Objects.equals(this.timeshift, liveHlsManifest.timeshift) &&
         Objects.equals(this.liveEdgeOffset, liveHlsManifest.liveEdgeOffset) &&
         Objects.equals(this.insertProgramDateTime, liveHlsManifest.insertProgramDateTime) &&
-        Objects.equals(this.programDateTimeSettings, liveHlsManifest.programDateTimeSettings);
+        Objects.equals(this.programDateTimeSettings, liveHlsManifest.programDateTimeSettings) &&
+        Objects.equals(this.adMarkerSettings, liveHlsManifest.adMarkerSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(manifestId, timeshift, liveEdgeOffset, insertProgramDateTime, programDateTimeSettings);
+    return Objects.hash(manifestId, timeshift, liveEdgeOffset, insertProgramDateTime, programDateTimeSettings, adMarkerSettings);
   }
 
   @Override
@@ -155,6 +179,7 @@ public class LiveHlsManifest {
     sb.append("    liveEdgeOffset: ").append(toIndentedString(liveEdgeOffset)).append("\n");
     sb.append("    insertProgramDateTime: ").append(toIndentedString(insertProgramDateTime)).append("\n");
     sb.append("    programDateTimeSettings: ").append(toIndentedString(programDateTimeSettings)).append("\n");
+    sb.append("    adMarkerSettings: ").append(toIndentedString(adMarkerSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

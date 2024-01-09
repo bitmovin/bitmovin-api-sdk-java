@@ -4,8 +4,10 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.StreamsAdConfigResponse;
 import com.bitmovin.api.sdk.model.StreamsContentProtectionResponse;
+import com.bitmovin.api.sdk.model.StreamsResponse;
 import com.bitmovin.api.sdk.model.StreamsStyleConfigResponse;
 import com.bitmovin.api.sdk.model.StreamsTrimmingStatus;
+import com.bitmovin.api.sdk.model.StreamsType;
 import com.bitmovin.api.sdk.model.StreamsVideoEncodingTask;
 import com.bitmovin.api.sdk.model.StreamsVideoStatus;
 import java.util.ArrayList;
@@ -19,22 +21,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * StreamsVideoResponse
  */
-
-public class StreamsVideoResponse {
-  @JsonProperty("id")
-  private String id;
-
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = StreamsVideoResponse.class)
+public class StreamsVideoResponse extends StreamsResponse {
   @JsonProperty("assetUrl")
   private String assetUrl;
-
-  @JsonProperty("title")
-  private String title;
-
-  @JsonProperty("description")
-  private String description;
-
-  @JsonProperty("createdAt")
-  private Date createdAt;
 
   @JsonProperty("status")
   private StreamsVideoStatus status;
@@ -65,43 +55,11 @@ public class StreamsVideoResponse {
   private Boolean signed;
 
   /**
-   * The identifier of the stream
-   * @return id
-   */
-  public String getId() {
-    return id;
-  }
-
-  /**
    * The asset URL of the stream
    * @return assetUrl
    */
   public String getAssetUrl() {
     return assetUrl;
-  }
-
-  /**
-   * The title of the stream
-   * @return title
-   */
-  public String getTitle() {
-    return title;
-  }
-
-  /**
-   * The description of the stream
-   * @return description
-   */
-  public String getDescription() {
-    return description;
-  }
-
-  /**
-   * Creation timestamp, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ
-   * @return createdAt
-   */
-  public Date getCreatedAt() {
-    return createdAt;
   }
 
   /**
@@ -216,11 +174,7 @@ public class StreamsVideoResponse {
       return false;
     }
     StreamsVideoResponse streamsVideoResponse = (StreamsVideoResponse) o;
-    return Objects.equals(this.id, streamsVideoResponse.id) &&
-        Objects.equals(this.assetUrl, streamsVideoResponse.assetUrl) &&
-        Objects.equals(this.title, streamsVideoResponse.title) &&
-        Objects.equals(this.description, streamsVideoResponse.description) &&
-        Objects.equals(this.createdAt, streamsVideoResponse.createdAt) &&
+    return Objects.equals(this.assetUrl, streamsVideoResponse.assetUrl) &&
         Objects.equals(this.status, streamsVideoResponse.status) &&
         Objects.equals(this.styleConfig, streamsVideoResponse.styleConfig) &&
         Objects.equals(this.encodingTasks, streamsVideoResponse.encodingTasks) &&
@@ -229,24 +183,21 @@ public class StreamsVideoResponse {
         Objects.equals(this.contentProtection, streamsVideoResponse.contentProtection) &&
         Objects.equals(this.trimming, streamsVideoResponse.trimming) &&
         Objects.equals(this.downloadUrl, streamsVideoResponse.downloadUrl) &&
-        Objects.equals(this.signed, streamsVideoResponse.signed);
+        Objects.equals(this.signed, streamsVideoResponse.signed) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, assetUrl, title, description, createdAt, status, styleConfig, encodingTasks, posterUrl, adConfig, contentProtection, trimming, downloadUrl, signed);
+    return Objects.hash(assetUrl, status, styleConfig, encodingTasks, posterUrl, adConfig, contentProtection, trimming, downloadUrl, signed, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class StreamsVideoResponse {\n");
-    
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    assetUrl: ").append(toIndentedString(assetUrl)).append("\n");
-    sb.append("    title: ").append(toIndentedString(title)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    styleConfig: ").append(toIndentedString(styleConfig)).append("\n");
     sb.append("    encodingTasks: ").append(toIndentedString(encodingTasks)).append("\n");

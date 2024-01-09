@@ -5,8 +5,10 @@ import java.util.Arrays;
 import com.bitmovin.api.sdk.model.StreamsAdConfigResponse;
 import com.bitmovin.api.sdk.model.StreamsContentProtectionResponse;
 import com.bitmovin.api.sdk.model.StreamsLiveLifeCycle;
+import com.bitmovin.api.sdk.model.StreamsResponse;
 import com.bitmovin.api.sdk.model.StreamsStyleConfigResponse;
 import com.bitmovin.api.sdk.model.StreamsTrimmingStatus;
+import com.bitmovin.api.sdk.model.StreamsType;
 import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -16,22 +18,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 /**
  * StreamsLiveResponse
  */
-
-public class StreamsLiveResponse {
-  @JsonProperty("id")
-  private String id;
-
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = StreamsLiveResponse.class)
+public class StreamsLiveResponse extends StreamsResponse {
   @JsonProperty("streamKey")
   private String streamKey;
-
-  @JsonProperty("title")
-  private String title;
-
-  @JsonProperty("description")
-  private String description;
-
-  @JsonProperty("createdAt")
-  private Date createdAt;
 
   @JsonProperty("lifeCycle")
   private StreamsLiveLifeCycle lifeCycle;
@@ -52,43 +42,11 @@ public class StreamsLiveResponse {
   private StreamsTrimmingStatus trimming;
 
   /**
-   * The identifier of the stream
-   * @return id
-   */
-  public String getId() {
-    return id;
-  }
-
-  /**
    * The streamKey of the stream
    * @return streamKey
    */
   public String getStreamKey() {
     return streamKey;
-  }
-
-  /**
-   * The title of the stream
-   * @return title
-   */
-  public String getTitle() {
-    return title;
-  }
-
-  /**
-   * The description of the stream
-   * @return description
-   */
-  public String getDescription() {
-    return description;
-  }
-
-  /**
-   * Creation timestamp, returned as UTC expressed in ISO 8601 format: YYYY-MM-DDThh:mm:ssZ
-   * @return createdAt
-   */
-  public Date getCreatedAt() {
-    return createdAt;
   }
 
   /**
@@ -179,34 +137,27 @@ public class StreamsLiveResponse {
       return false;
     }
     StreamsLiveResponse streamsLiveResponse = (StreamsLiveResponse) o;
-    return Objects.equals(this.id, streamsLiveResponse.id) &&
-        Objects.equals(this.streamKey, streamsLiveResponse.streamKey) &&
-        Objects.equals(this.title, streamsLiveResponse.title) &&
-        Objects.equals(this.description, streamsLiveResponse.description) &&
-        Objects.equals(this.createdAt, streamsLiveResponse.createdAt) &&
+    return Objects.equals(this.streamKey, streamsLiveResponse.streamKey) &&
         Objects.equals(this.lifeCycle, streamsLiveResponse.lifeCycle) &&
         Objects.equals(this.styleConfig, streamsLiveResponse.styleConfig) &&
         Objects.equals(this.posterUrl, streamsLiveResponse.posterUrl) &&
         Objects.equals(this.adConfig, streamsLiveResponse.adConfig) &&
         Objects.equals(this.contentProtection, streamsLiveResponse.contentProtection) &&
-        Objects.equals(this.trimming, streamsLiveResponse.trimming);
+        Objects.equals(this.trimming, streamsLiveResponse.trimming) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, streamKey, title, description, createdAt, lifeCycle, styleConfig, posterUrl, adConfig, contentProtection, trimming);
+    return Objects.hash(streamKey, lifeCycle, styleConfig, posterUrl, adConfig, contentProtection, trimming, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class StreamsLiveResponse {\n");
-    
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    streamKey: ").append(toIndentedString(streamKey)).append("\n");
-    sb.append("    title: ").append(toIndentedString(title)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    lifeCycle: ").append(toIndentedString(lifeCycle)).append("\n");
     sb.append("    styleConfig: ").append(toIndentedString(styleConfig)).append("\n");
     sb.append("    posterUrl: ").append(toIndentedString(posterUrl)).append("\n");

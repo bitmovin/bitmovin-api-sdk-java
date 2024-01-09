@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AclEntry;
 import com.bitmovin.api.sdk.model.Output;
+import com.bitmovin.api.sdk.model.S3AccessStyle;
 import com.bitmovin.api.sdk.model.S3SignatureVersion;
 import java.util.Date;
 import java.util.List;
@@ -36,8 +37,14 @@ public class GenericS3Output extends Output {
   @JsonProperty("ssl")
   private Boolean ssl;
 
+  @JsonProperty("signingRegion")
+  private String signingRegion;
+
   @JsonProperty("signatureVersion")
   private S3SignatureVersion signatureVersion;
+
+  @JsonProperty("accessStyle")
+  private S3AccessStyle accessStyle;
 
 
   /**
@@ -155,6 +162,25 @@ public class GenericS3Output extends Output {
 
 
   /**
+   * The signing region to use
+   * @return signingRegion
+   */
+  public String getSigningRegion() {
+    return signingRegion;
+  }
+
+  /**
+   * The signing region to use
+   *
+   * @param signingRegion
+   *        The signing region to use
+   */
+  public void setSigningRegion(String signingRegion) {
+    this.signingRegion = signingRegion;
+  }
+
+
+  /**
    * Specifies the method used for authentication
    * @return signatureVersion
    */
@@ -173,6 +199,25 @@ public class GenericS3Output extends Output {
   }
 
 
+  /**
+   * Specifies the URL access style to use
+   * @return accessStyle
+   */
+  public S3AccessStyle getAccessStyle() {
+    return accessStyle;
+  }
+
+  /**
+   * Specifies the URL access style to use
+   *
+   * @param accessStyle
+   *        Specifies the URL access style to use
+   */
+  public void setAccessStyle(S3AccessStyle accessStyle) {
+    this.accessStyle = accessStyle;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -188,13 +233,15 @@ public class GenericS3Output extends Output {
         Objects.equals(this.host, genericS3Output.host) &&
         Objects.equals(this.port, genericS3Output.port) &&
         Objects.equals(this.ssl, genericS3Output.ssl) &&
+        Objects.equals(this.signingRegion, genericS3Output.signingRegion) &&
         Objects.equals(this.signatureVersion, genericS3Output.signatureVersion) &&
+        Objects.equals(this.accessStyle, genericS3Output.accessStyle) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accessKey, secretKey, bucketName, host, port, ssl, signatureVersion, super.hashCode());
+    return Objects.hash(accessKey, secretKey, bucketName, host, port, ssl, signingRegion, signatureVersion, accessStyle, super.hashCode());
   }
 
   @Override
@@ -208,7 +255,9 @@ public class GenericS3Output extends Output {
     sb.append("    host: ").append(toIndentedString(host)).append("\n");
     sb.append("    port: ").append(toIndentedString(port)).append("\n");
     sb.append("    ssl: ").append(toIndentedString(ssl)).append("\n");
+    sb.append("    signingRegion: ").append(toIndentedString(signingRegion)).append("\n");
     sb.append("    signatureVersion: ").append(toIndentedString(signatureVersion)).append("\n");
+    sb.append("    accessStyle: ").append(toIndentedString(accessStyle)).append("\n");
     sb.append("}");
     return sb.toString();
   }

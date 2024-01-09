@@ -10,10 +10,15 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * StreamsSearchResponse
+ * StreamsResponse
  */
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = StreamsResponse.class)
+@JsonSubTypes({
+  @JsonSubTypes.Type(value = StreamsVideoResponse.class, name = "VIDEO"),
+  @JsonSubTypes.Type(value = StreamsLiveResponse.class, name = "LIVE"),
+})
 
-public class StreamsSearchResponse {
+public class StreamsResponse {
   @JsonProperty("id")
   private String id;
 
@@ -62,7 +67,7 @@ public class StreamsSearchResponse {
   }
 
   /**
-   * The type the stream
+   * Type of the Stream contained in the StreamsResponse
    * @return type
    */
   public StreamsType getType() {
@@ -78,12 +83,12 @@ public class StreamsSearchResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    StreamsSearchResponse streamsSearchResponse = (StreamsSearchResponse) o;
-    return Objects.equals(this.id, streamsSearchResponse.id) &&
-        Objects.equals(this.title, streamsSearchResponse.title) &&
-        Objects.equals(this.description, streamsSearchResponse.description) &&
-        Objects.equals(this.createdAt, streamsSearchResponse.createdAt) &&
-        Objects.equals(this.type, streamsSearchResponse.type);
+    StreamsResponse streamsResponse = (StreamsResponse) o;
+    return Objects.equals(this.id, streamsResponse.id) &&
+        Objects.equals(this.title, streamsResponse.title) &&
+        Objects.equals(this.description, streamsResponse.description) &&
+        Objects.equals(this.createdAt, streamsResponse.createdAt) &&
+        Objects.equals(this.type, streamsResponse.type);
   }
 
   @Override
@@ -94,7 +99,7 @@ public class StreamsSearchResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StreamsSearchResponse {\n");
+    sb.append("class StreamsResponse {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
