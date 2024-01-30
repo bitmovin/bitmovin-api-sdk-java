@@ -7,6 +7,7 @@ import com.bitmovin.api.sdk.encoding.outputs.OutputsApi;
 import com.bitmovin.api.sdk.encoding.configurations.ConfigurationsApi;
 import com.bitmovin.api.sdk.encoding.filters.FiltersApi;
 import com.bitmovin.api.sdk.encoding.encodings.EncodingsApi;
+import com.bitmovin.api.sdk.encoding.live.LiveApi;
 import com.bitmovin.api.sdk.encoding.manifests.ManifestsApi;
 import com.bitmovin.api.sdk.encoding.infrastructure.InfrastructureApi;
 import com.bitmovin.api.sdk.encoding.statistics.StatisticsApi;
@@ -21,6 +22,7 @@ public class EncodingApi {
     public final ConfigurationsApi configurations;
     public final FiltersApi filters;
     public final EncodingsApi encodings;
+    public final LiveApi live;
     public final ManifestsApi manifests;
     public final InfrastructureApi infrastructure;
     public final StatisticsApi statistics;
@@ -40,6 +42,7 @@ public class EncodingApi {
         this.configurations = new ConfigurationsApi(clientFactory);
         this.filters = new FiltersApi(clientFactory);
         this.encodings = new EncodingsApi(clientFactory);
+        this.live = new LiveApi(clientFactory);
         this.manifests = new ManifestsApi(clientFactory);
         this.infrastructure = new InfrastructureApi(clientFactory);
         this.statistics = new StatisticsApi(clientFactory);

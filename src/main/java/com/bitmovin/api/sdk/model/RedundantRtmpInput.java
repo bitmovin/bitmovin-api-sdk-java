@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.Input;
 import com.bitmovin.api.sdk.model.RtmpIngestPoint;
+import com.bitmovin.api.sdk.model.StaticRtmpIngestPoint;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -24,6 +25,10 @@ public class RedundantRtmpInput extends Input {
   @JsonProperty("ingestPoints")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<RtmpIngestPoint> ingestPoints = new ArrayList<RtmpIngestPoint>();
+
+  @JsonProperty("staticIngestPoints")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<StaticRtmpIngestPoint> staticIngestPoints = new ArrayList<StaticRtmpIngestPoint>();
 
 
   /**
@@ -51,7 +56,7 @@ public class RedundantRtmpInput extends Input {
   }
 
   /**
-   * Get ingestPoints
+   * Configuration for ingest points that use a dynamic IP based endpoint to stream to e.g.: rtmp://41.167.11.21/live Either ingestPoints **or** staticIngestPoints can be set 
    * @return ingestPoints
    */
   public List<RtmpIngestPoint> getIngestPoints() {
@@ -59,12 +64,37 @@ public class RedundantRtmpInput extends Input {
   }
 
   /**
-   * Set ingestPoints
+   * Configuration for ingest points that use a dynamic IP based endpoint to stream to e.g.: rtmp://41.167.11.21/live Either ingestPoints **or** staticIngestPoints can be set 
    *
    * @param ingestPoints
+   *        Configuration for ingest points that use a dynamic IP based endpoint to stream to e.g.: rtmp://41.167.11.21/live Either ingestPoints **or** staticIngestPoints can be set 
    */
   public void setIngestPoints(List<RtmpIngestPoint> ingestPoints) {
     this.ingestPoints = ingestPoints;
+  }
+
+
+  public RedundantRtmpInput addStaticIngestPointsItem(StaticRtmpIngestPoint staticIngestPointsItem) {
+    this.staticIngestPoints.add(staticIngestPointsItem);
+    return this;
+  }
+
+  /**
+   * Configuration for static ingest points. These ingest points use a consistent endpoint to stream to e.g.: rtmps://live-ingest.bitmovin.com/live Either ingestPoints **or** staticIngestPoints can be set 
+   * @return staticIngestPoints
+   */
+  public List<StaticRtmpIngestPoint> getStaticIngestPoints() {
+    return staticIngestPoints;
+  }
+
+  /**
+   * Configuration for static ingest points. These ingest points use a consistent endpoint to stream to e.g.: rtmps://live-ingest.bitmovin.com/live Either ingestPoints **or** staticIngestPoints can be set 
+   *
+   * @param staticIngestPoints
+   *        Configuration for static ingest points. These ingest points use a consistent endpoint to stream to e.g.: rtmps://live-ingest.bitmovin.com/live Either ingestPoints **or** staticIngestPoints can be set 
+   */
+  public void setStaticIngestPoints(List<StaticRtmpIngestPoint> staticIngestPoints) {
+    this.staticIngestPoints = staticIngestPoints;
   }
 
 
@@ -79,12 +109,13 @@ public class RedundantRtmpInput extends Input {
     RedundantRtmpInput redundantRtmpInput = (RedundantRtmpInput) o;
     return Objects.equals(this.delayThreshold, redundantRtmpInput.delayThreshold) &&
         Objects.equals(this.ingestPoints, redundantRtmpInput.ingestPoints) &&
+        Objects.equals(this.staticIngestPoints, redundantRtmpInput.staticIngestPoints) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(delayThreshold, ingestPoints, super.hashCode());
+    return Objects.hash(delayThreshold, ingestPoints, staticIngestPoints, super.hashCode());
   }
 
   @Override
@@ -94,6 +125,7 @@ public class RedundantRtmpInput extends Input {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    delayThreshold: ").append(toIndentedString(delayThreshold)).append("\n");
     sb.append("    ingestPoints: ").append(toIndentedString(ingestPoints)).append("\n");
+    sb.append("    staticIngestPoints: ").append(toIndentedString(staticIngestPoints)).append("\n");
     sb.append("}");
     return sb.toString();
   }
