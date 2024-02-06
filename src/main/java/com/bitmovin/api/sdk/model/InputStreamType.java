@@ -46,9 +46,6 @@ public enum InputStreamType {
   DVB_SUBTITLE("DVB_SUBTITLE"),
   
   
-  DVB_TELETEXT("DVB_TELETEXT"),
-  
-  
   DOLBY_ATMOS("DOLBY_ATMOS"),
   
   
