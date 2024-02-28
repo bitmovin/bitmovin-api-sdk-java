@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import feign.Client;
 import feign.Feign;
 import feign.Logger;
 import feign.jackson.JacksonEncoder;
@@ -24,6 +25,7 @@ public class BitmovinApiClientFactoryImpl implements BitmovinApiClientFactory {
     private final Logger.Level logLevel;
     private final String baseUrl;
     private ErrorDecoder errorDecoder;
+    private final Client client;
 
     protected final Feign.Builder feignBuilder;
 
@@ -34,7 +36,10 @@ public class BitmovinApiClientFactoryImpl implements BitmovinApiClientFactory {
         Logger logger,
         Logger.Level logLevel,
         Function<ObjectMapper, ErrorDecoder> errorDecoderFactory,
-        Map<String, Collection<String>> headers) {
+        Map<String, Collection<String>> headers,
+        Client client) {
+
+        this.client = client;
 
         if (apiKey == null || apiKey.isEmpty()) {
             throw new IllegalArgumentException("Parameter 'apiKey' may not be null or empty.");
@@ -96,13 +101,19 @@ public class BitmovinApiClientFactoryImpl implements BitmovinApiClientFactory {
     }
 
     protected Feign.Builder createFeignBuilder(ObjectMapper mapper) {
-        return Feign.builder()
-            .encoder(new JacksonEncoder(mapper))
-            .decoder(new BitmovinDecoder(mapper))
-            .errorDecoder(this.errorDecoder)
-            .queryMapEncoder(new BitmovinQueryMapEncoder())
-            .logger(this.logger)
-            .logLevel(this.logLevel)
-            .requestInterceptor(new BitmovinHeadersInterceptor(this.apiKey, this.tenantOrgId, this.headers));
+      Feign.Builder builder = Feign.builder()
+        .encoder(new JacksonEncoder(mapper))
+        .decoder(new BitmovinDecoder(mapper))
+        .errorDecoder(this.errorDecoder)
+        .queryMapEncoder(new BitmovinQueryMapEncoder())
+        .logger(this.logger)
+        .logLevel(this.logLevel)
+        .requestInterceptor(new BitmovinHeadersInterceptor(this.apiKey, this.tenantOrgId, this.headers));
+
+      if (client != null) {
+        builder.client(client);
+      }
+
+      return builder;
     }
 }

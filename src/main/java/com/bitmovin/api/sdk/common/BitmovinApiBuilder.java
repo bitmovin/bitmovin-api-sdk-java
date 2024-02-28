@@ -1,6 +1,7 @@
 package com.bitmovin.api.sdk.common;
 
 import feign.Logger;
+import feign.Client;
 import feign.codec.ErrorDecoder;
 
 import java.lang.reflect.Constructor;
@@ -21,6 +22,7 @@ public class BitmovinApiBuilder<T> {
     private Function<ObjectMapper, ErrorDecoder> errorDecoderFactory;
 
     private Map<String, Collection<String>> headers;
+    private Client client;
 
     public BitmovinApiBuilder(Class<T> apiClientClass) {
         this.apiClientClass = apiClientClass;
@@ -57,6 +59,11 @@ public class BitmovinApiBuilder<T> {
         return this;
     }
 
+    public BitmovinApiBuilder<T> withClient(Client client) {
+        this.client = client;
+        return this;
+    }
+
     public T build() {
         try {
             BitmovinApiClientFactoryImpl apiClientFactory =
@@ -67,7 +74,8 @@ public class BitmovinApiBuilder<T> {
                     this.logger,
                     this.logLevel,
                     this.errorDecoderFactory,
-                    this.headers
+                    this.headers,
+                    this.client
                 );
 
             Constructor ctor = apiClientClass.getConstructor(BitmovinApiClientFactory.class);
