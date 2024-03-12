@@ -22,6 +22,9 @@ public class StreamsVideoCreateRequest {
   @JsonProperty("description")
   private String description;
 
+  @JsonProperty("domainRestrictionId")
+  private String domainRestrictionId;
+
   @JsonProperty("encodingProfile")
   private StreamsEncodingProfile encodingProfile;
 
@@ -87,6 +90,25 @@ public class StreamsVideoCreateRequest {
 
 
   /**
+   * Id of the domain restriction config to use
+   * @return domainRestrictionId
+   */
+  public String getDomainRestrictionId() {
+    return domainRestrictionId;
+  }
+
+  /**
+   * Id of the domain restriction config to use
+   *
+   * @param domainRestrictionId
+   *        Id of the domain restriction config to use
+   */
+  public void setDomainRestrictionId(String domainRestrictionId) {
+    this.domainRestrictionId = domainRestrictionId;
+  }
+
+
+  /**
    * Profile to be used in encoding
    * @return encodingProfile
    */
@@ -136,13 +158,14 @@ public class StreamsVideoCreateRequest {
     return Objects.equals(this.assetUrl, streamsVideoCreateRequest.assetUrl) &&
         Objects.equals(this.title, streamsVideoCreateRequest.title) &&
         Objects.equals(this.description, streamsVideoCreateRequest.description) &&
+        Objects.equals(this.domainRestrictionId, streamsVideoCreateRequest.domainRestrictionId) &&
         Objects.equals(this.encodingProfile, streamsVideoCreateRequest.encodingProfile) &&
         Objects.equals(this.signed, streamsVideoCreateRequest.signed);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(assetUrl, title, description, encodingProfile, signed);
+    return Objects.hash(assetUrl, title, description, domainRestrictionId, encodingProfile, signed);
   }
 
   @Override
@@ -153,6 +176,7 @@ public class StreamsVideoCreateRequest {
     sb.append("    assetUrl: ").append(toIndentedString(assetUrl)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    domainRestrictionId: ").append(toIndentedString(domainRestrictionId)).append("\n");
     sb.append("    encodingProfile: ").append(toIndentedString(encodingProfile)).append("\n");
     sb.append("    signed: ").append(toIndentedString(signed)).append("\n");
     sb.append("}");

@@ -3,7 +3,7 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.StreamsAdConfigResponse;
-import com.bitmovin.api.sdk.model.StreamsContentProtectionResponse;
+import com.bitmovin.api.sdk.model.StreamsDomainRestrictionResponse;
 import com.bitmovin.api.sdk.model.StreamsResponse;
 import com.bitmovin.api.sdk.model.StreamsStyleConfigResponse;
 import com.bitmovin.api.sdk.model.StreamsTrimmingStatus;
@@ -42,8 +42,8 @@ public class StreamsVideoResponse extends StreamsResponse {
   @JsonProperty("adConfig")
   private StreamsAdConfigResponse adConfig;
 
-  @JsonProperty("contentProtection")
-  private StreamsContentProtectionResponse contentProtection;
+  @JsonProperty("domainRestriction")
+  private StreamsDomainRestrictionResponse domainRestriction;
 
   @JsonProperty("trimming")
   private StreamsTrimmingStatus trimming;
@@ -124,20 +124,20 @@ public class StreamsVideoResponse extends StreamsResponse {
 
 
   /**
-   * Get contentProtection
-   * @return contentProtection
+   * Get domainRestriction
+   * @return domainRestriction
    */
-  public StreamsContentProtectionResponse getContentProtection() {
-    return contentProtection;
+  public StreamsDomainRestrictionResponse getDomainRestriction() {
+    return domainRestriction;
   }
 
   /**
-   * Set contentProtection
+   * Set domainRestriction
    *
-   * @param contentProtection
+   * @param domainRestriction
    */
-  public void setContentProtection(StreamsContentProtectionResponse contentProtection) {
-    this.contentProtection = contentProtection;
+  public void setDomainRestriction(StreamsDomainRestrictionResponse domainRestriction) {
+    this.domainRestriction = domainRestriction;
   }
 
   /**
@@ -180,7 +180,7 @@ public class StreamsVideoResponse extends StreamsResponse {
         Objects.equals(this.encodingTasks, streamsVideoResponse.encodingTasks) &&
         Objects.equals(this.posterUrl, streamsVideoResponse.posterUrl) &&
         Objects.equals(this.adConfig, streamsVideoResponse.adConfig) &&
-        Objects.equals(this.contentProtection, streamsVideoResponse.contentProtection) &&
+        Objects.equals(this.domainRestriction, streamsVideoResponse.domainRestriction) &&
         Objects.equals(this.trimming, streamsVideoResponse.trimming) &&
         Objects.equals(this.downloadUrl, streamsVideoResponse.downloadUrl) &&
         Objects.equals(this.signed, streamsVideoResponse.signed) &&
@@ -189,7 +189,7 @@ public class StreamsVideoResponse extends StreamsResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(assetUrl, status, styleConfig, encodingTasks, posterUrl, adConfig, contentProtection, trimming, downloadUrl, signed, super.hashCode());
+    return Objects.hash(assetUrl, status, styleConfig, encodingTasks, posterUrl, adConfig, domainRestriction, trimming, downloadUrl, signed, super.hashCode());
   }
 
   @Override
@@ -203,7 +203,7 @@ public class StreamsVideoResponse extends StreamsResponse {
     sb.append("    encodingTasks: ").append(toIndentedString(encodingTasks)).append("\n");
     sb.append("    posterUrl: ").append(toIndentedString(posterUrl)).append("\n");
     sb.append("    adConfig: ").append(toIndentedString(adConfig)).append("\n");
-    sb.append("    contentProtection: ").append(toIndentedString(contentProtection)).append("\n");
+    sb.append("    domainRestriction: ").append(toIndentedString(domainRestriction)).append("\n");
     sb.append("    trimming: ").append(toIndentedString(trimming)).append("\n");
     sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
     sb.append("    signed: ").append(toIndentedString(signed)).append("\n");

@@ -10,10 +10,10 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * StreamsContentProtectionResponse
+ * StreamsDomainRestrictionResponse
  */
 
-public class StreamsContentProtectionResponse {
+public class StreamsDomainRestrictionResponse {
   @JsonProperty("id")
   private String id;
 
@@ -28,7 +28,7 @@ public class StreamsContentProtectionResponse {
   private Boolean allowShare;
 
   /**
-   * The identifier of the streams content protection entity
+   * The identifier of the streams domain restriction entity
    * @return id
    */
   public String getId() {
@@ -36,7 +36,7 @@ public class StreamsContentProtectionResponse {
   }
 
 
-  public StreamsContentProtectionResponse addAllowedDomainsItem(String allowedDomainsItem) {
+  public StreamsDomainRestrictionResponse addAllowedDomainsItem(String allowedDomainsItem) {
     this.allowedDomains.add(allowedDomainsItem);
     return this;
   }
@@ -61,7 +61,7 @@ public class StreamsContentProtectionResponse {
 
 
   /**
-   * Controls if requests to content protected streams without referer header should be allowed or denied
+   * Controls if requests to domain restricted streams without referer header should be allowed or denied
    * @return allowNoReferer
    */
   public Boolean getAllowNoReferer() {
@@ -69,10 +69,10 @@ public class StreamsContentProtectionResponse {
   }
 
   /**
-   * Controls if requests to content protected streams without referer header should be allowed or denied
+   * Controls if requests to domain restricted streams without referer header should be allowed or denied
    *
    * @param allowNoReferer
-   *        Controls if requests to content protected streams without referer header should be allowed or denied
+   *        Controls if requests to domain restricted streams without referer header should be allowed or denied
    */
   public void setAllowNoReferer(Boolean allowNoReferer) {
     this.allowNoReferer = allowNoReferer;
@@ -106,11 +106,11 @@ public class StreamsContentProtectionResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    StreamsContentProtectionResponse streamsContentProtectionResponse = (StreamsContentProtectionResponse) o;
-    return Objects.equals(this.id, streamsContentProtectionResponse.id) &&
-        Objects.equals(this.allowedDomains, streamsContentProtectionResponse.allowedDomains) &&
-        Objects.equals(this.allowNoReferer, streamsContentProtectionResponse.allowNoReferer) &&
-        Objects.equals(this.allowShare, streamsContentProtectionResponse.allowShare);
+    StreamsDomainRestrictionResponse streamsDomainRestrictionResponse = (StreamsDomainRestrictionResponse) o;
+    return Objects.equals(this.id, streamsDomainRestrictionResponse.id) &&
+        Objects.equals(this.allowedDomains, streamsDomainRestrictionResponse.allowedDomains) &&
+        Objects.equals(this.allowNoReferer, streamsDomainRestrictionResponse.allowNoReferer) &&
+        Objects.equals(this.allowShare, streamsDomainRestrictionResponse.allowShare);
   }
 
   @Override
@@ -121,7 +121,7 @@ public class StreamsContentProtectionResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StreamsContentProtectionResponse {\n");
+    sb.append("class StreamsDomainRestrictionResponse {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    allowedDomains: ").append(toIndentedString(allowedDomains)).append("\n");

@@ -42,11 +42,13 @@ public class LiveApi {
 
     /**
      * Create a Simple Encoding Live Job
-     * Check out our [Simple Encoding API Live Documentation](https://bitmovin.com/docs/encoding/articles/simple-encoding-api-live) for additional information about the Simple Encoding API Live. 
+     * Deprecation notice: use the more capable full API instead. Get started at https://developer.bitmovin.com/encoding/docs/java-sdk 
      * @param simpleEncodingLiveJobRequest The Simple Encoding Live Job to be created. (required)
      * @return SimpleEncodingLiveJobResponse
      * @throws BitmovinException if fails to make API call
+     * @deprecated
      */
+    @Deprecated
     public SimpleEncodingLiveJobResponse create(SimpleEncodingLiveJobRequest simpleEncodingLiveJobRequest) throws BitmovinException {
         try {
             return this.apiClient.create(simpleEncodingLiveJobRequest).getData().getResult();
@@ -57,11 +59,13 @@ public class LiveApi {
 
     /**
      * Simple Encoding Live Job details
-     * Get the details of a Simple Live Encoding Job.  Check out our [Simple Encoding API Live Documentation](https://bitmovin.com/docs/encoding/articles/simple-encoding-api-live) for additional information about the Simple Encoding API Live. 
+     * Get the details of a Simple Live Encoding Job. Deprecation notice: use the more capable full API instead. Get started at https://developer.bitmovin.com/encoding/docs/java-sdk 
      * @param simpleEncodingJobId Id of the Simple Encoding Live Job (required)
      * @return SimpleEncodingLiveJobResponse
      * @throws BitmovinException if fails to make API call
+     * @deprecated
      */
+    @Deprecated
     public SimpleEncodingLiveJobResponse get(String simpleEncodingJobId) throws BitmovinException {
         try {
             return this.apiClient.get(simpleEncodingJobId).getData().getResult();

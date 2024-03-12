@@ -25,6 +25,9 @@ public class StreamsVideoUpdateRequest {
   @JsonProperty("posterUrl")
   private String posterUrl;
 
+  @JsonProperty("domainRestrictionId")
+  private String domainRestrictionId;
+
 
   /**
    * The new status of the stream
@@ -102,6 +105,25 @@ public class StreamsVideoUpdateRequest {
   }
 
 
+  /**
+   * Id of the domain restriction config to use
+   * @return domainRestrictionId
+   */
+  public String getDomainRestrictionId() {
+    return domainRestrictionId;
+  }
+
+  /**
+   * Id of the domain restriction config to use
+   *
+   * @param domainRestrictionId
+   *        Id of the domain restriction config to use
+   */
+  public void setDomainRestrictionId(String domainRestrictionId) {
+    this.domainRestrictionId = domainRestrictionId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -114,12 +136,13 @@ public class StreamsVideoUpdateRequest {
     return Objects.equals(this.status, streamsVideoUpdateRequest.status) &&
         Objects.equals(this.title, streamsVideoUpdateRequest.title) &&
         Objects.equals(this.description, streamsVideoUpdateRequest.description) &&
-        Objects.equals(this.posterUrl, streamsVideoUpdateRequest.posterUrl);
+        Objects.equals(this.posterUrl, streamsVideoUpdateRequest.posterUrl) &&
+        Objects.equals(this.domainRestrictionId, streamsVideoUpdateRequest.domainRestrictionId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, title, description, posterUrl);
+    return Objects.hash(status, title, description, posterUrl, domainRestrictionId);
   }
 
   @Override
@@ -131,6 +154,7 @@ public class StreamsVideoUpdateRequest {
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    posterUrl: ").append(toIndentedString(posterUrl)).append("\n");
+    sb.append("    domainRestrictionId: ").append(toIndentedString(domainRestrictionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

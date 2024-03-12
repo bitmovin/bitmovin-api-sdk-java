@@ -18,6 +18,9 @@ public class StreamsLiveCreateRequest {
   @JsonProperty("description")
   private String description;
 
+  @JsonProperty("domainRestrictionId")
+  private String domainRestrictionId;
+
 
   /**
    * Title of the stream
@@ -57,6 +60,25 @@ public class StreamsLiveCreateRequest {
   }
 
 
+  /**
+   * Id of the domain restriction config to use
+   * @return domainRestrictionId
+   */
+  public String getDomainRestrictionId() {
+    return domainRestrictionId;
+  }
+
+  /**
+   * Id of the domain restriction config to use
+   *
+   * @param domainRestrictionId
+   *        Id of the domain restriction config to use
+   */
+  public void setDomainRestrictionId(String domainRestrictionId) {
+    this.domainRestrictionId = domainRestrictionId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -67,12 +89,13 @@ public class StreamsLiveCreateRequest {
     }
     StreamsLiveCreateRequest streamsLiveCreateRequest = (StreamsLiveCreateRequest) o;
     return Objects.equals(this.title, streamsLiveCreateRequest.title) &&
-        Objects.equals(this.description, streamsLiveCreateRequest.description);
+        Objects.equals(this.description, streamsLiveCreateRequest.description) &&
+        Objects.equals(this.domainRestrictionId, streamsLiveCreateRequest.domainRestrictionId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, description);
+    return Objects.hash(title, description, domainRestrictionId);
   }
 
   @Override
@@ -82,6 +105,7 @@ public class StreamsLiveCreateRequest {
     
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    domainRestrictionId: ").append(toIndentedString(domainRestrictionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

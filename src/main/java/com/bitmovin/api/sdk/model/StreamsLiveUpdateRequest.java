@@ -21,6 +21,9 @@ public class StreamsLiveUpdateRequest {
   @JsonProperty("posterUrl")
   private String posterUrl;
 
+  @JsonProperty("domainRestrictionId")
+  private String domainRestrictionId;
+
 
   /**
    * The new title of the stream
@@ -79,6 +82,25 @@ public class StreamsLiveUpdateRequest {
   }
 
 
+  /**
+   * Id of the domain restriction config to use
+   * @return domainRestrictionId
+   */
+  public String getDomainRestrictionId() {
+    return domainRestrictionId;
+  }
+
+  /**
+   * Id of the domain restriction config to use
+   *
+   * @param domainRestrictionId
+   *        Id of the domain restriction config to use
+   */
+  public void setDomainRestrictionId(String domainRestrictionId) {
+    this.domainRestrictionId = domainRestrictionId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -90,12 +112,13 @@ public class StreamsLiveUpdateRequest {
     StreamsLiveUpdateRequest streamsLiveUpdateRequest = (StreamsLiveUpdateRequest) o;
     return Objects.equals(this.title, streamsLiveUpdateRequest.title) &&
         Objects.equals(this.description, streamsLiveUpdateRequest.description) &&
-        Objects.equals(this.posterUrl, streamsLiveUpdateRequest.posterUrl);
+        Objects.equals(this.posterUrl, streamsLiveUpdateRequest.posterUrl) &&
+        Objects.equals(this.domainRestrictionId, streamsLiveUpdateRequest.domainRestrictionId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, description, posterUrl);
+    return Objects.hash(title, description, posterUrl, domainRestrictionId);
   }
 
   @Override
@@ -106,6 +129,7 @@ public class StreamsLiveUpdateRequest {
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    posterUrl: ").append(toIndentedString(posterUrl)).append("\n");
+    sb.append("    domainRestrictionId: ").append(toIndentedString(domainRestrictionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

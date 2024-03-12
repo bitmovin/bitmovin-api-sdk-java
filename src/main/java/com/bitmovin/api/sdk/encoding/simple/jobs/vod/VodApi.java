@@ -42,11 +42,13 @@ public class VodApi {
 
     /**
      * Create a Simple Encoding VOD Job
-     * Check out our [Simple Encoding API Documentation](https://bitmovin.com/docs/encoding/articles/simple-encoding-api) for additional information about the Simple Encoding API. 
+     * Deprecation notice: use the more capable full API instead. Get started at https://developer.bitmovin.com/encoding/docs/java-sdk 
      * @param simpleEncodingVodJobRequest The Simple Encoding VOD Job to be created. (required)
      * @return SimpleEncodingVodJobResponse
      * @throws BitmovinException if fails to make API call
+     * @deprecated
      */
+    @Deprecated
     public SimpleEncodingVodJobResponse create(SimpleEncodingVodJobRequest simpleEncodingVodJobRequest) throws BitmovinException {
         try {
             return this.apiClient.create(simpleEncodingVodJobRequest).getData().getResult();
@@ -57,11 +59,13 @@ public class VodApi {
 
     /**
      * Simple Encoding VOD Job details
-     * Get the details of a Simple VOD Encoding Job.  Check out our [Simple Encoding API Documentation](https://bitmovin.com/docs/encoding/articles/simple-encoding-api) for additional information about the Simple Encoding API. 
+     * Get the details of a Simple VOD Encoding Job. Deprecation notice: use the more capable full API instead. Get started at https://developer.bitmovin.com/encoding/docs/java-sdk 
      * @param simpleEncodingJobId Id of the Simple Encoding VOD Job (required)
      * @return SimpleEncodingVodJobResponse
      * @throws BitmovinException if fails to make API call
+     * @deprecated
      */
+    @Deprecated
     public SimpleEncodingVodJobResponse get(String simpleEncodingJobId) throws BitmovinException {
         try {
             return this.apiClient.get(simpleEncodingJobId).getData().getResult();
@@ -72,10 +76,12 @@ public class VodApi {
 
     /**
      * List all Simple Encoding VOD Jobs
-     * 
+     * Deprecation notice: use the more capable full API instead. Get started at https://developer.bitmovin.com/encoding/docs/java-sdk 
      * @return List&lt;SimpleEncodingVodJobResponse&gt;
      * @throws BitmovinException if fails to make API call
+     * @deprecated
      */
+    @Deprecated
     public PaginationResponse<SimpleEncodingVodJobResponse> list() throws BitmovinException {
         try {
             return this.apiClient.list(new QueryMapWrapper()).getData().getResult();
@@ -86,11 +92,13 @@ public class VodApi {
 
     /**
      * List all Simple Encoding VOD Jobs
-     * 
+     * Deprecation notice: use the more capable full API instead. Get started at https://developer.bitmovin.com/encoding/docs/java-sdk 
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;SimpleEncodingVodJobResponse&gt;
      * @throws BitmovinException if fails to make API call
+     * @deprecated
      */
+    @Deprecated
     public PaginationResponse<SimpleEncodingVodJobResponse> list(SimpleEncodingVodJobResponseListQueryParams queryParams) throws BitmovinException {
         try {
             return this.apiClient.list(new QueryMapWrapper(queryParams)).getData().getResult();
