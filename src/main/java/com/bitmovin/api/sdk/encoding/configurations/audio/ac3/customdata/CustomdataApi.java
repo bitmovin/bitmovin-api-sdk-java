@@ -41,8 +41,8 @@ public class CustomdataApi {
     }
 
     /**
-     * AC3 Codec Configuration Custom Data.  Deprecation notice: use Dolby Digital instead. For more information check out our tutorial here: https://bitmovin.com/docs/encoding/tutorials/how-to-create-dolby-digital-plus-encodings 
-     * 
+     * AC3 Codec Configuration Custom Data.
+     * Deprecation notice: use Dolby Digital instead. For more information check out our tutorial here: https://bitmovin.com/docs/encoding/tutorials/how-to-create-dolby-digital-plus-encodings 
      * @param configurationId Id of the codec configuration (required)
      * @return CustomData
      * @throws BitmovinException if fails to make API call

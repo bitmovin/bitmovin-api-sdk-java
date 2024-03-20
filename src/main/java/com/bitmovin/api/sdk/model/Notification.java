@@ -109,7 +109,6 @@ public class Notification extends BitmovinResponse {
     this.type = type;
   }
 
-
   /**
    * Get eventType
    * @return eventType
@@ -117,16 +116,6 @@ public class Notification extends BitmovinResponse {
   public String getEventType() {
     return eventType;
   }
-
-  /**
-   * Set eventType
-   *
-   * @param eventType
-   */
-  public void setEventType(String eventType) {
-    this.eventType = eventType;
-  }
-
 
   /**
    * Get category
@@ -137,30 +126,11 @@ public class Notification extends BitmovinResponse {
   }
 
   /**
-   * Set category
-   *
-   * @param category
-   */
-  public void setCategory(String category) {
-    this.category = category;
-  }
-
-
-  /**
    * Get resourceType
    * @return resourceType
    */
   public String getResourceType() {
     return resourceType;
-  }
-
-  /**
-   * Set resourceType
-   *
-   * @param resourceType
-   */
-  public void setResourceType(String resourceType) {
-    this.resourceType = resourceType;
   }
 
 
