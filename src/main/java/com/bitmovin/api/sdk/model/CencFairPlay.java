@@ -39,7 +39,7 @@ public class CencFairPlay {
 
 
   /**
-   * URL of the licensing server
+   * URL of the licensing server. Typically starts with a skd://. Please check with your DRM provider on their required format.
    * @return uri
    */
   public String getUri() {
@@ -47,10 +47,10 @@ public class CencFairPlay {
   }
 
   /**
-   * URL of the licensing server
+   * URL of the licensing server. Typically starts with a skd://. Please check with your DRM provider on their required format.
    *
    * @param uri
-   *        URL of the licensing server
+   *        URL of the licensing server. Typically starts with a skd://. Please check with your DRM provider on their required format.
    */
   public void setUri(String uri) {
     this.uri = uri;

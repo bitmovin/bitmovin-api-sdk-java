@@ -87,6 +87,20 @@ public class ErrorApi {
     }
 
     /**
+     * Get &#39;Manifest Error&#39; Webhooks (All Manifests)
+     * Get all webhook notifications triggering when a manifest generation fails
+     * @return List&lt;Webhook&gt;
+     * @throws BitmovinException if fails to make API call
+     */
+    public PaginationResponse<Webhook> list() throws BitmovinException {
+        try {
+            return this.apiClient.list().getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
+    /**
      * Replace &#39;Manifest Error&#39; Webhook Notification
      * 
      * @param notificationId Id of the webhook notification (required)
@@ -112,6 +126,9 @@ public class ErrorApi {
     
         @RequestLine("DELETE /notifications/webhooks/encoding/manifest/error/{notification_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "notification_id") String notificationId) throws BitmovinException;
+    
+        @RequestLine("GET /notifications/webhooks/encoding/manifest/error")
+        ResponseEnvelope<PaginationResponse<Webhook>> list() throws BitmovinException;
     
         @RequestLine("PUT /notifications/webhooks/encoding/manifest/error/{notification_id}")
         ResponseEnvelope<Webhook> update(@Param(value = "notification_id") String notificationId, Webhook webhook) throws BitmovinException;

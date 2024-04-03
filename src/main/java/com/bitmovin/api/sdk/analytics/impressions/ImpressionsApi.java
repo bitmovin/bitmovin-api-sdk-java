@@ -47,22 +47,6 @@ public class ImpressionsApi {
     }
 
     /**
-     * Impression Details
-     * 
-     * @param impressionId Impression id (required)
-     * @param analyticsLicenseKey Analytics license (required)
-     * @return List&lt;AnalyticsImpressionSample&gt;
-     * @throws BitmovinException if fails to make API call
-     */
-    public List<AnalyticsImpressionSample> create(String impressionId, AnalyticsLicenseKey analyticsLicenseKey) throws BitmovinException {
-        try {
-            return this.apiClient.create(impressionId, analyticsLicenseKey).getData().getResult();
-        } catch (Exception ex) {
-            throw buildBitmovinException(ex);
-        }
-    }
-
-    /**
      * List impressions
      * 
      * @param analyticsImpressionsQuery Analytics impressions query object (required)
@@ -79,9 +63,6 @@ public class ImpressionsApi {
 
     interface ImpressionsApiClient {
 
-        @RequestLine("POST /analytics/impressions/{impression_id}")
-        ResponseEnvelope<List<AnalyticsImpressionSample>> create(@Param(value = "impression_id") String impressionId, AnalyticsLicenseKey analyticsLicenseKey) throws BitmovinException;
-    
         @RequestLine("POST /analytics/impressions")
         ResponseEnvelope<AnalyticsImpressionsResponse> getImpressions(AnalyticsImpressionsQuery analyticsImpressionsQuery) throws BitmovinException;
     }
