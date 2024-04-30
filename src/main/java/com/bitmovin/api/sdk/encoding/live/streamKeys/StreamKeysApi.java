@@ -18,8 +18,10 @@ import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
+import com.bitmovin.api.sdk.encoding.live.streamKeys.actions.ActionsApi;
 
 public class StreamKeysApi {
+    public final ActionsApi actions;
 
     private final StreamKeysApiClient apiClient;
 
@@ -31,6 +33,7 @@ public class StreamKeysApi {
 
         this.apiClient = clientFactory.createApiClient(StreamKeysApiClient.class);
 
+        this.actions = new ActionsApi(clientFactory);
     }
 
     /**

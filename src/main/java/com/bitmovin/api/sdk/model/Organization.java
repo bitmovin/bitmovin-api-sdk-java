@@ -36,6 +36,9 @@ public class Organization extends BitmovinResource {
   @JsonProperty("signupSource")
   private SignupSource signupSource;
 
+  @JsonProperty("mfaRequired")
+  private Boolean mfaRequired;
+
 
   /**
    * Specifies the type of the organization in the hierachy. Only sub-organizations can be newly created. (required)
@@ -113,6 +116,14 @@ public class Organization extends BitmovinResource {
     return signupSource;
   }
 
+  /**
+   * Flag indicating if MFA is required for the organization
+   * @return mfaRequired
+   */
+  public Boolean getMfaRequired() {
+    return mfaRequired;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,12 +139,13 @@ public class Organization extends BitmovinResource {
         Objects.equals(this.labelColor, organization.labelColor) &&
         Objects.equals(this.limitsPerResource, organization.limitsPerResource) &&
         Objects.equals(this.signupSource, organization.signupSource) &&
+        Objects.equals(this.mfaRequired, organization.mfaRequired) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, parentId, labelColor, limitsPerResource, signupSource, super.hashCode());
+    return Objects.hash(type, parentId, labelColor, limitsPerResource, signupSource, mfaRequired, super.hashCode());
   }
 
   @Override
@@ -146,6 +158,7 @@ public class Organization extends BitmovinResource {
     sb.append("    labelColor: ").append(toIndentedString(labelColor)).append("\n");
     sb.append("    limitsPerResource: ").append(toIndentedString(limitsPerResource)).append("\n");
     sb.append("    signupSource: ").append(toIndentedString(signupSource)).append("\n");
+    sb.append("    mfaRequired: ").append(toIndentedString(mfaRequired)).append("\n");
     sb.append("}");
     return sb.toString();
   }
