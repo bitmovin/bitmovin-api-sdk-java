@@ -120,7 +120,17 @@ public enum AzureCloudRegion {
   /**
    * Texas
    */
-  US_SOUTH_CENTRAL("US_SOUTH_CENTRAL");
+  US_SOUTH_CENTRAL("US_SOUTH_CENTRAL"),
+  
+  /**
+   * Illinois
+   */
+  US_NORTH_CENTRAL("US_NORTH_CENTRAL"),
+  
+  /**
+   * London
+   */
+  UK_SOUTH("UK_SOUTH");
 
   private String value;
 

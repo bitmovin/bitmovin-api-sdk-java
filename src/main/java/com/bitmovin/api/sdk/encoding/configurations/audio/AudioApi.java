@@ -9,6 +9,7 @@ import com.bitmovin.api.sdk.encoding.configurations.audio.dtsx.DtsxApi;
 import com.bitmovin.api.sdk.encoding.configurations.audio.dolbyAtmos.DolbyAtmosApi;
 import com.bitmovin.api.sdk.encoding.configurations.audio.heAacV1.HeAacV1Api;
 import com.bitmovin.api.sdk.encoding.configurations.audio.heAacV2.HeAacV2Api;
+import com.bitmovin.api.sdk.encoding.configurations.audio.passthrough.PassthroughApi;
 import com.bitmovin.api.sdk.encoding.configurations.audio.vorbis.VorbisApi;
 import com.bitmovin.api.sdk.encoding.configurations.audio.opus.OpusApi;
 import com.bitmovin.api.sdk.encoding.configurations.audio.pcm.PcmApi;
@@ -27,6 +28,7 @@ public class AudioApi {
     public final DolbyAtmosApi dolbyAtmos;
     public final HeAacV1Api heAacV1;
     public final HeAacV2Api heAacV2;
+    public final PassthroughApi passthrough;
     public final VorbisApi vorbis;
     public final OpusApi opus;
     public final PcmApi pcm;
@@ -50,6 +52,7 @@ public class AudioApi {
         this.dolbyAtmos = new DolbyAtmosApi(clientFactory);
         this.heAacV1 = new HeAacV1Api(clientFactory);
         this.heAacV2 = new HeAacV2Api(clientFactory);
+        this.passthrough = new PassthroughApi(clientFactory);
         this.vorbis = new VorbisApi(clientFactory);
         this.opus = new OpusApi(clientFactory);
         this.pcm = new PcmApi(clientFactory);

@@ -293,6 +293,16 @@ public enum CloudRegion {
   AZURE_US_SOUTH_CENTRAL("AZURE_US_SOUTH_CENTRAL"),
   
   /**
+   * Azure North Central US, Illinois, USA
+   */
+  AZURE_US_NORTH_CENTRAL("AZURE_US_NORTH_CENTRAL"),
+  
+  /**
+   * Azure UK South, London, UK
+   */
+  AZURE_UK_SOUTH("AZURE_UK_SOUTH"),
+  
+  /**
    * Akamai São Paulo, Brazil
    */
   AKAMAI_BR_GRU("AKAMAI_BR_GRU"),

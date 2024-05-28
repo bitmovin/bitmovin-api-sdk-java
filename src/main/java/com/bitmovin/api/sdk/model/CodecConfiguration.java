@@ -17,6 +17,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = CodecConfiguration.class)
 @JsonSubTypes({
   @JsonSubTypes.Type(value = AacAudioConfiguration.class, name = "AAC"),
+  @JsonSubTypes.Type(value = PassthroughAudioConfiguration.class, name = "AUDIO_PASSTHROUGH"),
   @JsonSubTypes.Type(value = DtsPassthroughAudioConfiguration.class, name = "DTS_PASSTHROUGH"),
   @JsonSubTypes.Type(value = DtsAudioConfiguration.class, name = "DTS"),
   @JsonSubTypes.Type(value = DtsXAudioConfiguration.class, name = "DTSX"),
