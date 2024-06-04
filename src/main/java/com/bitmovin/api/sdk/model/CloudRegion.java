@@ -322,6 +322,16 @@ public enum CloudRegion {
    */
   AKAMAI_US_SEA("AKAMAI_US_SEA"),
   
+  /**
+   * OCI Frankfurt, Germany.  The Oracle Cloud integration is in beta and still undergoing testing.  Some issues or limitations may be present.
+   */
+  OCI_EU_FRANKFURT_1("OCI_EU_FRANKFURT_1"),
+  
+  /**
+   * OCI Ashburn, VA, USA.  The Oracle Cloud integration is in beta and still undergoing testing. Some issues or limitations may be present.
+   */
+  OCI_US_ASHBURN_1("OCI_US_ASHBURN_1"),
+  
   
   NORTH_AMERICA("NORTH_AMERICA"),
   
