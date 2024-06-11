@@ -22,6 +22,7 @@ import com.bitmovin.api.sdk.encoding.filters.type.TypeApi;
 import com.bitmovin.api.sdk.encoding.filters.conform.ConformApi;
 import com.bitmovin.api.sdk.encoding.filters.watermark.WatermarkApi;
 import com.bitmovin.api.sdk.encoding.filters.audioVolume.AudioVolumeApi;
+import com.bitmovin.api.sdk.encoding.filters.azureSpeechToCaptions.AzureSpeechToCaptionsApi;
 import com.bitmovin.api.sdk.encoding.filters.enhancedWatermark.EnhancedWatermarkApi;
 import com.bitmovin.api.sdk.encoding.filters.crop.CropApi;
 import com.bitmovin.api.sdk.encoding.filters.rotate.RotateApi;
@@ -40,6 +41,7 @@ public class FiltersApi {
     public final ConformApi conform;
     public final WatermarkApi watermark;
     public final AudioVolumeApi audioVolume;
+    public final AzureSpeechToCaptionsApi azureSpeechToCaptions;
     public final EnhancedWatermarkApi enhancedWatermark;
     public final CropApi crop;
     public final RotateApi rotate;
@@ -67,6 +69,7 @@ public class FiltersApi {
         this.conform = new ConformApi(clientFactory);
         this.watermark = new WatermarkApi(clientFactory);
         this.audioVolume = new AudioVolumeApi(clientFactory);
+        this.azureSpeechToCaptions = new AzureSpeechToCaptionsApi(clientFactory);
         this.enhancedWatermark = new EnhancedWatermarkApi(clientFactory);
         this.crop = new CropApi(clientFactory);
         this.rotate = new RotateApi(clientFactory);

@@ -31,6 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
   @JsonSubTypes.Type(value = InterlaceFilter.class, name = "INTERLACE"),
   @JsonSubTypes.Type(value = AudioVolumeFilter.class, name = "AUDIO_VOLUME"),
   @JsonSubTypes.Type(value = EbuR128SinglePassFilter.class, name = "EBU_R128_SINGLE_PASS"),
+  @JsonSubTypes.Type(value = AzureSpeechToCaptionsFilter.class, name = "AZURE_SPEECH_TO_CAPTIONS"),
 })
 
 public class Filter extends BitmovinResource {
