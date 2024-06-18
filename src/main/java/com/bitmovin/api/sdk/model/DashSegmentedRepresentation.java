@@ -131,7 +131,7 @@ public class DashSegmentedRepresentation extends DashMuxingRepresentation {
 
 
   /**
-   * Id of the Keyframe to start with
+   * Id of the keyframe to start with. It takes precedence over startSegmentNumber
    * @return startKeyframeId
    */
   public String getStartKeyframeId() {
@@ -139,10 +139,10 @@ public class DashSegmentedRepresentation extends DashMuxingRepresentation {
   }
 
   /**
-   * Id of the Keyframe to start with
+   * Id of the keyframe to start with. It takes precedence over startSegmentNumber
    *
    * @param startKeyframeId
-   *        Id of the Keyframe to start with
+   *        Id of the keyframe to start with. It takes precedence over startSegmentNumber
    */
   public void setStartKeyframeId(String startKeyframeId) {
     this.startKeyframeId = startKeyframeId;
@@ -150,7 +150,7 @@ public class DashSegmentedRepresentation extends DashMuxingRepresentation {
 
 
   /**
-   * Id of the Keyframe to end with
+   * Id of the keyframe to end with. It takes precedence over endSegmentNumber. The segment containing the end keyframe is not included in the representation.
    * @return endKeyframeId
    */
   public String getEndKeyframeId() {
@@ -158,10 +158,10 @@ public class DashSegmentedRepresentation extends DashMuxingRepresentation {
   }
 
   /**
-   * Id of the Keyframe to end with
+   * Id of the keyframe to end with. It takes precedence over endSegmentNumber. The segment containing the end keyframe is not included in the representation.
    *
    * @param endKeyframeId
-   *        Id of the Keyframe to end with
+   *        Id of the keyframe to end with. It takes precedence over endSegmentNumber. The segment containing the end keyframe is not included in the representation.
    */
   public void setEndKeyframeId(String endKeyframeId) {
     this.endKeyframeId = endKeyframeId;
