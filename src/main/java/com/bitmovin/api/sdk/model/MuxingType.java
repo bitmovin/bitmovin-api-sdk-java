@@ -33,6 +33,11 @@ public enum MuxingType {
   
   MXF("MXF"),
   
+  /**
+   * Single file output as Waveform Audio File Format containing a single PCM audio stream
+   */
+  PROGRESSIVE_WAV("PROGRESSIVE_WAV"),
+  
   
   PROGRESSIVE_WEBM("PROGRESSIVE_WEBM"),
   
