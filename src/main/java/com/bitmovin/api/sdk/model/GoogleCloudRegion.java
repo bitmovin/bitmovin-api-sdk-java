@@ -100,7 +100,12 @@ public enum GoogleCloudRegion {
   /**
    * Los Angeles, California, USA
    */
-  US_WEST_2("US_WEST_2");
+  US_WEST_2("US_WEST_2"),
+  
+  /**
+   * Dammam, Saudi Arabia
+   */
+  ME_CENTRAL_2("ME_CENTRAL_2");
 
   private String value;
 

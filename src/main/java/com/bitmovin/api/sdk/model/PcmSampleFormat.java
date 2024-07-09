@@ -20,7 +20,12 @@ public enum PcmSampleFormat {
   /**
    * Signed 24 bit little endian sampling
    */
-  S24LE("S24LE");
+  S24LE("S24LE"),
+  
+  /**
+   * Singed 32 bit little endian sampling
+   */
+  S32LE("S32LE");
 
   private String value;
 

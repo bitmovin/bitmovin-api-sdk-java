@@ -423,7 +423,7 @@ public class H264VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Maximum Bitrate
+   * Maximum Bitrate (bps)
    * @return maxBitrate
    */
   public Long getMaxBitrate() {
@@ -431,10 +431,10 @@ public class H264VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Maximum Bitrate
+   * Maximum Bitrate (bps)
    *
    * @param maxBitrate
-   *        Maximum Bitrate
+   *        Maximum Bitrate (bps)
    */
   public void setMaxBitrate(Long maxBitrate) {
     this.maxBitrate = maxBitrate;
@@ -442,7 +442,7 @@ public class H264VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Minimum Bitrate
+   * Minimum Bitrate (bps)
    * @return minBitrate
    */
   public Long getMinBitrate() {
@@ -450,10 +450,10 @@ public class H264VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Minimum Bitrate
+   * Minimum Bitrate (bps)
    *
    * @param minBitrate
-   *        Minimum Bitrate
+   *        Minimum Bitrate (bps)
    */
   public void setMinBitrate(Long minBitrate) {
     this.minBitrate = minBitrate;
@@ -461,7 +461,7 @@ public class H264VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Playback device buffer size
+   * Playback device buffer size (bits)
    * @return bufsize
    */
   public Long getBufsize() {
@@ -469,10 +469,10 @@ public class H264VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Playback device buffer size
+   * Playback device buffer size (bits)
    *
    * @param bufsize
-   *        Playback device buffer size
+   *        Playback device buffer size (bits)
    */
   public void setBufsize(Long bufsize) {
     this.bufsize = bufsize;

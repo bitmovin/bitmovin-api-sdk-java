@@ -13,9 +13,14 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum PcmChannelLayout {
   
   /**
-   * Channel layout Mono
+   * Channel layout with single channel
    */
-  MONO("MONO");
+  MONO("MONO"),
+  
+  /**
+   * Channel layout with left and right channel
+   */
+  STEREO("STEREO");
 
   private String value;
 

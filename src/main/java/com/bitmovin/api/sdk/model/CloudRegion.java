@@ -183,6 +183,11 @@ public enum CloudRegion {
   GOOGLE_US_WEST_2("GOOGLE_US_WEST_2"),
   
   /**
+   * Google Dammam, Saudi Arabia
+   */
+  GOOGLE_ME_CENTRAL_2("GOOGLE_ME_CENTRAL_2"),
+  
+  /**
    * Azure East Asia, Hong Kong
    */
   AZURE_ASIA_EAST("AZURE_ASIA_EAST"),

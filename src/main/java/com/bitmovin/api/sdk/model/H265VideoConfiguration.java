@@ -491,7 +491,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Maximum Bitrate
+   * Maximum Bitrate (bps)
    * @return maxBitrate
    */
   public Long getMaxBitrate() {
@@ -499,10 +499,10 @@ public class H265VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Maximum Bitrate
+   * Maximum Bitrate (bps)
    *
    * @param maxBitrate
-   *        Maximum Bitrate
+   *        Maximum Bitrate (bps)
    */
   public void setMaxBitrate(Long maxBitrate) {
     this.maxBitrate = maxBitrate;
@@ -510,7 +510,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Minimum Bitrate
+   * Minimum Bitrate (bps)
    * @return minBitrate
    */
   public Long getMinBitrate() {
@@ -518,10 +518,10 @@ public class H265VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Minimum Bitrate
+   * Minimum Bitrate (bps)
    *
    * @param minBitrate
-   *        Minimum Bitrate
+   *        Minimum Bitrate (bps)
    */
   public void setMinBitrate(Long minBitrate) {
     this.minBitrate = minBitrate;
@@ -529,7 +529,7 @@ public class H265VideoConfiguration extends VideoConfiguration {
 
 
   /**
-   * Size of the VBV buffer (kbits)
+   * Size of the VBV buffer (bits)
    * @return bufsize
    */
   public Long getBufsize() {
@@ -537,10 +537,10 @@ public class H265VideoConfiguration extends VideoConfiguration {
   }
 
   /**
-   * Size of the VBV buffer (kbits)
+   * Size of the VBV buffer (bits)
    *
    * @param bufsize
-   *        Size of the VBV buffer (kbits)
+   *        Size of the VBV buffer (bits)
    */
   public void setBufsize(Long bufsize) {
     this.bufsize = bufsize;
