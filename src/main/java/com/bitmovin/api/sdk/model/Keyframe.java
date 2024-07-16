@@ -19,9 +19,6 @@ public class Keyframe extends BitmovinResource {
   @JsonProperty("time")
   private Double time;
 
-  @JsonProperty("segmentCut")
-  private Boolean segmentCut;
-
 
   /**
    * Time in seconds where the keyframe should be inserted (required)
@@ -42,25 +39,6 @@ public class Keyframe extends BitmovinResource {
   }
 
 
-  /**
-   * Instructs the encoder to cut the segment at this position
-   * @return segmentCut
-   */
-  public Boolean getSegmentCut() {
-    return segmentCut;
-  }
-
-  /**
-   * Instructs the encoder to cut the segment at this position
-   *
-   * @param segmentCut
-   *        Instructs the encoder to cut the segment at this position
-   */
-  public void setSegmentCut(Boolean segmentCut) {
-    this.segmentCut = segmentCut;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -71,13 +49,12 @@ public class Keyframe extends BitmovinResource {
     }
     Keyframe keyframe = (Keyframe) o;
     return Objects.equals(this.time, keyframe.time) &&
-        Objects.equals(this.segmentCut, keyframe.segmentCut) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(time, segmentCut, super.hashCode());
+    return Objects.hash(time, super.hashCode());
   }
 
   @Override
@@ -86,7 +63,6 @@ public class Keyframe extends BitmovinResource {
     sb.append("class Keyframe {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    time: ").append(toIndentedString(time)).append("\n");
-    sb.append("    segmentCut: ").append(toIndentedString(segmentCut)).append("\n");
     sb.append("}");
     return sb.toString();
   }

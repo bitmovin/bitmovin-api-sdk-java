@@ -22,6 +22,9 @@ public class ResetLiveManifestTimeShift extends BitmovinResponse {
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<String> manifestIds = new ArrayList<String>();
 
+  @JsonProperty("shiftProgressiveMuxingStartPosition")
+  private Boolean shiftProgressiveMuxingStartPosition;
+
 
   /**
    * Determines how many seconds will be left in the manifest after segments are removed. If this is not set, all but one segment will be removed. 
@@ -66,6 +69,25 @@ public class ResetLiveManifestTimeShift extends BitmovinResponse {
   }
 
 
+  /**
+   * If set to true, the Progressive muxing start position will be shifted to the start of the first remaining segment after the removal.  NOTE: This only works for Progressive MP4 muxings.
+   * @return shiftProgressiveMuxingStartPosition
+   */
+  public Boolean getShiftProgressiveMuxingStartPosition() {
+    return shiftProgressiveMuxingStartPosition;
+  }
+
+  /**
+   * If set to true, the Progressive muxing start position will be shifted to the start of the first remaining segment after the removal.  NOTE: This only works for Progressive MP4 muxings.
+   *
+   * @param shiftProgressiveMuxingStartPosition
+   *        If set to true, the Progressive muxing start position will be shifted to the start of the first remaining segment after the removal.  NOTE: This only works for Progressive MP4 muxings.
+   */
+  public void setShiftProgressiveMuxingStartPosition(Boolean shiftProgressiveMuxingStartPosition) {
+    this.shiftProgressiveMuxingStartPosition = shiftProgressiveMuxingStartPosition;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -77,12 +99,13 @@ public class ResetLiveManifestTimeShift extends BitmovinResponse {
     ResetLiveManifestTimeShift resetLiveManifestTimeShift = (ResetLiveManifestTimeShift) o;
     return Objects.equals(this.residualPeriodInSeconds, resetLiveManifestTimeShift.residualPeriodInSeconds) &&
         Objects.equals(this.manifestIds, resetLiveManifestTimeShift.manifestIds) &&
+        Objects.equals(this.shiftProgressiveMuxingStartPosition, resetLiveManifestTimeShift.shiftProgressiveMuxingStartPosition) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(residualPeriodInSeconds, manifestIds, super.hashCode());
+    return Objects.hash(residualPeriodInSeconds, manifestIds, shiftProgressiveMuxingStartPosition, super.hashCode());
   }
 
   @Override
@@ -92,6 +115,7 @@ public class ResetLiveManifestTimeShift extends BitmovinResponse {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    residualPeriodInSeconds: ").append(toIndentedString(residualPeriodInSeconds)).append("\n");
     sb.append("    manifestIds: ").append(toIndentedString(manifestIds)).append("\n");
+    sb.append("    shiftProgressiveMuxingStartPosition: ").append(toIndentedString(shiftProgressiveMuxingStartPosition)).append("\n");
     sb.append("}");
     return sb.toString();
   }
