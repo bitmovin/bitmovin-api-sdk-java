@@ -28,6 +28,11 @@ public enum DolbyVisionProfile {
   DVHE_07("DVHE_07"),
   
   /**
+   * Dolby Vision Profile 8.1 (HDR10 cross-compatibility)
+   */
+  DVHE_08_1("DVHE_08_1"),
+  
+  /**
    * hev1.08
    */
   HEV1_08("HEV1_08"),
