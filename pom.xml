@@ -5,7 +5,7 @@
     <artifactId>bitmovin-api-sdk</artifactId>
     <packaging>jar</packaging>
     <name>bitmovin-api-sdk</name>
-    <version>1.200.0</version>
+    <version>1.201.0</version>
     <url>https://github.com/bitmovin/bitmovin-api-sdk-java</url>
     <description>Bitmovin Java API SDK</description>
     <scm>
@@ -196,9 +196,18 @@
         <dependency>
             <groupId>io.github.openfeign</groupId>
             <artifactId>feign-jackson</artifactId>
-            <version>11.9</version>
+            <version>${openfeign.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-slf4j</artifactId>
+            <version>${openfeign.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>io.github.openfeign</groupId>
+          <artifactId>feign-httpclient</artifactId>
+          <version>${openfeign.version}</version>
+        </dependency>
         <!-- test dependencies -->
         <dependency>
             <groupId>junit</groupId>
@@ -224,16 +233,12 @@
             <version>1.7.36</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>io.github.openfeign</groupId>
-            <artifactId>feign-slf4j</artifactId>
-            <version>11.9</version>
-        </dependency>
 
     </dependencies>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit-version>4.13.1</junit-version>
+        <openfeign.version>13.3</openfeign.version>
     </properties>
 </project>

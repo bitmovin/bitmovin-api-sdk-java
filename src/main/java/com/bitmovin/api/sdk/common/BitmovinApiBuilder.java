@@ -3,6 +3,7 @@ package com.bitmovin.api.sdk.common;
 import feign.Logger;
 import feign.Client;
 import feign.codec.ErrorDecoder;
+import feign.httpclient.ApacheHttpClient;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -22,7 +23,7 @@ public class BitmovinApiBuilder<T> {
     private Function<ObjectMapper, ErrorDecoder> errorDecoderFactory;
 
     private Map<String, Collection<String>> headers;
-    private Client client;
+    private Client client = new ApacheHttpClient();
 
     public BitmovinApiBuilder(Class<T> apiClientClass) {
         this.apiClientClass = apiClientClass;
