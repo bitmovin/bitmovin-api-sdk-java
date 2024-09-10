@@ -13,9 +13,19 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum H265DynamicRangeFormat {
   
   /**
-   * Configures what kind of dynamic range the output should conform to. Can be used to convert from SDR to HDR, from HDR to SDR or between different HDR formats
+   * Configure the Output to be Dolby Vision Profile 5.
    */
   DOLBY_VISION("DOLBY_VISION"),
+  
+  /**
+   * Configure the Output to be Dolby Vision Profile 5
+   */
+  DOLBY_VISION_PROFILE_5("DOLBY_VISION_PROFILE_5"),
+  
+  /**
+   * Configure the Output to be Dolby Vision Profile 8.1 (HDR10 cross-compatibility)
+   */
+  DOLBY_VISION_PROFILE_8_1("DOLBY_VISION_PROFILE_8_1"),
   
   /**
    * Configures what kind of dynamic range the output should conform to. Can be used to convert from SDR to HDR, from HDR to SDR or between different HDR formats
