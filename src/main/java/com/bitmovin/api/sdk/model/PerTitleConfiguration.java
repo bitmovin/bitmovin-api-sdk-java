@@ -35,6 +35,12 @@ public class PerTitleConfiguration {
   @JsonProperty("fixedResolutionAndBitrateConfiguration")
   private PerTitleFixedResolutionAndBitrateConfiguration fixedResolutionAndBitrateConfiguration;
 
+  @JsonProperty("targetQualityCrf")
+  private Double targetQualityCrf;
+
+  @JsonProperty("resolutionScaleFactor")
+  private Double resolutionScaleFactor;
+
 
   /**
    * The minimum bitrate that will be used by the Per-Title algorithm.
@@ -171,6 +177,44 @@ public class PerTitleConfiguration {
   }
 
 
+  /**
+   * Desired target quality of the highest representation expressed as CRF value
+   * @return targetQualityCrf
+   */
+  public Double getTargetQualityCrf() {
+    return targetQualityCrf;
+  }
+
+  /**
+   * Desired target quality of the highest representation expressed as CRF value
+   *
+   * @param targetQualityCrf
+   *        Desired target quality of the highest representation expressed as CRF value
+   */
+  public void setTargetQualityCrf(Double targetQualityCrf) {
+    this.targetQualityCrf = targetQualityCrf;
+  }
+
+
+  /**
+   * This factor influences the resolution selection of the per-title algorithm. The default value is 0.0. negative values will lead to results where the algorithm will choose lower resolutions for given bitrates. A positive value will result in higher resolutions to be selected. The range of the factor is -5.0 to +5.0. Please note that changing this factor might also lead to slightly different bitrate selection by the algorithm.
+   * @return resolutionScaleFactor
+   */
+  public Double getResolutionScaleFactor() {
+    return resolutionScaleFactor;
+  }
+
+  /**
+   * This factor influences the resolution selection of the per-title algorithm. The default value is 0.0. negative values will lead to results where the algorithm will choose lower resolutions for given bitrates. A positive value will result in higher resolutions to be selected. The range of the factor is -5.0 to +5.0. Please note that changing this factor might also lead to slightly different bitrate selection by the algorithm.
+   *
+   * @param resolutionScaleFactor
+   *        This factor influences the resolution selection of the per-title algorithm. The default value is 0.0. negative values will lead to results where the algorithm will choose lower resolutions for given bitrates. A positive value will result in higher resolutions to be selected. The range of the factor is -5.0 to +5.0. Please note that changing this factor might also lead to slightly different bitrate selection by the algorithm.
+   */
+  public void setResolutionScaleFactor(Double resolutionScaleFactor) {
+    this.resolutionScaleFactor = resolutionScaleFactor;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -186,12 +230,14 @@ public class PerTitleConfiguration {
         Objects.equals(this.maxBitrateStepSize, perTitleConfiguration.maxBitrateStepSize) &&
         Objects.equals(this.autoRepresentations, perTitleConfiguration.autoRepresentations) &&
         Objects.equals(this.complexityFactor, perTitleConfiguration.complexityFactor) &&
-        Objects.equals(this.fixedResolutionAndBitrateConfiguration, perTitleConfiguration.fixedResolutionAndBitrateConfiguration);
+        Objects.equals(this.fixedResolutionAndBitrateConfiguration, perTitleConfiguration.fixedResolutionAndBitrateConfiguration) &&
+        Objects.equals(this.targetQualityCrf, perTitleConfiguration.targetQualityCrf) &&
+        Objects.equals(this.resolutionScaleFactor, perTitleConfiguration.resolutionScaleFactor);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(minBitrate, maxBitrate, minBitrateStepSize, maxBitrateStepSize, autoRepresentations, complexityFactor, fixedResolutionAndBitrateConfiguration);
+    return Objects.hash(minBitrate, maxBitrate, minBitrateStepSize, maxBitrateStepSize, autoRepresentations, complexityFactor, fixedResolutionAndBitrateConfiguration, targetQualityCrf, resolutionScaleFactor);
   }
 
   @Override
@@ -206,6 +252,8 @@ public class PerTitleConfiguration {
     sb.append("    autoRepresentations: ").append(toIndentedString(autoRepresentations)).append("\n");
     sb.append("    complexityFactor: ").append(toIndentedString(complexityFactor)).append("\n");
     sb.append("    fixedResolutionAndBitrateConfiguration: ").append(toIndentedString(fixedResolutionAndBitrateConfiguration)).append("\n");
+    sb.append("    targetQualityCrf: ").append(toIndentedString(targetQualityCrf)).append("\n");
+    sb.append("    resolutionScaleFactor: ").append(toIndentedString(resolutionScaleFactor)).append("\n");
     sb.append("}");
     return sb.toString();
   }

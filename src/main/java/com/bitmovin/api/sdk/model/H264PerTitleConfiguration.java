@@ -15,9 +15,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 
 public class H264PerTitleConfiguration extends PerTitleConfiguration {
-  @JsonProperty("targetQualityCrf")
-  private Double targetQualityCrf;
-
   @JsonProperty("codecMinBitrateFactor")
   private Double codecMinBitrateFactor;
 
@@ -26,25 +23,6 @@ public class H264PerTitleConfiguration extends PerTitleConfiguration {
 
   @JsonProperty("codecBufsizeFactor")
   private Double codecBufsizeFactor;
-
-
-  /**
-   * Desired target quality of the highest representation expressed as CRF value
-   * @return targetQualityCrf
-   */
-  public Double getTargetQualityCrf() {
-    return targetQualityCrf;
-  }
-
-  /**
-   * Desired target quality of the highest representation expressed as CRF value
-   *
-   * @param targetQualityCrf
-   *        Desired target quality of the highest representation expressed as CRF value
-   */
-  public void setTargetQualityCrf(Double targetQualityCrf) {
-    this.targetQualityCrf = targetQualityCrf;
-  }
 
 
   /**
@@ -113,8 +91,7 @@ public class H264PerTitleConfiguration extends PerTitleConfiguration {
       return false;
     }
     H264PerTitleConfiguration h264PerTitleConfiguration = (H264PerTitleConfiguration) o;
-    return Objects.equals(this.targetQualityCrf, h264PerTitleConfiguration.targetQualityCrf) &&
-        Objects.equals(this.codecMinBitrateFactor, h264PerTitleConfiguration.codecMinBitrateFactor) &&
+    return Objects.equals(this.codecMinBitrateFactor, h264PerTitleConfiguration.codecMinBitrateFactor) &&
         Objects.equals(this.codecMaxBitrateFactor, h264PerTitleConfiguration.codecMaxBitrateFactor) &&
         Objects.equals(this.codecBufsizeFactor, h264PerTitleConfiguration.codecBufsizeFactor) &&
         super.equals(o);
@@ -122,7 +99,7 @@ public class H264PerTitleConfiguration extends PerTitleConfiguration {
 
   @Override
   public int hashCode() {
-    return Objects.hash(targetQualityCrf, codecMinBitrateFactor, codecMaxBitrateFactor, codecBufsizeFactor, super.hashCode());
+    return Objects.hash(codecMinBitrateFactor, codecMaxBitrateFactor, codecBufsizeFactor, super.hashCode());
   }
 
   @Override
@@ -130,7 +107,6 @@ public class H264PerTitleConfiguration extends PerTitleConfiguration {
     StringBuilder sb = new StringBuilder();
     sb.append("class H264PerTitleConfiguration {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    targetQualityCrf: ").append(toIndentedString(targetQualityCrf)).append("\n");
     sb.append("    codecMinBitrateFactor: ").append(toIndentedString(codecMinBitrateFactor)).append("\n");
     sb.append("    codecMaxBitrateFactor: ").append(toIndentedString(codecMaxBitrateFactor)).append("\n");
     sb.append("    codecBufsizeFactor: ").append(toIndentedString(codecBufsizeFactor)).append("\n");
