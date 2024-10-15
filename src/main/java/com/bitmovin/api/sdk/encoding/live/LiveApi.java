@@ -23,5 +23,4 @@ public class LiveApi {
         return new BitmovinApiBuilder<>(LiveApi.class);
     }
 
-    
 }

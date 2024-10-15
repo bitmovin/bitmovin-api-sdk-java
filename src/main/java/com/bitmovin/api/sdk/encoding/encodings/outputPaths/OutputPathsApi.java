@@ -39,7 +39,6 @@ public class OutputPathsApi {
     public static BitmovinApiBuilder<OutputPathsApi> builder() {
         return new BitmovinApiBuilder<>(OutputPathsApi.class);
     }
-
     /**
      * Encoding Output Paths Retrieval
      * 
@@ -55,8 +54,7 @@ public class OutputPathsApi {
         }
     }
 
-    interface OutputPathsApiClient {
-
+    interface OutputPathsApiClient { 
         @RequestLine("GET /encoding/encodings/{encoding_id}/output-paths")
         ResponseEnvelope<List<EncodingOutputPaths>> get(@Param(value = "encoding_id") String encodingId) throws BitmovinException;
     }

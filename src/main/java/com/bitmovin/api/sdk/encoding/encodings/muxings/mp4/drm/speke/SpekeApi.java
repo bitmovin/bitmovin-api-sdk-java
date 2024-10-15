@@ -42,7 +42,6 @@ public class SpekeApi {
     public static BitmovinApiBuilder<SpekeApi> builder() {
         return new BitmovinApiBuilder<>(SpekeApi.class);
     }
-
     /**
      * Add SPEKE DRM key provider to an MP4 muxing
      * 
@@ -59,7 +58,6 @@ public class SpekeApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete SPEKE DRM from an MP4 muxing
      * 
@@ -76,7 +74,6 @@ public class SpekeApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * SPEKE DRM Details of an MP4 muxing
      * 
@@ -93,7 +90,6 @@ public class SpekeApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List SPEKE DRM of an MP4 muxing
      * 
@@ -127,17 +123,16 @@ public class SpekeApi {
         }
     }
 
-    interface SpekeApiClient {
-
+    interface SpekeApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/mp4/{muxing_id}/drm/speke")
         ResponseEnvelope<SpekeDrm> create(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, SpekeDrm spekeDrm) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/mp4/{muxing_id}/drm/speke/{drm_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @Param(value = "drm_id") String drmId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/mp4/{muxing_id}/drm/speke/{drm_id}")
         ResponseEnvelope<SpekeDrm> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @Param(value = "drm_id") String drmId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/mp4/{muxing_id}/drm/speke")
         ResponseEnvelope<PaginationResponse<SpekeDrm>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

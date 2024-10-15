@@ -42,7 +42,6 @@ public class Ac3Api {
     public static BitmovinApiBuilder<Ac3Api> builder() {
         return new BitmovinApiBuilder<>(Ac3Api.class);
     }
-
     /**
      * Create AC3 Codec Configuration
      * Deprecation notice: use Dolby Digital instead. For more information check out our tutorial here: https://bitmovin.com/docs/encoding/tutorials/how-to-create-dolby-digital-plus-encodings 
@@ -59,7 +58,6 @@ public class Ac3Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete AC3 Codec Configuration
      * Deprecation notice: use Dolby Digital instead. For more information check out our tutorial here: https://bitmovin.com/docs/encoding/tutorials/how-to-create-dolby-digital-plus-encodings 
@@ -76,7 +74,6 @@ public class Ac3Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * AC3 Codec Configuration Details
      * Deprecation notice: use Dolby Digital instead. For more information check out our tutorial here: https://bitmovin.com/docs/encoding/tutorials/how-to-create-dolby-digital-plus-encodings 
@@ -93,7 +90,6 @@ public class Ac3Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List AC3 Configurations
      * Deprecation notice: use Dolby Digital instead. For more information check out our tutorial here:  https://bitmovin.com/docs/encoding/tutorials/how-to-create-dolby-digital-plus-encodings 
@@ -127,17 +123,16 @@ public class Ac3Api {
         }
     }
 
-    interface Ac3ApiClient {
-
+    interface Ac3ApiClient { 
         @RequestLine("POST /encoding/configurations/audio/ac3")
         ResponseEnvelope<Ac3AudioConfiguration> create(Ac3AudioConfiguration ac3AudioConfiguration) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/configurations/audio/ac3/{configuration_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/audio/ac3/{configuration_id}")
         ResponseEnvelope<Ac3AudioConfiguration> get(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/audio/ac3")
         ResponseEnvelope<PaginationResponse<Ac3AudioConfiguration>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

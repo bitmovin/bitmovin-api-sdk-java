@@ -42,7 +42,6 @@ public class DtsxApi {
     public static BitmovinApiBuilder<DtsxApi> builder() {
         return new BitmovinApiBuilder<>(DtsxApi.class);
     }
-
     /**
      * Create DTS:X Codec Configuration
      * 
@@ -57,7 +56,6 @@ public class DtsxApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete DTS:X Codec Configuration
      * 
@@ -72,7 +70,6 @@ public class DtsxApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * DTS:X Codec Configuration Details
      * 
@@ -87,7 +84,6 @@ public class DtsxApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List DTS:X Codec Configurations
      * 
@@ -117,17 +113,16 @@ public class DtsxApi {
         }
     }
 
-    interface DtsxApiClient {
-
+    interface DtsxApiClient { 
         @RequestLine("POST /encoding/configurations/audio/dtsx")
         ResponseEnvelope<DtsXAudioConfiguration> create(DtsXAudioConfiguration dtsXAudioConfiguration) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/configurations/audio/dtsx/{configuration_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/audio/dtsx/{configuration_id}")
         ResponseEnvelope<DtsXAudioConfiguration> get(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/audio/dtsx")
         ResponseEnvelope<PaginationResponse<DtsXAudioConfiguration>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

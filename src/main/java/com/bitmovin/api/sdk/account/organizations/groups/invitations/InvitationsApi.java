@@ -39,7 +39,6 @@ public class InvitationsApi {
     public static BitmovinApiBuilder<InvitationsApi> builder() {
         return new BitmovinApiBuilder<>(InvitationsApi.class);
     }
-
     /**
      * Add Invitation to Group
      * 
@@ -56,7 +55,6 @@ public class InvitationsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Invitation
      * 
@@ -73,7 +71,6 @@ public class InvitationsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Invitation Details
      * 
@@ -90,7 +87,6 @@ public class InvitationsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Invitations
      * 
@@ -124,17 +120,16 @@ public class InvitationsApi {
         }
     }
 
-    interface InvitationsApiClient {
-
+    interface InvitationsApiClient { 
         @RequestLine("POST /account/organizations/{organization_id}/groups/{group_id}/invitations")
         ResponseEnvelope<Invitation> create(@Param(value = "organization_id") String organizationId, @Param(value = "group_id") String groupId, Invitation invitation) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /account/organizations/{organization_id}/groups/{group_id}/invitations/{invitation_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "organization_id") String organizationId, @Param(value = "group_id") String groupId, @Param(value = "invitation_id") String invitationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /account/organizations/{organization_id}/groups/{group_id}/invitations/{invitation_id}")
         ResponseEnvelope<Invitation> get(@Param(value = "organization_id") String organizationId, @Param(value = "group_id") String groupId, @Param(value = "invitation_id") String invitationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /account/organizations/{organization_id}/groups/{group_id}/invitations")
         ResponseEnvelope<PaginationResponse<Invitation>> list(@Param(value = "organization_id") String organizationId, @Param(value = "group_id") String groupId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

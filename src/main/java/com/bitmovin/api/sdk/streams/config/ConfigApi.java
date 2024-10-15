@@ -23,5 +23,4 @@ public class ConfigApi {
         return new BitmovinApiBuilder<>(ConfigApi.class);
     }
 
-    
 }

@@ -42,7 +42,6 @@ public class S3Api {
     public static BitmovinApiBuilder<S3Api> builder() {
         return new BitmovinApiBuilder<>(S3Api.class);
     }
-
     /**
      * Create S3 Output
      * 
@@ -57,7 +56,6 @@ public class S3Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete S3 Output
      * 
@@ -72,7 +70,6 @@ public class S3Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * S3 Output Details
      * 
@@ -87,7 +84,6 @@ public class S3Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List S3 Outputs
      * 
@@ -117,17 +113,16 @@ public class S3Api {
         }
     }
 
-    interface S3ApiClient {
-
+    interface S3ApiClient { 
         @RequestLine("POST /encoding/outputs/s3")
         ResponseEnvelope<S3Output> create(S3Output s3Output) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/outputs/s3/{output_id}")
         ResponseEnvelope<S3Output> delete(@Param(value = "output_id") String outputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/outputs/s3/{output_id}")
         ResponseEnvelope<S3Output> get(@Param(value = "output_id") String outputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/outputs/s3")
         ResponseEnvelope<PaginationResponse<S3Output>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

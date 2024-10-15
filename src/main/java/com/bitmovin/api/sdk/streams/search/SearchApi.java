@@ -39,7 +39,6 @@ public class SearchApi {
     public static BitmovinApiBuilder<SearchApi> builder() {
         return new BitmovinApiBuilder<>(SearchApi.class);
     }
-
     /**
      * Get paginated search results of VOD and Live streams
      * 
@@ -69,8 +68,7 @@ public class SearchApi {
         }
     }
 
-    interface SearchApiClient {
-
+    interface SearchApiClient { 
         @RequestLine("GET /streams/search")
         ResponseEnvelope<PaginationResponse<StreamsResponse>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

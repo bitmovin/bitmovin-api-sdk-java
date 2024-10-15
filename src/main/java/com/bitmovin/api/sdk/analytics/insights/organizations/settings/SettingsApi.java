@@ -39,7 +39,6 @@ public class SettingsApi {
     public static BitmovinApiBuilder<SettingsApi> builder() {
         return new BitmovinApiBuilder<>(SettingsApi.class);
     }
-
     /**
      * Get the current organization settings for industry insights
      * 
@@ -54,7 +53,6 @@ public class SettingsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Update the organization settings for industry insights
      * 
@@ -71,11 +69,10 @@ public class SettingsApi {
         }
     }
 
-    interface SettingsApiClient {
-
+    interface SettingsApiClient { 
         @RequestLine("GET /analytics/insights/organizations/{organization_id}/settings")
         ResponseEnvelope<AnalyticsInsightsOrganizationSettings> get(@Param(value = "organization_id") String organizationId) throws BitmovinException;
-    
+   
         @RequestLine("PUT /analytics/insights/organizations/{organization_id}/settings")
         ResponseEnvelope<AnalyticsInsightsOrganizationSettings> update(@Param(value = "organization_id") String organizationId, AnalyticsInsightsOrganizationSettingsRequest analyticsInsightsOrganizationSettingsRequest) throws BitmovinException;
     }

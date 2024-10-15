@@ -42,7 +42,6 @@ public class SpritesApi {
     public static BitmovinApiBuilder<SpritesApi> builder() {
         return new BitmovinApiBuilder<>(SpritesApi.class);
     }
-
     /**
      * Add Sprite
      * 
@@ -59,7 +58,6 @@ public class SpritesApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Sprite
      * 
@@ -76,7 +74,6 @@ public class SpritesApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Sprite Details
      * 
@@ -93,7 +90,6 @@ public class SpritesApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Sprites
      * 
@@ -127,17 +123,16 @@ public class SpritesApi {
         }
     }
 
-    interface SpritesApiClient {
-
+    interface SpritesApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/streams/{stream_id}/sprites")
         ResponseEnvelope<Sprite> create(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, Sprite sprite) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/streams/{stream_id}/sprites/{sprite_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, @Param(value = "sprite_id") String spriteId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/streams/{stream_id}/sprites/{sprite_id}")
         ResponseEnvelope<Sprite> get(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, @Param(value = "sprite_id") String spriteId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/streams/{stream_id}/sprites")
         ResponseEnvelope<PaginationResponse<Sprite>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

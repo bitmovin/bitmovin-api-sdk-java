@@ -39,7 +39,6 @@ public class ChunkedTextApi {
     public static BitmovinApiBuilder<ChunkedTextApi> builder() {
         return new BitmovinApiBuilder<>(ChunkedTextApi.class);
     }
-
     /**
      * Add Chunked Text Representation
      * 
@@ -57,7 +56,6 @@ public class ChunkedTextApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Chunked Text Representation
      * 
@@ -75,7 +73,6 @@ public class ChunkedTextApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Chunked Text Representation Details
      * 
@@ -93,7 +90,6 @@ public class ChunkedTextApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List all Chunked Text Representations
      * 
@@ -129,17 +125,16 @@ public class ChunkedTextApi {
         }
     }
 
-    interface ChunkedTextApiClient {
-
+    interface ChunkedTextApiClient { 
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/representations/chunked-text")
         ResponseEnvelope<DashChunkedTextRepresentation> create(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, DashChunkedTextRepresentation dashChunkedTextRepresentation) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/representations/chunked-text/{representation_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, @Param(value = "representation_id") String representationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/representations/chunked-text/{representation_id}")
         ResponseEnvelope<DashChunkedTextRepresentation> get(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, @Param(value = "representation_id") String representationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/representations/chunked-text")
         ResponseEnvelope<PaginationResponse<DashChunkedTextRepresentation>> list(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

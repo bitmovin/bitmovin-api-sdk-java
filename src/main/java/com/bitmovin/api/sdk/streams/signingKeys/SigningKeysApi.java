@@ -39,7 +39,6 @@ public class SigningKeysApi {
     public static BitmovinApiBuilder<SigningKeysApi> builder() {
         return new BitmovinApiBuilder<>(SigningKeysApi.class);
     }
-
     /**
      * Create new signing-key
      * Create new signing-key pair. There is a limit of 2 active signing keys per organization.
@@ -53,7 +52,6 @@ public class SigningKeysApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete signing-key
      * 
@@ -67,7 +65,6 @@ public class SigningKeysApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Get list of public signing key ids
      * 
@@ -82,14 +79,13 @@ public class SigningKeysApi {
         }
     }
 
-    interface SigningKeysApiClient {
-
+    interface SigningKeysApiClient { 
         @RequestLine("POST /streams/signing-keys")
         ResponseEnvelope<StreamsSigningKeyResponse> create() throws BitmovinException;
-    
+   
         @RequestLine("DELETE /streams/signing-keys/{key_id}")
         void delete(@Param(value = "key_id") String keyId) throws BitmovinException;
-    
+   
         @RequestLine("GET /streams/signing-keys")
         ResponseEnvelope<StreamsPublicSigningKeyResponse> get() throws BitmovinException;
     }

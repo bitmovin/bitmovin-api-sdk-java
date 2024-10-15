@@ -51,7 +51,6 @@ public class SmoothApi {
     public static BitmovinApiBuilder<SmoothApi> builder() {
         return new BitmovinApiBuilder<>(SmoothApi.class);
     }
-
     /**
      * Create Smooth Streaming Manifest
      * A Custom Smooth Streaming Manifest gives you full control over its contents. Add Representations and Content Protections via the respective endpoints. If you need a simpler solution, create a Default Manifest resource instead. See [documentation](https://developer.bitmovin.com/encoding/docs/default-vs-custom-manifest) page for a comparison
@@ -66,7 +65,6 @@ public class SmoothApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Smooth Streaming Manifest
      * 
@@ -81,7 +79,6 @@ public class SmoothApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Smooth Streaming Manifest Details
      * 
@@ -96,7 +93,6 @@ public class SmoothApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Manifest Start Details
      * 
@@ -111,7 +107,6 @@ public class SmoothApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Smooth Streaming Manifests
      * 
@@ -140,7 +135,6 @@ public class SmoothApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Start Smooth Streaming manifest generation
      * 
@@ -171,7 +165,6 @@ public class SmoothApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Smooth Streaming manifest generation status
      * 
@@ -186,7 +179,6 @@ public class SmoothApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Stop Smooth Streaming manifest generation
      * 
@@ -202,32 +194,31 @@ public class SmoothApi {
         }
     }
 
-    interface SmoothApiClient {
-
+    interface SmoothApiClient { 
         @RequestLine("POST /encoding/manifests/smooth")
         ResponseEnvelope<SmoothStreamingManifest> create(SmoothStreamingManifest smoothStreamingManifest) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/manifests/smooth/{manifest_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/smooth/{manifest_id}")
         ResponseEnvelope<SmoothStreamingManifest> get(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/smooth/{manifest_id}/start")
         ResponseEnvelope<StartManifestRequest> getStartRequest(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/smooth")
         ResponseEnvelope<PaginationResponse<SmoothStreamingManifest>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
-    
+   
         @RequestLine("POST /encoding/manifests/smooth/{manifest_id}/start")
         ResponseEnvelope<BitmovinResponse> start(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
 
         @RequestLine("POST /encoding/manifests/smooth/{manifest_id}/start")
         ResponseEnvelope<BitmovinResponse> start(@Param(value = "manifest_id") String manifestId, StartManifestRequest startManifestRequest) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/smooth/{manifest_id}/status")
         ResponseEnvelope<Task> status(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
-    
+   
         @RequestLine("POST /encoding/manifests/smooth/{manifest_id}/stop")
         ResponseEnvelope<BitmovinResponse> stop(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
     }

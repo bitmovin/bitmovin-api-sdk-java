@@ -39,7 +39,6 @@ public class ErrorDefinitionsApi {
     public static BitmovinApiBuilder<ErrorDefinitionsApi> builder() {
         return new BitmovinApiBuilder<>(ErrorDefinitionsApi.class);
     }
-
     /**
      * List all possible api error definitions
      * 
@@ -69,8 +68,7 @@ public class ErrorDefinitionsApi {
         }
     }
 
-    interface ErrorDefinitionsApiClient {
-
+    interface ErrorDefinitionsApiClient { 
         @RequestLine("GET /general/error-definitions")
         ResponseEnvelope<PaginationResponse<ApiErrorDefinition>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

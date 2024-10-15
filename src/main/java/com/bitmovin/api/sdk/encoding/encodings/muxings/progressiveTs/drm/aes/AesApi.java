@@ -42,7 +42,6 @@ public class AesApi {
     public static BitmovinApiBuilder<AesApi> builder() {
         return new BitmovinApiBuilder<>(AesApi.class);
     }
-
     /**
      * Add AES encryption configuration to a Progressive TS muxing
      * 
@@ -59,7 +58,6 @@ public class AesApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete AES encryption configuration from a Progressive TS muxing
      * 
@@ -76,7 +74,6 @@ public class AesApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * AES encryption Details of a Progressive TS muxing
      * 
@@ -93,7 +90,6 @@ public class AesApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List AES encryption configurations of a Progressive TS muxing
      * 
@@ -127,17 +123,16 @@ public class AesApi {
         }
     }
 
-    interface AesApiClient {
-
+    interface AesApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/progressive-ts/{muxing_id}/drm/aes")
         ResponseEnvelope<AesEncryptionDrm> create(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, AesEncryptionDrm aesEncryptionDrm) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/progressive-ts/{muxing_id}/drm/aes/{drm_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @Param(value = "drm_id") String drmId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/progressive-ts/{muxing_id}/drm/aes/{drm_id}")
         ResponseEnvelope<AesEncryptionDrm> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @Param(value = "drm_id") String drmId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/progressive-ts/{muxing_id}/drm/aes")
         ResponseEnvelope<PaginationResponse<AesEncryptionDrm>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

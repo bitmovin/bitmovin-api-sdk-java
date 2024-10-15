@@ -48,7 +48,6 @@ public class InsertableContentApi {
     public static BitmovinApiBuilder<InsertableContentApi> builder() {
         return new BitmovinApiBuilder<>(InsertableContentApi.class);
     }
-
     /**
      * Create Insertable Content
      * Make Insertable Content available for a live encoding
@@ -64,7 +63,6 @@ public class InsertableContentApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Insertable Content
      * List all Insertable Content available for a live encoding
@@ -96,11 +94,10 @@ public class InsertableContentApi {
         }
     }
 
-    interface InsertableContentApiClient {
-
+    interface InsertableContentApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/live/insertable-content")
         ResponseEnvelope<InsertableContent> create(@Param(value = "encoding_id") String encodingId, InsertableContent insertableContent) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/live/insertable-content")
         ResponseEnvelope<PaginationResponse<InsertableContent>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

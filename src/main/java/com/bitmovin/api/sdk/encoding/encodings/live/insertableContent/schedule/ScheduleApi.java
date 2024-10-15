@@ -39,7 +39,6 @@ public class ScheduleApi {
     public static BitmovinApiBuilder<ScheduleApi> builder() {
         return new BitmovinApiBuilder<>(ScheduleApi.class);
     }
-
     /**
      * Schedule Insertable Content
      * Schedule Insertable Content for a live encoding
@@ -56,7 +55,6 @@ public class ScheduleApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Deschedule Insertable Content
      * 
@@ -74,11 +72,10 @@ public class ScheduleApi {
         }
     }
 
-    interface ScheduleApiClient {
-
+    interface ScheduleApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/live/insertable-content/{content_id}/schedule")
         ResponseEnvelope<ScheduledInsertableContent> create(@Param(value = "encoding_id") String encodingId, @Param(value = "content_id") String contentId, ScheduledInsertableContent scheduledInsertableContent) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/live/insertable-content/{content_id}/schedule/{scheduled_content_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "content_id") String contentId, @Param(value = "scheduled_content_id") String scheduledContentId) throws BitmovinException;
     }

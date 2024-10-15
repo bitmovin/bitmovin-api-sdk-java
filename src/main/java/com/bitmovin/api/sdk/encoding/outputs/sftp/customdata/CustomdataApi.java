@@ -39,7 +39,6 @@ public class CustomdataApi {
     public static BitmovinApiBuilder<CustomdataApi> builder() {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
-
     /**
      * SFTP Output Custom Data
      * 
@@ -55,8 +54,7 @@ public class CustomdataApi {
         }
     }
 
-    interface CustomdataApiClient {
-
+    interface CustomdataApiClient { 
         @RequestLine("GET /encoding/outputs/sftp/{output_id}/customData")
         ResponseEnvelope<CustomData> getCustomData(@Param(value = "output_id") String outputId) throws BitmovinException;
     }

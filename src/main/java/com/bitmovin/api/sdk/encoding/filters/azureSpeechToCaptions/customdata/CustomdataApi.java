@@ -39,7 +39,6 @@ public class CustomdataApi {
     public static BitmovinApiBuilder<CustomdataApi> builder() {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
-
     /**
      * Azure Speech to captions Filter Custom Data
      * 
@@ -55,8 +54,7 @@ public class CustomdataApi {
         }
     }
 
-    interface CustomdataApiClient {
-
+    interface CustomdataApiClient { 
         @RequestLine("GET /encoding/filters/azure-speech-to-captions/{filter_id}/customData")
         ResponseEnvelope<CustomData> getCustomData(@Param(value = "filter_id") String filterId) throws BitmovinException;
     }

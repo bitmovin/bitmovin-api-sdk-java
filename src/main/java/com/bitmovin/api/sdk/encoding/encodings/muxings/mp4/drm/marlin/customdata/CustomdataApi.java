@@ -39,7 +39,6 @@ public class CustomdataApi {
     public static BitmovinApiBuilder<CustomdataApi> builder() {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
-
     /**
      * Marlin DRM Custom Data of an MP4 muxing
      * 
@@ -57,8 +56,7 @@ public class CustomdataApi {
         }
     }
 
-    interface CustomdataApiClient {
-
+    interface CustomdataApiClient { 
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/mp4/{muxing_id}/drm/marlin/{drm_id}/customData")
         ResponseEnvelope<CustomData> getCustomData(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @Param(value = "drm_id") String drmId) throws BitmovinException;
     }

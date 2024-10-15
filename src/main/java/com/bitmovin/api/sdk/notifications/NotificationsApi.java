@@ -48,7 +48,6 @@ public class NotificationsApi {
     public static BitmovinApiBuilder<NotificationsApi> builder() {
         return new BitmovinApiBuilder<>(NotificationsApi.class);
     }
-
     /**
      * Delete Notification
      * 
@@ -63,7 +62,6 @@ public class NotificationsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Get Notification
      * 
@@ -78,7 +76,6 @@ public class NotificationsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Notifications
      * 
@@ -107,7 +104,6 @@ public class NotificationsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Notification State History (All Resources)
      * 
@@ -138,7 +134,6 @@ public class NotificationsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Mute Notification
      * 
@@ -153,7 +148,6 @@ public class NotificationsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Unmute Notification
      * 
@@ -169,23 +163,22 @@ public class NotificationsApi {
         }
     }
 
-    interface NotificationsApiClient {
-
+    interface NotificationsApiClient { 
         @RequestLine("DELETE /notifications/{notification_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "notification_id") String notificationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /notifications/{notification_id}")
         ResponseEnvelope<Notification> get(@Param(value = "notification_id") String notificationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /notifications")
         ResponseEnvelope<PaginationResponse<Notification>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
-    
+   
         @RequestLine("GET /notifications/{notification_id}/states")
         ResponseEnvelope<PaginationResponse<NotificationStateEntry>> listByNotificationId(@Param(value = "notification_id") String notificationId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
-    
+   
         @RequestLine("POST /notifications/{notification_id}/mute")
         ResponseEnvelope<BitmovinResponse> mute(@Param(value = "notification_id") String notificationId) throws BitmovinException;
-    
+   
         @RequestLine("POST /notifications/{notification_id}/unmute")
         ResponseEnvelope<BitmovinResponse> unmute(@Param(value = "notification_id") String notificationId) throws BitmovinException;
     }

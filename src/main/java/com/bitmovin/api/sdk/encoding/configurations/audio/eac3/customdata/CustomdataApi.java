@@ -39,7 +39,6 @@ public class CustomdataApi {
     public static BitmovinApiBuilder<CustomdataApi> builder() {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
-
     /**
      * E-AC3 Codec Configuration Custom Data
      * Deprecation notice: use Dolby Digital Plus instead. For more information check out our tutorial here: https://bitmovin.com/docs/encoding/tutorials/how-to-create-dolby-digital-plus-encodings 
@@ -57,8 +56,7 @@ public class CustomdataApi {
         }
     }
 
-    interface CustomdataApiClient {
-
+    interface CustomdataApiClient { 
         @RequestLine("GET /encoding/configurations/audio/eac3/{configuration_id}/customData")
         ResponseEnvelope<CustomData> getCustomData(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
     }

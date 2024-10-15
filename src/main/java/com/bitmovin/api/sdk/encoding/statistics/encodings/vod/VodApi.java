@@ -42,7 +42,6 @@ public class VodApi {
     public static BitmovinApiBuilder<VodApi> builder() {
         return new BitmovinApiBuilder<>(VodApi.class);
     }
-
     /**
      * List VOD Encoding Statistics
      * 
@@ -71,7 +70,6 @@ public class VodApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List VOD Encoding Statistics Within Specific Dates
      * 
@@ -105,11 +103,10 @@ public class VodApi {
         }
     }
 
-    interface VodApiClient {
-
+    interface VodApiClient { 
         @RequestLine("GET /encoding/statistics/encodings/vod")
         ResponseEnvelope<PaginationResponse<EncodingStatisticsVod>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/statistics/encodings/vod/{from}/{to}")
         ResponseEnvelope<PaginationResponse<EncodingStatisticsVod>> listByDateRange(@Param(value = "from", expander = BitmovinDateExpander.class) Date from, @Param(value = "to", expander = BitmovinDateExpander.class) Date to, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

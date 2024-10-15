@@ -39,7 +39,6 @@ public class DolbyAtmosApi {
     public static BitmovinApiBuilder<DolbyAtmosApi> builder() {
         return new BitmovinApiBuilder<>(DolbyAtmosApi.class);
     }
-
     /**
      * Add Dolby Atmos input stream
      * 
@@ -55,7 +54,6 @@ public class DolbyAtmosApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Dolby Atmos input stream
      * 
@@ -71,7 +69,6 @@ public class DolbyAtmosApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Dolby Atmos input stream details
      * 
@@ -87,7 +84,6 @@ public class DolbyAtmosApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Dolby Atmos input streams
      * 
@@ -119,17 +115,16 @@ public class DolbyAtmosApi {
         }
     }
 
-    interface DolbyAtmosApiClient {
-
+    interface DolbyAtmosApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/input-streams/dolby-atmos")
         ResponseEnvelope<DolbyAtmosIngestInputStream> create(@Param(value = "encoding_id") String encodingId, DolbyAtmosIngestInputStream dolbyAtmosIngestInputStream) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/input-streams/dolby-atmos/{input_stream_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "input_stream_id") String inputStreamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/dolby-atmos/{input_stream_id}")
         ResponseEnvelope<DolbyAtmosIngestInputStream> get(@Param(value = "encoding_id") String encodingId, @Param(value = "input_stream_id") String inputStreamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/dolby-atmos")
         ResponseEnvelope<PaginationResponse<DolbyAtmosIngestInputStream>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

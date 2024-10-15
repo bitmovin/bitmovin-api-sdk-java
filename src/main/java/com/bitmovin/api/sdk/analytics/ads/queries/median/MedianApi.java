@@ -39,7 +39,6 @@ public class MedianApi {
     public static BitmovinApiBuilder<MedianApi> builder() {
         return new BitmovinApiBuilder<>(MedianApi.class);
     }
-
     /**
      * Median
      * 
@@ -55,8 +54,7 @@ public class MedianApi {
         }
     }
 
-    interface MedianApiClient {
-
+    interface MedianApiClient { 
         @RequestLine("POST /analytics/ads/queries/median")
         ResponseEnvelope<AnalyticsResponse> create(AdAnalyticsMedianQueryRequest adAnalyticsMedianQueryRequest) throws BitmovinException;
     }

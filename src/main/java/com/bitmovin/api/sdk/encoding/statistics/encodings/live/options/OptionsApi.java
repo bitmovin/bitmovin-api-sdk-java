@@ -39,7 +39,6 @@ public class OptionsApi {
     public static BitmovinApiBuilder<OptionsApi> builder() {
         return new BitmovinApiBuilder<>(OptionsApi.class);
     }
-
     /**
      * List live options encoding statistics for a given encoding
      * 
@@ -54,7 +53,6 @@ public class OptionsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List live options encoding statistics within specific dates
      * 
@@ -84,11 +82,10 @@ public class OptionsApi {
         }
     }
 
-    interface OptionsApiClient {
-
+    interface OptionsApiClient { 
         @RequestLine("GET /encoding/statistics/encodings/live/{encoding_id}/options")
         ResponseEnvelope<LiveEncodingOptionsStatistics> get(@Param(value = "encoding_id") String encodingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/statistics/encodings/live/options")
         ResponseEnvelope<LiveOptionsStatistics> listByDateRange(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

@@ -26,5 +26,4 @@ public class EncodingApi {
         return new BitmovinApiBuilder<>(EncodingApi.class);
     }
 
-    
 }

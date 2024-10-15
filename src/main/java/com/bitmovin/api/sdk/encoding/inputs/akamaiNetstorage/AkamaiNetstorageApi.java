@@ -42,7 +42,6 @@ public class AkamaiNetstorageApi {
     public static BitmovinApiBuilder<AkamaiNetstorageApi> builder() {
         return new BitmovinApiBuilder<>(AkamaiNetstorageApi.class);
     }
-
     /**
      * Create Akamai NetStorage Input
      * 
@@ -57,7 +56,6 @@ public class AkamaiNetstorageApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Akamai NetStorage Input
      * 
@@ -72,7 +70,6 @@ public class AkamaiNetstorageApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Akamai NetStorage Input Details
      * 
@@ -87,7 +84,6 @@ public class AkamaiNetstorageApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Akamai NetStorage Inputs
      * 
@@ -117,17 +113,16 @@ public class AkamaiNetstorageApi {
         }
     }
 
-    interface AkamaiNetstorageApiClient {
-
+    interface AkamaiNetstorageApiClient { 
         @RequestLine("POST /encoding/inputs/akamai-netstorage")
         ResponseEnvelope<AkamaiNetStorageInput> create(AkamaiNetStorageInput akamaiNetStorageInput) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/inputs/akamai-netstorage/{input_id}")
         ResponseEnvelope<AkamaiNetStorageInput> delete(@Param(value = "input_id") String inputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/inputs/akamai-netstorage/{input_id}")
         ResponseEnvelope<AkamaiNetStorageInput> get(@Param(value = "input_id") String inputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/inputs/akamai-netstorage")
         ResponseEnvelope<PaginationResponse<AkamaiNetStorageInput>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

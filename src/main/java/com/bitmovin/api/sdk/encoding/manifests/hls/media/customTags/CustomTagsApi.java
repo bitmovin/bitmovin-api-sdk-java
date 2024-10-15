@@ -39,7 +39,6 @@ public class CustomTagsApi {
     public static BitmovinApiBuilder<CustomTagsApi> builder() {
         return new BitmovinApiBuilder<>(CustomTagsApi.class);
     }
-
     /**
      * Add Custom Tag to a Audio Media or a Subtitle media
      * 
@@ -56,7 +55,6 @@ public class CustomTagsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Custom Tag
      * 
@@ -73,7 +71,6 @@ public class CustomTagsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Custom Tag Details
      * 
@@ -90,7 +87,6 @@ public class CustomTagsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List all Custom Tags of a Audio media or a Subtitle media
      * 
@@ -124,17 +120,16 @@ public class CustomTagsApi {
         }
     }
 
-    interface CustomTagsApiClient {
-
+    interface CustomTagsApiClient { 
         @RequestLine("POST /encoding/manifests/hls/{manifest_id}/media/{media_id}/custom-tags")
         ResponseEnvelope<CustomTag> create(@Param(value = "manifest_id") String manifestId, @Param(value = "media_id") String mediaId, CustomTag customTag) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/manifests/hls/{manifest_id}/media/{media_id}/custom-tags/{custom_tag_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "manifest_id") String manifestId, @Param(value = "media_id") String mediaId, @Param(value = "custom_tag_id") String customTagId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/hls/{manifest_id}/media/{media_id}/custom-tags/{custom_tag_id}")
         ResponseEnvelope<CustomTag> get(@Param(value = "manifest_id") String manifestId, @Param(value = "media_id") String mediaId, @Param(value = "custom_tag_id") String customTagId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/hls/{manifest_id}/media/{media_id}/custom-tags")
         ResponseEnvelope<PaginationResponse<CustomTag>> list(@Param(value = "manifest_id") String manifestId, @Param(value = "media_id") String mediaId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

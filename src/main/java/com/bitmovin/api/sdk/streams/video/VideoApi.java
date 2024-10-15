@@ -39,7 +39,6 @@ public class VideoApi {
     public static BitmovinApiBuilder<VideoApi> builder() {
         return new BitmovinApiBuilder<>(VideoApi.class);
     }
-
     /**
      * Create new Streams video
      * 
@@ -54,7 +53,6 @@ public class VideoApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Stream
      * 
@@ -68,7 +66,6 @@ public class VideoApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Get Streams video by id
      * 
@@ -83,7 +80,6 @@ public class VideoApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Get paginated list of Streams videos
      * 
@@ -112,7 +108,6 @@ public class VideoApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Partially update video stream by id
      * 
@@ -129,20 +124,19 @@ public class VideoApi {
         }
     }
 
-    interface VideoApiClient {
-
+    interface VideoApiClient { 
         @RequestLine("POST /streams/video")
         ResponseEnvelope<StreamsVideoResponse> create(StreamsVideoCreateRequest streamsVideoCreateRequest) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /streams/video/{stream_id}")
         void delete(@Param(value = "stream_id") String streamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /streams/video/{stream_id}")
         ResponseEnvelope<StreamsVideoResponse> get(@Param(value = "stream_id") String streamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /streams/video")
         ResponseEnvelope<PaginationResponse<StreamsVideoResponse>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
-    
+   
         @RequestLine("PATCH /streams/video/{stream_id}")
         ResponseEnvelope<StreamsVideoResponse> patchStreamsVideo(@Param(value = "stream_id") String streamId, StreamsVideoUpdateRequest streamsVideoUpdateRequest) throws BitmovinException;
     }

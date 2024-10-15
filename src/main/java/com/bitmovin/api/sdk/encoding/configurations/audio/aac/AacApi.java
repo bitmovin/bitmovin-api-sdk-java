@@ -42,7 +42,6 @@ public class AacApi {
     public static BitmovinApiBuilder<AacApi> builder() {
         return new BitmovinApiBuilder<>(AacApi.class);
     }
-
     /**
      * Create AAC Codec Configuration
      * 
@@ -57,7 +56,6 @@ public class AacApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete AAC Codec Configuration
      * 
@@ -72,7 +70,6 @@ public class AacApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * AAC Codec Configuration Details
      * 
@@ -87,7 +84,6 @@ public class AacApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List AAC Configurations
      * 
@@ -117,17 +113,16 @@ public class AacApi {
         }
     }
 
-    interface AacApiClient {
-
+    interface AacApiClient { 
         @RequestLine("POST /encoding/configurations/audio/aac")
         ResponseEnvelope<AacAudioConfiguration> create(AacAudioConfiguration aacAudioConfiguration) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/configurations/audio/aac/{configuration_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/audio/aac/{configuration_id}")
         ResponseEnvelope<AacAudioConfiguration> get(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/audio/aac")
         ResponseEnvelope<PaginationResponse<AacAudioConfiguration>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

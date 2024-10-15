@@ -39,7 +39,6 @@ public class RegionsApi {
     public static BitmovinApiBuilder<RegionsApi> builder() {
         return new BitmovinApiBuilder<>(RegionsApi.class);
     }
-
     /**
      * Add AWS Region Setting
      * 
@@ -56,7 +55,6 @@ public class RegionsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete AWS Region Settings
      * 
@@ -72,7 +70,6 @@ public class RegionsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * AWS Region Settings Details
      * 
@@ -88,7 +85,6 @@ public class RegionsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List AWS Region Settings
      * 
@@ -120,17 +116,16 @@ public class RegionsApi {
         }
     }
 
-    interface RegionsApiClient {
-
+    interface RegionsApiClient { 
         @RequestLine("POST /encoding/infrastructure/aws/{infrastructure_id}/regions/{region}")
         ResponseEnvelope<AwsAccountRegionSettings> create(@Param(value = "infrastructure_id") String infrastructureId, @Param(value = "region") AwsCloudRegion region, AwsAccountRegionSettings awsAccountRegionSettings) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/infrastructure/aws/{infrastructure_id}/regions/{region}")
         ResponseEnvelope<AwsAccountRegionSettings> delete(@Param(value = "infrastructure_id") String infrastructureId, @Param(value = "region") AwsCloudRegion region) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/infrastructure/aws/{infrastructure_id}/regions/{region}")
         ResponseEnvelope<AwsAccountRegionSettings> get(@Param(value = "infrastructure_id") String infrastructureId, @Param(value = "region") AwsCloudRegion region) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/infrastructure/aws/{infrastructure_id}/regions")
         ResponseEnvelope<PaginationResponse<AwsAccountRegionSettings>> list(@Param(value = "infrastructure_id") String infrastructureId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

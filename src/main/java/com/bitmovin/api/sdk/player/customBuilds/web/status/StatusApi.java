@@ -39,7 +39,6 @@ public class StatusApi {
     public static BitmovinApiBuilder<StatusApi> builder() {
         return new BitmovinApiBuilder<>(StatusApi.class);
     }
-
     /**
      * Custom Web Player Build Status
      * 
@@ -55,8 +54,7 @@ public class StatusApi {
         }
     }
 
-    interface StatusApiClient {
-
+    interface StatusApiClient { 
         @RequestLine("GET /player/custom-builds/web/{custom_build_id}/status")
         ResponseEnvelope<CustomPlayerBuildStatus> get(@Param(value = "custom_build_id") String customBuildId) throws BitmovinException;
     }

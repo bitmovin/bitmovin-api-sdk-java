@@ -39,7 +39,6 @@ public class CustomdataApi {
     public static BitmovinApiBuilder<CustomdataApi> builder() {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
-
     /**
      * S3 Custom Data
      * 
@@ -55,8 +54,7 @@ public class CustomdataApi {
         }
     }
 
-    interface CustomdataApiClient {
-
+    interface CustomdataApiClient { 
         @RequestLine("GET /encoding/inputs/s3-role-based/{input_id}/customData")
         ResponseEnvelope<CustomData> getCustomData(@Param(value = "input_id") String inputId) throws BitmovinException;
     }

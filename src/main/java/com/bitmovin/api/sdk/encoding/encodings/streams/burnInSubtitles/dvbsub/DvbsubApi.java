@@ -39,7 +39,6 @@ public class DvbsubApi {
     public static BitmovinApiBuilder<DvbsubApi> builder() {
         return new BitmovinApiBuilder<>(DvbsubApi.class);
     }
-
     /**
      * Burn-In DVB-SUB Subtitle into Stream
      * 
@@ -56,7 +55,6 @@ public class DvbsubApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Burn-In DVB-SUB Subtitle from Stream
      * 
@@ -73,7 +71,6 @@ public class DvbsubApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Get Burn-In DVB-SUB Subtitle Details
      * 
@@ -90,7 +87,6 @@ public class DvbsubApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List the Burn-In DVB-SUB subtitles of a stream
      * 
@@ -124,17 +120,16 @@ public class DvbsubApi {
         }
     }
 
-    interface DvbsubApiClient {
-
+    interface DvbsubApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/streams/{stream_id}/burn-in-subtitles/dvbsub")
         ResponseEnvelope<BurnInSubtitleDvbSub> create(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, BurnInSubtitleDvbSub burnInSubtitleDvbSub) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/streams/{stream_id}/burn-in-subtitles/dvbsub/{subtitle_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, @Param(value = "subtitle_id") String subtitleId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/streams/{stream_id}/burn-in-subtitles/dvbsub/{subtitle_id}")
         ResponseEnvelope<BurnInSubtitleDvbSub> get(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, @Param(value = "subtitle_id") String subtitleId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/streams/{stream_id}/burn-in-subtitles/dvbsub")
         ResponseEnvelope<PaginationResponse<BurnInSubtitleDvbSub>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

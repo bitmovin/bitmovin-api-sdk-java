@@ -23,5 +23,4 @@ public class QcApi {
         return new BitmovinApiBuilder<>(QcApi.class);
     }
 
-    
 }

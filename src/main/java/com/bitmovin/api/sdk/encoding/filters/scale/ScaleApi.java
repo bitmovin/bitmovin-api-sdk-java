@@ -42,7 +42,6 @@ public class ScaleApi {
     public static BitmovinApiBuilder<ScaleApi> builder() {
         return new BitmovinApiBuilder<>(ScaleApi.class);
     }
-
     /**
      * Create Scale Filter
      * 
@@ -57,7 +56,6 @@ public class ScaleApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Scale Filter
      * 
@@ -72,7 +70,6 @@ public class ScaleApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Scale Filter Details
      * 
@@ -87,7 +84,6 @@ public class ScaleApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Scale Filters
      * 
@@ -117,17 +113,16 @@ public class ScaleApi {
         }
     }
 
-    interface ScaleApiClient {
-
+    interface ScaleApiClient { 
         @RequestLine("POST /encoding/filters/scale")
         ResponseEnvelope<ScaleFilter> create(ScaleFilter scaleFilter) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/filters/scale/{filter_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "filter_id") String filterId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/filters/scale/{filter_id}")
         ResponseEnvelope<ScaleFilter> get(@Param(value = "filter_id") String filterId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/filters/scale")
         ResponseEnvelope<PaginationResponse<ScaleFilter>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

@@ -39,7 +39,6 @@ public class FinishedApi {
     public static BitmovinApiBuilder<FinishedApi> builder() {
         return new BitmovinApiBuilder<>(FinishedApi.class);
     }
-
     /**
      * Add &#39;Manifest Finished Successfully&#39; Webhook (All Manifests)
      * 
@@ -54,7 +53,6 @@ public class FinishedApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Add &#39;Manifest Finished Successfully&#39; Webhook Notification (Specific Manifest)
      * 
@@ -70,7 +68,6 @@ public class FinishedApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Manifest Finished Webhook
      * 
@@ -85,7 +82,6 @@ public class FinishedApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Get &#39;Manifest Finished&#39; Webhooks (All Manifests)
      * Get all webhook notifications triggering when a manifest generation finishes successfully
@@ -99,7 +95,6 @@ public class FinishedApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Replace Manifest Finished Webhook Notification
      * 
@@ -116,20 +111,19 @@ public class FinishedApi {
         }
     }
 
-    interface FinishedApiClient {
-
+    interface FinishedApiClient { 
         @RequestLine("POST /notifications/webhooks/encoding/manifest/finished")
         ResponseEnvelope<Webhook> create(Webhook webhook) throws BitmovinException;
-    
+   
         @RequestLine("POST /notifications/webhooks/encoding/manifest/{manifest_id}/finished")
         ResponseEnvelope<Webhook> createByManifestId(@Param(value = "manifest_id") String manifestId, Webhook webhook) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /notifications/webhooks/encoding/manifest/finished/{notification_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "notification_id") String notificationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /notifications/webhooks/encoding/manifest/finished")
         ResponseEnvelope<PaginationResponse<Webhook>> list() throws BitmovinException;
-    
+   
         @RequestLine("PUT /notifications/webhooks/encoding/manifest/finished/{notification_id}")
         ResponseEnvelope<Webhook> update(@Param(value = "notification_id") String notificationId, Webhook webhook) throws BitmovinException;
     }

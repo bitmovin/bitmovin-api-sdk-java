@@ -29,5 +29,4 @@ public class TrimmingApi {
         return new BitmovinApiBuilder<>(TrimmingApi.class);
     }
 
-    
 }

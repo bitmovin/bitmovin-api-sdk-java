@@ -45,7 +45,6 @@ public class EmailsApi {
     public static BitmovinApiBuilder<EmailsApi> builder() {
         return new BitmovinApiBuilder<>(EmailsApi.class);
     }
-
     /**
      * List Email Notifications
      * 
@@ -75,8 +74,7 @@ public class EmailsApi {
         }
     }
 
-    interface EmailsApiClient {
-
+    interface EmailsApiClient { 
         @RequestLine("GET /notifications/emails")
         ResponseEnvelope<PaginationResponse<Notification>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

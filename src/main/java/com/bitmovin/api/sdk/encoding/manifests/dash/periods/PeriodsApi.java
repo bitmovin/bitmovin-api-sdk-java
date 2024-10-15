@@ -45,7 +45,6 @@ public class PeriodsApi {
     public static BitmovinApiBuilder<PeriodsApi> builder() {
         return new BitmovinApiBuilder<>(PeriodsApi.class);
     }
-
     /**
      * Add Period
      * 
@@ -61,7 +60,6 @@ public class PeriodsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Period
      * 
@@ -77,7 +75,6 @@ public class PeriodsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Period Details
      * 
@@ -93,7 +90,6 @@ public class PeriodsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List all Periods
      * 
@@ -125,17 +121,16 @@ public class PeriodsApi {
         }
     }
 
-    interface PeriodsApiClient {
-
+    interface PeriodsApiClient { 
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/periods")
         ResponseEnvelope<Period> create(@Param(value = "manifest_id") String manifestId, Period period) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/manifests/dash/{manifest_id}/periods/{period_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/periods/{period_id}")
         ResponseEnvelope<Period> get(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/periods")
         ResponseEnvelope<PaginationResponse<Period>> list(@Param(value = "manifest_id") String manifestId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

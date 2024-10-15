@@ -39,7 +39,6 @@ public class DomainsApi {
     public static BitmovinApiBuilder<DomainsApi> builder() {
         return new BitmovinApiBuilder<>(DomainsApi.class);
     }
-
     /**
      * Add Domain
      * 
@@ -55,7 +54,6 @@ public class DomainsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Domain
      * 
@@ -71,7 +69,6 @@ public class DomainsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List License Domains
      * 
@@ -87,14 +84,13 @@ public class DomainsApi {
         }
     }
 
-    interface DomainsApiClient {
-
+    interface DomainsApiClient { 
         @RequestLine("POST /analytics/licenses/{license_id}/domains")
         ResponseEnvelope<Domain> create(@Param(value = "license_id") String licenseId, Domain domain) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /analytics/licenses/{license_id}/domains/{domain_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "license_id") String licenseId, @Param(value = "domain_id") String domainId) throws BitmovinException;
-    
+   
         @RequestLine("GET /analytics/licenses/{license_id}/domains")
         ResponseEnvelope<DomainList> get(@Param(value = "license_id") String licenseId) throws BitmovinException;
     }

@@ -39,7 +39,6 @@ public class AvgConcurrentviewersApi {
     public static BitmovinApiBuilder<AvgConcurrentviewersApi> builder() {
         return new BitmovinApiBuilder<>(AvgConcurrentviewersApi.class);
     }
-
     /**
      * Get metrics data
      * 
@@ -55,8 +54,7 @@ public class AvgConcurrentviewersApi {
         }
     }
 
-    interface AvgConcurrentviewersApiClient {
-
+    interface AvgConcurrentviewersApiClient { 
         @RequestLine("POST /analytics/metrics/avg-concurrentviewers")
         ResponseEnvelope<AnalyticsAvgConcurrentViewersResponse> create(AnalyticsMetricsQueryRequest analyticsMetricsQueryRequest) throws BitmovinException;
     }

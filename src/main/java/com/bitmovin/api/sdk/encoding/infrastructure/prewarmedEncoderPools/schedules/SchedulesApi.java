@@ -39,7 +39,6 @@ public class SchedulesApi {
     public static BitmovinApiBuilder<SchedulesApi> builder() {
         return new BitmovinApiBuilder<>(SchedulesApi.class);
     }
-
     /**
      * Create prewarmed encoder pool schedule
      * 
@@ -55,7 +54,6 @@ public class SchedulesApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete prewarmed encoder pool schedule
      * 
@@ -71,7 +69,6 @@ public class SchedulesApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Prewarmed encoder pool schedule details
      * 
@@ -87,7 +84,6 @@ public class SchedulesApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List prewarmed encoder pool schedules
      * 
@@ -119,17 +115,16 @@ public class SchedulesApi {
         }
     }
 
-    interface SchedulesApiClient {
-
+    interface SchedulesApiClient { 
         @RequestLine("POST /encoding/infrastructure/prewarmed-encoder-pools/{pool_id}/schedules")
         ResponseEnvelope<PrewarmedEncoderPoolSchedule> create(@Param(value = "pool_id") String poolId, PrewarmedEncoderPoolSchedule prewarmedEncoderPoolSchedule) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/infrastructure/prewarmed-encoder-pools/{pool_id}/schedules/{schedule_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "pool_id") String poolId, @Param(value = "schedule_id") String scheduleId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/infrastructure/prewarmed-encoder-pools/{pool_id}/schedules/{schedule_id}")
         ResponseEnvelope<PrewarmedEncoderPoolSchedule> get(@Param(value = "pool_id") String poolId, @Param(value = "schedule_id") String scheduleId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/infrastructure/prewarmed-encoder-pools/{pool_id}/schedules")
         ResponseEnvelope<PaginationResponse<PrewarmedEncoderPoolSchedule>> list(@Param(value = "pool_id") String poolId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

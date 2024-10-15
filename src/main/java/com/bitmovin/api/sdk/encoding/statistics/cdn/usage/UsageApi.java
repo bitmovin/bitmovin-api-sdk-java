@@ -39,7 +39,6 @@ public class UsageApi {
     public static BitmovinApiBuilder<UsageApi> builder() {
         return new BitmovinApiBuilder<>(UsageApi.class);
     }
-
     /**
      * List CDN usage statistics within specific dates.
      * 
@@ -69,8 +68,7 @@ public class UsageApi {
         }
     }
 
-    interface UsageApiClient {
-
+    interface UsageApiClient { 
         @RequestLine("GET /encoding/statistics/cdn/usage")
         ResponseEnvelope<CdnUsageStatistics> get(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

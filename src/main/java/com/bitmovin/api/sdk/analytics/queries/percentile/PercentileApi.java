@@ -39,7 +39,6 @@ public class PercentileApi {
     public static BitmovinApiBuilder<PercentileApi> builder() {
         return new BitmovinApiBuilder<>(PercentileApi.class);
     }
-
     /**
      * Percentile
      * 
@@ -55,8 +54,7 @@ public class PercentileApi {
         }
     }
 
-    interface PercentileApiClient {
-
+    interface PercentileApiClient { 
         @RequestLine("POST /analytics/queries/percentile")
         ResponseEnvelope<AnalyticsResponse> create(AnalyticsPercentileQueryRequest analyticsPercentileQueryRequest) throws BitmovinException;
     }

@@ -51,7 +51,6 @@ public class OrganizationsApi {
     public static BitmovinApiBuilder<OrganizationsApi> builder() {
         return new BitmovinApiBuilder<>(OrganizationsApi.class);
     }
-
     /**
      * Add Organization
      * 
@@ -66,7 +65,6 @@ public class OrganizationsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Organization Details
      * 
@@ -81,7 +79,6 @@ public class OrganizationsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Organizations
      * 
@@ -95,7 +92,6 @@ public class OrganizationsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Update Organization
      * 
@@ -112,17 +108,16 @@ public class OrganizationsApi {
         }
     }
 
-    interface OrganizationsApiClient {
-
+    interface OrganizationsApiClient { 
         @RequestLine("POST /account/organizations")
         ResponseEnvelope<Organization> create(Organization organization) throws BitmovinException;
-    
+   
         @RequestLine("GET /account/organizations/{organization_id}")
         ResponseEnvelope<Organization> get(@Param(value = "organization_id") String organizationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /account/organizations")
         ResponseEnvelope<PaginationResponse<Organization>> list() throws BitmovinException;
-    
+   
         @RequestLine("PUT /account/organizations/{organization_id}")
         ResponseEnvelope<Organization> update(@Param(value = "organization_id") String organizationId, UpdateOrganizationRequest updateOrganizationRequest) throws BitmovinException;
     }

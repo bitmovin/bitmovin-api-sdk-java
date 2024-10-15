@@ -39,7 +39,6 @@ public class Cea608Api {
     public static BitmovinApiBuilder<Cea608Api> builder() {
         return new BitmovinApiBuilder<>(Cea608Api.class);
     }
-
     /**
      * Add CEA 608 Input Stream
      * 
@@ -55,7 +54,6 @@ public class Cea608Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete CEA 608 Input Stream
      * 
@@ -71,7 +69,6 @@ public class Cea608Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * CEA 608 Input Stream Details
      * 
@@ -87,7 +84,6 @@ public class Cea608Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List CEA 608 Input Streams
      * 
@@ -119,17 +115,16 @@ public class Cea608Api {
         }
     }
 
-    interface Cea608ApiClient {
-
+    interface Cea608ApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/input-streams/captions/cea608")
         ResponseEnvelope<Cea608CaptionInputStream> create(@Param(value = "encoding_id") String encodingId, Cea608CaptionInputStream cea608CaptionInputStream) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/input-streams/captions/cea608/{input_stream_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "input_stream_id") String inputStreamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/captions/cea608/{input_stream_id}")
         ResponseEnvelope<Cea608CaptionInputStream> get(@Param(value = "encoding_id") String encodingId, @Param(value = "input_stream_id") String inputStreamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/captions/cea608")
         ResponseEnvelope<PaginationResponse<Cea608CaptionInputStream>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

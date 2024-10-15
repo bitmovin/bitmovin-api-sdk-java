@@ -39,7 +39,6 @@ public class H264PictureTimingApi {
     public static BitmovinApiBuilder<H264PictureTimingApi> builder() {
         return new BitmovinApiBuilder<>(H264PictureTimingApi.class);
     }
-
     /**
      * Add H264 Picture Timing Trimming Input Stream
      * 
@@ -55,7 +54,6 @@ public class H264PictureTimingApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete H264 Picture Timing Trimming Input Stream
      * 
@@ -71,7 +69,6 @@ public class H264PictureTimingApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * H264 Picture Timing Trimming Input Stream Details
      * 
@@ -87,7 +84,6 @@ public class H264PictureTimingApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List H264 Picture Timing Trimming Input Streams
      * 
@@ -119,17 +115,16 @@ public class H264PictureTimingApi {
         }
     }
 
-    interface H264PictureTimingApiClient {
-
+    interface H264PictureTimingApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/input-streams/trimming/h264-picture-timing")
         ResponseEnvelope<H264PictureTimingTrimmingInputStream> create(@Param(value = "encoding_id") String encodingId, H264PictureTimingTrimmingInputStream h264PictureTimingTrimmingInputStream) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/input-streams/trimming/h264-picture-timing/{input_stream_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "input_stream_id") String inputStreamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/trimming/h264-picture-timing/{input_stream_id}")
         ResponseEnvelope<H264PictureTimingTrimmingInputStream> get(@Param(value = "encoding_id") String encodingId, @Param(value = "input_stream_id") String inputStreamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/trimming/h264-picture-timing")
         ResponseEnvelope<PaginationResponse<H264PictureTimingTrimmingInputStream>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

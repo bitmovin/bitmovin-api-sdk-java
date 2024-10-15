@@ -35,5 +35,4 @@ public class StreamsApi {
         return new BitmovinApiBuilder<>(StreamsApi.class);
     }
 
-    
 }

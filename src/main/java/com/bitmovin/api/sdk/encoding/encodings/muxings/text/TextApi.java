@@ -42,7 +42,6 @@ public class TextApi {
     public static BitmovinApiBuilder<TextApi> builder() {
         return new BitmovinApiBuilder<>(TextApi.class);
     }
-
     /**
      * Add Text muxing
      * 
@@ -58,7 +57,6 @@ public class TextApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Text muxing
      * 
@@ -74,7 +72,6 @@ public class TextApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Text muxing details
      * 
@@ -90,7 +87,6 @@ public class TextApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Text muxings
      * 
@@ -122,17 +118,16 @@ public class TextApi {
         }
     }
 
-    interface TextApiClient {
-
+    interface TextApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/text")
         ResponseEnvelope<TextMuxing> create(@Param(value = "encoding_id") String encodingId, TextMuxing textMuxing) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/text/{muxing_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/text/{muxing_id}")
         ResponseEnvelope<TextMuxing> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/text")
         ResponseEnvelope<PaginationResponse<TextMuxing>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

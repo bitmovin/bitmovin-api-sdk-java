@@ -42,7 +42,6 @@ public class DtsPassthroughApi {
     public static BitmovinApiBuilder<DtsPassthroughApi> builder() {
         return new BitmovinApiBuilder<>(DtsPassthroughApi.class);
     }
-
     /**
      * Create DTS Passthrough Configuration
      * 
@@ -57,7 +56,6 @@ public class DtsPassthroughApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete DTS Passthrough Codec Configuration
      * 
@@ -72,7 +70,6 @@ public class DtsPassthroughApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * DTS Passthrough Codec Configuration Details
      * 
@@ -87,7 +84,6 @@ public class DtsPassthroughApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List DTS Passthrough Configurations
      * 
@@ -117,17 +113,16 @@ public class DtsPassthroughApi {
         }
     }
 
-    interface DtsPassthroughApiClient {
-
+    interface DtsPassthroughApiClient { 
         @RequestLine("POST /encoding/configurations/audio/dts-passthrough")
         ResponseEnvelope<DtsPassthroughAudioConfiguration> create(DtsPassthroughAudioConfiguration dtsPassthroughAudioConfiguration) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/configurations/audio/dts-passthrough/{configuration_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/audio/dts-passthrough/{configuration_id}")
         ResponseEnvelope<DtsPassthroughAudioConfiguration> get(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/audio/dts-passthrough")
         ResponseEnvelope<PaginationResponse<DtsPassthroughAudioConfiguration>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

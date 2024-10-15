@@ -39,7 +39,6 @@ public class SubtitleApi {
     public static BitmovinApiBuilder<SubtitleApi> builder() {
         return new BitmovinApiBuilder<>(SubtitleApi.class);
     }
-
     /**
      * Add Subtitle AdaptationSet
      * 
@@ -56,7 +55,6 @@ public class SubtitleApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Subtitle AdaptationSet
      * 
@@ -73,7 +71,6 @@ public class SubtitleApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Subtitle AdaptationSet Details
      * 
@@ -90,7 +87,6 @@ public class SubtitleApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List all Subtitle AdaptationSets
      * 
@@ -124,17 +120,16 @@ public class SubtitleApi {
         }
     }
 
-    interface SubtitleApiClient {
-
+    interface SubtitleApiClient { 
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/subtitle")
         ResponseEnvelope<SubtitleAdaptationSet> create(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, SubtitleAdaptationSet subtitleAdaptationSet) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/subtitle/{adaptationset_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/subtitle/{adaptationset_id}")
         ResponseEnvelope<SubtitleAdaptationSet> get(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/subtitle")
         ResponseEnvelope<PaginationResponse<SubtitleAdaptationSet>> list(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

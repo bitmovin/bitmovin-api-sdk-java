@@ -42,7 +42,6 @@ public class FtpApi {
     public static BitmovinApiBuilder<FtpApi> builder() {
         return new BitmovinApiBuilder<>(FtpApi.class);
     }
-
     /**
      * Create FTP Output
      * 
@@ -57,7 +56,6 @@ public class FtpApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete FTP Output
      * 
@@ -72,7 +70,6 @@ public class FtpApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * FTP Output Details
      * 
@@ -87,7 +84,6 @@ public class FtpApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List FTP Outputs
      * 
@@ -117,17 +113,16 @@ public class FtpApi {
         }
     }
 
-    interface FtpApiClient {
-
+    interface FtpApiClient { 
         @RequestLine("POST /encoding/outputs/ftp")
         ResponseEnvelope<FtpOutput> create(FtpOutput ftpOutput) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/outputs/ftp/{output_id}")
         ResponseEnvelope<FtpOutput> delete(@Param(value = "output_id") String outputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/outputs/ftp/{output_id}")
         ResponseEnvelope<FtpOutput> get(@Param(value = "output_id") String outputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/outputs/ftp")
         ResponseEnvelope<PaginationResponse<FtpOutput>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

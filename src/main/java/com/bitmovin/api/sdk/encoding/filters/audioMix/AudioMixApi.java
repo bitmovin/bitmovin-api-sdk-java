@@ -42,7 +42,6 @@ public class AudioMixApi {
     public static BitmovinApiBuilder<AudioMixApi> builder() {
         return new BitmovinApiBuilder<>(AudioMixApi.class);
     }
-
     /**
      * Create Audio Mix Filter
      * 
@@ -57,7 +56,6 @@ public class AudioMixApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Audio Mix Filter
      * 
@@ -72,7 +70,6 @@ public class AudioMixApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Audio Mix Filter Details
      * 
@@ -87,7 +84,6 @@ public class AudioMixApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Audio Mix Filters
      * 
@@ -117,17 +113,16 @@ public class AudioMixApi {
         }
     }
 
-    interface AudioMixApiClient {
-
+    interface AudioMixApiClient { 
         @RequestLine("POST /encoding/filters/audio-mix")
         ResponseEnvelope<AudioMixFilter> create(AudioMixFilter audioMixFilter) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/filters/audio-mix/{filter_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "filter_id") String filterId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/filters/audio-mix/{filter_id}")
         ResponseEnvelope<AudioMixFilter> get(@Param(value = "filter_id") String filterId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/filters/audio-mix")
         ResponseEnvelope<PaginationResponse<AudioMixFilter>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

@@ -42,7 +42,6 @@ public class DvbSubtitleApi {
     public static BitmovinApiBuilder<DvbSubtitleApi> builder() {
         return new BitmovinApiBuilder<>(DvbSubtitleApi.class);
     }
-
     /**
      * Create DVB-SUB subtitle configuration
      * 
@@ -57,7 +56,6 @@ public class DvbSubtitleApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete DVB-SUB subtitle configuration
      * 
@@ -72,7 +70,6 @@ public class DvbSubtitleApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * DVB-SUB subtitle configuration details
      * 
@@ -87,7 +84,6 @@ public class DvbSubtitleApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List DVB-SUB subtitle configurations
      * 
@@ -117,17 +113,16 @@ public class DvbSubtitleApi {
         }
     }
 
-    interface DvbSubtitleApiClient {
-
+    interface DvbSubtitleApiClient { 
         @RequestLine("POST /encoding/configurations/subtitles/dvb-subtitle")
         ResponseEnvelope<DvbSubtitleConfiguration> create(DvbSubtitleConfiguration dvbSubtitleConfiguration) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/configurations/subtitles/dvb-subtitle/{configuration_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/subtitles/dvb-subtitle/{configuration_id}")
         ResponseEnvelope<DvbSubtitleConfiguration> get(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/subtitles/dvb-subtitle")
         ResponseEnvelope<PaginationResponse<DvbSubtitleConfiguration>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

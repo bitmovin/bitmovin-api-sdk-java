@@ -42,7 +42,6 @@ public class AudioVolumeApi {
     public static BitmovinApiBuilder<AudioVolumeApi> builder() {
         return new BitmovinApiBuilder<>(AudioVolumeApi.class);
     }
-
     /**
      * Create Audio Volume Filter
      * 
@@ -57,7 +56,6 @@ public class AudioVolumeApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Audio Volume Filter
      * 
@@ -72,7 +70,6 @@ public class AudioVolumeApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Audio Volume Filter Details
      * 
@@ -87,7 +84,6 @@ public class AudioVolumeApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Audio Volume Filters
      * 
@@ -117,17 +113,16 @@ public class AudioVolumeApi {
         }
     }
 
-    interface AudioVolumeApiClient {
-
+    interface AudioVolumeApiClient { 
         @RequestLine("POST /encoding/filters/audio-volume")
         ResponseEnvelope<AudioVolumeFilter> create(AudioVolumeFilter audioVolumeFilter) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/filters/audio-volume/{filter_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "filter_id") String filterId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/filters/audio-volume/{filter_id}")
         ResponseEnvelope<AudioVolumeFilter> get(@Param(value = "filter_id") String filterId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/filters/audio-volume")
         ResponseEnvelope<PaginationResponse<AudioVolumeFilter>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

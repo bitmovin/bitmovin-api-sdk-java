@@ -39,7 +39,6 @@ public class CustomdataApi {
     public static BitmovinApiBuilder<CustomdataApi> builder() {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
-
     /**
      * Unsharp Filter Custom Data
      * 
@@ -55,8 +54,7 @@ public class CustomdataApi {
         }
     }
 
-    interface CustomdataApiClient {
-
+    interface CustomdataApiClient { 
         @RequestLine("GET /encoding/filters/unsharp/{filter_id}/customData")
         ResponseEnvelope<CustomData> getCustomData(@Param(value = "filter_id") String filterId) throws BitmovinException;
     }

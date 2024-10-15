@@ -45,7 +45,6 @@ public class WebmApi {
     public static BitmovinApiBuilder<WebmApi> builder() {
         return new BitmovinApiBuilder<>(WebmApi.class);
     }
-
     /**
      * Add WebM muxing
      * 
@@ -61,7 +60,6 @@ public class WebmApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete WebM muxing
      * 
@@ -77,7 +75,6 @@ public class WebmApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * WebM muxing details
      * 
@@ -93,7 +90,6 @@ public class WebmApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List WebM muxings
      * 
@@ -125,17 +121,16 @@ public class WebmApi {
         }
     }
 
-    interface WebmApiClient {
-
+    interface WebmApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/webm")
         ResponseEnvelope<WebmMuxing> create(@Param(value = "encoding_id") String encodingId, WebmMuxing webmMuxing) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/webm/{muxing_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/webm/{muxing_id}")
         ResponseEnvelope<WebmMuxing> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/webm")
         ResponseEnvelope<PaginationResponse<WebmMuxing>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

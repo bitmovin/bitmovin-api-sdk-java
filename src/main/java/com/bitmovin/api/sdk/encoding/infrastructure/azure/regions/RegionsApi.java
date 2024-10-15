@@ -39,7 +39,6 @@ public class RegionsApi {
     public static BitmovinApiBuilder<RegionsApi> builder() {
         return new BitmovinApiBuilder<>(RegionsApi.class);
     }
-
     /**
      * Add Azure Region Setting
      * 
@@ -56,7 +55,6 @@ public class RegionsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Azure Region Settings
      * 
@@ -72,7 +70,6 @@ public class RegionsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Azure Region Settings Details
      * 
@@ -88,7 +85,6 @@ public class RegionsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Azure Region Settings
      * 
@@ -120,17 +116,16 @@ public class RegionsApi {
         }
     }
 
-    interface RegionsApiClient {
-
+    interface RegionsApiClient { 
         @RequestLine("POST /encoding/infrastructure/azure/{infrastructure_id}/regions/{region}")
         ResponseEnvelope<AzureAccountRegionSettings> create(@Param(value = "infrastructure_id") String infrastructureId, @Param(value = "region") AzureCloudRegion region, AzureAccountRegionSettings azureAccountRegionSettings) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/infrastructure/azure/{infrastructure_id}/regions/{region}")
         ResponseEnvelope<AzureAccountRegionSettings> delete(@Param(value = "infrastructure_id") String infrastructureId, @Param(value = "region") AzureCloudRegion region) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/infrastructure/azure/{infrastructure_id}/regions/{region}")
         ResponseEnvelope<AzureAccountRegionSettings> get(@Param(value = "infrastructure_id") String infrastructureId, @Param(value = "region") AzureCloudRegion region) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/infrastructure/azure/{infrastructure_id}/regions")
         ResponseEnvelope<PaginationResponse<AzureAccountRegionSettings>> list(@Param(value = "infrastructure_id") String infrastructureId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

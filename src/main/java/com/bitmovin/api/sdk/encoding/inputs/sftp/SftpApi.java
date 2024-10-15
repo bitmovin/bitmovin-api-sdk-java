@@ -42,7 +42,6 @@ public class SftpApi {
     public static BitmovinApiBuilder<SftpApi> builder() {
         return new BitmovinApiBuilder<>(SftpApi.class);
     }
-
     /**
      * Create SFTP Input
      * 
@@ -57,7 +56,6 @@ public class SftpApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete SFTP Input
      * 
@@ -72,7 +70,6 @@ public class SftpApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * SFTP Input Details
      * 
@@ -87,7 +84,6 @@ public class SftpApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List SFTP Inputs
      * 
@@ -117,17 +113,16 @@ public class SftpApi {
         }
     }
 
-    interface SftpApiClient {
-
+    interface SftpApiClient { 
         @RequestLine("POST /encoding/inputs/sftp")
         ResponseEnvelope<SftpInput> create(SftpInput sftpInput) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/inputs/sftp/{input_id}")
         ResponseEnvelope<SftpInput> delete(@Param(value = "input_id") String inputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/inputs/sftp/{input_id}")
         ResponseEnvelope<SftpInput> get(@Param(value = "input_id") String inputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/inputs/sftp")
         ResponseEnvelope<PaginationResponse<SftpInput>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

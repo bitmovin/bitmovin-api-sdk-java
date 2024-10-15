@@ -42,7 +42,6 @@ public class AwsApi {
     public static BitmovinApiBuilder<AwsApi> builder() {
         return new BitmovinApiBuilder<>(AwsApi.class);
     }
-
     /**
      * Add AWS Account
      * 
@@ -57,7 +56,6 @@ public class AwsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete AWS Account
      * 
@@ -72,7 +70,6 @@ public class AwsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * AWS Account Details
      * 
@@ -87,7 +84,6 @@ public class AwsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List AWS Accounts
      * 
@@ -117,17 +113,16 @@ public class AwsApi {
         }
     }
 
-    interface AwsApiClient {
-
+    interface AwsApiClient { 
         @RequestLine("POST /encoding/infrastructure/aws")
         ResponseEnvelope<AwsAccount> create(AwsAccount awsAccount) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/infrastructure/aws/{infrastructure_id}")
         ResponseEnvelope<AwsAccount> delete(@Param(value = "infrastructure_id") String infrastructureId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/infrastructure/aws/{infrastructure_id}")
         ResponseEnvelope<AwsAccount> get(@Param(value = "infrastructure_id") String infrastructureId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/infrastructure/aws")
         ResponseEnvelope<PaginationResponse<AwsAccount>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

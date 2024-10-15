@@ -39,7 +39,6 @@ public class EventsApi {
     public static BitmovinApiBuilder<EventsApi> builder() {
         return new BitmovinApiBuilder<>(EventsApi.class);
     }
-
     /**
      * List Events of Live Statistics from an Encoding
      * 
@@ -71,8 +70,7 @@ public class EventsApi {
         }
     }
 
-    interface EventsApiClient {
-
+    interface EventsApiClient { 
         @RequestLine("GET /encoding/statistics/encodings/{encoding_id}/live-statistics/events")
         ResponseEnvelope<PaginationResponse<LiveEncodingStatsEvent>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

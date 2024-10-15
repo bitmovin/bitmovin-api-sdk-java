@@ -39,7 +39,6 @@ public class CdnApi {
     public static BitmovinApiBuilder<CdnApi> builder() {
         return new BitmovinApiBuilder<>(CdnApi.class);
     }
-
     /**
      * CDN Output Details
      * 
@@ -54,7 +53,6 @@ public class CdnApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List CDN Outputs
      * 
@@ -84,11 +82,10 @@ public class CdnApi {
         }
     }
 
-    interface CdnApiClient {
-
+    interface CdnApiClient { 
         @RequestLine("GET /encoding/outputs/cdn/{output_id}")
         ResponseEnvelope<CdnOutput> get(@Param(value = "output_id") String outputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/outputs/cdn")
         ResponseEnvelope<PaginationResponse<CdnOutput>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

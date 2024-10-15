@@ -39,7 +39,6 @@ public class StopApi {
     public static BitmovinApiBuilder<StopApi> builder() {
         return new BitmovinApiBuilder<>(StopApi.class);
     }
-
     /**
      * Stop live stream by id
      * 
@@ -54,8 +53,7 @@ public class StopApi {
         }
     }
 
-    interface StopApiClient {
-
+    interface StopApiClient { 
         @RequestLine("PUT /streams/live/{stream_id}/stop")
         void update(@Param(value = "stream_id") String streamId) throws BitmovinException;
     }

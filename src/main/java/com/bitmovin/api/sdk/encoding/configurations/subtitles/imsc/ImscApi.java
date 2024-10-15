@@ -42,7 +42,6 @@ public class ImscApi {
     public static BitmovinApiBuilder<ImscApi> builder() {
         return new BitmovinApiBuilder<>(ImscApi.class);
     }
-
     /**
      * Create IMSC subtitle configuration
      * 
@@ -57,7 +56,6 @@ public class ImscApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete IMSC subtitle configuration
      * 
@@ -72,7 +70,6 @@ public class ImscApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * IMSC subtitle configuration details
      * 
@@ -87,7 +84,6 @@ public class ImscApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List IMSC subtitle configurations
      * 
@@ -117,17 +113,16 @@ public class ImscApi {
         }
     }
 
-    interface ImscApiClient {
-
+    interface ImscApiClient { 
         @RequestLine("POST /encoding/configurations/subtitles/imsc")
         ResponseEnvelope<ImscConfiguration> create(ImscConfiguration imscConfiguration) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/configurations/subtitles/imsc/{configuration_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/subtitles/imsc/{configuration_id}")
         ResponseEnvelope<ImscConfiguration> get(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/subtitles/imsc")
         ResponseEnvelope<PaginationResponse<ImscConfiguration>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

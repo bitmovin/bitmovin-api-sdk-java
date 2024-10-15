@@ -39,7 +39,6 @@ public class TypeApi {
     public static BitmovinApiBuilder<TypeApi> builder() {
         return new BitmovinApiBuilder<>(TypeApi.class);
     }
-
     /**
      * Get Muxing type
      * 
@@ -56,8 +55,7 @@ public class TypeApi {
         }
     }
 
-    interface TypeApiClient {
-
+    interface TypeApiClient { 
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/{muxing_id}/type")
         ResponseEnvelope<MuxingTypeResponse> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
     }

@@ -42,7 +42,6 @@ public class S3RoleBasedApi {
     public static BitmovinApiBuilder<S3RoleBasedApi> builder() {
         return new BitmovinApiBuilder<>(S3RoleBasedApi.class);
     }
-
     /**
      * Create S3 Role-based Input
      * 
@@ -57,7 +56,6 @@ public class S3RoleBasedApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete S3 Role-based Input
      * 
@@ -72,7 +70,6 @@ public class S3RoleBasedApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * S3 Role-based Input Details
      * 
@@ -87,7 +84,6 @@ public class S3RoleBasedApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List S3 Role-based Inputs
      * 
@@ -117,17 +113,16 @@ public class S3RoleBasedApi {
         }
     }
 
-    interface S3RoleBasedApiClient {
-
+    interface S3RoleBasedApiClient { 
         @RequestLine("POST /encoding/inputs/s3-role-based")
         ResponseEnvelope<S3RoleBasedInput> create(S3RoleBasedInput s3RoleBasedInput) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/inputs/s3-role-based/{input_id}")
         ResponseEnvelope<S3RoleBasedInput> delete(@Param(value = "input_id") String inputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/inputs/s3-role-based/{input_id}")
         ResponseEnvelope<S3RoleBasedInput> get(@Param(value = "input_id") String inputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/inputs/s3-role-based")
         ResponseEnvelope<PaginationResponse<S3RoleBasedInput>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

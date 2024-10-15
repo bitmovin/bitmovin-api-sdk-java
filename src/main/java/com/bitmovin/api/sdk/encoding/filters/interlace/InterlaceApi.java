@@ -42,7 +42,6 @@ public class InterlaceApi {
     public static BitmovinApiBuilder<InterlaceApi> builder() {
         return new BitmovinApiBuilder<>(InterlaceApi.class);
     }
-
     /**
      * Create Interlace Filter
      * 
@@ -57,7 +56,6 @@ public class InterlaceApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Interlace Filter
      * 
@@ -72,7 +70,6 @@ public class InterlaceApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Interlace Filter Details
      * 
@@ -87,7 +84,6 @@ public class InterlaceApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Interlace Filters
      * 
@@ -117,17 +113,16 @@ public class InterlaceApi {
         }
     }
 
-    interface InterlaceApiClient {
-
+    interface InterlaceApiClient { 
         @RequestLine("POST /encoding/filters/interlace")
         ResponseEnvelope<InterlaceFilter> create(InterlaceFilter interlaceFilter) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/filters/interlace/{filter_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "filter_id") String filterId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/filters/interlace/{filter_id}")
         ResponseEnvelope<InterlaceFilter> get(@Param(value = "filter_id") String filterId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/filters/interlace")
         ResponseEnvelope<PaginationResponse<InterlaceFilter>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

@@ -51,7 +51,6 @@ public class HlsApi {
     public static BitmovinApiBuilder<HlsApi> builder() {
         return new BitmovinApiBuilder<>(HlsApi.class);
     }
-
     /**
      * Create Custom HLS Manifest
      * A Custom HLS Manifest gives you full control over its contents. Add Variant Streams and Media elements via the respective endpoints. If you need a simpler solution, create a Default Manifest resource instead. See [documentation](https://developer.bitmovin.com/encoding/docs/default-vs-custom-manifest) page for a comparison
@@ -66,7 +65,6 @@ public class HlsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete HLS Manifest
      * 
@@ -81,7 +79,6 @@ public class HlsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * HLS Manifest Details
      * 
@@ -96,7 +93,6 @@ public class HlsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Manifest Start Details
      * 
@@ -111,7 +107,6 @@ public class HlsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List HLS Manifests
      * 
@@ -140,7 +135,6 @@ public class HlsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Start HLS manifest generation
      * 
@@ -171,7 +165,6 @@ public class HlsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * HLS manifest generation status
      * 
@@ -186,7 +179,6 @@ public class HlsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Stop HLS manifest generation
      * 
@@ -202,32 +194,31 @@ public class HlsApi {
         }
     }
 
-    interface HlsApiClient {
-
+    interface HlsApiClient { 
         @RequestLine("POST /encoding/manifests/hls")
         ResponseEnvelope<HlsManifest> create(HlsManifest hlsManifest) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/manifests/hls/{manifest_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/hls/{manifest_id}")
         ResponseEnvelope<HlsManifest> get(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/hls/{manifest_id}/start")
         ResponseEnvelope<StartManifestRequest> getStartRequest(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/hls")
         ResponseEnvelope<PaginationResponse<HlsManifest>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
-    
+   
         @RequestLine("POST /encoding/manifests/hls/{manifest_id}/start")
         ResponseEnvelope<BitmovinResponse> start(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
 
         @RequestLine("POST /encoding/manifests/hls/{manifest_id}/start")
         ResponseEnvelope<BitmovinResponse> start(@Param(value = "manifest_id") String manifestId, StartManifestRequest startManifestRequest) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/hls/{manifest_id}/status")
         ResponseEnvelope<Task> status(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
-    
+   
         @RequestLine("POST /encoding/manifests/hls/{manifest_id}/stop")
         ResponseEnvelope<BitmovinResponse> stop(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
     }

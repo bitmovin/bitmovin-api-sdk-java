@@ -45,7 +45,6 @@ public class BroadcastTsApi {
     public static BitmovinApiBuilder<BroadcastTsApi> builder() {
         return new BitmovinApiBuilder<>(BroadcastTsApi.class);
     }
-
     /**
      * Add Broadcast TS muxing
      * 
@@ -61,7 +60,6 @@ public class BroadcastTsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Broadcast TS muxing
      * 
@@ -77,7 +75,6 @@ public class BroadcastTsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Broadcast TS muxing details
      * 
@@ -93,7 +90,6 @@ public class BroadcastTsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Broadcast TS muxings
      * 
@@ -125,17 +121,16 @@ public class BroadcastTsApi {
         }
     }
 
-    interface BroadcastTsApiClient {
-
+    interface BroadcastTsApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/broadcast-ts")
         ResponseEnvelope<BroadcastTsMuxing> create(@Param(value = "encoding_id") String encodingId, BroadcastTsMuxing broadcastTsMuxing) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/broadcast-ts/{muxing_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/broadcast-ts/{muxing_id}")
         ResponseEnvelope<BroadcastTsMuxing> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/broadcast-ts")
         ResponseEnvelope<PaginationResponse<BroadcastTsMuxing>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

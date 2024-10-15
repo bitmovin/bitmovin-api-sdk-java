@@ -26,5 +26,4 @@ public class JobsApi {
         return new BitmovinApiBuilder<>(JobsApi.class);
     }
 
-    
 }

@@ -39,7 +39,6 @@ public class AudioMixApi {
     public static BitmovinApiBuilder<AudioMixApi> builder() {
         return new BitmovinApiBuilder<>(AudioMixApi.class);
     }
-
     /**
      * Add audio mix input stream
      * 
@@ -55,7 +54,6 @@ public class AudioMixApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete audio mix input stream
      * 
@@ -71,7 +69,6 @@ public class AudioMixApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Audio mix input stream details
      * 
@@ -87,7 +84,6 @@ public class AudioMixApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List audio mix input stream
      * 
@@ -119,17 +115,16 @@ public class AudioMixApi {
         }
     }
 
-    interface AudioMixApiClient {
-
+    interface AudioMixApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/input-streams/audio-mix")
         ResponseEnvelope<AudioMixInputStream> create(@Param(value = "encoding_id") String encodingId, AudioMixInputStream audioMixInputStream) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/input-streams/audio-mix/{input_stream_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "input_stream_id") String inputStreamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/audio-mix/{input_stream_id}")
         ResponseEnvelope<AudioMixInputStream> get(@Param(value = "encoding_id") String encodingId, @Param(value = "input_stream_id") String inputStreamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/audio-mix")
         ResponseEnvelope<PaginationResponse<AudioMixInputStream>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

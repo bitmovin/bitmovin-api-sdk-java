@@ -39,7 +39,6 @@ public class TenantsApi {
     public static BitmovinApiBuilder<TenantsApi> builder() {
         return new BitmovinApiBuilder<>(TenantsApi.class);
     }
-
     /**
      * List all Tenants with their groups for a given organization
      * 
@@ -55,8 +54,7 @@ public class TenantsApi {
         }
     }
 
-    interface TenantsApiClient {
-
+    interface TenantsApiClient { 
         @RequestLine("GET /account/organizations/{organization_id}/tenants")
         ResponseEnvelope<PaginationResponse<TenantWithGroups>> list(@Param(value = "organization_id") String organizationId) throws BitmovinException;
     }

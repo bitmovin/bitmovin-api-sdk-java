@@ -39,7 +39,6 @@ public class InputsApi {
     public static BitmovinApiBuilder<InputsApi> builder() {
         return new BitmovinApiBuilder<>(InputsApi.class);
     }
-
     /**
      * Stream Input Analysis Details
      * 
@@ -56,8 +55,7 @@ public class InputsApi {
         }
     }
 
-    interface InputsApiClient {
-
+    interface InputsApiClient { 
         @RequestLine("GET /encoding/encodings/{encoding_id}/streams/{stream_id}/inputs")
         ResponseEnvelope<PaginationResponse<EncodingStreamInput>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId) throws BitmovinException;
     }

@@ -39,7 +39,6 @@ public class LiveInputStreamChangedApi {
     public static BitmovinApiBuilder<LiveInputStreamChangedApi> builder() {
         return new BitmovinApiBuilder<>(LiveInputStreamChangedApi.class);
     }
-
     /**
      * Add Live Input Stream Changed Email Notification (All Encodings)
      * 
@@ -54,7 +53,6 @@ public class LiveInputStreamChangedApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Add Live Input Stream Changed Email Notification (Specific Encoding)
      * 
@@ -70,7 +68,6 @@ public class LiveInputStreamChangedApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Replace Live Input Stream Changed Email Notification
      * 
@@ -87,14 +84,13 @@ public class LiveInputStreamChangedApi {
         }
     }
 
-    interface LiveInputStreamChangedApiClient {
-
+    interface LiveInputStreamChangedApiClient { 
         @RequestLine("POST /notifications/emails/encoding/encodings/live-input-stream-changed")
         ResponseEnvelope<EmailNotificationWithStreamConditions> create(EmailNotificationWithStreamConditionsRequest emailNotificationWithStreamConditionsRequest) throws BitmovinException;
-    
+   
         @RequestLine("POST /notifications/emails/encoding/encodings/{encoding_id}/live-input-stream-changed")
         ResponseEnvelope<EmailNotificationWithStreamConditions> createByEncodingId(@Param(value = "encoding_id") String encodingId, EmailNotificationWithStreamConditionsRequest emailNotificationWithStreamConditionsRequest) throws BitmovinException;
-    
+   
         @RequestLine("PUT /notifications/emails/encoding/encodings/live-input-stream-changed/{notification_id}")
         ResponseEnvelope<EmailNotificationWithStreamConditions> update(@Param(value = "notification_id") String notificationId, EmailNotificationWithStreamConditionsRequest emailNotificationWithStreamConditionsRequest) throws BitmovinException;
     }

@@ -48,7 +48,6 @@ public class ProgressiveWebmApi {
     public static BitmovinApiBuilder<ProgressiveWebmApi> builder() {
         return new BitmovinApiBuilder<>(ProgressiveWebmApi.class);
     }
-
     /**
      * Add Progressive WebM muxing
      * 
@@ -64,7 +63,6 @@ public class ProgressiveWebmApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Progressive WebM muxing
      * 
@@ -80,7 +78,6 @@ public class ProgressiveWebmApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Progressive WebM muxing details
      * 
@@ -96,7 +93,6 @@ public class ProgressiveWebmApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Progressive WebM muxings
      * 
@@ -128,17 +124,16 @@ public class ProgressiveWebmApi {
         }
     }
 
-    interface ProgressiveWebmApiClient {
-
+    interface ProgressiveWebmApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/progressive-webm")
         ResponseEnvelope<ProgressiveWebmMuxing> create(@Param(value = "encoding_id") String encodingId, ProgressiveWebmMuxing progressiveWebmMuxing) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/progressive-webm/{muxing_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/progressive-webm/{muxing_id}")
         ResponseEnvelope<ProgressiveWebmMuxing> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/progressive-webm")
         ResponseEnvelope<PaginationResponse<ProgressiveWebmMuxing>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

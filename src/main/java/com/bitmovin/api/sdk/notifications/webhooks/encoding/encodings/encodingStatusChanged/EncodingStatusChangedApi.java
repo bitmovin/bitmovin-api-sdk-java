@@ -39,7 +39,6 @@ public class EncodingStatusChangedApi {
     public static BitmovinApiBuilder<EncodingStatusChangedApi> builder() {
         return new BitmovinApiBuilder<>(EncodingStatusChangedApi.class);
     }
-
     /**
      * Add Encoding Changed Webhook Notification (All Encodings)
      * 
@@ -54,7 +53,6 @@ public class EncodingStatusChangedApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Add Encoding Changed Webhook Notification (Specific Encoding)
      * 
@@ -70,7 +68,6 @@ public class EncodingStatusChangedApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Encoding Status Changed Webhook
      * 
@@ -85,7 +82,6 @@ public class EncodingStatusChangedApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Replace Encoding Status Changed Webhook Notification
      * 
@@ -102,17 +98,16 @@ public class EncodingStatusChangedApi {
         }
     }
 
-    interface EncodingStatusChangedApiClient {
-
+    interface EncodingStatusChangedApiClient { 
         @RequestLine("POST /notifications/webhooks/encoding/encodings/encoding-status-changed")
         ResponseEnvelope<WebhookNotificationWithStreamConditions> create(WebhookNotificationWithStreamConditionsRequest webhookNotificationWithStreamConditionsRequest) throws BitmovinException;
-    
+   
         @RequestLine("POST /notifications/webhooks/encoding/encodings/{encoding_id}/encoding-status-changed")
         ResponseEnvelope<WebhookNotificationWithStreamConditions> createByEncodingId(@Param(value = "encoding_id") String encodingId, WebhookNotificationWithStreamConditionsRequest webhookNotificationWithStreamConditionsRequest) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /notifications/webhooks/encoding/encodings/encoding-status-changed/{notification_id}")
         ResponseEnvelope<BitmovinResponse> deleteByWebhookId(@Param(value = "notification_id") String notificationId) throws BitmovinException;
-    
+   
         @RequestLine("PUT /notifications/webhooks/encoding/encodings/encoding-status-changed/{notification_id}")
         ResponseEnvelope<WebhookNotificationWithStreamConditions> update(@Param(value = "notification_id") String notificationId, WebhookNotificationWithStreamConditionsRequest webhookNotificationWithStreamConditionsRequest) throws BitmovinException;
     }

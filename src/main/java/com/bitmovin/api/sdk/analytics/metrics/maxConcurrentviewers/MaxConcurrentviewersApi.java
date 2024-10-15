@@ -39,7 +39,6 @@ public class MaxConcurrentviewersApi {
     public static BitmovinApiBuilder<MaxConcurrentviewersApi> builder() {
         return new BitmovinApiBuilder<>(MaxConcurrentviewersApi.class);
     }
-
     /**
      * Get metrics data
      * 
@@ -55,8 +54,7 @@ public class MaxConcurrentviewersApi {
         }
     }
 
-    interface MaxConcurrentviewersApiClient {
-
+    interface MaxConcurrentviewersApiClient { 
         @RequestLine("POST /analytics/metrics/max-concurrentviewers")
         ResponseEnvelope<AnalyticsMaxConcurrentViewersResponse> create(AnalyticsMetricsQueryRequest analyticsMetricsQueryRequest) throws BitmovinException;
     }

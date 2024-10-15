@@ -29,5 +29,4 @@ public class AccountApi {
         return new BitmovinApiBuilder<>(AccountApi.class);
     }
 
-    
 }

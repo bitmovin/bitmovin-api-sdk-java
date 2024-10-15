@@ -39,7 +39,6 @@ public class RegionsApi {
     public static BitmovinApiBuilder<RegionsApi> builder() {
         return new BitmovinApiBuilder<>(RegionsApi.class);
     }
-
     /**
      * Add Google Cloud Region Setting
      * 
@@ -56,7 +55,6 @@ public class RegionsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Google Cloud Region Settings
      * 
@@ -72,7 +70,6 @@ public class RegionsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Google Cloud Region Settings Details
      * 
@@ -88,7 +85,6 @@ public class RegionsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Google Cloud Region Settings
      * 
@@ -120,17 +116,16 @@ public class RegionsApi {
         }
     }
 
-    interface RegionsApiClient {
-
+    interface RegionsApiClient { 
         @RequestLine("POST /encoding/infrastructure/gce/{infrastructure_id}/regions/{region}")
         ResponseEnvelope<GceAccountRegionSettings> create(@Param(value = "infrastructure_id") String infrastructureId, @Param(value = "region") GoogleCloudRegion region, GceAccountRegionSettings gceAccountRegionSettings) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/infrastructure/gce/{infrastructure_id}/regions/{region}")
         ResponseEnvelope<GceAccountRegionSettings> delete(@Param(value = "infrastructure_id") String infrastructureId, @Param(value = "region") GoogleCloudRegion region) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/infrastructure/gce/{infrastructure_id}/regions/{region}")
         ResponseEnvelope<GceAccountRegionSettings> get(@Param(value = "infrastructure_id") String infrastructureId, @Param(value = "region") GoogleCloudRegion region) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/infrastructure/gce/{infrastructure_id}/regions")
         ResponseEnvelope<PaginationResponse<GceAccountRegionSettings>> list(@Param(value = "infrastructure_id") String infrastructureId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

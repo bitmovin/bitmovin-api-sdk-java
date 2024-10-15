@@ -23,5 +23,4 @@ public class InsightsApi {
         return new BitmovinApiBuilder<>(InsightsApi.class);
     }
 
-    
 }

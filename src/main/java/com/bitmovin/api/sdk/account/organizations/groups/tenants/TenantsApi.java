@@ -39,7 +39,6 @@ public class TenantsApi {
     public static BitmovinApiBuilder<TenantsApi> builder() {
         return new BitmovinApiBuilder<>(TenantsApi.class);
     }
-
     /**
      * Add Tenant to Group
      * 
@@ -56,7 +55,6 @@ public class TenantsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Tenant
      * 
@@ -73,7 +71,6 @@ public class TenantsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Tenant Details
      * 
@@ -90,7 +87,6 @@ public class TenantsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Tenants
      * 
@@ -124,17 +120,16 @@ public class TenantsApi {
         }
     }
 
-    interface TenantsApiClient {
-
+    interface TenantsApiClient { 
         @RequestLine("POST /account/organizations/{organization_id}/groups/{group_id}/tenants")
         ResponseEnvelope<Tenant> create(@Param(value = "organization_id") String organizationId, @Param(value = "group_id") String groupId, Tenant tenant) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /account/organizations/{organization_id}/groups/{group_id}/tenants/{tenant_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "organization_id") String organizationId, @Param(value = "group_id") String groupId, @Param(value = "tenant_id") String tenantId) throws BitmovinException;
-    
+   
         @RequestLine("GET /account/organizations/{organization_id}/groups/{group_id}/tenants/{tenant_id}")
         ResponseEnvelope<Tenant> get(@Param(value = "organization_id") String organizationId, @Param(value = "group_id") String groupId, @Param(value = "tenant_id") String tenantId) throws BitmovinException;
-    
+   
         @RequestLine("GET /account/organizations/{organization_id}/groups/{group_id}/tenants")
         ResponseEnvelope<PaginationResponse<Tenant>> list(@Param(value = "organization_id") String organizationId, @Param(value = "group_id") String groupId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

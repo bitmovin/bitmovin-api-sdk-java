@@ -39,7 +39,6 @@ public class DolbyVisionApi {
     public static BitmovinApiBuilder<DolbyVisionApi> builder() {
         return new BitmovinApiBuilder<>(DolbyVisionApi.class);
     }
-
     /**
      * Add Dolby Vision input stream
      * 
@@ -55,7 +54,6 @@ public class DolbyVisionApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Dolby Vision input stream
      * 
@@ -71,7 +69,6 @@ public class DolbyVisionApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Dolby Vision input stream details
      * 
@@ -87,7 +84,6 @@ public class DolbyVisionApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Dolby Vision input stream
      * 
@@ -119,17 +115,16 @@ public class DolbyVisionApi {
         }
     }
 
-    interface DolbyVisionApiClient {
-
+    interface DolbyVisionApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/input-streams/dolby-vision")
         ResponseEnvelope<DolbyVisionInputStream> create(@Param(value = "encoding_id") String encodingId, DolbyVisionInputStream dolbyVisionInputStream) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/input-streams/dolby-vision/{dolby_vision_input_stream_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "dolby_vision_input_stream_id") String dolbyVisionInputStreamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/dolby-vision/{dolby_vision_input_stream_id}")
         ResponseEnvelope<DolbyVisionInputStream> get(@Param(value = "encoding_id") String encodingId, @Param(value = "dolby_vision_input_stream_id") String dolbyVisionInputStreamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/dolby-vision")
         ResponseEnvelope<PaginationResponse<DolbyVisionInputStream>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

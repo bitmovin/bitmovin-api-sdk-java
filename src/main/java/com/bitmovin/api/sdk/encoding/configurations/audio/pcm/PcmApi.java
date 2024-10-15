@@ -42,7 +42,6 @@ public class PcmApi {
     public static BitmovinApiBuilder<PcmApi> builder() {
         return new BitmovinApiBuilder<>(PcmApi.class);
     }
-
     /**
      * Create PCM Codec Configuration
      * 
@@ -57,7 +56,6 @@ public class PcmApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete PCM Codec Configuration
      * 
@@ -72,7 +70,6 @@ public class PcmApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * PCM Codec Configuration Details
      * 
@@ -87,7 +84,6 @@ public class PcmApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List PCM Configurations
      * 
@@ -117,17 +113,16 @@ public class PcmApi {
         }
     }
 
-    interface PcmApiClient {
-
+    interface PcmApiClient { 
         @RequestLine("POST /encoding/configurations/audio/pcm")
         ResponseEnvelope<PcmAudioConfiguration> create(PcmAudioConfiguration pcmAudioConfiguration) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/configurations/audio/pcm/{configuration_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/audio/pcm/{configuration_id}")
         ResponseEnvelope<PcmAudioConfiguration> get(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/audio/pcm")
         ResponseEnvelope<PaginationResponse<PcmAudioConfiguration>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

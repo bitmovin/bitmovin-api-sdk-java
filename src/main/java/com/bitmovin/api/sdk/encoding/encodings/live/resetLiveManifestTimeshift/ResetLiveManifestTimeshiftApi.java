@@ -39,7 +39,6 @@ public class ResetLiveManifestTimeshiftApi {
     public static BitmovinApiBuilder<ResetLiveManifestTimeshiftApi> builder() {
         return new BitmovinApiBuilder<>(ResetLiveManifestTimeshiftApi.class);
     }
-
     /**
      * Reset Live manifest time-shift
      * 
@@ -56,8 +55,7 @@ public class ResetLiveManifestTimeshiftApi {
         }
     }
 
-    interface ResetLiveManifestTimeshiftApiClient {
-
+    interface ResetLiveManifestTimeshiftApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/live/reset-live-manifest-timeshift")
         ResponseEnvelope<ResetLiveManifestTimeShift> create(@Param(value = "encoding_id") String encodingId, ResetLiveManifestTimeShift resetLiveManifestTimeShift) throws BitmovinException;
     }

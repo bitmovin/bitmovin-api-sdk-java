@@ -42,7 +42,6 @@ public class VersionsApi {
     public static BitmovinApiBuilder<VersionsApi> builder() {
         return new BitmovinApiBuilder<>(VersionsApi.class);
     }
-
     /**
      * List Player Versions for Channel
      * 
@@ -58,8 +57,7 @@ public class VersionsApi {
         }
     }
 
-    interface VersionsApiClient {
-
+    interface VersionsApiClient { 
         @RequestLine("GET /player/channels/{channel_name}/versions")
         ResponseEnvelope<PaginationResponse<PlayerVersion>> list(@Param(value = "channel_name") String channelName) throws BitmovinException;
     }

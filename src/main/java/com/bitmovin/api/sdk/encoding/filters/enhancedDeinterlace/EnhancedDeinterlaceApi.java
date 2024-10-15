@@ -42,7 +42,6 @@ public class EnhancedDeinterlaceApi {
     public static BitmovinApiBuilder<EnhancedDeinterlaceApi> builder() {
         return new BitmovinApiBuilder<>(EnhancedDeinterlaceApi.class);
     }
-
     /**
      * Create Enhanced Deinterlace Filter
      * 
@@ -57,7 +56,6 @@ public class EnhancedDeinterlaceApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Enhanced Deinterlace Filter
      * 
@@ -72,7 +70,6 @@ public class EnhancedDeinterlaceApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Enhanced Deinterlace Filter Details
      * 
@@ -87,7 +84,6 @@ public class EnhancedDeinterlaceApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Enhanced Deinterlace Filters
      * 
@@ -117,17 +113,16 @@ public class EnhancedDeinterlaceApi {
         }
     }
 
-    interface EnhancedDeinterlaceApiClient {
-
+    interface EnhancedDeinterlaceApiClient { 
         @RequestLine("POST /encoding/filters/enhanced-deinterlace")
         ResponseEnvelope<EnhancedDeinterlaceFilter> create(EnhancedDeinterlaceFilter enhancedDeinterlaceFilter) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/filters/enhanced-deinterlace/{filter_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "filter_id") String filterId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/filters/enhanced-deinterlace/{filter_id}")
         ResponseEnvelope<EnhancedDeinterlaceFilter> get(@Param(value = "filter_id") String filterId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/filters/enhanced-deinterlace")
         ResponseEnvelope<PaginationResponse<EnhancedDeinterlaceFilter>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

@@ -41,5 +41,4 @@ public class MediaApi {
         return new BitmovinApiBuilder<>(MediaApi.class);
     }
 
-    
 }

@@ -39,7 +39,6 @@ public class ClosedCaptionsApi {
     public static BitmovinApiBuilder<ClosedCaptionsApi> builder() {
         return new BitmovinApiBuilder<>(ClosedCaptionsApi.class);
     }
-
     /**
      * Add Closed Captions Media
      * 
@@ -55,7 +54,6 @@ public class ClosedCaptionsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Closed Captions Media
      * 
@@ -71,7 +69,6 @@ public class ClosedCaptionsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Closed Captions Media Details
      * 
@@ -87,7 +84,6 @@ public class ClosedCaptionsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List all Closed Captions Media
      * 
@@ -119,17 +115,16 @@ public class ClosedCaptionsApi {
         }
     }
 
-    interface ClosedCaptionsApiClient {
-
+    interface ClosedCaptionsApiClient { 
         @RequestLine("POST /encoding/manifests/hls/{manifest_id}/media/closed-captions")
         ResponseEnvelope<ClosedCaptionsMediaInfo> create(@Param(value = "manifest_id") String manifestId, ClosedCaptionsMediaInfo closedCaptionsMediaInfo) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/manifests/hls/{manifest_id}/media/closed-captions/{media_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "manifest_id") String manifestId, @Param(value = "media_id") String mediaId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/hls/{manifest_id}/media/closed-captions/{media_id}")
         ResponseEnvelope<ClosedCaptionsMediaInfo> get(@Param(value = "manifest_id") String manifestId, @Param(value = "media_id") String mediaId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/hls/{manifest_id}/media/closed-captions")
         ResponseEnvelope<PaginationResponse<ClosedCaptionsMediaInfo>> list(@Param(value = "manifest_id") String manifestId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

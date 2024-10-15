@@ -42,7 +42,6 @@ public class StreamKeysApi {
     public static BitmovinApiBuilder<StreamKeysApi> builder() {
         return new BitmovinApiBuilder<>(StreamKeysApi.class);
     }
-
     /**
      * Create new stream key
      * 
@@ -57,7 +56,6 @@ public class StreamKeysApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Stream Key
      * 
@@ -72,7 +70,6 @@ public class StreamKeysApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Stream Key details
      * 
@@ -87,7 +84,6 @@ public class StreamKeysApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Stream Keys
      * 
@@ -117,17 +113,16 @@ public class StreamKeysApi {
         }
     }
 
-    interface StreamKeysApiClient {
-
+    interface StreamKeysApiClient { 
         @RequestLine("POST /encoding/live/stream-keys")
         ResponseEnvelope<StreamKey> create(StreamKey streamKey) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/live/stream-keys/{stream_key_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "stream_key_id") String streamKeyId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/live/stream-keys/{stream_key_id}")
         ResponseEnvelope<StreamKey> get(@Param(value = "stream_key_id") String streamKeyId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/live/stream-keys")
         ResponseEnvelope<PaginationResponse<StreamKey>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

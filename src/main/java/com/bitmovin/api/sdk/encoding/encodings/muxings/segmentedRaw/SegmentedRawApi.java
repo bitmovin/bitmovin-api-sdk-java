@@ -42,7 +42,6 @@ public class SegmentedRawApi {
     public static BitmovinApiBuilder<SegmentedRawApi> builder() {
         return new BitmovinApiBuilder<>(SegmentedRawApi.class);
     }
-
     /**
      * Add Segmented RAW muxing
      * 
@@ -58,7 +57,6 @@ public class SegmentedRawApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Segmented RAW muxing
      * 
@@ -74,7 +72,6 @@ public class SegmentedRawApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Segmented RAW muxing details
      * 
@@ -90,7 +87,6 @@ public class SegmentedRawApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Segmented RAW muxings
      * 
@@ -122,17 +118,16 @@ public class SegmentedRawApi {
         }
     }
 
-    interface SegmentedRawApiClient {
-
+    interface SegmentedRawApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/segmented-raw")
         ResponseEnvelope<SegmentedRawMuxing> create(@Param(value = "encoding_id") String encodingId, SegmentedRawMuxing segmentedRawMuxing) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/segmented-raw/{muxing_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/segmented-raw/{muxing_id}")
         ResponseEnvelope<SegmentedRawMuxing> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/segmented-raw")
         ResponseEnvelope<PaginationResponse<SegmentedRawMuxing>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

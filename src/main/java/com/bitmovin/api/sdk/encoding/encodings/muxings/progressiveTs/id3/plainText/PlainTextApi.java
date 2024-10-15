@@ -42,7 +42,6 @@ public class PlainTextApi {
     public static BitmovinApiBuilder<PlainTextApi> builder() {
         return new BitmovinApiBuilder<>(PlainTextApi.class);
     }
-
     /**
      * Add Plain Text ID3 Tag to a Progressive TS muxing
      * 
@@ -59,7 +58,6 @@ public class PlainTextApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Plain Text ID3 Tag of a Progressive TS muxing
      * 
@@ -76,7 +74,6 @@ public class PlainTextApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Plain Text ID3 Tag Details of a Progressive TS muxing
      * 
@@ -93,7 +90,6 @@ public class PlainTextApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Plain Text ID3 Tags of a Progressive TS muxing
      * 
@@ -127,17 +123,16 @@ public class PlainTextApi {
         }
     }
 
-    interface PlainTextApiClient {
-
+    interface PlainTextApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/progressive-ts/{muxing_id}/id3/plain-text")
         ResponseEnvelope<PlaintextId3Tag> create(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, PlaintextId3Tag plaintextId3Tag) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/progressive-ts/{muxing_id}/id3/plain-text/{id3_tag_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @Param(value = "id3_tag_id") String id3TagId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/progressive-ts/{muxing_id}/id3/plain-text/{id3_tag_id}")
         ResponseEnvelope<PlaintextId3Tag> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @Param(value = "id3_tag_id") String id3TagId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/progressive-ts/{muxing_id}/id3/plain-text")
         ResponseEnvelope<PaginationResponse<PlaintextId3Tag>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

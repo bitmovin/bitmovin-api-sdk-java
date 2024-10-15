@@ -42,7 +42,6 @@ public class PrewarmedEncoderPoolsApi {
     public static BitmovinApiBuilder<PrewarmedEncoderPoolsApi> builder() {
         return new BitmovinApiBuilder<>(PrewarmedEncoderPoolsApi.class);
     }
-
     /**
      * Create prewarmed encoder pool
      * 
@@ -57,7 +56,6 @@ public class PrewarmedEncoderPoolsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete prewarmed encoder pool
      * 
@@ -72,7 +70,6 @@ public class PrewarmedEncoderPoolsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Prewarmed encoder pool details
      * 
@@ -87,7 +84,6 @@ public class PrewarmedEncoderPoolsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List prewarmed encoder pools
      * 
@@ -116,7 +112,6 @@ public class PrewarmedEncoderPoolsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Start prewarmed encoder pool
      * 
@@ -131,7 +126,6 @@ public class PrewarmedEncoderPoolsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Stop prewarmed encoder pool
      * 
@@ -147,23 +141,22 @@ public class PrewarmedEncoderPoolsApi {
         }
     }
 
-    interface PrewarmedEncoderPoolsApiClient {
-
+    interface PrewarmedEncoderPoolsApiClient { 
         @RequestLine("POST /encoding/infrastructure/prewarmed-encoder-pools")
         ResponseEnvelope<PrewarmedEncoderPool> create(PrewarmedEncoderPool prewarmedEncoderPool) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/infrastructure/prewarmed-encoder-pools/{pool_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "pool_id") String poolId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/infrastructure/prewarmed-encoder-pools/{pool_id}")
         ResponseEnvelope<PrewarmedEncoderPool> get(@Param(value = "pool_id") String poolId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/infrastructure/prewarmed-encoder-pools")
         ResponseEnvelope<PaginationResponse<PrewarmedEncoderPool>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
-    
+   
         @RequestLine("POST /encoding/infrastructure/prewarmed-encoder-pools/{pool_id}/start")
         ResponseEnvelope<BitmovinResponse> start(@Param(value = "pool_id") String poolId) throws BitmovinException;
-    
+   
         @RequestLine("POST /encoding/infrastructure/prewarmed-encoder-pools/{pool_id}/stop")
         ResponseEnvelope<BitmovinResponse> stop(@Param(value = "pool_id") String poolId) throws BitmovinException;
     }

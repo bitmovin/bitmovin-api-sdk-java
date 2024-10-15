@@ -42,7 +42,6 @@ public class ChunkedTextApi {
     public static BitmovinApiBuilder<ChunkedTextApi> builder() {
         return new BitmovinApiBuilder<>(ChunkedTextApi.class);
     }
-
     /**
      * Add Chunked Text muxing
      * 
@@ -58,7 +57,6 @@ public class ChunkedTextApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Chunked Text muxing
      * 
@@ -74,7 +72,6 @@ public class ChunkedTextApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Chunked Text muxing details
      * 
@@ -90,7 +87,6 @@ public class ChunkedTextApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Chunked Text muxings
      * 
@@ -122,17 +118,16 @@ public class ChunkedTextApi {
         }
     }
 
-    interface ChunkedTextApiClient {
-
+    interface ChunkedTextApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/chunked-text")
         ResponseEnvelope<ChunkedTextMuxing> create(@Param(value = "encoding_id") String encodingId, ChunkedTextMuxing chunkedTextMuxing) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/chunked-text/{muxing_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/chunked-text/{muxing_id}")
         ResponseEnvelope<ChunkedTextMuxing> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/chunked-text")
         ResponseEnvelope<PaginationResponse<ChunkedTextMuxing>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

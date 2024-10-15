@@ -39,7 +39,6 @@ public class InformationApi {
     public static BitmovinApiBuilder<InformationApi> builder() {
         return new BitmovinApiBuilder<>(InformationApi.class);
     }
-
     /**
      * Progressive WebM muxing Information
      * 
@@ -56,8 +55,7 @@ public class InformationApi {
         }
     }
 
-    interface InformationApiClient {
-
+    interface InformationApiClient { 
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/progressive-webm/{muxing_id}/information")
         ResponseEnvelope<ProgressiveWebmMuxingInformation> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
     }

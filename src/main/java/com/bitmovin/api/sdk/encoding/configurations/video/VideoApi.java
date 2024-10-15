@@ -41,5 +41,4 @@ public class VideoApi {
         return new BitmovinApiBuilder<>(VideoApi.class);
     }
 
-    
 }

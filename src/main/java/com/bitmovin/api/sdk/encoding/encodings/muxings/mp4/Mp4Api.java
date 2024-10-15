@@ -48,7 +48,6 @@ public class Mp4Api {
     public static BitmovinApiBuilder<Mp4Api> builder() {
         return new BitmovinApiBuilder<>(Mp4Api.class);
     }
-
     /**
      * Add MP4 muxing
      * 
@@ -64,7 +63,6 @@ public class Mp4Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete MP4 muxing
      * 
@@ -80,7 +78,6 @@ public class Mp4Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * MP4 muxing details
      * 
@@ -96,7 +93,6 @@ public class Mp4Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List MP4 muxings
      * 
@@ -128,17 +124,16 @@ public class Mp4Api {
         }
     }
 
-    interface Mp4ApiClient {
-
+    interface Mp4ApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/mp4")
         ResponseEnvelope<Mp4Muxing> create(@Param(value = "encoding_id") String encodingId, Mp4Muxing mp4Muxing) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/mp4/{muxing_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/mp4/{muxing_id}")
         ResponseEnvelope<Mp4Muxing> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/mp4")
         ResponseEnvelope<PaginationResponse<Mp4Muxing>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

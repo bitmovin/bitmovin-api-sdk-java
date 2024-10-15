@@ -48,7 +48,6 @@ public class PackedAudioApi {
     public static BitmovinApiBuilder<PackedAudioApi> builder() {
         return new BitmovinApiBuilder<>(PackedAudioApi.class);
     }
-
     /**
      * Add Packed Audio muxing
      * 
@@ -64,7 +63,6 @@ public class PackedAudioApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Packed Audio muxing
      * 
@@ -80,7 +78,6 @@ public class PackedAudioApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Packed Audio muxing details
      * 
@@ -96,7 +93,6 @@ public class PackedAudioApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Packed Audio muxings
      * 
@@ -128,17 +124,16 @@ public class PackedAudioApi {
         }
     }
 
-    interface PackedAudioApiClient {
-
+    interface PackedAudioApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/packed-audio")
         ResponseEnvelope<PackedAudioMuxing> create(@Param(value = "encoding_id") String encodingId, PackedAudioMuxing packedAudioMuxing) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/packed-audio/{muxing_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/packed-audio/{muxing_id}")
         ResponseEnvelope<PackedAudioMuxing> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/packed-audio")
         ResponseEnvelope<PaginationResponse<PackedAudioMuxing>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

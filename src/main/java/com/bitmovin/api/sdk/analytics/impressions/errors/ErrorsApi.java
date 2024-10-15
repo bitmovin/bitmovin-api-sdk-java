@@ -39,7 +39,6 @@ public class ErrorsApi {
     public static BitmovinApiBuilder<ErrorsApi> builder() {
         return new BitmovinApiBuilder<>(ErrorsApi.class);
     }
-
     /**
      * Impression Error Details
      * 
@@ -56,8 +55,7 @@ public class ErrorsApi {
         }
     }
 
-    interface ErrorsApiClient {
-
+    interface ErrorsApiClient { 
         @RequestLine("POST /analytics/impressions/{impression_id}/errors")
         ResponseEnvelope<AnalyticsErrorDetailsResponse> create(@Param(value = "impression_id") String impressionId, AnalyticsLicenseKey analyticsLicenseKey) throws BitmovinException;
     }

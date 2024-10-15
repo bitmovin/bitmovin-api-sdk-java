@@ -42,7 +42,6 @@ public class EnhancedWatermarkApi {
     public static BitmovinApiBuilder<EnhancedWatermarkApi> builder() {
         return new BitmovinApiBuilder<>(EnhancedWatermarkApi.class);
     }
-
     /**
      * Create Enhanced Watermark Filter
      * 
@@ -57,7 +56,6 @@ public class EnhancedWatermarkApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Enhanced Watermark Filter
      * 
@@ -72,7 +70,6 @@ public class EnhancedWatermarkApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Enhanced Watermark Filter Details
      * 
@@ -87,7 +84,6 @@ public class EnhancedWatermarkApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Enhanced Watermark Filters
      * 
@@ -117,17 +113,16 @@ public class EnhancedWatermarkApi {
         }
     }
 
-    interface EnhancedWatermarkApiClient {
-
+    interface EnhancedWatermarkApiClient { 
         @RequestLine("POST /encoding/filters/enhanced-watermark")
         ResponseEnvelope<EnhancedWatermarkFilter> create(EnhancedWatermarkFilter enhancedWatermarkFilter) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/filters/enhanced-watermark/{filter_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "filter_id") String filterId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/filters/enhanced-watermark/{filter_id}")
         ResponseEnvelope<EnhancedWatermarkFilter> get(@Param(value = "filter_id") String filterId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/filters/enhanced-watermark")
         ResponseEnvelope<PaginationResponse<EnhancedWatermarkFilter>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

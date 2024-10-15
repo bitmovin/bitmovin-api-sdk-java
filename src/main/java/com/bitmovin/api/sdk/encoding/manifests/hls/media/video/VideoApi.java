@@ -39,7 +39,6 @@ public class VideoApi {
     public static BitmovinApiBuilder<VideoApi> builder() {
         return new BitmovinApiBuilder<>(VideoApi.class);
     }
-
     /**
      * Add Video Media
      * 
@@ -55,7 +54,6 @@ public class VideoApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Video Media
      * 
@@ -71,7 +69,6 @@ public class VideoApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Video Media Details
      * 
@@ -87,7 +84,6 @@ public class VideoApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List all Video Media
      * 
@@ -119,17 +115,16 @@ public class VideoApi {
         }
     }
 
-    interface VideoApiClient {
-
+    interface VideoApiClient { 
         @RequestLine("POST /encoding/manifests/hls/{manifest_id}/media/video")
         ResponseEnvelope<VideoMediaInfo> create(@Param(value = "manifest_id") String manifestId, VideoMediaInfo videoMediaInfo) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/manifests/hls/{manifest_id}/media/video/{media_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "manifest_id") String manifestId, @Param(value = "media_id") String mediaId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/hls/{manifest_id}/media/video/{media_id}")
         ResponseEnvelope<VideoMediaInfo> get(@Param(value = "manifest_id") String manifestId, @Param(value = "media_id") String mediaId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/hls/{manifest_id}/media/video")
         ResponseEnvelope<PaginationResponse<VideoMediaInfo>> list(@Param(value = "manifest_id") String manifestId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

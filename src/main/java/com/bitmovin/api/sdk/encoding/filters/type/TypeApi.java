@@ -39,7 +39,6 @@ public class TypeApi {
     public static BitmovinApiBuilder<TypeApi> builder() {
         return new BitmovinApiBuilder<>(TypeApi.class);
     }
-
     /**
      * Get Filter Type
      * 
@@ -55,8 +54,7 @@ public class TypeApi {
         }
     }
 
-    interface TypeApiClient {
-
+    interface TypeApiClient { 
         @RequestLine("GET /encoding/filters/{filter_id}/type")
         ResponseEnvelope<FilterType> get(@Param(value = "filter_id") String filterId) throws BitmovinException;
     }

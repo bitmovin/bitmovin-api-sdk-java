@@ -42,7 +42,6 @@ public class HeAacV2Api {
     public static BitmovinApiBuilder<HeAacV2Api> builder() {
         return new BitmovinApiBuilder<>(HeAacV2Api.class);
     }
-
     /**
      * Create HE-AAC v2 Codec Configuration
      * 
@@ -57,7 +56,6 @@ public class HeAacV2Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete HE-AAC v2 Codec Configuration
      * 
@@ -72,7 +70,6 @@ public class HeAacV2Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * HE-AAC v2 Codec Configuration Details
      * 
@@ -87,7 +84,6 @@ public class HeAacV2Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List HE-AAC v2 Configurations
      * 
@@ -117,17 +113,16 @@ public class HeAacV2Api {
         }
     }
 
-    interface HeAacV2ApiClient {
-
+    interface HeAacV2ApiClient { 
         @RequestLine("POST /encoding/configurations/audio/he-aac-v2")
         ResponseEnvelope<HeAacV2AudioConfiguration> create(HeAacV2AudioConfiguration heAacV2AudioConfiguration) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/configurations/audio/he-aac-v2/{configuration_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/audio/he-aac-v2/{configuration_id}")
         ResponseEnvelope<HeAacV2AudioConfiguration> get(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/audio/he-aac-v2")
         ResponseEnvelope<PaginationResponse<HeAacV2AudioConfiguration>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

@@ -39,7 +39,6 @@ public class StartApi {
     public static BitmovinApiBuilder<StartApi> builder() {
         return new BitmovinApiBuilder<>(StartApi.class);
     }
-
     /**
      * Start live stream by id
      * 
@@ -54,8 +53,7 @@ public class StartApi {
         }
     }
 
-    interface StartApiClient {
-
+    interface StartApiClient { 
         @RequestLine("PUT /streams/live/{stream_id}/start")
         void update(@Param(value = "stream_id") String streamId) throws BitmovinException;
     }

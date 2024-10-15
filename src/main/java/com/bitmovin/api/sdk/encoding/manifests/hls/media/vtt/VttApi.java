@@ -39,7 +39,6 @@ public class VttApi {
     public static BitmovinApiBuilder<VttApi> builder() {
         return new BitmovinApiBuilder<>(VttApi.class);
     }
-
     /**
      * Add VTT Media
      * 
@@ -55,7 +54,6 @@ public class VttApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete VTT Media
      * 
@@ -71,7 +69,6 @@ public class VttApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * VTT Media Details
      * 
@@ -87,7 +84,6 @@ public class VttApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List all VTT Media
      * 
@@ -119,17 +115,16 @@ public class VttApi {
         }
     }
 
-    interface VttApiClient {
-
+    interface VttApiClient { 
         @RequestLine("POST /encoding/manifests/hls/{manifest_id}/media/vtt")
         ResponseEnvelope<VttMediaInfo> create(@Param(value = "manifest_id") String manifestId, VttMediaInfo vttMediaInfo) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/manifests/hls/{manifest_id}/media/vtt/{media_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "manifest_id") String manifestId, @Param(value = "media_id") String mediaId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/hls/{manifest_id}/media/vtt/{media_id}")
         ResponseEnvelope<VttMediaInfo> get(@Param(value = "manifest_id") String manifestId, @Param(value = "media_id") String mediaId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/hls/{manifest_id}/media/vtt")
         ResponseEnvelope<PaginationResponse<VttMediaInfo>> list(@Param(value = "manifest_id") String manifestId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

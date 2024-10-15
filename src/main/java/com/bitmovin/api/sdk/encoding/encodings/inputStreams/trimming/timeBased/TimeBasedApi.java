@@ -39,7 +39,6 @@ public class TimeBasedApi {
     public static BitmovinApiBuilder<TimeBasedApi> builder() {
         return new BitmovinApiBuilder<>(TimeBasedApi.class);
     }
-
     /**
      * Add Time-Based Trimming Input Stream
      * 
@@ -55,7 +54,6 @@ public class TimeBasedApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Time-Based Trimming Input Stream
      * 
@@ -71,7 +69,6 @@ public class TimeBasedApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Time-Based Trimming Input Stream Details
      * 
@@ -87,7 +84,6 @@ public class TimeBasedApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Time-Based Trimming Input Streams
      * 
@@ -119,17 +115,16 @@ public class TimeBasedApi {
         }
     }
 
-    interface TimeBasedApiClient {
-
+    interface TimeBasedApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/input-streams/trimming/time-based")
         ResponseEnvelope<TimeBasedTrimmingInputStream> create(@Param(value = "encoding_id") String encodingId, TimeBasedTrimmingInputStream timeBasedTrimmingInputStream) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/input-streams/trimming/time-based/{input_stream_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "input_stream_id") String inputStreamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/trimming/time-based/{input_stream_id}")
         ResponseEnvelope<TimeBasedTrimmingInputStream> get(@Param(value = "encoding_id") String encodingId, @Param(value = "input_stream_id") String inputStreamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/trimming/time-based")
         ResponseEnvelope<PaginationResponse<TimeBasedTrimmingInputStream>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

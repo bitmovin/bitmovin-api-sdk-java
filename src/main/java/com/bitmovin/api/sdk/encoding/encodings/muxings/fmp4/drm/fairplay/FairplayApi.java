@@ -42,7 +42,6 @@ public class FairplayApi {
     public static BitmovinApiBuilder<FairplayApi> builder() {
         return new BitmovinApiBuilder<>(FairplayApi.class);
     }
-
     /**
      * Add FairPlay DRM to an fMP4 muxing
      * 
@@ -59,7 +58,6 @@ public class FairplayApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete FairPlay DRM from an fMP4 muxing
      * 
@@ -76,7 +74,6 @@ public class FairplayApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * FairPlay DRM Details of an fMP4 muxing
      * 
@@ -93,7 +90,6 @@ public class FairplayApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List FairPlay DRMs of an fMP4 muxing
      * 
@@ -127,17 +123,16 @@ public class FairplayApi {
         }
     }
 
-    interface FairplayApiClient {
-
+    interface FairplayApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/fmp4/{muxing_id}/drm/fairplay")
         ResponseEnvelope<FairPlayDrm> create(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, FairPlayDrm fairPlayDrm) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/fmp4/{muxing_id}/drm/fairplay/{drm_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @Param(value = "drm_id") String drmId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/fmp4/{muxing_id}/drm/fairplay/{drm_id}")
         ResponseEnvelope<FairPlayDrm> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @Param(value = "drm_id") String drmId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/fmp4/{muxing_id}/drm/fairplay")
         ResponseEnvelope<PaginationResponse<FairPlayDrm>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

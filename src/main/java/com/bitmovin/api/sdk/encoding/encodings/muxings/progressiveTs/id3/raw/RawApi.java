@@ -42,7 +42,6 @@ public class RawApi {
     public static BitmovinApiBuilder<RawApi> builder() {
         return new BitmovinApiBuilder<>(RawApi.class);
     }
-
     /**
      * Add Raw ID3 Tag to a Progressive TS muxing
      * 
@@ -59,7 +58,6 @@ public class RawApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Raw ID3 Tag of a Progressive TS muxing
      * 
@@ -76,7 +74,6 @@ public class RawApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Raw ID3 Tag Details of a Progressive TS muxing
      * 
@@ -93,7 +90,6 @@ public class RawApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Raw ID3 Tags of a Progressive TS muxing
      * 
@@ -127,17 +123,16 @@ public class RawApi {
         }
     }
 
-    interface RawApiClient {
-
+    interface RawApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/progressive-ts/{muxing_id}/id3/raw")
         ResponseEnvelope<RawId3Tag> create(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, RawId3Tag rawId3Tag) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/progressive-ts/{muxing_id}/id3/raw/{id3_tag_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @Param(value = "id3_tag_id") String id3TagId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/progressive-ts/{muxing_id}/id3/raw/{id3_tag_id}")
         ResponseEnvelope<RawId3Tag> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @Param(value = "id3_tag_id") String id3TagId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/progressive-ts/{muxing_id}/id3/raw")
         ResponseEnvelope<PaginationResponse<RawId3Tag>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

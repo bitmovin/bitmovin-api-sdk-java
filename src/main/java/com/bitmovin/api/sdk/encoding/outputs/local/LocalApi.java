@@ -42,7 +42,6 @@ public class LocalApi {
     public static BitmovinApiBuilder<LocalApi> builder() {
         return new BitmovinApiBuilder<>(LocalApi.class);
     }
-
     /**
      * Create Local Output
      * 
@@ -57,7 +56,6 @@ public class LocalApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Local Output
      * 
@@ -72,7 +70,6 @@ public class LocalApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Local Output Details
      * 
@@ -87,7 +84,6 @@ public class LocalApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Local Outputs
      * 
@@ -117,17 +113,16 @@ public class LocalApi {
         }
     }
 
-    interface LocalApiClient {
-
+    interface LocalApiClient { 
         @RequestLine("POST /encoding/outputs/local")
         ResponseEnvelope<LocalOutput> create(LocalOutput localOutput) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/outputs/local/{output_id}")
         ResponseEnvelope<LocalOutput> delete(@Param(value = "output_id") String outputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/outputs/local/{output_id}")
         ResponseEnvelope<LocalOutput> get(@Param(value = "output_id") String outputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/outputs/local")
         ResponseEnvelope<PaginationResponse<LocalOutput>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

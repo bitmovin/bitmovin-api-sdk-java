@@ -45,7 +45,6 @@ public class StreamsApi {
     public static BitmovinApiBuilder<StreamsApi> builder() {
         return new BitmovinApiBuilder<>(StreamsApi.class);
     }
-
     /**
      * Add Variant Stream
      * 
@@ -61,7 +60,6 @@ public class StreamsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Variant Stream
      * 
@@ -77,7 +75,6 @@ public class StreamsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Variant Stream Details
      * 
@@ -93,7 +90,6 @@ public class StreamsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List all Variant Streams
      * 
@@ -125,17 +121,16 @@ public class StreamsApi {
         }
     }
 
-    interface StreamsApiClient {
-
+    interface StreamsApiClient { 
         @RequestLine("POST /encoding/manifests/hls/{manifest_id}/streams")
         ResponseEnvelope<StreamInfo> create(@Param(value = "manifest_id") String manifestId, StreamInfo streamInfo) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/manifests/hls/{manifest_id}/streams/{stream_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "manifest_id") String manifestId, @Param(value = "stream_id") String streamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/hls/{manifest_id}/streams/{stream_id}")
         ResponseEnvelope<StreamInfo> get(@Param(value = "manifest_id") String manifestId, @Param(value = "stream_id") String streamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/hls/{manifest_id}/streams")
         ResponseEnvelope<PaginationResponse<StreamInfo>> list(@Param(value = "manifest_id") String manifestId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

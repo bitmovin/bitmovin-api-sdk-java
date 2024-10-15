@@ -39,7 +39,6 @@ public class PassthroughApi {
     public static BitmovinApiBuilder<PassthroughApi> builder() {
         return new BitmovinApiBuilder<>(PassthroughApi.class);
     }
-
     /**
      * Create Audio Passthrough Configuration
      * 
@@ -54,7 +53,6 @@ public class PassthroughApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Audio Passthrough Codec Configuration
      * 
@@ -69,7 +67,6 @@ public class PassthroughApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Audio Passthrough Configuration Details
      * 
@@ -84,7 +81,6 @@ public class PassthroughApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Audio Passthrough Configurations
      * 
@@ -114,17 +110,16 @@ public class PassthroughApi {
         }
     }
 
-    interface PassthroughApiClient {
-
+    interface PassthroughApiClient { 
         @RequestLine("POST /encoding/configurations/audio/passthrough")
         ResponseEnvelope<PassthroughAudioConfiguration> create(PassthroughAudioConfiguration passthroughAudioConfiguration) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/configurations/audio/passthrough/{configuration_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/audio/passthrough/{configuration_id}")
         ResponseEnvelope<PassthroughAudioConfiguration> get(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/audio/passthrough")
         ResponseEnvelope<PaginationResponse<PassthroughAudioConfiguration>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

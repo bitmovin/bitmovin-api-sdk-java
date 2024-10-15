@@ -39,7 +39,6 @@ public class LiveEncodingHeartbeatApi {
     public static BitmovinApiBuilder<LiveEncodingHeartbeatApi> builder() {
         return new BitmovinApiBuilder<>(LiveEncodingHeartbeatApi.class);
     }
-
     /**
      * Add &#39;Live Encoding Heartbeat&#39; Webhook
      * Add a new webhook notification that triggers a heartbeat webhook with a fixed &#x60;interval&#x60; for all Live Encodings. 
@@ -54,7 +53,6 @@ public class LiveEncodingHeartbeatApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete &#39;Live Encoding Heartbeat&#39; Webhook
      * 
@@ -69,7 +67,6 @@ public class LiveEncodingHeartbeatApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * &#39;Live Encoding Heartbeat&#39; Webhook Details
      * 
@@ -84,7 +81,6 @@ public class LiveEncodingHeartbeatApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List &#39;Live Encoding Heartbeat&#39; Webhooks
      * 
@@ -114,17 +110,16 @@ public class LiveEncodingHeartbeatApi {
         }
     }
 
-    interface LiveEncodingHeartbeatApiClient {
-
+    interface LiveEncodingHeartbeatApiClient { 
         @RequestLine("POST /notifications/webhooks/encoding/encodings/live-encoding-heartbeat")
         ResponseEnvelope<LiveEncodingHeartbeatWebhook> create(LiveEncodingHeartbeatWebhook liveEncodingHeartbeatWebhook) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /notifications/webhooks/encoding/encodings/live-encoding-heartbeat/{webhook_id}")
         ResponseEnvelope<BitmovinResponse> deleteByWebhookId(@Param(value = "webhook_id") String webhookId) throws BitmovinException;
-    
+   
         @RequestLine("GET /notifications/webhooks/encoding/encodings/live-encoding-heartbeat/{webhook_id}")
         ResponseEnvelope<LiveEncodingHeartbeatWebhook> getByWebhookId(@Param(value = "webhook_id") String webhookId) throws BitmovinException;
-    
+   
         @RequestLine("GET /notifications/webhooks/encoding/encodings/live-encoding-heartbeat")
         ResponseEnvelope<PaginationResponse<LiveEncodingHeartbeatWebhook>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

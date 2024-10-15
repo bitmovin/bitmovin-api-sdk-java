@@ -42,7 +42,6 @@ public class WidevineApi {
     public static BitmovinApiBuilder<WidevineApi> builder() {
         return new BitmovinApiBuilder<>(WidevineApi.class);
     }
-
     /**
      * Add Widevine DRM to an MP4 muxing
      * 
@@ -59,7 +58,6 @@ public class WidevineApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Widevine DRM from an MP4 muxing
      * 
@@ -76,7 +74,6 @@ public class WidevineApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Widevine DRM Details of an MP4 muxing
      * 
@@ -93,7 +90,6 @@ public class WidevineApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Widevine DRMs of an MP4 muxing
      * 
@@ -127,17 +123,16 @@ public class WidevineApi {
         }
     }
 
-    interface WidevineApiClient {
-
+    interface WidevineApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/mp4/{muxing_id}/drm/widevine")
         ResponseEnvelope<WidevineDrm> create(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, WidevineDrm widevineDrm) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/mp4/{muxing_id}/drm/widevine/{drm_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @Param(value = "drm_id") String drmId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/mp4/{muxing_id}/drm/widevine/{drm_id}")
         ResponseEnvelope<WidevineDrm> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @Param(value = "drm_id") String drmId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/mp4/{muxing_id}/drm/widevine")
         ResponseEnvelope<PaginationResponse<WidevineDrm>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

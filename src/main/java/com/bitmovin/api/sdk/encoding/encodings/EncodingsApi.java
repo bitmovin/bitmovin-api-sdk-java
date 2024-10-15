@@ -69,7 +69,6 @@ public class EncodingsApi {
     public static BitmovinApiBuilder<EncodingsApi> builder() {
         return new BitmovinApiBuilder<>(EncodingsApi.class);
     }
-
     /**
      * Create Encoding
      * 
@@ -84,7 +83,6 @@ public class EncodingsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Encoding
      * 
@@ -99,7 +97,6 @@ public class EncodingsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Encoding Details
      * 
@@ -114,7 +111,6 @@ public class EncodingsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Encoding Start Details
      * 
@@ -129,7 +125,6 @@ public class EncodingsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List all Encodings
      * Bitmovin retains historical encoding jobs data for a period of 90 days. Should you require the data to be stored for an extended duration, it is necessary to store it within your own data repository.
@@ -158,7 +153,6 @@ public class EncodingsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Reprioritize Encoding
      * 
@@ -174,7 +168,6 @@ public class EncodingsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Reschedule Encoding
      * 
@@ -190,7 +183,6 @@ public class EncodingsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Start VoD Encoding
      * 
@@ -221,7 +213,6 @@ public class EncodingsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Encoding Status
      * 
@@ -236,7 +227,6 @@ public class EncodingsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Stop Encoding
      * 
@@ -252,38 +242,37 @@ public class EncodingsApi {
         }
     }
 
-    interface EncodingsApiClient {
-
+    interface EncodingsApiClient { 
         @RequestLine("POST /encoding/encodings")
         ResponseEnvelope<Encoding> create(Encoding encoding) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}")
         ResponseEnvelope<Encoding> get(@Param(value = "encoding_id") String encodingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/start")
         ResponseEnvelope<StartEncodingRequest> getStartRequest(@Param(value = "encoding_id") String encodingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings")
         ResponseEnvelope<PaginationResponse<Encoding>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
-    
+   
         @RequestLine("POST /encoding/encodings/{encoding_id}/reprioritize")
         ResponseEnvelope<BitmovinResponse> reprioritize(@Param(value = "encoding_id") String encodingId, ReprioritizeEncodingRequest reprioritizeEncodingRequest) throws BitmovinException;
-    
+   
         @RequestLine("POST /encoding/encodings/{encoding_id}/reschedule")
         ResponseEnvelope<BitmovinResponse> reschedule(@Param(value = "encoding_id") String encodingId, RescheduleEncodingRequest rescheduleEncodingRequest) throws BitmovinException;
-    
+   
         @RequestLine("POST /encoding/encodings/{encoding_id}/start")
         ResponseEnvelope<BitmovinResponse> start(@Param(value = "encoding_id") String encodingId) throws BitmovinException;
 
         @RequestLine("POST /encoding/encodings/{encoding_id}/start")
         ResponseEnvelope<BitmovinResponse> start(@Param(value = "encoding_id") String encodingId, StartEncodingRequest startEncodingRequest) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/status")
         ResponseEnvelope<Task> status(@Param(value = "encoding_id") String encodingId) throws BitmovinException;
-    
+   
         @RequestLine("POST /encoding/encodings/{encoding_id}/stop")
         ResponseEnvelope<BitmovinResponse> stop(@Param(value = "encoding_id") String encodingId) throws BitmovinException;
     }

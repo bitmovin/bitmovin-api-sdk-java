@@ -42,7 +42,6 @@ public class AzureSpeechToCaptionsApi {
     public static BitmovinApiBuilder<AzureSpeechToCaptionsApi> builder() {
         return new BitmovinApiBuilder<>(AzureSpeechToCaptionsApi.class);
     }
-
     /**
      * Create Azure Speech to captions Filter
      * This filter uses the Azure Speech Services - Speech to captions feature to transcribe an audio stream in real-time.  - Required for this filter is an Azure account with an Azure Speech service resource. - Your own Azure speech service subscription key is required.  - This filter only works for Live Encodings. - This filter transforms an audio input stream into a captions stream. - The filter must be applied to a stream that has an audio input. - The stream&#39;s codec configuration must be a subtitle or caption format (WebVtt, TTML, ..). 
@@ -57,7 +56,6 @@ public class AzureSpeechToCaptionsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Azure Speech to captions Filter
      * 
@@ -72,7 +70,6 @@ public class AzureSpeechToCaptionsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Azure Speech to captions Filter details
      * 
@@ -87,7 +84,6 @@ public class AzureSpeechToCaptionsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Azure Speech to captions Filters
      * 
@@ -117,17 +113,16 @@ public class AzureSpeechToCaptionsApi {
         }
     }
 
-    interface AzureSpeechToCaptionsApiClient {
-
+    interface AzureSpeechToCaptionsApiClient { 
         @RequestLine("POST /encoding/filters/azure-speech-to-captions")
         ResponseEnvelope<AzureSpeechToCaptionsFilter> create(AzureSpeechToCaptionsFilter azureSpeechToCaptionsFilter) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/filters/azure-speech-to-captions/{filter_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "filter_id") String filterId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/filters/azure-speech-to-captions/{filter_id}")
         ResponseEnvelope<AzureSpeechToCaptionsFilter> get(@Param(value = "filter_id") String filterId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/filters/azure-speech-to-captions")
         ResponseEnvelope<PaginationResponse<AzureSpeechToCaptionsFilter>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

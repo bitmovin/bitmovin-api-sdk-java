@@ -39,7 +39,6 @@ public class WebvttApi {
     public static BitmovinApiBuilder<WebvttApi> builder() {
         return new BitmovinApiBuilder<>(WebvttApi.class);
     }
-
     /**
      * Add WebVTT sidecar file
      * 
@@ -55,7 +54,6 @@ public class WebvttApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Sidecar
      * 
@@ -71,7 +69,6 @@ public class WebvttApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * WebVTT Sidecar Details
      * 
@@ -87,7 +84,6 @@ public class WebvttApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List WebVTT sidecar files
      * 
@@ -119,17 +115,16 @@ public class WebvttApi {
         }
     }
 
-    interface WebvttApiClient {
-
+    interface WebvttApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/sidecars/webvtt")
         ResponseEnvelope<WebVttSidecarFile> create(@Param(value = "encoding_id") String encodingId, WebVttSidecarFile webVttSidecarFile) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/sidecars/webvtt/{sidecar_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "sidecar_id") String sidecarId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/sidecars/webvtt/{sidecar_id}")
         ResponseEnvelope<WebVttSidecarFile> get(@Param(value = "encoding_id") String encodingId, @Param(value = "sidecar_id") String sidecarId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/sidecars/webvtt")
         ResponseEnvelope<PaginationResponse<WebVttSidecarFile>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

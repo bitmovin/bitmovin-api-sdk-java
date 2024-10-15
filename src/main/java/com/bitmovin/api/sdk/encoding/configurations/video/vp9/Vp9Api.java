@@ -42,7 +42,6 @@ public class Vp9Api {
     public static BitmovinApiBuilder<Vp9Api> builder() {
         return new BitmovinApiBuilder<>(Vp9Api.class);
     }
-
     /**
      * Create VP9 Codec Configuration
      * 
@@ -57,7 +56,6 @@ public class Vp9Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete VP9 Codec Configuration
      * 
@@ -72,7 +70,6 @@ public class Vp9Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * VP9 Codec Configuration Details
      * 
@@ -87,7 +84,6 @@ public class Vp9Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List VP9 Codec Configurations
      * 
@@ -117,17 +113,16 @@ public class Vp9Api {
         }
     }
 
-    interface Vp9ApiClient {
-
+    interface Vp9ApiClient { 
         @RequestLine("POST /encoding/configurations/video/vp9")
         ResponseEnvelope<Vp9VideoConfiguration> create(Vp9VideoConfiguration vp9VideoConfiguration) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/configurations/video/vp9/{configuration_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/video/vp9/{configuration_id}")
         ResponseEnvelope<Vp9VideoConfiguration> get(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/video/vp9")
         ResponseEnvelope<PaginationResponse<Vp9VideoConfiguration>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

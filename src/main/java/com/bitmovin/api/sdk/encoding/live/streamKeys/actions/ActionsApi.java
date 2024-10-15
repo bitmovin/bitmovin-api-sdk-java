@@ -39,7 +39,6 @@ public class ActionsApi {
     public static BitmovinApiBuilder<ActionsApi> builder() {
         return new BitmovinApiBuilder<>(ActionsApi.class);
     }
-
     /**
      * Unassign stream keys
      * 
@@ -55,8 +54,7 @@ public class ActionsApi {
         }
     }
 
-    interface ActionsApiClient {
-
+    interface ActionsApiClient { 
         @RequestLine("POST /encoding/live/stream-keys/actions/unassign")
         ResponseEnvelope<StreamKeysUnassignAction> unassign(StreamKeysUnassignAction streamKeysUnassignAction) throws BitmovinException;
     }

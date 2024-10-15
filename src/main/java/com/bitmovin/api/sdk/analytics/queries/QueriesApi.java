@@ -47,5 +47,4 @@ public class QueriesApi {
         return new BitmovinApiBuilder<>(QueriesApi.class);
     }
 
-    
 }

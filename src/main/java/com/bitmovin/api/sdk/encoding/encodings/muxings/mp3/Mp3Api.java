@@ -45,7 +45,6 @@ public class Mp3Api {
     public static BitmovinApiBuilder<Mp3Api> builder() {
         return new BitmovinApiBuilder<>(Mp3Api.class);
     }
-
     /**
      * Add MP3 muxing
      * 
@@ -61,7 +60,6 @@ public class Mp3Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete MP3 muxing
      * 
@@ -77,7 +75,6 @@ public class Mp3Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * MP3 muxing details
      * 
@@ -93,7 +90,6 @@ public class Mp3Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List MP3 muxings
      * 
@@ -125,17 +121,16 @@ public class Mp3Api {
         }
     }
 
-    interface Mp3ApiClient {
-
+    interface Mp3ApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/mp3")
         ResponseEnvelope<Mp3Muxing> create(@Param(value = "encoding_id") String encodingId, Mp3Muxing mp3Muxing) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/mp3/{muxing_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/mp3/{muxing_id}")
         ResponseEnvelope<Mp3Muxing> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/mp3")
         ResponseEnvelope<PaginationResponse<Mp3Muxing>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

@@ -42,7 +42,6 @@ public class Vp8Api {
     public static BitmovinApiBuilder<Vp8Api> builder() {
         return new BitmovinApiBuilder<>(Vp8Api.class);
     }
-
     /**
      * Create VP8 Codec Configuration
      * 
@@ -57,7 +56,6 @@ public class Vp8Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete VP8 Codec Configuration
      * 
@@ -72,7 +70,6 @@ public class Vp8Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * VP8 Codec Configuration Details
      * 
@@ -87,7 +84,6 @@ public class Vp8Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * 
      * 
@@ -117,17 +113,16 @@ public class Vp8Api {
         }
     }
 
-    interface Vp8ApiClient {
-
+    interface Vp8ApiClient { 
         @RequestLine("POST /encoding/configurations/video/vp8")
         ResponseEnvelope<Vp8VideoConfiguration> create(Vp8VideoConfiguration vp8VideoConfiguration) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/configurations/video/vp8/{configuration_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/video/vp8/{configuration_id}")
         ResponseEnvelope<Vp8VideoConfiguration> get(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/video/vp8")
         ResponseEnvelope<PaginationResponse<Vp8VideoConfiguration>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

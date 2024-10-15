@@ -29,5 +29,4 @@ public class MetricsApi {
         return new BitmovinApiBuilder<>(MetricsApi.class);
     }
 
-    
 }

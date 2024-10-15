@@ -39,7 +39,6 @@ public class AnalyticsApi {
     public static BitmovinApiBuilder<AnalyticsApi> builder() {
         return new BitmovinApiBuilder<>(AnalyticsApi.class);
     }
-
     /**
      * Activate Analytics
      * 
@@ -55,7 +54,6 @@ public class AnalyticsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Deactivate Analytics
      * 
@@ -71,11 +69,10 @@ public class AnalyticsApi {
         }
     }
 
-    interface AnalyticsApiClient {
-
+    interface AnalyticsApiClient { 
         @RequestLine("POST /player/licenses/{license_id}/analytics")
         ResponseEnvelope<PlayerLicenseAnalytics> create(@Param(value = "license_id") String licenseId, PlayerLicenseAnalytics playerLicenseAnalytics) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /player/licenses/{license_id}/analytics")
         ResponseEnvelope<PlayerLicenseAnalytics> delete(@Param(value = "license_id") String licenseId) throws BitmovinException;
     }

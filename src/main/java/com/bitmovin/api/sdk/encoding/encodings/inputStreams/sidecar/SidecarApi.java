@@ -23,5 +23,4 @@ public class SidecarApi {
         return new BitmovinApiBuilder<>(SidecarApi.class);
     }
 
-    
 }

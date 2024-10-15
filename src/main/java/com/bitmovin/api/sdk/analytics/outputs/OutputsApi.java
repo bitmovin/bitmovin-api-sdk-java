@@ -29,5 +29,4 @@ public class OutputsApi {
         return new BitmovinApiBuilder<>(OutputsApi.class);
     }
 
-    
 }

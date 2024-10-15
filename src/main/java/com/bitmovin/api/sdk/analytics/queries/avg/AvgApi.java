@@ -39,7 +39,6 @@ public class AvgApi {
     public static BitmovinApiBuilder<AvgApi> builder() {
         return new BitmovinApiBuilder<>(AvgApi.class);
     }
-
     /**
      * Avg
      * 
@@ -55,8 +54,7 @@ public class AvgApi {
         }
     }
 
-    interface AvgApiClient {
-
+    interface AvgApiClient { 
         @RequestLine("POST /analytics/queries/avg")
         ResponseEnvelope<AnalyticsResponse> create(AnalyticsAvgQueryRequest analyticsAvgQueryRequest) throws BitmovinException;
     }

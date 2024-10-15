@@ -42,7 +42,6 @@ public class LicensesApi {
     public static BitmovinApiBuilder<LicensesApi> builder() {
         return new BitmovinApiBuilder<>(LicensesApi.class);
     }
-
     /**
      * Create Analytics License
      * 
@@ -57,7 +56,6 @@ public class LicensesApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Get License
      * 
@@ -72,7 +70,6 @@ public class LicensesApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Analytics Licenses
      * 
@@ -101,7 +98,6 @@ public class LicensesApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Update Analytics License
      * 
@@ -118,17 +114,16 @@ public class LicensesApi {
         }
     }
 
-    interface LicensesApiClient {
-
+    interface LicensesApiClient { 
         @RequestLine("POST /analytics/licenses")
         ResponseEnvelope<AnalyticsLicense> create(AnalyticsLicense analyticsLicense) throws BitmovinException;
-    
+   
         @RequestLine("GET /analytics/licenses/{license_id}")
         ResponseEnvelope<AnalyticsLicense> get(@Param(value = "license_id") String licenseId) throws BitmovinException;
-    
+   
         @RequestLine("GET /analytics/licenses")
         ResponseEnvelope<PaginationResponse<AnalyticsLicense>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
-    
+   
         @RequestLine("PUT /analytics/licenses/{license_id}")
         ResponseEnvelope<AnalyticsLicense> update(@Param(value = "license_id") String licenseId, AnalyticsLicense analyticsLicense) throws BitmovinException;
     }

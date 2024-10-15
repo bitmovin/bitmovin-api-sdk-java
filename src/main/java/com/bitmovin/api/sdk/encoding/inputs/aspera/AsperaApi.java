@@ -42,7 +42,6 @@ public class AsperaApi {
     public static BitmovinApiBuilder<AsperaApi> builder() {
         return new BitmovinApiBuilder<>(AsperaApi.class);
     }
-
     /**
      * Create Aspera Input
      * 
@@ -57,7 +56,6 @@ public class AsperaApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Aspera Input
      * 
@@ -72,7 +70,6 @@ public class AsperaApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Aspera Input Details
      * 
@@ -87,7 +84,6 @@ public class AsperaApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Aspera Inputs
      * 
@@ -117,17 +113,16 @@ public class AsperaApi {
         }
     }
 
-    interface AsperaApiClient {
-
+    interface AsperaApiClient { 
         @RequestLine("POST /encoding/inputs/aspera")
         ResponseEnvelope<AsperaInput> create(AsperaInput asperaInput) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/inputs/aspera/{input_id}")
         ResponseEnvelope<AsperaInput> delete(@Param(value = "input_id") String inputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/inputs/aspera/{input_id}")
         ResponseEnvelope<AsperaInput> get(@Param(value = "input_id") String inputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/inputs/aspera")
         ResponseEnvelope<PaginationResponse<AsperaInput>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

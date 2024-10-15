@@ -42,7 +42,6 @@ public class CmafApi {
     public static BitmovinApiBuilder<CmafApi> builder() {
         return new BitmovinApiBuilder<>(CmafApi.class);
     }
-
     /**
      * Add CMAF muxing
      * 
@@ -58,7 +57,6 @@ public class CmafApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete CMAF muxing
      * 
@@ -74,7 +72,6 @@ public class CmafApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * CMAF muxing details
      * 
@@ -90,7 +87,6 @@ public class CmafApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List CMAF muxings
      * 
@@ -122,17 +118,16 @@ public class CmafApi {
         }
     }
 
-    interface CmafApiClient {
-
+    interface CmafApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/cmaf")
         ResponseEnvelope<CmafMuxing> create(@Param(value = "encoding_id") String encodingId, CmafMuxing cmafMuxing) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/cmaf/{muxing_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/cmaf/{muxing_id}")
         ResponseEnvelope<CmafMuxing> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/cmaf")
         ResponseEnvelope<PaginationResponse<CmafMuxing>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

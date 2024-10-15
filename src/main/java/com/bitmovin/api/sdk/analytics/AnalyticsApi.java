@@ -47,5 +47,4 @@ public class AnalyticsApi {
         return new BitmovinApiBuilder<>(AnalyticsApi.class);
     }
 
-    
 }

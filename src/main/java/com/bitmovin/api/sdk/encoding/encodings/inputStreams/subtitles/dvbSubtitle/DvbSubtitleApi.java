@@ -39,7 +39,6 @@ public class DvbSubtitleApi {
     public static BitmovinApiBuilder<DvbSubtitleApi> builder() {
         return new BitmovinApiBuilder<>(DvbSubtitleApi.class);
     }
-
     /**
      * Add DVB Subtitle Input Stream
      * 
@@ -55,7 +54,6 @@ public class DvbSubtitleApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete DVB Subtitle Input Stream
      * 
@@ -71,7 +69,6 @@ public class DvbSubtitleApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * DVB Subtitle Input Stream Details
      * 
@@ -87,7 +84,6 @@ public class DvbSubtitleApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List DVB Subtitle Input Streams
      * 
@@ -119,17 +115,16 @@ public class DvbSubtitleApi {
         }
     }
 
-    interface DvbSubtitleApiClient {
-
+    interface DvbSubtitleApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/input-streams/subtitles/dvb-subtitle")
         ResponseEnvelope<DvbSubtitleInputStream> create(@Param(value = "encoding_id") String encodingId, DvbSubtitleInputStream dvbSubtitleInputStream) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/input-streams/subtitles/dvb-subtitle/{input_stream_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "input_stream_id") String inputStreamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/subtitles/dvb-subtitle/{input_stream_id}")
         ResponseEnvelope<DvbSubtitleInputStream> get(@Param(value = "encoding_id") String encodingId, @Param(value = "input_stream_id") String inputStreamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/subtitles/dvb-subtitle")
         ResponseEnvelope<PaginationResponse<DvbSubtitleInputStream>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

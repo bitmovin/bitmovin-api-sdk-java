@@ -39,7 +39,6 @@ public class ImageApi {
     public static BitmovinApiBuilder<ImageApi> builder() {
         return new BitmovinApiBuilder<>(ImageApi.class);
     }
-
     /**
      * Add Image AdaptationSet
      * 
@@ -56,7 +55,6 @@ public class ImageApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Image AdaptationSet
      * 
@@ -73,7 +71,6 @@ public class ImageApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Image AdaptationSet Details
      * 
@@ -90,7 +87,6 @@ public class ImageApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List all Image AdaptationSets
      * 
@@ -124,17 +120,16 @@ public class ImageApi {
         }
     }
 
-    interface ImageApiClient {
-
+    interface ImageApiClient { 
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/image")
         ResponseEnvelope<ImageAdaptationSet> create(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, ImageAdaptationSet imageAdaptationSet) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/image/{adaptationset_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/image/{adaptationset_id}")
         ResponseEnvelope<ImageAdaptationSet> get(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/image")
         ResponseEnvelope<PaginationResponse<ImageAdaptationSet>> list(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

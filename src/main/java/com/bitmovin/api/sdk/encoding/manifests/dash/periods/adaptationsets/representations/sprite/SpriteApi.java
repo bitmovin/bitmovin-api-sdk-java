@@ -39,7 +39,6 @@ public class SpriteApi {
     public static BitmovinApiBuilder<SpriteApi> builder() {
         return new BitmovinApiBuilder<>(SpriteApi.class);
     }
-
     /**
      * Add Sprite Representation
      * 
@@ -57,7 +56,6 @@ public class SpriteApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Sprite Representation
      * 
@@ -75,7 +73,6 @@ public class SpriteApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Sprite Representation Details
      * 
@@ -93,7 +90,6 @@ public class SpriteApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List all Sprite Representations
      * 
@@ -129,17 +125,16 @@ public class SpriteApi {
         }
     }
 
-    interface SpriteApiClient {
-
+    interface SpriteApiClient { 
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/representations/sprite")
         ResponseEnvelope<SpriteRepresentation> create(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, SpriteRepresentation spriteRepresentation) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/representations/sprite/{representation_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, @Param(value = "representation_id") String representationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/representations/sprite/{representation_id}")
         ResponseEnvelope<SpriteRepresentation> get(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, @Param(value = "representation_id") String representationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/representations/sprite")
         ResponseEnvelope<PaginationResponse<SpriteRepresentation>> list(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

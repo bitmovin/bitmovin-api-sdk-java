@@ -51,7 +51,6 @@ public class ProgressiveTsApi {
     public static BitmovinApiBuilder<ProgressiveTsApi> builder() {
         return new BitmovinApiBuilder<>(ProgressiveTsApi.class);
     }
-
     /**
      * Add Progressive TS muxing
      * 
@@ -67,7 +66,6 @@ public class ProgressiveTsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Progressive TS muxing
      * 
@@ -83,7 +81,6 @@ public class ProgressiveTsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Progressive TS muxing details
      * 
@@ -99,7 +96,6 @@ public class ProgressiveTsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Progressive TS muxings
      * 
@@ -131,17 +127,16 @@ public class ProgressiveTsApi {
         }
     }
 
-    interface ProgressiveTsApiClient {
-
+    interface ProgressiveTsApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/progressive-ts")
         ResponseEnvelope<ProgressiveTsMuxing> create(@Param(value = "encoding_id") String encodingId, ProgressiveTsMuxing progressiveTsMuxing) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/progressive-ts/{muxing_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/progressive-ts/{muxing_id}")
         ResponseEnvelope<ProgressiveTsMuxing> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/progressive-ts")
         ResponseEnvelope<PaginationResponse<ProgressiveTsMuxing>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

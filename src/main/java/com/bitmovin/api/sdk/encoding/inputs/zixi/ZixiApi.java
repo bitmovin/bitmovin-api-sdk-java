@@ -42,7 +42,6 @@ public class ZixiApi {
     public static BitmovinApiBuilder<ZixiApi> builder() {
         return new BitmovinApiBuilder<>(ZixiApi.class);
     }
-
     /**
      * Create Zixi input
      * 
@@ -57,7 +56,6 @@ public class ZixiApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Zixi input
      * 
@@ -72,7 +70,6 @@ public class ZixiApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Zixi Input Details
      * 
@@ -87,7 +84,6 @@ public class ZixiApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Zixi inputs
      * 
@@ -117,17 +113,16 @@ public class ZixiApi {
         }
     }
 
-    interface ZixiApiClient {
-
+    interface ZixiApiClient { 
         @RequestLine("POST /encoding/inputs/zixi")
         ResponseEnvelope<ZixiInput> create(ZixiInput zixiInput) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/inputs/zixi/{input_id}")
         ResponseEnvelope<ZixiInput> delete(@Param(value = "input_id") String inputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/inputs/zixi/{input_id}")
         ResponseEnvelope<ZixiInput> get(@Param(value = "input_id") String inputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/inputs/zixi")
         ResponseEnvelope<PaginationResponse<ZixiInput>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

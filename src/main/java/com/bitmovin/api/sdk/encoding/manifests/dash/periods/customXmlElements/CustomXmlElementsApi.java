@@ -39,7 +39,6 @@ public class CustomXmlElementsApi {
     public static BitmovinApiBuilder<CustomXmlElementsApi> builder() {
         return new BitmovinApiBuilder<>(CustomXmlElementsApi.class);
     }
-
     /**
      * Add Custom XML Element to Period
      * 
@@ -56,7 +55,6 @@ public class CustomXmlElementsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Custom XML Element
      * 
@@ -73,7 +71,6 @@ public class CustomXmlElementsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Custom XML Element Details
      * 
@@ -90,7 +87,6 @@ public class CustomXmlElementsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List all Custom XML Elements of Period
      * 
@@ -124,17 +120,16 @@ public class CustomXmlElementsApi {
         }
     }
 
-    interface CustomXmlElementsApiClient {
-
+    interface CustomXmlElementsApiClient { 
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/periods/{period_id}/custom-xml-elements")
         ResponseEnvelope<CustomXmlElement> create(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, CustomXmlElement customXmlElement) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/manifests/dash/{manifest_id}/periods/{period_id}/custom-xml-elements/{custom_xml_element_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "custom_xml_element_id") String customXmlElementId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/periods/{period_id}/custom-xml-elements/{custom_xml_element_id}")
         ResponseEnvelope<CustomXmlElement> get(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "custom_xml_element_id") String customXmlElementId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/periods/{period_id}/custom-xml-elements")
         ResponseEnvelope<PaginationResponse<CustomXmlElement>> list(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

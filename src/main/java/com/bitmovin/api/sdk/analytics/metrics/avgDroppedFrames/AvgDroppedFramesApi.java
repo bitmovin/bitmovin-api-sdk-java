@@ -39,7 +39,6 @@ public class AvgDroppedFramesApi {
     public static BitmovinApiBuilder<AvgDroppedFramesApi> builder() {
         return new BitmovinApiBuilder<>(AvgDroppedFramesApi.class);
     }
-
     /**
      * Get metrics data
      * 
@@ -55,8 +54,7 @@ public class AvgDroppedFramesApi {
         }
     }
 
-    interface AvgDroppedFramesApiClient {
-
+    interface AvgDroppedFramesApiClient { 
         @RequestLine("POST /analytics/metrics/avg-dropped-frames")
         ResponseEnvelope<AnalyticsAvgDroppedFramesResponse> create(AnalyticsMetricsQueryRequest analyticsMetricsQueryRequest) throws BitmovinException;
     }

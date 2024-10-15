@@ -39,7 +39,6 @@ public class MaxApi {
     public static BitmovinApiBuilder<MaxApi> builder() {
         return new BitmovinApiBuilder<>(MaxApi.class);
     }
-
     /**
      * Max
      * 
@@ -55,8 +54,7 @@ public class MaxApi {
         }
     }
 
-    interface MaxApiClient {
-
+    interface MaxApiClient { 
         @RequestLine("POST /analytics/queries/max")
         ResponseEnvelope<AnalyticsResponse> create(AnalyticsMaxQueryRequest analyticsMaxQueryRequest) throws BitmovinException;
     }

@@ -42,7 +42,6 @@ public class RotateApi {
     public static BitmovinApiBuilder<RotateApi> builder() {
         return new BitmovinApiBuilder<>(RotateApi.class);
     }
-
     /**
      * Create Rotate Filter
      * 
@@ -57,7 +56,6 @@ public class RotateApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Rotate Filter
      * 
@@ -72,7 +70,6 @@ public class RotateApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Rotate Filter Details
      * 
@@ -87,7 +84,6 @@ public class RotateApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Rotate Filters
      * 
@@ -117,17 +113,16 @@ public class RotateApi {
         }
     }
 
-    interface RotateApiClient {
-
+    interface RotateApiClient { 
         @RequestLine("POST /encoding/filters/rotate")
         ResponseEnvelope<RotateFilter> create(RotateFilter rotateFilter) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/filters/rotate/{filter_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "filter_id") String filterId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/filters/rotate/{filter_id}")
         ResponseEnvelope<RotateFilter> get(@Param(value = "filter_id") String filterId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/filters/rotate")
         ResponseEnvelope<PaginationResponse<RotateFilter>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

@@ -45,7 +45,6 @@ public class ProgressiveMovApi {
     public static BitmovinApiBuilder<ProgressiveMovApi> builder() {
         return new BitmovinApiBuilder<>(ProgressiveMovApi.class);
     }
-
     /**
      * Add Progressive MOV muxing
      * 
@@ -61,7 +60,6 @@ public class ProgressiveMovApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Progressive MOV muxing
      * 
@@ -77,7 +75,6 @@ public class ProgressiveMovApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Progressive MOV muxing details
      * 
@@ -93,7 +90,6 @@ public class ProgressiveMovApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Progressive MOV muxings
      * 
@@ -125,17 +121,16 @@ public class ProgressiveMovApi {
         }
     }
 
-    interface ProgressiveMovApiClient {
-
+    interface ProgressiveMovApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/progressive-mov")
         ResponseEnvelope<ProgressiveMovMuxing> create(@Param(value = "encoding_id") String encodingId, ProgressiveMovMuxing progressiveMovMuxing) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/progressive-mov/{muxing_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/progressive-mov/{muxing_id}")
         ResponseEnvelope<ProgressiveMovMuxing> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/progressive-mov")
         ResponseEnvelope<PaginationResponse<ProgressiveMovMuxing>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

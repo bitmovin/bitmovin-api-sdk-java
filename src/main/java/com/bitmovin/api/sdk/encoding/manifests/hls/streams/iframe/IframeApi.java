@@ -39,7 +39,6 @@ public class IframeApi {
     public static BitmovinApiBuilder<IframeApi> builder() {
         return new BitmovinApiBuilder<>(IframeApi.class);
     }
-
     /**
      * Add I-frame playlist to variant stream
      * 
@@ -56,7 +55,6 @@ public class IframeApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete I-frame playlist
      * 
@@ -73,7 +71,6 @@ public class IframeApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * I-frame playlist Details
      * 
@@ -90,7 +87,6 @@ public class IframeApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List all I-frame playlists of a variant stream
      * 
@@ -124,17 +120,16 @@ public class IframeApi {
         }
     }
 
-    interface IframeApiClient {
-
+    interface IframeApiClient { 
         @RequestLine("POST /encoding/manifests/hls/{manifest_id}/streams/{stream_id}/iframe")
         ResponseEnvelope<IFramePlaylist> create(@Param(value = "manifest_id") String manifestId, @Param(value = "stream_id") String streamId, IFramePlaylist iframePlaylist) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/manifests/hls/{manifest_id}/streams/{stream_id}/iframe/{iframe_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "manifest_id") String manifestId, @Param(value = "stream_id") String streamId, @Param(value = "iframe_id") String iframeId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/hls/{manifest_id}/streams/{stream_id}/iframe/{iframe_id}")
         ResponseEnvelope<IFramePlaylist> get(@Param(value = "manifest_id") String manifestId, @Param(value = "stream_id") String streamId, @Param(value = "iframe_id") String iframeId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/hls/{manifest_id}/streams/{stream_id}/iframe")
         ResponseEnvelope<PaginationResponse<IFramePlaylist>> list(@Param(value = "manifest_id") String manifestId, @Param(value = "stream_id") String streamId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

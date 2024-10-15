@@ -39,7 +39,6 @@ public class UsageReportsApi {
     public static BitmovinApiBuilder<UsageReportsApi> builder() {
         return new BitmovinApiBuilder<>(UsageReportsApi.class);
     }
-
     /**
      * List Email Notifications (All Usage Reports)
      * 
@@ -69,8 +68,7 @@ public class UsageReportsApi {
         }
     }
 
-    interface UsageReportsApiClient {
-
+    interface UsageReportsApiClient { 
         @RequestLine("GET /notifications/emails/usage-reports")
         ResponseEnvelope<PaginationResponse<EmailNotification>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

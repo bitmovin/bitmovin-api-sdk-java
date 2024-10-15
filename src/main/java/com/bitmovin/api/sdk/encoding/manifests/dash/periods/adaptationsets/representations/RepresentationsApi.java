@@ -69,7 +69,6 @@ public class RepresentationsApi {
     public static BitmovinApiBuilder<RepresentationsApi> builder() {
         return new BitmovinApiBuilder<>(RepresentationsApi.class);
     }
-
     /**
      * List all DASH Representations
      * 
@@ -105,8 +104,7 @@ public class RepresentationsApi {
         }
     }
 
-    interface RepresentationsApiClient {
-
+    interface RepresentationsApiClient { 
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/representations")
         ResponseEnvelope<PaginationResponse<DashRepresentation>> list(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

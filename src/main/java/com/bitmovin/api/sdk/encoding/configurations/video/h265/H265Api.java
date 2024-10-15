@@ -42,7 +42,6 @@ public class H265Api {
     public static BitmovinApiBuilder<H265Api> builder() {
         return new BitmovinApiBuilder<>(H265Api.class);
     }
-
     /**
      * Create H265/HEVC Codec Configuration
      * 
@@ -57,7 +56,6 @@ public class H265Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete H265/HEVC Codec Configuration
      * 
@@ -72,7 +70,6 @@ public class H265Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * H265/HEVC Codec Configuration Details
      * 
@@ -87,7 +84,6 @@ public class H265Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List H265/HEVC Codec Configurations
      * 
@@ -117,17 +113,16 @@ public class H265Api {
         }
     }
 
-    interface H265ApiClient {
-
+    interface H265ApiClient { 
         @RequestLine("POST /encoding/configurations/video/h265")
         ResponseEnvelope<H265VideoConfiguration> create(H265VideoConfiguration h265VideoConfiguration) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/configurations/video/h265/{configuration_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/video/h265/{configuration_id}")
         ResponseEnvelope<H265VideoConfiguration> get(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/video/h265")
         ResponseEnvelope<PaginationResponse<H265VideoConfiguration>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

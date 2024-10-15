@@ -45,7 +45,6 @@ public class LiveApi {
     public static BitmovinApiBuilder<LiveApi> builder() {
         return new BitmovinApiBuilder<>(LiveApi.class);
     }
-
     /**
      * Create new live stream
      * 
@@ -60,7 +59,6 @@ public class LiveApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Stream
      * 
@@ -74,7 +72,6 @@ public class LiveApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Get live stream by id
      * 
@@ -89,7 +86,6 @@ public class LiveApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Get paginated list of live streams
      * 
@@ -118,7 +114,6 @@ public class LiveApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Partially update live stream by id
      * 
@@ -135,20 +130,19 @@ public class LiveApi {
         }
     }
 
-    interface LiveApiClient {
-
+    interface LiveApiClient { 
         @RequestLine("POST /streams/live")
         ResponseEnvelope<StreamsLiveResponse> create(StreamsLiveCreateRequest streamsLiveCreateRequest) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /streams/live/{stream_id}")
         void delete(@Param(value = "stream_id") String streamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /streams/live/{stream_id}")
         ResponseEnvelope<StreamsLiveResponse> get(@Param(value = "stream_id") String streamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /streams/live")
         ResponseEnvelope<PaginationResponse<StreamsLiveResponse>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
-    
+   
         @RequestLine("PATCH /streams/live/{stream_id}")
         ResponseEnvelope<StreamsLiveResponse> patchStreamsLive(@Param(value = "stream_id") String streamId, StreamsLiveUpdateRequest streamsLiveUpdateRequest) throws BitmovinException;
     }

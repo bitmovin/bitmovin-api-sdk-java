@@ -42,7 +42,6 @@ public class GcsServiceAccountApi {
     public static BitmovinApiBuilder<GcsServiceAccountApi> builder() {
         return new BitmovinApiBuilder<>(GcsServiceAccountApi.class);
     }
-
     /**
      * Create Service Account based GCS Output
      * 
@@ -57,7 +56,6 @@ public class GcsServiceAccountApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Service Account based GCS Output
      * 
@@ -72,7 +70,6 @@ public class GcsServiceAccountApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Service Account based GCS Output Details
      * 
@@ -87,7 +84,6 @@ public class GcsServiceAccountApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Service Account based GCS Outputs
      * 
@@ -117,17 +113,16 @@ public class GcsServiceAccountApi {
         }
     }
 
-    interface GcsServiceAccountApiClient {
-
+    interface GcsServiceAccountApiClient { 
         @RequestLine("POST /analytics/outputs/gcs-service-account")
         ResponseEnvelope<AnalyticsGcsServiceAccountOutput> create(AnalyticsGcsServiceAccountOutput analyticsGcsServiceAccountOutput) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /analytics/outputs/gcs-service-account/{output_id}")
         ResponseEnvelope<GcsServiceAccountOutput> delete(@Param(value = "output_id") String outputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /analytics/outputs/gcs-service-account/{output_id}")
         ResponseEnvelope<GcsServiceAccountOutput> get(@Param(value = "output_id") String outputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /analytics/outputs/gcs-service-account")
         ResponseEnvelope<PaginationResponse<AnalyticsGcsServiceAccountOutput>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

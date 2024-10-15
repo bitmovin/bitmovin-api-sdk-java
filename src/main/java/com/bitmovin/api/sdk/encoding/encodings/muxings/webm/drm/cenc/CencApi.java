@@ -42,7 +42,6 @@ public class CencApi {
     public static BitmovinApiBuilder<CencApi> builder() {
         return new BitmovinApiBuilder<>(CencApi.class);
     }
-
     /**
      * Add CENC DRM to a WebM muxing
      * 
@@ -59,7 +58,6 @@ public class CencApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete CENC DRM from a WebM muxing
      * 
@@ -76,7 +74,6 @@ public class CencApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * CENC DRM Details of a WebM muxing
      * 
@@ -93,7 +90,6 @@ public class CencApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List CENC DRMs of a WebM muxing
      * 
@@ -127,17 +123,16 @@ public class CencApi {
         }
     }
 
-    interface CencApiClient {
-
+    interface CencApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/webm/{muxing_id}/drm/cenc")
         ResponseEnvelope<CencDrm> create(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, CencDrm cencDrm) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/webm/{muxing_id}/drm/cenc/{drm_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @Param(value = "drm_id") String drmId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/webm/{muxing_id}/drm/cenc/{drm_id}")
         ResponseEnvelope<CencDrm> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @Param(value = "drm_id") String drmId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/webm/{muxing_id}/drm/cenc")
         ResponseEnvelope<PaginationResponse<CencDrm>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

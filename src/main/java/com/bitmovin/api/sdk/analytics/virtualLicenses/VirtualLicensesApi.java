@@ -39,7 +39,6 @@ public class VirtualLicensesApi {
     public static BitmovinApiBuilder<VirtualLicensesApi> builder() {
         return new BitmovinApiBuilder<>(VirtualLicensesApi.class);
     }
-
     /**
      * Create Analytics Virtual License
      * 
@@ -54,7 +53,6 @@ public class VirtualLicensesApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Analytics Virtual License
      * 
@@ -69,7 +67,6 @@ public class VirtualLicensesApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Analytics Virtual License
      * 
@@ -84,7 +81,6 @@ public class VirtualLicensesApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Analytics Virtual Licenses
      * 
@@ -113,7 +109,6 @@ public class VirtualLicensesApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Update Analytics Virtual License
      * 
@@ -130,20 +125,19 @@ public class VirtualLicensesApi {
         }
     }
 
-    interface VirtualLicensesApiClient {
-
+    interface VirtualLicensesApiClient { 
         @RequestLine("POST /analytics/virtual-licenses")
         ResponseEnvelope<AnalyticsVirtualLicense> create(AnalyticsVirtualLicenseRequest analyticsVirtualLicenseRequest) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /analytics/virtual-licenses/{virtual_license_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "virtual_license_id") String virtualLicenseId) throws BitmovinException;
-    
+   
         @RequestLine("GET /analytics/virtual-licenses/{virtual_license_id}")
         ResponseEnvelope<AnalyticsVirtualLicense> get(@Param(value = "virtual_license_id") String virtualLicenseId) throws BitmovinException;
-    
+   
         @RequestLine("GET /analytics/virtual-licenses")
         ResponseEnvelope<PaginationResponse<AnalyticsVirtualLicense>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
-    
+   
         @RequestLine("PUT /analytics/virtual-licenses/{virtual_license_id}")
         ResponseEnvelope<AnalyticsVirtualLicense> update(@Param(value = "virtual_license_id") String virtualLicenseId, AnalyticsVirtualLicenseRequest analyticsVirtualLicenseRequest) throws BitmovinException;
     }

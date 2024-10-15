@@ -42,7 +42,6 @@ public class H262Api {
     public static BitmovinApiBuilder<H262Api> builder() {
         return new BitmovinApiBuilder<>(H262Api.class);
     }
-
     /**
      * Create H262 Codec Configuration
      * 
@@ -57,7 +56,6 @@ public class H262Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete H262 Codec Configuration
      * 
@@ -72,7 +70,6 @@ public class H262Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * H262 Codec Configuration Details
      * 
@@ -87,7 +84,6 @@ public class H262Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List H262 Codec Configurations
      * 
@@ -117,17 +113,16 @@ public class H262Api {
         }
     }
 
-    interface H262ApiClient {
-
+    interface H262ApiClient { 
         @RequestLine("POST /encoding/configurations/video/h262")
         ResponseEnvelope<H262VideoConfiguration> create(H262VideoConfiguration h262VideoConfiguration) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/configurations/video/h262/{configuration_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/video/h262/{configuration_id}")
         ResponseEnvelope<H262VideoConfiguration> get(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/video/h262")
         ResponseEnvelope<PaginationResponse<H262VideoConfiguration>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

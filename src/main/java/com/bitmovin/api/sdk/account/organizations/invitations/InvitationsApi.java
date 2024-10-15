@@ -39,7 +39,6 @@ public class InvitationsApi {
     public static BitmovinApiBuilder<InvitationsApi> builder() {
         return new BitmovinApiBuilder<>(InvitationsApi.class);
     }
-
     /**
      * List all pending invitations of an org id
      * 
@@ -55,8 +54,7 @@ public class InvitationsApi {
         }
     }
 
-    interface InvitationsApiClient {
-
+    interface InvitationsApiClient { 
         @RequestLine("GET /account/organizations/{organization_id}/invitations")
         ResponseEnvelope<PaginationResponse<OrganizationPendingInvitation>> list(@Param(value = "organization_id") String organizationId) throws BitmovinException;
     }

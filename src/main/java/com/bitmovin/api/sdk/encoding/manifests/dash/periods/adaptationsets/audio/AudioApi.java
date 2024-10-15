@@ -39,7 +39,6 @@ public class AudioApi {
     public static BitmovinApiBuilder<AudioApi> builder() {
         return new BitmovinApiBuilder<>(AudioApi.class);
     }
-
     /**
      * Add Audio AdaptationSet
      * 
@@ -56,7 +55,6 @@ public class AudioApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Audio AdaptationSet
      * 
@@ -73,7 +71,6 @@ public class AudioApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Audio AdaptationSet Details
      * 
@@ -90,7 +87,6 @@ public class AudioApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List all Audio AdaptationSets
      * 
@@ -124,17 +120,16 @@ public class AudioApi {
         }
     }
 
-    interface AudioApiClient {
-
+    interface AudioApiClient { 
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/audio")
         ResponseEnvelope<AudioAdaptationSet> create(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, AudioAdaptationSet audioAdaptationSet) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/audio/{adaptationset_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/audio/{adaptationset_id}")
         ResponseEnvelope<AudioAdaptationSet> get(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/audio")
         ResponseEnvelope<PaginationResponse<AudioAdaptationSet>> list(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

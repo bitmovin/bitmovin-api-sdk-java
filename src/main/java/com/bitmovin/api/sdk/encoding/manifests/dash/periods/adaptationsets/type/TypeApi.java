@@ -39,7 +39,6 @@ public class TypeApi {
     public static BitmovinApiBuilder<TypeApi> builder() {
         return new BitmovinApiBuilder<>(TypeApi.class);
     }
-
     /**
      * Get adaptation set type
      * 
@@ -57,8 +56,7 @@ public class TypeApi {
         }
     }
 
-    interface TypeApiClient {
-
+    interface TypeApiClient { 
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/type")
         ResponseEnvelope<AdaptationSetTypeResponse> get(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId) throws BitmovinException;
     }

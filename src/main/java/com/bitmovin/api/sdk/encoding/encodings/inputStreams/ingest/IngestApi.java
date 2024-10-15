@@ -39,7 +39,6 @@ public class IngestApi {
     public static BitmovinApiBuilder<IngestApi> builder() {
         return new BitmovinApiBuilder<>(IngestApi.class);
     }
-
     /**
      * Add Ingest Input Stream
      * 
@@ -55,7 +54,6 @@ public class IngestApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Ingest Input Stream
      * 
@@ -71,7 +69,6 @@ public class IngestApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Ingest Input Stream Details
      * 
@@ -87,7 +84,6 @@ public class IngestApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Ingest Input Streams
      * 
@@ -119,17 +115,16 @@ public class IngestApi {
         }
     }
 
-    interface IngestApiClient {
-
+    interface IngestApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/input-streams/ingest")
         ResponseEnvelope<IngestInputStream> create(@Param(value = "encoding_id") String encodingId, IngestInputStream ingestInputStream) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/input-streams/ingest/{input_stream_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "input_stream_id") String inputStreamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/ingest/{input_stream_id}")
         ResponseEnvelope<IngestInputStream> get(@Param(value = "encoding_id") String encodingId, @Param(value = "input_stream_id") String inputStreamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/ingest")
         ResponseEnvelope<PaginationResponse<IngestInputStream>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

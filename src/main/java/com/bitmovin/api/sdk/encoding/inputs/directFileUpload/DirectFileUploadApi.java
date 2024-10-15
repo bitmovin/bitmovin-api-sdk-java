@@ -42,7 +42,6 @@ public class DirectFileUploadApi {
     public static BitmovinApiBuilder<DirectFileUploadApi> builder() {
         return new BitmovinApiBuilder<>(DirectFileUploadApi.class);
     }
-
     /**
      * Create Direct File Upload Input
      * 
@@ -57,7 +56,6 @@ public class DirectFileUploadApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Direct File Upload Input
      * 
@@ -72,7 +70,6 @@ public class DirectFileUploadApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Direct File Upload Input Details
      * 
@@ -87,7 +84,6 @@ public class DirectFileUploadApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Direct File Upload Inputs
      * 
@@ -117,17 +113,16 @@ public class DirectFileUploadApi {
         }
     }
 
-    interface DirectFileUploadApiClient {
-
+    interface DirectFileUploadApiClient { 
         @RequestLine("POST /encoding/inputs/direct-file-upload")
         ResponseEnvelope<DirectFileUploadInput> create(DirectFileUploadInput directFileUploadInput) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/inputs/direct-file-upload/{input_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "input_id") String inputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/inputs/direct-file-upload/{input_id}")
         ResponseEnvelope<DirectFileUploadInput> get(@Param(value = "input_id") String inputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/inputs/direct-file-upload")
         ResponseEnvelope<PaginationResponse<DirectFileUploadInput>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

@@ -42,7 +42,6 @@ public class CropApi {
     public static BitmovinApiBuilder<CropApi> builder() {
         return new BitmovinApiBuilder<>(CropApi.class);
     }
-
     /**
      * Create Crop Filter
      * 
@@ -57,7 +56,6 @@ public class CropApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Crop Filter
      * 
@@ -72,7 +70,6 @@ public class CropApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Crop Filter Details
      * 
@@ -87,7 +84,6 @@ public class CropApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Crop Filters
      * 
@@ -117,17 +113,16 @@ public class CropApi {
         }
     }
 
-    interface CropApiClient {
-
+    interface CropApiClient { 
         @RequestLine("POST /encoding/filters/crop")
         ResponseEnvelope<CropFilter> create(CropFilter cropFilter) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/filters/crop/{filter_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "filter_id") String filterId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/filters/crop/{filter_id}")
         ResponseEnvelope<CropFilter> get(@Param(value = "filter_id") String filterId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/filters/crop")
         ResponseEnvelope<PaginationResponse<CropFilter>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

@@ -39,7 +39,6 @@ public class DrmApi {
     public static BitmovinApiBuilder<DrmApi> builder() {
         return new BitmovinApiBuilder<>(DrmApi.class);
     }
-
     /**
      * Add DRM MP4 Representation
      * 
@@ -57,7 +56,6 @@ public class DrmApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete DRM MP4 Representation
      * 
@@ -75,7 +73,6 @@ public class DrmApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * DRM MP4 Representation Details
      * 
@@ -93,7 +90,6 @@ public class DrmApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List all DRM MP4 Representations
      * 
@@ -129,17 +125,16 @@ public class DrmApi {
         }
     }
 
-    interface DrmApiClient {
-
+    interface DrmApiClient { 
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/representations/mp4/drm")
         ResponseEnvelope<DashMp4DrmRepresentation> create(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, DashMp4DrmRepresentation dashMp4DrmRepresentation) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/representations/mp4/drm/{representation_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, @Param(value = "representation_id") String representationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/representations/mp4/drm/{representation_id}")
         ResponseEnvelope<DashMp4DrmRepresentation> get(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, @Param(value = "representation_id") String representationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets/{adaptationset_id}/representations/mp4/drm")
         ResponseEnvelope<PaginationResponse<DashMp4DrmRepresentation>> list(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @Param(value = "adaptationset_id") String adaptationsetId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

@@ -39,7 +39,6 @@ public class VodApi {
     public static BitmovinApiBuilder<VodApi> builder() {
         return new BitmovinApiBuilder<>(VodApi.class);
     }
-
     /**
      * Create a Simple Encoding VOD Job
      * Deprecation notice: use the more capable full API instead. Get started at https://developer.bitmovin.com/encoding/docs/java-sdk 
@@ -56,7 +55,6 @@ public class VodApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Simple Encoding VOD Job details
      * Get the details of a Simple VOD Encoding Job. Deprecation notice: use the more capable full API instead. Get started at https://developer.bitmovin.com/encoding/docs/java-sdk 
@@ -73,7 +71,6 @@ public class VodApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List all Simple Encoding VOD Jobs
      * Deprecation notice: use the more capable full API instead. Get started at https://developer.bitmovin.com/encoding/docs/java-sdk 
@@ -107,14 +104,13 @@ public class VodApi {
         }
     }
 
-    interface VodApiClient {
-
+    interface VodApiClient { 
         @RequestLine("POST /encoding/simple/jobs/vod")
         ResponseEnvelope<SimpleEncodingVodJobResponse> create(SimpleEncodingVodJobRequest simpleEncodingVodJobRequest) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/simple/jobs/vod/{simple_encoding_job_id}")
         ResponseEnvelope<SimpleEncodingVodJobResponse> get(@Param(value = "simple_encoding_job_id") String simpleEncodingJobId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/simple/jobs/vod")
         ResponseEnvelope<PaginationResponse<SimpleEncodingVodJobResponse>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

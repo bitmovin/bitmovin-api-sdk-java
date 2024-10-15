@@ -42,7 +42,6 @@ public class MxfApi {
     public static BitmovinApiBuilder<MxfApi> builder() {
         return new BitmovinApiBuilder<>(MxfApi.class);
     }
-
     /**
      * Add MXF muxing
      * 
@@ -58,7 +57,6 @@ public class MxfApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete MXF muxing
      * 
@@ -74,7 +72,6 @@ public class MxfApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * MXF muxing details
      * 
@@ -90,7 +87,6 @@ public class MxfApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List MXF muxings
      * 
@@ -122,17 +118,16 @@ public class MxfApi {
         }
     }
 
-    interface MxfApiClient {
-
+    interface MxfApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/mxf")
         ResponseEnvelope<MxfMuxing> create(@Param(value = "encoding_id") String encodingId, MxfMuxing mxfMuxing) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/mxf/{muxing_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/mxf/{muxing_id}")
         ResponseEnvelope<MxfMuxing> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/mxf")
         ResponseEnvelope<PaginationResponse<MxfMuxing>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

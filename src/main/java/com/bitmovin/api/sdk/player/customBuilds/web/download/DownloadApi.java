@@ -39,7 +39,6 @@ public class DownloadApi {
     public static BitmovinApiBuilder<DownloadApi> builder() {
         return new BitmovinApiBuilder<>(DownloadApi.class);
     }
-
     /**
      * Custom Web Player Build Download Link
      * 
@@ -55,8 +54,7 @@ public class DownloadApi {
         }
     }
 
-    interface DownloadApiClient {
-
+    interface DownloadApiClient { 
         @RequestLine("GET /player/custom-builds/web/{custom_build_id}/download")
         ResponseEnvelope<CustomPlayerBuildDownload> get(@Param(value = "custom_build_id") String customBuildId) throws BitmovinException;
     }

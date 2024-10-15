@@ -39,7 +39,6 @@ public class PermissionsApi {
     public static BitmovinApiBuilder<PermissionsApi> builder() {
         return new BitmovinApiBuilder<>(PermissionsApi.class);
     }
-
     /**
      * Set Group Permissions
      * 
@@ -56,7 +55,6 @@ public class PermissionsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Permission
      * 
@@ -73,7 +71,6 @@ public class PermissionsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Get Group Permissions
      * 
@@ -90,14 +87,13 @@ public class PermissionsApi {
         }
     }
 
-    interface PermissionsApiClient {
-
+    interface PermissionsApiClient { 
         @RequestLine("POST /account/organizations/{organization_id}/groups/{group_id}/permissions")
         ResponseEnvelope<Acl> create(@Param(value = "organization_id") String organizationId, @Param(value = "group_id") String groupId, Acl acl) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /account/organizations/{organization_id}/groups/{group_id}/permissions/{permission_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "organization_id") String organizationId, @Param(value = "group_id") String groupId, @Param(value = "permission_id") String permissionId) throws BitmovinException;
-    
+   
         @RequestLine("GET /account/organizations/{organization_id}/groups/{group_id}/permissions")
         ResponseEnvelope<PaginationResponse<Acl>> list(@Param(value = "organization_id") String organizationId, @Param(value = "group_id") String groupId) throws BitmovinException;
     }

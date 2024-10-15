@@ -39,7 +39,6 @@ public class DolbyVisionApi {
     public static BitmovinApiBuilder<DolbyVisionApi> builder() {
         return new BitmovinApiBuilder<>(DolbyVisionApi.class);
     }
-
     /**
      * Add Dolby Vision Metadata
      * 
@@ -56,7 +55,6 @@ public class DolbyVisionApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Dolby Vision Metadata
      * 
@@ -73,7 +71,6 @@ public class DolbyVisionApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Dolby Vision Metadata Details
      * 
@@ -90,7 +87,6 @@ public class DolbyVisionApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Dolby Vision Metadata
      * 
@@ -124,17 +120,16 @@ public class DolbyVisionApi {
         }
     }
 
-    interface DolbyVisionApiClient {
-
+    interface DolbyVisionApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/streams/{stream_id}/hdr/dolby-vision")
         ResponseEnvelope<DolbyVisionMetadata> create(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, DolbyVisionMetadata dolbyVisionMetadata) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/streams/{stream_id}/hdr/dolby-vision/{hdr_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, @Param(value = "hdr_id") String hdrId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/streams/{stream_id}/hdr/dolby-vision/{hdr_id}")
         ResponseEnvelope<DolbyVisionMetadata> get(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, @Param(value = "hdr_id") String hdrId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/streams/{stream_id}/hdr/dolby-vision")
         ResponseEnvelope<PaginationResponse<DolbyVisionMetadata>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

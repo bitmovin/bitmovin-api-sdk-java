@@ -39,7 +39,6 @@ public class CustomdataApi {
     public static BitmovinApiBuilder<CustomdataApi> builder() {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
-
     /**
      * Denoise hqdn3d Filter Custom Data
      * 
@@ -55,8 +54,7 @@ public class CustomdataApi {
         }
     }
 
-    interface CustomdataApiClient {
-
+    interface CustomdataApiClient { 
         @RequestLine("GET /encoding/filters/denoise-hqdn3d/{filter_id}/customData")
         ResponseEnvelope<CustomData> getCustomData(@Param(value = "filter_id") String filterId) throws BitmovinException;
     }

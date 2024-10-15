@@ -48,7 +48,6 @@ public class DashApi {
     public static BitmovinApiBuilder<DashApi> builder() {
         return new BitmovinApiBuilder<>(DashApi.class);
     }
-
     /**
      * Create Custom DASH Manifest
      * A Custom DASH Manifest gives you full control over its contents. Add Periods, Adaptation Sets, Representations, Content Protections or Custom XML Elements via the respective endpoints. If you need a simpler solution, create a Default Manifest resource instead. See [documentation](https://developer.bitmovin.com/encoding/docs/default-vs-custom-manifest) page for a comparison
@@ -63,7 +62,6 @@ public class DashApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete DASH Manifest
      * 
@@ -78,7 +76,6 @@ public class DashApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * DASH Manifest Details
      * 
@@ -93,7 +90,6 @@ public class DashApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Manifest Start Details
      * 
@@ -108,7 +104,6 @@ public class DashApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List DASH Manifests
      * 
@@ -137,7 +132,6 @@ public class DashApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Start DASH manifest generation
      * 
@@ -168,7 +162,6 @@ public class DashApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * DASH manifest generation status
      * 
@@ -183,7 +176,6 @@ public class DashApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Stop DASH manifest generation
      * 
@@ -199,32 +191,31 @@ public class DashApi {
         }
     }
 
-    interface DashApiClient {
-
+    interface DashApiClient { 
         @RequestLine("POST /encoding/manifests/dash")
         ResponseEnvelope<DashManifest> create(DashManifest dashManifest) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/manifests/dash/{manifest_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}")
         ResponseEnvelope<DashManifest> get(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/start")
         ResponseEnvelope<StartManifestRequest> getStartRequest(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/dash")
         ResponseEnvelope<PaginationResponse<DashManifest>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
-    
+   
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/start")
         ResponseEnvelope<BitmovinResponse> start(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
 
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/start")
         ResponseEnvelope<BitmovinResponse> start(@Param(value = "manifest_id") String manifestId, StartManifestRequest startManifestRequest) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/status")
         ResponseEnvelope<Task> status(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
-    
+   
         @RequestLine("POST /encoding/manifests/dash/{manifest_id}/stop")
         ResponseEnvelope<BitmovinResponse> stop(@Param(value = "manifest_id") String manifestId) throws BitmovinException;
     }

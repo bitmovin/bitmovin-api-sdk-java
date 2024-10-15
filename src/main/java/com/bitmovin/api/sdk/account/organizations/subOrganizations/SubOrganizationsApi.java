@@ -39,7 +39,6 @@ public class SubOrganizationsApi {
     public static BitmovinApiBuilder<SubOrganizationsApi> builder() {
         return new BitmovinApiBuilder<>(SubOrganizationsApi.class);
     }
-
     /**
      * Organizations under given parent organization
      * 
@@ -71,8 +70,7 @@ public class SubOrganizationsApi {
         }
     }
 
-    interface SubOrganizationsApiClient {
-
+    interface SubOrganizationsApiClient { 
         @RequestLine("GET /account/organizations/{organization_id}/sub-organizations")
         ResponseEnvelope<PaginationResponse<Organization>> list(@Param(value = "organization_id") String organizationId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

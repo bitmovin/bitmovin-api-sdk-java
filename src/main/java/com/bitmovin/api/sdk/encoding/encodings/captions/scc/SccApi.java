@@ -42,7 +42,6 @@ public class SccApi {
     public static BitmovinApiBuilder<SccApi> builder() {
         return new BitmovinApiBuilder<>(SccApi.class);
     }
-
     /**
      * Convert SCC captions
      * 
@@ -58,7 +57,6 @@ public class SccApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Convert SCC captions
      * 
@@ -74,7 +72,6 @@ public class SccApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Convert SCC captions Details
      * 
@@ -90,7 +87,6 @@ public class SccApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Convert SCC captions
      * 
@@ -122,17 +118,16 @@ public class SccApi {
         }
     }
 
-    interface SccApiClient {
-
+    interface SccApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/captions/scc")
         ResponseEnvelope<ConvertSccCaption> create(@Param(value = "encoding_id") String encodingId, ConvertSccCaption convertSccCaption) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/captions/scc/{captions_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "captions_id") String captionsId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/captions/scc/{captions_id}")
         ResponseEnvelope<ConvertSccCaption> get(@Param(value = "encoding_id") String encodingId, @Param(value = "captions_id") String captionsId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/captions/scc")
         ResponseEnvelope<PaginationResponse<ConvertSccCaption>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

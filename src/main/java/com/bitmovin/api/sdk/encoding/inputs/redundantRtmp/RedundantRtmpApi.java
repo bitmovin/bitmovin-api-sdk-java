@@ -39,7 +39,6 @@ public class RedundantRtmpApi {
     public static BitmovinApiBuilder<RedundantRtmpApi> builder() {
         return new BitmovinApiBuilder<>(RedundantRtmpApi.class);
     }
-
     /**
      * Create Redundant RTMP Input
      * 
@@ -54,7 +53,6 @@ public class RedundantRtmpApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Redundant RTMP Input
      * 
@@ -69,7 +67,6 @@ public class RedundantRtmpApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Redundant RTMP Input Details
      * 
@@ -84,7 +81,6 @@ public class RedundantRtmpApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Redundant RTMP Inputs
      * 
@@ -114,17 +110,16 @@ public class RedundantRtmpApi {
         }
     }
 
-    interface RedundantRtmpApiClient {
-
+    interface RedundantRtmpApiClient { 
         @RequestLine("POST /encoding/inputs/redundant-rtmp")
         ResponseEnvelope<RedundantRtmpInput> create(RedundantRtmpInput redundantRtmpInput) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/inputs/redundant-rtmp/{input_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "input_id") String inputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/inputs/redundant-rtmp/{input_id}")
         ResponseEnvelope<RedundantRtmpInput> get(@Param(value = "input_id") String inputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/inputs/redundant-rtmp")
         ResponseEnvelope<PaginationResponse<RedundantRtmpInput>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

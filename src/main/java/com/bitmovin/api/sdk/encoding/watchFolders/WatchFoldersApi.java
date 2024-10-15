@@ -39,7 +39,6 @@ public class WatchFoldersApi {
     public static BitmovinApiBuilder<WatchFoldersApi> builder() {
         return new BitmovinApiBuilder<>(WatchFoldersApi.class);
     }
-
     /**
      * Create Watch Folder
      * 
@@ -54,7 +53,6 @@ public class WatchFoldersApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Watch Folder
      * 
@@ -69,7 +67,6 @@ public class WatchFoldersApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Watch Folder details
      * 
@@ -84,7 +81,6 @@ public class WatchFoldersApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List all Watch Folders
      * 
@@ -113,7 +109,6 @@ public class WatchFoldersApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Start Watch Folder
      * 
@@ -128,7 +123,6 @@ public class WatchFoldersApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Stop Watch Folder
      * 
@@ -144,23 +138,22 @@ public class WatchFoldersApi {
         }
     }
 
-    interface WatchFoldersApiClient {
-
+    interface WatchFoldersApiClient { 
         @RequestLine("POST /encoding/watch-folders")
         ResponseEnvelope<WatchFolder> create(WatchFolder watchFolder) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/watch-folders/{watch_folder_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "watch_folder_id") String watchFolderId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/watch-folders/{watch_folder_id}")
         ResponseEnvelope<WatchFolder> get(@Param(value = "watch_folder_id") String watchFolderId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/watch-folders")
         ResponseEnvelope<PaginationResponse<WatchFolder>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
-    
+   
         @RequestLine("POST /encoding/watch-folders/{watch_folder_id}/start")
         ResponseEnvelope<BitmovinResponse> start(@Param(value = "watch_folder_id") String watchFolderId) throws BitmovinException;
-    
+   
         @RequestLine("POST /encoding/watch-folders/{watch_folder_id}/stop")
         ResponseEnvelope<BitmovinResponse> stop(@Param(value = "watch_folder_id") String watchFolderId) throws BitmovinException;
     }

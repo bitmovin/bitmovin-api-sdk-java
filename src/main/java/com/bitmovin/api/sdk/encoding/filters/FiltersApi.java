@@ -90,7 +90,6 @@ public class FiltersApi {
     public static BitmovinApiBuilder<FiltersApi> builder() {
         return new BitmovinApiBuilder<>(FiltersApi.class);
     }
-
     /**
      * Get Filter Details
      * 
@@ -105,7 +104,6 @@ public class FiltersApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List all Filters
      * 
@@ -135,11 +133,10 @@ public class FiltersApi {
         }
     }
 
-    interface FiltersApiClient {
-
+    interface FiltersApiClient { 
         @RequestLine("GET /encoding/filters/{filter_id}")
         ResponseEnvelope<Filter> get(@Param(value = "filter_id") String filterId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/filters")
         ResponseEnvelope<PaginationResponse<Filter>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

@@ -39,7 +39,6 @@ public class PsnrApi {
     public static BitmovinApiBuilder<PsnrApi> builder() {
         return new BitmovinApiBuilder<>(PsnrApi.class);
     }
-
     /**
      * PSNR quality metrics
      * Activates PSNR quality metrics for the selected stream
@@ -55,7 +54,6 @@ public class PsnrApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Get Stream PSNR metrics
      * 
@@ -89,11 +87,10 @@ public class PsnrApi {
         }
     }
 
-    interface PsnrApiClient {
-
+    interface PsnrApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/streams/{stream_id}/qc/psnr")
         ResponseEnvelope<BitmovinResponse> create(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/streams/{stream_id}/qc/psnr")
         ResponseEnvelope<PaginationResponse<PsnrQualityMetric>> list(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

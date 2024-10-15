@@ -39,7 +39,6 @@ public class DomainRestrictionApi {
     public static BitmovinApiBuilder<DomainRestrictionApi> builder() {
         return new BitmovinApiBuilder<>(DomainRestrictionApi.class);
     }
-
     /**
      * Create new streams domain restriction
      * 
@@ -54,7 +53,6 @@ public class DomainRestrictionApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete streams domain restriction by id
      * 
@@ -68,7 +66,6 @@ public class DomainRestrictionApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Get streams domain restriction config by id
      * 
@@ -83,7 +80,6 @@ public class DomainRestrictionApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Get paginated list of domain restriction configurations
      * 
@@ -112,7 +108,6 @@ public class DomainRestrictionApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Partially update streams domain restriction by id
      * 
@@ -129,20 +124,19 @@ public class DomainRestrictionApi {
         }
     }
 
-    interface DomainRestrictionApiClient {
-
+    interface DomainRestrictionApiClient { 
         @RequestLine("POST /streams/config/domain-restriction/")
         ResponseEnvelope<StreamsDomainRestrictionResponse> create(StreamsDomainRestrictionCreateRequest streamsDomainRestrictionCreateRequest) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /streams/config/domain-restriction/{domain_restriction_id}")
         void delete(@Param(value = "domain_restriction_id") String domainRestrictionId) throws BitmovinException;
-    
+   
         @RequestLine("GET /streams/config/domain-restriction/{domain_restriction_id}")
         ResponseEnvelope<StreamsDomainRestrictionResponse> get(@Param(value = "domain_restriction_id") String domainRestrictionId) throws BitmovinException;
-    
+   
         @RequestLine("GET /streams/config/domain-restriction/")
         ResponseEnvelope<PaginationResponse<StreamsDomainRestrictionResponse>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
-    
+   
         @RequestLine("PATCH /streams/config/domain-restriction/{domain_restriction_id}")
         ResponseEnvelope<StreamsDomainRestrictionResponse> patchStreamsDomainRestriction(@Param(value = "domain_restriction_id") String domainRestrictionId, StreamsDomainRestrictionUpdateRequest streamsDomainRestrictionUpdateRequest) throws BitmovinException;
     }

@@ -39,7 +39,6 @@ public class StddevApi {
     public static BitmovinApiBuilder<StddevApi> builder() {
         return new BitmovinApiBuilder<>(StddevApi.class);
     }
-
     /**
      * Stddev
      * 
@@ -55,8 +54,7 @@ public class StddevApi {
         }
     }
 
-    interface StddevApiClient {
-
+    interface StddevApiClient { 
         @RequestLine("POST /analytics/queries/stddev")
         ResponseEnvelope<AnalyticsResponse> create(AnalyticsStddevQueryRequest analyticsStddevQueryRequest) throws BitmovinException;
     }

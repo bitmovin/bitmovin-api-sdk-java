@@ -42,7 +42,6 @@ public class TextApi {
     public static BitmovinApiBuilder<TextApi> builder() {
         return new BitmovinApiBuilder<>(TextApi.class);
     }
-
     /**
      * Create Text Filter
      * 
@@ -57,7 +56,6 @@ public class TextApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Text Filter
      * 
@@ -72,7 +70,6 @@ public class TextApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Text Filter Details
      * 
@@ -87,7 +84,6 @@ public class TextApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Text Filters
      * 
@@ -117,17 +113,16 @@ public class TextApi {
         }
     }
 
-    interface TextApiClient {
-
+    interface TextApiClient { 
         @RequestLine("POST /encoding/filters/text")
         ResponseEnvelope<TextFilter> create(TextFilter textFilter) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/filters/text/{filter_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "filter_id") String filterId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/filters/text/{filter_id}")
         ResponseEnvelope<TextFilter> get(@Param(value = "filter_id") String filterId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/filters/text")
         ResponseEnvelope<PaginationResponse<TextFilter>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

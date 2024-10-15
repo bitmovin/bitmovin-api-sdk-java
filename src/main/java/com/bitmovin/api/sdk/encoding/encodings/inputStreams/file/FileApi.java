@@ -39,7 +39,6 @@ public class FileApi {
     public static BitmovinApiBuilder<FileApi> builder() {
         return new BitmovinApiBuilder<>(FileApi.class);
     }
-
     /**
      * Add File input stream
      * 
@@ -55,7 +54,6 @@ public class FileApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete File stream
      * 
@@ -71,7 +69,6 @@ public class FileApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * File input stream details
      * 
@@ -87,7 +84,6 @@ public class FileApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List File input stream
      * 
@@ -119,17 +115,16 @@ public class FileApi {
         }
     }
 
-    interface FileApiClient {
-
+    interface FileApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/input-streams/file")
         ResponseEnvelope<FileInputStream> create(@Param(value = "encoding_id") String encodingId, FileInputStream fileInputStream) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/input-streams/file/{input_stream_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "input_stream_id") String inputStreamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/file/{input_stream_id}")
         ResponseEnvelope<FileInputStream> get(@Param(value = "encoding_id") String encodingId, @Param(value = "input_stream_id") String inputStreamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/file")
         ResponseEnvelope<PaginationResponse<FileInputStream>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

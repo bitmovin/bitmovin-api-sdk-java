@@ -42,7 +42,6 @@ public class MjpegApi {
     public static BitmovinApiBuilder<MjpegApi> builder() {
         return new BitmovinApiBuilder<>(MjpegApi.class);
     }
-
     /**
      * Create MJPEG Codec Configuration
      * 
@@ -57,7 +56,6 @@ public class MjpegApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete MJPEG Codec Configuration
      * 
@@ -72,7 +70,6 @@ public class MjpegApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * MJPEG Codec Configuration Details
      * 
@@ -87,7 +84,6 @@ public class MjpegApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List MJPEG Configurations
      * 
@@ -117,17 +113,16 @@ public class MjpegApi {
         }
     }
 
-    interface MjpegApiClient {
-
+    interface MjpegApiClient { 
         @RequestLine("POST /encoding/configurations/video/mjpeg")
         ResponseEnvelope<MjpegVideoConfiguration> create(MjpegVideoConfiguration mjpegVideoConfiguration) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/configurations/video/mjpeg/{configuration_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/video/mjpeg/{configuration_id}")
         ResponseEnvelope<MjpegVideoConfiguration> get(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/video/mjpeg")
         ResponseEnvelope<PaginationResponse<MjpegVideoConfiguration>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

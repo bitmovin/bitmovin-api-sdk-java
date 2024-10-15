@@ -23,5 +23,4 @@ public class CustomBuildsApi {
         return new BitmovinApiBuilder<>(CustomBuildsApi.class);
     }
 
-    
 }

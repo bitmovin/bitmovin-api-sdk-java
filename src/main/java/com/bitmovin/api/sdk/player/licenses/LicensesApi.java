@@ -48,7 +48,6 @@ public class LicensesApi {
     public static BitmovinApiBuilder<LicensesApi> builder() {
         return new BitmovinApiBuilder<>(LicensesApi.class);
     }
-
     /**
      * Create Player License
      * 
@@ -63,7 +62,6 @@ public class LicensesApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Get License
      * 
@@ -78,7 +76,6 @@ public class LicensesApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Player Licenses
      * 
@@ -108,14 +105,13 @@ public class LicensesApi {
         }
     }
 
-    interface LicensesApiClient {
-
+    interface LicensesApiClient { 
         @RequestLine("POST /player/licenses")
         ResponseEnvelope<PlayerLicense> create(PlayerLicense playerLicense) throws BitmovinException;
-    
+   
         @RequestLine("GET /player/licenses/{license_id}")
         ResponseEnvelope<PlayerLicense> get(@Param(value = "license_id") String licenseId) throws BitmovinException;
-    
+   
         @RequestLine("GET /player/licenses")
         ResponseEnvelope<PaginationResponse<PlayerLicense>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

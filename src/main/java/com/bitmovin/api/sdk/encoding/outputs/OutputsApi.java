@@ -81,7 +81,6 @@ public class OutputsApi {
     public static BitmovinApiBuilder<OutputsApi> builder() {
         return new BitmovinApiBuilder<>(OutputsApi.class);
     }
-
     /**
      * Check output permissions (S3 only)
      * 
@@ -112,7 +111,6 @@ public class OutputsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Get Output Details
      * 
@@ -127,7 +125,6 @@ public class OutputsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List all Outputs
      * 
@@ -157,17 +154,16 @@ public class OutputsApi {
         }
     }
 
-    interface OutputsApiClient {
-
+    interface OutputsApiClient { 
         @RequestLine("POST /encoding/outputs/{output_id}/check-permissions")
         ResponseEnvelope<CheckOutputPermissionsResponse> checkPermissions(@Param(value = "output_id") String outputId) throws BitmovinException;
 
         @RequestLine("POST /encoding/outputs/{output_id}/check-permissions")
         ResponseEnvelope<CheckOutputPermissionsResponse> checkPermissions(@Param(value = "output_id") String outputId, CheckOutputPermissionsRequest checkOutputPermissionsRequest) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/outputs/{output_id}")
         ResponseEnvelope<Output> get(@Param(value = "output_id") String outputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/outputs")
         ResponseEnvelope<PaginationResponse<Output>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

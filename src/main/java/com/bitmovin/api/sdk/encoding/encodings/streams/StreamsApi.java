@@ -75,7 +75,6 @@ public class StreamsApi {
     public static BitmovinApiBuilder<StreamsApi> builder() {
         return new BitmovinApiBuilder<>(StreamsApi.class);
     }
-
     /**
      * Add Stream
      * 
@@ -91,7 +90,6 @@ public class StreamsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Stream
      * 
@@ -107,7 +105,6 @@ public class StreamsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Stream Details
      * 
@@ -123,7 +120,6 @@ public class StreamsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Streams
      * 
@@ -155,17 +151,16 @@ public class StreamsApi {
         }
     }
 
-    interface StreamsApiClient {
-
+    interface StreamsApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/streams")
         ResponseEnvelope<Stream> create(@Param(value = "encoding_id") String encodingId, Stream stream) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/streams/{stream_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/streams/{stream_id}")
         ResponseEnvelope<Stream> get(@Param(value = "encoding_id") String encodingId, @Param(value = "stream_id") String streamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/streams")
         ResponseEnvelope<PaginationResponse<Stream>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

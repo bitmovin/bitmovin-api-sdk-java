@@ -23,5 +23,4 @@ public class CdnApi {
         return new BitmovinApiBuilder<>(CdnApi.class);
     }
 
-    
 }

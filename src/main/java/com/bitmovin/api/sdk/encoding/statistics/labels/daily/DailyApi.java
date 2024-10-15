@@ -39,7 +39,6 @@ public class DailyApi {
     public static BitmovinApiBuilder<DailyApi> builder() {
         return new BitmovinApiBuilder<>(DailyApi.class);
     }
-
     /**
      * Get Daily Statistics per Label
      * 
@@ -68,7 +67,6 @@ public class DailyApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Get daily statistics per label within specific dates
      * 
@@ -102,11 +100,10 @@ public class DailyApi {
         }
     }
 
-    interface DailyApiClient {
-
+    interface DailyApiClient { 
         @RequestLine("GET /encoding/statistics/labels/daily")
         ResponseEnvelope<PaginationResponse<DailyStatisticsPerLabel>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/statistics/labels/daily/{from}/{to}")
         ResponseEnvelope<PaginationResponse<DailyStatisticsPerLabel>> listByDateRange(@Param(value = "from", expander = BitmovinDateExpander.class) Date from, @Param(value = "to", expander = BitmovinDateExpander.class) Date to, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

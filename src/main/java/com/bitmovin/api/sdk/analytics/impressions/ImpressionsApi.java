@@ -45,7 +45,6 @@ public class ImpressionsApi {
     public static BitmovinApiBuilder<ImpressionsApi> builder() {
         return new BitmovinApiBuilder<>(ImpressionsApi.class);
     }
-
     /**
      * List impressions
      * 
@@ -61,8 +60,7 @@ public class ImpressionsApi {
         }
     }
 
-    interface ImpressionsApiClient {
-
+    interface ImpressionsApiClient { 
         @RequestLine("POST /analytics/impressions")
         ResponseEnvelope<AnalyticsImpressionsResponse> getImpressions(AnalyticsImpressionsQuery analyticsImpressionsQuery) throws BitmovinException;
     }

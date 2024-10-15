@@ -39,7 +39,6 @@ public class ErrorApi {
     public static BitmovinApiBuilder<ErrorApi> builder() {
         return new BitmovinApiBuilder<>(ErrorApi.class);
     }
-
     /**
      * Add &#39;Manifest Error&#39; Webhook (All Manifests)
      * Add a new webhook notification that triggers if a manifest generation fails. A maximum number of 5 webhooks is allowed
@@ -54,7 +53,6 @@ public class ErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Add &#39;Manifest Error&#39; Webhook Notification (Specific Manifest)
      * 
@@ -70,7 +68,6 @@ public class ErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete &#39;Manifest Error&#39; Webhook
      * 
@@ -85,7 +82,6 @@ public class ErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Get &#39;Manifest Error&#39; Webhooks (All Manifests)
      * Get all webhook notifications triggering when a manifest generation fails
@@ -99,7 +95,6 @@ public class ErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Replace &#39;Manifest Error&#39; Webhook Notification
      * 
@@ -116,20 +111,19 @@ public class ErrorApi {
         }
     }
 
-    interface ErrorApiClient {
-
+    interface ErrorApiClient { 
         @RequestLine("POST /notifications/webhooks/encoding/manifest/error")
         ResponseEnvelope<Webhook> create(Webhook webhook) throws BitmovinException;
-    
+   
         @RequestLine("POST /notifications/webhooks/encoding/manifest/{manifest_id}/error")
         ResponseEnvelope<Webhook> createByManifestId(@Param(value = "manifest_id") String manifestId, Webhook webhook) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /notifications/webhooks/encoding/manifest/error/{notification_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "notification_id") String notificationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /notifications/webhooks/encoding/manifest/error")
         ResponseEnvelope<PaginationResponse<Webhook>> list() throws BitmovinException;
-    
+   
         @RequestLine("PUT /notifications/webhooks/encoding/manifest/error/{notification_id}")
         ResponseEnvelope<Webhook> update(@Param(value = "notification_id") String notificationId, Webhook webhook) throws BitmovinException;
     }

@@ -39,7 +39,6 @@ public class TimecodeTrackApi {
     public static BitmovinApiBuilder<TimecodeTrackApi> builder() {
         return new BitmovinApiBuilder<>(TimecodeTrackApi.class);
     }
-
     /**
      * Add Timecode Track Trimming Input Stream
      * 
@@ -55,7 +54,6 @@ public class TimecodeTrackApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Timecode Track Trimming Input Stream
      * 
@@ -71,7 +69,6 @@ public class TimecodeTrackApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Timecode Track Trimming Input Stream Details
      * 
@@ -87,7 +84,6 @@ public class TimecodeTrackApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Timecode Track Trimming Input Streams
      * 
@@ -119,17 +115,16 @@ public class TimecodeTrackApi {
         }
     }
 
-    interface TimecodeTrackApiClient {
-
+    interface TimecodeTrackApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/input-streams/trimming/timecode-track")
         ResponseEnvelope<TimecodeTrackTrimmingInputStream> create(@Param(value = "encoding_id") String encodingId, TimecodeTrackTrimmingInputStream timecodeTrackTrimmingInputStream) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/input-streams/trimming/timecode-track/{input_stream_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "input_stream_id") String inputStreamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/trimming/timecode-track/{input_stream_id}")
         ResponseEnvelope<TimecodeTrackTrimmingInputStream> get(@Param(value = "encoding_id") String encodingId, @Param(value = "input_stream_id") String inputStreamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/trimming/timecode-track")
         ResponseEnvelope<PaginationResponse<TimecodeTrackTrimmingInputStream>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

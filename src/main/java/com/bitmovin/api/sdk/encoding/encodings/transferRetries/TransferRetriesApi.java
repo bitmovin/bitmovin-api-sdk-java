@@ -39,7 +39,6 @@ public class TransferRetriesApi {
     public static BitmovinApiBuilder<TransferRetriesApi> builder() {
         return new BitmovinApiBuilder<>(TransferRetriesApi.class);
     }
-
     /**
      * Transfer retry
      * Triggers a retry attempt for a failed transfer. This is possible within 72 hours after the initial failure.
@@ -54,7 +53,6 @@ public class TransferRetriesApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Transfer retry Details
      * 
@@ -70,7 +68,6 @@ public class TransferRetriesApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List transfer-retries
      * 
@@ -102,14 +99,13 @@ public class TransferRetriesApi {
         }
     }
 
-    interface TransferRetriesApiClient {
-
+    interface TransferRetriesApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/transfer-retries")
         ResponseEnvelope<TransferRetry> create(@Param(value = "encoding_id") String encodingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/transfer-retries/{transfer_retry_id}")
         ResponseEnvelope<TransferRetry> get(@Param(value = "encoding_id") String encodingId, @Param(value = "transfer_retry_id") String transferRetryId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/transfer-retries")
         ResponseEnvelope<PaginationResponse<TransferRetry>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

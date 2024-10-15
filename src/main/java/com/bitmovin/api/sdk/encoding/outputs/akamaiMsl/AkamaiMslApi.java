@@ -42,7 +42,6 @@ public class AkamaiMslApi {
     public static BitmovinApiBuilder<AkamaiMslApi> builder() {
         return new BitmovinApiBuilder<>(AkamaiMslApi.class);
     }
-
     /**
      * Create Akamai MSL Output
      * 
@@ -57,7 +56,6 @@ public class AkamaiMslApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Akamai MSL Output
      * 
@@ -72,7 +70,6 @@ public class AkamaiMslApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Akamai MSL Output Details
      * 
@@ -87,7 +84,6 @@ public class AkamaiMslApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Akamai MSL Outputs
      * 
@@ -117,17 +113,16 @@ public class AkamaiMslApi {
         }
     }
 
-    interface AkamaiMslApiClient {
-
+    interface AkamaiMslApiClient { 
         @RequestLine("POST /encoding/outputs/akamai-msl")
         ResponseEnvelope<AkamaiMslOutput> create(AkamaiMslOutput akamaiMslOutput) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/outputs/akamai-msl/{output_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "output_id") String outputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/outputs/akamai-msl/{output_id}")
         ResponseEnvelope<AkamaiMslOutput> get(@Param(value = "output_id") String outputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/outputs/akamai-msl")
         ResponseEnvelope<PaginationResponse<AkamaiMslOutput>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

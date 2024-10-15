@@ -42,7 +42,6 @@ public class VorbisApi {
     public static BitmovinApiBuilder<VorbisApi> builder() {
         return new BitmovinApiBuilder<>(VorbisApi.class);
     }
-
     /**
      * Create Vorbis Codec Configuration
      * 
@@ -57,7 +56,6 @@ public class VorbisApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Vorbis Codec Configuration
      * 
@@ -72,7 +70,6 @@ public class VorbisApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Vorbis Codec Configuration Details
      * 
@@ -87,7 +84,6 @@ public class VorbisApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Vorbis Configurations
      * 
@@ -117,17 +113,16 @@ public class VorbisApi {
         }
     }
 
-    interface VorbisApiClient {
-
+    interface VorbisApiClient { 
         @RequestLine("POST /encoding/configurations/audio/vorbis")
         ResponseEnvelope<VorbisAudioConfiguration> create(VorbisAudioConfiguration vorbisAudioConfiguration) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/configurations/audio/vorbis/{configuration_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/audio/vorbis/{configuration_id}")
         ResponseEnvelope<VorbisAudioConfiguration> get(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/audio/vorbis")
         ResponseEnvelope<PaginationResponse<VorbisAudioConfiguration>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

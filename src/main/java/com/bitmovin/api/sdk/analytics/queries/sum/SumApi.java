@@ -39,7 +39,6 @@ public class SumApi {
     public static BitmovinApiBuilder<SumApi> builder() {
         return new BitmovinApiBuilder<>(SumApi.class);
     }
-
     /**
      * Sum
      * 
@@ -55,8 +54,7 @@ public class SumApi {
         }
     }
 
-    interface SumApiClient {
-
+    interface SumApiClient { 
         @RequestLine("POST /analytics/queries/sum")
         ResponseEnvelope<AnalyticsResponse> create(AnalyticsSumQueryRequest analyticsSumQueryRequest) throws BitmovinException;
     }

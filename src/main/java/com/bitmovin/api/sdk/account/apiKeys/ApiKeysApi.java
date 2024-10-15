@@ -39,7 +39,6 @@ public class ApiKeysApi {
     public static BitmovinApiBuilder<ApiKeysApi> builder() {
         return new BitmovinApiBuilder<>(ApiKeysApi.class);
     }
-
     /**
      * Create Api Key
      * 
@@ -53,7 +52,6 @@ public class ApiKeysApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Api Key
      * 
@@ -68,7 +66,6 @@ public class ApiKeysApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Get Api Key
      * 
@@ -83,7 +80,6 @@ public class ApiKeysApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Api Keys
      * 
@@ -98,17 +94,16 @@ public class ApiKeysApi {
         }
     }
 
-    interface ApiKeysApiClient {
-
+    interface ApiKeysApiClient { 
         @RequestLine("POST /account/api-keys")
         ResponseEnvelope<AccountApiKey> create() throws BitmovinException;
-    
+   
         @RequestLine("DELETE /account/api-keys/{api_key_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "api_key_id") String apiKeyId) throws BitmovinException;
-    
+   
         @RequestLine("GET /account/api-keys/{api_key_id}")
         ResponseEnvelope<AccountApiKey> get(@Param(value = "api_key_id") String apiKeyId) throws BitmovinException;
-    
+   
         @RequestLine("GET /account/api-keys")
         ResponseEnvelope<PaginationResponse<AccountApiKey>> list() throws BitmovinException;
     }

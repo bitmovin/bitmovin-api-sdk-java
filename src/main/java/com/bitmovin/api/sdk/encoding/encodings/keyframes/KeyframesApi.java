@@ -39,7 +39,6 @@ public class KeyframesApi {
     public static BitmovinApiBuilder<KeyframesApi> builder() {
         return new BitmovinApiBuilder<>(KeyframesApi.class);
     }
-
     /**
      * Create Keyframes
      * 
@@ -55,7 +54,6 @@ public class KeyframesApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Keyframe
      * 
@@ -71,7 +69,6 @@ public class KeyframesApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Keyframe Details
      * 
@@ -87,7 +84,6 @@ public class KeyframesApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List all Keyframes
      * 
@@ -119,17 +115,16 @@ public class KeyframesApi {
         }
     }
 
-    interface KeyframesApiClient {
-
+    interface KeyframesApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/keyframes")
         ResponseEnvelope<Keyframe> create(@Param(value = "encoding_id") String encodingId, Keyframe keyframe) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/keyframes/{keyframe_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "keyframe_id") String keyframeId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/keyframes/{keyframe_id}")
         ResponseEnvelope<Keyframe> get(@Param(value = "encoding_id") String encodingId, @Param(value = "keyframe_id") String keyframeId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/keyframes")
         ResponseEnvelope<PaginationResponse<Keyframe>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

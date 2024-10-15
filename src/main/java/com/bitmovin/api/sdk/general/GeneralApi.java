@@ -23,5 +23,4 @@ public class GeneralApi {
         return new BitmovinApiBuilder<>(GeneralApi.class);
     }
 
-    
 }

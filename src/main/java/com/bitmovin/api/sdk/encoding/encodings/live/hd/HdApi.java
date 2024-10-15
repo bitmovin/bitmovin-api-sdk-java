@@ -39,7 +39,6 @@ public class HdApi {
     public static BitmovinApiBuilder<HdApi> builder() {
         return new BitmovinApiBuilder<>(HdApi.class);
     }
-
     /**
      * Live Encoding Start Details
      * 
@@ -54,7 +53,6 @@ public class HdApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Start HD Options Live Encoding
      * 
@@ -71,11 +69,10 @@ public class HdApi {
         }
     }
 
-    interface HdApiClient {
-
+    interface HdApiClient { 
         @RequestLine("GET /encoding/encodings/{encoding_id}/live/hd/start")
         ResponseEnvelope<StartLiveChannelEncodingRequest> getStartRequest(@Param(value = "encoding_id") String encodingId) throws BitmovinException;
-    
+   
         @RequestLine("POST /encoding/encodings/{encoding_id}/live/hd/start")
         ResponseEnvelope<BitmovinResponse> start(@Param(value = "encoding_id") String encodingId, StartLiveChannelEncodingRequest startLiveChannelEncodingRequest) throws BitmovinException;
     }

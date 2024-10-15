@@ -45,7 +45,6 @@ public class EncodingsApi {
     public static BitmovinApiBuilder<EncodingsApi> builder() {
         return new BitmovinApiBuilder<>(EncodingsApi.class);
     }
-
     /**
      * List Email Notifications (Specific Encoding)
      * 
@@ -77,8 +76,7 @@ public class EncodingsApi {
         }
     }
 
-    interface EncodingsApiClient {
-
+    interface EncodingsApiClient { 
         @RequestLine("GET /notifications/emails/encoding/encodings/{encoding_id}")
         ResponseEnvelope<PaginationResponse<EmailNotificationWithStreamConditions>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

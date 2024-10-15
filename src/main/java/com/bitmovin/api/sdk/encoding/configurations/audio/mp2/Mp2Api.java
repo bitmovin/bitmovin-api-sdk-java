@@ -42,7 +42,6 @@ public class Mp2Api {
     public static BitmovinApiBuilder<Mp2Api> builder() {
         return new BitmovinApiBuilder<>(Mp2Api.class);
     }
-
     /**
      * Create MP2 Codec Configuration
      * 
@@ -57,7 +56,6 @@ public class Mp2Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete MP2 Codec Configuration
      * 
@@ -72,7 +70,6 @@ public class Mp2Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * MP2 Codec Configuration Details
      * 
@@ -87,7 +84,6 @@ public class Mp2Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List MP2 Configurations
      * 
@@ -117,17 +113,16 @@ public class Mp2Api {
         }
     }
 
-    interface Mp2ApiClient {
-
+    interface Mp2ApiClient { 
         @RequestLine("POST /encoding/configurations/audio/mp2")
         ResponseEnvelope<Mp2AudioConfiguration> create(Mp2AudioConfiguration mp2AudioConfiguration) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/configurations/audio/mp2/{configuration_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/audio/mp2/{configuration_id}")
         ResponseEnvelope<Mp2AudioConfiguration> get(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/audio/mp2")
         ResponseEnvelope<PaginationResponse<Mp2AudioConfiguration>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

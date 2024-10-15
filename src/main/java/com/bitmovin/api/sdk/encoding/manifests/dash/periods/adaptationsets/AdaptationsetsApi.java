@@ -60,7 +60,6 @@ public class AdaptationsetsApi {
     public static BitmovinApiBuilder<AdaptationsetsApi> builder() {
         return new BitmovinApiBuilder<>(AdaptationsetsApi.class);
     }
-
     /**
      * List all AdaptationSets
      * 
@@ -94,8 +93,7 @@ public class AdaptationsetsApi {
         }
     }
 
-    interface AdaptationsetsApiClient {
-
+    interface AdaptationsetsApiClient { 
         @RequestLine("GET /encoding/manifests/dash/{manifest_id}/periods/{period_id}/adaptationsets")
         ResponseEnvelope<PaginationResponse<AdaptationSet>> list(@Param(value = "manifest_id") String manifestId, @Param(value = "period_id") String periodId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

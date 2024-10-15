@@ -39,7 +39,6 @@ public class TypeApi {
     public static BitmovinApiBuilder<TypeApi> builder() {
         return new BitmovinApiBuilder<>(TypeApi.class);
     }
-
     /**
      * HLS Media Type
      * 
@@ -56,8 +55,7 @@ public class TypeApi {
         }
     }
 
-    interface TypeApiClient {
-
+    interface TypeApiClient { 
         @RequestLine("GET /encoding/manifests/hls/{manifest_id}/media/{media_id}/type")
         ResponseEnvelope<MediaInfoTypeResponse> get(@Param(value = "manifest_id") String manifestId, @Param(value = "media_id") String mediaId) throws BitmovinException;
     }

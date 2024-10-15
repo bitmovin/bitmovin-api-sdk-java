@@ -39,7 +39,6 @@ public class StopApi {
     public static BitmovinApiBuilder<StopApi> builder() {
         return new BitmovinApiBuilder<>(StopApi.class);
     }
-
     /**
      * Stops currently running Inserted Content
      * 
@@ -54,8 +53,7 @@ public class StopApi {
         }
     }
 
-    interface StopApiClient {
-
+    interface StopApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/live/insertable-content/stop")
         void create(@Param(value = "encoding_id") String encodingId) throws BitmovinException;
     }

@@ -39,7 +39,6 @@ public class DailyApi {
     public static BitmovinApiBuilder<DailyApi> builder() {
         return new BitmovinApiBuilder<>(DailyApi.class);
     }
-
     /**
      * List daily live encoding statistics within specific dates
      * 
@@ -56,8 +55,7 @@ public class DailyApi {
         }
     }
 
-    interface DailyApiClient {
-
+    interface DailyApiClient { 
         @RequestLine("GET /encoding/statistics/encodings/live/daily/{from}/{to}")
         ResponseEnvelope<PaginationResponse<EncodingStatisticsLive>> listByDateRange(@Param(value = "from", expander = BitmovinDateExpander.class) Date from, @Param(value = "to", expander = BitmovinDateExpander.class) Date to) throws BitmovinException;
     }

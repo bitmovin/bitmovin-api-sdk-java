@@ -42,7 +42,6 @@ public class AzureApi {
     public static BitmovinApiBuilder<AzureApi> builder() {
         return new BitmovinApiBuilder<>(AzureApi.class);
     }
-
     /**
      * Create Azure Output
      * 
@@ -57,7 +56,6 @@ public class AzureApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Azure Output
      * 
@@ -72,7 +70,6 @@ public class AzureApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Azure Output Details
      * 
@@ -87,7 +84,6 @@ public class AzureApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Azure Outputs
      * 
@@ -117,17 +113,16 @@ public class AzureApi {
         }
     }
 
-    interface AzureApiClient {
-
+    interface AzureApiClient { 
         @RequestLine("POST /encoding/outputs/azure")
         ResponseEnvelope<AzureOutput> create(AzureOutput azureOutput) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/outputs/azure/{output_id}")
         ResponseEnvelope<AzureOutput> delete(@Param(value = "output_id") String outputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/outputs/azure/{output_id}")
         ResponseEnvelope<AzureOutput> get(@Param(value = "output_id") String outputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/outputs/azure")
         ResponseEnvelope<PaginationResponse<AzureOutput>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

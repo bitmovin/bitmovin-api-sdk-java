@@ -42,7 +42,6 @@ public class DolbyAtmosApi {
     public static BitmovinApiBuilder<DolbyAtmosApi> builder() {
         return new BitmovinApiBuilder<>(DolbyAtmosApi.class);
     }
-
     /**
      * Create Dolby Atmos Configuration
      * 
@@ -57,7 +56,6 @@ public class DolbyAtmosApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Dolby Atmos Codec Configuration
      * 
@@ -72,7 +70,6 @@ public class DolbyAtmosApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Dolby Atmos Codec Configuration Details
      * 
@@ -87,7 +84,6 @@ public class DolbyAtmosApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Dolby Atmos Configurations
      * 
@@ -117,17 +113,16 @@ public class DolbyAtmosApi {
         }
     }
 
-    interface DolbyAtmosApiClient {
-
+    interface DolbyAtmosApiClient { 
         @RequestLine("POST /encoding/configurations/audio/dolby-atmos")
         ResponseEnvelope<DolbyAtmosAudioConfiguration> create(DolbyAtmosAudioConfiguration dolbyAtmosAudioConfiguration) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/configurations/audio/dolby-atmos/{configuration_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/audio/dolby-atmos/{configuration_id}")
         ResponseEnvelope<DolbyAtmosAudioConfiguration> get(@Param(value = "configuration_id") String configurationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/configurations/audio/dolby-atmos")
         ResponseEnvelope<PaginationResponse<DolbyAtmosAudioConfiguration>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

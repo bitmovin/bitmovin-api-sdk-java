@@ -42,7 +42,6 @@ public class LiveMediaIngestApi {
     public static BitmovinApiBuilder<LiveMediaIngestApi> builder() {
         return new BitmovinApiBuilder<>(LiveMediaIngestApi.class);
     }
-
     /**
      * Create Live Media Ingest Output
      * 
@@ -57,7 +56,6 @@ public class LiveMediaIngestApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Live Media Ingest Output
      * 
@@ -72,7 +70,6 @@ public class LiveMediaIngestApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Live Media Ingest Output Details
      * 
@@ -87,7 +84,6 @@ public class LiveMediaIngestApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Live Media Ingest Outputs
      * 
@@ -117,17 +113,16 @@ public class LiveMediaIngestApi {
         }
     }
 
-    interface LiveMediaIngestApiClient {
-
+    interface LiveMediaIngestApiClient { 
         @RequestLine("POST /encoding/outputs/live-media-ingest")
         ResponseEnvelope<LiveMediaIngestOutput> create(LiveMediaIngestOutput liveMediaIngestOutput) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/outputs/live-media-ingest/{output_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "output_id") String outputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/outputs/live-media-ingest/{output_id}")
         ResponseEnvelope<LiveMediaIngestOutput> get(@Param(value = "output_id") String outputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/outputs/live-media-ingest")
         ResponseEnvelope<PaginationResponse<LiveMediaIngestOutput>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

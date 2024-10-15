@@ -39,7 +39,6 @@ public class LiveInputStreamChangedApi {
     public static BitmovinApiBuilder<LiveInputStreamChangedApi> builder() {
         return new BitmovinApiBuilder<>(LiveInputStreamChangedApi.class);
     }
-
     /**
      * Add Live Input Stream Changed Webhook Notification (All Encodings)
      * 
@@ -54,7 +53,6 @@ public class LiveInputStreamChangedApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Add Live Input Stream Changed Webhook Notification (Specific Encoding)
      * 
@@ -70,7 +68,6 @@ public class LiveInputStreamChangedApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Replace Live Input Stream Changed Webhook Notification
      * 
@@ -87,14 +84,13 @@ public class LiveInputStreamChangedApi {
         }
     }
 
-    interface LiveInputStreamChangedApiClient {
-
+    interface LiveInputStreamChangedApiClient { 
         @RequestLine("POST /notifications/webhooks/encoding/encodings/live-input-stream-changed")
         ResponseEnvelope<WebhookNotificationWithStreamConditions> create(WebhookNotificationWithStreamConditionsRequest webhookNotificationWithStreamConditionsRequest) throws BitmovinException;
-    
+   
         @RequestLine("POST /notifications/webhooks/encoding/encodings/{encoding_id}/live-input-stream-changed")
         ResponseEnvelope<WebhookNotificationWithStreamConditions> createByEncodingId(@Param(value = "encoding_id") String encodingId, WebhookNotificationWithStreamConditionsRequest webhookNotificationWithStreamConditionsRequest) throws BitmovinException;
-    
+   
         @RequestLine("PUT /notifications/webhooks/encoding/encodings/live-input-stream-changed/{notification_id}")
         ResponseEnvelope<WebhookNotificationWithStreamConditions> update(@Param(value = "notification_id") String notificationId, WebhookNotificationWithStreamConditionsRequest webhookNotificationWithStreamConditionsRequest) throws BitmovinException;
     }

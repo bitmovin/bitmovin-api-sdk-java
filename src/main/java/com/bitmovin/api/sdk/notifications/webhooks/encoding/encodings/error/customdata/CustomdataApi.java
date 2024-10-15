@@ -39,7 +39,6 @@ public class CustomdataApi {
     public static BitmovinApiBuilder<CustomdataApi> builder() {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
-
     /**
      * &#39;Encoding Error&#39; Webhook Custom Data for a specific Encoding
      * 
@@ -55,7 +54,6 @@ public class CustomdataApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * &#39;Encoding Error&#39; Webhook Custom Data
      * 
@@ -71,11 +69,10 @@ public class CustomdataApi {
         }
     }
 
-    interface CustomdataApiClient {
-
+    interface CustomdataApiClient { 
         @RequestLine("GET /notifications/webhooks/encoding/encodings/{encoding_id}/error/{webhook_id}/customData")
         ResponseEnvelope<CustomData> getCustomDataByEncodingIdAndWebhookId(@Param(value = "encoding_id") String encodingId, @Param(value = "webhook_id") String webhookId) throws BitmovinException;
-    
+   
         @RequestLine("GET /notifications/webhooks/encoding/encodings/error/{webhook_id}/customData")
         ResponseEnvelope<CustomData> getCustomDataByWebhookId(@Param(value = "webhook_id") String webhookId) throws BitmovinException;
     }

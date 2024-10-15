@@ -42,7 +42,6 @@ public class ConformApi {
     public static BitmovinApiBuilder<ConformApi> builder() {
         return new BitmovinApiBuilder<>(ConformApi.class);
     }
-
     /**
      * Create Conform Filter
      * Retains all frames of the input. The playback speed of the output will be slower or faster.
@@ -57,7 +56,6 @@ public class ConformApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Conform Filter
      * 
@@ -72,7 +70,6 @@ public class ConformApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Conform Filter Details
      * 
@@ -87,7 +84,6 @@ public class ConformApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Conform Filters
      * 
@@ -117,17 +113,16 @@ public class ConformApi {
         }
     }
 
-    interface ConformApiClient {
-
+    interface ConformApiClient { 
         @RequestLine("POST /encoding/filters/conform")
         ResponseEnvelope<ConformFilter> create(ConformFilter conformFilter) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/filters/conform/{filter_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "filter_id") String filterId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/filters/conform/{filter_id}")
         ResponseEnvelope<ConformFilter> get(@Param(value = "filter_id") String filterId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/filters/conform")
         ResponseEnvelope<PaginationResponse<ConformFilter>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

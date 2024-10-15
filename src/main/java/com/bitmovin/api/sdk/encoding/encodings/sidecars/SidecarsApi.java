@@ -45,7 +45,6 @@ public class SidecarsApi {
     public static BitmovinApiBuilder<SidecarsApi> builder() {
         return new BitmovinApiBuilder<>(SidecarsApi.class);
     }
-
     /**
      * Add Sidecar
      * 
@@ -61,7 +60,6 @@ public class SidecarsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Sidecar
      * 
@@ -77,7 +75,6 @@ public class SidecarsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Sidecar Details
      * 
@@ -93,7 +90,6 @@ public class SidecarsApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Sidecars
      * 
@@ -125,17 +121,16 @@ public class SidecarsApi {
         }
     }
 
-    interface SidecarsApiClient {
-
+    interface SidecarsApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/sidecars")
         ResponseEnvelope<SidecarFile> create(@Param(value = "encoding_id") String encodingId, SidecarFile sidecarFile) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/sidecars/{sidecar_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "sidecar_id") String sidecarId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/sidecars/{sidecar_id}")
         ResponseEnvelope<SidecarFile> get(@Param(value = "encoding_id") String encodingId, @Param(value = "sidecar_id") String sidecarId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/sidecars")
         ResponseEnvelope<PaginationResponse<SidecarFile>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

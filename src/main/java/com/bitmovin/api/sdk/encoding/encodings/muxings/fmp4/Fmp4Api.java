@@ -48,7 +48,6 @@ public class Fmp4Api {
     public static BitmovinApiBuilder<Fmp4Api> builder() {
         return new BitmovinApiBuilder<>(Fmp4Api.class);
     }
-
     /**
      * Add fMP4 muxing
      * 
@@ -64,7 +63,6 @@ public class Fmp4Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete fMP4 muxing
      * 
@@ -80,7 +78,6 @@ public class Fmp4Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * fMP4 muxing details
      * 
@@ -96,7 +93,6 @@ public class Fmp4Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List fMP4 muxings
      * 
@@ -128,17 +124,16 @@ public class Fmp4Api {
         }
     }
 
-    interface Fmp4ApiClient {
-
+    interface Fmp4ApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/muxings/fmp4")
         ResponseEnvelope<Fmp4Muxing> create(@Param(value = "encoding_id") String encodingId, Fmp4Muxing fmp4Muxing) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/muxings/fmp4/{muxing_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/fmp4/{muxing_id}")
         ResponseEnvelope<Fmp4Muxing> get(@Param(value = "encoding_id") String encodingId, @Param(value = "muxing_id") String muxingId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/muxings/fmp4")
         ResponseEnvelope<PaginationResponse<Fmp4Muxing>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

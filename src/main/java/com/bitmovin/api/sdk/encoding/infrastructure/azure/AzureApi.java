@@ -42,7 +42,6 @@ public class AzureApi {
     public static BitmovinApiBuilder<AzureApi> builder() {
         return new BitmovinApiBuilder<>(AzureApi.class);
     }
-
     /**
      * Add Azure Account
      * 
@@ -57,7 +56,6 @@ public class AzureApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Azure Account
      * 
@@ -72,7 +70,6 @@ public class AzureApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Azure Account Details
      * 
@@ -87,7 +84,6 @@ public class AzureApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Azure Accounts
      * 
@@ -117,17 +113,16 @@ public class AzureApi {
         }
     }
 
-    interface AzureApiClient {
-
+    interface AzureApiClient { 
         @RequestLine("POST /encoding/infrastructure/azure")
         ResponseEnvelope<AzureAccount> create(AzureAccount azureAccount) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/infrastructure/azure/{infrastructure_id}")
         ResponseEnvelope<AzureAccount> delete(@Param(value = "infrastructure_id") String infrastructureId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/infrastructure/azure/{infrastructure_id}")
         ResponseEnvelope<AzureAccount> get(@Param(value = "infrastructure_id") String infrastructureId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/infrastructure/azure")
         ResponseEnvelope<PaginationResponse<AzureAccount>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

@@ -39,7 +39,6 @@ public class MinApi {
     public static BitmovinApiBuilder<MinApi> builder() {
         return new BitmovinApiBuilder<>(MinApi.class);
     }
-
     /**
      * Min
      * 
@@ -55,8 +54,7 @@ public class MinApi {
         }
     }
 
-    interface MinApiClient {
-
+    interface MinApiClient { 
         @RequestLine("POST /analytics/ads/queries/min")
         ResponseEnvelope<AnalyticsResponse> create(AdAnalyticsMinQueryRequest adAnalyticsMinQueryRequest) throws BitmovinException;
     }

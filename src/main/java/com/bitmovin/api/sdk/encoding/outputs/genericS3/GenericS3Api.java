@@ -42,7 +42,6 @@ public class GenericS3Api {
     public static BitmovinApiBuilder<GenericS3Api> builder() {
         return new BitmovinApiBuilder<>(GenericS3Api.class);
     }
-
     /**
      * Create Generic S3 Output
      * 
@@ -57,7 +56,6 @@ public class GenericS3Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Generic S3 Output
      * 
@@ -72,7 +70,6 @@ public class GenericS3Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Generic S3 Output Details
      * 
@@ -87,7 +84,6 @@ public class GenericS3Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Generic S3 Outputs
      * 
@@ -117,17 +113,16 @@ public class GenericS3Api {
         }
     }
 
-    interface GenericS3ApiClient {
-
+    interface GenericS3ApiClient { 
         @RequestLine("POST /encoding/outputs/generic-s3")
         ResponseEnvelope<GenericS3Output> create(GenericS3Output genericS3Output) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/outputs/generic-s3/{output_id}")
         ResponseEnvelope<GenericS3Output> delete(@Param(value = "output_id") String outputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/outputs/generic-s3/{output_id}")
         ResponseEnvelope<GenericS3Output> get(@Param(value = "output_id") String outputId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/outputs/generic-s3")
         ResponseEnvelope<PaginationResponse<GenericS3Output>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

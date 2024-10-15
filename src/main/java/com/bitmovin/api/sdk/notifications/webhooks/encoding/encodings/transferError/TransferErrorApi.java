@@ -42,7 +42,6 @@ public class TransferErrorApi {
     public static BitmovinApiBuilder<TransferErrorApi> builder() {
         return new BitmovinApiBuilder<>(TransferErrorApi.class);
     }
-
     /**
      * Add &#39;Encoding Transfer Error&#39; Webhook
      * Add a new webhook notification that triggers if a transfer fails. A maximum number of 5 webhooks is allowed
@@ -57,7 +56,6 @@ public class TransferErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Add &#39;Encoding Transfer Error&#39; Webhook for a specific Encoding
      * 
@@ -73,7 +71,6 @@ public class TransferErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete &#39;Encoding Transfer Error&#39; Webhook for a specific Encoding
      * 
@@ -89,7 +86,6 @@ public class TransferErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete &#39;Encoding Transfer Error&#39; Webhook
      * 
@@ -104,7 +100,6 @@ public class TransferErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * &#39;Encoding Transfer Error&#39; Webhook Details for a specific Encoding
      * 
@@ -120,7 +115,6 @@ public class TransferErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * &#39;Encoding Transfer Error&#39; Webhook Details
      * 
@@ -135,7 +129,6 @@ public class TransferErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List &#39;Encoding Transfer Error&#39; Webhooks
      * 
@@ -164,7 +157,6 @@ public class TransferErrorApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List &#39;Encoding Transfer Error&#39; Webhooks for a specific Encoding
      * 
@@ -196,29 +188,28 @@ public class TransferErrorApi {
         }
     }
 
-    interface TransferErrorApiClient {
-
+    interface TransferErrorApiClient { 
         @RequestLine("POST /notifications/webhooks/encoding/encodings/transfer-error")
         ResponseEnvelope<Webhook> create(Webhook webhook) throws BitmovinException;
-    
+   
         @RequestLine("POST /notifications/webhooks/encoding/encodings/{encoding_id}/transfer-error")
         ResponseEnvelope<Webhook> createByEncodingId(@Param(value = "encoding_id") String encodingId, Webhook webhook) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /notifications/webhooks/encoding/encodings/{encoding_id}/transfer-error/{webhook_id}")
         ResponseEnvelope<BitmovinResponse> deleteByEncodingIdAndWebhookId(@Param(value = "encoding_id") String encodingId, @Param(value = "webhook_id") String webhookId) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /notifications/webhooks/encoding/encodings/transfer-error/{webhook_id}")
         ResponseEnvelope<BitmovinResponse> deleteByWebhookId(@Param(value = "webhook_id") String webhookId) throws BitmovinException;
-    
+   
         @RequestLine("GET /notifications/webhooks/encoding/encodings/{encoding_id}/transfer-error/{webhook_id}")
         ResponseEnvelope<Webhook> getByEncodingIdAndWebhookId(@Param(value = "encoding_id") String encodingId, @Param(value = "webhook_id") String webhookId) throws BitmovinException;
-    
+   
         @RequestLine("GET /notifications/webhooks/encoding/encodings/transfer-error/{webhook_id}")
         ResponseEnvelope<Webhook> getByWebhookId(@Param(value = "webhook_id") String webhookId) throws BitmovinException;
-    
+   
         @RequestLine("GET /notifications/webhooks/encoding/encodings/transfer-error")
         ResponseEnvelope<PaginationResponse<Webhook>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
-    
+   
         @RequestLine("GET /notifications/webhooks/encoding/encodings/{encoding_id}/transfer-error")
         ResponseEnvelope<PaginationResponse<Webhook>> listByEncodingId(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

@@ -29,5 +29,4 @@ public class PlayerApi {
         return new BitmovinApiBuilder<>(PlayerApi.class);
     }
 
-    
 }

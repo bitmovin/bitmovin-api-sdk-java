@@ -39,7 +39,6 @@ public class DolbyVisionMetadataIngestApi {
     public static BitmovinApiBuilder<DolbyVisionMetadataIngestApi> builder() {
         return new BitmovinApiBuilder<>(DolbyVisionMetadataIngestApi.class);
     }
-
     /**
      * Add Dolby Vision Metadata Ingest Input Stream
      * 
@@ -55,7 +54,6 @@ public class DolbyVisionMetadataIngestApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Dolby Vision Metadata Ingest Input Stream
      * 
@@ -71,7 +69,6 @@ public class DolbyVisionMetadataIngestApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Dolby Vision Metadata Ingest Input Stream Details
      * 
@@ -87,7 +84,6 @@ public class DolbyVisionMetadataIngestApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Dolby Vision Metadata Ingest Input Streams
      * 
@@ -119,17 +115,16 @@ public class DolbyVisionMetadataIngestApi {
         }
     }
 
-    interface DolbyVisionMetadataIngestApiClient {
-
+    interface DolbyVisionMetadataIngestApiClient { 
         @RequestLine("POST /encoding/encodings/{encoding_id}/input-streams/sidecar/dolby-vision-metadata-ingest")
         ResponseEnvelope<DolbyVisionMetadataIngestInputStream> create(@Param(value = "encoding_id") String encodingId, DolbyVisionMetadataIngestInputStream dolbyVisionMetadataIngestInputStream) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/encodings/{encoding_id}/input-streams/sidecar/dolby-vision-metadata-ingest/{input_stream_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_id") String encodingId, @Param(value = "input_stream_id") String inputStreamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/sidecar/dolby-vision-metadata-ingest/{input_stream_id}")
         ResponseEnvelope<DolbyVisionMetadataIngestInputStream> get(@Param(value = "encoding_id") String encodingId, @Param(value = "input_stream_id") String inputStreamId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/encodings/{encoding_id}/input-streams/sidecar/dolby-vision-metadata-ingest")
         ResponseEnvelope<PaginationResponse<DolbyVisionMetadataIngestInputStream>> list(@Param(value = "encoding_id") String encodingId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

@@ -39,7 +39,6 @@ public class Mp4Api {
     public static BitmovinApiBuilder<Mp4Api> builder() {
         return new BitmovinApiBuilder<>(Mp4Api.class);
     }
-
     /**
      * Add MP4 Representation to Smooth Streaming Manifest
      * 
@@ -55,7 +54,6 @@ public class Mp4Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Smooth Streaming MP4 Representation
      * 
@@ -71,7 +69,6 @@ public class Mp4Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Smooth Streaming MP4 Representation Details
      * 
@@ -87,7 +84,6 @@ public class Mp4Api {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List MP4 Representation
      * 
@@ -119,17 +115,16 @@ public class Mp4Api {
         }
     }
 
-    interface Mp4ApiClient {
-
+    interface Mp4ApiClient { 
         @RequestLine("POST /encoding/manifests/smooth/{manifest_id}/representations/mp4")
         ResponseEnvelope<SmoothStreamingRepresentation> create(@Param(value = "manifest_id") String manifestId, SmoothStreamingRepresentation smoothStreamingRepresentation) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/manifests/smooth/{manifest_id}/representations/mp4/{representation_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "manifest_id") String manifestId, @Param(value = "representation_id") String representationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/smooth/{manifest_id}/representations/mp4/{representation_id}")
         ResponseEnvelope<SmoothStreamingRepresentation> get(@Param(value = "manifest_id") String manifestId, @Param(value = "representation_id") String representationId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/smooth/{manifest_id}/representations/mp4")
         ResponseEnvelope<PaginationResponse<SmoothStreamingRepresentation>> list(@Param(value = "manifest_id") String manifestId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

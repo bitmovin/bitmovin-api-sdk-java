@@ -39,7 +39,6 @@ public class ContentprotectionApi {
     public static BitmovinApiBuilder<ContentprotectionApi> builder() {
         return new BitmovinApiBuilder<>(ContentprotectionApi.class);
     }
-
     /**
      * Add Content Protection to Smooth Streaming
      * 
@@ -55,7 +54,6 @@ public class ContentprotectionApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Delete Content Protection of Smooth Streaming
      * 
@@ -71,7 +69,6 @@ public class ContentprotectionApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Content Protection of Smooth Streaming Representation Details
      * 
@@ -87,7 +84,6 @@ public class ContentprotectionApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * List Content Protection of Smooth Streaming
      * 
@@ -119,17 +115,16 @@ public class ContentprotectionApi {
         }
     }
 
-    interface ContentprotectionApiClient {
-
+    interface ContentprotectionApiClient { 
         @RequestLine("POST /encoding/manifests/smooth/{manifest_id}/contentprotection")
         ResponseEnvelope<SmoothManifestContentProtection> create(@Param(value = "manifest_id") String manifestId, SmoothManifestContentProtection smoothManifestContentProtection) throws BitmovinException;
-    
+   
         @RequestLine("DELETE /encoding/manifests/smooth/{manifest_id}/contentprotection/{protection_id}")
         ResponseEnvelope<BitmovinResponse> delete(@Param(value = "manifest_id") String manifestId, @Param(value = "protection_id") String protectionId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/smooth/{manifest_id}/contentprotection/{protection_id}")
         ResponseEnvelope<SmoothManifestContentProtection> get(@Param(value = "manifest_id") String manifestId, @Param(value = "protection_id") String protectionId) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/manifests/smooth/{manifest_id}/contentprotection")
         ResponseEnvelope<PaginationResponse<SmoothManifestContentProtection>> list(@Param(value = "manifest_id") String manifestId, @QueryMap QueryMapWrapper queryParams) throws BitmovinException;
     }

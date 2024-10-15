@@ -39,7 +39,6 @@ public class LiveApi {
     public static BitmovinApiBuilder<LiveApi> builder() {
         return new BitmovinApiBuilder<>(LiveApi.class);
     }
-
     /**
      * Create a Simple Encoding Live Job
      * Deprecation notice: use the more capable full API instead. Get started at https://developer.bitmovin.com/encoding/docs/java-sdk 
@@ -56,7 +55,6 @@ public class LiveApi {
             throw buildBitmovinException(ex);
         }
     }
-
     /**
      * Simple Encoding Live Job details
      * Get the details of a Simple Live Encoding Job. Deprecation notice: use the more capable full API instead. Get started at https://developer.bitmovin.com/encoding/docs/java-sdk 
@@ -74,11 +72,10 @@ public class LiveApi {
         }
     }
 
-    interface LiveApiClient {
-
+    interface LiveApiClient { 
         @RequestLine("POST /encoding/simple/jobs/live")
         ResponseEnvelope<SimpleEncodingLiveJobResponse> create(SimpleEncodingLiveJobRequest simpleEncodingLiveJobRequest) throws BitmovinException;
-    
+   
         @RequestLine("GET /encoding/simple/jobs/live/{simple_encoding_job_id}")
         ResponseEnvelope<SimpleEncodingLiveJobResponse> get(@Param(value = "simple_encoding_job_id") String simpleEncodingJobId) throws BitmovinException;
     }

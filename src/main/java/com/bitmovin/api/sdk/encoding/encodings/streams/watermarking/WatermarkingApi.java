@@ -23,5 +23,4 @@ public class WatermarkingApi {
         return new BitmovinApiBuilder<>(WatermarkingApi.class);
     }
 
-    
 }
