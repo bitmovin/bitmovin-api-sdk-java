@@ -313,14 +313,59 @@ public enum CloudRegion {
   AKAMAI_BR_GRU("AKAMAI_BR_GRU"),
   
   /**
+   * Akamai Madrid, Spain
+   */
+  AKAMAI_ES_MAD("AKAMAI_ES_MAD"),
+  
+  /**
    * Akamai Paris, France
    */
   AKAMAI_FR_PAR("AKAMAI_FR_PAR"),
   
   /**
+   * Akamai Jakarta, Indonesia
+   */
+  AKAMAI_ID_CGK("AKAMAI_ID_CGK"),
+  
+  /**
+   * Akamai Chennai, India
+   */
+  AKAMAI_IN_MAA("AKAMAI_IN_MAA"),
+  
+  /**
+   * Akamai Milan, Italy
+   */
+  AKAMAI_IT_MIL("AKAMAI_IT_MIL"),
+  
+  /**
    * Akamai Osaka, Japan
    */
   AKAMAI_JP_OSA("AKAMAI_JP_OSA"),
+  
+  /**
+   * Akamai Amsterdam, Netherlands
+   */
+  AKAMAI_NL_AMS("AKAMAI_NL_AMS"),
+  
+  /**
+   * Akamai Stockholm, Sweden
+   */
+  AKAMAI_SE_STO("AKAMAI_SE_STO"),
+  
+  /**
+   * Akamai Los Angeles, USA
+   */
+  AKAMAI_US_LAX("AKAMAI_US_LAX"),
+  
+  /**
+   * Akamai Miami, USA
+   */
+  AKAMAI_US_MIA("AKAMAI_US_MIA"),
+  
+  /**
+   * Akamai Chicago, USA
+   */
+  AKAMAI_US_ORD("AKAMAI_US_ORD"),
   
   /**
    * Akamai Seattle, USA

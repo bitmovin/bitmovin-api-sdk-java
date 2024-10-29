@@ -18,6 +18,9 @@ public class LiveAutoShutdownConfiguration {
   @JsonProperty("streamTimeoutMinutes")
   private Long streamTimeoutMinutes;
 
+  @JsonProperty("waitingForFirstConnectTimeoutMinutes")
+  private Long waitingForFirstConnectTimeoutMinutes;
+
 
   /**
    * Automatically shutdown the live stream if there is no input anymore for a predefined number of seconds.
@@ -63,6 +66,28 @@ public class LiveAutoShutdownConfiguration {
   }
 
 
+  /**
+   * Automatically shutdown the live stream if input is never connected for a predefined number of minutes.
+   * minimum: 5
+   * @return waitingForFirstConnectTimeoutMinutes
+   */
+  public Long getWaitingForFirstConnectTimeoutMinutes() {
+    return waitingForFirstConnectTimeoutMinutes;
+  }
+
+  /**
+   * Automatically shutdown the live stream if input is never connected for a predefined number of minutes.
+   * minimum: 5
+   *
+   * @param waitingForFirstConnectTimeoutMinutes
+   *        Automatically shutdown the live stream if input is never connected for a predefined number of minutes.
+   *        minimum: 5
+   */
+  public void setWaitingForFirstConnectTimeoutMinutes(Long waitingForFirstConnectTimeoutMinutes) {
+    this.waitingForFirstConnectTimeoutMinutes = waitingForFirstConnectTimeoutMinutes;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -73,12 +98,13 @@ public class LiveAutoShutdownConfiguration {
     }
     LiveAutoShutdownConfiguration liveAutoShutdownConfiguration = (LiveAutoShutdownConfiguration) o;
     return Objects.equals(this.bytesReadTimeoutSeconds, liveAutoShutdownConfiguration.bytesReadTimeoutSeconds) &&
-        Objects.equals(this.streamTimeoutMinutes, liveAutoShutdownConfiguration.streamTimeoutMinutes);
+        Objects.equals(this.streamTimeoutMinutes, liveAutoShutdownConfiguration.streamTimeoutMinutes) &&
+        Objects.equals(this.waitingForFirstConnectTimeoutMinutes, liveAutoShutdownConfiguration.waitingForFirstConnectTimeoutMinutes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bytesReadTimeoutSeconds, streamTimeoutMinutes);
+    return Objects.hash(bytesReadTimeoutSeconds, streamTimeoutMinutes, waitingForFirstConnectTimeoutMinutes);
   }
 
   @Override
@@ -88,6 +114,7 @@ public class LiveAutoShutdownConfiguration {
     
     sb.append("    bytesReadTimeoutSeconds: ").append(toIndentedString(bytesReadTimeoutSeconds)).append("\n");
     sb.append("    streamTimeoutMinutes: ").append(toIndentedString(streamTimeoutMinutes)).append("\n");
+    sb.append("    waitingForFirstConnectTimeoutMinutes: ").append(toIndentedString(waitingForFirstConnectTimeoutMinutes)).append("\n");
     sb.append("}");
     return sb.toString();
   }
