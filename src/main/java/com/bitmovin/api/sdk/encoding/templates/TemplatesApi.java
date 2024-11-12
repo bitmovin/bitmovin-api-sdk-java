@@ -40,6 +40,76 @@ public class TemplatesApi {
         return new BitmovinApiBuilder<>(TemplatesApi.class);
     }
     /**
+     * Store an Encoding Template
+     * Stores an Encoding Template that can be used later to start encodings or standby pools 
+     * @param encodingTemplateRequest The Encoding Template to be stored (required)
+     * @return EncodingTemplateDetails
+     * @throws BitmovinException if fails to make API call
+     */
+    public EncodingTemplateDetails create(Object encodingTemplateRequest) throws BitmovinException {
+        try {
+            return this.apiClient.create(encodingTemplateRequest).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+    /**
+     * Delete Encoding Template
+     * 
+     * @param encodingTemplateId Id of the encoding template to delete (required)
+     * @return BitmovinResponse
+     * @throws BitmovinException if fails to make API call
+     */
+    public BitmovinResponse delete(String encodingTemplateId) throws BitmovinException {
+        try {
+            return this.apiClient.delete(encodingTemplateId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+    /**
+     * Encoding Template details
+     * Get the details of a stored Encoding Template 
+     * @param encodingTemplateId Id of the Encoding Template (required)
+     * @return EncodingTemplateDetails
+     * @throws BitmovinException if fails to make API call
+     */
+    public EncodingTemplateDetails get(String encodingTemplateId) throws BitmovinException {
+        try {
+            return this.apiClient.get(encodingTemplateId).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+    /**
+     * List stored Encoding Templates
+     * 
+     * @return List&lt;EncodingTemplateResponse&gt;
+     * @throws BitmovinException if fails to make API call
+     */
+    public PaginationResponse<EncodingTemplateResponse> list() throws BitmovinException {
+        try {
+            return this.apiClient.list(new QueryMapWrapper()).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+
+    /**
+     * List stored Encoding Templates
+     * 
+     * @param queryParams The query parameters for sorting, filtering and paging options (optional)
+     * @return List&lt;EncodingTemplateResponse&gt;
+     * @throws BitmovinException if fails to make API call
+     */
+    public PaginationResponse<EncodingTemplateResponse> list(EncodingTemplateResponseListQueryParams queryParams) throws BitmovinException {
+        try {
+            return this.apiClient.list(new QueryMapWrapper(queryParams)).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
+    /**
      * BETA: Start an Encoding defined with an Encoding Template
      * 
      * @param encodingTemplateRequest The Encoding Template to start an Encoding from (required)
@@ -55,6 +125,18 @@ public class TemplatesApi {
     }
 
     interface TemplatesApiClient { 
+        @RequestLine("POST /encoding/templates")
+        ResponseEnvelope<EncodingTemplateDetails> create(Object encodingTemplateRequest) throws BitmovinException;
+   
+        @RequestLine("DELETE /encoding/templates/{encoding_template_id}")
+        ResponseEnvelope<BitmovinResponse> delete(@Param(value = "encoding_template_id") String encodingTemplateId) throws BitmovinException;
+   
+        @RequestLine("GET /encoding/templates/{encoding_template_id}")
+        ResponseEnvelope<EncodingTemplateDetails> get(@Param(value = "encoding_template_id") String encodingTemplateId) throws BitmovinException;
+   
+        @RequestLine("GET /encoding/templates")
+        ResponseEnvelope<PaginationResponse<EncodingTemplateResponse>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
+   
         @RequestLine("POST /encoding/templates/start")
         ResponseEnvelope<EncodingTemplateStartResponse> start(Object encodingTemplateRequest) throws BitmovinException;
     }
