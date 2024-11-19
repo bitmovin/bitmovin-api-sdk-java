@@ -9,7 +9,6 @@ import com.bitmovin.api.sdk.model.Ignoring;
 import com.bitmovin.api.sdk.model.Muxing;
 import com.bitmovin.api.sdk.model.MuxingStream;
 import com.bitmovin.api.sdk.model.StreamConditionsMode;
-import com.bitmovin.api.sdk.model.TimeCode;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -28,9 +27,6 @@ public class Mp4Muxing extends Muxing {
 
   @JsonProperty("fragmentDuration")
   private Integer fragmentDuration;
-
-  @JsonProperty("timeCode")
-  private TimeCode timeCode;
 
   @JsonProperty("fragmentedMP4MuxingManifestType")
   private FragmentedMp4MuxingManifestType fragmentedMP4MuxingManifestType;
@@ -74,24 +70,6 @@ public class Mp4Muxing extends Muxing {
    */
   public void setFragmentDuration(Integer fragmentDuration) {
     this.fragmentDuration = fragmentDuration;
-  }
-
-
-  /**
-   * Get timeCode
-   * @return timeCode
-   */
-  public TimeCode getTimeCode() {
-    return timeCode;
-  }
-
-  /**
-   * Set timeCode
-   *
-   * @param timeCode
-   */
-  public void setTimeCode(TimeCode timeCode) {
-    this.timeCode = timeCode;
   }
 
 
@@ -143,7 +121,6 @@ public class Mp4Muxing extends Muxing {
     Mp4Muxing mp4Muxing = (Mp4Muxing) o;
     return Objects.equals(this.filename, mp4Muxing.filename) &&
         Objects.equals(this.fragmentDuration, mp4Muxing.fragmentDuration) &&
-        Objects.equals(this.timeCode, mp4Muxing.timeCode) &&
         Objects.equals(this.fragmentedMP4MuxingManifestType, mp4Muxing.fragmentedMP4MuxingManifestType) &&
         Objects.equals(this.dolbyVisionConfiguration, mp4Muxing.dolbyVisionConfiguration) &&
         super.equals(o);
@@ -151,7 +128,7 @@ public class Mp4Muxing extends Muxing {
 
   @Override
   public int hashCode() {
-    return Objects.hash(filename, fragmentDuration, timeCode, fragmentedMP4MuxingManifestType, dolbyVisionConfiguration, super.hashCode());
+    return Objects.hash(filename, fragmentDuration, fragmentedMP4MuxingManifestType, dolbyVisionConfiguration, super.hashCode());
   }
 
   @Override
@@ -161,7 +138,6 @@ public class Mp4Muxing extends Muxing {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    filename: ").append(toIndentedString(filename)).append("\n");
     sb.append("    fragmentDuration: ").append(toIndentedString(fragmentDuration)).append("\n");
-    sb.append("    timeCode: ").append(toIndentedString(timeCode)).append("\n");
     sb.append("    fragmentedMP4MuxingManifestType: ").append(toIndentedString(fragmentedMP4MuxingManifestType)).append("\n");
     sb.append("    dolbyVisionConfiguration: ").append(toIndentedString(dolbyVisionConfiguration)).append("\n");
     sb.append("}");
