@@ -3,6 +3,8 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.LiveEncodingEventName;
+import java.util.ArrayList;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -15,6 +17,16 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 public class LiveEncodingStatsEventDetails {
   @JsonProperty("eventType")
   private LiveEncodingEventName eventType;
+
+  @JsonProperty("message")
+  private String message;
+
+  @JsonProperty("midRollAssetNames")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<String> midRollAssetNames = new ArrayList<String>();
+
+  @JsonProperty("durationInSeconds")
+  private Double durationInSeconds;
 
 
   /**
@@ -34,6 +46,30 @@ public class LiveEncodingStatsEventDetails {
     this.eventType = eventType;
   }
 
+  /**
+   * Short description of the event
+   * @return message
+   */
+  public String getMessage() {
+    return message;
+  }
+
+  /**
+   * Name of the mid roll asset name
+   * @return midRollAssetNames
+   */
+  public List<String> getMidRollAssetNames() {
+    return midRollAssetNames;
+  }
+
+  /**
+   * Duration in seconds
+   * @return durationInSeconds
+   */
+  public Double getDurationInSeconds() {
+    return durationInSeconds;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -44,12 +80,15 @@ public class LiveEncodingStatsEventDetails {
       return false;
     }
     LiveEncodingStatsEventDetails liveEncodingStatsEventDetails = (LiveEncodingStatsEventDetails) o;
-    return Objects.equals(this.eventType, liveEncodingStatsEventDetails.eventType);
+    return Objects.equals(this.eventType, liveEncodingStatsEventDetails.eventType) &&
+        Objects.equals(this.message, liveEncodingStatsEventDetails.message) &&
+        Objects.equals(this.midRollAssetNames, liveEncodingStatsEventDetails.midRollAssetNames) &&
+        Objects.equals(this.durationInSeconds, liveEncodingStatsEventDetails.durationInSeconds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventType);
+    return Objects.hash(eventType, message, midRollAssetNames, durationInSeconds);
   }
 
   @Override
@@ -58,6 +97,9 @@ public class LiveEncodingStatsEventDetails {
     sb.append("class LiveEncodingStatsEventDetails {\n");
     
     sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
+    sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    midRollAssetNames: ").append(toIndentedString(midRollAssetNames)).append("\n");
+    sb.append("    durationInSeconds: ").append(toIndentedString(durationInSeconds)).append("\n");
     sb.append("}");
     return sb.toString();
   }
