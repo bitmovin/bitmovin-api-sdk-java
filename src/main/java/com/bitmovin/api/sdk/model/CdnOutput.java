@@ -3,6 +3,7 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AclEntry;
+import com.bitmovin.api.sdk.model.CdnProvider;
 import com.bitmovin.api.sdk.model.Output;
 import java.util.Date;
 import java.util.List;
@@ -20,12 +21,34 @@ public class CdnOutput extends Output {
   @JsonProperty("domainName")
   private String domainName;
 
+  @JsonProperty("cdnProvider")
+  private CdnProvider cdnProvider;
+
   /**
    * Domain name for public access to CDN content
    * @return domainName
    */
   public String getDomainName() {
     return domainName;
+  }
+
+
+  /**
+   * CDN Provider of the Output
+   * @return cdnProvider
+   */
+  public CdnProvider getCdnProvider() {
+    return cdnProvider;
+  }
+
+  /**
+   * CDN Provider of the Output
+   *
+   * @param cdnProvider
+   *        CDN Provider of the Output
+   */
+  public void setCdnProvider(CdnProvider cdnProvider) {
+    this.cdnProvider = cdnProvider;
   }
 
 
@@ -39,12 +62,13 @@ public class CdnOutput extends Output {
     }
     CdnOutput cdnOutput = (CdnOutput) o;
     return Objects.equals(this.domainName, cdnOutput.domainName) &&
+        Objects.equals(this.cdnProvider, cdnOutput.cdnProvider) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(domainName, super.hashCode());
+    return Objects.hash(domainName, cdnProvider, super.hashCode());
   }
 
   @Override
@@ -53,6 +77,7 @@ public class CdnOutput extends Output {
     sb.append("class CdnOutput {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
+    sb.append("    cdnProvider: ").append(toIndentedString(cdnProvider)).append("\n");
     sb.append("}");
     return sb.toString();
   }

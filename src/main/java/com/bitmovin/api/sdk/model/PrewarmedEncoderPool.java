@@ -143,7 +143,7 @@ public class PrewarmedEncoderPool extends BitmovinResource {
 
 
   /**
-   * Activate dynamic pool behaviour. Pool will increase/decrease based on usage. Minimum pool size is set by targetPoolSize.
+   * Activate dynamic pool behaviour. Pool will increase/decrease based on usage up until a size of 10 instances. Minimum pool size is set by targetPoolSize
    * @return dynamicPool
    */
   public Boolean getDynamicPool() {
@@ -151,10 +151,10 @@ public class PrewarmedEncoderPool extends BitmovinResource {
   }
 
   /**
-   * Activate dynamic pool behaviour. Pool will increase/decrease based on usage. Minimum pool size is set by targetPoolSize.
+   * Activate dynamic pool behaviour. Pool will increase/decrease based on usage up until a size of 10 instances. Minimum pool size is set by targetPoolSize
    *
    * @param dynamicPool
-   *        Activate dynamic pool behaviour. Pool will increase/decrease based on usage. Minimum pool size is set by targetPoolSize.
+   *        Activate dynamic pool behaviour. Pool will increase/decrease based on usage up until a size of 10 instances. Minimum pool size is set by targetPoolSize
    */
   public void setDynamicPool(Boolean dynamicPool) {
     this.dynamicPool = dynamicPool;
