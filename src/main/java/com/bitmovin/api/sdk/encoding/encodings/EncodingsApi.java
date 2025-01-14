@@ -28,6 +28,7 @@ import com.bitmovin.api.sdk.encoding.encodings.outputPaths.OutputPathsApi;
 import com.bitmovin.api.sdk.encoding.encodings.captions.CaptionsApi;
 import com.bitmovin.api.sdk.encoding.encodings.sidecars.SidecarsApi;
 import com.bitmovin.api.sdk.encoding.encodings.keyframes.KeyframesApi;
+import com.bitmovin.api.sdk.encoding.encodings.scte35Triggers.Scte35TriggersApi;
 
 public class EncodingsApi {
     public final LiveApi live;
@@ -40,6 +41,7 @@ public class EncodingsApi {
     public final CaptionsApi captions;
     public final SidecarsApi sidecars;
     public final KeyframesApi keyframes;
+    public final Scte35TriggersApi scte35Triggers;
 
     private final EncodingsApiClient apiClient;
 
@@ -61,6 +63,7 @@ public class EncodingsApi {
         this.captions = new CaptionsApi(clientFactory);
         this.sidecars = new SidecarsApi(clientFactory);
         this.keyframes = new KeyframesApi(clientFactory);
+        this.scte35Triggers = new Scte35TriggersApi(clientFactory);
     }
 
     /**
