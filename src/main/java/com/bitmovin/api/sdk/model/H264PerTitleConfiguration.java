@@ -26,7 +26,7 @@ public class H264PerTitleConfiguration extends PerTitleConfiguration {
 
 
   /**
-   * This factor is used to calculate the minBitrate of the codec configuration for the generated representations as a multiple of the targetBitrate
+   * This factor doesn&#39;t have any impact!
    * @return codecMinBitrateFactor
    */
   public Double getCodecMinBitrateFactor() {
@@ -34,10 +34,10 @@ public class H264PerTitleConfiguration extends PerTitleConfiguration {
   }
 
   /**
-   * This factor is used to calculate the minBitrate of the codec configuration for the generated representations as a multiple of the targetBitrate
+   * This factor doesn&#39;t have any impact!
    *
    * @param codecMinBitrateFactor
-   *        This factor is used to calculate the minBitrate of the codec configuration for the generated representations as a multiple of the targetBitrate
+   *        This factor doesn&#39;t have any impact!
    */
   public void setCodecMinBitrateFactor(Double codecMinBitrateFactor) {
     this.codecMinBitrateFactor = codecMinBitrateFactor;
