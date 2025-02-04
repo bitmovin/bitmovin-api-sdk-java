@@ -3,6 +3,7 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.DashEditionCompatibility;
+import com.bitmovin.api.sdk.model.DashISO8601TimestampFormat;
 import com.bitmovin.api.sdk.model.DashProfile;
 import com.bitmovin.api.sdk.model.EncodingOutput;
 import com.bitmovin.api.sdk.model.Manifest;
@@ -40,6 +41,9 @@ public class DashManifest extends Manifest {
 
   @JsonProperty("dashEditionCompatibility")
   private DashEditionCompatibility dashEditionCompatibility;
+
+  @JsonProperty("iso8601TimestampFormat")
+  private DashISO8601TimestampFormat iso8601TimestampFormat;
 
 
   /**
@@ -147,6 +151,25 @@ public class DashManifest extends Manifest {
   }
 
 
+  /**
+   * Determines how timestamps should appear in the manifest
+   * @return iso8601TimestampFormat
+   */
+  public DashISO8601TimestampFormat getIso8601TimestampFormat() {
+    return iso8601TimestampFormat;
+  }
+
+  /**
+   * Determines how timestamps should appear in the manifest
+   *
+   * @param iso8601TimestampFormat
+   *        Determines how timestamps should appear in the manifest
+   */
+  public void setIso8601TimestampFormat(DashISO8601TimestampFormat iso8601TimestampFormat) {
+    this.iso8601TimestampFormat = iso8601TimestampFormat;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -161,12 +184,13 @@ public class DashManifest extends Manifest {
         Objects.equals(this.namespaces, dashManifest.namespaces) &&
         Objects.equals(this.utcTimings, dashManifest.utcTimings) &&
         Objects.equals(this.dashEditionCompatibility, dashManifest.dashEditionCompatibility) &&
+        Objects.equals(this.iso8601TimestampFormat, dashManifest.iso8601TimestampFormat) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(profile, manifestName, namespaces, utcTimings, dashEditionCompatibility, super.hashCode());
+    return Objects.hash(profile, manifestName, namespaces, utcTimings, dashEditionCompatibility, iso8601TimestampFormat, super.hashCode());
   }
 
   @Override
@@ -179,6 +203,7 @@ public class DashManifest extends Manifest {
     sb.append("    namespaces: ").append(toIndentedString(namespaces)).append("\n");
     sb.append("    utcTimings: ").append(toIndentedString(utcTimings)).append("\n");
     sb.append("    dashEditionCompatibility: ").append(toIndentedString(dashEditionCompatibility)).append("\n");
+    sb.append("    iso8601TimestampFormat: ").append(toIndentedString(iso8601TimestampFormat)).append("\n");
     sb.append("}");
     return sb.toString();
   }
