@@ -24,6 +24,9 @@ public class H264PerTitleConfiguration extends PerTitleConfiguration {
   @JsonProperty("codecBufsizeFactor")
   private Double codecBufsizeFactor;
 
+  @JsonProperty("targetQualityCrf")
+  private Double targetQualityCrf;
+
 
   /**
    * This factor doesn&#39;t have any impact!
@@ -82,6 +85,25 @@ public class H264PerTitleConfiguration extends PerTitleConfiguration {
   }
 
 
+  /**
+   * Desired target quality of the highest representation expressed as CRF value
+   * @return targetQualityCrf
+   */
+  public Double getTargetQualityCrf() {
+    return targetQualityCrf;
+  }
+
+  /**
+   * Desired target quality of the highest representation expressed as CRF value
+   *
+   * @param targetQualityCrf
+   *        Desired target quality of the highest representation expressed as CRF value
+   */
+  public void setTargetQualityCrf(Double targetQualityCrf) {
+    this.targetQualityCrf = targetQualityCrf;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -94,12 +116,13 @@ public class H264PerTitleConfiguration extends PerTitleConfiguration {
     return Objects.equals(this.codecMinBitrateFactor, h264PerTitleConfiguration.codecMinBitrateFactor) &&
         Objects.equals(this.codecMaxBitrateFactor, h264PerTitleConfiguration.codecMaxBitrateFactor) &&
         Objects.equals(this.codecBufsizeFactor, h264PerTitleConfiguration.codecBufsizeFactor) &&
+        Objects.equals(this.targetQualityCrf, h264PerTitleConfiguration.targetQualityCrf) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(codecMinBitrateFactor, codecMaxBitrateFactor, codecBufsizeFactor, super.hashCode());
+    return Objects.hash(codecMinBitrateFactor, codecMaxBitrateFactor, codecBufsizeFactor, targetQualityCrf, super.hashCode());
   }
 
   @Override
@@ -110,6 +133,7 @@ public class H264PerTitleConfiguration extends PerTitleConfiguration {
     sb.append("    codecMinBitrateFactor: ").append(toIndentedString(codecMinBitrateFactor)).append("\n");
     sb.append("    codecMaxBitrateFactor: ").append(toIndentedString(codecMaxBitrateFactor)).append("\n");
     sb.append("    codecBufsizeFactor: ").append(toIndentedString(codecBufsizeFactor)).append("\n");
+    sb.append("    targetQualityCrf: ").append(toIndentedString(targetQualityCrf)).append("\n");
     sb.append("}");
     return sb.toString();
   }

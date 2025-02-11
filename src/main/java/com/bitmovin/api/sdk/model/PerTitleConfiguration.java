@@ -35,9 +35,6 @@ public class PerTitleConfiguration {
   @JsonProperty("fixedResolutionAndBitrateConfiguration")
   private PerTitleFixedResolutionAndBitrateConfiguration fixedResolutionAndBitrateConfiguration;
 
-  @JsonProperty("targetQualityCrf")
-  private Double targetQualityCrf;
-
   @JsonProperty("resolutionScaleFactor")
   private Double resolutionScaleFactor;
 
@@ -100,7 +97,7 @@ public class PerTitleConfiguration {
 
 
   /**
-   * The maximum ratio between the bitrates of neighbouring renditions, e.g., if the first bitrate is 240,000, a maximum ratio of 1.5 will require the next higher bitrate to be at most 360,000
+   * The maximum ratio between the bitrates of neighbouring renditions, e.g., if the first bitrate is 240,000, a maximum ratio of 1.9 will require the next higher bitrate to be at most 456,000
    * @return maxBitrateStepSize
    */
   public Double getMaxBitrateStepSize() {
@@ -108,10 +105,10 @@ public class PerTitleConfiguration {
   }
 
   /**
-   * The maximum ratio between the bitrates of neighbouring renditions, e.g., if the first bitrate is 240,000, a maximum ratio of 1.5 will require the next higher bitrate to be at most 360,000
+   * The maximum ratio between the bitrates of neighbouring renditions, e.g., if the first bitrate is 240,000, a maximum ratio of 1.9 will require the next higher bitrate to be at most 456,000
    *
    * @param maxBitrateStepSize
-   *        The maximum ratio between the bitrates of neighbouring renditions, e.g., if the first bitrate is 240,000, a maximum ratio of 1.5 will require the next higher bitrate to be at most 360,000
+   *        The maximum ratio between the bitrates of neighbouring renditions, e.g., if the first bitrate is 240,000, a maximum ratio of 1.9 will require the next higher bitrate to be at most 456,000
    */
   public void setMaxBitrateStepSize(Double maxBitrateStepSize) {
     this.maxBitrateStepSize = maxBitrateStepSize;
@@ -178,25 +175,6 @@ public class PerTitleConfiguration {
 
 
   /**
-   * Desired target quality of the highest representation expressed as CRF value
-   * @return targetQualityCrf
-   */
-  public Double getTargetQualityCrf() {
-    return targetQualityCrf;
-  }
-
-  /**
-   * Desired target quality of the highest representation expressed as CRF value
-   *
-   * @param targetQualityCrf
-   *        Desired target quality of the highest representation expressed as CRF value
-   */
-  public void setTargetQualityCrf(Double targetQualityCrf) {
-    this.targetQualityCrf = targetQualityCrf;
-  }
-
-
-  /**
    * This factor influences the resolution selection of the per-title algorithm. The default value is 0.0. negative values will lead to results where the algorithm will choose lower resolutions for given bitrates. A positive value will result in higher resolutions to be selected. The range of the factor is -5.0 to +5.0. Please note that changing this factor might also lead to slightly different bitrate selection by the algorithm.
    * @return resolutionScaleFactor
    */
@@ -231,13 +209,12 @@ public class PerTitleConfiguration {
         Objects.equals(this.autoRepresentations, perTitleConfiguration.autoRepresentations) &&
         Objects.equals(this.complexityFactor, perTitleConfiguration.complexityFactor) &&
         Objects.equals(this.fixedResolutionAndBitrateConfiguration, perTitleConfiguration.fixedResolutionAndBitrateConfiguration) &&
-        Objects.equals(this.targetQualityCrf, perTitleConfiguration.targetQualityCrf) &&
         Objects.equals(this.resolutionScaleFactor, perTitleConfiguration.resolutionScaleFactor);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(minBitrate, maxBitrate, minBitrateStepSize, maxBitrateStepSize, autoRepresentations, complexityFactor, fixedResolutionAndBitrateConfiguration, targetQualityCrf, resolutionScaleFactor);
+    return Objects.hash(minBitrate, maxBitrate, minBitrateStepSize, maxBitrateStepSize, autoRepresentations, complexityFactor, fixedResolutionAndBitrateConfiguration, resolutionScaleFactor);
   }
 
   @Override
@@ -252,7 +229,6 @@ public class PerTitleConfiguration {
     sb.append("    autoRepresentations: ").append(toIndentedString(autoRepresentations)).append("\n");
     sb.append("    complexityFactor: ").append(toIndentedString(complexityFactor)).append("\n");
     sb.append("    fixedResolutionAndBitrateConfiguration: ").append(toIndentedString(fixedResolutionAndBitrateConfiguration)).append("\n");
-    sb.append("    targetQualityCrf: ").append(toIndentedString(targetQualityCrf)).append("\n");
     sb.append("    resolutionScaleFactor: ").append(toIndentedString(resolutionScaleFactor)).append("\n");
     sb.append("}");
     return sb.toString();
