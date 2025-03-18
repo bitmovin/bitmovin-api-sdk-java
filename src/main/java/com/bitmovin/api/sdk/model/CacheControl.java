@@ -2,27 +2,38 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.AutoRestartConfiguration;
-import com.bitmovin.api.sdk.model.CacheControlSettings;
-import com.bitmovin.api.sdk.model.EncodingMode;
-import com.bitmovin.api.sdk.model.EsamSettings;
-import com.bitmovin.api.sdk.model.LiveAutoShutdownConfiguration;
-import com.bitmovin.api.sdk.model.LiveDashManifest;
-import com.bitmovin.api.sdk.model.LiveHlsManifest;
-import com.bitmovin.api.sdk.model.ManifestGenerator;
-import com.bitmovin.api.sdk.model.ReuploadSettings;
-import com.bitmovin.api.sdk.model.StartLiveEncodingRequest;
-import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * StartLiveChannelEncodingRequest
+ * CacheControl
  */
 
-public class StartLiveChannelEncodingRequest extends StartLiveEncodingRequest {
+public class CacheControl {
+  @JsonProperty("cacheControl")
+  private String cacheControl;
+
+
+  /**
+   * Cache control for storing data on CDN. Example \&quot;public, max-age&#x3D;0, no-cache\&quot;.
+   * @return cacheControl
+   */
+  public String getCacheControl() {
+    return cacheControl;
+  }
+
+  /**
+   * Cache control for storing data on CDN. Example \&quot;public, max-age&#x3D;0, no-cache\&quot;.
+   *
+   * @param cacheControl
+   *        Cache control for storing data on CDN. Example \&quot;public, max-age&#x3D;0, no-cache\&quot;.
+   */
+  public void setCacheControl(String cacheControl) {
+    this.cacheControl = cacheControl;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -32,19 +43,21 @@ public class StartLiveChannelEncodingRequest extends StartLiveEncodingRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return super.equals(o);
+    CacheControl cacheControl = (CacheControl) o;
+    return Objects.equals(this.cacheControl, cacheControl.cacheControl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode());
+    return Objects.hash(cacheControl);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StartLiveChannelEncodingRequest {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("class CacheControl {\n");
+    
+    sb.append("    cacheControl: ").append(toIndentedString(cacheControl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

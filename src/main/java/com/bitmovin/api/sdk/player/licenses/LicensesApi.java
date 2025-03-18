@@ -104,6 +104,21 @@ public class LicensesApi {
             throw buildBitmovinException(ex);
         }
     }
+    /**
+     * Update License
+     * 
+     * @param licenseId License id (required)
+     * @param playerLicenseUpdateRequest Player License details to be updated (required)
+     * @return PlayerLicense
+     * @throws BitmovinException if fails to make API call
+     */
+    public PlayerLicense update(String licenseId, PlayerLicenseUpdateRequest playerLicenseUpdateRequest) throws BitmovinException {
+        try {
+            return this.apiClient.update(licenseId, playerLicenseUpdateRequest).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
 
     interface LicensesApiClient { 
         @RequestLine("POST /player/licenses")
@@ -114,5 +129,8 @@ public class LicensesApi {
    
         @RequestLine("GET /player/licenses")
         ResponseEnvelope<PaginationResponse<PlayerLicense>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
+   
+        @RequestLine("PUT /player/licenses/{license_id}")
+        ResponseEnvelope<PlayerLicense> update(@Param(value = "license_id") String licenseId, PlayerLicenseUpdateRequest playerLicenseUpdateRequest) throws BitmovinException;
     }
 }

@@ -7,6 +7,7 @@ import com.bitmovin.api.sdk.encoding.infrastructure.staticIps.StaticIpsApi;
 import com.bitmovin.api.sdk.encoding.infrastructure.azure.AzureApi;
 import com.bitmovin.api.sdk.encoding.infrastructure.gce.GceApi;
 import com.bitmovin.api.sdk.encoding.infrastructure.akamai.AkamaiApi;
+import com.bitmovin.api.sdk.encoding.infrastructure.oci.OciApi;
 import com.bitmovin.api.sdk.encoding.infrastructure.prewarmedEncoderPools.PrewarmedEncoderPoolsApi;
 
 public class InfrastructureApi {
@@ -15,6 +16,7 @@ public class InfrastructureApi {
     public final AzureApi azure;
     public final GceApi gce;
     public final AkamaiApi akamai;
+    public final OciApi oci;
     public final PrewarmedEncoderPoolsApi prewarmedEncoderPools;
 
     public InfrastructureApi(BitmovinApiClientFactory clientFactory) {
@@ -28,6 +30,7 @@ public class InfrastructureApi {
         this.azure = new AzureApi(clientFactory);
         this.gce = new GceApi(clientFactory);
         this.akamai = new AkamaiApi(clientFactory);
+        this.oci = new OciApi(clientFactory);
         this.prewarmedEncoderPools = new PrewarmedEncoderPoolsApi(clientFactory);
     }
 

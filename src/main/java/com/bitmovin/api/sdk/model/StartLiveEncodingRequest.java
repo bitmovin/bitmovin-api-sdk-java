@@ -3,7 +3,9 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AutoRestartConfiguration;
+import com.bitmovin.api.sdk.model.CacheControlSettings;
 import com.bitmovin.api.sdk.model.EncodingMode;
+import com.bitmovin.api.sdk.model.EsamSettings;
 import com.bitmovin.api.sdk.model.LiveAutoShutdownConfiguration;
 import com.bitmovin.api.sdk.model.LiveDashManifest;
 import com.bitmovin.api.sdk.model.LiveHlsManifest;
@@ -46,6 +48,12 @@ public class StartLiveEncodingRequest {
 
   @JsonProperty("autoShutdownConfiguration")
   private LiveAutoShutdownConfiguration autoShutdownConfiguration;
+
+  @JsonProperty("esamSettings")
+  private EsamSettings esamSettings;
+
+  @JsonProperty("cacheControlSettings")
+  private CacheControlSettings cacheControlSettings;
 
 
   /**
@@ -210,6 +218,44 @@ public class StartLiveEncodingRequest {
   }
 
 
+  /**
+   * Configuration for Event Signaling and Management (ESAM) system,  allowing the encoder to communicate with an ESAM server for signal processing and dynamic ad insertion update.&#39; 
+   * @return esamSettings
+   */
+  public EsamSettings getEsamSettings() {
+    return esamSettings;
+  }
+
+  /**
+   * Configuration for Event Signaling and Management (ESAM) system,  allowing the encoder to communicate with an ESAM server for signal processing and dynamic ad insertion update.&#39; 
+   *
+   * @param esamSettings
+   *        Configuration for Event Signaling and Management (ESAM) system,  allowing the encoder to communicate with an ESAM server for signal processing and dynamic ad insertion update.&#39; 
+   */
+  public void setEsamSettings(EsamSettings esamSettings) {
+    this.esamSettings = esamSettings;
+  }
+
+
+  /**
+   * Configuration of cache control policies for media segments, HLS, and DASH manifests.  You can set caching for the HLS multivariant playlist, HLS media playlist, DASH timeline manifest,  DASH template manifest, initialization segment, and media segment. 
+   * @return cacheControlSettings
+   */
+  public CacheControlSettings getCacheControlSettings() {
+    return cacheControlSettings;
+  }
+
+  /**
+   * Configuration of cache control policies for media segments, HLS, and DASH manifests.  You can set caching for the HLS multivariant playlist, HLS media playlist, DASH timeline manifest,  DASH template manifest, initialization segment, and media segment. 
+   *
+   * @param cacheControlSettings
+   *        Configuration of cache control policies for media segments, HLS, and DASH manifests.  You can set caching for the HLS multivariant playlist, HLS media playlist, DASH timeline manifest,  DASH template manifest, initialization segment, and media segment. 
+   */
+  public void setCacheControlSettings(CacheControlSettings cacheControlSettings) {
+    this.cacheControlSettings = cacheControlSettings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -226,12 +272,14 @@ public class StartLiveEncodingRequest {
         Objects.equals(this.reuploadSettings, startLiveEncodingRequest.reuploadSettings) &&
         Objects.equals(this.manifestGenerator, startLiveEncodingRequest.manifestGenerator) &&
         Objects.equals(this.autoRestartConfiguration, startLiveEncodingRequest.autoRestartConfiguration) &&
-        Objects.equals(this.autoShutdownConfiguration, startLiveEncodingRequest.autoShutdownConfiguration);
+        Objects.equals(this.autoShutdownConfiguration, startLiveEncodingRequest.autoShutdownConfiguration) &&
+        Objects.equals(this.esamSettings, startLiveEncodingRequest.esamSettings) &&
+        Objects.equals(this.cacheControlSettings, startLiveEncodingRequest.cacheControlSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(streamKey, hlsManifests, dashManifests, liveEncodingMode, reuploadSettings, manifestGenerator, autoRestartConfiguration, autoShutdownConfiguration);
+    return Objects.hash(streamKey, hlsManifests, dashManifests, liveEncodingMode, reuploadSettings, manifestGenerator, autoRestartConfiguration, autoShutdownConfiguration, esamSettings, cacheControlSettings);
   }
 
   @Override
@@ -247,6 +295,8 @@ public class StartLiveEncodingRequest {
     sb.append("    manifestGenerator: ").append(toIndentedString(manifestGenerator)).append("\n");
     sb.append("    autoRestartConfiguration: ").append(toIndentedString(autoRestartConfiguration)).append("\n");
     sb.append("    autoShutdownConfiguration: ").append(toIndentedString(autoShutdownConfiguration)).append("\n");
+    sb.append("    esamSettings: ").append(toIndentedString(esamSettings)).append("\n");
+    sb.append("    cacheControlSettings: ").append(toIndentedString(cacheControlSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }
