@@ -151,6 +151,66 @@ public enum AnalyticsAttribute {
   CUSTOM_DATA_30("CUSTOM_DATA_30"),
   
   
+  CUSTOM_DATA_31("CUSTOM_DATA_31"),
+  
+  
+  CUSTOM_DATA_32("CUSTOM_DATA_32"),
+  
+  
+  CUSTOM_DATA_33("CUSTOM_DATA_33"),
+  
+  
+  CUSTOM_DATA_34("CUSTOM_DATA_34"),
+  
+  
+  CUSTOM_DATA_35("CUSTOM_DATA_35"),
+  
+  
+  CUSTOM_DATA_36("CUSTOM_DATA_36"),
+  
+  
+  CUSTOM_DATA_37("CUSTOM_DATA_37"),
+  
+  
+  CUSTOM_DATA_38("CUSTOM_DATA_38"),
+  
+  
+  CUSTOM_DATA_39("CUSTOM_DATA_39"),
+  
+  
+  CUSTOM_DATA_40("CUSTOM_DATA_40"),
+  
+  
+  CUSTOM_DATA_41("CUSTOM_DATA_41"),
+  
+  
+  CUSTOM_DATA_42("CUSTOM_DATA_42"),
+  
+  
+  CUSTOM_DATA_43("CUSTOM_DATA_43"),
+  
+  
+  CUSTOM_DATA_44("CUSTOM_DATA_44"),
+  
+  
+  CUSTOM_DATA_45("CUSTOM_DATA_45"),
+  
+  
+  CUSTOM_DATA_46("CUSTOM_DATA_46"),
+  
+  
+  CUSTOM_DATA_47("CUSTOM_DATA_47"),
+  
+  
+  CUSTOM_DATA_48("CUSTOM_DATA_48"),
+  
+  
+  CUSTOM_DATA_49("CUSTOM_DATA_49"),
+  
+  
+  CUSTOM_DATA_50("CUSTOM_DATA_50"),
+  
+  
   CUSTOM_USER_ID("CUSTOM_USER_ID"),
   
   
@@ -260,6 +320,9 @@ public enum AnalyticsAttribute {
   
   
   PLATFORM("PLATFORM"),
+  
+  
+  PLAY_ATTEMPTS("PLAY_ATTEMPTS"),
   
   
   PLAYED("PLAYED"),
