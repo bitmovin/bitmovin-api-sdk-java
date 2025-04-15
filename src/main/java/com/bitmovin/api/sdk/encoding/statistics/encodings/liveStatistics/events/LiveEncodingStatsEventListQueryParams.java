@@ -27,4 +27,15 @@ public class LiveEncodingStatsEventListQueryParams extends HashMap<String, Objec
     public void setLimit(Integer limit) {
         this.put("limit", limit);
     }
+
+    public Boolean getSortByTime() {
+        return (Boolean) this.get("sortByTime");
+    }
+
+    /**
+    * @param sortByTime Sort events by time in DESC order (optional)
+    */
+    public void setSortByTime(Boolean sortByTime) {
+        this.put("sortByTime", sortByTime);
+    }
 }

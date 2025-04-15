@@ -1,0 +1,253 @@
+package com.bitmovin.api.sdk.model;
+
+import java.util.Objects;
+import java.util.Arrays;
+import com.bitmovin.api.sdk.model.Content;
+import com.bitmovin.api.sdk.model.IABTaxonomy;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
+/**
+ * Scene
+ */
+
+public class Scene {
+  @JsonProperty("startInSeconds")
+  private BigDecimal startInSeconds;
+
+  @JsonProperty("endInSeconds")
+  private BigDecimal endInSeconds;
+
+  @JsonProperty("id")
+  private String id;
+
+  @JsonProperty("content")
+  private Content content;
+
+  @JsonProperty("summary")
+  private String summary;
+
+  @JsonProperty("sensitiveTopics")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<String> sensitiveTopics = new ArrayList<String>();
+
+  @JsonProperty("keywords")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<String> keywords = new ArrayList<String>();
+
+  @JsonProperty("iab")
+  private IABTaxonomy iab;
+
+
+  /**
+   * Get startInSeconds
+   * @return startInSeconds
+   */
+  public BigDecimal getStartInSeconds() {
+    return startInSeconds;
+  }
+
+  /**
+   * Set startInSeconds
+   *
+   * @param startInSeconds
+   */
+  public void setStartInSeconds(BigDecimal startInSeconds) {
+    this.startInSeconds = startInSeconds;
+  }
+
+
+  /**
+   * Get endInSeconds
+   * @return endInSeconds
+   */
+  public BigDecimal getEndInSeconds() {
+    return endInSeconds;
+  }
+
+  /**
+   * Set endInSeconds
+   *
+   * @param endInSeconds
+   */
+  public void setEndInSeconds(BigDecimal endInSeconds) {
+    this.endInSeconds = endInSeconds;
+  }
+
+
+  /**
+   * Get id
+   * @return id
+   */
+  public String getId() {
+    return id;
+  }
+
+  /**
+   * Set id
+   *
+   * @param id
+   */
+  public void setId(String id) {
+    this.id = id;
+  }
+
+
+  /**
+   * Get content
+   * @return content
+   */
+  public Content getContent() {
+    return content;
+  }
+
+  /**
+   * Set content
+   *
+   * @param content
+   */
+  public void setContent(Content content) {
+    this.content = content;
+  }
+
+
+  /**
+   * Get summary
+   * @return summary
+   */
+  public String getSummary() {
+    return summary;
+  }
+
+  /**
+   * Set summary
+   *
+   * @param summary
+   */
+  public void setSummary(String summary) {
+    this.summary = summary;
+  }
+
+
+  public Scene addSensitiveTopicsItem(String sensitiveTopicsItem) {
+    this.sensitiveTopics.add(sensitiveTopicsItem);
+    return this;
+  }
+
+  /**
+   * Get sensitiveTopics
+   * @return sensitiveTopics
+   */
+  public List<String> getSensitiveTopics() {
+    return sensitiveTopics;
+  }
+
+  /**
+   * Set sensitiveTopics
+   *
+   * @param sensitiveTopics
+   */
+  public void setSensitiveTopics(List<String> sensitiveTopics) {
+    this.sensitiveTopics = sensitiveTopics;
+  }
+
+
+  public Scene addKeywordsItem(String keywordsItem) {
+    this.keywords.add(keywordsItem);
+    return this;
+  }
+
+  /**
+   * Get keywords
+   * @return keywords
+   */
+  public List<String> getKeywords() {
+    return keywords;
+  }
+
+  /**
+   * Set keywords
+   *
+   * @param keywords
+   */
+  public void setKeywords(List<String> keywords) {
+    this.keywords = keywords;
+  }
+
+
+  /**
+   * Get iab
+   * @return iab
+   */
+  public IABTaxonomy getIab() {
+    return iab;
+  }
+
+  /**
+   * Set iab
+   *
+   * @param iab
+   */
+  public void setIab(IABTaxonomy iab) {
+    this.iab = iab;
+  }
+
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Scene scene = (Scene) o;
+    return Objects.equals(this.startInSeconds, scene.startInSeconds) &&
+        Objects.equals(this.endInSeconds, scene.endInSeconds) &&
+        Objects.equals(this.id, scene.id) &&
+        Objects.equals(this.content, scene.content) &&
+        Objects.equals(this.summary, scene.summary) &&
+        Objects.equals(this.sensitiveTopics, scene.sensitiveTopics) &&
+        Objects.equals(this.keywords, scene.keywords) &&
+        Objects.equals(this.iab, scene.iab);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(startInSeconds, endInSeconds, id, content, summary, sensitiveTopics, keywords, iab);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Scene {\n");
+    
+    sb.append("    startInSeconds: ").append(toIndentedString(startInSeconds)).append("\n");
+    sb.append("    endInSeconds: ").append(toIndentedString(endInSeconds)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    content: ").append(toIndentedString(content)).append("\n");
+    sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
+    sb.append("    sensitiveTopics: ").append(toIndentedString(sensitiveTopics)).append("\n");
+    sb.append("    keywords: ").append(toIndentedString(keywords)).append("\n");
+    sb.append("    iab: ").append(toIndentedString(iab)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+

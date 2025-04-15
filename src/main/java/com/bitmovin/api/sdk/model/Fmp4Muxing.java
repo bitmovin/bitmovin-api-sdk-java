@@ -39,6 +39,9 @@ public class Fmp4Muxing extends Muxing {
   @JsonProperty("writeDurationPerSample")
   private Boolean writeDurationPerSample;
 
+  @JsonProperty("signalScte35AsEmsg")
+  private Boolean signalScte35AsEmsg;
+
   @JsonProperty("segmentsMuxed")
   private Integer segmentsMuxed;
 
@@ -159,6 +162,25 @@ public class Fmp4Muxing extends Muxing {
     this.writeDurationPerSample = writeDurationPerSample;
   }
 
+
+  /**
+   * Insert scte35 triggers as emsg boxes into the fMP4 segments.
+   * @return signalScte35AsEmsg
+   */
+  public Boolean getSignalScte35AsEmsg() {
+    return signalScte35AsEmsg;
+  }
+
+  /**
+   * Insert scte35 triggers as emsg boxes into the fMP4 segments.
+   *
+   * @param signalScte35AsEmsg
+   *        Insert scte35 triggers as emsg boxes into the fMP4 segments.
+   */
+  public void setSignalScte35AsEmsg(Boolean signalScte35AsEmsg) {
+    this.signalScte35AsEmsg = signalScte35AsEmsg;
+  }
+
   /**
    * Number of segments which have been encoded
    * @return segmentsMuxed
@@ -202,6 +224,7 @@ public class Fmp4Muxing extends Muxing {
         Objects.equals(this.initSegmentName, fmp4Muxing.initSegmentName) &&
         Objects.equals(this.initSegmentNameTemplate, fmp4Muxing.initSegmentNameTemplate) &&
         Objects.equals(this.writeDurationPerSample, fmp4Muxing.writeDurationPerSample) &&
+        Objects.equals(this.signalScte35AsEmsg, fmp4Muxing.signalScte35AsEmsg) &&
         Objects.equals(this.segmentsMuxed, fmp4Muxing.segmentsMuxed) &&
         Objects.equals(this.ptsAlignMode, fmp4Muxing.ptsAlignMode) &&
         super.equals(o);
@@ -209,7 +232,7 @@ public class Fmp4Muxing extends Muxing {
 
   @Override
   public int hashCode() {
-    return Objects.hash(segmentLength, segmentNaming, segmentNamingTemplate, initSegmentName, initSegmentNameTemplate, writeDurationPerSample, segmentsMuxed, ptsAlignMode, super.hashCode());
+    return Objects.hash(segmentLength, segmentNaming, segmentNamingTemplate, initSegmentName, initSegmentNameTemplate, writeDurationPerSample, signalScte35AsEmsg, segmentsMuxed, ptsAlignMode, super.hashCode());
   }
 
   @Override
@@ -223,6 +246,7 @@ public class Fmp4Muxing extends Muxing {
     sb.append("    initSegmentName: ").append(toIndentedString(initSegmentName)).append("\n");
     sb.append("    initSegmentNameTemplate: ").append(toIndentedString(initSegmentNameTemplate)).append("\n");
     sb.append("    writeDurationPerSample: ").append(toIndentedString(writeDurationPerSample)).append("\n");
+    sb.append("    signalScte35AsEmsg: ").append(toIndentedString(signalScte35AsEmsg)).append("\n");
     sb.append("    segmentsMuxed: ").append(toIndentedString(segmentsMuxed)).append("\n");
     sb.append("    ptsAlignMode: ").append(toIndentedString(ptsAlignMode)).append("\n");
     sb.append("}");

@@ -17,7 +17,7 @@ public class CacheControl {
 
 
   /**
-   * Cache control for storing data on CDN. Example \&quot;public, max-age&#x3D;0, no-cache\&quot;.
+   * Cache control for storing data on CDN. Example \&quot;public, max-age&#x3D;0, no-cache\&quot;. Cache control is supported on S3, GCS and Azure output storage providers.
    * @return cacheControl
    */
   public String getCacheControl() {
@@ -25,10 +25,10 @@ public class CacheControl {
   }
 
   /**
-   * Cache control for storing data on CDN. Example \&quot;public, max-age&#x3D;0, no-cache\&quot;.
+   * Cache control for storing data on CDN. Example \&quot;public, max-age&#x3D;0, no-cache\&quot;. Cache control is supported on S3, GCS and Azure output storage providers.
    *
    * @param cacheControl
-   *        Cache control for storing data on CDN. Example \&quot;public, max-age&#x3D;0, no-cache\&quot;.
+   *        Cache control for storing data on CDN. Example \&quot;public, max-age&#x3D;0, no-cache\&quot;. Cache control is supported on S3, GCS and Azure output storage providers.
    */
   public void setCacheControl(String cacheControl) {
     this.cacheControl = cacheControl;
