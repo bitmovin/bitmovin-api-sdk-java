@@ -11,16 +11,16 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * AiContentAnalysisAutomaticAdPlacement
+ * AiSceneAnalysisAutomaticAdPlacement
  */
 
-public class AiContentAnalysisAutomaticAdPlacement {
+public class AiSceneAnalysisAutomaticAdPlacement {
   @JsonProperty("schedule")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<AutomaticAdPlacementPosition> schedule = new ArrayList<AutomaticAdPlacementPosition>();
 
 
-  public AiContentAnalysisAutomaticAdPlacement addScheduleItem(AutomaticAdPlacementPosition scheduleItem) {
+  public AiSceneAnalysisAutomaticAdPlacement addScheduleItem(AutomaticAdPlacementPosition scheduleItem) {
     this.schedule.add(scheduleItem);
     return this;
   }
@@ -52,8 +52,8 @@ public class AiContentAnalysisAutomaticAdPlacement {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AiContentAnalysisAutomaticAdPlacement aiContentAnalysisAutomaticAdPlacement = (AiContentAnalysisAutomaticAdPlacement) o;
-    return Objects.equals(this.schedule, aiContentAnalysisAutomaticAdPlacement.schedule);
+    AiSceneAnalysisAutomaticAdPlacement aiSceneAnalysisAutomaticAdPlacement = (AiSceneAnalysisAutomaticAdPlacement) o;
+    return Objects.equals(this.schedule, aiSceneAnalysisAutomaticAdPlacement.schedule);
   }
 
   @Override
@@ -64,7 +64,7 @@ public class AiContentAnalysisAutomaticAdPlacement {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AiContentAnalysisAutomaticAdPlacement {\n");
+    sb.append("class AiSceneAnalysisAutomaticAdPlacement {\n");
     
     sb.append("    schedule: ").append(toIndentedString(schedule)).append("\n");
     sb.append("}");

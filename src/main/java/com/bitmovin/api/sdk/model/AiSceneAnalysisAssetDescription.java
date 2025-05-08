@@ -11,10 +11,10 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * AiContentAnalysisAssetDescription
+ * AiSceneAnalysisAssetDescription
  */
 
-public class AiContentAnalysisAssetDescription {
+public class AiSceneAnalysisAssetDescription {
   @JsonProperty("filename")
   private String filename;
 
@@ -42,7 +42,7 @@ public class AiContentAnalysisAssetDescription {
   }
 
 
-  public AiContentAnalysisAssetDescription addOutputsItem(EncodingOutput outputsItem) {
+  public AiSceneAnalysisAssetDescription addOutputsItem(EncodingOutput outputsItem) {
     this.outputs.add(outputsItem);
     return this;
   }
@@ -73,9 +73,9 @@ public class AiContentAnalysisAssetDescription {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AiContentAnalysisAssetDescription aiContentAnalysisAssetDescription = (AiContentAnalysisAssetDescription) o;
-    return Objects.equals(this.filename, aiContentAnalysisAssetDescription.filename) &&
-        Objects.equals(this.outputs, aiContentAnalysisAssetDescription.outputs);
+    AiSceneAnalysisAssetDescription aiSceneAnalysisAssetDescription = (AiSceneAnalysisAssetDescription) o;
+    return Objects.equals(this.filename, aiSceneAnalysisAssetDescription.filename) &&
+        Objects.equals(this.outputs, aiSceneAnalysisAssetDescription.outputs);
   }
 
   @Override
@@ -86,7 +86,7 @@ public class AiContentAnalysisAssetDescription {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AiContentAnalysisAssetDescription {\n");
+    sb.append("class AiSceneAnalysisAssetDescription {\n");
     
     sb.append("    filename: ").append(toIndentedString(filename)).append("\n");
     sb.append("    outputs: ").append(toIndentedString(outputs)).append("\n");

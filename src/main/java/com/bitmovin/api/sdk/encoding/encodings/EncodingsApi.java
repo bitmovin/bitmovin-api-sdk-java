@@ -23,6 +23,7 @@ import com.bitmovin.api.sdk.encoding.encodings.customdata.CustomdataApi;
 import com.bitmovin.api.sdk.encoding.encodings.streams.StreamsApi;
 import com.bitmovin.api.sdk.encoding.encodings.inputStreams.InputStreamsApi;
 import com.bitmovin.api.sdk.encoding.encodings.muxings.MuxingsApi;
+import com.bitmovin.api.sdk.encoding.encodings.template.TemplateApi;
 import com.bitmovin.api.sdk.encoding.encodings.transferRetries.TransferRetriesApi;
 import com.bitmovin.api.sdk.encoding.encodings.outputPaths.OutputPathsApi;
 import com.bitmovin.api.sdk.encoding.encodings.captions.CaptionsApi;
@@ -36,6 +37,7 @@ public class EncodingsApi {
     public final StreamsApi streams;
     public final InputStreamsApi inputStreams;
     public final MuxingsApi muxings;
+    public final TemplateApi template;
     public final TransferRetriesApi transferRetries;
     public final OutputPathsApi outputPaths;
     public final CaptionsApi captions;
@@ -58,6 +60,7 @@ public class EncodingsApi {
         this.streams = new StreamsApi(clientFactory);
         this.inputStreams = new InputStreamsApi(clientFactory);
         this.muxings = new MuxingsApi(clientFactory);
+        this.template = new TemplateApi(clientFactory);
         this.transferRetries = new TransferRetriesApi(clientFactory);
         this.outputPaths = new OutputPathsApi(clientFactory);
         this.captions = new CaptionsApi(clientFactory);

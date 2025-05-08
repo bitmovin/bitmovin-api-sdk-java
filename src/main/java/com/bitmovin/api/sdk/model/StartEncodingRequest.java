@@ -2,7 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.AiContentAnalysis;
+import com.bitmovin.api.sdk.model.AiSceneAnalysis;
 import com.bitmovin.api.sdk.model.EncodingMode;
 import com.bitmovin.api.sdk.model.ManifestGenerator;
 import com.bitmovin.api.sdk.model.ManifestResource;
@@ -63,8 +63,8 @@ public class StartEncodingRequest {
   @JsonProperty("perTitle")
   private PerTitle perTitle;
 
-  @JsonProperty("aiContentAnalysis")
-  private AiContentAnalysis aiContentAnalysis;
+  @JsonProperty("aiSceneAnalysis")
+  private AiSceneAnalysis aiSceneAnalysis;
 
 
   /**
@@ -321,21 +321,21 @@ public class StartEncodingRequest {
 
 
   /**
-   * AI content analysis settings
-   * @return aiContentAnalysis
+   * AI scene analysis settings
+   * @return aiSceneAnalysis
    */
-  public AiContentAnalysis getAiContentAnalysis() {
-    return aiContentAnalysis;
+  public AiSceneAnalysis getAiSceneAnalysis() {
+    return aiSceneAnalysis;
   }
 
   /**
-   * AI content analysis settings
+   * AI scene analysis settings
    *
-   * @param aiContentAnalysis
-   *        AI content analysis settings
+   * @param aiSceneAnalysis
+   *        AI scene analysis settings
    */
-  public void setAiContentAnalysis(AiContentAnalysis aiContentAnalysis) {
-    this.aiContentAnalysis = aiContentAnalysis;
+  public void setAiSceneAnalysis(AiSceneAnalysis aiSceneAnalysis) {
+    this.aiSceneAnalysis = aiSceneAnalysis;
   }
 
 
@@ -360,12 +360,12 @@ public class StartEncodingRequest {
         Objects.equals(this.vodSmoothManifests, startEncodingRequest.vodSmoothManifests) &&
         Objects.equals(this.manifestGenerator, startEncodingRequest.manifestGenerator) &&
         Objects.equals(this.perTitle, startEncodingRequest.perTitle) &&
-        Objects.equals(this.aiContentAnalysis, startEncodingRequest.aiContentAnalysis);
+        Objects.equals(this.aiSceneAnalysis, startEncodingRequest.aiSceneAnalysis);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(trimming, scheduling, tweaks, handleVariableInputFps, encodingMode, previewDashManifests, previewHlsManifests, vodDashManifests, vodHlsManifests, vodSmoothManifests, manifestGenerator, perTitle, aiContentAnalysis);
+    return Objects.hash(trimming, scheduling, tweaks, handleVariableInputFps, encodingMode, previewDashManifests, previewHlsManifests, vodDashManifests, vodHlsManifests, vodSmoothManifests, manifestGenerator, perTitle, aiSceneAnalysis);
   }
 
   @Override
@@ -385,7 +385,7 @@ public class StartEncodingRequest {
     sb.append("    vodSmoothManifests: ").append(toIndentedString(vodSmoothManifests)).append("\n");
     sb.append("    manifestGenerator: ").append(toIndentedString(manifestGenerator)).append("\n");
     sb.append("    perTitle: ").append(toIndentedString(perTitle)).append("\n");
-    sb.append("    aiContentAnalysis: ").append(toIndentedString(aiContentAnalysis)).append("\n");
+    sb.append("    aiSceneAnalysis: ").append(toIndentedString(aiSceneAnalysis)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -2,40 +2,40 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.AiContentAnalysisAssetDescription;
-import com.bitmovin.api.sdk.model.AiContentAnalysisAutomaticAdPlacement;
+import com.bitmovin.api.sdk.model.AiSceneAnalysisAssetDescription;
+import com.bitmovin.api.sdk.model.AiSceneAnalysisAutomaticAdPlacement;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * AiContentAnalysisFeatures
+ * AiSceneAnalysisFeatures
  */
 
-public class AiContentAnalysisFeatures {
+public class AiSceneAnalysisFeatures {
   @JsonProperty("assetDescription")
-  private AiContentAnalysisAssetDescription assetDescription;
+  private AiSceneAnalysisAssetDescription assetDescription;
 
   @JsonProperty("automaticAdPlacement")
-  private AiContentAnalysisAutomaticAdPlacement automaticAdPlacement;
+  private AiSceneAnalysisAutomaticAdPlacement automaticAdPlacement;
 
 
   /**
-   * AI content analysis will create an asset description file. 
+   * AI scene analysis will create an asset description file. 
    * @return assetDescription
    */
-  public AiContentAnalysisAssetDescription getAssetDescription() {
+  public AiSceneAnalysisAssetDescription getAssetDescription() {
     return assetDescription;
   }
 
   /**
-   * AI content analysis will create an asset description file. 
+   * AI scene analysis will create an asset description file. 
    *
    * @param assetDescription
-   *        AI content analysis will create an asset description file. 
+   *        AI scene analysis will create an asset description file. 
    */
-  public void setAssetDescription(AiContentAnalysisAssetDescription assetDescription) {
+  public void setAssetDescription(AiSceneAnalysisAssetDescription assetDescription) {
     this.assetDescription = assetDescription;
   }
 
@@ -44,7 +44,7 @@ public class AiContentAnalysisFeatures {
    * Ad markers placed on detected scene changes and configured positions. 
    * @return automaticAdPlacement
    */
-  public AiContentAnalysisAutomaticAdPlacement getAutomaticAdPlacement() {
+  public AiSceneAnalysisAutomaticAdPlacement getAutomaticAdPlacement() {
     return automaticAdPlacement;
   }
 
@@ -54,7 +54,7 @@ public class AiContentAnalysisFeatures {
    * @param automaticAdPlacement
    *        Ad markers placed on detected scene changes and configured positions. 
    */
-  public void setAutomaticAdPlacement(AiContentAnalysisAutomaticAdPlacement automaticAdPlacement) {
+  public void setAutomaticAdPlacement(AiSceneAnalysisAutomaticAdPlacement automaticAdPlacement) {
     this.automaticAdPlacement = automaticAdPlacement;
   }
 
@@ -67,9 +67,9 @@ public class AiContentAnalysisFeatures {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AiContentAnalysisFeatures aiContentAnalysisFeatures = (AiContentAnalysisFeatures) o;
-    return Objects.equals(this.assetDescription, aiContentAnalysisFeatures.assetDescription) &&
-        Objects.equals(this.automaticAdPlacement, aiContentAnalysisFeatures.automaticAdPlacement);
+    AiSceneAnalysisFeatures aiSceneAnalysisFeatures = (AiSceneAnalysisFeatures) o;
+    return Objects.equals(this.assetDescription, aiSceneAnalysisFeatures.assetDescription) &&
+        Objects.equals(this.automaticAdPlacement, aiSceneAnalysisFeatures.automaticAdPlacement);
   }
 
   @Override
@@ -80,7 +80,7 @@ public class AiContentAnalysisFeatures {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AiContentAnalysisFeatures {\n");
+    sb.append("class AiSceneAnalysisFeatures {\n");
     
     sb.append("    assetDescription: ").append(toIndentedString(assetDescription)).append("\n");
     sb.append("    automaticAdPlacement: ").append(toIndentedString(automaticAdPlacement)).append("\n");

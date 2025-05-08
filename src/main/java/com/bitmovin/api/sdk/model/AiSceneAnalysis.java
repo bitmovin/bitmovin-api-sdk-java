@@ -2,7 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.AiContentAnalysisFeatures;
+import com.bitmovin.api.sdk.model.AiSceneAnalysisFeatures;
 import com.bitmovin.api.sdk.model.AiService;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -10,15 +10,15 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * AiContentAnalysis
+ * AiSceneAnalysis
  */
 
-public class AiContentAnalysis {
+public class AiSceneAnalysis {
   @JsonProperty("aiService")
   private AiService aiService;
 
   @JsonProperty("features")
-  private AiContentAnalysisFeatures features;
+  private AiSceneAnalysisFeatures features;
 
 
   /**
@@ -41,20 +41,20 @@ public class AiContentAnalysis {
 
 
   /**
-   * Features of the AI content analysis
+   * Features of the AI scene analysis
    * @return features
    */
-  public AiContentAnalysisFeatures getFeatures() {
+  public AiSceneAnalysisFeatures getFeatures() {
     return features;
   }
 
   /**
-   * Features of the AI content analysis
+   * Features of the AI scene analysis
    *
    * @param features
-   *        Features of the AI content analysis
+   *        Features of the AI scene analysis
    */
-  public void setFeatures(AiContentAnalysisFeatures features) {
+  public void setFeatures(AiSceneAnalysisFeatures features) {
     this.features = features;
   }
 
@@ -67,9 +67,9 @@ public class AiContentAnalysis {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AiContentAnalysis aiContentAnalysis = (AiContentAnalysis) o;
-    return Objects.equals(this.aiService, aiContentAnalysis.aiService) &&
-        Objects.equals(this.features, aiContentAnalysis.features);
+    AiSceneAnalysis aiSceneAnalysis = (AiSceneAnalysis) o;
+    return Objects.equals(this.aiService, aiSceneAnalysis.aiService) &&
+        Objects.equals(this.features, aiSceneAnalysis.features);
   }
 
   @Override
@@ -80,7 +80,7 @@ public class AiContentAnalysis {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AiContentAnalysis {\n");
+    sb.append("class AiSceneAnalysis {\n");
     
     sb.append("    aiService: ").append(toIndentedString(aiService)).append("\n");
     sb.append("    features: ").append(toIndentedString(features)).append("\n");
