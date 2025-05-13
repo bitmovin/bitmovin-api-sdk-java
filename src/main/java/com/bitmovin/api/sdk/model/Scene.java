@@ -17,6 +17,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 
 public class Scene {
+  @JsonProperty("title")
+  private String title;
+
   @JsonProperty("startInSeconds")
   private BigDecimal startInSeconds;
 
@@ -42,6 +45,24 @@ public class Scene {
 
   @JsonProperty("iab")
   private IABTaxonomy iab;
+
+
+  /**
+   * Get title
+   * @return title
+   */
+  public String getTitle() {
+    return title;
+  }
+
+  /**
+   * Set title
+   *
+   * @param title
+   */
+  public void setTitle(String title) {
+    this.title = title;
+  }
 
 
   /**
@@ -207,7 +228,8 @@ public class Scene {
       return false;
     }
     Scene scene = (Scene) o;
-    return Objects.equals(this.startInSeconds, scene.startInSeconds) &&
+    return Objects.equals(this.title, scene.title) &&
+        Objects.equals(this.startInSeconds, scene.startInSeconds) &&
         Objects.equals(this.endInSeconds, scene.endInSeconds) &&
         Objects.equals(this.id, scene.id) &&
         Objects.equals(this.content, scene.content) &&
@@ -219,7 +241,7 @@ public class Scene {
 
   @Override
   public int hashCode() {
-    return Objects.hash(startInSeconds, endInSeconds, id, content, summary, sensitiveTopics, keywords, iab);
+    return Objects.hash(title, startInSeconds, endInSeconds, id, content, summary, sensitiveTopics, keywords, iab);
   }
 
   @Override
@@ -227,6 +249,7 @@ public class Scene {
     StringBuilder sb = new StringBuilder();
     sb.append("class Scene {\n");
     
+    sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    startInSeconds: ").append(toIndentedString(startInSeconds)).append("\n");
     sb.append("    endInSeconds: ").append(toIndentedString(endInSeconds)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");

@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.Metadata;
 import com.bitmovin.api.sdk.model.Rating;
 import com.bitmovin.api.sdk.model.Scene;
 import java.util.ArrayList;
@@ -38,6 +39,9 @@ public class SceneAnalysisDetailsResponse {
   @JsonProperty("iabSensitiveTopicTaxonomies")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<String> iabSensitiveTopicTaxonomies = new ArrayList<String>();
+
+  @JsonProperty("metadata")
+  private Metadata metadata;
 
 
   public SceneAnalysisDetailsResponse addScenesItem(Scene scenesItem) {
@@ -173,6 +177,24 @@ public class SceneAnalysisDetailsResponse {
   }
 
 
+  /**
+   * Get metadata
+   * @return metadata
+   */
+  public Metadata getMetadata() {
+    return metadata;
+  }
+
+  /**
+   * Set metadata
+   *
+   * @param metadata
+   */
+  public void setMetadata(Metadata metadata) {
+    this.metadata = metadata;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -187,12 +209,13 @@ public class SceneAnalysisDetailsResponse {
         Objects.equals(this.keywords, sceneAnalysisDetailsResponse.keywords) &&
         Objects.equals(this.ratings, sceneAnalysisDetailsResponse.ratings) &&
         Objects.equals(this.sensitiveTopics, sceneAnalysisDetailsResponse.sensitiveTopics) &&
-        Objects.equals(this.iabSensitiveTopicTaxonomies, sceneAnalysisDetailsResponse.iabSensitiveTopicTaxonomies);
+        Objects.equals(this.iabSensitiveTopicTaxonomies, sceneAnalysisDetailsResponse.iabSensitiveTopicTaxonomies) &&
+        Objects.equals(this.metadata, sceneAnalysisDetailsResponse.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(scenes, description, keywords, ratings, sensitiveTopics, iabSensitiveTopicTaxonomies);
+    return Objects.hash(scenes, description, keywords, ratings, sensitiveTopics, iabSensitiveTopicTaxonomies, metadata);
   }
 
   @Override
@@ -206,6 +229,7 @@ public class SceneAnalysisDetailsResponse {
     sb.append("    ratings: ").append(toIndentedString(ratings)).append("\n");
     sb.append("    sensitiveTopics: ").append(toIndentedString(sensitiveTopics)).append("\n");
     sb.append("    iabSensitiveTopicTaxonomies: ").append(toIndentedString(iabSensitiveTopicTaxonomies)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }
