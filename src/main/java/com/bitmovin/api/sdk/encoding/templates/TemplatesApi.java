@@ -110,7 +110,7 @@ public class TemplatesApi {
         }
     }
     /**
-     * BETA: Start an Encoding defined with an Encoding Template
+     * Start an Encoding defined with an Encoding Template
      * 
      * @param encodingTemplateRequest The Encoding Template to start an Encoding from (required)
      * @return EncodingTemplateStartResponse

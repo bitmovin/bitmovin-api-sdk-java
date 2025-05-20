@@ -50,6 +50,9 @@ public class AccountInformation extends BitmovinResource {
   @JsonProperty("intercomIdVerification")
   private String intercomIdVerification;
 
+  @JsonProperty("samlDomain")
+  private String samlDomain;
+
   /**
    * Email address of the account. (required)
    * @return email
@@ -174,6 +177,14 @@ public class AccountInformation extends BitmovinResource {
     return intercomIdVerification;
   }
 
+  /**
+   * The Saml Domain of this Account
+   * @return samlDomain
+   */
+  public String getSamlDomain() {
+    return samlDomain;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -194,12 +205,13 @@ public class AccountInformation extends BitmovinResource {
         Objects.equals(this.marketplace, accountInformation.marketplace) &&
         Objects.equals(this.mfaEnabled, accountInformation.mfaEnabled) &&
         Objects.equals(this.intercomIdVerification, accountInformation.intercomIdVerification) &&
+        Objects.equals(this.samlDomain, accountInformation.samlDomain) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(email, apiKeys, firstName, lastName, phone, company, verified, marketplace, mfaEnabled, intercomIdVerification, super.hashCode());
+    return Objects.hash(email, apiKeys, firstName, lastName, phone, company, verified, marketplace, mfaEnabled, intercomIdVerification, samlDomain, super.hashCode());
   }
 
   @Override
@@ -217,6 +229,7 @@ public class AccountInformation extends BitmovinResource {
     sb.append("    marketplace: ").append(toIndentedString(marketplace)).append("\n");
     sb.append("    mfaEnabled: ").append(toIndentedString(mfaEnabled)).append("\n");
     sb.append("    intercomIdVerification: ").append(toIndentedString(intercomIdVerification)).append("\n");
+    sb.append("    samlDomain: ").append(toIndentedString(samlDomain)).append("\n");
     sb.append("}");
     return sb.toString();
   }
