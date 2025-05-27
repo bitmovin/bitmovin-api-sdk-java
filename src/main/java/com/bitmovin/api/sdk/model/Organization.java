@@ -39,6 +39,9 @@ public class Organization extends BitmovinResource {
   @JsonProperty("mfaRequired")
   private Boolean mfaRequired;
 
+  @JsonProperty("ownerUserId")
+  private String ownerUserId;
+
 
   /**
    * Specifies the type of the organization in the hierachy. Only sub-organizations can be newly created. (required)
@@ -124,6 +127,14 @@ public class Organization extends BitmovinResource {
     return mfaRequired;
   }
 
+  /**
+   * ID of the user who owns the organization
+   * @return ownerUserId
+   */
+  public String getOwnerUserId() {
+    return ownerUserId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -140,12 +151,13 @@ public class Organization extends BitmovinResource {
         Objects.equals(this.limitsPerResource, organization.limitsPerResource) &&
         Objects.equals(this.signupSource, organization.signupSource) &&
         Objects.equals(this.mfaRequired, organization.mfaRequired) &&
+        Objects.equals(this.ownerUserId, organization.ownerUserId) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, parentId, labelColor, limitsPerResource, signupSource, mfaRequired, super.hashCode());
+    return Objects.hash(type, parentId, labelColor, limitsPerResource, signupSource, mfaRequired, ownerUserId, super.hashCode());
   }
 
   @Override
@@ -159,6 +171,7 @@ public class Organization extends BitmovinResource {
     sb.append("    limitsPerResource: ").append(toIndentedString(limitsPerResource)).append("\n");
     sb.append("    signupSource: ").append(toIndentedString(signupSource)).append("\n");
     sb.append("    mfaRequired: ").append(toIndentedString(mfaRequired)).append("\n");
+    sb.append("    ownerUserId: ").append(toIndentedString(ownerUserId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
