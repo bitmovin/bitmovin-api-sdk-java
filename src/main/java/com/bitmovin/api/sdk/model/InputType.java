@@ -28,6 +28,9 @@ public enum InputType {
   FTP("FTP"),
   
   
+  HLS("HLS"),
+  
+  
   GENERIC_S3("GENERIC_S3"),
   
   

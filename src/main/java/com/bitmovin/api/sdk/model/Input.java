@@ -25,6 +25,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
   @JsonSubTypes.Type(value = GcsInput.class, name = "GCS"),
   @JsonSubTypes.Type(value = HttpInput.class, name = "HTTP"),
   @JsonSubTypes.Type(value = HttpsInput.class, name = "HTTPS"),
+  @JsonSubTypes.Type(value = HlsInput.class, name = "HLS"),
   @JsonSubTypes.Type(value = LocalInput.class, name = "LOCAL"),
   @JsonSubTypes.Type(value = RtmpInput.class, name = "RTMP"),
   @JsonSubTypes.Type(value = S3Input.class, name = "S3"),
