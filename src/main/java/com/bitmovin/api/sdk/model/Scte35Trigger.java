@@ -13,30 +13,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 
 public class Scte35Trigger extends BitmovinResponse {
-  @JsonProperty("time")
-  private Double time;
-
   @JsonProperty("base64EncodedMetadata")
   private String base64EncodedMetadata;
-
-
-  /**
-   * Time in seconds where the SCTE 35 trigger should be inserted (required)
-   * @return time
-   */
-  public Double getTime() {
-    return time;
-  }
-
-  /**
-   * Time in seconds where the SCTE 35 trigger should be inserted (required)
-   *
-   * @param time
-   *        Time in seconds where the SCTE 35 trigger should be inserted (required)
-   */
-  public void setTime(Double time) {
-    this.time = time;
-  }
 
 
   /**
@@ -67,14 +45,13 @@ public class Scte35Trigger extends BitmovinResponse {
       return false;
     }
     Scte35Trigger scte35Trigger = (Scte35Trigger) o;
-    return Objects.equals(this.time, scte35Trigger.time) &&
-        Objects.equals(this.base64EncodedMetadata, scte35Trigger.base64EncodedMetadata) &&
+    return Objects.equals(this.base64EncodedMetadata, scte35Trigger.base64EncodedMetadata) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(time, base64EncodedMetadata, super.hashCode());
+    return Objects.hash(base64EncodedMetadata, super.hashCode());
   }
 
   @Override
@@ -82,7 +59,6 @@ public class Scte35Trigger extends BitmovinResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class Scte35Trigger {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    time: ").append(toIndentedString(time)).append("\n");
     sb.append("    base64EncodedMetadata: ").append(toIndentedString(base64EncodedMetadata)).append("\n");
     sb.append("}");
     return sb.toString();

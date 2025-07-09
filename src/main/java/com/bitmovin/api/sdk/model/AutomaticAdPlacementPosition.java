@@ -23,7 +23,7 @@ public class AutomaticAdPlacementPosition {
 
 
   /**
-   * Position of the ad placement in seconds.
+   * Position of the ad placement in seconds. (required)
    * @return position
    */
   public Double getPosition() {
@@ -31,10 +31,10 @@ public class AutomaticAdPlacementPosition {
   }
 
   /**
-   * Position of the ad placement in seconds.
+   * Position of the ad placement in seconds. (required)
    *
    * @param position
-   *        Position of the ad placement in seconds.
+   *        Position of the ad placement in seconds. (required)
    */
   public void setPosition(Double position) {
     this.position = position;
@@ -42,7 +42,7 @@ public class AutomaticAdPlacementPosition {
 
 
   /**
-   * Maximum deviation in seconds to the ad placement position.
+   * Maximum deviation in seconds to the ad placement position. (required)
    * @return maxDeviation
    */
   public Double getMaxDeviation() {
@@ -50,10 +50,10 @@ public class AutomaticAdPlacementPosition {
   }
 
   /**
-   * Maximum deviation in seconds to the ad placement position.
+   * Maximum deviation in seconds to the ad placement position. (required)
    *
    * @param maxDeviation
-   *        Maximum deviation in seconds to the ad placement position.
+   *        Maximum deviation in seconds to the ad placement position. (required)
    */
   public void setMaxDeviation(Double maxDeviation) {
     this.maxDeviation = maxDeviation;
