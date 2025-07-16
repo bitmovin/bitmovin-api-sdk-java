@@ -25,9 +25,15 @@ public class AwsAccount extends BitmovinResource {
   @JsonProperty("accountNumber")
   private String accountNumber;
 
+  @JsonProperty("roleName")
+  private String roleName;
+
+  @JsonProperty("externalId")
+  private String externalId;
+
 
   /**
-   * Amazon access key (required)
+   * Deprecated: Amazon access key for legacy support. Use roleName instead
    * @return accessKey
    */
   public String getAccessKey() {
@@ -35,10 +41,10 @@ public class AwsAccount extends BitmovinResource {
   }
 
   /**
-   * Amazon access key (required)
+   * Deprecated: Amazon access key for legacy support. Use roleName instead
    *
    * @param accessKey
-   *        Amazon access key (required)
+   *        Deprecated: Amazon access key for legacy support. Use roleName instead
    */
   public void setAccessKey(String accessKey) {
     this.accessKey = accessKey;
@@ -46,7 +52,7 @@ public class AwsAccount extends BitmovinResource {
 
 
   /**
-   * Amazon secret key (required)
+   * Deprecated: Amazon secret key for legacy support. Use roleName instead
    * @return secretKey
    */
   public String getSecretKey() {
@@ -54,10 +60,10 @@ public class AwsAccount extends BitmovinResource {
   }
 
   /**
-   * Amazon secret key (required)
+   * Deprecated: Amazon secret key for legacy support. Use roleName instead
    *
    * @param secretKey
-   *        Amazon secret key (required)
+   *        Deprecated: Amazon secret key for legacy support. Use roleName instead
    */
   public void setSecretKey(String secretKey) {
     this.secretKey = secretKey;
@@ -83,6 +89,33 @@ public class AwsAccount extends BitmovinResource {
   }
 
 
+  /**
+   * Role name including path for the AWS IAM role that will be used by Bitmovin to access the AWS account depicted by accountNumber. The role ARN is constructed based on accountNumber and roleName: arn:aws:iam::{accountNumber}:role/{roleName}
+   * @return roleName
+   */
+  public String getRoleName() {
+    return roleName;
+  }
+
+  /**
+   * Role name including path for the AWS IAM role that will be used by Bitmovin to access the AWS account depicted by accountNumber. The role ARN is constructed based on accountNumber and roleName: arn:aws:iam::{accountNumber}:role/{roleName}
+   *
+   * @param roleName
+   *        Role name including path for the AWS IAM role that will be used by Bitmovin to access the AWS account depicted by accountNumber. The role ARN is constructed based on accountNumber and roleName: arn:aws:iam::{accountNumber}:role/{roleName}
+   */
+  public void setRoleName(String roleName) {
+    this.roleName = roleName;
+  }
+
+  /**
+   * External ID that needs to be set in the trust policy of the AWS IAM role (depicted by roleName) that allows Bitmovin access to the AWS account depicted by accountNumber
+   * @return externalId
+   */
+  public String getExternalId() {
+    return externalId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -95,12 +128,14 @@ public class AwsAccount extends BitmovinResource {
     return Objects.equals(this.accessKey, awsAccount.accessKey) &&
         Objects.equals(this.secretKey, awsAccount.secretKey) &&
         Objects.equals(this.accountNumber, awsAccount.accountNumber) &&
+        Objects.equals(this.roleName, awsAccount.roleName) &&
+        Objects.equals(this.externalId, awsAccount.externalId) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accessKey, secretKey, accountNumber, super.hashCode());
+    return Objects.hash(accessKey, secretKey, accountNumber, roleName, externalId, super.hashCode());
   }
 
   @Override
@@ -111,6 +146,8 @@ public class AwsAccount extends BitmovinResource {
     sb.append("    accessKey: ").append(toIndentedString(accessKey)).append("\n");
     sb.append("    secretKey: ").append(toIndentedString(secretKey)).append("\n");
     sb.append("    accountNumber: ").append(toIndentedString(accountNumber)).append("\n");
+    sb.append("    roleName: ").append(toIndentedString(roleName)).append("\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

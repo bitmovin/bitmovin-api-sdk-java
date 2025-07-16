@@ -3,6 +3,7 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AvailabilityStartTimeMode;
+import com.bitmovin.api.sdk.model.DashManifestAdMarkerSettings;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -30,6 +31,9 @@ public class LiveDashManifest {
 
   @JsonProperty("availabilityStartTimeMode")
   private AvailabilityStartTimeMode availabilityStartTimeMode;
+
+  @JsonProperty("adMarkerSettings")
+  private DashManifestAdMarkerSettings adMarkerSettings;
 
 
   /**
@@ -146,6 +150,24 @@ public class LiveDashManifest {
   }
 
 
+  /**
+   * Get adMarkerSettings
+   * @return adMarkerSettings
+   */
+  public DashManifestAdMarkerSettings getAdMarkerSettings() {
+    return adMarkerSettings;
+  }
+
+  /**
+   * Set adMarkerSettings
+   *
+   * @param adMarkerSettings
+   */
+  public void setAdMarkerSettings(DashManifestAdMarkerSettings adMarkerSettings) {
+    this.adMarkerSettings = adMarkerSettings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -160,12 +182,13 @@ public class LiveDashManifest {
         Objects.equals(this.liveEdgeOffset, liveDashManifest.liveEdgeOffset) &&
         Objects.equals(this.suggestedPresentationDelay, liveDashManifest.suggestedPresentationDelay) &&
         Objects.equals(this.minimumUpdatePeriod, liveDashManifest.minimumUpdatePeriod) &&
-        Objects.equals(this.availabilityStartTimeMode, liveDashManifest.availabilityStartTimeMode);
+        Objects.equals(this.availabilityStartTimeMode, liveDashManifest.availabilityStartTimeMode) &&
+        Objects.equals(this.adMarkerSettings, liveDashManifest.adMarkerSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(manifestId, timeshift, liveEdgeOffset, suggestedPresentationDelay, minimumUpdatePeriod, availabilityStartTimeMode);
+    return Objects.hash(manifestId, timeshift, liveEdgeOffset, suggestedPresentationDelay, minimumUpdatePeriod, availabilityStartTimeMode, adMarkerSettings);
   }
 
   @Override
@@ -179,6 +202,7 @@ public class LiveDashManifest {
     sb.append("    suggestedPresentationDelay: ").append(toIndentedString(suggestedPresentationDelay)).append("\n");
     sb.append("    minimumUpdatePeriod: ").append(toIndentedString(minimumUpdatePeriod)).append("\n");
     sb.append("    availabilityStartTimeMode: ").append(toIndentedString(availabilityStartTimeMode)).append("\n");
+    sb.append("    adMarkerSettings: ").append(toIndentedString(adMarkerSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

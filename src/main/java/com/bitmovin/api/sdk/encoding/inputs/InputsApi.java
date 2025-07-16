@@ -29,6 +29,7 @@ import com.bitmovin.api.sdk.encoding.inputs.gcs.GcsApi;
 import com.bitmovin.api.sdk.encoding.inputs.gcsServiceAccount.GcsServiceAccountApi;
 import com.bitmovin.api.sdk.encoding.inputs.azure.AzureApi;
 import com.bitmovin.api.sdk.encoding.inputs.ftp.FtpApi;
+import com.bitmovin.api.sdk.encoding.inputs.hls.HlsApi;
 import com.bitmovin.api.sdk.encoding.inputs.sftp.SftpApi;
 import com.bitmovin.api.sdk.encoding.inputs.http.HttpApi;
 import com.bitmovin.api.sdk.encoding.inputs.https.HttpsApi;
@@ -50,6 +51,7 @@ public class InputsApi {
     public final GcsServiceAccountApi gcsServiceAccount;
     public final AzureApi azure;
     public final FtpApi ftp;
+    public final HlsApi hls;
     public final SftpApi sftp;
     public final HttpApi http;
     public final HttpsApi https;
@@ -80,6 +82,7 @@ public class InputsApi {
         this.gcsServiceAccount = new GcsServiceAccountApi(clientFactory);
         this.azure = new AzureApi(clientFactory);
         this.ftp = new FtpApi(clientFactory);
+        this.hls = new HlsApi(clientFactory);
         this.sftp = new SftpApi(clientFactory);
         this.http = new HttpApi(clientFactory);
         this.https = new HttpsApi(clientFactory);

@@ -35,6 +35,9 @@ public class Scene {
   @JsonProperty("summary")
   private String summary;
 
+  @JsonProperty("verboseSummary")
+  private String verboseSummary;
+
   @JsonProperty("sensitiveTopics")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<String> sensitiveTopics = new ArrayList<String>();
@@ -155,6 +158,24 @@ public class Scene {
   }
 
 
+  /**
+   * Get verboseSummary
+   * @return verboseSummary
+   */
+  public String getVerboseSummary() {
+    return verboseSummary;
+  }
+
+  /**
+   * Set verboseSummary
+   *
+   * @param verboseSummary
+   */
+  public void setVerboseSummary(String verboseSummary) {
+    this.verboseSummary = verboseSummary;
+  }
+
+
   public Scene addSensitiveTopicsItem(String sensitiveTopicsItem) {
     this.sensitiveTopics.add(sensitiveTopicsItem);
     return this;
@@ -234,6 +255,7 @@ public class Scene {
         Objects.equals(this.id, scene.id) &&
         Objects.equals(this.content, scene.content) &&
         Objects.equals(this.summary, scene.summary) &&
+        Objects.equals(this.verboseSummary, scene.verboseSummary) &&
         Objects.equals(this.sensitiveTopics, scene.sensitiveTopics) &&
         Objects.equals(this.keywords, scene.keywords) &&
         Objects.equals(this.iab, scene.iab);
@@ -241,7 +263,7 @@ public class Scene {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, startInSeconds, endInSeconds, id, content, summary, sensitiveTopics, keywords, iab);
+    return Objects.hash(title, startInSeconds, endInSeconds, id, content, summary, verboseSummary, sensitiveTopics, keywords, iab);
   }
 
   @Override
@@ -255,6 +277,7 @@ public class Scene {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
+    sb.append("    verboseSummary: ").append(toIndentedString(verboseSummary)).append("\n");
     sb.append("    sensitiveTopics: ").append(toIndentedString(sensitiveTopics)).append("\n");
     sb.append("    keywords: ").append(toIndentedString(keywords)).append("\n");
     sb.append("    iab: ").append(toIndentedString(iab)).append("\n");
