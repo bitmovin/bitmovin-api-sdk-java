@@ -33,7 +33,7 @@ public class AwsAccount extends BitmovinResource {
 
 
   /**
-   * Deprecated: Amazon access key for legacy support. Use roleName instead
+   * Deprecated: Amazon access key for legacy support. Use &#x60;roleName&#x60; instead
    * @return accessKey
    */
   public String getAccessKey() {
@@ -41,10 +41,10 @@ public class AwsAccount extends BitmovinResource {
   }
 
   /**
-   * Deprecated: Amazon access key for legacy support. Use roleName instead
+   * Deprecated: Amazon access key for legacy support. Use &#x60;roleName&#x60; instead
    *
    * @param accessKey
-   *        Deprecated: Amazon access key for legacy support. Use roleName instead
+   *        Deprecated: Amazon access key for legacy support. Use &#x60;roleName&#x60; instead
    */
   public void setAccessKey(String accessKey) {
     this.accessKey = accessKey;
@@ -52,7 +52,7 @@ public class AwsAccount extends BitmovinResource {
 
 
   /**
-   * Deprecated: Amazon secret key for legacy support. Use roleName instead
+   * Deprecated: Amazon secret key for legacy support. Use &#x60;roleName&#x60; instead
    * @return secretKey
    */
   public String getSecretKey() {
@@ -60,10 +60,10 @@ public class AwsAccount extends BitmovinResource {
   }
 
   /**
-   * Deprecated: Amazon secret key for legacy support. Use roleName instead
+   * Deprecated: Amazon secret key for legacy support. Use &#x60;roleName&#x60; instead
    *
    * @param secretKey
-   *        Deprecated: Amazon secret key for legacy support. Use roleName instead
+   *        Deprecated: Amazon secret key for legacy support. Use &#x60;roleName&#x60; instead
    */
   public void setSecretKey(String secretKey) {
     this.secretKey = secretKey;
@@ -90,7 +90,7 @@ public class AwsAccount extends BitmovinResource {
 
 
   /**
-   * Role name including path for the AWS IAM role that will be used by Bitmovin to access the AWS account depicted by accountNumber. The role ARN is constructed based on accountNumber and roleName: arn:aws:iam::{accountNumber}:role/{roleName}
+   * Role name including path for the AWS IAM role that will be used by Bitmovin to access the AWS account depicted by &#x60;accountNumber&#x60;. The role ARN is constructed based on &#x60;accountNumber&#x60; and &#x60;roleName&#x60;: &#x60;arn:aws:iam::{accountNumber}:role/{roleName}&#x60;.  For details on how to create the AWS IAM role in your account, please refer to the [AWS cloud connect setup guide](https://developer.bitmovin.com/encoding/docs/using-bitmovin-cloud-connect-with-aws). 
    * @return roleName
    */
   public String getRoleName() {
@@ -98,17 +98,17 @@ public class AwsAccount extends BitmovinResource {
   }
 
   /**
-   * Role name including path for the AWS IAM role that will be used by Bitmovin to access the AWS account depicted by accountNumber. The role ARN is constructed based on accountNumber and roleName: arn:aws:iam::{accountNumber}:role/{roleName}
+   * Role name including path for the AWS IAM role that will be used by Bitmovin to access the AWS account depicted by &#x60;accountNumber&#x60;. The role ARN is constructed based on &#x60;accountNumber&#x60; and &#x60;roleName&#x60;: &#x60;arn:aws:iam::{accountNumber}:role/{roleName}&#x60;.  For details on how to create the AWS IAM role in your account, please refer to the [AWS cloud connect setup guide](https://developer.bitmovin.com/encoding/docs/using-bitmovin-cloud-connect-with-aws). 
    *
    * @param roleName
-   *        Role name including path for the AWS IAM role that will be used by Bitmovin to access the AWS account depicted by accountNumber. The role ARN is constructed based on accountNumber and roleName: arn:aws:iam::{accountNumber}:role/{roleName}
+   *        Role name including path for the AWS IAM role that will be used by Bitmovin to access the AWS account depicted by &#x60;accountNumber&#x60;. The role ARN is constructed based on &#x60;accountNumber&#x60; and &#x60;roleName&#x60;: &#x60;arn:aws:iam::{accountNumber}:role/{roleName}&#x60;.  For details on how to create the AWS IAM role in your account, please refer to the [AWS cloud connect setup guide](https://developer.bitmovin.com/encoding/docs/using-bitmovin-cloud-connect-with-aws). 
    */
   public void setRoleName(String roleName) {
     this.roleName = roleName;
   }
 
   /**
-   * External ID that needs to be set in the trust policy of the AWS IAM role (depicted by roleName) that allows Bitmovin access to the AWS account depicted by accountNumber
+   * External ID that needs to be set in the trust policy of the AWS IAM role (depicted by &#x60;roleName&#x60;) that allows Bitmovin access to the AWS account depicted by &#x60;accountNumber&#x60;
    * @return externalId
    */
   public String getExternalId() {

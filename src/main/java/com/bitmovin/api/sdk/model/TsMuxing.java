@@ -24,6 +24,9 @@ public class TsMuxing extends Muxing {
   @JsonProperty("segmentLength")
   private Double segmentLength;
 
+  @JsonProperty("minimumSegmentLength")
+  private Double minimumSegmentLength;
+
   @JsonProperty("segmentNaming")
   private String segmentNaming;
 
@@ -56,6 +59,25 @@ public class TsMuxing extends Muxing {
    */
   public void setSegmentLength(Double segmentLength) {
     this.segmentLength = segmentLength;
+  }
+
+
+  /**
+   * Prevents creation of very short final segments (in seconds). If the last segment is shorter than minimumSegmentLength, it will be merged with the previous one, creating a segment of a size up to segmentLength + minimumSegmentLength.
+   * @return minimumSegmentLength
+   */
+  public Double getMinimumSegmentLength() {
+    return minimumSegmentLength;
+  }
+
+  /**
+   * Prevents creation of very short final segments (in seconds). If the last segment is shorter than minimumSegmentLength, it will be merged with the previous one, creating a segment of a size up to segmentLength + minimumSegmentLength.
+   *
+   * @param minimumSegmentLength
+   *        Prevents creation of very short final segments (in seconds). If the last segment is shorter than minimumSegmentLength, it will be merged with the previous one, creating a segment of a size up to segmentLength + minimumSegmentLength.
+   */
+  public void setMinimumSegmentLength(Double minimumSegmentLength) {
+    this.minimumSegmentLength = minimumSegmentLength;
   }
 
 
@@ -153,6 +175,7 @@ public class TsMuxing extends Muxing {
     }
     TsMuxing tsMuxing = (TsMuxing) o;
     return Objects.equals(this.segmentLength, tsMuxing.segmentLength) &&
+        Objects.equals(this.minimumSegmentLength, tsMuxing.minimumSegmentLength) &&
         Objects.equals(this.segmentNaming, tsMuxing.segmentNaming) &&
         Objects.equals(this.segmentNamingTemplate, tsMuxing.segmentNamingTemplate) &&
         Objects.equals(this.startOffset, tsMuxing.startOffset) &&
@@ -163,7 +186,7 @@ public class TsMuxing extends Muxing {
 
   @Override
   public int hashCode() {
-    return Objects.hash(segmentLength, segmentNaming, segmentNamingTemplate, startOffset, segmentsMuxed, _configuration, super.hashCode());
+    return Objects.hash(segmentLength, minimumSegmentLength, segmentNaming, segmentNamingTemplate, startOffset, segmentsMuxed, _configuration, super.hashCode());
   }
 
   @Override
@@ -172,6 +195,7 @@ public class TsMuxing extends Muxing {
     sb.append("class TsMuxing {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    segmentLength: ").append(toIndentedString(segmentLength)).append("\n");
+    sb.append("    minimumSegmentLength: ").append(toIndentedString(minimumSegmentLength)).append("\n");
     sb.append("    segmentNaming: ").append(toIndentedString(segmentNaming)).append("\n");
     sb.append("    segmentNamingTemplate: ").append(toIndentedString(segmentNamingTemplate)).append("\n");
     sb.append("    startOffset: ").append(toIndentedString(startOffset)).append("\n");

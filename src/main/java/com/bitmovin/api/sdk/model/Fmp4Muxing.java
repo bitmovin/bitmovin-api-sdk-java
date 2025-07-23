@@ -24,6 +24,9 @@ public class Fmp4Muxing extends Muxing {
   @JsonProperty("segmentLength")
   private Double segmentLength;
 
+  @JsonProperty("minimumSegmentLength")
+  private Double minimumSegmentLength;
+
   @JsonProperty("segmentNaming")
   private String segmentNaming;
 
@@ -65,6 +68,25 @@ public class Fmp4Muxing extends Muxing {
    */
   public void setSegmentLength(Double segmentLength) {
     this.segmentLength = segmentLength;
+  }
+
+
+  /**
+   * Prevents creation of very short final segments (in seconds). If the last segment is shorter than minimumSegmentLength, it will be merged with the previous one, creating a segment of a size up to segmentLength + minimumSegmentLength.
+   * @return minimumSegmentLength
+   */
+  public Double getMinimumSegmentLength() {
+    return minimumSegmentLength;
+  }
+
+  /**
+   * Prevents creation of very short final segments (in seconds). If the last segment is shorter than minimumSegmentLength, it will be merged with the previous one, creating a segment of a size up to segmentLength + minimumSegmentLength.
+   *
+   * @param minimumSegmentLength
+   *        Prevents creation of very short final segments (in seconds). If the last segment is shorter than minimumSegmentLength, it will be merged with the previous one, creating a segment of a size up to segmentLength + minimumSegmentLength.
+   */
+  public void setMinimumSegmentLength(Double minimumSegmentLength) {
+    this.minimumSegmentLength = minimumSegmentLength;
   }
 
 
@@ -219,6 +241,7 @@ public class Fmp4Muxing extends Muxing {
     }
     Fmp4Muxing fmp4Muxing = (Fmp4Muxing) o;
     return Objects.equals(this.segmentLength, fmp4Muxing.segmentLength) &&
+        Objects.equals(this.minimumSegmentLength, fmp4Muxing.minimumSegmentLength) &&
         Objects.equals(this.segmentNaming, fmp4Muxing.segmentNaming) &&
         Objects.equals(this.segmentNamingTemplate, fmp4Muxing.segmentNamingTemplate) &&
         Objects.equals(this.initSegmentName, fmp4Muxing.initSegmentName) &&
@@ -232,7 +255,7 @@ public class Fmp4Muxing extends Muxing {
 
   @Override
   public int hashCode() {
-    return Objects.hash(segmentLength, segmentNaming, segmentNamingTemplate, initSegmentName, initSegmentNameTemplate, writeDurationPerSample, signalScte35AsEmsg, segmentsMuxed, ptsAlignMode, super.hashCode());
+    return Objects.hash(segmentLength, minimumSegmentLength, segmentNaming, segmentNamingTemplate, initSegmentName, initSegmentNameTemplate, writeDurationPerSample, signalScte35AsEmsg, segmentsMuxed, ptsAlignMode, super.hashCode());
   }
 
   @Override
@@ -241,6 +264,7 @@ public class Fmp4Muxing extends Muxing {
     sb.append("class Fmp4Muxing {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    segmentLength: ").append(toIndentedString(segmentLength)).append("\n");
+    sb.append("    minimumSegmentLength: ").append(toIndentedString(minimumSegmentLength)).append("\n");
     sb.append("    segmentNaming: ").append(toIndentedString(segmentNaming)).append("\n");
     sb.append("    segmentNamingTemplate: ").append(toIndentedString(segmentNamingTemplate)).append("\n");
     sb.append("    initSegmentName: ").append(toIndentedString(initSegmentName)).append("\n");

@@ -19,6 +19,9 @@ public class HlsManifestAdMarkerSettings {
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<HlsManifestAdMarkerType> enabledMarkerTypes = new ArrayList<HlsManifestAdMarkerType>();
 
+  @JsonProperty("disablePreannouncing")
+  private Boolean disablePreannouncing;
+
 
   public HlsManifestAdMarkerSettings addEnabledMarkerTypesItem(HlsManifestAdMarkerType enabledMarkerTypesItem) {
     this.enabledMarkerTypes.add(enabledMarkerTypesItem);
@@ -44,6 +47,25 @@ public class HlsManifestAdMarkerSettings {
   }
 
 
+  /**
+   * Certain tags, such as EXT_X_DATERANGE, may be preannounced in the HLS manifest. This means they are inserted as early as possible, before the actual ad break begins or ends. Preannouncing helps clients anticipate upcoming splice points, but may cause compatibility issues with some downstream consumers (e.g., AWS MediaTailor SSAI). When this setting is enabled, preannouncing of tags is disabled, and tags are inserted at the segment corresponding to the event&#39;s splice time. 
+   * @return disablePreannouncing
+   */
+  public Boolean getDisablePreannouncing() {
+    return disablePreannouncing;
+  }
+
+  /**
+   * Certain tags, such as EXT_X_DATERANGE, may be preannounced in the HLS manifest. This means they are inserted as early as possible, before the actual ad break begins or ends. Preannouncing helps clients anticipate upcoming splice points, but may cause compatibility issues with some downstream consumers (e.g., AWS MediaTailor SSAI). When this setting is enabled, preannouncing of tags is disabled, and tags are inserted at the segment corresponding to the event&#39;s splice time. 
+   *
+   * @param disablePreannouncing
+   *        Certain tags, such as EXT_X_DATERANGE, may be preannounced in the HLS manifest. This means they are inserted as early as possible, before the actual ad break begins or ends. Preannouncing helps clients anticipate upcoming splice points, but may cause compatibility issues with some downstream consumers (e.g., AWS MediaTailor SSAI). When this setting is enabled, preannouncing of tags is disabled, and tags are inserted at the segment corresponding to the event&#39;s splice time. 
+   */
+  public void setDisablePreannouncing(Boolean disablePreannouncing) {
+    this.disablePreannouncing = disablePreannouncing;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -53,12 +75,13 @@ public class HlsManifestAdMarkerSettings {
       return false;
     }
     HlsManifestAdMarkerSettings hlsManifestAdMarkerSettings = (HlsManifestAdMarkerSettings) o;
-    return Objects.equals(this.enabledMarkerTypes, hlsManifestAdMarkerSettings.enabledMarkerTypes);
+    return Objects.equals(this.enabledMarkerTypes, hlsManifestAdMarkerSettings.enabledMarkerTypes) &&
+        Objects.equals(this.disablePreannouncing, hlsManifestAdMarkerSettings.disablePreannouncing);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabledMarkerTypes);
+    return Objects.hash(enabledMarkerTypes, disablePreannouncing);
   }
 
   @Override
@@ -67,6 +90,7 @@ public class HlsManifestAdMarkerSettings {
     sb.append("class HlsManifestAdMarkerSettings {\n");
     
     sb.append("    enabledMarkerTypes: ").append(toIndentedString(enabledMarkerTypes)).append("\n");
+    sb.append("    disablePreannouncing: ").append(toIndentedString(disablePreannouncing)).append("\n");
     sb.append("}");
     return sb.toString();
   }
