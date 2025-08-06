@@ -18,8 +18,10 @@ import com.bitmovin.api.sdk.common.BitmovinDateExpander;
 import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
+import com.bitmovin.api.sdk.aiSceneAnalysis.analyses.byEncodingId.details.language.LanguageApi;
 
 public class DetailsApi {
+    public final LanguageApi language;
 
     private final DetailsApiClient apiClient;
 
@@ -31,6 +33,7 @@ public class DetailsApi {
 
         this.apiClient = clientFactory.createApiClient(DetailsApiClient.class);
 
+        this.language = new LanguageApi(clientFactory);
     }
 
     /**

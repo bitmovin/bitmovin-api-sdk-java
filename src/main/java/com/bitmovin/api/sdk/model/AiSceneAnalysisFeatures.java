@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AiSceneAnalysisAssetDescription;
 import com.bitmovin.api.sdk.model.AiSceneAnalysisAutomaticAdPlacement;
+import com.bitmovin.api.sdk.model.AiSceneAnalysisOutputLanguageCodes;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -19,6 +20,9 @@ public class AiSceneAnalysisFeatures {
 
   @JsonProperty("automaticAdPlacement")
   private AiSceneAnalysisAutomaticAdPlacement automaticAdPlacement;
+
+  @JsonProperty("outputLanguageCodes")
+  private AiSceneAnalysisOutputLanguageCodes outputLanguageCodes;
 
 
   /**
@@ -59,6 +63,25 @@ public class AiSceneAnalysisFeatures {
   }
 
 
+  /**
+   * AI scene analysis will create translated asset description files for the language codes. 
+   * @return outputLanguageCodes
+   */
+  public AiSceneAnalysisOutputLanguageCodes getOutputLanguageCodes() {
+    return outputLanguageCodes;
+  }
+
+  /**
+   * AI scene analysis will create translated asset description files for the language codes. 
+   *
+   * @param outputLanguageCodes
+   *        AI scene analysis will create translated asset description files for the language codes. 
+   */
+  public void setOutputLanguageCodes(AiSceneAnalysisOutputLanguageCodes outputLanguageCodes) {
+    this.outputLanguageCodes = outputLanguageCodes;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -69,12 +92,13 @@ public class AiSceneAnalysisFeatures {
     }
     AiSceneAnalysisFeatures aiSceneAnalysisFeatures = (AiSceneAnalysisFeatures) o;
     return Objects.equals(this.assetDescription, aiSceneAnalysisFeatures.assetDescription) &&
-        Objects.equals(this.automaticAdPlacement, aiSceneAnalysisFeatures.automaticAdPlacement);
+        Objects.equals(this.automaticAdPlacement, aiSceneAnalysisFeatures.automaticAdPlacement) &&
+        Objects.equals(this.outputLanguageCodes, aiSceneAnalysisFeatures.outputLanguageCodes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(assetDescription, automaticAdPlacement);
+    return Objects.hash(assetDescription, automaticAdPlacement, outputLanguageCodes);
   }
 
   @Override
@@ -84,6 +108,7 @@ public class AiSceneAnalysisFeatures {
     
     sb.append("    assetDescription: ").append(toIndentedString(assetDescription)).append("\n");
     sb.append("    automaticAdPlacement: ").append(toIndentedString(automaticAdPlacement)).append("\n");
+    sb.append("    outputLanguageCodes: ").append(toIndentedString(outputLanguageCodes)).append("\n");
     sb.append("}");
     return sb.toString();
   }
