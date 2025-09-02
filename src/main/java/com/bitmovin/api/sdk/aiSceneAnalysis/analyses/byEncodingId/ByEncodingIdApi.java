@@ -4,10 +4,12 @@ import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.aiSceneAnalysis.analyses.byEncodingId.details.DetailsApi;
 import com.bitmovin.api.sdk.aiSceneAnalysis.analyses.byEncodingId.languages.LanguagesApi;
+import com.bitmovin.api.sdk.aiSceneAnalysis.analyses.byEncodingId.adPlacements.AdPlacementsApi;
 
 public class ByEncodingIdApi {
     public final DetailsApi details;
     public final LanguagesApi languages;
+    public final AdPlacementsApi adPlacements;
 
     public ByEncodingIdApi(BitmovinApiClientFactory clientFactory) {
         if (clientFactory == null)
@@ -17,6 +19,7 @@ public class ByEncodingIdApi {
 
         this.details = new DetailsApi(clientFactory);
         this.languages = new LanguagesApi(clientFactory);
+        this.adPlacements = new AdPlacementsApi(clientFactory);
     }
 
     /**
