@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.AdMarkersSource;
 import com.bitmovin.api.sdk.model.Input;
 import java.util.Date;
 import java.util.List;
@@ -18,6 +19,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 public class HlsInput extends Input {
   @JsonProperty("url")
   private String url;
+
+  @JsonProperty("adMarkersSource")
+  private AdMarkersSource adMarkersSource;
 
 
   /**
@@ -39,6 +43,25 @@ public class HlsInput extends Input {
   }
 
 
+  /**
+   * Specifies the source for ad markers messages: - MANIFEST: Ad marker messages are read from tags in the HLS manifest - SEGMENTS: Ad marker messages are read from the content segments from the data stream 
+   * @return adMarkersSource
+   */
+  public AdMarkersSource getAdMarkersSource() {
+    return adMarkersSource;
+  }
+
+  /**
+   * Specifies the source for ad markers messages: - MANIFEST: Ad marker messages are read from tags in the HLS manifest - SEGMENTS: Ad marker messages are read from the content segments from the data stream 
+   *
+   * @param adMarkersSource
+   *        Specifies the source for ad markers messages: - MANIFEST: Ad marker messages are read from tags in the HLS manifest - SEGMENTS: Ad marker messages are read from the content segments from the data stream 
+   */
+  public void setAdMarkersSource(AdMarkersSource adMarkersSource) {
+    this.adMarkersSource = adMarkersSource;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -49,12 +72,13 @@ public class HlsInput extends Input {
     }
     HlsInput hlsInput = (HlsInput) o;
     return Objects.equals(this.url, hlsInput.url) &&
+        Objects.equals(this.adMarkersSource, hlsInput.adMarkersSource) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(url, super.hashCode());
+    return Objects.hash(url, adMarkersSource, super.hashCode());
   }
 
   @Override
@@ -63,6 +87,7 @@ public class HlsInput extends Input {
     sb.append("class HlsInput {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    sb.append("    adMarkersSource: ").append(toIndentedString(adMarkersSource)).append("\n");
     sb.append("}");
     return sb.toString();
   }

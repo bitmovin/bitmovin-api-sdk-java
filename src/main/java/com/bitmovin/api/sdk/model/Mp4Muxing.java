@@ -28,6 +28,9 @@ public class Mp4Muxing extends Muxing {
   @JsonProperty("fragmentDuration")
   private Integer fragmentDuration;
 
+  @JsonProperty("minimumFragmentDuration")
+  private Double minimumFragmentDuration;
+
   @JsonProperty("fragmentedMP4MuxingManifestType")
   private FragmentedMp4MuxingManifestType fragmentedMP4MuxingManifestType;
 
@@ -70,6 +73,25 @@ public class Mp4Muxing extends Muxing {
    */
   public void setFragmentDuration(Integer fragmentDuration) {
     this.fragmentDuration = fragmentDuration;
+  }
+
+
+  /**
+   * Prevents creation of very short fragments (in seconds). If the last fragment is shorter than minimumFragmentDuration or there is a custom keyframe too close to a fragment boundary, short fragments will be omitted by removing fragment boundaries, resulting in a fragment of a size up to fragmentDuration + minimumFragmentDuration.
+   * @return minimumFragmentDuration
+   */
+  public Double getMinimumFragmentDuration() {
+    return minimumFragmentDuration;
+  }
+
+  /**
+   * Prevents creation of very short fragments (in seconds). If the last fragment is shorter than minimumFragmentDuration or there is a custom keyframe too close to a fragment boundary, short fragments will be omitted by removing fragment boundaries, resulting in a fragment of a size up to fragmentDuration + minimumFragmentDuration.
+   *
+   * @param minimumFragmentDuration
+   *        Prevents creation of very short fragments (in seconds). If the last fragment is shorter than minimumFragmentDuration or there is a custom keyframe too close to a fragment boundary, short fragments will be omitted by removing fragment boundaries, resulting in a fragment of a size up to fragmentDuration + minimumFragmentDuration.
+   */
+  public void setMinimumFragmentDuration(Double minimumFragmentDuration) {
+    this.minimumFragmentDuration = minimumFragmentDuration;
   }
 
 
@@ -121,6 +143,7 @@ public class Mp4Muxing extends Muxing {
     Mp4Muxing mp4Muxing = (Mp4Muxing) o;
     return Objects.equals(this.filename, mp4Muxing.filename) &&
         Objects.equals(this.fragmentDuration, mp4Muxing.fragmentDuration) &&
+        Objects.equals(this.minimumFragmentDuration, mp4Muxing.minimumFragmentDuration) &&
         Objects.equals(this.fragmentedMP4MuxingManifestType, mp4Muxing.fragmentedMP4MuxingManifestType) &&
         Objects.equals(this.dolbyVisionConfiguration, mp4Muxing.dolbyVisionConfiguration) &&
         super.equals(o);
@@ -128,7 +151,7 @@ public class Mp4Muxing extends Muxing {
 
   @Override
   public int hashCode() {
-    return Objects.hash(filename, fragmentDuration, fragmentedMP4MuxingManifestType, dolbyVisionConfiguration, super.hashCode());
+    return Objects.hash(filename, fragmentDuration, minimumFragmentDuration, fragmentedMP4MuxingManifestType, dolbyVisionConfiguration, super.hashCode());
   }
 
   @Override
@@ -138,6 +161,7 @@ public class Mp4Muxing extends Muxing {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    filename: ").append(toIndentedString(filename)).append("\n");
     sb.append("    fragmentDuration: ").append(toIndentedString(fragmentDuration)).append("\n");
+    sb.append("    minimumFragmentDuration: ").append(toIndentedString(minimumFragmentDuration)).append("\n");
     sb.append("    fragmentedMP4MuxingManifestType: ").append(toIndentedString(fragmentedMP4MuxingManifestType)).append("\n");
     sb.append("    dolbyVisionConfiguration: ").append(toIndentedString(dolbyVisionConfiguration)).append("\n");
     sb.append("}");
