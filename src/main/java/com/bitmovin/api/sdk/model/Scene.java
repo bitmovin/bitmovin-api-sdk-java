@@ -53,9 +53,6 @@ public class Scene {
   @JsonProperty("type")
   private SceneType type;
 
-  @JsonProperty("typeConfidence")
-  private Double typeConfidence;
-
 
   /**
    * Get title
@@ -266,31 +263,6 @@ public class Scene {
   }
 
 
-  /**
-   * Confidence score for the detected scene type (0.0 to 1.0)
-   * minimum: 0
-   * maximum: 1
-   * @return typeConfidence
-   */
-  public Double getTypeConfidence() {
-    return typeConfidence;
-  }
-
-  /**
-   * Confidence score for the detected scene type (0.0 to 1.0)
-   * minimum: 0
-   * maximum: 1
-   *
-   * @param typeConfidence
-   *        Confidence score for the detected scene type (0.0 to 1.0)
-   *        minimum: 0
-   *        maximum: 1
-   */
-  public void setTypeConfidence(Double typeConfidence) {
-    this.typeConfidence = typeConfidence;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -310,13 +282,12 @@ public class Scene {
         Objects.equals(this.sensitiveTopics, scene.sensitiveTopics) &&
         Objects.equals(this.keywords, scene.keywords) &&
         Objects.equals(this.iab, scene.iab) &&
-        Objects.equals(this.type, scene.type) &&
-        Objects.equals(this.typeConfidence, scene.typeConfidence);
+        Objects.equals(this.type, scene.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, startInSeconds, endInSeconds, id, content, summary, verboseSummary, sensitiveTopics, keywords, iab, type, typeConfidence);
+    return Objects.hash(title, startInSeconds, endInSeconds, id, content, summary, verboseSummary, sensitiveTopics, keywords, iab, type);
   }
 
   @Override
@@ -335,7 +306,6 @@ public class Scene {
     sb.append("    keywords: ").append(toIndentedString(keywords)).append("\n");
     sb.append("    iab: ").append(toIndentedString(iab)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    typeConfidence: ").append(toIndentedString(typeConfidence)).append("\n");
     sb.append("}");
     return sb.toString();
   }
