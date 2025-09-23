@@ -64,6 +64,10 @@ public class AnalyticsLicense {
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<AnalyticsLicenseDomain> domains = new ArrayList<AnalyticsLicenseDomain>();
 
+  @JsonProperty("playerDomains")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<String> playerDomains = new ArrayList<String>();
+
   @JsonProperty("includeInInsights")
   private Boolean includeInInsights;
 
@@ -231,6 +235,14 @@ public class AnalyticsLicense {
   }
 
   /**
+   * Allowlisted player domains
+   * @return playerDomains
+   */
+  public List<String> getPlayerDomains() {
+    return playerDomains;
+  }
+
+  /**
    * Whether the data of this license should be included in the industry insights or not
    * @return includeInInsights
    */
@@ -342,6 +354,7 @@ public class AnalyticsLicense {
         Objects.equals(this.retentionTime, analyticsLicense.retentionTime) &&
         Objects.equals(this.compressedRetentionTime, analyticsLicense.compressedRetentionTime) &&
         Objects.equals(this.domains, analyticsLicense.domains) &&
+        Objects.equals(this.playerDomains, analyticsLicense.playerDomains) &&
         Objects.equals(this.includeInInsights, analyticsLicense.includeInInsights) &&
         Objects.equals(this.customDataFieldLabels, analyticsLicense.customDataFieldLabels) &&
         Objects.equals(this.customDataFieldsCount, analyticsLicense.customDataFieldsCount) &&
@@ -353,7 +366,7 @@ public class AnalyticsLicense {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, customData, licenseKey, name, industry, subIndustry, ignoreDNT, impressions, maxImpressions, timeZone, retentionTime, compressedRetentionTime, domains, includeInInsights, customDataFieldLabels, customDataFieldsCount, orderIndex, rateLimit, features, planExpiredAt);
+    return Objects.hash(id, createdAt, customData, licenseKey, name, industry, subIndustry, ignoreDNT, impressions, maxImpressions, timeZone, retentionTime, compressedRetentionTime, domains, playerDomains, includeInInsights, customDataFieldLabels, customDataFieldsCount, orderIndex, rateLimit, features, planExpiredAt);
   }
 
   @Override
@@ -375,6 +388,7 @@ public class AnalyticsLicense {
     sb.append("    retentionTime: ").append(toIndentedString(retentionTime)).append("\n");
     sb.append("    compressedRetentionTime: ").append(toIndentedString(compressedRetentionTime)).append("\n");
     sb.append("    domains: ").append(toIndentedString(domains)).append("\n");
+    sb.append("    playerDomains: ").append(toIndentedString(playerDomains)).append("\n");
     sb.append("    includeInInsights: ").append(toIndentedString(includeInInsights)).append("\n");
     sb.append("    customDataFieldLabels: ").append(toIndentedString(customDataFieldLabels)).append("\n");
     sb.append("    customDataFieldsCount: ").append(toIndentedString(customDataFieldsCount)).append("\n");
