@@ -268,6 +268,9 @@ public enum AdAnalyticsAttribute {
   ERROR_CODE("ERROR_CODE"),
   
   
+  ERROR_SEVERITY("ERROR_SEVERITY"),
+  
+  
   ERROR_PERCENTAGE("ERROR_PERCENTAGE"),
   
   

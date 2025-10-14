@@ -241,6 +241,9 @@ public enum AnalyticsAttribute {
   ERROR_CODE("ERROR_CODE"),
   
   
+  ERROR_SEVERITY("ERROR_SEVERITY"),
+  
+  
   ERROR_MESSAGE("ERROR_MESSAGE"),
   
   
