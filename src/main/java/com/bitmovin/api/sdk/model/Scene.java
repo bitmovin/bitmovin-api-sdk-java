@@ -5,6 +5,7 @@ import java.util.Arrays;
 import com.bitmovin.api.sdk.model.Content;
 import com.bitmovin.api.sdk.model.IABTaxonomy;
 import com.bitmovin.api.sdk.model.SceneType;
+import com.bitmovin.api.sdk.model.Shot;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -52,6 +53,10 @@ public class Scene {
 
   @JsonProperty("type")
   private SceneType type;
+
+  @JsonProperty("shots")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<Shot> shots = new ArrayList<Shot>();
 
 
   /**
@@ -263,6 +268,30 @@ public class Scene {
   }
 
 
+  public Scene addShotsItem(Shot shotsItem) {
+    this.shots.add(shotsItem);
+    return this;
+  }
+
+  /**
+   * A detailed breakdown of individual camera shots within this scene, providing granular analysis of visual content and subjects
+   * @return shots
+   */
+  public List<Shot> getShots() {
+    return shots;
+  }
+
+  /**
+   * A detailed breakdown of individual camera shots within this scene, providing granular analysis of visual content and subjects
+   *
+   * @param shots
+   *        A detailed breakdown of individual camera shots within this scene, providing granular analysis of visual content and subjects
+   */
+  public void setShots(List<Shot> shots) {
+    this.shots = shots;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -282,12 +311,13 @@ public class Scene {
         Objects.equals(this.sensitiveTopics, scene.sensitiveTopics) &&
         Objects.equals(this.keywords, scene.keywords) &&
         Objects.equals(this.iab, scene.iab) &&
-        Objects.equals(this.type, scene.type);
+        Objects.equals(this.type, scene.type) &&
+        Objects.equals(this.shots, scene.shots);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, startInSeconds, endInSeconds, id, content, summary, verboseSummary, sensitiveTopics, keywords, iab, type);
+    return Objects.hash(title, startInSeconds, endInSeconds, id, content, summary, verboseSummary, sensitiveTopics, keywords, iab, type, shots);
   }
 
   @Override
@@ -306,6 +336,7 @@ public class Scene {
     sb.append("    keywords: ").append(toIndentedString(keywords)).append("\n");
     sb.append("    iab: ").append(toIndentedString(iab)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    shots: ").append(toIndentedString(shots)).append("\n");
     sb.append("}");
     return sb.toString();
   }

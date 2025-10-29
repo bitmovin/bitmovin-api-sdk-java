@@ -60,6 +60,9 @@ public class AnalyticsLicense {
   @JsonProperty("compressedRetentionTime")
   private String compressedRetentionTime;
 
+  @JsonProperty("compressionAvailableTo")
+  private Date compressionAvailableTo;
+
   @JsonProperty("domains")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<AnalyticsLicenseDomain> domains = new ArrayList<AnalyticsLicenseDomain>();
@@ -227,6 +230,14 @@ public class AnalyticsLicense {
   }
 
   /**
+   * The date and time up until which the compressed data is available. Returned as ISO 8601 date-time format
+   * @return compressionAvailableTo
+   */
+  public Date getCompressionAvailableTo() {
+    return compressionAvailableTo;
+  }
+
+  /**
    * Whitelisted domains
    * @return domains
    */
@@ -353,6 +364,7 @@ public class AnalyticsLicense {
         Objects.equals(this.timeZone, analyticsLicense.timeZone) &&
         Objects.equals(this.retentionTime, analyticsLicense.retentionTime) &&
         Objects.equals(this.compressedRetentionTime, analyticsLicense.compressedRetentionTime) &&
+        Objects.equals(this.compressionAvailableTo, analyticsLicense.compressionAvailableTo) &&
         Objects.equals(this.domains, analyticsLicense.domains) &&
         Objects.equals(this.playerDomains, analyticsLicense.playerDomains) &&
         Objects.equals(this.includeInInsights, analyticsLicense.includeInInsights) &&
@@ -366,7 +378,7 @@ public class AnalyticsLicense {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, customData, licenseKey, name, industry, subIndustry, ignoreDNT, impressions, maxImpressions, timeZone, retentionTime, compressedRetentionTime, domains, playerDomains, includeInInsights, customDataFieldLabels, customDataFieldsCount, orderIndex, rateLimit, features, planExpiredAt);
+    return Objects.hash(id, createdAt, customData, licenseKey, name, industry, subIndustry, ignoreDNT, impressions, maxImpressions, timeZone, retentionTime, compressedRetentionTime, compressionAvailableTo, domains, playerDomains, includeInInsights, customDataFieldLabels, customDataFieldsCount, orderIndex, rateLimit, features, planExpiredAt);
   }
 
   @Override
@@ -387,6 +399,7 @@ public class AnalyticsLicense {
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    retentionTime: ").append(toIndentedString(retentionTime)).append("\n");
     sb.append("    compressedRetentionTime: ").append(toIndentedString(compressedRetentionTime)).append("\n");
+    sb.append("    compressionAvailableTo: ").append(toIndentedString(compressionAvailableTo)).append("\n");
     sb.append("    domains: ").append(toIndentedString(domains)).append("\n");
     sb.append("    playerDomains: ").append(toIndentedString(playerDomains)).append("\n");
     sb.append("    includeInInsights: ").append(toIndentedString(includeInInsights)).append("\n");

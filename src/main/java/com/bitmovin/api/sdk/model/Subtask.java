@@ -5,6 +5,7 @@ import java.util.Arrays;
 import com.bitmovin.api.sdk.model.BitmovinResponse;
 import com.bitmovin.api.sdk.model.Message;
 import com.bitmovin.api.sdk.model.Status;
+import com.bitmovin.api.sdk.model.SubtaskMetadata;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -30,6 +31,10 @@ public class Subtask extends BitmovinResponse {
   @JsonProperty("messages")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<Message> messages = new ArrayList<Message>();
+
+  @JsonProperty("metadata")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<SubtaskMetadata> metadata = new ArrayList<SubtaskMetadata>();
 
   @JsonProperty("createdAt")
   private Date createdAt;
@@ -131,6 +136,30 @@ public class Subtask extends BitmovinResponse {
    */
   public void setMessages(List<Message> messages) {
     this.messages = messages;
+  }
+
+
+  public Subtask addMetadataItem(SubtaskMetadata metadataItem) {
+    this.metadata.add(metadataItem);
+    return this;
+  }
+
+  /**
+   * Task specific metadata
+   * @return metadata
+   */
+  public List<SubtaskMetadata> getMetadata() {
+    return metadata;
+  }
+
+  /**
+   * Task specific metadata
+   *
+   * @param metadata
+   *        Task specific metadata
+   */
+  public void setMetadata(List<SubtaskMetadata> metadata) {
+    this.metadata = metadata;
   }
 
 
@@ -280,6 +309,7 @@ public class Subtask extends BitmovinResponse {
         Objects.equals(this.progress, subtask.progress) &&
         Objects.equals(this.name, subtask.name) &&
         Objects.equals(this.messages, subtask.messages) &&
+        Objects.equals(this.metadata, subtask.metadata) &&
         Objects.equals(this.createdAt, subtask.createdAt) &&
         Objects.equals(this.updatedAt, subtask.updatedAt) &&
         Objects.equals(this.startedAt, subtask.startedAt) &&
@@ -292,7 +322,7 @@ public class Subtask extends BitmovinResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, progress, name, messages, createdAt, updatedAt, startedAt, queuedAt, runningAt, finishedAt, errorAt, super.hashCode());
+    return Objects.hash(status, progress, name, messages, metadata, createdAt, updatedAt, startedAt, queuedAt, runningAt, finishedAt, errorAt, super.hashCode());
   }
 
   @Override
@@ -304,6 +334,7 @@ public class Subtask extends BitmovinResponse {
     sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    startedAt: ").append(toIndentedString(startedAt)).append("\n");
