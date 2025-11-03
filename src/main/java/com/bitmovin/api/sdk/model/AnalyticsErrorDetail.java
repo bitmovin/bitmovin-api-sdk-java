@@ -35,6 +35,9 @@ public class AnalyticsErrorDetail {
   @JsonProperty("errorData")
   private AnalyticsErrorData errorData;
 
+  @JsonProperty("severity")
+  private String severity;
+
   @JsonProperty("httpRequests")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<AnalyticsHttpRequest> httpRequests = new ArrayList<AnalyticsHttpRequest>();
@@ -153,6 +156,25 @@ public class AnalyticsErrorDetail {
   }
 
 
+  /**
+   * Severity of the error
+   * @return severity
+   */
+  public String getSeverity() {
+    return severity;
+  }
+
+  /**
+   * Severity of the error
+   *
+   * @param severity
+   *        Severity of the error
+   */
+  public void setSeverity(String severity) {
+    this.severity = severity;
+  }
+
+
   public AnalyticsErrorDetail addHttpRequestsItem(AnalyticsHttpRequest httpRequestsItem) {
     this.httpRequests.add(httpRequestsItem);
     return this;
@@ -191,12 +213,13 @@ public class AnalyticsErrorDetail {
         Objects.equals(this.code, analyticsErrorDetail.code) &&
         Objects.equals(this.message, analyticsErrorDetail.message) &&
         Objects.equals(this.errorData, analyticsErrorDetail.errorData) &&
+        Objects.equals(this.severity, analyticsErrorDetail.severity) &&
         Objects.equals(this.httpRequests, analyticsErrorDetail.httpRequests);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errorId, time, clientTime, code, message, errorData, httpRequests);
+    return Objects.hash(errorId, time, clientTime, code, message, errorData, severity, httpRequests);
   }
 
   @Override
@@ -210,6 +233,7 @@ public class AnalyticsErrorDetail {
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    errorData: ").append(toIndentedString(errorData)).append("\n");
+    sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
     sb.append("    httpRequests: ").append(toIndentedString(httpRequests)).append("\n");
     sb.append("}");
     return sb.toString();
