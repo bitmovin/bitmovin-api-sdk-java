@@ -30,7 +30,7 @@ public class EsamSettings {
 
 
   /**
-   * The URL of the Placement Opportunity Information System (POIS) signal processing endpoint.  The encoder transmits SignalProcessingEvents to this endpoint whenever SCTE-35 messages are detected. 
+   * The URL of the Placement Opportunity Information System (POIS) signal processing endpoint. The encoder transmits SignalProcessingEvents to this endpoint whenever SCTE-35 messages are detected. 
    * @return poisEndpoint
    */
   public String getPoisEndpoint() {
@@ -38,10 +38,10 @@ public class EsamSettings {
   }
 
   /**
-   * The URL of the Placement Opportunity Information System (POIS) signal processing endpoint.  The encoder transmits SignalProcessingEvents to this endpoint whenever SCTE-35 messages are detected. 
+   * The URL of the Placement Opportunity Information System (POIS) signal processing endpoint. The encoder transmits SignalProcessingEvents to this endpoint whenever SCTE-35 messages are detected. 
    *
    * @param poisEndpoint
-   *        The URL of the Placement Opportunity Information System (POIS) signal processing endpoint.  The encoder transmits SignalProcessingEvents to this endpoint whenever SCTE-35 messages are detected. 
+   *        The URL of the Placement Opportunity Information System (POIS) signal processing endpoint. The encoder transmits SignalProcessingEvents to this endpoint whenever SCTE-35 messages are detected. 
    */
   public void setPoisEndpoint(String poisEndpoint) {
     this.poisEndpoint = poisEndpoint;
@@ -87,7 +87,7 @@ public class EsamSettings {
 
 
   /**
-   * Defines an offset (in milliseconds) to be applied to the stream event timestamp.  This offset adjusts the &#x60;StreamTime&#x60; values (such as PTS) associated with ad opportunities  or content insertions. It is used to fine-tune timing for embedded SCTE-104/35 messages  to ensure precise frame alignment in the transport stream. 
+   * Defines an offset (in milliseconds) to be applied to the stream event timestamp. This offset adjusts the &#x60;StreamTime&#x60; values (such as PTS) associated with ad opportunities or content insertions. It is used to fine-tune timing for embedded SCTE-104/35 messages to ensure precise frame alignment in the transport stream. 
    * minimum: 0
    * @return adAvailOffset
    */
@@ -96,11 +96,11 @@ public class EsamSettings {
   }
 
   /**
-   * Defines an offset (in milliseconds) to be applied to the stream event timestamp.  This offset adjusts the &#x60;StreamTime&#x60; values (such as PTS) associated with ad opportunities  or content insertions. It is used to fine-tune timing for embedded SCTE-104/35 messages  to ensure precise frame alignment in the transport stream. 
+   * Defines an offset (in milliseconds) to be applied to the stream event timestamp. This offset adjusts the &#x60;StreamTime&#x60; values (such as PTS) associated with ad opportunities or content insertions. It is used to fine-tune timing for embedded SCTE-104/35 messages to ensure precise frame alignment in the transport stream. 
    * minimum: 0
    *
    * @param adAvailOffset
-   *        Defines an offset (in milliseconds) to be applied to the stream event timestamp.  This offset adjusts the &#x60;StreamTime&#x60; values (such as PTS) associated with ad opportunities  or content insertions. It is used to fine-tune timing for embedded SCTE-104/35 messages  to ensure precise frame alignment in the transport stream. 
+   *        Defines an offset (in milliseconds) to be applied to the stream event timestamp. This offset adjusts the &#x60;StreamTime&#x60; values (such as PTS) associated with ad opportunities or content insertions. It is used to fine-tune timing for embedded SCTE-104/35 messages to ensure precise frame alignment in the transport stream. 
    *        minimum: 0
    */
   public void setAdAvailOffset(Integer adAvailOffset) {
