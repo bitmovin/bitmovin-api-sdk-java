@@ -3,7 +3,6 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AiSceneAnalysisFeatures;
-import com.bitmovin.api.sdk.model.AiService;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -14,30 +13,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 
 public class AiSceneAnalysis {
-  @JsonProperty("aiService")
-  private AiService aiService;
-
   @JsonProperty("features")
   private AiSceneAnalysisFeatures features;
-
-
-  /**
-   * AI service settings
-   * @return aiService
-   */
-  public AiService getAiService() {
-    return aiService;
-  }
-
-  /**
-   * AI service settings
-   *
-   * @param aiService
-   *        AI service settings
-   */
-  public void setAiService(AiService aiService) {
-    this.aiService = aiService;
-  }
 
 
   /**
@@ -68,13 +45,12 @@ public class AiSceneAnalysis {
       return false;
     }
     AiSceneAnalysis aiSceneAnalysis = (AiSceneAnalysis) o;
-    return Objects.equals(this.aiService, aiSceneAnalysis.aiService) &&
-        Objects.equals(this.features, aiSceneAnalysis.features);
+    return Objects.equals(this.features, aiSceneAnalysis.features);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(aiService, features);
+    return Objects.hash(features);
   }
 
   @Override
@@ -82,7 +58,6 @@ public class AiSceneAnalysis {
     StringBuilder sb = new StringBuilder();
     sb.append("class AiSceneAnalysis {\n");
     
-    sb.append("    aiService: ").append(toIndentedString(aiService)).append("\n");
     sb.append("    features: ").append(toIndentedString(features)).append("\n");
     sb.append("}");
     return sb.toString();
