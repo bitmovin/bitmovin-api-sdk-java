@@ -2,32 +2,29 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.LiveEncodingEventName;
+import com.bitmovin.api.sdk.model.LiveEncodingHeartbeatEventType;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * LiveEncodingStatsEventDetails
+ * LiveEncodingHeartbeatEventDetails
  */
 
-public class LiveEncodingStatsEventDetails {
+public class LiveEncodingHeartbeatEventDetails {
   @JsonProperty("eventType")
-  private LiveEncodingEventName eventType;
+  private LiveEncodingHeartbeatEventType eventType;
 
   @JsonProperty("message")
   private String message;
-
-  @JsonProperty("additionalProperties")
-  private String additionalProperties;
 
 
   /**
    * Get eventType
    * @return eventType
    */
-  public LiveEncodingEventName getEventType() {
+  public LiveEncodingHeartbeatEventType getEventType() {
     return eventType;
   }
 
@@ -36,9 +33,10 @@ public class LiveEncodingStatsEventDetails {
    *
    * @param eventType
    */
-  public void setEventType(LiveEncodingEventName eventType) {
+  public void setEventType(LiveEncodingHeartbeatEventType eventType) {
     this.eventType = eventType;
   }
+
 
   /**
    * Short description of the event
@@ -48,23 +46,14 @@ public class LiveEncodingStatsEventDetails {
     return message;
   }
 
-
   /**
-   * Additional event details as key-value pairs
-   * @return additionalProperties
-   */
-  public String getAdditionalProperties() {
-    return additionalProperties;
-  }
-
-  /**
-   * Additional event details as key-value pairs
+   * Short description of the event
    *
-   * @param additionalProperties
-   *        Additional event details as key-value pairs
+   * @param message
+   *        Short description of the event
    */
-  public void setAdditionalProperties(String additionalProperties) {
-    this.additionalProperties = additionalProperties;
+  public void setMessage(String message) {
+    this.message = message;
   }
 
 
@@ -76,25 +65,23 @@ public class LiveEncodingStatsEventDetails {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    LiveEncodingStatsEventDetails liveEncodingStatsEventDetails = (LiveEncodingStatsEventDetails) o;
-    return Objects.equals(this.eventType, liveEncodingStatsEventDetails.eventType) &&
-        Objects.equals(this.message, liveEncodingStatsEventDetails.message) &&
-        Objects.equals(this.additionalProperties, liveEncodingStatsEventDetails.additionalProperties);
+    LiveEncodingHeartbeatEventDetails liveEncodingHeartbeatEventDetails = (LiveEncodingHeartbeatEventDetails) o;
+    return Objects.equals(this.eventType, liveEncodingHeartbeatEventDetails.eventType) &&
+        Objects.equals(this.message, liveEncodingHeartbeatEventDetails.message);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventType, message, additionalProperties);
+    return Objects.hash(eventType, message);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class LiveEncodingStatsEventDetails {\n");
+    sb.append("class LiveEncodingHeartbeatEventDetails {\n");
     
     sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

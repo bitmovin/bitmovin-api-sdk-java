@@ -45,6 +45,9 @@ public class DashManifest extends Manifest {
   @JsonProperty("iso8601TimestampFormat")
   private DashISO8601TimestampFormat iso8601TimestampFormat;
 
+  @JsonProperty("minBufferTime")
+  private Double minBufferTime;
+
 
   /**
    * Determines if segmented or progressive representations can appear in the manifest
@@ -170,6 +173,25 @@ public class DashManifest extends Manifest {
   }
 
 
+  /**
+   * The minimum buffer time in seconds that the client should maintain to ensure uninterrupted playback. Default is 2 seconds. Note: For VOD ON_DEMAND dash manifests, the default value may differ from 2.0 seconds if not explicitly set. 
+   * @return minBufferTime
+   */
+  public Double getMinBufferTime() {
+    return minBufferTime;
+  }
+
+  /**
+   * The minimum buffer time in seconds that the client should maintain to ensure uninterrupted playback. Default is 2 seconds. Note: For VOD ON_DEMAND dash manifests, the default value may differ from 2.0 seconds if not explicitly set. 
+   *
+   * @param minBufferTime
+   *        The minimum buffer time in seconds that the client should maintain to ensure uninterrupted playback. Default is 2 seconds. Note: For VOD ON_DEMAND dash manifests, the default value may differ from 2.0 seconds if not explicitly set. 
+   */
+  public void setMinBufferTime(Double minBufferTime) {
+    this.minBufferTime = minBufferTime;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -185,12 +207,13 @@ public class DashManifest extends Manifest {
         Objects.equals(this.utcTimings, dashManifest.utcTimings) &&
         Objects.equals(this.dashEditionCompatibility, dashManifest.dashEditionCompatibility) &&
         Objects.equals(this.iso8601TimestampFormat, dashManifest.iso8601TimestampFormat) &&
+        Objects.equals(this.minBufferTime, dashManifest.minBufferTime) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(profile, manifestName, namespaces, utcTimings, dashEditionCompatibility, iso8601TimestampFormat, super.hashCode());
+    return Objects.hash(profile, manifestName, namespaces, utcTimings, dashEditionCompatibility, iso8601TimestampFormat, minBufferTime, super.hashCode());
   }
 
   @Override
@@ -204,6 +227,7 @@ public class DashManifest extends Manifest {
     sb.append("    utcTimings: ").append(toIndentedString(utcTimings)).append("\n");
     sb.append("    dashEditionCompatibility: ").append(toIndentedString(dashEditionCompatibility)).append("\n");
     sb.append("    iso8601TimestampFormat: ").append(toIndentedString(iso8601TimestampFormat)).append("\n");
+    sb.append("    minBufferTime: ").append(toIndentedString(minBufferTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

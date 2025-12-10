@@ -19,12 +19,14 @@ import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.encodings.live.resetLiveManifestTimeshift.ResetLiveManifestTimeshiftApi;
+import com.bitmovin.api.sdk.encoding.encodings.live.heartbeat.HeartbeatApi;
 import com.bitmovin.api.sdk.encoding.encodings.live.hd.HdApi;
 import com.bitmovin.api.sdk.encoding.encodings.live.insertableContent.InsertableContentApi;
 import com.bitmovin.api.sdk.encoding.encodings.live.scte35Cue.Scte35CueApi;
 
 public class LiveApi {
     public final ResetLiveManifestTimeshiftApi resetLiveManifestTimeshift;
+    public final HeartbeatApi heartbeat;
     public final HdApi hd;
     public final InsertableContentApi insertableContent;
     public final Scte35CueApi scte35Cue;
@@ -40,6 +42,7 @@ public class LiveApi {
         this.apiClient = clientFactory.createApiClient(LiveApiClient.class);
 
         this.resetLiveManifestTimeshift = new ResetLiveManifestTimeshiftApi(clientFactory);
+        this.heartbeat = new HeartbeatApi(clientFactory);
         this.hd = new HdApi(clientFactory);
         this.insertableContent = new InsertableContentApi(clientFactory);
         this.scte35Cue = new Scte35CueApi(clientFactory);

@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum LiveEncodingEventName {
+public enum LiveEncodingHeartbeatEventType {
   
   /**
    * First connection of the ingest
@@ -28,38 +28,18 @@ public enum LiveEncodingEventName {
   RECONNECT("RECONNECT"),
   
   /**
-   * Audio and video are out of sync and resyncing occurred. Usually happens after a RECONNECT event.
-   */
-  RESYNCING("RESYNCING"),
-  
-  /**
-   * Ingest is connected but doesn&#39;t send any data
-   */
-  IDLE("IDLE"),
-  
-  /**
-   * Error occurred, please see the errorMessage for further details
-   */
-  ERROR("ERROR"),
-  
-  /**
-   * Warning message
+   * Warning occurred, please see the message for further details
    */
   WARNING("WARNING"),
   
   /**
-   * Picture timing was found in respective source
+   * Error occurred, please see the message for further details
    */
-  PICTURE_TIMING("PICTURE_TIMING"),
-  
-  /**
-   * Information message
-   */
-  INFO("INFO");
+  ERROR("ERROR");
 
   private String value;
 
-  LiveEncodingEventName(String value) {
+  LiveEncodingHeartbeatEventType(String value) {
     this.value = value;
   }
 
@@ -74,8 +54,8 @@ public enum LiveEncodingEventName {
   }
 
   @JsonCreator
-  public static LiveEncodingEventName fromValue(String text) {
-    for (LiveEncodingEventName b : LiveEncodingEventName.values()) {
+  public static LiveEncodingHeartbeatEventType fromValue(String text) {
+    for (LiveEncodingHeartbeatEventType b : LiveEncodingHeartbeatEventType.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
