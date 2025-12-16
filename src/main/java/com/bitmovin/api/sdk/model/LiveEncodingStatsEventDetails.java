@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.ClockSynchronizationMode;
 import com.bitmovin.api.sdk.model.LiveEncodingEventName;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -19,8 +20,29 @@ public class LiveEncodingStatsEventDetails {
   @JsonProperty("message")
   private String message;
 
-  @JsonProperty("additionalProperties")
-  private String additionalProperties;
+  @JsonProperty("source")
+  private ClockSynchronizationMode source;
+
+  @JsonProperty("year")
+  private Long year;
+
+  @JsonProperty("month")
+  private Long month;
+
+  @JsonProperty("day")
+  private Long day;
+
+  @JsonProperty("hours")
+  private Long hours;
+
+  @JsonProperty("minutes")
+  private Long minutes;
+
+  @JsonProperty("seconds")
+  private Long seconds;
+
+  @JsonProperty("microSeconds")
+  private Long microSeconds;
 
 
   /**
@@ -48,23 +70,68 @@ public class LiveEncodingStatsEventDetails {
     return message;
   }
 
-
   /**
-   * Additional event details as key-value pairs
-   * @return additionalProperties
+   * Source used for clock-synchronization
+   * @return source
    */
-  public String getAdditionalProperties() {
-    return additionalProperties;
+  public ClockSynchronizationMode getSource() {
+    return source;
   }
 
   /**
-   * Additional event details as key-value pairs
-   *
-   * @param additionalProperties
-   *        Additional event details as key-value pairs
+   * Year specified in picture timing
+   * @return year
    */
-  public void setAdditionalProperties(String additionalProperties) {
-    this.additionalProperties = additionalProperties;
+  public Long getYear() {
+    return year;
+  }
+
+  /**
+   * Month specified in picture timing
+   * @return month
+   */
+  public Long getMonth() {
+    return month;
+  }
+
+  /**
+   * Day specified in picture timing
+   * @return day
+   */
+  public Long getDay() {
+    return day;
+  }
+
+  /**
+   * Hours specified in picture timing
+   * @return hours
+   */
+  public Long getHours() {
+    return hours;
+  }
+
+  /**
+   * Minutes specified in picture timing
+   * @return minutes
+   */
+  public Long getMinutes() {
+    return minutes;
+  }
+
+  /**
+   * Seconds specified in picture timing
+   * @return seconds
+   */
+  public Long getSeconds() {
+    return seconds;
+  }
+
+  /**
+   * Microseconds specified in picture timing
+   * @return microSeconds
+   */
+  public Long getMicroSeconds() {
+    return microSeconds;
   }
 
 
@@ -79,12 +146,19 @@ public class LiveEncodingStatsEventDetails {
     LiveEncodingStatsEventDetails liveEncodingStatsEventDetails = (LiveEncodingStatsEventDetails) o;
     return Objects.equals(this.eventType, liveEncodingStatsEventDetails.eventType) &&
         Objects.equals(this.message, liveEncodingStatsEventDetails.message) &&
-        Objects.equals(this.additionalProperties, liveEncodingStatsEventDetails.additionalProperties);
+        Objects.equals(this.source, liveEncodingStatsEventDetails.source) &&
+        Objects.equals(this.year, liveEncodingStatsEventDetails.year) &&
+        Objects.equals(this.month, liveEncodingStatsEventDetails.month) &&
+        Objects.equals(this.day, liveEncodingStatsEventDetails.day) &&
+        Objects.equals(this.hours, liveEncodingStatsEventDetails.hours) &&
+        Objects.equals(this.minutes, liveEncodingStatsEventDetails.minutes) &&
+        Objects.equals(this.seconds, liveEncodingStatsEventDetails.seconds) &&
+        Objects.equals(this.microSeconds, liveEncodingStatsEventDetails.microSeconds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventType, message, additionalProperties);
+    return Objects.hash(eventType, message, source, year, month, day, hours, minutes, seconds, microSeconds);
   }
 
   @Override
@@ -94,7 +168,14 @@ public class LiveEncodingStatsEventDetails {
     
     sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+    sb.append("    source: ").append(toIndentedString(source)).append("\n");
+    sb.append("    year: ").append(toIndentedString(year)).append("\n");
+    sb.append("    month: ").append(toIndentedString(month)).append("\n");
+    sb.append("    day: ").append(toIndentedString(day)).append("\n");
+    sb.append("    hours: ").append(toIndentedString(hours)).append("\n");
+    sb.append("    minutes: ").append(toIndentedString(minutes)).append("\n");
+    sb.append("    seconds: ").append(toIndentedString(seconds)).append("\n");
+    sb.append("    microSeconds: ").append(toIndentedString(microSeconds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

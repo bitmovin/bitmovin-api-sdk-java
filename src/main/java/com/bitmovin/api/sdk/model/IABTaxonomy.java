@@ -14,8 +14,11 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 
 public class IABTaxonomy {
-  @JsonProperty("version")
-  private String version;
+  @JsonProperty("contentVersion")
+  private String contentVersion;
+
+  @JsonProperty("adProductVersion")
+  private String adProductVersion;
 
   @JsonProperty("contentTaxonomies")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -31,20 +34,38 @@ public class IABTaxonomy {
 
 
   /**
-   * Get version
-   * @return version
+   * Get contentVersion
+   * @return contentVersion
    */
-  public String getVersion() {
-    return version;
+  public String getContentVersion() {
+    return contentVersion;
   }
 
   /**
-   * Set version
+   * Set contentVersion
    *
-   * @param version
+   * @param contentVersion
    */
-  public void setVersion(String version) {
-    this.version = version;
+  public void setContentVersion(String contentVersion) {
+    this.contentVersion = contentVersion;
+  }
+
+
+  /**
+   * Get adProductVersion
+   * @return adProductVersion
+   */
+  public String getAdProductVersion() {
+    return adProductVersion;
+  }
+
+  /**
+   * Set adProductVersion
+   *
+   * @param adProductVersion
+   */
+  public void setAdProductVersion(String adProductVersion) {
+    this.adProductVersion = adProductVersion;
   }
 
 
@@ -126,7 +147,8 @@ public class IABTaxonomy {
       return false;
     }
     IABTaxonomy iaBTaxonomy = (IABTaxonomy) o;
-    return Objects.equals(this.version, iaBTaxonomy.version) &&
+    return Objects.equals(this.contentVersion, iaBTaxonomy.contentVersion) &&
+        Objects.equals(this.adProductVersion, iaBTaxonomy.adProductVersion) &&
         Objects.equals(this.contentTaxonomies, iaBTaxonomy.contentTaxonomies) &&
         Objects.equals(this.adOpportunityTaxonomies, iaBTaxonomy.adOpportunityTaxonomies) &&
         Objects.equals(this.sensitiveTopicTaxonomies, iaBTaxonomy.sensitiveTopicTaxonomies);
@@ -134,7 +156,7 @@ public class IABTaxonomy {
 
   @Override
   public int hashCode() {
-    return Objects.hash(version, contentTaxonomies, adOpportunityTaxonomies, sensitiveTopicTaxonomies);
+    return Objects.hash(contentVersion, adProductVersion, contentTaxonomies, adOpportunityTaxonomies, sensitiveTopicTaxonomies);
   }
 
   @Override
@@ -142,7 +164,8 @@ public class IABTaxonomy {
     StringBuilder sb = new StringBuilder();
     sb.append("class IABTaxonomy {\n");
     
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    contentVersion: ").append(toIndentedString(contentVersion)).append("\n");
+    sb.append("    adProductVersion: ").append(toIndentedString(adProductVersion)).append("\n");
     sb.append("    contentTaxonomies: ").append(toIndentedString(contentTaxonomies)).append("\n");
     sb.append("    adOpportunityTaxonomies: ").append(toIndentedString(adOpportunityTaxonomies)).append("\n");
     sb.append("    sensitiveTopicTaxonomies: ").append(toIndentedString(sensitiveTopicTaxonomies)).append("\n");
