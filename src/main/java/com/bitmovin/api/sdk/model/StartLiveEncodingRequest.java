@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.AdInsertionSettings;
 import com.bitmovin.api.sdk.model.AutoRestartConfiguration;
 import com.bitmovin.api.sdk.model.CacheControlSettings;
 import com.bitmovin.api.sdk.model.EncodingMode;
@@ -54,6 +55,9 @@ public class StartLiveEncodingRequest {
 
   @JsonProperty("cacheControlSettings")
   private CacheControlSettings cacheControlSettings;
+
+  @JsonProperty("adInsertionSettings")
+  private AdInsertionSettings adInsertionSettings;
 
 
   /**
@@ -256,6 +260,25 @@ public class StartLiveEncodingRequest {
   }
 
 
+  /**
+   * Configuration for ad insertion features like ESAM MediaPoint insertion
+   * @return adInsertionSettings
+   */
+  public AdInsertionSettings getAdInsertionSettings() {
+    return adInsertionSettings;
+  }
+
+  /**
+   * Configuration for ad insertion features like ESAM MediaPoint insertion
+   *
+   * @param adInsertionSettings
+   *        Configuration for ad insertion features like ESAM MediaPoint insertion
+   */
+  public void setAdInsertionSettings(AdInsertionSettings adInsertionSettings) {
+    this.adInsertionSettings = adInsertionSettings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -274,12 +297,13 @@ public class StartLiveEncodingRequest {
         Objects.equals(this.autoRestartConfiguration, startLiveEncodingRequest.autoRestartConfiguration) &&
         Objects.equals(this.autoShutdownConfiguration, startLiveEncodingRequest.autoShutdownConfiguration) &&
         Objects.equals(this.esamSettings, startLiveEncodingRequest.esamSettings) &&
-        Objects.equals(this.cacheControlSettings, startLiveEncodingRequest.cacheControlSettings);
+        Objects.equals(this.cacheControlSettings, startLiveEncodingRequest.cacheControlSettings) &&
+        Objects.equals(this.adInsertionSettings, startLiveEncodingRequest.adInsertionSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(streamKey, hlsManifests, dashManifests, liveEncodingMode, reuploadSettings, manifestGenerator, autoRestartConfiguration, autoShutdownConfiguration, esamSettings, cacheControlSettings);
+    return Objects.hash(streamKey, hlsManifests, dashManifests, liveEncodingMode, reuploadSettings, manifestGenerator, autoRestartConfiguration, autoShutdownConfiguration, esamSettings, cacheControlSettings, adInsertionSettings);
   }
 
   @Override
@@ -297,6 +321,7 @@ public class StartLiveEncodingRequest {
     sb.append("    autoShutdownConfiguration: ").append(toIndentedString(autoShutdownConfiguration)).append("\n");
     sb.append("    esamSettings: ").append(toIndentedString(esamSettings)).append("\n");
     sb.append("    cacheControlSettings: ").append(toIndentedString(cacheControlSettings)).append("\n");
+    sb.append("    adInsertionSettings: ").append(toIndentedString(adInsertionSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

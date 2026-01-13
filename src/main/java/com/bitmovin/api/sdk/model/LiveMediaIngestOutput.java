@@ -20,6 +20,9 @@ public class LiveMediaIngestOutput extends Output {
   @JsonProperty("publishingPoint")
   private String publishingPoint;
 
+  @JsonProperty("scte35Passthrough")
+  private Boolean scte35Passthrough;
+
 
   /**
    * URL specifying the publishing point for the output. Can use either http or https. (required)
@@ -40,6 +43,25 @@ public class LiveMediaIngestOutput extends Output {
   }
 
 
+  /**
+   * Enable passthrough of SCTE-35 messages from input to output. Default is false.
+   * @return scte35Passthrough
+   */
+  public Boolean getScte35Passthrough() {
+    return scte35Passthrough;
+  }
+
+  /**
+   * Enable passthrough of SCTE-35 messages from input to output. Default is false.
+   *
+   * @param scte35Passthrough
+   *        Enable passthrough of SCTE-35 messages from input to output. Default is false.
+   */
+  public void setScte35Passthrough(Boolean scte35Passthrough) {
+    this.scte35Passthrough = scte35Passthrough;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -50,12 +72,13 @@ public class LiveMediaIngestOutput extends Output {
     }
     LiveMediaIngestOutput liveMediaIngestOutput = (LiveMediaIngestOutput) o;
     return Objects.equals(this.publishingPoint, liveMediaIngestOutput.publishingPoint) &&
+        Objects.equals(this.scte35Passthrough, liveMediaIngestOutput.scte35Passthrough) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(publishingPoint, super.hashCode());
+    return Objects.hash(publishingPoint, scte35Passthrough, super.hashCode());
   }
 
   @Override
@@ -64,6 +87,7 @@ public class LiveMediaIngestOutput extends Output {
     sb.append("class LiveMediaIngestOutput {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    publishingPoint: ").append(toIndentedString(publishingPoint)).append("\n");
+    sb.append("    scte35Passthrough: ").append(toIndentedString(scte35Passthrough)).append("\n");
     sb.append("}");
     return sb.toString();
   }

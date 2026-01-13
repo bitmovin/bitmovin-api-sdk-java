@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.AdInsertionSettings;
 import com.bitmovin.api.sdk.model.AutoRestartConfiguration;
 import com.bitmovin.api.sdk.model.CacheControlSettings;
 import com.bitmovin.api.sdk.model.EncodingMode;
