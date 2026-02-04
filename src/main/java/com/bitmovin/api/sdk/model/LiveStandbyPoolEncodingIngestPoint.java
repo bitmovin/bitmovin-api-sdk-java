@@ -18,6 +18,7 @@ public class LiveStandbyPoolEncodingIngestPoint {
   @JsonProperty("streamKey")
   private String streamKey;
 
+
   /**
    * URL to the RTMP/RTMPS endpoint for this live encoding
    * @return streamBaseUrl
@@ -27,11 +28,32 @@ public class LiveStandbyPoolEncodingIngestPoint {
   }
 
   /**
+   * URL to the RTMP/RTMPS endpoint for this live encoding
+   *
+   * @param streamBaseUrl
+   *        URL to the RTMP/RTMPS endpoint for this live encoding
+   */
+  public void setStreamBaseUrl(String streamBaseUrl) {
+    this.streamBaseUrl = streamBaseUrl;
+  }
+
+
+  /**
    * Stream key value of this live encoding
    * @return streamKey
    */
   public String getStreamKey() {
     return streamKey;
+  }
+
+  /**
+   * Stream key value of this live encoding
+   *
+   * @param streamKey
+   *        Stream key value of this live encoding
+   */
+  public void setStreamKey(String streamKey) {
+    this.streamKey = streamKey;
   }
 
 

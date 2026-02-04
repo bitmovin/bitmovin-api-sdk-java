@@ -95,27 +95,12 @@ public class LiveStandbyPoolEncoding {
     this.manifests = manifests;
   }
 
-
-  public LiveStandbyPoolEncoding addIngestPointsItem(LiveStandbyPoolEncodingIngestPoint ingestPointsItem) {
-    this.ingestPoints.add(ingestPointsItem);
-    return this;
-  }
-
   /**
    * Get ingestPoints
    * @return ingestPoints
    */
   public List<LiveStandbyPoolEncodingIngestPoint> getIngestPoints() {
     return ingestPoints;
-  }
-
-  /**
-   * Set ingestPoints
-   *
-   * @param ingestPoints
-   */
-  public void setIngestPoints(List<LiveStandbyPoolEncodingIngestPoint> ingestPoints) {
-    this.ingestPoints = ingestPoints;
   }
 
 

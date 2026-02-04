@@ -41,7 +41,7 @@ public class Scte35TriggersApi {
     }
     /**
      * Create SCTE 35 trigger
-     * 
+     * This endpoint supports VOD encodings only. Requests made with a live encoding ID will fail. 
      * @param encodingId Id of the encoding. (required)
      * @param scte35Trigger The SCTE 35 trigger to be created (required)
      * @return Scte35Trigger
@@ -56,7 +56,7 @@ public class Scte35TriggersApi {
     }
     /**
      * Delete SCTE 35 trigger
-     * 
+     * This endpoint supports VOD encodings only. Requests made with a live encoding ID will fail. 
      * @param encodingId Id of the encoding (required)
      * @param scte35triggerId Id of the SCTE 35 trigger (required)
      * @return BitmovinResponse
@@ -71,7 +71,7 @@ public class Scte35TriggersApi {
     }
     /**
      * SCTE 35 trigger Details
-     * 
+     * This endpoint supports VOD encodings only. Requests made with a live encoding ID will fail. 
      * @param encodingId Id of the encoding (required)
      * @param scte35triggerId Id of the SCTE 35 trigger (required)
      * @return Scte35Trigger
@@ -86,7 +86,7 @@ public class Scte35TriggersApi {
     }
     /**
      * List all SCTE 35 triggers for an encoding
-     * 
+     * This endpoint supports VOD encodings only. Requests made with a live encoding ID will fail. 
      * @param encodingId Id of the encoding. (required)
      * @return List&lt;Scte35Trigger&gt;
      * @throws BitmovinException if fails to make API call
@@ -101,7 +101,7 @@ public class Scte35TriggersApi {
 
     /**
      * List all SCTE 35 triggers for an encoding
-     * 
+     * This endpoint supports VOD encodings only. Requests made with a live encoding ID will fail. 
      * @param encodingId Id of the encoding. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;Scte35Trigger&gt;

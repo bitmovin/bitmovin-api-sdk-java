@@ -53,6 +53,22 @@ public class ActionsApi {
             throw buildBitmovinException(ex);
         }
     }
+
+    /**
+     * Acquire an encoding from a standby pool
+     * 
+     * @param poolId Id of the standby pool (required)
+     * @param liveStandbyPoolAcquireEncoding The optionally provided payload for acquiring an encoding (optional)
+     * @return LiveStandbyPoolEncoding
+     * @throws BitmovinException if fails to make API call
+     */
+    public LiveStandbyPoolEncoding acquireEncoding(String poolId, LiveStandbyPoolAcquireEncoding liveStandbyPoolAcquireEncoding) throws BitmovinException {
+        try {
+            return this.apiClient.acquireEncoding(poolId, liveStandbyPoolAcquireEncoding).getData().getResult();
+        } catch (Exception ex) {
+            throw buildBitmovinException(ex);
+        }
+    }
     /**
      * Delete error encodings from the standby pool
      * 
@@ -71,6 +87,9 @@ public class ActionsApi {
     interface ActionsApiClient { 
         @RequestLine("POST /encoding/live/standby-pools/{pool_id}/actions/acquire-encoding")
         ResponseEnvelope<LiveStandbyPoolEncoding> acquireEncoding(@Param(value = "pool_id") String poolId) throws BitmovinException;
+
+        @RequestLine("POST /encoding/live/standby-pools/{pool_id}/actions/acquire-encoding")
+        ResponseEnvelope<LiveStandbyPoolEncoding> acquireEncoding(@Param(value = "pool_id") String poolId, LiveStandbyPoolAcquireEncoding liveStandbyPoolAcquireEncoding) throws BitmovinException;
    
         @RequestLine("POST /encoding/live/standby-pools/{pool_id}/actions/delete-error-encodings")
         ResponseEnvelope<LiveStandbyPoolEncoding> deleteErrorEncodings(@Param(value = "pool_id") String poolId) throws BitmovinException;
