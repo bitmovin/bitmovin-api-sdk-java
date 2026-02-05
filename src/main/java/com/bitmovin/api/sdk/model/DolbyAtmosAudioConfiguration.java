@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AudioConfiguration;
 import com.bitmovin.api.sdk.model.DolbyAtmosLoudnessControl;
+import com.bitmovin.api.sdk.model.DolbyAtmosPreprocessing;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +20,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 public class DolbyAtmosAudioConfiguration extends AudioConfiguration {
   @JsonProperty("loudnessControl")
   private DolbyAtmosLoudnessControl loudnessControl;
+
+  @JsonProperty("preprocessing")
+  private DolbyAtmosPreprocessing preprocessing;
 
 
   /**
@@ -40,6 +44,24 @@ public class DolbyAtmosAudioConfiguration extends AudioConfiguration {
   }
 
 
+  /**
+   * Get preprocessing
+   * @return preprocessing
+   */
+  public DolbyAtmosPreprocessing getPreprocessing() {
+    return preprocessing;
+  }
+
+  /**
+   * Set preprocessing
+   *
+   * @param preprocessing
+   */
+  public void setPreprocessing(DolbyAtmosPreprocessing preprocessing) {
+    this.preprocessing = preprocessing;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -50,12 +72,13 @@ public class DolbyAtmosAudioConfiguration extends AudioConfiguration {
     }
     DolbyAtmosAudioConfiguration dolbyAtmosAudioConfiguration = (DolbyAtmosAudioConfiguration) o;
     return Objects.equals(this.loudnessControl, dolbyAtmosAudioConfiguration.loudnessControl) &&
+        Objects.equals(this.preprocessing, dolbyAtmosAudioConfiguration.preprocessing) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(loudnessControl, super.hashCode());
+    return Objects.hash(loudnessControl, preprocessing, super.hashCode());
   }
 
   @Override
@@ -64,6 +87,7 @@ public class DolbyAtmosAudioConfiguration extends AudioConfiguration {
     sb.append("class DolbyAtmosAudioConfiguration {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    loudnessControl: ").append(toIndentedString(loudnessControl)).append("\n");
+    sb.append("    preprocessing: ").append(toIndentedString(preprocessing)).append("\n");
     sb.append("}");
     return sb.toString();
   }

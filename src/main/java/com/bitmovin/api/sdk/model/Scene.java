@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.AdOpportunity;
 import com.bitmovin.api.sdk.model.Content;
 import com.bitmovin.api.sdk.model.IABTaxonomy;
 import com.bitmovin.api.sdk.model.SceneType;
@@ -57,6 +58,9 @@ public class Scene {
   @JsonProperty("shots")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<Shot> shots = new ArrayList<Shot>();
+
+  @JsonProperty("adOpportunityInformation")
+  private AdOpportunity adOpportunityInformation;
 
 
   /**
@@ -292,6 +296,24 @@ public class Scene {
   }
 
 
+  /**
+   * Get adOpportunityInformation
+   * @return adOpportunityInformation
+   */
+  public AdOpportunity getAdOpportunityInformation() {
+    return adOpportunityInformation;
+  }
+
+  /**
+   * Set adOpportunityInformation
+   *
+   * @param adOpportunityInformation
+   */
+  public void setAdOpportunityInformation(AdOpportunity adOpportunityInformation) {
+    this.adOpportunityInformation = adOpportunityInformation;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -312,12 +334,13 @@ public class Scene {
         Objects.equals(this.keywords, scene.keywords) &&
         Objects.equals(this.iab, scene.iab) &&
         Objects.equals(this.type, scene.type) &&
-        Objects.equals(this.shots, scene.shots);
+        Objects.equals(this.shots, scene.shots) &&
+        Objects.equals(this.adOpportunityInformation, scene.adOpportunityInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, startInSeconds, endInSeconds, id, content, summary, verboseSummary, sensitiveTopics, keywords, iab, type, shots);
+    return Objects.hash(title, startInSeconds, endInSeconds, id, content, summary, verboseSummary, sensitiveTopics, keywords, iab, type, shots, adOpportunityInformation);
   }
 
   @Override
@@ -337,6 +360,7 @@ public class Scene {
     sb.append("    iab: ").append(toIndentedString(iab)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    shots: ").append(toIndentedString(shots)).append("\n");
+    sb.append("    adOpportunityInformation: ").append(toIndentedString(adOpportunityInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -125,7 +125,7 @@ public class DomainRestrictionApi {
     }
 
     interface DomainRestrictionApiClient { 
-        @RequestLine("POST /streams/config/domain-restriction/")
+        @RequestLine("POST /streams/config/domain-restriction")
         ResponseEnvelope<StreamsDomainRestrictionResponse> create(StreamsDomainRestrictionCreateRequest streamsDomainRestrictionCreateRequest) throws BitmovinException;
    
         @RequestLine("DELETE /streams/config/domain-restriction/{domain_restriction_id}")
@@ -134,7 +134,7 @@ public class DomainRestrictionApi {
         @RequestLine("GET /streams/config/domain-restriction/{domain_restriction_id}")
         ResponseEnvelope<StreamsDomainRestrictionResponse> get(@Param(value = "domain_restriction_id") String domainRestrictionId) throws BitmovinException;
    
-        @RequestLine("GET /streams/config/domain-restriction/")
+        @RequestLine("GET /streams/config/domain-restriction")
         ResponseEnvelope<PaginationResponse<StreamsDomainRestrictionResponse>> list(@QueryMap QueryMapWrapper queryParams) throws BitmovinException;
    
         @RequestLine("PATCH /streams/config/domain-restriction/{domain_restriction_id}")

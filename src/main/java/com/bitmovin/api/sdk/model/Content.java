@@ -3,6 +3,7 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.Character;
+import com.bitmovin.api.sdk.model.SceneDynamics;
 import com.bitmovin.api.sdk.model.SceneObject;
 import com.bitmovin.api.sdk.model.Setting;
 import java.util.ArrayList;
@@ -28,6 +29,9 @@ public class Content {
   @JsonProperty("settings")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<Setting> settings = new ArrayList<Setting>();
+
+  @JsonProperty("dynamics")
+  private SceneDynamics dynamics;
 
 
   public Content addCharactersItem(Character charactersItem) {
@@ -99,6 +103,24 @@ public class Content {
   }
 
 
+  /**
+   * Get dynamics
+   * @return dynamics
+   */
+  public SceneDynamics getDynamics() {
+    return dynamics;
+  }
+
+  /**
+   * Set dynamics
+   *
+   * @param dynamics
+   */
+  public void setDynamics(SceneDynamics dynamics) {
+    this.dynamics = dynamics;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -110,12 +132,13 @@ public class Content {
     Content content = (Content) o;
     return Objects.equals(this.characters, content.characters) &&
         Objects.equals(this.objects, content.objects) &&
-        Objects.equals(this.settings, content.settings);
+        Objects.equals(this.settings, content.settings) &&
+        Objects.equals(this.dynamics, content.dynamics);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(characters, objects, settings);
+    return Objects.hash(characters, objects, settings, dynamics);
   }
 
   @Override
@@ -126,6 +149,7 @@ public class Content {
     sb.append("    characters: ").append(toIndentedString(characters)).append("\n");
     sb.append("    objects: ").append(toIndentedString(objects)).append("\n");
     sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
+    sb.append("    dynamics: ").append(toIndentedString(dynamics)).append("\n");
     sb.append("}");
     return sb.toString();
   }
