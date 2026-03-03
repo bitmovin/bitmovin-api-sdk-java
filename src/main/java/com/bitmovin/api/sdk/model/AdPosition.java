@@ -15,6 +15,9 @@ public class AdPosition {
   @JsonProperty("position")
   private Double position;
 
+  @JsonProperty("duration")
+  private Double duration;
+
 
   /**
    * Get position
@@ -34,6 +37,24 @@ public class AdPosition {
   }
 
 
+  /**
+   * Get duration
+   * @return duration
+   */
+  public Double getDuration() {
+    return duration;
+  }
+
+  /**
+   * Set duration
+   *
+   * @param duration
+   */
+  public void setDuration(Double duration) {
+    this.duration = duration;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -43,12 +64,13 @@ public class AdPosition {
       return false;
     }
     AdPosition adPosition = (AdPosition) o;
-    return Objects.equals(this.position, adPosition.position);
+    return Objects.equals(this.position, adPosition.position) &&
+        Objects.equals(this.duration, adPosition.duration);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(position);
+    return Objects.hash(position, duration);
   }
 
   @Override
@@ -57,6 +79,7 @@ public class AdPosition {
     sb.append("class AdPosition {\n");
     
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
+    sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
     sb.append("}");
     return sb.toString();
   }

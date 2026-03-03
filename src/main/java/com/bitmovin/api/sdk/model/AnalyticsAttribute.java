@@ -211,6 +211,36 @@ public enum AnalyticsAttribute {
   CUSTOM_DATA_50("CUSTOM_DATA_50"),
   
   
+  CUSTOM_DATA_51("CUSTOM_DATA_51"),
+  
+  
+  CUSTOM_DATA_52("CUSTOM_DATA_52"),
+  
+  
+  CUSTOM_DATA_53("CUSTOM_DATA_53"),
+  
+  
+  CUSTOM_DATA_54("CUSTOM_DATA_54"),
+  
+  
+  CUSTOM_DATA_55("CUSTOM_DATA_55"),
+  
+  
+  CUSTOM_DATA_56("CUSTOM_DATA_56"),
+  
+  
+  CUSTOM_DATA_57("CUSTOM_DATA_57"),
+  
+  
+  CUSTOM_DATA_58("CUSTOM_DATA_58"),
+  
+  
+  CUSTOM_DATA_59("CUSTOM_DATA_59"),
+  
+  
+  CUSTOM_DATA_60("CUSTOM_DATA_60"),
+  
+  
   CUSTOM_USER_ID("CUSTOM_USER_ID"),
   
   
@@ -278,6 +308,9 @@ public enum AnalyticsAttribute {
   
   
   IS_MUTED("IS_MUTED"),
+  
+  
+  IS_PROGRAM_CHANGE("IS_PROGRAM_CHANGE"),
   
   
   ISP("ISP"),

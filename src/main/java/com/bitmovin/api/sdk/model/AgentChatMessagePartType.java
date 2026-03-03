@@ -10,24 +10,17 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum DolbyAtmosInputFormat {
-  
-  /**
-   * Dolby Atmos input format is DAMF (Dolby Atmos Master Format), usually a .atmos file. The &#39;metadata&#39; and &#39;audio&#39; files referenced within this file need to reside in the same directory and will be resolved automatically.
-   */
-  DAMF("DAMF"),
-  
-  /**
-   * Dolby Atmos input format is ADM (Audio Definition Model), usually a .wav file
-   */
-  ADM("ADM"),
+public enum AgentChatMessagePartType {
   
   
-  MXF("MXF");
+  TEXT("text"),
+  
+  
+  DATA_ATTACHMENTS("data-attachments");
 
   private String value;
 
-  DolbyAtmosInputFormat(String value) {
+  AgentChatMessagePartType(String value) {
     this.value = value;
   }
 
@@ -42,8 +35,8 @@ public enum DolbyAtmosInputFormat {
   }
 
   @JsonCreator
-  public static DolbyAtmosInputFormat fromValue(String text) {
-    for (DolbyAtmosInputFormat b : DolbyAtmosInputFormat.values()) {
+  public static AgentChatMessagePartType fromValue(String text) {
+    for (AgentChatMessagePartType b : AgentChatMessagePartType.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
