@@ -2,7 +2,6 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.bitmovin.api.sdk.model.EsamCondition;
 import com.bitmovin.api.sdk.model.EsamSignal;
 import java.util.ArrayList;
 import java.util.Date;
@@ -23,10 +22,6 @@ public class EsamMediaPoint {
   @JsonProperty("signals")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<EsamSignal> signals = new ArrayList<EsamSignal>();
-
-  @JsonProperty("conditions")
-  @JsonInclude(JsonInclude.Include.NON_EMPTY)
-  private List<EsamCondition> conditions = new ArrayList<EsamCondition>();
 
 
   /**
@@ -72,30 +67,6 @@ public class EsamMediaPoint {
   }
 
 
-  public EsamMediaPoint addConditionsItem(EsamCondition conditionsItem) {
-    this.conditions.add(conditionsItem);
-    return this;
-  }
-
-  /**
-   * Optional array of ESAM conditions with timing offsets and directional markers (OUT/IN) for signaling content boundaries
-   * @return conditions
-   */
-  public List<EsamCondition> getConditions() {
-    return conditions;
-  }
-
-  /**
-   * Optional array of ESAM conditions with timing offsets and directional markers (OUT/IN) for signaling content boundaries
-   *
-   * @param conditions
-   *        Optional array of ESAM conditions with timing offsets and directional markers (OUT/IN) for signaling content boundaries
-   */
-  public void setConditions(List<EsamCondition> conditions) {
-    this.conditions = conditions;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -106,13 +77,12 @@ public class EsamMediaPoint {
     }
     EsamMediaPoint esamMediaPoint = (EsamMediaPoint) o;
     return Objects.equals(this.matchTime, esamMediaPoint.matchTime) &&
-        Objects.equals(this.signals, esamMediaPoint.signals) &&
-        Objects.equals(this.conditions, esamMediaPoint.conditions);
+        Objects.equals(this.signals, esamMediaPoint.signals);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(matchTime, signals, conditions);
+    return Objects.hash(matchTime, signals);
   }
 
   @Override
@@ -122,7 +92,6 @@ public class EsamMediaPoint {
     
     sb.append("    matchTime: ").append(toIndentedString(matchTime)).append("\n");
     sb.append("    signals: ").append(toIndentedString(signals)).append("\n");
-    sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

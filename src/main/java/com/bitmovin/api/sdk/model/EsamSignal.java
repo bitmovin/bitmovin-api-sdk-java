@@ -18,12 +18,6 @@ public class EsamSignal {
   @JsonProperty("binary")
   private String binary;
 
-  @JsonProperty("interval")
-  private String interval;
-
-  @JsonProperty("end")
-  private String end;
-
 
   /**
    * The offset from the matched signal in ISO 8601 duration format, accurate to milliseconds
@@ -63,44 +57,6 @@ public class EsamSignal {
   }
 
 
-  /**
-   * Interval in ISO 8601 duration format for which the signal should be repeated.  A signal may be specified as repeating when the interval and end attributes are present.  In this case, the signal is executed at the time specified by offset and again at the time  specified by adding interval to offset. This should be continued until reaching the duration  of offset + end. 
-   * @return interval
-   */
-  public String getInterval() {
-    return interval;
-  }
-
-  /**
-   * Interval in ISO 8601 duration format for which the signal should be repeated.  A signal may be specified as repeating when the interval and end attributes are present.  In this case, the signal is executed at the time specified by offset and again at the time  specified by adding interval to offset. This should be continued until reaching the duration  of offset + end. 
-   *
-   * @param interval
-   *        Interval in ISO 8601 duration format for which the signal should be repeated.  A signal may be specified as repeating when the interval and end attributes are present.  In this case, the signal is executed at the time specified by offset and again at the time  specified by adding interval to offset. This should be continued until reaching the duration  of offset + end. 
-   */
-  public void setInterval(String interval) {
-    this.interval = interval;
-  }
-
-
-  /**
-   * End duration in ISO 8601 duration format when a repeated signal should stop being repeated
-   * @return end
-   */
-  public String getEnd() {
-    return end;
-  }
-
-  /**
-   * End duration in ISO 8601 duration format when a repeated signal should stop being repeated
-   *
-   * @param end
-   *        End duration in ISO 8601 duration format when a repeated signal should stop being repeated
-   */
-  public void setEnd(String end) {
-    this.end = end;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -111,14 +67,12 @@ public class EsamSignal {
     }
     EsamSignal esamSignal = (EsamSignal) o;
     return Objects.equals(this.offset, esamSignal.offset) &&
-        Objects.equals(this.binary, esamSignal.binary) &&
-        Objects.equals(this.interval, esamSignal.interval) &&
-        Objects.equals(this.end, esamSignal.end);
+        Objects.equals(this.binary, esamSignal.binary);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(offset, binary, interval, end);
+    return Objects.hash(offset, binary);
   }
 
   @Override
@@ -128,8 +82,6 @@ public class EsamSignal {
     
     sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
     sb.append("    binary: ").append(toIndentedString(binary)).append("\n");
-    sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
-    sb.append("    end: ").append(toIndentedString(end)).append("\n");
     sb.append("}");
     return sb.toString();
   }
