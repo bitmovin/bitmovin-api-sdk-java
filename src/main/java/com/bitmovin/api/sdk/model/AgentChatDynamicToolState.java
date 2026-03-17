@@ -10,20 +10,23 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum AgentChatMessagePartType {
+public enum AgentChatDynamicToolState {
   
   
-  TEXT("text"),
+  INPUT_STREAMING("input-streaming"),
   
   
-  DATA_ATTACHMENTS("data-attachments"),
+  INPUT_AVAILABLE("input-available"),
   
   
-  DYNAMIC_TOOL("dynamic-tool");
+  OUTPUT_AVAILABLE("output-available"),
+  
+  
+  OUTPUT_ERROR("output-error");
 
   private String value;
 
-  AgentChatMessagePartType(String value) {
+  AgentChatDynamicToolState(String value) {
     this.value = value;
   }
 
@@ -38,8 +41,8 @@ public enum AgentChatMessagePartType {
   }
 
   @JsonCreator
-  public static AgentChatMessagePartType fromValue(String text) {
-    for (AgentChatMessagePartType b : AgentChatMessagePartType.values()) {
+  public static AgentChatDynamicToolState fromValue(String text) {
+    for (AgentChatDynamicToolState b : AgentChatDynamicToolState.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

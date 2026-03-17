@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonSubTypes({
   @JsonSubTypes.Type(value = AgentChatTextPart.class, name = "text"),
   @JsonSubTypes.Type(value = AgentChatAttachmentsPart.class, name = "data-attachments"),
+  @JsonSubTypes.Type(value = AgentChatDynamicToolPart.class, name = "dynamic-tool"),
 })
 
 public class AgentChatMessagePart {

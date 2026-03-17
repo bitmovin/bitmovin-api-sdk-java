@@ -10,20 +10,29 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum AgentChatMessagePartType {
+public enum S3StorageClass {
   
   
-  TEXT("text"),
+  GLACIER_IR("GLACIER_IR"),
   
   
-  DATA_ATTACHMENTS("data-attachments"),
+  INTELLIGENT_TIERING("INTELLIGENT_TIERING"),
   
   
-  DYNAMIC_TOOL("dynamic-tool");
+  ONEZONE_IA("ONEZONE_IA"),
+  
+  
+  REDUCED_REDUNDANCY("REDUCED_REDUNDANCY"),
+  
+  
+  STANDARD("STANDARD"),
+  
+  
+  STANDARD_IA("STANDARD_IA");
 
   private String value;
 
-  AgentChatMessagePartType(String value) {
+  S3StorageClass(String value) {
     this.value = value;
   }
 
@@ -38,8 +47,8 @@ public enum AgentChatMessagePartType {
   }
 
   @JsonCreator
-  public static AgentChatMessagePartType fromValue(String text) {
-    for (AgentChatMessagePartType b : AgentChatMessagePartType.values()) {
+  public static S3StorageClass fromValue(String text) {
+    for (S3StorageClass b : S3StorageClass.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

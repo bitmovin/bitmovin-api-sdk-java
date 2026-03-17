@@ -6,6 +6,7 @@ import com.bitmovin.api.sdk.model.AclEntry;
 import com.bitmovin.api.sdk.model.AwsCloudRegion;
 import com.bitmovin.api.sdk.model.Output;
 import com.bitmovin.api.sdk.model.S3SignatureVersion;
+import com.bitmovin.api.sdk.model.S3StorageClass;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -36,6 +37,9 @@ public class S3Output extends Output {
 
   @JsonProperty("signatureVersion")
   private S3SignatureVersion signatureVersion;
+
+  @JsonProperty("storageClass")
+  private S3StorageClass storageClass;
 
 
   /**
@@ -152,6 +156,25 @@ public class S3Output extends Output {
   }
 
 
+  /**
+   * Specifies the storage class used for the bucket. This depends on the requirements of workloads, like performance, data access, resiliency, and cost.
+   * @return storageClass
+   */
+  public S3StorageClass getStorageClass() {
+    return storageClass;
+  }
+
+  /**
+   * Specifies the storage class used for the bucket. This depends on the requirements of workloads, like performance, data access, resiliency, and cost.
+   *
+   * @param storageClass
+   *        Specifies the storage class used for the bucket. This depends on the requirements of workloads, like performance, data access, resiliency, and cost.
+   */
+  public void setStorageClass(S3StorageClass storageClass) {
+    this.storageClass = storageClass;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -167,12 +190,13 @@ public class S3Output extends Output {
         Objects.equals(this.md5MetaTag, s3Output.md5MetaTag) &&
         Objects.equals(this.cloudRegion, s3Output.cloudRegion) &&
         Objects.equals(this.signatureVersion, s3Output.signatureVersion) &&
+        Objects.equals(this.storageClass, s3Output.storageClass) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bucketName, accessKey, secretKey, md5MetaTag, cloudRegion, signatureVersion, super.hashCode());
+    return Objects.hash(bucketName, accessKey, secretKey, md5MetaTag, cloudRegion, signatureVersion, storageClass, super.hashCode());
   }
 
   @Override
@@ -186,6 +210,7 @@ public class S3Output extends Output {
     sb.append("    md5MetaTag: ").append(toIndentedString(md5MetaTag)).append("\n");
     sb.append("    cloudRegion: ").append(toIndentedString(cloudRegion)).append("\n");
     sb.append("    signatureVersion: ").append(toIndentedString(signatureVersion)).append("\n");
+    sb.append("    storageClass: ").append(toIndentedString(storageClass)).append("\n");
     sb.append("}");
     return sb.toString();
   }
