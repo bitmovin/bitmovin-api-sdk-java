@@ -5,6 +5,7 @@ import java.util.Arrays;
 import com.bitmovin.api.sdk.model.Metadata;
 import com.bitmovin.api.sdk.model.Rating;
 import com.bitmovin.api.sdk.model.Scene;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -20,6 +21,9 @@ public class SceneAnalysisDetailsResponse {
   @JsonProperty("scenes")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<Scene> scenes = new ArrayList<Scene>();
+
+  @JsonProperty("duration")
+  private BigDecimal duration;
 
   @JsonProperty("description")
   private String description;
@@ -39,6 +43,10 @@ public class SceneAnalysisDetailsResponse {
   @JsonProperty("iabSensitiveTopicTaxonomies")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<String> iabSensitiveTopicTaxonomies = new ArrayList<String>();
+
+  @JsonProperty("inputLanguageCodes")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<String> inputLanguageCodes = new ArrayList<String>();
 
   @JsonProperty("metadata")
   private Metadata metadata;
@@ -64,6 +72,24 @@ public class SceneAnalysisDetailsResponse {
    */
   public void setScenes(List<Scene> scenes) {
     this.scenes = scenes;
+  }
+
+
+  /**
+   * Get duration
+   * @return duration
+   */
+  public BigDecimal getDuration() {
+    return duration;
+  }
+
+  /**
+   * Set duration
+   *
+   * @param duration
+   */
+  public void setDuration(BigDecimal duration) {
+    this.duration = duration;
   }
 
 
@@ -177,6 +203,29 @@ public class SceneAnalysisDetailsResponse {
   }
 
 
+  public SceneAnalysisDetailsResponse addInputLanguageCodesItem(String inputLanguageCodesItem) {
+    this.inputLanguageCodes.add(inputLanguageCodesItem);
+    return this;
+  }
+
+  /**
+   * Get inputLanguageCodes
+   * @return inputLanguageCodes
+   */
+  public List<String> getInputLanguageCodes() {
+    return inputLanguageCodes;
+  }
+
+  /**
+   * Set inputLanguageCodes
+   *
+   * @param inputLanguageCodes
+   */
+  public void setInputLanguageCodes(List<String> inputLanguageCodes) {
+    this.inputLanguageCodes = inputLanguageCodes;
+  }
+
+
   /**
    * Get metadata
    * @return metadata
@@ -205,17 +254,19 @@ public class SceneAnalysisDetailsResponse {
     }
     SceneAnalysisDetailsResponse sceneAnalysisDetailsResponse = (SceneAnalysisDetailsResponse) o;
     return Objects.equals(this.scenes, sceneAnalysisDetailsResponse.scenes) &&
+        Objects.equals(this.duration, sceneAnalysisDetailsResponse.duration) &&
         Objects.equals(this.description, sceneAnalysisDetailsResponse.description) &&
         Objects.equals(this.keywords, sceneAnalysisDetailsResponse.keywords) &&
         Objects.equals(this.ratings, sceneAnalysisDetailsResponse.ratings) &&
         Objects.equals(this.sensitiveTopics, sceneAnalysisDetailsResponse.sensitiveTopics) &&
         Objects.equals(this.iabSensitiveTopicTaxonomies, sceneAnalysisDetailsResponse.iabSensitiveTopicTaxonomies) &&
+        Objects.equals(this.inputLanguageCodes, sceneAnalysisDetailsResponse.inputLanguageCodes) &&
         Objects.equals(this.metadata, sceneAnalysisDetailsResponse.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(scenes, description, keywords, ratings, sensitiveTopics, iabSensitiveTopicTaxonomies, metadata);
+    return Objects.hash(scenes, duration, description, keywords, ratings, sensitiveTopics, iabSensitiveTopicTaxonomies, inputLanguageCodes, metadata);
   }
 
   @Override
@@ -224,11 +275,13 @@ public class SceneAnalysisDetailsResponse {
     sb.append("class SceneAnalysisDetailsResponse {\n");
     
     sb.append("    scenes: ").append(toIndentedString(scenes)).append("\n");
+    sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    keywords: ").append(toIndentedString(keywords)).append("\n");
     sb.append("    ratings: ").append(toIndentedString(ratings)).append("\n");
     sb.append("    sensitiveTopics: ").append(toIndentedString(sensitiveTopics)).append("\n");
     sb.append("    iabSensitiveTopicTaxonomies: ").append(toIndentedString(iabSensitiveTopicTaxonomies)).append("\n");
+    sb.append("    inputLanguageCodes: ").append(toIndentedString(inputLanguageCodes)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
