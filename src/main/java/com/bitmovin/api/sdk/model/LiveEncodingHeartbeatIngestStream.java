@@ -49,6 +49,12 @@ public class LiveEncodingHeartbeatIngestStream {
   @JsonProperty("keyFrameIntervalAvg")
   private Double keyFrameIntervalAvg;
 
+  @JsonProperty("keyFrameIntervalMaxLastMinute")
+  private Integer keyFrameIntervalMaxLastMinute;
+
+  @JsonProperty("keyFrameIntervalAvgLastMinute")
+  private Double keyFrameIntervalAvgLastMinute;
+
   @JsonProperty("lastTimestamp")
   private Integer lastTimestamp;
 
@@ -297,6 +303,44 @@ public class LiveEncodingHeartbeatIngestStream {
 
 
   /**
+   * Largest key-frame interval observed over the last minute, in milliseconds. Absent until the rolling window has at least one sample.
+   * @return keyFrameIntervalMaxLastMinute
+   */
+  public Integer getKeyFrameIntervalMaxLastMinute() {
+    return keyFrameIntervalMaxLastMinute;
+  }
+
+  /**
+   * Largest key-frame interval observed over the last minute, in milliseconds. Absent until the rolling window has at least one sample.
+   *
+   * @param keyFrameIntervalMaxLastMinute
+   *        Largest key-frame interval observed over the last minute, in milliseconds. Absent until the rolling window has at least one sample.
+   */
+  public void setKeyFrameIntervalMaxLastMinute(Integer keyFrameIntervalMaxLastMinute) {
+    this.keyFrameIntervalMaxLastMinute = keyFrameIntervalMaxLastMinute;
+  }
+
+
+  /**
+   * Average key-frame interval over the last minute, in milliseconds. Absent until the rolling window has at least one sample.
+   * @return keyFrameIntervalAvgLastMinute
+   */
+  public Double getKeyFrameIntervalAvgLastMinute() {
+    return keyFrameIntervalAvgLastMinute;
+  }
+
+  /**
+   * Average key-frame interval over the last minute, in milliseconds. Absent until the rolling window has at least one sample.
+   *
+   * @param keyFrameIntervalAvgLastMinute
+   *        Average key-frame interval over the last minute, in milliseconds. Absent until the rolling window has at least one sample.
+   */
+  public void setKeyFrameIntervalAvgLastMinute(Double keyFrameIntervalAvgLastMinute) {
+    this.keyFrameIntervalAvgLastMinute = keyFrameIntervalAvgLastMinute;
+  }
+
+
+  /**
    * Last presentation timestamp (PTS) of the stream.
    * @return lastTimestamp
    */
@@ -431,6 +475,8 @@ public class LiveEncodingHeartbeatIngestStream {
         Objects.equals(this.incomingBitrate, liveEncodingHeartbeatIngestStream.incomingBitrate) &&
         Objects.equals(this.keyFrameIntervalMax, liveEncodingHeartbeatIngestStream.keyFrameIntervalMax) &&
         Objects.equals(this.keyFrameIntervalAvg, liveEncodingHeartbeatIngestStream.keyFrameIntervalAvg) &&
+        Objects.equals(this.keyFrameIntervalMaxLastMinute, liveEncodingHeartbeatIngestStream.keyFrameIntervalMaxLastMinute) &&
+        Objects.equals(this.keyFrameIntervalAvgLastMinute, liveEncodingHeartbeatIngestStream.keyFrameIntervalAvgLastMinute) &&
         Objects.equals(this.lastTimestamp, liveEncodingHeartbeatIngestStream.lastTimestamp) &&
         Objects.equals(this.lastTimestampTimescale, liveEncodingHeartbeatIngestStream.lastTimestampTimescale) &&
         Objects.equals(this.numberOfAudioChannels, liveEncodingHeartbeatIngestStream.numberOfAudioChannels) &&
@@ -441,7 +487,7 @@ public class LiveEncodingHeartbeatIngestStream {
 
   @Override
   public int hashCode() {
-    return Objects.hash(streamId, mediaType, width, height, rate, codec, aspectRatio, bitrate, samplesReadPerSecondAvg, incomingBitrate, keyFrameIntervalMax, keyFrameIntervalAvg, lastTimestamp, lastTimestampTimescale, numberOfAudioChannels, audioChannelFormat, lastArrivalTime, healthy);
+    return Objects.hash(streamId, mediaType, width, height, rate, codec, aspectRatio, bitrate, samplesReadPerSecondAvg, incomingBitrate, keyFrameIntervalMax, keyFrameIntervalAvg, keyFrameIntervalMaxLastMinute, keyFrameIntervalAvgLastMinute, lastTimestamp, lastTimestampTimescale, numberOfAudioChannels, audioChannelFormat, lastArrivalTime, healthy);
   }
 
   @Override
@@ -461,6 +507,8 @@ public class LiveEncodingHeartbeatIngestStream {
     sb.append("    incomingBitrate: ").append(toIndentedString(incomingBitrate)).append("\n");
     sb.append("    keyFrameIntervalMax: ").append(toIndentedString(keyFrameIntervalMax)).append("\n");
     sb.append("    keyFrameIntervalAvg: ").append(toIndentedString(keyFrameIntervalAvg)).append("\n");
+    sb.append("    keyFrameIntervalMaxLastMinute: ").append(toIndentedString(keyFrameIntervalMaxLastMinute)).append("\n");
+    sb.append("    keyFrameIntervalAvgLastMinute: ").append(toIndentedString(keyFrameIntervalAvgLastMinute)).append("\n");
     sb.append("    lastTimestamp: ").append(toIndentedString(lastTimestamp)).append("\n");
     sb.append("    lastTimestampTimescale: ").append(toIndentedString(lastTimestampTimescale)).append("\n");
     sb.append("    numberOfAudioChannels: ").append(toIndentedString(numberOfAudioChannels)).append("\n");
