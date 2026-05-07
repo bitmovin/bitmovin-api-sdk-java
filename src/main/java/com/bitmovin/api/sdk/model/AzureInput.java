@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.AzureServicePrincipal;
 import com.bitmovin.api.sdk.model.Input;
 import java.util.Date;
 import java.util.List;
@@ -21,6 +22,9 @@ public class AzureInput extends Input {
 
   @JsonProperty("accountKey")
   private String accountKey;
+
+  @JsonProperty("servicePrincipal")
+  private AzureServicePrincipal servicePrincipal;
 
   @JsonProperty("container")
   private String container;
@@ -46,7 +50,7 @@ public class AzureInput extends Input {
 
 
   /**
-   * Azure Account Key (required)
+   * Azure Account Key
    * @return accountKey
    */
   public String getAccountKey() {
@@ -54,13 +58,31 @@ public class AzureInput extends Input {
   }
 
   /**
-   * Azure Account Key (required)
+   * Azure Account Key
    *
    * @param accountKey
-   *        Azure Account Key (required)
+   *        Azure Account Key
    */
   public void setAccountKey(String accountKey) {
     this.accountKey = accountKey;
+  }
+
+
+  /**
+   * Get servicePrincipal
+   * @return servicePrincipal
+   */
+  public AzureServicePrincipal getServicePrincipal() {
+    return servicePrincipal;
+  }
+
+  /**
+   * Set servicePrincipal
+   *
+   * @param servicePrincipal
+   */
+  public void setServicePrincipal(AzureServicePrincipal servicePrincipal) {
+    this.servicePrincipal = servicePrincipal;
   }
 
 
@@ -94,13 +116,14 @@ public class AzureInput extends Input {
     AzureInput azureInput = (AzureInput) o;
     return Objects.equals(this.accountName, azureInput.accountName) &&
         Objects.equals(this.accountKey, azureInput.accountKey) &&
+        Objects.equals(this.servicePrincipal, azureInput.servicePrincipal) &&
         Objects.equals(this.container, azureInput.container) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountName, accountKey, container, super.hashCode());
+    return Objects.hash(accountName, accountKey, servicePrincipal, container, super.hashCode());
   }
 
   @Override
@@ -110,6 +133,7 @@ public class AzureInput extends Input {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    accountName: ").append(toIndentedString(accountName)).append("\n");
     sb.append("    accountKey: ").append(toIndentedString(accountKey)).append("\n");
+    sb.append("    servicePrincipal: ").append(toIndentedString(servicePrincipal)).append("\n");
     sb.append("    container: ").append(toIndentedString(container)).append("\n");
     sb.append("}");
     return sb.toString();

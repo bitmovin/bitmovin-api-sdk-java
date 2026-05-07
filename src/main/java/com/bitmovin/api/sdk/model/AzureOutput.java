@@ -3,6 +3,7 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AclEntry;
+import com.bitmovin.api.sdk.model.AzureServicePrincipal;
 import com.bitmovin.api.sdk.model.Output;
 import java.util.Date;
 import java.util.List;
@@ -22,6 +23,9 @@ public class AzureOutput extends Output {
 
   @JsonProperty("accountKey")
   private String accountKey;
+
+  @JsonProperty("servicePrincipal")
+  private AzureServicePrincipal servicePrincipal;
 
   @JsonProperty("container")
   private String container;
@@ -47,7 +51,7 @@ public class AzureOutput extends Output {
 
 
   /**
-   * Azure Account Key (required)
+   * Azure Account Key
    * @return accountKey
    */
   public String getAccountKey() {
@@ -55,13 +59,31 @@ public class AzureOutput extends Output {
   }
 
   /**
-   * Azure Account Key (required)
+   * Azure Account Key
    *
    * @param accountKey
-   *        Azure Account Key (required)
+   *        Azure Account Key
    */
   public void setAccountKey(String accountKey) {
     this.accountKey = accountKey;
+  }
+
+
+  /**
+   * Get servicePrincipal
+   * @return servicePrincipal
+   */
+  public AzureServicePrincipal getServicePrincipal() {
+    return servicePrincipal;
+  }
+
+  /**
+   * Set servicePrincipal
+   *
+   * @param servicePrincipal
+   */
+  public void setServicePrincipal(AzureServicePrincipal servicePrincipal) {
+    this.servicePrincipal = servicePrincipal;
   }
 
 
@@ -95,13 +117,14 @@ public class AzureOutput extends Output {
     AzureOutput azureOutput = (AzureOutput) o;
     return Objects.equals(this.accountName, azureOutput.accountName) &&
         Objects.equals(this.accountKey, azureOutput.accountKey) &&
+        Objects.equals(this.servicePrincipal, azureOutput.servicePrincipal) &&
         Objects.equals(this.container, azureOutput.container) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountName, accountKey, container, super.hashCode());
+    return Objects.hash(accountName, accountKey, servicePrincipal, container, super.hashCode());
   }
 
   @Override
@@ -111,6 +134,7 @@ public class AzureOutput extends Output {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    accountName: ").append(toIndentedString(accountName)).append("\n");
     sb.append("    accountKey: ").append(toIndentedString(accountKey)).append("\n");
+    sb.append("    servicePrincipal: ").append(toIndentedString(servicePrincipal)).append("\n");
     sb.append("    container: ").append(toIndentedString(container)).append("\n");
     sb.append("}");
     return sb.toString();
