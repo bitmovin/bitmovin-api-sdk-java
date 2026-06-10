@@ -53,6 +53,9 @@ public class AccountInformation extends BitmovinResource {
   @JsonProperty("samlDomain")
   private String samlDomain;
 
+  @JsonProperty("tosAccepted")
+  private Boolean tosAccepted;
+
   /**
    * Email address of the account. (required)
    * @return email
@@ -186,6 +189,25 @@ public class AccountInformation extends BitmovinResource {
   }
 
 
+  /**
+   * Whether the user has accepted the Terms of Service. Users created via SAML SSO start as &#x60;false&#x60; because the SAML flow bypasses the registration form that normally captures TOS acceptance; all other signup paths default to &#x60;true&#x60;. Acceptance is one-way: sending &#x60;true&#x60; accepts the TOS, sending &#x60;false&#x60; is ignored.
+   * @return tosAccepted
+   */
+  public Boolean getTosAccepted() {
+    return tosAccepted;
+  }
+
+  /**
+   * Whether the user has accepted the Terms of Service. Users created via SAML SSO start as &#x60;false&#x60; because the SAML flow bypasses the registration form that normally captures TOS acceptance; all other signup paths default to &#x60;true&#x60;. Acceptance is one-way: sending &#x60;true&#x60; accepts the TOS, sending &#x60;false&#x60; is ignored.
+   *
+   * @param tosAccepted
+   *        Whether the user has accepted the Terms of Service. Users created via SAML SSO start as &#x60;false&#x60; because the SAML flow bypasses the registration form that normally captures TOS acceptance; all other signup paths default to &#x60;true&#x60;. Acceptance is one-way: sending &#x60;true&#x60; accepts the TOS, sending &#x60;false&#x60; is ignored.
+   */
+  public void setTosAccepted(Boolean tosAccepted) {
+    this.tosAccepted = tosAccepted;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -206,12 +228,13 @@ public class AccountInformation extends BitmovinResource {
         Objects.equals(this.mfaEnabled, accountInformation.mfaEnabled) &&
         Objects.equals(this.intercomIdVerification, accountInformation.intercomIdVerification) &&
         Objects.equals(this.samlDomain, accountInformation.samlDomain) &&
+        Objects.equals(this.tosAccepted, accountInformation.tosAccepted) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(email, apiKeys, firstName, lastName, phone, company, verified, marketplace, mfaEnabled, intercomIdVerification, samlDomain, super.hashCode());
+    return Objects.hash(email, apiKeys, firstName, lastName, phone, company, verified, marketplace, mfaEnabled, intercomIdVerification, samlDomain, tosAccepted, super.hashCode());
   }
 
   @Override
@@ -230,6 +253,7 @@ public class AccountInformation extends BitmovinResource {
     sb.append("    mfaEnabled: ").append(toIndentedString(mfaEnabled)).append("\n");
     sb.append("    intercomIdVerification: ").append(toIndentedString(intercomIdVerification)).append("\n");
     sb.append("    samlDomain: ").append(toIndentedString(samlDomain)).append("\n");
+    sb.append("    tosAccepted: ").append(toIndentedString(tosAccepted)).append("\n");
     sb.append("}");
     return sb.toString();
   }

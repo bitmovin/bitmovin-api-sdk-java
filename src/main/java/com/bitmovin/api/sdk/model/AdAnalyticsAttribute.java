@@ -427,6 +427,9 @@ public enum AdAnalyticsAttribute {
   IS_LINEAR("IS_LINEAR"),
   
   
+  IS_SLATE("IS_SLATE"),
+  
+  
   ISP("ISP"),
   
   

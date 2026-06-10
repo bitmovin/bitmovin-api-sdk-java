@@ -35,6 +35,18 @@ public class LiveEncodingHeartbeatIngest {
   @JsonProperty("rtmpUserIngestInfo")
   private RtmpUserIngestInfo rtmpUserIngestInfo;
 
+  @JsonProperty("droppedPacketsVideo")
+  private Long droppedPacketsVideo;
+
+  @JsonProperty("droppedPacketsAudio")
+  private Long droppedPacketsAudio;
+
+  @JsonProperty("corruptPacketsVideo")
+  private Long corruptPacketsVideo;
+
+  @JsonProperty("corruptPacketsAudio")
+  private Long corruptPacketsAudio;
+
 
   /**
    * Get status
@@ -139,6 +151,82 @@ public class LiveEncodingHeartbeatIngest {
   }
 
 
+  /**
+   * Total number of dropped video packets since the live encoding started. 
+   * @return droppedPacketsVideo
+   */
+  public Long getDroppedPacketsVideo() {
+    return droppedPacketsVideo;
+  }
+
+  /**
+   * Total number of dropped video packets since the live encoding started. 
+   *
+   * @param droppedPacketsVideo
+   *        Total number of dropped video packets since the live encoding started. 
+   */
+  public void setDroppedPacketsVideo(Long droppedPacketsVideo) {
+    this.droppedPacketsVideo = droppedPacketsVideo;
+  }
+
+
+  /**
+   * Total number of dropped audio packets since the live encoding started. 
+   * @return droppedPacketsAudio
+   */
+  public Long getDroppedPacketsAudio() {
+    return droppedPacketsAudio;
+  }
+
+  /**
+   * Total number of dropped audio packets since the live encoding started. 
+   *
+   * @param droppedPacketsAudio
+   *        Total number of dropped audio packets since the live encoding started. 
+   */
+  public void setDroppedPacketsAudio(Long droppedPacketsAudio) {
+    this.droppedPacketsAudio = droppedPacketsAudio;
+  }
+
+
+  /**
+   * Total number of corrupt video packets since the live encoding started. 
+   * @return corruptPacketsVideo
+   */
+  public Long getCorruptPacketsVideo() {
+    return corruptPacketsVideo;
+  }
+
+  /**
+   * Total number of corrupt video packets since the live encoding started. 
+   *
+   * @param corruptPacketsVideo
+   *        Total number of corrupt video packets since the live encoding started. 
+   */
+  public void setCorruptPacketsVideo(Long corruptPacketsVideo) {
+    this.corruptPacketsVideo = corruptPacketsVideo;
+  }
+
+
+  /**
+   * Total number of corrupt audio packets since the live encoding started. 
+   * @return corruptPacketsAudio
+   */
+  public Long getCorruptPacketsAudio() {
+    return corruptPacketsAudio;
+  }
+
+  /**
+   * Total number of corrupt audio packets since the live encoding started. 
+   *
+   * @param corruptPacketsAudio
+   *        Total number of corrupt audio packets since the live encoding started. 
+   */
+  public void setCorruptPacketsAudio(Long corruptPacketsAudio) {
+    this.corruptPacketsAudio = corruptPacketsAudio;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -152,12 +240,16 @@ public class LiveEncodingHeartbeatIngest {
         Objects.equals(this.healthy, liveEncodingHeartbeatIngest.healthy) &&
         Objects.equals(this.ingestPoints, liveEncodingHeartbeatIngest.ingestPoints) &&
         Objects.equals(this.streams, liveEncodingHeartbeatIngest.streams) &&
-        Objects.equals(this.rtmpUserIngestInfo, liveEncodingHeartbeatIngest.rtmpUserIngestInfo);
+        Objects.equals(this.rtmpUserIngestInfo, liveEncodingHeartbeatIngest.rtmpUserIngestInfo) &&
+        Objects.equals(this.droppedPacketsVideo, liveEncodingHeartbeatIngest.droppedPacketsVideo) &&
+        Objects.equals(this.droppedPacketsAudio, liveEncodingHeartbeatIngest.droppedPacketsAudio) &&
+        Objects.equals(this.corruptPacketsVideo, liveEncodingHeartbeatIngest.corruptPacketsVideo) &&
+        Objects.equals(this.corruptPacketsAudio, liveEncodingHeartbeatIngest.corruptPacketsAudio);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, healthy, ingestPoints, streams, rtmpUserIngestInfo);
+    return Objects.hash(status, healthy, ingestPoints, streams, rtmpUserIngestInfo, droppedPacketsVideo, droppedPacketsAudio, corruptPacketsVideo, corruptPacketsAudio);
   }
 
   @Override
@@ -170,6 +262,10 @@ public class LiveEncodingHeartbeatIngest {
     sb.append("    ingestPoints: ").append(toIndentedString(ingestPoints)).append("\n");
     sb.append("    streams: ").append(toIndentedString(streams)).append("\n");
     sb.append("    rtmpUserIngestInfo: ").append(toIndentedString(rtmpUserIngestInfo)).append("\n");
+    sb.append("    droppedPacketsVideo: ").append(toIndentedString(droppedPacketsVideo)).append("\n");
+    sb.append("    droppedPacketsAudio: ").append(toIndentedString(droppedPacketsAudio)).append("\n");
+    sb.append("    corruptPacketsVideo: ").append(toIndentedString(corruptPacketsVideo)).append("\n");
+    sb.append("    corruptPacketsAudio: ").append(toIndentedString(corruptPacketsAudio)).append("\n");
     sb.append("}");
     return sb.toString();
   }

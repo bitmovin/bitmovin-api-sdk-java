@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * Azure service principal credentials for Microsoft Entra ID authentication
+ * Azure service principal credentials for Microsoft Entra ID authentication. This authentication method is usable from encoder version 2.273.0 onwards.
  */
 
 public class AzureServicePrincipal {
