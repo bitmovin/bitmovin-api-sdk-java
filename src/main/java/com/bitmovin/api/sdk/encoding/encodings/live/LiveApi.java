@@ -20,6 +20,7 @@ import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.encodings.live.resetLiveManifestTimeshift.ResetLiveManifestTimeshiftApi;
 import com.bitmovin.api.sdk.encoding.encodings.live.heartbeat.HeartbeatApi;
+import com.bitmovin.api.sdk.encoding.encodings.live.heartbeatFinal.HeartbeatFinalApi;
 import com.bitmovin.api.sdk.encoding.encodings.live.hd.HdApi;
 import com.bitmovin.api.sdk.encoding.encodings.live.esam.EsamApi;
 import com.bitmovin.api.sdk.encoding.encodings.live.insertableContent.InsertableContentApi;
@@ -28,6 +29,7 @@ import com.bitmovin.api.sdk.encoding.encodings.live.scte35Cue.Scte35CueApi;
 public class LiveApi {
     public final ResetLiveManifestTimeshiftApi resetLiveManifestTimeshift;
     public final HeartbeatApi heartbeat;
+    public final HeartbeatFinalApi heartbeatFinal;
     public final HdApi hd;
     public final EsamApi esam;
     public final InsertableContentApi insertableContent;
@@ -45,6 +47,7 @@ public class LiveApi {
 
         this.resetLiveManifestTimeshift = new ResetLiveManifestTimeshiftApi(clientFactory);
         this.heartbeat = new HeartbeatApi(clientFactory);
+        this.heartbeatFinal = new HeartbeatFinalApi(clientFactory);
         this.hd = new HdApi(clientFactory);
         this.esam = new EsamApi(clientFactory);
         this.insertableContent = new InsertableContentApi(clientFactory);
