@@ -30,7 +30,12 @@ public enum EncodingMode {
   /**
    * Three pass encoding for best quality (this only works for VoD workflows)
    */
-  THREE_PASS("THREE_PASS");
+  THREE_PASS("THREE_PASS"),
+  
+  /**
+   * Smart pass encoding
+   */
+  SMART_PASS("SMART_PASS");
 
   private String value;
 

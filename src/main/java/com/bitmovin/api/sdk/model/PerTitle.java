@@ -5,6 +5,7 @@ import java.util.Arrays;
 import com.bitmovin.api.sdk.model.Av1PerTitleConfiguration;
 import com.bitmovin.api.sdk.model.H264PerTitleConfiguration;
 import com.bitmovin.api.sdk.model.H265PerTitleConfiguration;
+import com.bitmovin.api.sdk.model.H265V2PerTitleConfiguration;
 import com.bitmovin.api.sdk.model.Vp9PerTitleConfiguration;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -27,6 +28,9 @@ public class PerTitle {
 
   @JsonProperty("av1Configuration")
   private Av1PerTitleConfiguration av1Configuration;
+
+  @JsonProperty("h265V2Configuration")
+  private H265V2PerTitleConfiguration h265V2Configuration;
 
 
   /**
@@ -105,6 +109,25 @@ public class PerTitle {
   }
 
 
+  /**
+   * Per-Title configuration for H265 V2
+   * @return h265V2Configuration
+   */
+  public H265V2PerTitleConfiguration getH265V2Configuration() {
+    return h265V2Configuration;
+  }
+
+  /**
+   * Per-Title configuration for H265 V2
+   *
+   * @param h265V2Configuration
+   *        Per-Title configuration for H265 V2
+   */
+  public void setH265V2Configuration(H265V2PerTitleConfiguration h265V2Configuration) {
+    this.h265V2Configuration = h265V2Configuration;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -117,12 +140,13 @@ public class PerTitle {
     return Objects.equals(this.h264Configuration, perTitle.h264Configuration) &&
         Objects.equals(this.h265Configuration, perTitle.h265Configuration) &&
         Objects.equals(this.vp9Configuration, perTitle.vp9Configuration) &&
-        Objects.equals(this.av1Configuration, perTitle.av1Configuration);
+        Objects.equals(this.av1Configuration, perTitle.av1Configuration) &&
+        Objects.equals(this.h265V2Configuration, perTitle.h265V2Configuration);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(h264Configuration, h265Configuration, vp9Configuration, av1Configuration);
+    return Objects.hash(h264Configuration, h265Configuration, vp9Configuration, av1Configuration, h265V2Configuration);
   }
 
   @Override
@@ -134,6 +158,7 @@ public class PerTitle {
     sb.append("    h265Configuration: ").append(toIndentedString(h265Configuration)).append("\n");
     sb.append("    vp9Configuration: ").append(toIndentedString(vp9Configuration)).append("\n");
     sb.append("    av1Configuration: ").append(toIndentedString(av1Configuration)).append("\n");
+    sb.append("    h265V2Configuration: ").append(toIndentedString(h265V2Configuration)).append("\n");
     sb.append("}");
     return sb.toString();
   }
