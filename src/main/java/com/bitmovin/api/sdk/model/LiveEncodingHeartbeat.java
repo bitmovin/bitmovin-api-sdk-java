@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.LiveEncodingHeartbeatEvent;
 import com.bitmovin.api.sdk.model.LiveEncodingHeartbeatIngest;
+import com.bitmovin.api.sdk.model.LiveEncodingHeartbeatOutput;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -26,6 +27,9 @@ public class LiveEncodingHeartbeat {
   @JsonProperty("events")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<LiveEncodingHeartbeatEvent> events = new ArrayList<LiveEncodingHeartbeatEvent>();
+
+  @JsonProperty("output")
+  private LiveEncodingHeartbeatOutput output;
 
 
   /**
@@ -90,6 +94,25 @@ public class LiveEncodingHeartbeat {
   }
 
 
+  /**
+   * Output statistics for the live encoding 
+   * @return output
+   */
+  public LiveEncodingHeartbeatOutput getOutput() {
+    return output;
+  }
+
+  /**
+   * Output statistics for the live encoding 
+   *
+   * @param output
+   *        Output statistics for the live encoding 
+   */
+  public void setOutput(LiveEncodingHeartbeatOutput output) {
+    this.output = output;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -101,12 +124,13 @@ public class LiveEncodingHeartbeat {
     LiveEncodingHeartbeat liveEncodingHeartbeat = (LiveEncodingHeartbeat) o;
     return Objects.equals(this.timestamp, liveEncodingHeartbeat.timestamp) &&
         Objects.equals(this.ingest, liveEncodingHeartbeat.ingest) &&
-        Objects.equals(this.events, liveEncodingHeartbeat.events);
+        Objects.equals(this.events, liveEncodingHeartbeat.events) &&
+        Objects.equals(this.output, liveEncodingHeartbeat.output);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(timestamp, ingest, events);
+    return Objects.hash(timestamp, ingest, events, output);
   }
 
   @Override
@@ -117,6 +141,7 @@ public class LiveEncodingHeartbeat {
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("    ingest: ").append(toIndentedString(ingest)).append("\n");
     sb.append("    events: ").append(toIndentedString(events)).append("\n");
+    sb.append("    output: ").append(toIndentedString(output)).append("\n");
     sb.append("}");
     return sb.toString();
   }

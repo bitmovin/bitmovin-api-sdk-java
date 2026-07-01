@@ -91,7 +91,10 @@ public enum CodecConfigType {
   IMSC("IMSC"),
   
   
-  DVB_SUBTITLE("DVB_SUBTITLE");
+  DVB_SUBTITLE("DVB_SUBTITLE"),
+  
+  
+  H265V2("H265V2");
 
   private String value;
 
