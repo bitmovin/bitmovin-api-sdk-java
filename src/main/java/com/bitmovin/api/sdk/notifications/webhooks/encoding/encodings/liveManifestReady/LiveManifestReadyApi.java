@@ -58,7 +58,7 @@ public class LiveManifestReadyApi {
     }
     /**
      * Add &#39;Live Manifest Ready&#39; Webhook for a specific Encoding
-     * Add a new webhook notification that triggers when a live manifest is ready for a specific encoding. A maximum number of 5 webhooks per Encoding is allowed
+     * Add a webhook notification that triggers when a live manifest is ready for a specific encoding. A maximum number of 5 webhooks per Encoding is allowed. For a running live encoding (V2 manifest generator, encoder version &#x60;2.276.0&#x60; or above) it is propagated asynchronously (eventually consistent, typically sub-second) and does not require a restart; if the manifest is already ready, it fires immediately and exactly once. Org-level webhooks apply on the next start.
      * @param encodingId Id of the encoding (required)
      * @param webhook The &#39;Live Manifest Ready&#39; Webhook to be added. (required)
      * @return Webhook
@@ -73,7 +73,7 @@ public class LiveManifestReadyApi {
     }
     /**
      * Delete &#39;Live Manifest Ready&#39; Webhook for a specific Encoding
-     * 
+     * Delete a &#39;Live Manifest Ready&#39; webhook for a specific encoding. For a running live encoding (V2 manifest generator, encoder version &#x60;2.276.0&#x60; or above) it is propagated asynchronously (eventually consistent, typically sub-second) and does not require a restart; deliveries already in flight are not cancelled. Org-level webhooks apply on the next start.
      * @param encodingId Id of the encoding (required)
      * @param webhookId Id of the webhook (required)
      * @return BitmovinResponse

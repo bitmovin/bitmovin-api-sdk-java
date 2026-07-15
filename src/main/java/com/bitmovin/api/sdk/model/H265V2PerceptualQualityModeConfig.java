@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.H265V2PerceptualEncodingMode;
 import com.bitmovin.api.sdk.model.H265V2RateControlModeConfig;
 import com.bitmovin.api.sdk.model.H265V2RateControlModeConfigType;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -14,117 +15,117 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = H265V2PerceptualQualityModeConfig.class)
 public class H265V2PerceptualQualityModeConfig extends H265V2RateControlModeConfig {
-  @JsonProperty("percept")
-  private Integer percept;
+  @JsonProperty("perceptualEncodingMode")
+  private H265V2PerceptualEncodingMode perceptualEncodingMode;
 
-  @JsonProperty("percStr")
-  private Double percStr;
+  @JsonProperty("perceptualStrength")
+  private Double perceptualStrength;
 
-  @JsonProperty("percPenaltyStr")
-  private Double percPenaltyStr;
+  @JsonProperty("perceptualPenaltyStrength")
+  private Double perceptualPenaltyStrength;
 
-  @JsonProperty("percPenaltyKnee")
-  private Double percPenaltyKnee;
+  @JsonProperty("perceptualPenaltyKnee")
+  private Double perceptualPenaltyKnee;
 
-  @JsonProperty("percTemporalStr")
-  private Double percTemporalStr;
+  @JsonProperty("perceptualTemporalStrength")
+  private Double perceptualTemporalStrength;
 
   @JsonProperty("pixelPerDegree")
   private Double pixelPerDegree;
 
 
   /**
-   * HVS-based perceptual encoding mode (0:off 1:cudqp 2:+quant).
-   * @return percept
+   * HVS-based perceptual encoding mode.
+   * @return perceptualEncodingMode
    */
-  public Integer getPercept() {
-    return percept;
+  public H265V2PerceptualEncodingMode getPerceptualEncodingMode() {
+    return perceptualEncodingMode;
   }
 
   /**
-   * HVS-based perceptual encoding mode (0:off 1:cudqp 2:+quant).
+   * HVS-based perceptual encoding mode.
    *
-   * @param percept
-   *        HVS-based perceptual encoding mode (0:off 1:cudqp 2:+quant).
+   * @param perceptualEncodingMode
+   *        HVS-based perceptual encoding mode.
    */
-  public void setPercept(Integer percept) {
-    this.percept = percept;
+  public void setPerceptualEncodingMode(H265V2PerceptualEncodingMode perceptualEncodingMode) {
+    this.perceptualEncodingMode = perceptualEncodingMode;
   }
 
 
   /**
    * Overall strength of perceptual model (0.0-1.0).
-   * @return percStr
+   * @return perceptualStrength
    */
-  public Double getPercStr() {
-    return percStr;
+  public Double getPerceptualStrength() {
+    return perceptualStrength;
   }
 
   /**
    * Overall strength of perceptual model (0.0-1.0).
    *
-   * @param percStr
+   * @param perceptualStrength
    *        Overall strength of perceptual model (0.0-1.0).
    */
-  public void setPercStr(Double percStr) {
-    this.percStr = percStr;
+  public void setPerceptualStrength(Double perceptualStrength) {
+    this.perceptualStrength = perceptualStrength;
   }
 
 
   /**
    * Strength of penalties from perceptual model (0.0-1.0).
-   * @return percPenaltyStr
+   * @return perceptualPenaltyStrength
    */
-  public Double getPercPenaltyStr() {
-    return percPenaltyStr;
+  public Double getPerceptualPenaltyStrength() {
+    return perceptualPenaltyStrength;
   }
 
   /**
    * Strength of penalties from perceptual model (0.0-1.0).
    *
-   * @param percPenaltyStr
+   * @param perceptualPenaltyStrength
    *        Strength of penalties from perceptual model (0.0-1.0).
    */
-  public void setPercPenaltyStr(Double percPenaltyStr) {
-    this.percPenaltyStr = percPenaltyStr;
+  public void setPerceptualPenaltyStrength(Double perceptualPenaltyStrength) {
+    this.perceptualPenaltyStrength = perceptualPenaltyStrength;
   }
 
 
   /**
    * Knee point of penalty strength modulation (0.0-1.0).
-   * @return percPenaltyKnee
+   * @return perceptualPenaltyKnee
    */
-  public Double getPercPenaltyKnee() {
-    return percPenaltyKnee;
+  public Double getPerceptualPenaltyKnee() {
+    return perceptualPenaltyKnee;
   }
 
   /**
    * Knee point of penalty strength modulation (0.0-1.0).
    *
-   * @param percPenaltyKnee
+   * @param perceptualPenaltyKnee
    *        Knee point of penalty strength modulation (0.0-1.0).
    */
-  public void setPercPenaltyKnee(Double percPenaltyKnee) {
-    this.percPenaltyKnee = percPenaltyKnee;
+  public void setPerceptualPenaltyKnee(Double perceptualPenaltyKnee) {
+    this.perceptualPenaltyKnee = perceptualPenaltyKnee;
   }
 
 
   /**
    * Strength of temporal component of perceptual model (0.0-1.0).
-   * @return percTemporalStr
+   * @return perceptualTemporalStrength
    */
-  public Double getPercTemporalStr() {
-    return percTemporalStr;
+  public Double getPerceptualTemporalStrength() {
+    return perceptualTemporalStrength;
   }
 
   /**
    * Strength of temporal component of perceptual model (0.0-1.0).
    *
-   * @param percTemporalStr
+   * @param perceptualTemporalStrength
    *        Strength of temporal component of perceptual model (0.0-1.0).
    */
-  public void setPercTemporalStr(Double percTemporalStr) {
-    this.percTemporalStr = percTemporalStr;
+  public void setPerceptualTemporalStrength(Double perceptualTemporalStrength) {
+    this.perceptualTemporalStrength = perceptualTemporalStrength;
   }
 
 
@@ -156,18 +157,18 @@ public class H265V2PerceptualQualityModeConfig extends H265V2RateControlModeConf
       return false;
     }
     H265V2PerceptualQualityModeConfig h265V2PerceptualQualityModeConfig = (H265V2PerceptualQualityModeConfig) o;
-    return Objects.equals(this.percept, h265V2PerceptualQualityModeConfig.percept) &&
-        Objects.equals(this.percStr, h265V2PerceptualQualityModeConfig.percStr) &&
-        Objects.equals(this.percPenaltyStr, h265V2PerceptualQualityModeConfig.percPenaltyStr) &&
-        Objects.equals(this.percPenaltyKnee, h265V2PerceptualQualityModeConfig.percPenaltyKnee) &&
-        Objects.equals(this.percTemporalStr, h265V2PerceptualQualityModeConfig.percTemporalStr) &&
+    return Objects.equals(this.perceptualEncodingMode, h265V2PerceptualQualityModeConfig.perceptualEncodingMode) &&
+        Objects.equals(this.perceptualStrength, h265V2PerceptualQualityModeConfig.perceptualStrength) &&
+        Objects.equals(this.perceptualPenaltyStrength, h265V2PerceptualQualityModeConfig.perceptualPenaltyStrength) &&
+        Objects.equals(this.perceptualPenaltyKnee, h265V2PerceptualQualityModeConfig.perceptualPenaltyKnee) &&
+        Objects.equals(this.perceptualTemporalStrength, h265V2PerceptualQualityModeConfig.perceptualTemporalStrength) &&
         Objects.equals(this.pixelPerDegree, h265V2PerceptualQualityModeConfig.pixelPerDegree) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(percept, percStr, percPenaltyStr, percPenaltyKnee, percTemporalStr, pixelPerDegree, super.hashCode());
+    return Objects.hash(perceptualEncodingMode, perceptualStrength, perceptualPenaltyStrength, perceptualPenaltyKnee, perceptualTemporalStrength, pixelPerDegree, super.hashCode());
   }
 
   @Override
@@ -175,11 +176,11 @@ public class H265V2PerceptualQualityModeConfig extends H265V2RateControlModeConf
     StringBuilder sb = new StringBuilder();
     sb.append("class H265V2PerceptualQualityModeConfig {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    percept: ").append(toIndentedString(percept)).append("\n");
-    sb.append("    percStr: ").append(toIndentedString(percStr)).append("\n");
-    sb.append("    percPenaltyStr: ").append(toIndentedString(percPenaltyStr)).append("\n");
-    sb.append("    percPenaltyKnee: ").append(toIndentedString(percPenaltyKnee)).append("\n");
-    sb.append("    percTemporalStr: ").append(toIndentedString(percTemporalStr)).append("\n");
+    sb.append("    perceptualEncodingMode: ").append(toIndentedString(perceptualEncodingMode)).append("\n");
+    sb.append("    perceptualStrength: ").append(toIndentedString(perceptualStrength)).append("\n");
+    sb.append("    perceptualPenaltyStrength: ").append(toIndentedString(perceptualPenaltyStrength)).append("\n");
+    sb.append("    perceptualPenaltyKnee: ").append(toIndentedString(perceptualPenaltyKnee)).append("\n");
+    sb.append("    perceptualTemporalStrength: ").append(toIndentedString(perceptualTemporalStrength)).append("\n");
     sb.append("    pixelPerDegree: ").append(toIndentedString(pixelPerDegree)).append("\n");
     sb.append("}");
     return sb.toString();
