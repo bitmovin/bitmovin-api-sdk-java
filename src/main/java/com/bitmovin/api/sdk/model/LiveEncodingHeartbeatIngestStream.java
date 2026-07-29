@@ -35,7 +35,7 @@ public class LiveEncodingHeartbeatIngestStream {
   private String aspectRatio;
 
   @JsonProperty("bitrate")
-  private Integer bitrate;
+  private Long bitrate;
 
   @JsonProperty("samplesReadPerSecondAvg")
   private Double samplesReadPerSecondAvg;
@@ -56,7 +56,7 @@ public class LiveEncodingHeartbeatIngestStream {
   private Double keyFrameIntervalAvgLastMinute;
 
   @JsonProperty("lastTimestamp")
-  private Integer lastTimestamp;
+  private Long lastTimestamp;
 
   @JsonProperty("lastTimestampTimescale")
   private Integer lastTimestampTimescale;
@@ -211,7 +211,7 @@ public class LiveEncodingHeartbeatIngestStream {
    * Container format&#39;s bitrate of the stream, in bits per second.
    * @return bitrate
    */
-  public Integer getBitrate() {
+  public Long getBitrate() {
     return bitrate;
   }
 
@@ -221,7 +221,7 @@ public class LiveEncodingHeartbeatIngestStream {
    * @param bitrate
    *        Container format&#39;s bitrate of the stream, in bits per second.
    */
-  public void setBitrate(Integer bitrate) {
+  public void setBitrate(Long bitrate) {
     this.bitrate = bitrate;
   }
 
@@ -344,7 +344,7 @@ public class LiveEncodingHeartbeatIngestStream {
    * Last presentation timestamp (PTS) of the stream.
    * @return lastTimestamp
    */
-  public Integer getLastTimestamp() {
+  public Long getLastTimestamp() {
     return lastTimestamp;
   }
 
@@ -354,7 +354,7 @@ public class LiveEncodingHeartbeatIngestStream {
    * @param lastTimestamp
    *        Last presentation timestamp (PTS) of the stream.
    */
-  public void setLastTimestamp(Integer lastTimestamp) {
+  public void setLastTimestamp(Long lastTimestamp) {
     this.lastTimestamp = lastTimestamp;
   }
 

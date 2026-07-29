@@ -3,7 +3,6 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.MainSubject;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -17,10 +16,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 public class Shot {
   @JsonProperty("startInSeconds")
-  private BigDecimal startInSeconds;
+  private Double startInSeconds;
 
   @JsonProperty("endInSeconds")
-  private BigDecimal endInSeconds;
+  private Double endInSeconds;
 
   @JsonProperty("detailedDescription")
   private String detailedDescription;
@@ -38,7 +37,7 @@ public class Shot {
    * The start time of the shot in seconds from the beginning of the video (required)
    * @return startInSeconds
    */
-  public BigDecimal getStartInSeconds() {
+  public Double getStartInSeconds() {
     return startInSeconds;
   }
 
@@ -48,7 +47,7 @@ public class Shot {
    * @param startInSeconds
    *        The start time of the shot in seconds from the beginning of the video (required)
    */
-  public void setStartInSeconds(BigDecimal startInSeconds) {
+  public void setStartInSeconds(Double startInSeconds) {
     this.startInSeconds = startInSeconds;
   }
 
@@ -57,7 +56,7 @@ public class Shot {
    * The end time of the shot in seconds from the beginning of the video (required)
    * @return endInSeconds
    */
-  public BigDecimal getEndInSeconds() {
+  public Double getEndInSeconds() {
     return endInSeconds;
   }
 
@@ -67,7 +66,7 @@ public class Shot {
    * @param endInSeconds
    *        The end time of the shot in seconds from the beginning of the video (required)
    */
-  public void setEndInSeconds(BigDecimal endInSeconds) {
+  public void setEndInSeconds(Double endInSeconds) {
     this.endInSeconds = endInSeconds;
   }
 

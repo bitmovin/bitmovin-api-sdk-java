@@ -8,50 +8,50 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * InputFactorCodec
+ * Song
  */
 
-public class InputFactorCodec {
-  @JsonProperty("value")
-  private String value;
+public class Song {
+  @JsonProperty("name")
+  private String name;
 
-  @JsonProperty("factor")
-  private Double factor;
+  @JsonProperty("artist")
+  private String artist;
 
 
   /**
-   * Get value
-   * @return value
+   * Get name
+   * @return name
    */
-  public String getValue() {
-    return value;
+  public String getName() {
+    return name;
   }
 
   /**
-   * Set value
+   * Set name
    *
-   * @param value
+   * @param name
    */
-  public void setValue(String value) {
-    this.value = value;
+  public void setName(String name) {
+    this.name = name;
   }
 
 
   /**
-   * Get factor
-   * @return factor
+   * Get artist
+   * @return artist
    */
-  public Double getFactor() {
-    return factor;
+  public String getArtist() {
+    return artist;
   }
 
   /**
-   * Set factor
+   * Set artist
    *
-   * @param factor
+   * @param artist
    */
-  public void setFactor(Double factor) {
-    this.factor = factor;
+  public void setArtist(String artist) {
+    this.artist = artist;
   }
 
 
@@ -63,23 +63,23 @@ public class InputFactorCodec {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InputFactorCodec inputFactorCodec = (InputFactorCodec) o;
-    return Objects.equals(this.value, inputFactorCodec.value) &&
-        Objects.equals(this.factor, inputFactorCodec.factor);
+    Song song = (Song) o;
+    return Objects.equals(this.name, song.name) &&
+        Objects.equals(this.artist, song.artist);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(value, factor);
+    return Objects.hash(name, artist);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InputFactorCodec {\n");
+    sb.append("class Song {\n");
     
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
-    sb.append("    factor: ").append(toIndentedString(factor)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    artist: ").append(toIndentedString(artist)).append("\n");
     sb.append("}");
     return sb.toString();
   }

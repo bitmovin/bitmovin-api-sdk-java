@@ -2,7 +2,6 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -17,7 +16,7 @@ public class InputFactorBitrate {
   private Long value;
 
   @JsonProperty("factor")
-  private BigDecimal factor;
+  private Double factor;
 
 
   /**
@@ -42,7 +41,7 @@ public class InputFactorBitrate {
    * Get factor
    * @return factor
    */
-  public BigDecimal getFactor() {
+  public Double getFactor() {
     return factor;
   }
 
@@ -51,7 +50,7 @@ public class InputFactorBitrate {
    *
    * @param factor
    */
-  public void setFactor(BigDecimal factor) {
+  public void setFactor(Double factor) {
     this.factor = factor;
   }
 

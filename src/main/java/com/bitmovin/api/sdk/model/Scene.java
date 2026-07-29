@@ -7,7 +7,6 @@ import com.bitmovin.api.sdk.model.Content;
 import com.bitmovin.api.sdk.model.IABTaxonomy;
 import com.bitmovin.api.sdk.model.SceneType;
 import com.bitmovin.api.sdk.model.Shot;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -24,10 +23,10 @@ public class Scene {
   private String title;
 
   @JsonProperty("startInSeconds")
-  private BigDecimal startInSeconds;
+  private Double startInSeconds;
 
   @JsonProperty("endInSeconds")
-  private BigDecimal endInSeconds;
+  private Double endInSeconds;
 
   @JsonProperty("id")
   private String id;
@@ -85,7 +84,7 @@ public class Scene {
    * Get startInSeconds
    * @return startInSeconds
    */
-  public BigDecimal getStartInSeconds() {
+  public Double getStartInSeconds() {
     return startInSeconds;
   }
 
@@ -94,7 +93,7 @@ public class Scene {
    *
    * @param startInSeconds
    */
-  public void setStartInSeconds(BigDecimal startInSeconds) {
+  public void setStartInSeconds(Double startInSeconds) {
     this.startInSeconds = startInSeconds;
   }
 
@@ -103,7 +102,7 @@ public class Scene {
    * Get endInSeconds
    * @return endInSeconds
    */
-  public BigDecimal getEndInSeconds() {
+  public Double getEndInSeconds() {
     return endInSeconds;
   }
 
@@ -112,7 +111,7 @@ public class Scene {
    *
    * @param endInSeconds
    */
-  public void setEndInSeconds(BigDecimal endInSeconds) {
+  public void setEndInSeconds(Double endInSeconds) {
     this.endInSeconds = endInSeconds;
   }
 

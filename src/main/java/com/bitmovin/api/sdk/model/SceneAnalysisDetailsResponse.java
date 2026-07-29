@@ -2,10 +2,10 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.Credits;
 import com.bitmovin.api.sdk.model.Metadata;
 import com.bitmovin.api.sdk.model.Rating;
 import com.bitmovin.api.sdk.model.Scene;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -23,10 +23,13 @@ public class SceneAnalysisDetailsResponse {
   private List<Scene> scenes = new ArrayList<Scene>();
 
   @JsonProperty("duration")
-  private BigDecimal duration;
+  private Double duration;
 
   @JsonProperty("description")
   private String description;
+
+  @JsonProperty("title")
+  private String title;
 
   @JsonProperty("keywords")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -47,6 +50,9 @@ public class SceneAnalysisDetailsResponse {
   @JsonProperty("inputLanguageCodes")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<String> inputLanguageCodes = new ArrayList<String>();
+
+  @JsonProperty("credits")
+  private Credits credits;
 
   @JsonProperty("metadata")
   private Metadata metadata;
@@ -79,7 +85,7 @@ public class SceneAnalysisDetailsResponse {
    * Get duration
    * @return duration
    */
-  public BigDecimal getDuration() {
+  public Double getDuration() {
     return duration;
   }
 
@@ -88,7 +94,7 @@ public class SceneAnalysisDetailsResponse {
    *
    * @param duration
    */
-  public void setDuration(BigDecimal duration) {
+  public void setDuration(Double duration) {
     this.duration = duration;
   }
 
@@ -108,6 +114,25 @@ public class SceneAnalysisDetailsResponse {
    */
   public void setDescription(String description) {
     this.description = description;
+  }
+
+
+  /**
+   * Inferred title representing the analyzed content as a whole. If omitted or null, the title is not available.
+   * @return title
+   */
+  public String getTitle() {
+    return title;
+  }
+
+  /**
+   * Inferred title representing the analyzed content as a whole. If omitted or null, the title is not available.
+   *
+   * @param title
+   *        Inferred title representing the analyzed content as a whole. If omitted or null, the title is not available.
+   */
+  public void setTitle(String title) {
+    this.title = title;
   }
 
 
@@ -227,6 +252,24 @@ public class SceneAnalysisDetailsResponse {
 
 
   /**
+   * Get credits
+   * @return credits
+   */
+  public Credits getCredits() {
+    return credits;
+  }
+
+  /**
+   * Set credits
+   *
+   * @param credits
+   */
+  public void setCredits(Credits credits) {
+    this.credits = credits;
+  }
+
+
+  /**
    * Get metadata
    * @return metadata
    */
@@ -256,17 +299,19 @@ public class SceneAnalysisDetailsResponse {
     return Objects.equals(this.scenes, sceneAnalysisDetailsResponse.scenes) &&
         Objects.equals(this.duration, sceneAnalysisDetailsResponse.duration) &&
         Objects.equals(this.description, sceneAnalysisDetailsResponse.description) &&
+        Objects.equals(this.title, sceneAnalysisDetailsResponse.title) &&
         Objects.equals(this.keywords, sceneAnalysisDetailsResponse.keywords) &&
         Objects.equals(this.ratings, sceneAnalysisDetailsResponse.ratings) &&
         Objects.equals(this.sensitiveTopics, sceneAnalysisDetailsResponse.sensitiveTopics) &&
         Objects.equals(this.iabSensitiveTopicTaxonomies, sceneAnalysisDetailsResponse.iabSensitiveTopicTaxonomies) &&
         Objects.equals(this.inputLanguageCodes, sceneAnalysisDetailsResponse.inputLanguageCodes) &&
+        Objects.equals(this.credits, sceneAnalysisDetailsResponse.credits) &&
         Objects.equals(this.metadata, sceneAnalysisDetailsResponse.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(scenes, duration, description, keywords, ratings, sensitiveTopics, iabSensitiveTopicTaxonomies, inputLanguageCodes, metadata);
+    return Objects.hash(scenes, duration, description, title, keywords, ratings, sensitiveTopics, iabSensitiveTopicTaxonomies, inputLanguageCodes, credits, metadata);
   }
 
   @Override
@@ -277,11 +322,13 @@ public class SceneAnalysisDetailsResponse {
     sb.append("    scenes: ").append(toIndentedString(scenes)).append("\n");
     sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    keywords: ").append(toIndentedString(keywords)).append("\n");
     sb.append("    ratings: ").append(toIndentedString(ratings)).append("\n");
     sb.append("    sensitiveTopics: ").append(toIndentedString(sensitiveTopics)).append("\n");
     sb.append("    iabSensitiveTopicTaxonomies: ").append(toIndentedString(iabSensitiveTopicTaxonomies)).append("\n");
     sb.append("    inputLanguageCodes: ").append(toIndentedString(inputLanguageCodes)).append("\n");
+    sb.append("    credits: ").append(toIndentedString(credits)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();

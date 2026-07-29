@@ -2,7 +2,6 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -17,7 +16,7 @@ public class AdOpportunity {
   private String reason;
 
   @JsonProperty("score")
-  private BigDecimal score;
+  private Double score;
 
 
   /**
@@ -45,7 +44,7 @@ public class AdOpportunity {
    * maximum: 1
    * @return score
    */
-  public BigDecimal getScore() {
+  public Double getScore() {
     return score;
   }
 
@@ -59,7 +58,7 @@ public class AdOpportunity {
    *        minimum: 0
    *        maximum: 1
    */
-  public void setScore(BigDecimal score) {
+  public void setScore(Double score) {
     this.score = score;
   }
 

@@ -2,7 +2,6 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -20,13 +19,13 @@ public class MainSubject {
   private String description;
 
   @JsonProperty("appearanceTimeInSeconds")
-  private BigDecimal appearanceTimeInSeconds;
+  private Double appearanceTimeInSeconds;
 
   @JsonProperty("centerX")
-  private BigDecimal centerX;
+  private Double centerX;
 
   @JsonProperty("centerY")
-  private BigDecimal centerY;
+  private Double centerY;
 
 
   /**
@@ -71,7 +70,7 @@ public class MainSubject {
    * The timestamp in seconds when this subject first appears or is most prominently visible in the shot (required)
    * @return appearanceTimeInSeconds
    */
-  public BigDecimal getAppearanceTimeInSeconds() {
+  public Double getAppearanceTimeInSeconds() {
     return appearanceTimeInSeconds;
   }
 
@@ -81,7 +80,7 @@ public class MainSubject {
    * @param appearanceTimeInSeconds
    *        The timestamp in seconds when this subject first appears or is most prominently visible in the shot (required)
    */
-  public void setAppearanceTimeInSeconds(BigDecimal appearanceTimeInSeconds) {
+  public void setAppearanceTimeInSeconds(Double appearanceTimeInSeconds) {
     this.appearanceTimeInSeconds = appearanceTimeInSeconds;
   }
 
@@ -90,7 +89,7 @@ public class MainSubject {
    * The horizontal center position of the subject as a percentage from the left edge (0-100, where 0 is the left edge and 100 is the right edge) (required)
    * @return centerX
    */
-  public BigDecimal getCenterX() {
+  public Double getCenterX() {
     return centerX;
   }
 
@@ -100,7 +99,7 @@ public class MainSubject {
    * @param centerX
    *        The horizontal center position of the subject as a percentage from the left edge (0-100, where 0 is the left edge and 100 is the right edge) (required)
    */
-  public void setCenterX(BigDecimal centerX) {
+  public void setCenterX(Double centerX) {
     this.centerX = centerX;
   }
 
@@ -109,7 +108,7 @@ public class MainSubject {
    * The vertical center position of the subject as a percentage from the top edge (0-100, where 0 is the top edge and 100 is the bottom edge) (required)
    * @return centerY
    */
-  public BigDecimal getCenterY() {
+  public Double getCenterY() {
     return centerY;
   }
 
@@ -119,7 +118,7 @@ public class MainSubject {
    * @param centerY
    *        The vertical center position of the subject as a percentage from the top edge (0-100, where 0 is the top edge and 100 is the bottom edge) (required)
    */
-  public void setCenterY(BigDecimal centerY) {
+  public void setCenterY(Double centerY) {
     this.centerY = centerY;
   }
 
