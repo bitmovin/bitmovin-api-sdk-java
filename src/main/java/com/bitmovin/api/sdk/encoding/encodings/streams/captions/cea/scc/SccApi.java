@@ -43,7 +43,7 @@ public class SccApi {
         return new BitmovinApiBuilder<>(SccApi.class);
     }
     /**
-     * Embed SCC captions as 608/708 into Stream
+     * Create SCC captions as 608/708
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -59,7 +59,7 @@ public class SccApi {
         }
     }
     /**
-     * Delete SCC captions as 608/708 from Stream
+     * Delete SCC captions as 608/708
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -75,7 +75,7 @@ public class SccApi {
         }
     }
     /**
-     * Embed SCC captions as 608/708 Details
+     * Get SCC captions as 608/708 details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -91,7 +91,7 @@ public class SccApi {
         }
     }
     /**
-     * List SCC captions as 608/708 from Stream
+     * List SCC captions as 608/708
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -107,7 +107,7 @@ public class SccApi {
     }
 
     /**
-     * List SCC captions as 608/708 from Stream
+     * List SCC captions as 608/708
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)

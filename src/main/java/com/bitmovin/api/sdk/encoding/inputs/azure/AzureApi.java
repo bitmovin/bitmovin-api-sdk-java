@@ -71,7 +71,7 @@ public class AzureApi {
         }
     }
     /**
-     * Azure Input Details
+     * Get Azure Input details
      * 
      * @param inputId Id of the input (required)
      * @return AzureInput

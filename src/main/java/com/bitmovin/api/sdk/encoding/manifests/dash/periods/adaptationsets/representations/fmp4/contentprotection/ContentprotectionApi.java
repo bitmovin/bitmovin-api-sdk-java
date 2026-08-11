@@ -40,7 +40,7 @@ public class ContentprotectionApi {
         return new BitmovinApiBuilder<>(ContentprotectionApi.class);
     }
     /**
-     * Add Content Protection to fMP4 Representation
+     * Create Content Protection to fMP4 Representation
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -76,7 +76,7 @@ public class ContentprotectionApi {
         }
     }
     /**
-     * fMP4 Representation Content Protection Details
+     * Get fMP4 Representation Content Protection details
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -94,7 +94,7 @@ public class ContentprotectionApi {
         }
     }
     /**
-     * List all fMP4 Representation Content Protections
+     * List fMP4 Representation Content Protections
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -112,7 +112,7 @@ public class ContentprotectionApi {
     }
 
     /**
-     * List all fMP4 Representation Content Protections
+     * List fMP4 Representation Content Protections
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)

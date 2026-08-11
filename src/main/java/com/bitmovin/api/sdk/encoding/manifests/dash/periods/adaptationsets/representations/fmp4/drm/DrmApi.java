@@ -43,7 +43,7 @@ public class DrmApi {
         return new BitmovinApiBuilder<>(DrmApi.class);
     }
     /**
-     * Add DRM fMP4 Representation
+     * Create DRM fMP4 Representation
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -77,7 +77,7 @@ public class DrmApi {
         }
     }
     /**
-     * DRM fMP4 Representation Details
+     * Get DRM fMP4 Representation details
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -94,7 +94,7 @@ public class DrmApi {
         }
     }
     /**
-     * List all DRM fMP4 Representations
+     * List DRM fMP4 Representations
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -111,7 +111,7 @@ public class DrmApi {
     }
 
     /**
-     * List all DRM fMP4 Representations
+     * List DRM fMP4 Representations
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)

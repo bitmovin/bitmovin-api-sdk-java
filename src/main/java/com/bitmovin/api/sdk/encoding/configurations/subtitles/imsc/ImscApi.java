@@ -71,7 +71,7 @@ public class ImscApi {
         }
     }
     /**
-     * IMSC subtitle configuration details
+     * Get IMSC subtitle configuration details
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return ImscConfiguration

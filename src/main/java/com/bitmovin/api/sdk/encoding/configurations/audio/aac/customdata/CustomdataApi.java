@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * AAC Codec Configuration Custom Data
+     * Get AAC Codec Configuration Custom Data
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return CustomData

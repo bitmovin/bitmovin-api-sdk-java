@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Zixi input Custom Data
+     * Get Zixi Input Custom Data
      * 
      * @param inputId Id of the input (required)
      * @return CustomData

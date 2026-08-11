@@ -40,7 +40,7 @@ public class IngestApi {
         return new BitmovinApiBuilder<>(IngestApi.class);
     }
     /**
-     * Add Ingest Input Stream
+     * Create Ingest Input Stream
      * 
      * @param encodingId Id of the encoding. (required)
      * @param ingestInputStream The Ingest Input Stream to be created (required)
@@ -70,7 +70,7 @@ public class IngestApi {
         }
     }
     /**
-     * Ingest Input Stream Details
+     * Get Ingest Input Stream details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param inputStreamId Id of the ingest input stream. (required)

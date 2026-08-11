@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Enhanced Watermark Filter Custom Data
+     * Get Enhanced Watermark Filter Custom Data
      * 
      * @param filterId Id of the enhanced Watermark Filter. (required)
      * @return CustomData

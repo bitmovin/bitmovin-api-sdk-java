@@ -40,7 +40,7 @@ public class ContentprotectionApi {
         return new BitmovinApiBuilder<>(ContentprotectionApi.class);
     }
     /**
-     * Add Content Protection to AdaptationSet
+     * Create Content Protection to AdaptationSet
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -74,7 +74,7 @@ public class ContentprotectionApi {
         }
     }
     /**
-     * AdaptationSet Content Protection Details
+     * Get AdaptationSet Content Protection details
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -91,7 +91,7 @@ public class ContentprotectionApi {
         }
     }
     /**
-     * List all AdaptationSet Content Protections
+     * List AdaptationSet Content Protections
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -108,7 +108,7 @@ public class ContentprotectionApi {
     }
 
     /**
-     * List all AdaptationSet Content Protections
+     * List AdaptationSet Content Protections
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)

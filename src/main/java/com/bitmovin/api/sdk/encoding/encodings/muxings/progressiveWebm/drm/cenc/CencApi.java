@@ -43,7 +43,7 @@ public class CencApi {
         return new BitmovinApiBuilder<>(CencApi.class);
     }
     /**
-     * Add CENC DRM to a Progressive WebM muxing
+     * Create CENC DRM to a Progressive WebM muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive WebM muxing. (required)
@@ -75,7 +75,7 @@ public class CencApi {
         }
     }
     /**
-     * CENC DRM Details of a Progressive WebM muxing
+     * Get CENC DRM from a Progressive WebM muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive WebM muxing. (required)

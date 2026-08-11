@@ -71,7 +71,7 @@ public class GenericS3Api {
         }
     }
     /**
-     * Generic S3 Input Details
+     * Get Generic S3 Input details
      * 
      * @param inputId Id of the input (required)
      * @return GenericS3Input

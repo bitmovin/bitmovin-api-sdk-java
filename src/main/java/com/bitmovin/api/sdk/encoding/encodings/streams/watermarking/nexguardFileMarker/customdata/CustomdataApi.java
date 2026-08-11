@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Nexguard file marker watermarking configuration Custom Data
+     * Get Nexguard file marker watermarking configurations Custom Data
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)

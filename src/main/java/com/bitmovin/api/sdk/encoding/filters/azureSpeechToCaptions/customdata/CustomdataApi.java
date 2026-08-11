@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Azure Speech to captions Filter Custom Data
+     * Get Azure Speech to captions Filter Custom Data
      * 
      * @param filterId Id of the Azure Speech to captions Filter. (required)
      * @return CustomData

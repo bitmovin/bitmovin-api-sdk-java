@@ -40,7 +40,7 @@ public class HdApi {
         return new BitmovinApiBuilder<>(HdApi.class);
     }
     /**
-     * Live Encoding Start Details
+     * Get Live Encoding Channel Start Details
      * 
      * @param encodingId Id of the encoding (required)
      * @return StartLiveChannelEncodingRequest

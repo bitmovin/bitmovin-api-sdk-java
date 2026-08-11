@@ -40,7 +40,7 @@ public class FiltersApi {
         return new BitmovinApiBuilder<>(FiltersApi.class);
     }
     /**
-     * Add Filters to Stream
+     * Create Filters to Stream
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -87,7 +87,7 @@ public class FiltersApi {
         }
     }
     /**
-     * List the filters of a stream
+     * List Filters of a Stream
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -103,7 +103,7 @@ public class FiltersApi {
     }
 
     /**
-     * List the filters of a stream
+     * List Filters of a Stream
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)

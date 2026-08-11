@@ -71,7 +71,7 @@ public class S3RoleBasedApi {
         }
     }
     /**
-     * S3 Role-based Output Details
+     * Get S3 Role-based Output details
      * 
      * @param outputId Id of the input (required)
      * @return S3RoleBasedOutput

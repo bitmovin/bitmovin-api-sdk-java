@@ -75,7 +75,7 @@ public class LiveApi {
         }
     }
     /**
-     * Live Encoding Start Details
+     * Get Live Encoding Start Details
      * 
      * @param encodingId Id of the encoding (required)
      * @return StartLiveEncodingRequest

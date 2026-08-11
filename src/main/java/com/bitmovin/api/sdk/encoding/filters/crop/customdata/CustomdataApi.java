@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Crop Filter Custom Data
+     * Get Crop Filter Custom Data
      * 
      * @param filterId Id of the Crop Filter. (required)
      * @return CustomData

@@ -43,7 +43,7 @@ public class SrtApi {
         return new BitmovinApiBuilder<>(SrtApi.class);
     }
     /**
-     * Embed SRT captions as 608/708 into Stream
+     * Create SRT captions as 608/708
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -59,7 +59,7 @@ public class SrtApi {
         }
     }
     /**
-     * Delete SRT captions as 608/708 from Stream
+     * Delete SRT captions as 608/708
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -75,7 +75,7 @@ public class SrtApi {
         }
     }
     /**
-     * Embed SRT captions as 608/708 Details
+     * Get SRT captions as 608/708 details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -91,7 +91,7 @@ public class SrtApi {
         }
     }
     /**
-     * List SRT captions as 608/708 from Stream
+     * List SRT captions as 608/708
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -107,7 +107,7 @@ public class SrtApi {
     }
 
     /**
-     * List SRT captions as 608/708 from Stream
+     * List SRT captions as 608/708
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)

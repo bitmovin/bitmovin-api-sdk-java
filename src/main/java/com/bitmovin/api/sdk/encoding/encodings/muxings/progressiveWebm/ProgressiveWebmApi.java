@@ -49,7 +49,7 @@ public class ProgressiveWebmApi {
         return new BitmovinApiBuilder<>(ProgressiveWebmApi.class);
     }
     /**
-     * Add Progressive WebM muxing
+     * Create Progressive WebM muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param progressiveWebmMuxing The Progressive WebM muxing to be created (required)
@@ -79,7 +79,7 @@ public class ProgressiveWebmApi {
         }
     }
     /**
-     * Progressive WebM muxing details
+     * Get Progressive WebM muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive WebM muxing (required)

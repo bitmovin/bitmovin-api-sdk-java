@@ -77,7 +77,7 @@ public class DashApi {
         }
     }
     /**
-     * DASH Manifest Details
+     * Get DASH Manifest details
      * 
      * @param manifestId UUID of the DASH Manifest (required)
      * @return DashManifest
@@ -91,7 +91,7 @@ public class DashApi {
         }
     }
     /**
-     * Manifest Start Details
+     * DASH Manifest Start Details
      * 
      * @param manifestId Id of the manifest (required)
      * @return StartManifestRequest

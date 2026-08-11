@@ -71,7 +71,7 @@ public class PcmApi {
         }
     }
     /**
-     * PCM Codec Configuration Details
+     * Get PCM Codec Configuration details
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return PcmAudioConfiguration

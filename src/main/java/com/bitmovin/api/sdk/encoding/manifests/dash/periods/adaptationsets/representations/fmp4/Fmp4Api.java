@@ -46,7 +46,7 @@ public class Fmp4Api {
         return new BitmovinApiBuilder<>(Fmp4Api.class);
     }
     /**
-     * Add fMP4 Representation
+     * Create fMP4 Representation
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -80,7 +80,7 @@ public class Fmp4Api {
         }
     }
     /**
-     * fMP4 Representation Details
+     * Get fMP4 Representation details
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -97,7 +97,7 @@ public class Fmp4Api {
         }
     }
     /**
-     * List all fMP4 Representations
+     * List fMP4 Representations
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -114,7 +114,7 @@ public class Fmp4Api {
     }
 
     /**
-     * List all fMP4 Representations
+     * List fMP4 Representations
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)

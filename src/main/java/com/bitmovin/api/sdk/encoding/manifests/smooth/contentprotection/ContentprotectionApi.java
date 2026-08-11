@@ -40,7 +40,7 @@ public class ContentprotectionApi {
         return new BitmovinApiBuilder<>(ContentprotectionApi.class);
     }
     /**
-     * Add Content Protection to Smooth Streaming
+     * Create Content Protection to Smooth Streaming
      * 
      * @param manifestId Id of the Smooth Streaming manifest. (required)
      * @param smoothManifestContentProtection The Content Protection to be added (required)
@@ -55,7 +55,7 @@ public class ContentprotectionApi {
         }
     }
     /**
-     * Delete Content Protection of Smooth Streaming
+     * Delete Content Protection of Smooth Streaming Representation
      * 
      * @param manifestId Id of the Smooth Streaming manifest. (required)
      * @param protectionId Id of the content protection. (required)
@@ -70,7 +70,7 @@ public class ContentprotectionApi {
         }
     }
     /**
-     * Content Protection of Smooth Streaming Representation Details
+     * Get Content Protection of Smooth Streaming Representation details
      * 
      * @param manifestId Id of the Smooth Streaming manifest. (required)
      * @param protectionId Id of the content protection. (required)

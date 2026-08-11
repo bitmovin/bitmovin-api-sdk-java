@@ -71,7 +71,7 @@ public class LiveMediaIngestApi {
         }
     }
     /**
-     * Live Media Ingest Output Details
+     * Get Live Media Ingest Output details
      * 
      * @param outputId Id of the output (required)
      * @return LiveMediaIngestOutput

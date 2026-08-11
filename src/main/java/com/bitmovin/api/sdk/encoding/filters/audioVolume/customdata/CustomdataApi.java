@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Audio Volume Filter Custom Data
+     * Get Audio Volume Filter Custom Data
      * 
      * @param filterId Id of the Audio Volume Filter. (required)
      * @return CustomData

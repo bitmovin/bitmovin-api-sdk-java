@@ -43,7 +43,7 @@ public class AkamaiApi {
         return new BitmovinApiBuilder<>(AkamaiApi.class);
     }
     /**
-     * Add Akamai account
+     * Create Akamai account
      * 
      * @param akamaiAccount The Akamai account to be added (required)
      * @return AkamaiAccount
@@ -71,7 +71,7 @@ public class AkamaiApi {
         }
     }
     /**
-     * Akamai account details
+     * Get Akamai account details
      * 
      * @param infrastructureId Id of the Akamai account (required)
      * @return AkamaiAccount

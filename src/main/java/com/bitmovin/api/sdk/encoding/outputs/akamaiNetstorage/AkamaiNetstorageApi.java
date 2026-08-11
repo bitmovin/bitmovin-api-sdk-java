@@ -71,7 +71,7 @@ public class AkamaiNetstorageApi {
         }
     }
     /**
-     * Akamai NetStorage Output Details
+     * Get Akamai NetStorage Output details
      * 
      * @param outputId Id of the output (required)
      * @return AkamaiNetStorageOutput

@@ -43,7 +43,7 @@ public class ThumbnailsApi {
         return new BitmovinApiBuilder<>(ThumbnailsApi.class);
     }
     /**
-     * Add Thumbnail
+     * Create Thumbnail
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -75,7 +75,7 @@ public class ThumbnailsApi {
         }
     }
     /**
-     * Thumbnail Details
+     * Get Thumbnail details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)

@@ -40,7 +40,7 @@ public class DailyApi {
         return new BitmovinApiBuilder<>(DailyApi.class);
     }
     /**
-     * List daily VoD encoding statistics within specific dates
+     * List daily VOD encoding statistics within specific dates
      * 
      * @param from Start date, format: yyyy-MM-dd (required)
      * @param to End date, format: yyyy-MM-dd (required)

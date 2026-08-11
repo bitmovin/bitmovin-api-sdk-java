@@ -71,7 +71,7 @@ public class HttpApi {
         }
     }
     /**
-     * HTTP Input Details
+     * Get HTTP Input details
      * 
      * @param inputId Id of the input (required)
      * @return HttpInput

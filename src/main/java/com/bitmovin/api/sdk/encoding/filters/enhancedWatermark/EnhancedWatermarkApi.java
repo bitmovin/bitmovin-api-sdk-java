@@ -71,7 +71,7 @@ public class EnhancedWatermarkApi {
         }
     }
     /**
-     * Enhanced Watermark Filter Details
+     * Get Enhanced Watermark Filter details
      * 
      * @param filterId Id of the enhanced Watermark Filter. (required)
      * @return EnhancedWatermarkFilter

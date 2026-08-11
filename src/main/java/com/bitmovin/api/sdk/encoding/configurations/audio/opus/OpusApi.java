@@ -71,7 +71,7 @@ public class OpusApi {
         }
     }
     /**
-     * Opus Codec Configuration Details
+     * Get Opus Codec Configuration details
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return OpusAudioConfiguration

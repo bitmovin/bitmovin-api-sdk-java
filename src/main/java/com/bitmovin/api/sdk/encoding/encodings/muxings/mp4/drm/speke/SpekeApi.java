@@ -43,7 +43,7 @@ public class SpekeApi {
         return new BitmovinApiBuilder<>(SpekeApi.class);
     }
     /**
-     * Add SPEKE DRM key provider to an MP4 muxing
+     * Create SPEKE DRM key provider to an MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP4 muxing (required)
@@ -75,7 +75,7 @@ public class SpekeApi {
         }
     }
     /**
-     * SPEKE DRM Details of an MP4 muxing
+     * Get SPEKE DRM from an MP4 muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP4 muxing (required)

@@ -40,7 +40,7 @@ public class DvbSubtitleApi {
         return new BitmovinApiBuilder<>(DvbSubtitleApi.class);
     }
     /**
-     * Add DVB Subtitle Input Stream
+     * Create DVB Subtitle Input Stream
      * 
      * @param encodingId Id of the encoding. (required)
      * @param dvbSubtitleInputStream The DVB Subtitle Input Stream to be created (required)
@@ -70,7 +70,7 @@ public class DvbSubtitleApi {
         }
     }
     /**
-     * DVB Subtitle Input Stream Details
+     * Get DVB Subtitle Input Stream details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param inputStreamId Id of the DVB Subtitle Input Stream. (required)

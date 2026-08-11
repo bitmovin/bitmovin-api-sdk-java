@@ -68,7 +68,7 @@ public class HlsApi {
         }
     }
     /**
-     * HLS Input Details
+     * Get HLS Input details
      * 
      * @param inputId Id of the input (required)
      * @return HlsInput

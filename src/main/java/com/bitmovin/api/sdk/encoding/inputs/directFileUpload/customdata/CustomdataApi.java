@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Direct File Upload Custom Data
+     * Get Direct File Upload Input Custom Data
      * 
      * @param inputId Id of the input (required)
      * @return CustomData

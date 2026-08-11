@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Enhanced Deinterlace Filter Custom Data
+     * Get Enhanced Deinterlace Filter Custom Data
      * 
      * @param filterId Id of the Enhanced Deinterlace Filter (required)
      * @return CustomData

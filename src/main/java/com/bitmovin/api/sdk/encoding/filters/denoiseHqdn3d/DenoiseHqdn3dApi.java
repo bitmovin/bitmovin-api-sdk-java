@@ -71,7 +71,7 @@ public class DenoiseHqdn3dApi {
         }
     }
     /**
-     * Denoise hqdn3d Filter Details
+     * Get Denoise hqdn3d Filter details
      * 
      * @param filterId Id of the denoise hqdn3d filter (required)
      * @return DenoiseHqdn3dFilter

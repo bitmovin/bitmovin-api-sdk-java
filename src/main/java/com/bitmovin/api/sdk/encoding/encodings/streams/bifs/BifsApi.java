@@ -43,7 +43,7 @@ public class BifsApi {
         return new BitmovinApiBuilder<>(BifsApi.class);
     }
     /**
-     * Add a Roku Bif file
+     * Create a Roku Bif file
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -75,7 +75,7 @@ public class BifsApi {
         }
     }
     /**
-     * Bif Details
+     * Get Bif details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)

@@ -43,7 +43,7 @@ public class TextApi {
         return new BitmovinApiBuilder<>(TextApi.class);
     }
     /**
-     * Add Text muxing
+     * Create Text muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param textMuxing The Text muxing to be created (required)
@@ -73,7 +73,7 @@ public class TextApi {
         }
     }
     /**
-     * Text muxing details
+     * Get Text muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Text muxing (required)

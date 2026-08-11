@@ -43,7 +43,7 @@ public class AesApi {
         return new BitmovinApiBuilder<>(AesApi.class);
     }
     /**
-     * Add AES encryption configuration to the Packed Audio muxing
+     * Create AES encryption configuration to a Packed Audio muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the packed audio muxing. (required)
@@ -75,7 +75,7 @@ public class AesApi {
         }
     }
     /**
-     * AES encryption Details of a Packed Audio muxing
+     * Get AES encryption configuration from a Packed Audio muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Packed Audio muxing. (required)

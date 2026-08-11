@@ -68,7 +68,7 @@ public class WatchFoldersApi {
         }
     }
     /**
-     * Watch Folder details
+     * Get Watch Folder details
      * 
      * @param watchFolderId Id of the Watch Folder (required)
      * @return WatchFolder
@@ -82,7 +82,7 @@ public class WatchFoldersApi {
         }
     }
     /**
-     * List all Watch Folders
+     * List Watch Folders
      * 
      * @return List&lt;WatchFolder&gt;
      * @throws BitmovinException if fails to make API call
@@ -96,7 +96,7 @@ public class WatchFoldersApi {
     }
 
     /**
-     * List all Watch Folders
+     * List Watch Folders
      * 
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;WatchFolder&gt;

@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Convert SCC captions Custom Data
+     * Get SCC Caption Conversion Custom Data
      * 
      * @param encodingId Id of the encoding. (required)
      * @param captionsId Id of the caption. (required)

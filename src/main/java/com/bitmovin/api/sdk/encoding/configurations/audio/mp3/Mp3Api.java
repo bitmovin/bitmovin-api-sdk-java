@@ -71,7 +71,7 @@ public class Mp3Api {
         }
     }
     /**
-     * MP3 Codec Configuration Details
+     * Get MP3 Codec Configuration details
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return Mp3AudioConfiguration

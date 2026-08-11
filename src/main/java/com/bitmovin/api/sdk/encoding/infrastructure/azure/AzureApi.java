@@ -43,7 +43,7 @@ public class AzureApi {
         return new BitmovinApiBuilder<>(AzureApi.class);
     }
     /**
-     * Add Azure Account
+     * Create Azure Account
      * 
      * @param azureAccount The Azure Account to be added (required)
      * @return AzureAccount
@@ -71,7 +71,7 @@ public class AzureApi {
         }
     }
     /**
-     * Azure Account Details
+     * Get Azure Account details
      * 
      * @param infrastructureId Id of the Azure account (required)
      * @return AzureAccount

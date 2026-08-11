@@ -71,7 +71,7 @@ public class WebvttApi {
         }
     }
     /**
-     * WebVtt subtitle configuration details
+     * Get WebVtt subtitle configuration details
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return WebVttConfiguration

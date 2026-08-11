@@ -40,7 +40,7 @@ public class ContentprotectionApi {
         return new BitmovinApiBuilder<>(ContentprotectionApi.class);
     }
     /**
-     * Add Content Protection to CMAF Representation
+     * Create Content Protection to CMAF Representation
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -76,7 +76,7 @@ public class ContentprotectionApi {
         }
     }
     /**
-     * CMAF Representation Content Protection Details
+     * Get CMAF Representation Content Protection details
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -94,7 +94,7 @@ public class ContentprotectionApi {
         }
     }
     /**
-     * List all CMAF Representation Content Protections
+     * List CMAF Representation Content Protections
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -112,7 +112,7 @@ public class ContentprotectionApi {
     }
 
     /**
-     * List all CMAF Representation Content Protections
+     * List CMAF Representation Content Protections
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)

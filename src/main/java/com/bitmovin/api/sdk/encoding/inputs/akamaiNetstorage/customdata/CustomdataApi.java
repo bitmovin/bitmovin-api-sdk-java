@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Akamai NetStorage Custom Data
+     * Get Akamai NetStorage Input Custom Data
      * 
      * @param inputId Id of the input (required)
      * @return CustomData

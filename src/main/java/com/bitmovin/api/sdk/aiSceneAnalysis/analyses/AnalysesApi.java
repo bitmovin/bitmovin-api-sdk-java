@@ -43,8 +43,8 @@ public class AnalysesApi {
         return new BitmovinApiBuilder<>(AnalysesApi.class);
     }
     /**
-     * List AI scene analyses
-     * Returns a paginated list of AI scene analyses.
+     * List AI Scene Analyses
+     * Returns a paginated list of AI scene analyses. A searchText containing at least one non-whitespace character enables semantic search, must contain between 3 and 100 characters, and uses relevance ordering; omitted, empty, or whitespace-only searchText preserves ordinary list behavior.
      * @return List&lt;SceneAnalysisListItem&gt;
      * @throws BitmovinException if fails to make API call
      */
@@ -57,8 +57,8 @@ public class AnalysesApi {
     }
 
     /**
-     * List AI scene analyses
-     * Returns a paginated list of AI scene analyses.
+     * List AI Scene Analyses
+     * Returns a paginated list of AI scene analyses. A searchText containing at least one non-whitespace character enables semantic search, must contain between 3 and 100 characters, and uses relevance ordering; omitted, empty, or whitespace-only searchText preserves ordinary list behavior.
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;SceneAnalysisListItem&gt;
      * @throws BitmovinException if fails to make API call

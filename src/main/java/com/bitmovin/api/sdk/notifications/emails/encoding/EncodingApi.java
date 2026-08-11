@@ -43,7 +43,7 @@ public class EncodingApi {
         return new BitmovinApiBuilder<>(EncodingApi.class);
     }
     /**
-     * List Email Notifications (All Encodings)
+     * List Encoding Email Notifications
      * 
      * @return List&lt;EmailNotification&gt;
      * @throws BitmovinException if fails to make API call
@@ -57,7 +57,7 @@ public class EncodingApi {
     }
 
     /**
-     * List Email Notifications (All Encodings)
+     * List Encoding Email Notifications
      * 
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;EmailNotification&gt;

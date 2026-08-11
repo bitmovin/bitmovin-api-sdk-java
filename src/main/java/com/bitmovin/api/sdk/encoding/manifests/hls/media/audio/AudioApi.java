@@ -40,7 +40,7 @@ public class AudioApi {
         return new BitmovinApiBuilder<>(AudioApi.class);
     }
     /**
-     * Add Audio Media
+     * Create Audio Media
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param audioMediaInfo The Audio Media to be added (required)
@@ -70,7 +70,7 @@ public class AudioApi {
         }
     }
     /**
-     * Audio Media Details
+     * Get Audio Media details
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param mediaId Id of the audio media. (required)
@@ -85,7 +85,7 @@ public class AudioApi {
         }
     }
     /**
-     * List all Audio Media
+     * List Audio Media
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @return List&lt;AudioMediaInfo&gt;
@@ -100,7 +100,7 @@ public class AudioApi {
     }
 
     /**
-     * List all Audio Media
+     * List Audio Media
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

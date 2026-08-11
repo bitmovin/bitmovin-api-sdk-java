@@ -71,7 +71,7 @@ public class FtpApi {
         }
     }
     /**
-     * FTP Output Details
+     * Get FTP Output details
      * 
      * @param outputId Id of the output (required)
      * @return FtpOutput

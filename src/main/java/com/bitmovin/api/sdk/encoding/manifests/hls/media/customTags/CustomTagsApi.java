@@ -56,7 +56,7 @@ public class CustomTagsApi {
         }
     }
     /**
-     * Delete Custom Tag
+     * Delete Media Custom Tag
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param mediaId Id of the media. (required)
@@ -72,7 +72,7 @@ public class CustomTagsApi {
         }
     }
     /**
-     * Custom Tag Details
+     * Media Custom Tag Details
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param mediaId Id of the media (required)

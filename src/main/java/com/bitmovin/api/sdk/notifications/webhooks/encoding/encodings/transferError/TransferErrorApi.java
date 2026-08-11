@@ -43,7 +43,7 @@ public class TransferErrorApi {
         return new BitmovinApiBuilder<>(TransferErrorApi.class);
     }
     /**
-     * Add &#39;Encoding Transfer Error&#39; Webhook
+     * Create &#39;Encoding Transfer Error&#39; Webhook
      * Add a new webhook notification that triggers if a transfer fails. A maximum number of 5 webhooks is allowed
      * @param webhook The &#39;Encoding Transfer Error&#39; Webhook to be added. (required)
      * @return Webhook
@@ -57,7 +57,7 @@ public class TransferErrorApi {
         }
     }
     /**
-     * Add &#39;Encoding Transfer Error&#39; Webhook for a specific Encoding
+     * Create &#39;Encoding Transfer Error&#39; Webhook for a specific Encoding
      * 
      * @param encodingId Id of the encoding (required)
      * @param webhook The &#39;Encoding Transfer Error&#39; Webhook to be added. A maximum number of 5 webhooks per Encoding is allowed (required)
@@ -101,7 +101,7 @@ public class TransferErrorApi {
         }
     }
     /**
-     * &#39;Encoding Transfer Error&#39; Webhook Details for a specific Encoding
+     * Get &#39;Encoding Transfer Error&#39; Webhook details for a specific Encoding
      * 
      * @param encodingId Id of the encoding (required)
      * @param webhookId Id of the webhook (required)
@@ -116,7 +116,7 @@ public class TransferErrorApi {
         }
     }
     /**
-     * &#39;Encoding Transfer Error&#39; Webhook Details
+     * Get &#39;Encoding Transfer Error&#39; Webhook details
      * 
      * @param webhookId Id of the webhook (required)
      * @return Webhook

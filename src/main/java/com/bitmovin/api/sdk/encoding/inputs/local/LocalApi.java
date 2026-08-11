@@ -71,7 +71,7 @@ public class LocalApi {
         }
     }
     /**
-     * Local Input Details
+     * Get Local Input details
      * 
      * @param inputId Id of the input (required)
      * @return LocalInput

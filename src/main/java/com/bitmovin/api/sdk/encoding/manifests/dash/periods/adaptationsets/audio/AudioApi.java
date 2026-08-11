@@ -40,7 +40,7 @@ public class AudioApi {
         return new BitmovinApiBuilder<>(AudioApi.class);
     }
     /**
-     * Add Audio AdaptationSet
+     * Create Audio AdaptationSet
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -72,7 +72,7 @@ public class AudioApi {
         }
     }
     /**
-     * Audio AdaptationSet Details
+     * Get Audio AdaptationSet details
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -88,7 +88,7 @@ public class AudioApi {
         }
     }
     /**
-     * List all Audio AdaptationSets
+     * List Audio AdaptationSets
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -104,7 +104,7 @@ public class AudioApi {
     }
 
     /**
-     * List all Audio AdaptationSets
+     * List Audio AdaptationSets
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)

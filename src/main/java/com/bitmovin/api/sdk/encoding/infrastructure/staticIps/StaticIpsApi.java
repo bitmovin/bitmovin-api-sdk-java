@@ -40,7 +40,7 @@ public class StaticIpsApi {
         return new BitmovinApiBuilder<>(StaticIpsApi.class);
     }
     /**
-     * Add Static IP Address
+     * Create Static IP Address
      * 
      * @param staticIp The static ip to be created (required)
      * @return StaticIp
@@ -68,7 +68,7 @@ public class StaticIpsApi {
         }
     }
     /**
-     * Static IP Address Details
+     * Get Static IP Address details
      * 
      * @param id Id of the Static IP Address (required)
      * @return StaticIp
@@ -82,7 +82,7 @@ public class StaticIpsApi {
         }
     }
     /**
-     * List all Static IP Addresses
+     * List Static IP Addresses
      * 
      * @return List&lt;StaticIp&gt;
      * @throws BitmovinException if fails to make API call
@@ -96,7 +96,7 @@ public class StaticIpsApi {
     }
 
     /**
-     * List all Static IP Addresses
+     * List Static IP Addresses
      * 
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;StaticIp&gt;

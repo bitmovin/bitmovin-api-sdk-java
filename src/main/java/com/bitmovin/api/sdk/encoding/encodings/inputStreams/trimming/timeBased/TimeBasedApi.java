@@ -40,7 +40,7 @@ public class TimeBasedApi {
         return new BitmovinApiBuilder<>(TimeBasedApi.class);
     }
     /**
-     * Add Time-Based Trimming Input Stream
+     * Create Time-Based Trimming Input Stream
      * 
      * @param encodingId Id of the encoding. (required)
      * @param timeBasedTrimmingInputStream The Time-Based Trimming Input Stream to be created (required)
@@ -70,7 +70,7 @@ public class TimeBasedApi {
         }
     }
     /**
-     * Time-Based Trimming Input Stream Details
+     * Get Time-Based Trimming Input Stream details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param inputStreamId Id of the Time-Based Trimming Input Stream. (required)

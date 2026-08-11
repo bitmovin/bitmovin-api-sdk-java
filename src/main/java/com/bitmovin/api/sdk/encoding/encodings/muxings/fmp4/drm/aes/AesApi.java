@@ -43,7 +43,7 @@ public class AesApi {
         return new BitmovinApiBuilder<>(AesApi.class);
     }
     /**
-     * Add AES encryption configuration to fMP4
+     * Create AES encryption configuration to fMP4
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)
@@ -75,7 +75,7 @@ public class AesApi {
         }
     }
     /**
-     * AES encryption Details of an fMP4 muxing
+     * Get AES encryption configuration from an fMP4 muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)

@@ -46,7 +46,7 @@ public class SidecarsApi {
         return new BitmovinApiBuilder<>(SidecarsApi.class);
     }
     /**
-     * Add Sidecar
+     * Create Sidecar
      * 
      * @param encodingId Id of the encoding. (required)
      * @param sidecarFile The Sidecar to be added (required)
@@ -76,7 +76,7 @@ public class SidecarsApi {
         }
     }
     /**
-     * Sidecar Details
+     * Get Sidecar details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param sidecarId Id of the sidecar. (required)

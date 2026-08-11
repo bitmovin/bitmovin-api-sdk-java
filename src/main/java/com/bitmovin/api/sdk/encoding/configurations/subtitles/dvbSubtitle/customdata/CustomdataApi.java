@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * DVB-SUB subtitle configuration custom data
+     * Get DVB-SUB subtitle configuration Custom Data
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return CustomData

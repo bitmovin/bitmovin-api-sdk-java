@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * FTP Custom Data
+     * Get FTP Input Custom Data
      * 
      * @param inputId Id of the input (required)
      * @return CustomData

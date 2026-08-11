@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * GCS input Custom Data
+     * Get GCS Input Custom Data
      * 
      * @param inputId Id of the input (required)
      * @return CustomData

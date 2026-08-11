@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * AES encryption Custom Data of a Packed Audio muxing
+     * Get AES encryption configuration from a Packed Audio muxing Custom Data
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Packed Audio muxing. (required)

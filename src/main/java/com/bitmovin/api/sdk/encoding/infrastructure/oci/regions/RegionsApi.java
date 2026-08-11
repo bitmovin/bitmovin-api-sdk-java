@@ -71,7 +71,7 @@ public class RegionsApi {
         }
     }
     /**
-     * OCI account region settings details
+     * Get OCI account region settings details
      * 
      * @param infrastructureId Id of the OCI account (required)
      * @param region OCI region (required)

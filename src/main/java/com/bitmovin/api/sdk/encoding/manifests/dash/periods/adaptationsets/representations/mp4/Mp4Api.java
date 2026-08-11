@@ -43,7 +43,7 @@ public class Mp4Api {
         return new BitmovinApiBuilder<>(Mp4Api.class);
     }
     /**
-     * Add MP4 Representation
+     * Create MP4 Representation
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -77,7 +77,7 @@ public class Mp4Api {
         }
     }
     /**
-     * MP4 Representation Details
+     * Get MP4 Representation details
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -94,7 +94,7 @@ public class Mp4Api {
         }
     }
     /**
-     * List all MP4 Representations
+     * List MP4 Representations
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -111,7 +111,7 @@ public class Mp4Api {
     }
 
     /**
-     * List all MP4 Representations
+     * List MP4 Representations
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)

@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Scale Filter Custom Data
+     * Get Scale Filter Custom Data
      * 
      * @param filterId Id of the scale filter (required)
      * @return CustomData

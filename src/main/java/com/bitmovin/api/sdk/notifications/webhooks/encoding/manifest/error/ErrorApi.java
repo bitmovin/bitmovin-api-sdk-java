@@ -40,7 +40,7 @@ public class ErrorApi {
         return new BitmovinApiBuilder<>(ErrorApi.class);
     }
     /**
-     * Add &#39;Manifest Error&#39; Webhook (All Manifests)
+     * Create &#39;Manifest Error&#39; Webhook
      * Add a new webhook notification that triggers if a manifest generation fails. A maximum number of 5 webhooks is allowed
      * @param webhook The &#39;Manifest Error&#39; Webhook to be added. (required)
      * @return Webhook
@@ -54,7 +54,7 @@ public class ErrorApi {
         }
     }
     /**
-     * Add &#39;Manifest Error&#39; Webhook Notification (Specific Manifest)
+     * Create &#39;Manifest Error&#39; Webhook for a specific Manifest
      * 
      * @param manifestId Id of the manifest resource (required)
      * @param webhook The webhook notifications object. A maximum number of 5 webhooks per Manifest is allowed (required)
@@ -83,7 +83,7 @@ public class ErrorApi {
         }
     }
     /**
-     * Get &#39;Manifest Error&#39; Webhooks (All Manifests)
+     * List &#39;Manifest Error&#39; Webhooks
      * Get all webhook notifications triggering when a manifest generation fails
      * @return List&lt;Webhook&gt;
      * @throws BitmovinException if fails to make API call
@@ -96,7 +96,7 @@ public class ErrorApi {
         }
     }
     /**
-     * Replace &#39;Manifest Error&#39; Webhook Notification
+     * Update &#39;Manifest Error&#39; Webhook
      * 
      * @param notificationId Id of the webhook notification (required)
      * @param webhook The webhook notification with the updated values (required)

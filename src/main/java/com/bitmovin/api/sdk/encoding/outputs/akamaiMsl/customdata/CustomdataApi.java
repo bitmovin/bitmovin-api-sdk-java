@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Akamai MSL Output Custom Data
+     * Get Akamai MSL Output Custom Data
      * 
      * @param outputId Id of the output (required)
      * @return CustomData

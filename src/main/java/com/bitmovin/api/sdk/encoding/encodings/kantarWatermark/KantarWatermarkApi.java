@@ -40,7 +40,7 @@ public class KantarWatermarkApi {
         return new BitmovinApiBuilder<>(KantarWatermarkApi.class);
     }
     /**
-     * Create or replace the Kantar Watermark for an encoding
+     * Create or replace Kantar Watermark
      * 
      * @param encodingId Id of the encoding. (required)
      * @param kantarWatermark The Kantar Watermark to be created (required)
@@ -55,7 +55,7 @@ public class KantarWatermarkApi {
         }
     }
     /**
-     * Delete the Kantar Watermark for an encoding
+     * Delete Kantar Watermark
      * 
      * @param encodingId Id of the encoding. (required)
      * @return BitmovinResponse
@@ -69,7 +69,7 @@ public class KantarWatermarkApi {
         }
     }
     /**
-     * Get the Kantar Watermark for an encoding
+     * Get Kantar Watermark
      * 
      * @param encodingId Id of the encoding. (required)
      * @return KantarWatermark

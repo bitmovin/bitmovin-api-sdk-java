@@ -46,7 +46,7 @@ public class EncodingsApi {
         return new BitmovinApiBuilder<>(EncodingsApi.class);
     }
     /**
-     * List Email Notifications (Specific Encoding)
+     * List Email Notifications for a specific Encoding
      * 
      * @param encodingId Id of the encoding resource (required)
      * @return List&lt;EmailNotificationWithStreamConditions&gt;
@@ -61,7 +61,7 @@ public class EncodingsApi {
     }
 
     /**
-     * List Email Notifications (Specific Encoding)
+     * List Email Notifications for a specific Encoding
      * 
      * @param encodingId Id of the encoding resource (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

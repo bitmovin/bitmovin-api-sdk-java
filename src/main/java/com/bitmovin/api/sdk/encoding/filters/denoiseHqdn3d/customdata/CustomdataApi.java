@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Denoise hqdn3d Filter Custom Data
+     * Get Denoise hqdn3d Filter Custom Data
      * 
      * @param filterId Id of the denoise hqdn3d filter (required)
      * @return CustomData

@@ -40,7 +40,7 @@ public class VttApi {
         return new BitmovinApiBuilder<>(VttApi.class);
     }
     /**
-     * Add VTT Representation
+     * Create VTT Representation
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -74,7 +74,7 @@ public class VttApi {
         }
     }
     /**
-     * VTT Representation Details
+     * Get VTT Representation details
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -91,7 +91,7 @@ public class VttApi {
         }
     }
     /**
-     * List all VTT Representations
+     * List VTT Representations
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -108,7 +108,7 @@ public class VttApi {
     }
 
     /**
-     * List all VTT Representations
+     * List VTT Representations
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)

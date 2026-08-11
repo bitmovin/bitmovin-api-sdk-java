@@ -49,7 +49,7 @@ public class LiveStatisticsApi {
         return new BitmovinApiBuilder<>(LiveStatisticsApi.class);
     }
     /**
-     * List Live Statistics from an Encoding
+     * List Live Statistics
      * 
      * @param encodingId Id of the encoding. (required)
      * @return LiveEncodingStats

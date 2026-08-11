@@ -43,7 +43,7 @@ public class SpekeApi {
         return new BitmovinApiBuilder<>(SpekeApi.class);
     }
     /**
-     * Add SPEKE DRM key provider to Progressive TS
+     * Create SPEKE DRM key provider to Progressive TS
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive TS muxing (required)
@@ -75,7 +75,7 @@ public class SpekeApi {
         }
     }
     /**
-     * SPEKE DRM Details of a Progressive TS muxing
+     * Get SPEKE DRM from a Progressive TS muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive TS muxing (required)

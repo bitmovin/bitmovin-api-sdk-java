@@ -40,7 +40,7 @@ public class ActionsApi {
         return new BitmovinApiBuilder<>(ActionsApi.class);
     }
     /**
-     * Unassign stream keys
+     * Unassign Stream Keys
      * 
      * @param streamKeysUnassignAction The action payload for unassigning stream keys (required)
      * @return StreamKeysUnassignAction

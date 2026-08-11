@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * VP9 Codec Configuration Custom Data
+     * Get VP9 Codec Configuration Custom Data
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return CustomData

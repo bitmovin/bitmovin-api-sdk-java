@@ -71,7 +71,7 @@ public class DvbSubtitleApi {
         }
     }
     /**
-     * DVB-SUB subtitle configuration details
+     * Get DVB-SUB subtitle configuration details
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return DvbSubtitleConfiguration

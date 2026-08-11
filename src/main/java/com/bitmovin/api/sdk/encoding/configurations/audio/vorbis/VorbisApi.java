@@ -71,7 +71,7 @@ public class VorbisApi {
         }
     }
     /**
-     * Vorbis Codec Configuration Details
+     * Get Vorbis Codec Configuration details
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return VorbisAudioConfiguration

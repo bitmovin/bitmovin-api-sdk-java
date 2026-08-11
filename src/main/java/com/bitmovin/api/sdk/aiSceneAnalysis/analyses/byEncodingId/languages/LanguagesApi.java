@@ -40,7 +40,7 @@ public class LanguagesApi {
         return new BitmovinApiBuilder<>(LanguagesApi.class);
     }
     /**
-     * Get AI scene analysis languages by encoding ID
+     * Get AI Scene Analysis languages
      * Returns list of languages from AI scene analysis for a given encoding.
      * @param encodingId The encoding ID (required)
      * @return SceneAnalysisLanguagesResponse

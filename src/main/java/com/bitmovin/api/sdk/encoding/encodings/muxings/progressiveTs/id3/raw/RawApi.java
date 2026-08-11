@@ -43,7 +43,7 @@ public class RawApi {
         return new BitmovinApiBuilder<>(RawApi.class);
     }
     /**
-     * Add Raw ID3 Tag to a Progressive TS muxing
+     * Create Raw ID3 Tag to a Progressive TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param muxingId ID of the Progressive TS muxing (required)
@@ -75,7 +75,7 @@ public class RawApi {
         }
     }
     /**
-     * Raw ID3 Tag Details of a Progressive TS muxing
+     * Get Raw ID3 Tag of a Progressive TS muxing details
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param muxingId ID of the Progressive TS muxing (required)

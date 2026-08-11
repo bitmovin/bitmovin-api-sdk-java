@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * WebVtt subtitle configuration custom data
+     * Get WebVtt subtitle configuration Custom Data
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return CustomData

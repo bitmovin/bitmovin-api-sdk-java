@@ -71,7 +71,7 @@ public class DeinterlaceApi {
         }
     }
     /**
-     * Deinterlace Filter Details
+     * Get Deinterlace Filter details
      * 
      * @param filterId Id of the Deinterlace Filter (required)
      * @return DeinterlaceFilter

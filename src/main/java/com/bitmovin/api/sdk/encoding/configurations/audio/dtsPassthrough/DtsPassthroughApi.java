@@ -71,7 +71,7 @@ public class DtsPassthroughApi {
         }
     }
     /**
-     * DTS Passthrough Codec Configuration Details
+     * Get DTS Passthrough Codec Configuration details
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return DtsPassthroughAudioConfiguration

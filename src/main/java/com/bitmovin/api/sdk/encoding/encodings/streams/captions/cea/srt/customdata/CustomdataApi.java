@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Embed SRT captions as 608/708 Custom Data
+     * Get SRT captions as 608/708 Custom Data
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)

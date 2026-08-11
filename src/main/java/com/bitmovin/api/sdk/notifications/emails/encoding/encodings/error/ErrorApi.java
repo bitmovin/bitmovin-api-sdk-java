@@ -40,7 +40,7 @@ public class ErrorApi {
         return new BitmovinApiBuilder<>(ErrorApi.class);
     }
     /**
-     * Add Encoding Error Email Notification (All Encodings)
+     * Create &#39;Encoding Error&#39; Email Notification
      * 
      * @param encodingErrorEmailNotification Add a new email notification if an encoding received an error (required)
      * @return List&lt;EncodingErrorEmailNotification&gt;
@@ -54,7 +54,7 @@ public class ErrorApi {
         }
     }
     /**
-     * Add Encoding Error Email Notification (Specific Encoding)
+     * Create &#39;Encoding Error&#39; Email Notification for a specific Encoding
      * 
      * @param encodingId Id of the encoding resource (required)
      * @param emailNotification The email notifications object (required)
@@ -69,7 +69,7 @@ public class ErrorApi {
         }
     }
     /**
-     * Replace Encoding Error Email Notification
+     * Update &#39;Encoding Error&#39; Email Notification
      * 
      * @param notificationId Id of the email notification (required)
      * @param emailNotification The email notification with the updated values (required)

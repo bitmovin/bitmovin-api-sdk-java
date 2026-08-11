@@ -71,7 +71,7 @@ public class InterlaceApi {
         }
     }
     /**
-     * Interlace Filter Details
+     * Get Interlace Filter details
      * 
      * @param filterId Id of the Interlace Filter (required)
      * @return InterlaceFilter

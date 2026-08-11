@@ -43,7 +43,7 @@ public class PlayreadyApi {
         return new BitmovinApiBuilder<>(PlayreadyApi.class);
     }
     /**
-     * Add PlayReady DRM to an fMP4 muxing
+     * Create PlayReady DRM to an fMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)
@@ -75,7 +75,7 @@ public class PlayreadyApi {
         }
     }
     /**
-     * PlayReady DRM Details of an fMP4 muxing
+     * Get PlayReady DRM from an fMP4 muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing (required)

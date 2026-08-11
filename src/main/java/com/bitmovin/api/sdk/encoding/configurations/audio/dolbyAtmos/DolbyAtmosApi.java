@@ -71,7 +71,7 @@ public class DolbyAtmosApi {
         }
     }
     /**
-     * Dolby Atmos Codec Configuration Details
+     * Get Dolby Atmos Codec Configuration details
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return DolbyAtmosAudioConfiguration

@@ -40,7 +40,7 @@ public class CdnApi {
         return new BitmovinApiBuilder<>(CdnApi.class);
     }
     /**
-     * CDN Output Details
+     * Get CDN Output details
      * 
      * @param outputId Id of the output (required)
      * @return CdnOutput

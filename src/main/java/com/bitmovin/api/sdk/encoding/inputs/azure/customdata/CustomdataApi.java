@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Azure Custom Data
+     * Get Azure Input Custom Data
      * 
      * @param inputId Id of the input (required)
      * @return CustomData

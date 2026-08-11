@@ -40,7 +40,7 @@ public class SpriteApi {
         return new BitmovinApiBuilder<>(SpriteApi.class);
     }
     /**
-     * Add Sprite Representation
+     * Create Sprite Representation
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -74,7 +74,7 @@ public class SpriteApi {
         }
     }
     /**
-     * Sprite Representation Details
+     * Get Sprite Representation details
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -91,7 +91,7 @@ public class SpriteApi {
         }
     }
     /**
-     * List all Sprite Representations
+     * List Sprite Representations
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -108,7 +108,7 @@ public class SpriteApi {
     }
 
     /**
-     * List all Sprite Representations
+     * List Sprite Representations
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)

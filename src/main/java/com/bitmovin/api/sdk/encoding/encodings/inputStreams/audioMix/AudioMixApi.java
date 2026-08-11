@@ -40,7 +40,7 @@ public class AudioMixApi {
         return new BitmovinApiBuilder<>(AudioMixApi.class);
     }
     /**
-     * Add audio mix input stream
+     * Create audio mix input stream
      * 
      * @param encodingId Id of the encoding. (required)
      * @param audioMixInputStream The audio mix input stream to be created (required)
@@ -55,7 +55,7 @@ public class AudioMixApi {
         }
     }
     /**
-     * Delete audio mix input stream
+     * Delete Audio mix input stream
      * 
      * @param encodingId Id of the encoding. (required)
      * @param inputStreamId Id of the audio mix input stream. (required)
@@ -70,7 +70,7 @@ public class AudioMixApi {
         }
     }
     /**
-     * Audio mix input stream details
+     * Get Audio mix input stream details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param inputStreamId Id of the audio mix input stream. (required)

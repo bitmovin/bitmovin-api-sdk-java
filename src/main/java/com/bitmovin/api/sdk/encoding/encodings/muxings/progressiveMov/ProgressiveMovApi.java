@@ -46,7 +46,7 @@ public class ProgressiveMovApi {
         return new BitmovinApiBuilder<>(ProgressiveMovApi.class);
     }
     /**
-     * Add Progressive MOV muxing
+     * Create Progressive MOV muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param progressiveMovMuxing The Progressive MOV muxing to be created (required)
@@ -76,7 +76,7 @@ public class ProgressiveMovApi {
         }
     }
     /**
-     * Progressive MOV muxing details
+     * Get Progressive MOV muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive MOV muxing (required)

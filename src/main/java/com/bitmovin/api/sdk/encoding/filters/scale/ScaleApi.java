@@ -71,7 +71,7 @@ public class ScaleApi {
         }
     }
     /**
-     * Scale Filter Details
+     * Get Scale Filter details
      * 
      * @param filterId Id of the scale filter (required)
      * @return ScaleFilter

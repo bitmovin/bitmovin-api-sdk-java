@@ -46,7 +46,7 @@ public class ManifestApi {
         return new BitmovinApiBuilder<>(ManifestApi.class);
     }
     /**
-     * List Webhook Notifications (Specific Manifest)
+     * List Webhooks for a specific Manifest
      * 
      * @param manifestId Id of the manifest resource (required)
      * @return List&lt;Notification&gt;
@@ -61,7 +61,7 @@ public class ManifestApi {
     }
 
     /**
-     * List Webhook Notifications (Specific Manifest)
+     * List Webhooks for a specific Manifest
      * 
      * @param manifestId Id of the manifest resource (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

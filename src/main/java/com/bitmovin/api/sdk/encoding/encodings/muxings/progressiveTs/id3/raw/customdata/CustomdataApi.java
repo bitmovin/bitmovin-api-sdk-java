@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Raw ID3 Tag Custom Data of a Progressive TS muxing
+     * Get Raw ID3 Tag of a Progressive TS muxing Custom Data
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param muxingId ID of the Progressive TS muxing (required)

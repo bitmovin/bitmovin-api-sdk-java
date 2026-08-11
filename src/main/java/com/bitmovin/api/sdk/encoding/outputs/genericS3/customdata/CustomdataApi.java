@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Generic S3 Output Custom Data
+     * Get Generic S3 Output Custom Data
      * 
      * @param outputId Id of the Output (required)
      * @return CustomData

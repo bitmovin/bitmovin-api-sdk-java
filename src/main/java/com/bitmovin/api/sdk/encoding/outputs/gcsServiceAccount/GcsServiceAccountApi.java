@@ -71,7 +71,7 @@ public class GcsServiceAccountApi {
         }
     }
     /**
-     * Service Account based GCS Output Details
+     * Get Service Account based GCS Output details
      * 
      * @param outputId Id of the output (required)
      * @return GcsServiceAccountOutput

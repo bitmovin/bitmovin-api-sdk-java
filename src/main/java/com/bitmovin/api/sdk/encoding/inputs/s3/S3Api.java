@@ -71,7 +71,7 @@ public class S3Api {
         }
     }
     /**
-     * S3 Input Details
+     * Get S3 Input details
      * 
      * @param inputId Id of the input (required)
      * @return S3Input

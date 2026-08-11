@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * EBU R128 Single Pass Filter Custom Data
+     * Get EBU R128 Single Pass Filter Custom Data
      * 
      * @param filterId Id of the EBU R128 Single Pass filter. (required)
      * @return CustomData

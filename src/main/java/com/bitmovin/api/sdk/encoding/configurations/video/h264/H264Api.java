@@ -71,7 +71,7 @@ public class H264Api {
         }
     }
     /**
-     * H264/AVC Codec Configuration Details
+     * Get H264/AVC Codec Configuration details
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return H264VideoConfiguration

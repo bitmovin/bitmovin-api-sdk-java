@@ -40,7 +40,7 @@ public class IframeApi {
         return new BitmovinApiBuilder<>(IframeApi.class);
     }
     /**
-     * Add I-frame playlist to variant stream
+     * Create I-frame playlist to variant stream
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param streamId Id of the variant stream. (required)
@@ -72,7 +72,7 @@ public class IframeApi {
         }
     }
     /**
-     * I-frame playlist Details
+     * Get I-frame playlist details
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param streamId Id of the variant stream. (required)
@@ -88,7 +88,7 @@ public class IframeApi {
         }
     }
     /**
-     * List all I-frame playlists of a variant stream
+     * List I-frame playlists of a variant stream
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param streamId Id of the variant stream. (required)
@@ -104,7 +104,7 @@ public class IframeApi {
     }
 
     /**
-     * List all I-frame playlists of a variant stream
+     * List I-frame playlists of a variant stream
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param streamId Id of the variant stream. (required)

@@ -40,7 +40,7 @@ public class ConcatenationApi {
         return new BitmovinApiBuilder<>(ConcatenationApi.class);
     }
     /**
-     * Add Concatenation Input Stream
+     * Create Concatenation Input Stream
      * 
      * @param encodingId Id of the encoding. (required)
      * @param concatenationInputStream The Concatenation Input Stream to be created (required)
@@ -70,7 +70,7 @@ public class ConcatenationApi {
         }
     }
     /**
-     * Concatenation Input Stream Details
+     * Get Concatenation Input Stream details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param inputStreamId Id of the concatenation input stream. (required)

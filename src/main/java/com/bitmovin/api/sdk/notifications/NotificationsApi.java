@@ -63,7 +63,7 @@ public class NotificationsApi {
         }
     }
     /**
-     * Get Notification
+     * Get Notification details
      * 
      * @param notificationId Id of the notification (required)
      * @return Notification
@@ -105,7 +105,7 @@ public class NotificationsApi {
         }
     }
     /**
-     * List Notification State History (All Resources)
+     * List Notification State History
      * 
      * @param notificationId Id of the notification (required)
      * @return List&lt;NotificationStateEntry&gt;
@@ -120,7 +120,7 @@ public class NotificationsApi {
     }
 
     /**
-     * List Notification State History (All Resources)
+     * List Notification State History
      * 
      * @param notificationId Id of the notification (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

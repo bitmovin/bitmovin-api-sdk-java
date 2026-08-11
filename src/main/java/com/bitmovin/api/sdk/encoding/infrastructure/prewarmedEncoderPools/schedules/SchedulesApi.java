@@ -55,7 +55,7 @@ public class SchedulesApi {
         }
     }
     /**
-     * Delete prewarmed encoder pool schedule
+     * Delete Prewarmed encoder pool schedule
      * 
      * @param poolId Id of the scheduled encoder pool (required)
      * @param scheduleId Id of the prewarmed encoder pool schedule (required)
@@ -70,7 +70,7 @@ public class SchedulesApi {
         }
     }
     /**
-     * Prewarmed encoder pool schedule details
+     * Get Prewarmed encoder pool schedule details
      * 
      * @param poolId Id of the scheduled encoder pool (required)
      * @param scheduleId Id of the prewarmed encoder pool schedule (required)

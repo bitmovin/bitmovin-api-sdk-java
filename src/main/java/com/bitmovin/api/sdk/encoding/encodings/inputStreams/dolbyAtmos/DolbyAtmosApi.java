@@ -40,7 +40,7 @@ public class DolbyAtmosApi {
         return new BitmovinApiBuilder<>(DolbyAtmosApi.class);
     }
     /**
-     * Add Dolby Atmos input stream
+     * Create Dolby Atmos input stream
      * 
      * @param encodingId Id of the encoding (required)
      * @param dolbyAtmosIngestInputStream The Dolby Atmos input stream to be created (required)
@@ -70,7 +70,7 @@ public class DolbyAtmosApi {
         }
     }
     /**
-     * Dolby Atmos input stream details
+     * Get Dolby Atmos input stream details
      * 
      * @param encodingId Id of the encoding (required)
      * @param inputStreamId Id of the Dolby Atmos input stream (required)

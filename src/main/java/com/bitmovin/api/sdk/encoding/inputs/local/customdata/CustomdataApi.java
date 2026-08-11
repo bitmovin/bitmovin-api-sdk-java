@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Local Input Custom Data
+     * Get Local Input Custom Data
      * 
      * @param inputId Id of the input (required)
      * @return CustomData

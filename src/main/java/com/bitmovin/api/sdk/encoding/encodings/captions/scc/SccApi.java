@@ -43,7 +43,7 @@ public class SccApi {
         return new BitmovinApiBuilder<>(SccApi.class);
     }
     /**
-     * Convert SCC captions
+     * Create SCC Caption Conversion
      * 
      * @param encodingId Id of the encoding. (required)
      * @param convertSccCaption The SCC captions to be created (required)
@@ -58,7 +58,7 @@ public class SccApi {
         }
     }
     /**
-     * Delete Convert SCC captions
+     * Delete SCC Caption Conversion
      * 
      * @param encodingId Id of the encoding. (required)
      * @param captionsId Id of the caption. (required)
@@ -73,7 +73,7 @@ public class SccApi {
         }
     }
     /**
-     * Convert SCC captions Details
+     * Get SCC Caption Conversion details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param captionsId Id of the caption. (required)
@@ -88,7 +88,7 @@ public class SccApi {
         }
     }
     /**
-     * List Convert SCC captions
+     * List SCC Caption Conversions
      * 
      * @param encodingId Id of the encoding. (required)
      * @return List&lt;ConvertSccCaption&gt;
@@ -103,7 +103,7 @@ public class SccApi {
     }
 
     /**
-     * List Convert SCC captions
+     * List SCC Caption Conversions
      * 
      * @param encodingId Id of the encoding. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

@@ -43,7 +43,7 @@ public class MarlinApi {
         return new BitmovinApiBuilder<>(MarlinApi.class);
     }
     /**
-     * Add Marlin DRM to an MP4 muxing
+     * Create Marlin DRM to an MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP4 muxing. (required)
@@ -75,7 +75,7 @@ public class MarlinApi {
         }
     }
     /**
-     * Marlin DRM Details of an MP4 muxing
+     * Get Marlin DRM from an MP4 muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the mp4. (required)

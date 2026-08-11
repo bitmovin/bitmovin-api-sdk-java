@@ -71,7 +71,7 @@ public class GcsServiceAccountApi {
         }
     }
     /**
-     * List Service Account based GCS Input Details
+     * Get Service Account based GCS Input details
      * 
      * @param inputId Id of the input (required)
      * @return GcsServiceAccountInput

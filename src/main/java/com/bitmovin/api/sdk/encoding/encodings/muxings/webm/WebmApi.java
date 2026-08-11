@@ -46,7 +46,7 @@ public class WebmApi {
         return new BitmovinApiBuilder<>(WebmApi.class);
     }
     /**
-     * Add WebM muxing
+     * Create WebM muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param webmMuxing The WebM muxing to be created (required)
@@ -76,7 +76,7 @@ public class WebmApi {
         }
     }
     /**
-     * WebM muxing details
+     * Get WebM muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the WebM muxing (required)

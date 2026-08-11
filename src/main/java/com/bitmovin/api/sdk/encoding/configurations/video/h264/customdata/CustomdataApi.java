@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * H264/AVC Codec Configuration Custom Data
+     * Get H264/AVC Codec Configuration Custom Data
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return CustomData

@@ -71,7 +71,7 @@ public class RegionsApi {
         }
     }
     /**
-     * Akamai account region settings details
+     * Get Akamai account region settings details
      * 
      * @param infrastructureId Id of the Akamai account (required)
      * @param region Akamai region (required)

@@ -40,7 +40,7 @@ public class TimecodeTrackApi {
         return new BitmovinApiBuilder<>(TimecodeTrackApi.class);
     }
     /**
-     * Add Timecode Track Trimming Input Stream
+     * Create Timecode Track Trimming Input Stream
      * 
      * @param encodingId Id of the encoding. (required)
      * @param timecodeTrackTrimmingInputStream The Timecode Track Trimming Input Stream to be created (required)
@@ -70,7 +70,7 @@ public class TimecodeTrackApi {
         }
     }
     /**
-     * Timecode Track Trimming Input Stream Details
+     * Get Timecode Track Trimming Input Stream details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param inputStreamId Id of the Timecode Track Trimming Input Stream. (required)

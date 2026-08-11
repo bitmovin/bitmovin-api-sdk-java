@@ -40,7 +40,7 @@ public class StreamsApi {
         return new BitmovinApiBuilder<>(StreamsApi.class);
     }
     /**
-     * List Stream Infos of Live Statistics from an Encoding
+     * List Live Statistics Stream Infos
      * 
      * @param encodingId Id of the encoding. (required)
      * @return List&lt;StreamInfos&gt;
@@ -55,7 +55,7 @@ public class StreamsApi {
     }
 
     /**
-     * List Stream Infos of Live Statistics from an Encoding
+     * List Live Statistics Stream Infos
      * 
      * @param encodingId Id of the encoding. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

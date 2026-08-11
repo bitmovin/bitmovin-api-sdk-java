@@ -49,7 +49,7 @@ public class PackedAudioApi {
         return new BitmovinApiBuilder<>(PackedAudioApi.class);
     }
     /**
-     * Add Packed Audio muxing
+     * Create Packed Audio muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param packedAudioMuxing The Packed Audio muxing to be created (required)
@@ -79,7 +79,7 @@ public class PackedAudioApi {
         }
     }
     /**
-     * Packed Audio muxing details
+     * Get Packed Audio muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Packed Audio muxing (required)

@@ -71,7 +71,7 @@ public class DtsxApi {
         }
     }
     /**
-     * DTS:X Codec Configuration Details
+     * Get DTS:X Codec Configuration details
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return DtsXAudioConfiguration

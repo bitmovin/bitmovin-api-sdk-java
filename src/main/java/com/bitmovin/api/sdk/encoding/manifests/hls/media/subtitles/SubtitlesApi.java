@@ -40,7 +40,7 @@ public class SubtitlesApi {
         return new BitmovinApiBuilder<>(SubtitlesApi.class);
     }
     /**
-     * Add Subtitles Media
+     * Create Subtitles Media
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param subtitlesMediaInfo The Subtitles Media to be added (required)
@@ -70,7 +70,7 @@ public class SubtitlesApi {
         }
     }
     /**
-     * Subtitles Media Details
+     * Get Subtitles Media details
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param mediaId Id of the subtitles media. (required)
@@ -85,7 +85,7 @@ public class SubtitlesApi {
         }
     }
     /**
-     * List all Subtitles Media
+     * List Subtitles Media
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @return List&lt;SubtitlesMediaInfo&gt;
@@ -100,7 +100,7 @@ public class SubtitlesApi {
     }
 
     /**
-     * List all Subtitles Media
+     * List Subtitles Media
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

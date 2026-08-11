@@ -46,7 +46,7 @@ public class BroadcastTsApi {
         return new BitmovinApiBuilder<>(BroadcastTsApi.class);
     }
     /**
-     * Add Broadcast TS muxing
+     * Create Broadcast TS muxing
      * 
      * @param encodingId ID of the encoding. (required)
      * @param broadcastTsMuxing The Broadcast TS muxing to be created (required)
@@ -76,7 +76,7 @@ public class BroadcastTsApi {
         }
     }
     /**
-     * Broadcast TS muxing details
+     * Get Broadcast TS muxing details
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param muxingId ID of the Broadcast TS muxing (required)

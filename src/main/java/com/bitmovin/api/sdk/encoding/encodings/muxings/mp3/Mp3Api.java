@@ -46,7 +46,7 @@ public class Mp3Api {
         return new BitmovinApiBuilder<>(Mp3Api.class);
     }
     /**
-     * Add MP3 muxing
+     * Create MP3 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param mp3Muxing The MP3 muxing to be created (required)
@@ -76,7 +76,7 @@ public class Mp3Api {
         }
     }
     /**
-     * MP3 muxing details
+     * Get MP3 muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP3 muxing (required)

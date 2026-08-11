@@ -71,7 +71,7 @@ public class LocalApi {
         }
     }
     /**
-     * Local Output Details
+     * Get Local Output details
      * 
      * @param outputId Id of the output (required)
      * @return LocalOutput

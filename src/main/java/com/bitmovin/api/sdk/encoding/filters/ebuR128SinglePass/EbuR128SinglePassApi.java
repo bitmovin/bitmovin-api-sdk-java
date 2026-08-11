@@ -71,7 +71,7 @@ public class EbuR128SinglePassApi {
         }
     }
     /**
-     * EBU R128 Single Pass Filter Details
+     * Get EBU R128 Single Pass Filter details
      * 
      * @param filterId Id of the EBU R128 Single Pass filter. (required)
      * @return EbuR128SinglePassFilter

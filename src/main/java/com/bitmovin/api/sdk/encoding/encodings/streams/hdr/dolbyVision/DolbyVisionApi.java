@@ -40,7 +40,7 @@ public class DolbyVisionApi {
         return new BitmovinApiBuilder<>(DolbyVisionApi.class);
     }
     /**
-     * Add Dolby Vision Metadata
+     * Create Dolby Vision Metadata
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -72,7 +72,7 @@ public class DolbyVisionApi {
         }
     }
     /**
-     * Dolby Vision Metadata Details
+     * Get Dolby Vision Metadata details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)

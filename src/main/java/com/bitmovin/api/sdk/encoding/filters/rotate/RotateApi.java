@@ -71,7 +71,7 @@ public class RotateApi {
         }
     }
     /**
-     * Rotate Filter Details
+     * Get Rotate Filter details
      * 
      * @param filterId Id of the Rotate Filter. (required)
      * @return RotateFilter

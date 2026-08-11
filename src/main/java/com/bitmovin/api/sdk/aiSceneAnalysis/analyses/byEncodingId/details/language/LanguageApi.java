@@ -40,7 +40,7 @@ public class LanguageApi {
         return new BitmovinApiBuilder<>(LanguageApi.class);
     }
     /**
-     * Get translated AI scene analysis details by encoding ID and language code
+     * Get AI Scene Analysis details in a specific language
      * Returns detailed translated AI scene analysis for a given encoding.
      * @param encodingId The encoding ID (required)
      * @param languageCode The language code (required)

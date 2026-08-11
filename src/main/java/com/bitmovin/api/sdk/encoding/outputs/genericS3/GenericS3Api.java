@@ -71,7 +71,7 @@ public class GenericS3Api {
         }
     }
     /**
-     * Generic S3 Output Details
+     * Get Generic S3 Output details
      * 
      * @param outputId Id of the output (required)
      * @return GenericS3Output

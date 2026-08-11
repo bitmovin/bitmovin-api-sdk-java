@@ -71,7 +71,7 @@ public class AkamaiNetstorageApi {
         }
     }
     /**
-     * Akamai NetStorage Input Details
+     * Get Akamai NetStorage Input details
      * 
      * @param inputId Id of the input (required)
      * @return AkamaiNetStorageInput

@@ -71,7 +71,7 @@ public class GcsApi {
         }
     }
     /**
-     * GCS Output Details
+     * Get GCS Output details
      * 
      * @param outputId Id of the output (required)
      * @return GcsOutput

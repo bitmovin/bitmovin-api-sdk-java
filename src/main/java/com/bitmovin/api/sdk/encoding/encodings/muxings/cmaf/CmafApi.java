@@ -43,7 +43,7 @@ public class CmafApi {
         return new BitmovinApiBuilder<>(CmafApi.class);
     }
     /**
-     * Add CMAF muxing
+     * Create CMAF muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param cmafMuxing The CMAF muxing to be created (required)
@@ -73,7 +73,7 @@ public class CmafApi {
         }
     }
     /**
-     * CMAF muxing details
+     * Get CMAF muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the CMAF muxing (required)

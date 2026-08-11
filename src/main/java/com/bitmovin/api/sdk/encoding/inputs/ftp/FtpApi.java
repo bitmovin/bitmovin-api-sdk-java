@@ -71,7 +71,7 @@ public class FtpApi {
         }
     }
     /**
-     * FTP Input Details
+     * Get FTP Input details
      * 
      * @param inputId Id of the input (required)
      * @return FtpInput

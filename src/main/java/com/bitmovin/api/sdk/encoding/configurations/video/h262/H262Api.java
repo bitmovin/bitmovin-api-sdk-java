@@ -71,7 +71,7 @@ public class H262Api {
         }
     }
     /**
-     * H262 Codec Configuration Details
+     * Get H262 Codec Configuration details
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return H262VideoConfiguration

@@ -40,7 +40,7 @@ public class ActionsApi {
         return new BitmovinApiBuilder<>(ActionsApi.class);
     }
     /**
-     * Update the ingest points of a Redundant RTMP Input
+     * Update Ingest Points of a Redundant RTMP Input
      * 
      * @param encodingId Id of the encoding. (required)
      * @param updateEncodingRtmpIngestPointRequest The list of the RTMP ingest points to update. (required)

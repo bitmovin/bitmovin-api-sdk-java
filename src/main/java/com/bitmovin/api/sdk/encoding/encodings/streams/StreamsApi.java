@@ -76,7 +76,7 @@ public class StreamsApi {
         return new BitmovinApiBuilder<>(StreamsApi.class);
     }
     /**
-     * Add Stream
+     * Create Stream
      * 
      * @param encodingId Id of the encoding. (required)
      * @param stream The Stream to be created (required)
@@ -106,7 +106,7 @@ public class StreamsApi {
         }
     }
     /**
-     * Stream Details
+     * Get Stream details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)

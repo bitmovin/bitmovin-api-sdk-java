@@ -56,7 +56,7 @@ public class CustomTagsApi {
         }
     }
     /**
-     * Delete Custom Tag
+     * Delete Stream Custom Tag
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param streamId Id of the variant stream. (required)
@@ -72,7 +72,7 @@ public class CustomTagsApi {
         }
     }
     /**
-     * Custom Tag Details
+     * Stream Custom Tag Details
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param streamId Id of the variant stream. (required)

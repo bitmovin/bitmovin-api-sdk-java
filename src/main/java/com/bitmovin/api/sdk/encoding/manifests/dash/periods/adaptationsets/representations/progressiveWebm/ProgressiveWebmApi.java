@@ -40,7 +40,7 @@ public class ProgressiveWebmApi {
         return new BitmovinApiBuilder<>(ProgressiveWebmApi.class);
     }
     /**
-     * Add Progressive WebM Representation
+     * Create Progressive WebM Representation
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -74,7 +74,7 @@ public class ProgressiveWebmApi {
         }
     }
     /**
-     * Progressive WebM Representation Details
+     * Get Progressive WebM Representation details
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -91,7 +91,7 @@ public class ProgressiveWebmApi {
         }
     }
     /**
-     * List all Progressive WebM Representations
+     * List Progressive WebM Representations
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -108,7 +108,7 @@ public class ProgressiveWebmApi {
     }
 
     /**
-     * List all Progressive WebM Representations
+     * List Progressive WebM Representations
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)

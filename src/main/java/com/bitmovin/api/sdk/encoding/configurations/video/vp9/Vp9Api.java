@@ -71,7 +71,7 @@ public class Vp9Api {
         }
     }
     /**
-     * VP9 Codec Configuration Details
+     * Get VP9 Codec Configuration details
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return Vp9VideoConfiguration

@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * S3 Role-based Output Custom Data
+     * Get S3 Role-based Output Custom Data
      * 
      * @param outputId Id of the output (required)
      * @return CustomData

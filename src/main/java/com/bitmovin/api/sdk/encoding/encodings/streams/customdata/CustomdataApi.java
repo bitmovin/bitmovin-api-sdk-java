@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Stream Custom Data
+     * Get Stream Custom Data
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)

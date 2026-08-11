@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * HLS Manifest Custom Data
+     * Get HLS Manifest Custom Data
      * 
      * @param manifestId UUID of the HLS manifest (required)
      * @return CustomData

@@ -71,7 +71,7 @@ public class RegionsApi {
         }
     }
     /**
-     * AWS Region Settings Details
+     * Get AWS Region Settings details
      * 
      * @param infrastructureId Id of the AWS account (required)
      * @param region AWS region. (required)

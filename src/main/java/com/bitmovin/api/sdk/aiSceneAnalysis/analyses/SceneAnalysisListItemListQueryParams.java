@@ -28,12 +28,23 @@ public class SceneAnalysisListItemListQueryParams extends HashMap<String, Object
         this.put("limit", limit);
     }
 
+    public String getSearchText() {
+        return (String) this.get("searchText");
+    }
+
+    /**
+    * @param searchText Natural-language text for semantic analysis search. A value containing at least one non-whitespace character enables semantic search and must contain at least 3 characters; omitted, empty, or whitespace-only values use ordinary list behavior (optional)
+    */
+    public void setSearchText(String searchText) {
+        this.put("searchText", searchText);
+    }
+
     public SceneAnalysisListSort getSort() {
         return (SceneAnalysisListSort) this.get("sort");
     }
 
     /**
-    * @param sort Order the result by creation date. Default is createdAt:DESC (optional, default to null)
+    * @param sort Order the results. When searchText is omitted, empty, or whitespace-only, the default is createdAt:DESC and the supported values are createdAt:DESC and createdAt:ASC. When searchText contains at least one non-whitespace character, relevance:DESC is the default and only supported value. Other combinations are rejected (optional, default to null)
     */
     public void setSort(SceneAnalysisListSort sort) {
         this.put("sort", sort);

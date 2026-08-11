@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Smooth Streaming Manifest Custom Data
+     * Get Smooth Streaming Manifest Custom Data
      * 
      * @param manifestId UUID of the Smooth Streaming manifest (required)
      * @return CustomData

@@ -57,7 +57,7 @@ public class ZixiApi {
         }
     }
     /**
-     * Delete Zixi input
+     * Delete Zixi Input
      * 
      * @param inputId Id of the input (required)
      * @return ZixiInput
@@ -71,7 +71,7 @@ public class ZixiApi {
         }
     }
     /**
-     * Zixi Input Details
+     * Get Zixi Input details
      * 
      * @param inputId Id of the input (required)
      * @return ZixiInput

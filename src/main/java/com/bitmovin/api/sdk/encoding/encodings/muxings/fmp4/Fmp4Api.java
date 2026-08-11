@@ -49,7 +49,7 @@ public class Fmp4Api {
         return new BitmovinApiBuilder<>(Fmp4Api.class);
     }
     /**
-     * Add fMP4 muxing
+     * Create fMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param fmp4Muxing The fMP4 muxing to be created (required)
@@ -79,7 +79,7 @@ public class Fmp4Api {
         }
     }
     /**
-     * fMP4 muxing details
+     * Get fMP4 muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing (required)

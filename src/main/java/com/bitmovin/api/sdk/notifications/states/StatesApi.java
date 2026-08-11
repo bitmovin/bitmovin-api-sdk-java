@@ -40,7 +40,7 @@ public class StatesApi {
         return new BitmovinApiBuilder<>(StatesApi.class);
     }
     /**
-     * List Notification State History (Specific Resource)
+     * List Notification State History for a specific Resource
      * 
      * @param notificationId Id of the notification (required)
      * @param resourceId Id of the resource, e.g. encoding id (required)
@@ -56,7 +56,7 @@ public class StatesApi {
     }
 
     /**
-     * List Notification State History (Specific Resource)
+     * List Notification State History for a specific Resource
      * 
      * @param notificationId Id of the notification (required)
      * @param resourceId Id of the resource, e.g. encoding id (required)

@@ -71,7 +71,7 @@ public class AudioMixApi {
         }
     }
     /**
-     * Audio Mix Filter Details
+     * Get Audio Mix Filter details
      * 
      * @param filterId Id of the Audio Mix Filter. (required)
      * @return AudioMixFilter

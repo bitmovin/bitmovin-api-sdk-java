@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * IMSC subtitle configuration custom data
+     * Get IMSC subtitle configuration Custom Data
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return CustomData

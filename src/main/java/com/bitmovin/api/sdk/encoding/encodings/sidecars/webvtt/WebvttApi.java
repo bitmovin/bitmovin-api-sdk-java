@@ -55,7 +55,7 @@ public class WebvttApi {
         }
     }
     /**
-     * Delete Sidecar
+     * Delete WebVTT Sidecar
      * 
      * @param encodingId Id of the encoding. (required)
      * @param sidecarId Id of the sidecar. (required)
@@ -70,7 +70,7 @@ public class WebvttApi {
         }
     }
     /**
-     * WebVTT Sidecar Details
+     * Get WebVTT Sidecar details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param sidecarId Id of the sidecar. (required)

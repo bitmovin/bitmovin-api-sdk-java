@@ -57,7 +57,7 @@ public class SrtApi {
         }
     }
     /**
-     * Delete SRT input
+     * Delete SRT Input
      * 
      * @param inputId Id of the input (required)
      * @return SrtInput
@@ -71,7 +71,7 @@ public class SrtApi {
         }
     }
     /**
-     * SRT Input Details
+     * Get SRT Input details
      * 
      * @param inputId Id of the input (required)
      * @return SrtInput

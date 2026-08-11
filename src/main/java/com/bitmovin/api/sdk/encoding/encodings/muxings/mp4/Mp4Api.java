@@ -49,7 +49,7 @@ public class Mp4Api {
         return new BitmovinApiBuilder<>(Mp4Api.class);
     }
     /**
-     * Add MP4 muxing
+     * Create MP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param mp4Muxing The progressive MP4 muxing to be created (required)
@@ -79,7 +79,7 @@ public class Mp4Api {
         }
     }
     /**
-     * MP4 muxing details
+     * Get MP4 muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MP4 muxing (required)

@@ -71,7 +71,7 @@ public class Vp8Api {
         }
     }
     /**
-     * VP8 Codec Configuration Details
+     * Get VP8 Codec Configuration details
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return Vp8VideoConfiguration
@@ -85,7 +85,7 @@ public class Vp8Api {
         }
     }
     /**
-     * 
+     * List VP8 Codec Configurations
      * 
      * @return List&lt;Vp8VideoConfiguration&gt;
      * @throws BitmovinException if fails to make API call
@@ -99,7 +99,7 @@ public class Vp8Api {
     }
 
     /**
-     * 
+     * List VP8 Codec Configurations
      * 
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;Vp8VideoConfiguration&gt;

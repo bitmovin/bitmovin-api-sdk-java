@@ -46,7 +46,7 @@ public class PeriodsApi {
         return new BitmovinApiBuilder<>(PeriodsApi.class);
     }
     /**
-     * Add Period
+     * Create Period
      * 
      * @param manifestId Id of the manifest (required)
      * @param period The Period to be added to the manifest (required)
@@ -76,7 +76,7 @@ public class PeriodsApi {
         }
     }
     /**
-     * Period Details
+     * Get Period details
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -91,7 +91,7 @@ public class PeriodsApi {
         }
     }
     /**
-     * List all Periods
+     * List Periods
      * 
      * @param manifestId Id of the manifest (required)
      * @return List&lt;Period&gt;
@@ -106,7 +106,7 @@ public class PeriodsApi {
     }
 
     /**
-     * List all Periods
+     * List Periods
      * 
      * @param manifestId Id of the manifest (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

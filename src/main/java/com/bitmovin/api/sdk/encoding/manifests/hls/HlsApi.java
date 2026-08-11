@@ -80,7 +80,7 @@ public class HlsApi {
         }
     }
     /**
-     * HLS Manifest Details
+     * Get HLS Manifest details
      * 
      * @param manifestId Id of the HLS Manifest. (required)
      * @return HlsManifest
@@ -94,7 +94,7 @@ public class HlsApi {
         }
     }
     /**
-     * Manifest Start Details
+     * HLS Manifest Start Details
      * 
      * @param manifestId ID of the manifest (required)
      * @return StartManifestRequest

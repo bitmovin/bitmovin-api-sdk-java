@@ -40,7 +40,7 @@ public class RtmpApi {
         return new BitmovinApiBuilder<>(RtmpApi.class);
     }
     /**
-     * RTMP Input Details
+     * Get RTMP Input details
      * 
      * @param inputId Id of the input (required)
      * @return RtmpInput

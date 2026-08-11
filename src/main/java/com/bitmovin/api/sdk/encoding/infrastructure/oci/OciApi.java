@@ -43,7 +43,7 @@ public class OciApi {
         return new BitmovinApiBuilder<>(OciApi.class);
     }
     /**
-     * Add OCI account
+     * Create OCI account
      * 
      * @param ociAccount The OCI account to be added (required)
      * @return OciAccount
@@ -71,7 +71,7 @@ public class OciApi {
         }
     }
     /**
-     * OCI account details
+     * Get OCI account details
      * 
      * @param infrastructureId Id of the OCI account (required)
      * @return OciAccount

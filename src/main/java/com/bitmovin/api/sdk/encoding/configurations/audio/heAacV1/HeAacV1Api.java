@@ -71,7 +71,7 @@ public class HeAacV1Api {
         }
     }
     /**
-     * HE-AAC v1 Codec Configuration Details
+     * Get HE-AAC v1 Codec Configuration details
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return HeAacV1AudioConfiguration

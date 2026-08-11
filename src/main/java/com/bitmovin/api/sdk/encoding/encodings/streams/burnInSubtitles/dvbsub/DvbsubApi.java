@@ -40,7 +40,7 @@ public class DvbsubApi {
         return new BitmovinApiBuilder<>(DvbsubApi.class);
     }
     /**
-     * Burn-In DVB-SUB Subtitle into Stream
+     * Create Burn-In DVB-SUB Subtitle
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -56,7 +56,7 @@ public class DvbsubApi {
         }
     }
     /**
-     * Delete Burn-In DVB-SUB Subtitle from Stream
+     * Delete Burn-In DVB-SUB Subtitle
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -72,7 +72,7 @@ public class DvbsubApi {
         }
     }
     /**
-     * Get Burn-In DVB-SUB Subtitle Details
+     * Get Burn-In DVB-SUB Subtitle details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -88,7 +88,7 @@ public class DvbsubApi {
         }
     }
     /**
-     * List the Burn-In DVB-SUB subtitles of a stream
+     * List Burn-In DVB-SUB Subtitles
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -104,7 +104,7 @@ public class DvbsubApi {
     }
 
     /**
-     * List the Burn-In DVB-SUB subtitles of a stream
+     * List Burn-In DVB-SUB Subtitles
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)

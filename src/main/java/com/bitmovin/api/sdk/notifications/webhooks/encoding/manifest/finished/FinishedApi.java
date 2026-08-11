@@ -40,7 +40,7 @@ public class FinishedApi {
         return new BitmovinApiBuilder<>(FinishedApi.class);
     }
     /**
-     * Add &#39;Manifest Finished Successfully&#39; Webhook (All Manifests)
+     * Create &#39;Manifest Finished&#39; Webhook
      * 
      * @param webhook Add a new webhook notification that triggers if a manifest generation finished successfully. A maximum number of 5 webhooks is allowed (required)
      * @return Webhook
@@ -54,7 +54,7 @@ public class FinishedApi {
         }
     }
     /**
-     * Add &#39;Manifest Finished Successfully&#39; Webhook Notification (Specific Manifest)
+     * Create &#39;Manifest Finished&#39; Webhook for a specific Manifest
      * 
      * @param manifestId Id of the manifest resource (required)
      * @param webhook The webhook notifications object. A maximum number of 5 webhooks per Manifest is allowed (required)
@@ -69,7 +69,7 @@ public class FinishedApi {
         }
     }
     /**
-     * Delete Manifest Finished Webhook
+     * Delete &#39;Manifest Finished&#39; Webhook
      * 
      * @param notificationId Id of the webhook notification (required)
      * @return BitmovinResponse
@@ -83,7 +83,7 @@ public class FinishedApi {
         }
     }
     /**
-     * Get &#39;Manifest Finished&#39; Webhooks (All Manifests)
+     * List &#39;Manifest Finished&#39; Webhooks
      * Get all webhook notifications triggering when a manifest generation finishes successfully
      * @return List&lt;Webhook&gt;
      * @throws BitmovinException if fails to make API call
@@ -96,7 +96,7 @@ public class FinishedApi {
         }
     }
     /**
-     * Replace Manifest Finished Webhook Notification
+     * Update &#39;Manifest Finished&#39; Webhook
      * 
      * @param notificationId Id of the webhook notification (required)
      * @param webhook The webhook notification with the updated values (required)

@@ -43,7 +43,7 @@ public class PrimetimeApi {
         return new BitmovinApiBuilder<>(PrimetimeApi.class);
     }
     /**
-     * Add PrimeTime DRM to an fMP4 muxing
+     * Create PrimeTime DRM to an fMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)
@@ -75,7 +75,7 @@ public class PrimetimeApi {
         }
     }
     /**
-     * PrimeTime DRM Details of an fMP4 muxing
+     * Get PrimeTime DRM from an fMP4 muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing (required)

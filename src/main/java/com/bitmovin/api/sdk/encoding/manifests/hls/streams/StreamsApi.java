@@ -46,7 +46,7 @@ public class StreamsApi {
         return new BitmovinApiBuilder<>(StreamsApi.class);
     }
     /**
-     * Add Variant Stream
+     * Create Variant Stream
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param streamInfo The Variant Stream to be added (required)
@@ -76,7 +76,7 @@ public class StreamsApi {
         }
     }
     /**
-     * Variant Stream Details
+     * Get Variant Stream details
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param streamId Id of the variant stream. (required)
@@ -91,7 +91,7 @@ public class StreamsApi {
         }
     }
     /**
-     * List all Variant Streams
+     * List Variant Streams
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @return List&lt;StreamInfo&gt;
@@ -106,7 +106,7 @@ public class StreamsApi {
     }
 
     /**
-     * List all Variant Streams
+     * List Variant Streams
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

@@ -43,7 +43,7 @@ public class CmafApi {
         return new BitmovinApiBuilder<>(CmafApi.class);
     }
     /**
-     * Add CMAF Representation
+     * Create CMAF Representation
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -77,7 +77,7 @@ public class CmafApi {
         }
     }
     /**
-     * CMAF Representation Details
+     * Get CMAF Representation details
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -94,7 +94,7 @@ public class CmafApi {
         }
     }
     /**
-     * List all CMAF Representations
+     * List CMAF Representations
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -111,7 +111,7 @@ public class CmafApi {
     }
 
     /**
-     * List all CMAF Representations
+     * List CMAF Representations
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)

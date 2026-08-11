@@ -40,7 +40,7 @@ public class VideoApi {
         return new BitmovinApiBuilder<>(VideoApi.class);
     }
     /**
-     * Add Video AdaptationSet
+     * Create Video AdaptationSet
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -72,7 +72,7 @@ public class VideoApi {
         }
     }
     /**
-     * Video AdaptationSet Details
+     * Get Video AdaptationSet details
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -88,7 +88,7 @@ public class VideoApi {
         }
     }
     /**
-     * List all Video AdaptationSets
+     * List Video AdaptationSets
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -104,7 +104,7 @@ public class VideoApi {
     }
 
     /**
-     * List all Video AdaptationSets
+     * List Video AdaptationSets
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)

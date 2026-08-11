@@ -71,7 +71,7 @@ public class EnhancedDeinterlaceApi {
         }
     }
     /**
-     * Enhanced Deinterlace Filter Details
+     * Get Enhanced Deinterlace Filter details
      * 
      * @param filterId Id of the Enhanced Deinterlace Filter (required)
      * @return EnhancedDeinterlaceFilter

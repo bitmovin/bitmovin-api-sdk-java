@@ -71,7 +71,7 @@ public class WatermarkApi {
         }
     }
     /**
-     * Watermark Filter Details
+     * Get Watermark Filter details
      * 
      * @param filterId Id of the Watermark Filter. (required)
      * @return WatermarkFilter

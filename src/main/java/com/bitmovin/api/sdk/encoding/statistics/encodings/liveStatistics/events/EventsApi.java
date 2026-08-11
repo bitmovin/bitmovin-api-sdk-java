@@ -40,7 +40,7 @@ public class EventsApi {
         return new BitmovinApiBuilder<>(EventsApi.class);
     }
     /**
-     * List Events of Live Statistics from an Encoding
+     * List Live Statistics Events
      * 
      * @param encodingId Id of the encoding. (required)
      * @return List&lt;LiveEncodingStatsEvent&gt;
@@ -55,7 +55,7 @@ public class EventsApi {
     }
 
     /**
-     * List Events of Live Statistics from an Encoding
+     * List Live Statistics Events
      * 
      * @param encodingId Id of the encoding. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

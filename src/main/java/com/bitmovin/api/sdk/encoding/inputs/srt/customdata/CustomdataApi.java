@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * SRT input Custom Data
+     * Get SRT Input Custom Data
      * 
      * @param inputId Id of the input (required)
      * @return CustomData

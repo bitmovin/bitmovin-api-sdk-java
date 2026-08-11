@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * &#39;Encoding Transfer Error&#39; Webhook Custom Data for a specific Encoding
+     * Get &#39;Encoding Transfer Error&#39; Webhook Custom Data for a specific Encoding
      * 
      * @param encodingId Id of the encoding (required)
      * @param webhookId Id of the webhook (required)
@@ -55,7 +55,7 @@ public class CustomdataApi {
         }
     }
     /**
-     * &#39;Encoding Transfer Error&#39; Webhook Custom Data
+     * Get &#39;Encoding Transfer Error&#39; Webhook Custom Data
      * 
      * @param webhookId Id of the webhook (required)
      * @return CustomData

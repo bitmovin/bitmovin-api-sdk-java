@@ -40,7 +40,7 @@ public class LiveInputStreamChangedApi {
         return new BitmovinApiBuilder<>(LiveInputStreamChangedApi.class);
     }
     /**
-     * Add Live Input Stream Changed Email Notification (All Encodings)
+     * Create &#39;Live Input Stream Changed&#39; Email Notification
      * 
      * @param emailNotificationWithStreamConditionsRequest The email notifications object (required)
      * @return EmailNotificationWithStreamConditions
@@ -54,7 +54,7 @@ public class LiveInputStreamChangedApi {
         }
     }
     /**
-     * Add Live Input Stream Changed Email Notification (Specific Encoding)
+     * Create &#39;Live Input Stream Changed&#39; Email Notification for a specific Encoding
      * 
      * @param encodingId Id of the encoding resource (required)
      * @param emailNotificationWithStreamConditionsRequest The email notifications object (required)
@@ -69,7 +69,7 @@ public class LiveInputStreamChangedApi {
         }
     }
     /**
-     * Replace Live Input Stream Changed Email Notification
+     * Update &#39;Live Input Stream Changed&#39; Email Notification
      * 
      * @param notificationId Id of the email notification (required)
      * @param emailNotificationWithStreamConditionsRequest The email notification with the updated values (required)

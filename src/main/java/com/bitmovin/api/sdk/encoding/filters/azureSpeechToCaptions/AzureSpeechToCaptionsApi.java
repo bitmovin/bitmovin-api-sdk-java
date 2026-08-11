@@ -71,7 +71,7 @@ public class AzureSpeechToCaptionsApi {
         }
     }
     /**
-     * Azure Speech to captions Filter details
+     * Get Azure Speech to captions Filter details
      * 
      * @param filterId Id of the Azure Speech to captions Filter. (required)
      * @return AzureSpeechToCaptionsFilter

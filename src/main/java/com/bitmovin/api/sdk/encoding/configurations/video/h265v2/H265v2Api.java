@@ -68,7 +68,7 @@ public class H265v2Api {
         }
     }
     /**
-     * H265 V2 Codec Configuration Details
+     * Get H265 V2 Codec Configuration details
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return H265V2VideoConfiguration

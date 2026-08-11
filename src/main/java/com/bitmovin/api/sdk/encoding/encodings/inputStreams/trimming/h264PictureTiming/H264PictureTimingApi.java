@@ -40,7 +40,7 @@ public class H264PictureTimingApi {
         return new BitmovinApiBuilder<>(H264PictureTimingApi.class);
     }
     /**
-     * Add H264 Picture Timing Trimming Input Stream
+     * Create H264 Picture Timing Trimming Input Stream
      * 
      * @param encodingId Id of the encoding. (required)
      * @param h264PictureTimingTrimmingInputStream The H264 Picture Timing Trimming Input Stream to be created (required)
@@ -70,7 +70,7 @@ public class H264PictureTimingApi {
         }
     }
     /**
-     * H264 Picture Timing Trimming Input Stream Details
+     * Get H264 Picture Timing Trimming Input Stream details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param inputStreamId Id of the H264 Picture Timing Trimming Input Stream. (required)

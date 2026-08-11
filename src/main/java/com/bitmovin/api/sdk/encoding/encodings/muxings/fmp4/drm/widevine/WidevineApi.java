@@ -43,7 +43,7 @@ public class WidevineApi {
         return new BitmovinApiBuilder<>(WidevineApi.class);
     }
     /**
-     * Add Widevine DRM to an fMP4 muxing
+     * Create Widevine DRM to an fMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)
@@ -75,7 +75,7 @@ public class WidevineApi {
         }
     }
     /**
-     * Widevine DRM Details of an fMP4 muxing
+     * Get Widevine DRM from an fMP4 muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)

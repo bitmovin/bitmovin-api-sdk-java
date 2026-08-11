@@ -71,7 +71,7 @@ public class Mp2Api {
         }
     }
     /**
-     * MP2 Codec Configuration Details
+     * Get MP2 Codec Configuration details
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return Mp2AudioConfiguration

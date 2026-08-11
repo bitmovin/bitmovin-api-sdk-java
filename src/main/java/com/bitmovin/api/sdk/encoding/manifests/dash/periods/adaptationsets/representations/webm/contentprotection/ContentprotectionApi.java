@@ -40,7 +40,7 @@ public class ContentprotectionApi {
         return new BitmovinApiBuilder<>(ContentprotectionApi.class);
     }
     /**
-     * Add Content Protection to WebM Representation
+     * Create Content Protection to WebM Representation
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -76,7 +76,7 @@ public class ContentprotectionApi {
         }
     }
     /**
-     * WebM Representation Content Protection Details
+     * Get WebM Representation Content Protection details
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -94,7 +94,7 @@ public class ContentprotectionApi {
         }
     }
     /**
-     * List all WebM Representation Content Protections
+     * List WebM Representation Content Protections
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -112,7 +112,7 @@ public class ContentprotectionApi {
     }
 
     /**
-     * List all WebM Representation Content Protections
+     * List WebM Representation Content Protections
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)

@@ -40,7 +40,7 @@ public class SrtApi {
         return new BitmovinApiBuilder<>(SrtApi.class);
     }
     /**
-     * List Stream Infos of Live Statistics from an Encoding
+     * List Live Statistics SRT
      * 
      * @param encodingId Id of the encoding. (required)
      * @return List&lt;SrtStatistics&gt;
@@ -55,7 +55,7 @@ public class SrtApi {
     }
 
     /**
-     * List Stream Infos of Live Statistics from an Encoding
+     * List Live Statistics SRT
      * 
      * @param encodingId Id of the encoding. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

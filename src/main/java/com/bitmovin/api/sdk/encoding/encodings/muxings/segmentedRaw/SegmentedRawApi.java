@@ -43,7 +43,7 @@ public class SegmentedRawApi {
         return new BitmovinApiBuilder<>(SegmentedRawApi.class);
     }
     /**
-     * Add Segmented RAW muxing
+     * Create Segmented RAW muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param segmentedRawMuxing The Segmented RAW muxing to be created (required)
@@ -73,7 +73,7 @@ public class SegmentedRawApi {
         }
     }
     /**
-     * Segmented RAW muxing details
+     * Get Segmented RAW muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Segmented RAW muxing (required)

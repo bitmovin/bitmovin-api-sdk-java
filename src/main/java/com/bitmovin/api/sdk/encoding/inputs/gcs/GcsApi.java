@@ -71,7 +71,7 @@ public class GcsApi {
         }
     }
     /**
-     * GCS Input Details
+     * Get GCS Input details
      * 
      * @param inputId Id of the input (required)
      * @return GcsInput

@@ -71,7 +71,7 @@ public class AacApi {
         }
     }
     /**
-     * AAC Codec Configuration Details
+     * Get AAC Codec Configuration details
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return AacAudioConfiguration

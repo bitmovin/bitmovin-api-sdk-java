@@ -40,7 +40,7 @@ public class ImageApi {
         return new BitmovinApiBuilder<>(ImageApi.class);
     }
     /**
-     * Add Image AdaptationSet
+     * Create Image AdaptationSet
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -72,7 +72,7 @@ public class ImageApi {
         }
     }
     /**
-     * Image AdaptationSet Details
+     * Get Image AdaptationSet details
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -88,7 +88,7 @@ public class ImageApi {
         }
     }
     /**
-     * List all Image AdaptationSets
+     * List Image AdaptationSets
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -104,7 +104,7 @@ public class ImageApi {
     }
 
     /**
-     * List all Image AdaptationSets
+     * List Image AdaptationSets
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)

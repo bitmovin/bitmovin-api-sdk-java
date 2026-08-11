@@ -71,7 +71,7 @@ public class AzureApi {
         }
     }
     /**
-     * Azure Output Details
+     * Get Azure Output details
      * 
      * @param outputId Id of the output (required)
      * @return AzureOutput

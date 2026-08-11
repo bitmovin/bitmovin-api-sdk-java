@@ -40,7 +40,7 @@ public class CustomXmlElementsApi {
         return new BitmovinApiBuilder<>(CustomXmlElementsApi.class);
     }
     /**
-     * Add Custom XML Element to Period
+     * Create Custom XML Element to Period
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -72,7 +72,7 @@ public class CustomXmlElementsApi {
         }
     }
     /**
-     * Custom XML Element Details
+     * Get Custom XML Element details
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -88,7 +88,7 @@ public class CustomXmlElementsApi {
         }
     }
     /**
-     * List all Custom XML Elements of Period
+     * List Custom XML Elements of Period
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -104,7 +104,7 @@ public class CustomXmlElementsApi {
     }
 
     /**
-     * List all Custom XML Elements of Period
+     * List Custom XML Elements of Period
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)

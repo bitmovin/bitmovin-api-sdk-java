@@ -71,7 +71,7 @@ public class SftpApi {
         }
     }
     /**
-     * SFTP Output Details
+     * Get SFTP Output details
      * 
      * @param outputId Id of the output (required)
      * @return SftpOutput

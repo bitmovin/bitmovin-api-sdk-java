@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Live Media Ingest Output Custom Data
+     * Get Live Media Ingest Output Custom Data
      * 
      * @param outputId Id of the output (required)
      * @return CustomData

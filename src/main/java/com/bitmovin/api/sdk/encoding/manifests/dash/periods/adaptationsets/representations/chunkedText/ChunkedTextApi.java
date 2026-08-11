@@ -40,7 +40,7 @@ public class ChunkedTextApi {
         return new BitmovinApiBuilder<>(ChunkedTextApi.class);
     }
     /**
-     * Add Chunked Text Representation
+     * Create Chunked Text Representation
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -74,7 +74,7 @@ public class ChunkedTextApi {
         }
     }
     /**
-     * Chunked Text Representation Details
+     * Get Chunked Text Representation details
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -91,7 +91,7 @@ public class ChunkedTextApi {
         }
     }
     /**
-     * List all Chunked Text Representations
+     * List Chunked Text Representations
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -108,7 +108,7 @@ public class ChunkedTextApi {
     }
 
     /**
-     * List all Chunked Text Representations
+     * List Chunked Text Representations
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)

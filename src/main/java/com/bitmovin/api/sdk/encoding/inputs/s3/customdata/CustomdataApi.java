@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * S3 Custom Data
+     * Get S3 Input Custom Data
      * 
      * @param inputId Id of the input (required)
      * @return CustomData

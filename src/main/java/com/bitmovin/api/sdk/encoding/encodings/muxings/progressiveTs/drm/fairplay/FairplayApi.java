@@ -43,7 +43,7 @@ public class FairplayApi {
         return new BitmovinApiBuilder<>(FairplayApi.class);
     }
     /**
-     * Add FairPlay DRM to a Progressive TS muxing
+     * Create FairPlay DRM to a Progressive TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive TS muxing. (required)
@@ -75,7 +75,7 @@ public class FairplayApi {
         }
     }
     /**
-     * FairPlay DRM Details of a Progressive TS
+     * Get FairPlay DRM from a Progressive TS muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive TS muxing. (required)

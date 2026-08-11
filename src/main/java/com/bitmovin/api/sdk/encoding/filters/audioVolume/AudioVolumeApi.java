@@ -71,7 +71,7 @@ public class AudioVolumeApi {
         }
     }
     /**
-     * Audio Volume Filter Details
+     * Get Audio Volume Filter details
      * 
      * @param filterId Id of the Audio Volume Filter. (required)
      * @return AudioVolumeFilter

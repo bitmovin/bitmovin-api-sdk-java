@@ -40,7 +40,7 @@ public class AssaApi {
         return new BitmovinApiBuilder<>(AssaApi.class);
     }
     /**
-     * Burn-In ASSA Subtitle into Stream
+     * Create Burn-In ASSA Subtitle
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -56,7 +56,7 @@ public class AssaApi {
         }
     }
     /**
-     * Delete Burn-In ASSA Subtitle from Stream
+     * Delete Burn-In ASSA Subtitle
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -72,7 +72,7 @@ public class AssaApi {
         }
     }
     /**
-     * Get Burn-In ASSA Subtitle Details
+     * Get Burn-In ASSA Subtitle details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -88,7 +88,7 @@ public class AssaApi {
         }
     }
     /**
-     * List the Burn-In ASSA subtitles of a stream
+     * List Burn-In ASSA Subtitles
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -104,7 +104,7 @@ public class AssaApi {
     }
 
     /**
-     * List the Burn-In ASSA subtitles of a stream
+     * List Burn-In ASSA Subtitles
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)

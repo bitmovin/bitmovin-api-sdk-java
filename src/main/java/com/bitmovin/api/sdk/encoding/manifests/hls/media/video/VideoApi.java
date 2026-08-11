@@ -40,7 +40,7 @@ public class VideoApi {
         return new BitmovinApiBuilder<>(VideoApi.class);
     }
     /**
-     * Add Video Media
+     * Create Video Media
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param videoMediaInfo The Video Media to be added (required)
@@ -70,7 +70,7 @@ public class VideoApi {
         }
     }
     /**
-     * Video Media Details
+     * Get Video Media details
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param mediaId Id of the video media. (required)
@@ -85,7 +85,7 @@ public class VideoApi {
         }
     }
     /**
-     * List all Video Media
+     * List Video Media
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @return List&lt;VideoMediaInfo&gt;
@@ -100,7 +100,7 @@ public class VideoApi {
     }
 
     /**
-     * List all Video Media
+     * List Video Media
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

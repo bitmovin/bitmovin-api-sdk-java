@@ -43,7 +43,7 @@ public class LiveManifestReadyApi {
         return new BitmovinApiBuilder<>(LiveManifestReadyApi.class);
     }
     /**
-     * Add &#39;Live Manifest Ready&#39; Webhook
+     * Create &#39;Live Manifest Ready&#39; Webhook
      * Add a webhook notification that is triggered when a live manifest is ready, meaning at least one segment is available in every playlist. A maximum number of 5 webhooks is allowed
      * @param webhook The &#39;Live Manifest Ready&#39; Webhook to be added. (required)
      * @return Webhook
@@ -57,7 +57,7 @@ public class LiveManifestReadyApi {
         }
     }
     /**
-     * Add &#39;Live Manifest Ready&#39; Webhook for a specific Encoding
+     * Create &#39;Live Manifest Ready&#39; Webhook for a specific Encoding
      * Add a webhook notification that triggers when a live manifest is ready for a specific encoding. A maximum number of 5 webhooks per Encoding is allowed. For a running live encoding (V2 manifest generator, encoder version &#x60;2.276.0&#x60; or above) it is propagated asynchronously (eventually consistent, typically sub-second) and does not require a restart; if the manifest is already ready, it fires immediately and exactly once. Org-level webhooks apply on the next start.
      * @param encodingId Id of the encoding (required)
      * @param webhook The &#39;Live Manifest Ready&#39; Webhook to be added. (required)
@@ -101,7 +101,7 @@ public class LiveManifestReadyApi {
         }
     }
     /**
-     * &#39;Live Manifest Ready&#39; Webhook Details for a specific Encoding
+     * Get &#39;Live Manifest Ready&#39; Webhook details for a specific Encoding
      * 
      * @param encodingId Id of the encoding (required)
      * @param webhookId Id of the webhook (required)
@@ -116,7 +116,7 @@ public class LiveManifestReadyApi {
         }
     }
     /**
-     * &#39;Live Manifest Ready&#39; Webhook Details
+     * Get &#39;Live Manifest Ready&#39; Webhook details
      * 
      * @param webhookId Id of the webhook (required)
      * @return Webhook

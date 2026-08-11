@@ -71,7 +71,7 @@ public class DirectFileUploadApi {
         }
     }
     /**
-     * Direct File Upload Input Details
+     * Get Direct File Upload Input details
      * 
      * @param inputId Id of the input (required)
      * @return DirectFileUploadInput

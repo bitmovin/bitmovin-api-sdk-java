@@ -80,7 +80,7 @@ public class SmoothApi {
         }
     }
     /**
-     * Smooth Streaming Manifest Details
+     * Get Smooth Streaming Manifest details
      * 
      * @param manifestId Id of the Smooth Streaming Manifest. (required)
      * @return SmoothStreamingManifest
@@ -94,7 +94,7 @@ public class SmoothApi {
         }
     }
     /**
-     * Manifest Start Details
+     * Smooth Streaming Manifest Start Details
      * 
      * @param manifestId Id of the manifest (required)
      * @return StartManifestRequest

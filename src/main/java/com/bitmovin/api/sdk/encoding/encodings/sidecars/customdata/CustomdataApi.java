@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Sidecar Custom Data
+     * Get Sidecar Custom Data
      * 
      * @param encodingId Id of the encoding. (required)
      * @param sidecarId Id of the sidecar. (required)

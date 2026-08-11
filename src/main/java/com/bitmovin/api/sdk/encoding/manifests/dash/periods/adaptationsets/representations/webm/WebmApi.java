@@ -43,7 +43,7 @@ public class WebmApi {
         return new BitmovinApiBuilder<>(WebmApi.class);
     }
     /**
-     * Add WebM Representation
+     * Create WebM Representation
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -77,7 +77,7 @@ public class WebmApi {
         }
     }
     /**
-     * WebM Representation Details
+     * Get WebM Representation details
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -94,7 +94,7 @@ public class WebmApi {
         }
     }
     /**
-     * List all WebM Representations
+     * List WebM Representations
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -111,7 +111,7 @@ public class WebmApi {
     }
 
     /**
-     * List all WebM Representations
+     * List WebM Representations
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)

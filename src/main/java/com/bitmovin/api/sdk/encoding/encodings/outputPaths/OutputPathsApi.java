@@ -40,7 +40,7 @@ public class OutputPathsApi {
         return new BitmovinApiBuilder<>(OutputPathsApi.class);
     }
     /**
-     * Encoding Output Paths Retrieval
+     * Get Encoding Output Paths
      * 
      * @param encodingId Id of the encoding (required)
      * @return List&lt;EncodingOutputPaths&gt;

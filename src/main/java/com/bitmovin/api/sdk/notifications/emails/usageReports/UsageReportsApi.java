@@ -40,7 +40,7 @@ public class UsageReportsApi {
         return new BitmovinApiBuilder<>(UsageReportsApi.class);
     }
     /**
-     * List Email Notifications (All Usage Reports)
+     * List Usage Report Email Notifications
      * 
      * @return List&lt;EmailNotification&gt;
      * @throws BitmovinException if fails to make API call
@@ -54,7 +54,7 @@ public class UsageReportsApi {
     }
 
     /**
-     * List Email Notifications (All Usage Reports)
+     * List Usage Report Email Notifications
      * 
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;EmailNotification&gt;

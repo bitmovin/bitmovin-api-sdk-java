@@ -43,7 +43,7 @@ public class ChunkedTextApi {
         return new BitmovinApiBuilder<>(ChunkedTextApi.class);
     }
     /**
-     * Add Chunked Text muxing
+     * Create Chunked Text muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param chunkedTextMuxing The Chunked Text muxing to be created (required)
@@ -73,7 +73,7 @@ public class ChunkedTextApi {
         }
     }
     /**
-     * Chunked Text muxing details
+     * Get Chunked Text muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Chunked Text muxing (required)

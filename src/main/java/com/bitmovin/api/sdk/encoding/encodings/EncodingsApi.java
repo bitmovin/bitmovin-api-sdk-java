@@ -104,7 +104,7 @@ public class EncodingsApi {
         }
     }
     /**
-     * Encoding Details
+     * Get Encoding details
      * 
      * @param encodingId Id of the encoding. (required)
      * @return Encoding
@@ -118,7 +118,7 @@ public class EncodingsApi {
         }
     }
     /**
-     * Encoding Start Details
+     * Get Encoding Start Details
      * 
      * @param encodingId Id of the encoding (required)
      * @return StartEncodingRequest
@@ -132,7 +132,7 @@ public class EncodingsApi {
         }
     }
     /**
-     * List all Encodings
+     * List Encodings
      * Bitmovin retains historical encoding jobs data for a period of 90 days. Should you require the data to be stored for an extended duration, it is necessary to store it within your own data repository.
      * @return List&lt;Encoding&gt;
      * @throws BitmovinException if fails to make API call
@@ -146,7 +146,7 @@ public class EncodingsApi {
     }
 
     /**
-     * List all Encodings
+     * List Encodings
      * Bitmovin retains historical encoding jobs data for a period of 90 days. Should you require the data to be stored for an extended duration, it is necessary to store it within your own data repository.
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;Encoding&gt;
@@ -190,7 +190,7 @@ public class EncodingsApi {
         }
     }
     /**
-     * Start VoD Encoding
+     * Start VOD Encoding
      * 
      * @param encodingId Id of the encoding (required)
      * @return BitmovinResponse
@@ -205,7 +205,7 @@ public class EncodingsApi {
     }
 
     /**
-     * Start VoD Encoding
+     * Start VOD Encoding
      * 
      * @param encodingId Id of the encoding (required)
      * @param startEncodingRequest Encoding Startup Options (optional)
@@ -220,7 +220,7 @@ public class EncodingsApi {
         }
     }
     /**
-     * Encoding Status
+     * Get Encoding Status
      * 
      * @param encodingId Id of the encoding (required)
      * @return Task
@@ -234,7 +234,7 @@ public class EncodingsApi {
         }
     }
     /**
-     * Stop Encoding
+     * Stop VOD Encoding
      * 
      * @param encodingId Id of the encoding (required)
      * @return BitmovinResponse

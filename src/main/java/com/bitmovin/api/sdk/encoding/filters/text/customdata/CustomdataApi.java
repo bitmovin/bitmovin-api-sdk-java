@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Text Filter Custom Data
+     * Get Text Filter Custom Data
      * 
      * @param filterId Id of the Text Filter (required)
      * @return CustomData

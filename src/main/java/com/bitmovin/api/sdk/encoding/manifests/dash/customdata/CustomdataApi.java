@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * DASH Manifest Custom Data
+     * Get DASH Manifest Custom Data
      * 
      * @param manifestId UUID of the DASH manifest (required)
      * @return CustomData

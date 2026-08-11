@@ -46,7 +46,7 @@ public class ProgressiveWavApi {
         return new BitmovinApiBuilder<>(ProgressiveWavApi.class);
     }
     /**
-     * Add Progressive Wav muxing
+     * Create Progressive Wav muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param progressiveWavMuxing The Progressive WAV muxing to be created (required)
@@ -76,7 +76,7 @@ public class ProgressiveWavApi {
         }
     }
     /**
-     * Progressive WAV muxing details
+     * Get Progressive WAV muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive WAV muxing (required)

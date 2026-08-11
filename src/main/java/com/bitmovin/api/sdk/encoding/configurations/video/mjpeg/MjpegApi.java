@@ -71,7 +71,7 @@ public class MjpegApi {
         }
     }
     /**
-     * MJPEG Codec Configuration Details
+     * Get MJPEG Codec Configuration details
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return MjpegVideoConfiguration

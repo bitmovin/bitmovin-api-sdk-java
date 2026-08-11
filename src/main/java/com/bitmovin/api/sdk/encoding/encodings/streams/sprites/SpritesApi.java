@@ -43,7 +43,7 @@ public class SpritesApi {
         return new BitmovinApiBuilder<>(SpritesApi.class);
     }
     /**
-     * Add Sprite
+     * Create Sprite
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -75,7 +75,7 @@ public class SpritesApi {
         }
     }
     /**
-     * Sprite Details
+     * Get Sprite details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)

@@ -71,7 +71,7 @@ public class DolbyDigitalPlusApi {
         }
     }
     /**
-     * Dolby Digital Plus Codec Configuration Details
+     * Get Dolby Digital Plus Codec Configuration details
      * 
      * @param configurationId Id of the codec configuration (required)
      * @return DolbyDigitalPlusAudioConfiguration

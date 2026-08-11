@@ -75,7 +75,7 @@ public class Eac3Api {
         }
     }
     /**
-     * E-AC3 Codec Configuration Details
+     * Get E-AC3 Codec Configuration details
      * Deprecation notice: use Dolby Digital Plus instead. For more information check out our tutorial here: https://bitmovin.com/docs/encoding/tutorials/how-to-create-dolby-digital-plus-encodings 
      * @param configurationId Id of the codec configuration (required)
      * @return Eac3AudioConfiguration

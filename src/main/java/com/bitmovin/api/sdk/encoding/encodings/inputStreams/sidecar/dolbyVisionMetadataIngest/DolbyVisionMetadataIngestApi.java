@@ -40,7 +40,7 @@ public class DolbyVisionMetadataIngestApi {
         return new BitmovinApiBuilder<>(DolbyVisionMetadataIngestApi.class);
     }
     /**
-     * Add Dolby Vision Metadata Ingest Input Stream
+     * Create Dolby Vision Metadata Ingest Input Stream
      * 
      * @param encodingId Id of the encoding. (required)
      * @param dolbyVisionMetadataIngestInputStream The Dolby Vision Metadata Ingest Input Stream to be created (required)
@@ -70,7 +70,7 @@ public class DolbyVisionMetadataIngestApi {
         }
     }
     /**
-     * Dolby Vision Metadata Ingest Input Stream Details
+     * Get Dolby Vision Metadata Ingest Input Stream details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param inputStreamId Id of the Dolby Vision Metadata Ingest input stream. (required)

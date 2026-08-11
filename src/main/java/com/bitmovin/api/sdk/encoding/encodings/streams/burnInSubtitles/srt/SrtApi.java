@@ -40,7 +40,7 @@ public class SrtApi {
         return new BitmovinApiBuilder<>(SrtApi.class);
     }
     /**
-     * Burn-In SRT Subtitle into Stream
+     * Create Burn-In SRT Subtitle
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -56,7 +56,7 @@ public class SrtApi {
         }
     }
     /**
-     * Delete Burn-In SRT Subtitle from Stream
+     * Delete Burn-In SRT Subtitle
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -72,7 +72,7 @@ public class SrtApi {
         }
     }
     /**
-     * Get Burn-In SRT Subtitle Details
+     * Get Burn-In SRT Subtitle details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -88,7 +88,7 @@ public class SrtApi {
         }
     }
     /**
-     * List the Burn-In SRT subtitles of a stream
+     * List Burn-In SRT Subtitles
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)
@@ -104,7 +104,7 @@ public class SrtApi {
     }
 
     /**
-     * List the Burn-In SRT subtitles of a stream
+     * List Burn-In SRT Subtitles
      * 
      * @param encodingId Id of the encoding. (required)
      * @param streamId Id of the stream. (required)

@@ -71,7 +71,7 @@ public class RegionsApi {
         }
     }
     /**
-     * Azure Region Settings Details
+     * Get Azure Region Settings details
      * 
      * @param infrastructureId Id of the Azure account (required)
      * @param region Azure region. (required)

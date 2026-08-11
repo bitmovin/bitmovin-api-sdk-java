@@ -71,7 +71,7 @@ public class TextApi {
         }
     }
     /**
-     * Text Filter Details
+     * Get Text Filter details
      * 
      * @param filterId Id of the Text Filter (required)
      * @return TextFilter

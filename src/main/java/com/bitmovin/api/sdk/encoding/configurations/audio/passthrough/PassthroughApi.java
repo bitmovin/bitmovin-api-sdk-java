@@ -68,7 +68,7 @@ public class PassthroughApi {
         }
     }
     /**
-     * Audio Passthrough Configuration Details
+     * Get Audio Passthrough Codec Configuration details
      * 
      * @param configurationId Id of the audio configuration (required)
      * @return PassthroughAudioConfiguration

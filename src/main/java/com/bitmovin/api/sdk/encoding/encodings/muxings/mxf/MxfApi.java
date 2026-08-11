@@ -43,7 +43,7 @@ public class MxfApi {
         return new BitmovinApiBuilder<>(MxfApi.class);
     }
     /**
-     * Add MXF muxing
+     * Create MXF muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param mxfMuxing The MXF muxing to be created (required)
@@ -73,7 +73,7 @@ public class MxfApi {
         }
     }
     /**
-     * MXF muxing details
+     * Get MXF muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the MXF muxing (required)

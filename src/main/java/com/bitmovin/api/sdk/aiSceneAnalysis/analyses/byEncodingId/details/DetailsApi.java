@@ -43,7 +43,7 @@ public class DetailsApi {
         return new BitmovinApiBuilder<>(DetailsApi.class);
     }
     /**
-     * Get AI scene analysis details by encoding ID
+     * Get AI Scene Analysis details
      * Returns detailed AI scene analysis for a given encoding.
      * @param encodingId The encoding ID (required)
      * @return SceneAnalysisDetailsResponse

@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Unsharp Filter Custom Data
+     * Get Unsharp Filter Custom Data
      * 
      * @param filterId Id of the unsharp filter (required)
      * @return CustomData

@@ -43,7 +43,7 @@ public class GceApi {
         return new BitmovinApiBuilder<>(GceApi.class);
     }
     /**
-     * Add GCE Account
+     * Create GCE Account
      * 
      * @param gceAccount The GCE Account to be added (required)
      * @return GceAccount
@@ -71,7 +71,7 @@ public class GceApi {
         }
     }
     /**
-     * GCE Account Details
+     * Get GCE Account details
      * 
      * @param infrastructureId Id of the GCE account (required)
      * @return GceAccount

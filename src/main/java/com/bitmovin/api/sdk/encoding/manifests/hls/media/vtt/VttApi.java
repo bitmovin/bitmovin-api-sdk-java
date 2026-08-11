@@ -40,7 +40,7 @@ public class VttApi {
         return new BitmovinApiBuilder<>(VttApi.class);
     }
     /**
-     * Add VTT Media
+     * Create VTT Media
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param vttMediaInfo The VTT Media to be added (required)
@@ -70,7 +70,7 @@ public class VttApi {
         }
     }
     /**
-     * VTT Media Details
+     * Get VTT Media details
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param mediaId Id of the VTT media. (required)
@@ -85,7 +85,7 @@ public class VttApi {
         }
     }
     /**
-     * List all VTT Media
+     * List VTT Media
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @return List&lt;VttMediaInfo&gt;
@@ -100,7 +100,7 @@ public class VttApi {
     }
 
     /**
-     * List all VTT Media
+     * List VTT Media
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

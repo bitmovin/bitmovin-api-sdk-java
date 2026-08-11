@@ -43,7 +43,7 @@ public class AwsApi {
         return new BitmovinApiBuilder<>(AwsApi.class);
     }
     /**
-     * Add AWS Account
+     * Create AWS Account
      * 
      * @param awsAccount The AWS Account to be added (required)
      * @return AwsAccount
@@ -71,7 +71,7 @@ public class AwsApi {
         }
     }
     /**
-     * AWS Account Details
+     * Get AWS Account details
      * 
      * @param infrastructureId Id of the AWS account (required)
      * @return AwsAccount

@@ -40,7 +40,7 @@ public class AdPlacementsApi {
         return new BitmovinApiBuilder<>(AdPlacementsApi.class);
     }
     /**
-     * Get AI scene analysis ad placements by encoding ID
+     * Get AI Scene Analysis ad placements
      * Returns ad placements from AI scene analysis for a given encoding.
      * @param encodingId The encoding ID (required)
      * @return SceneAnalysisAdPlacementMetadataResponse

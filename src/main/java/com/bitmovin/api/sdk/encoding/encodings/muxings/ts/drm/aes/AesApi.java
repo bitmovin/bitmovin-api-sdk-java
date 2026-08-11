@@ -43,7 +43,7 @@ public class AesApi {
         return new BitmovinApiBuilder<>(AesApi.class);
     }
     /**
-     * Add AES encryption configuration to a TS muxing
+     * Create AES encryption configuration to a TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the TS muxing. (required)
@@ -75,7 +75,7 @@ public class AesApi {
         }
     }
     /**
-     * AES encryption Details of a TS muxing
+     * Get AES encryption configuration from a TS muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the TS muxing. (required)

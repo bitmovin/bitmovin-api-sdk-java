@@ -43,7 +43,7 @@ public class FairplayApi {
         return new BitmovinApiBuilder<>(FairplayApi.class);
     }
     /**
-     * Add FairPlay DRM to an fMP4 muxing
+     * Create FairPlay DRM to an fMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing (required)
@@ -75,7 +75,7 @@ public class FairplayApi {
         }
     }
     /**
-     * FairPlay DRM Details of an fMP4 muxing
+     * Get FairPlay DRM from an fMP4 muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing (required)

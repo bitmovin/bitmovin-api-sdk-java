@@ -52,7 +52,7 @@ public class ProgressiveTsApi {
         return new BitmovinApiBuilder<>(ProgressiveTsApi.class);
     }
     /**
-     * Add Progressive TS muxing
+     * Create Progressive TS muxing
      * 
      * @param encodingId ID of the encoding. (required)
      * @param progressiveTsMuxing The Progressive TS muxing to be created (required)
@@ -82,7 +82,7 @@ public class ProgressiveTsApi {
         }
     }
     /**
-     * Progressive TS muxing details
+     * Get Progressive TS muxing details
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param muxingId ID of the Progressive TS muxing (required)

@@ -46,7 +46,7 @@ public class TsApi {
         return new BitmovinApiBuilder<>(TsApi.class);
     }
     /**
-     * Add TS muxing
+     * Create TS muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param tsMuxing The TS muxing to be created (required)
@@ -76,7 +76,7 @@ public class TsApi {
         }
     }
     /**
-     * TS muxing details
+     * Get TS muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the TS muxing (required)

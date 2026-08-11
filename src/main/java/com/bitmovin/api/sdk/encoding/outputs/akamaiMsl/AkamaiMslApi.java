@@ -71,7 +71,7 @@ public class AkamaiMslApi {
         }
     }
     /**
-     * Akamai MSL Output Details
+     * Get Akamai MSL Output details
      * 
      * @param outputId Id of the output (required)
      * @return AkamaiMslOutput

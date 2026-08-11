@@ -71,7 +71,7 @@ public class UnsharpApi {
         }
     }
     /**
-     * Unsharp Filter Details
+     * Get Unsharp Filter details
      * 
      * @param filterId Id of the unsharp filter (required)
      * @return UnsharpFilter

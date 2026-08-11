@@ -43,7 +43,7 @@ public class SpekeApi {
         return new BitmovinApiBuilder<>(SpekeApi.class);
     }
     /**
-     * Add SPEKE DRM key provider to Progressive WebM
+     * Create SPEKE DRM key provider to Progressive WebM
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive WebM muxing (required)
@@ -75,7 +75,7 @@ public class SpekeApi {
         }
     }
     /**
-     * SPEKE DRM Details of a Progressive WebM muxing
+     * Get SPEKE DRM from a Progressive WebM muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the Progressive WebM muxing (required)

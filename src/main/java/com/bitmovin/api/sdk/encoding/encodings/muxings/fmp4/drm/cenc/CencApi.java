@@ -43,7 +43,7 @@ public class CencApi {
         return new BitmovinApiBuilder<>(CencApi.class);
     }
     /**
-     * Add CENC DRM to an fMP4 muxing
+     * Create CENC DRM to an fMP4 muxing
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)
@@ -75,7 +75,7 @@ public class CencApi {
         }
     }
     /**
-     * CENC DRM Details of an fMP4 muxing
+     * Get CENC DRM from an fMP4 muxing details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param muxingId Id of the fMP4 muxing. (required)

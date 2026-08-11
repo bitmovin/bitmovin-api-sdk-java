@@ -20,7 +20,12 @@ public enum SceneAnalysisListSort {
   /**
    * Sort by analysis creation date in ascending order
    */
-  CREATED_AT_ASC("createdAt:ASC");
+  CREATED_AT_ASC("createdAt:ASC"),
+  
+  /**
+   * Sort by semantic relevance in descending order. Supported only when searchText contains at least one non-whitespace character
+   */
+  RELEVANCE_DESC("relevance:DESC");
 
   private String value;
 

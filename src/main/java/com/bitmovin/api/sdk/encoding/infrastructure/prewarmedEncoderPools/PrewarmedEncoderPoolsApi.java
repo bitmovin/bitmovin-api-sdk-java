@@ -57,7 +57,7 @@ public class PrewarmedEncoderPoolsApi {
         }
     }
     /**
-     * Delete prewarmed encoder pool
+     * Delete Prewarmed encoder pool
      * 
      * @param poolId Id of the prewarmed encoder pool (required)
      * @return BitmovinResponse
@@ -71,7 +71,7 @@ public class PrewarmedEncoderPoolsApi {
         }
     }
     /**
-     * Prewarmed encoder pool details
+     * Get Prewarmed encoder pool details
      * 
      * @param poolId Id of the prewarmed encoder pool (required)
      * @return PrewarmedEncoderPool

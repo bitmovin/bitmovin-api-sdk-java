@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Conform Filter Custom Data
+     * Get Conform Filter Custom Data
      * 
      * @param filterId Id of the conform filter (required)
      * @return CustomData

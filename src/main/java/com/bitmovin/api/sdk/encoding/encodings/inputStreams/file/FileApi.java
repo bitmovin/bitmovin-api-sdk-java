@@ -40,7 +40,7 @@ public class FileApi {
         return new BitmovinApiBuilder<>(FileApi.class);
     }
     /**
-     * Add File input stream
+     * Create File input stream
      * 
      * @param encodingId Id of the encoding. (required)
      * @param fileInputStream The File input stream to be created (required)
@@ -55,7 +55,7 @@ public class FileApi {
         }
     }
     /**
-     * Delete File stream
+     * Delete File Input Stream
      * 
      * @param encodingId Id of the encoding. (required)
      * @param inputStreamId Id of the File input stream. (required)
@@ -70,7 +70,7 @@ public class FileApi {
         }
     }
     /**
-     * File input stream details
+     * Get File Input Stream details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param inputStreamId Id of the File input stream. (required)

@@ -40,7 +40,7 @@ public class SubtitleApi {
         return new BitmovinApiBuilder<>(SubtitleApi.class);
     }
     /**
-     * Add Subtitle AdaptationSet
+     * Create Subtitle AdaptationSet
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -72,7 +72,7 @@ public class SubtitleApi {
         }
     }
     /**
-     * Subtitle AdaptationSet Details
+     * Get Subtitle AdaptationSet details
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -88,7 +88,7 @@ public class SubtitleApi {
         }
     }
     /**
-     * List all Subtitle AdaptationSets
+     * List Subtitle AdaptationSets
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)
@@ -104,7 +104,7 @@ public class SubtitleApi {
     }
 
     /**
-     * List all Subtitle AdaptationSets
+     * List Subtitle AdaptationSets
      * 
      * @param manifestId Id of the manifest (required)
      * @param periodId Id of the period (required)

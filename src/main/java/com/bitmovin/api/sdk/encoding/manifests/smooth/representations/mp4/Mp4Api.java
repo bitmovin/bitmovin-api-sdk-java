@@ -40,7 +40,7 @@ public class Mp4Api {
         return new BitmovinApiBuilder<>(Mp4Api.class);
     }
     /**
-     * Add MP4 Representation to Smooth Streaming Manifest
+     * Create MP4 Representation to Smooth Streaming Manifest
      * 
      * @param manifestId Id of the Smooth Streaming manifest. (required)
      * @param smoothStreamingRepresentation The MP4 Representation to be added (required)
@@ -70,7 +70,7 @@ public class Mp4Api {
         }
     }
     /**
-     * Smooth Streaming MP4 Representation Details
+     * Get Smooth Streaming MP4 Representation details
      * 
      * @param manifestId Id of the Smooth Streaming manifest. (required)
      * @param representationId Id of the MP4 representation. (required)

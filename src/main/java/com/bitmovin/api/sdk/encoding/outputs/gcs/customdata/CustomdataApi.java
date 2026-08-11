@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * GCS Output Custom Data
+     * Get GCS Output Custom Data
      * 
      * @param outputId Id of the output (required)
      * @return CustomData

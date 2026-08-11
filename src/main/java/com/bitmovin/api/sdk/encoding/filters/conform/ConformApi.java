@@ -71,7 +71,7 @@ public class ConformApi {
         }
     }
     /**
-     * Conform Filter Details
+     * Get Conform Filter details
      * 
      * @param filterId Id of the conform filter (required)
      * @return ConformFilter

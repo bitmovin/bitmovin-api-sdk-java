@@ -70,7 +70,7 @@ public class KeyframesApi {
         }
     }
     /**
-     * Keyframe Details
+     * Get Keyframe details
      * 
      * @param encodingId Id of the encoding. (required)
      * @param keyframeId Id of the keyframe. (required)
@@ -85,7 +85,7 @@ public class KeyframesApi {
         }
     }
     /**
-     * List all Keyframes
+     * List Keyframes
      * 
      * @param encodingId Id of the encoding. (required)
      * @return List&lt;Keyframe&gt;
@@ -100,7 +100,7 @@ public class KeyframesApi {
     }
 
     /**
-     * List all Keyframes
+     * List Keyframes
      * 
      * @param encodingId Id of the encoding. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

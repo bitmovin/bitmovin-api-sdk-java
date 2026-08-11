@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Encoding Custom Data
+     * Get Encoding Custom Data
      * 
      * @param encodingId Id of the encoding. (required)
      * @return CustomData

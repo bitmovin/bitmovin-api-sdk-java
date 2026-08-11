@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * Rotate Filter Custom Data
+     * Get Rotate Filter Custom Data
      * 
      * @param filterId Id of the Rotate Filter. (required)
      * @return CustomData

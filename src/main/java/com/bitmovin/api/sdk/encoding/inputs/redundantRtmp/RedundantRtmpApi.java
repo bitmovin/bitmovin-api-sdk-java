@@ -68,7 +68,7 @@ public class RedundantRtmpApi {
         }
     }
     /**
-     * Redundant RTMP Input Details
+     * Get Redundant RTMP Input details
      * 
      * @param inputId Id of the input (required)
      * @return RedundantRtmpInput

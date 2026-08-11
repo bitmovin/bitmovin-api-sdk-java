@@ -43,7 +43,7 @@ public class StreamKeysApi {
         return new BitmovinApiBuilder<>(StreamKeysApi.class);
     }
     /**
-     * Create new stream key
+     * Create Stream Key
      * 
      * @param streamKey The stream key to be created (required)
      * @return StreamKey
@@ -71,7 +71,7 @@ public class StreamKeysApi {
         }
     }
     /**
-     * Stream Key details
+     * Get Stream Key details
      * 
      * @param streamKeyId Id of the stream key (required)
      * @return StreamKey

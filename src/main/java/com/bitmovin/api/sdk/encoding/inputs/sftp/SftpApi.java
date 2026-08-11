@@ -71,7 +71,7 @@ public class SftpApi {
         }
     }
     /**
-     * SFTP Input Details
+     * Get SFTP Input details
      * 
      * @param inputId Id of the input (required)
      * @return SftpInput

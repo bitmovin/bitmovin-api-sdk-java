@@ -40,7 +40,7 @@ public class TemplateApi {
         return new BitmovinApiBuilder<>(TemplateApi.class);
     }
     /**
-     * Encoding Template URL
+     * Get Encoding Template URL
      * Retrieve the download URL for the Encoding Template associated with a specific encoding. 
      * @param encodingId Id of the Encoding (required)
      * @return EncodingTemplateUrlResponse

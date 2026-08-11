@@ -40,7 +40,7 @@ public class ClosedCaptionsApi {
         return new BitmovinApiBuilder<>(ClosedCaptionsApi.class);
     }
     /**
-     * Add Closed Captions Media
+     * Create Closed Captions Media
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param closedCaptionsMediaInfo The Closed Captions Media to be added (required)
@@ -70,7 +70,7 @@ public class ClosedCaptionsApi {
         }
     }
     /**
-     * Closed Captions Media Details
+     * Get Closed Captions Media details
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param mediaId Id of the closed captions media. (required)
@@ -85,7 +85,7 @@ public class ClosedCaptionsApi {
         }
     }
     /**
-     * List all Closed Captions Media
+     * List Closed Captions Media
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @return List&lt;ClosedCaptionsMediaInfo&gt;
@@ -100,7 +100,7 @@ public class ClosedCaptionsApi {
     }
 
     /**
-     * List all Closed Captions Media
+     * List Closed Captions Media
      * 
      * @param manifestId Id of the hls manifest. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)

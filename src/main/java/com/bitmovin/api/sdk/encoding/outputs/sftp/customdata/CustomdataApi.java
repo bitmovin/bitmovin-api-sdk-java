@@ -40,7 +40,7 @@ public class CustomdataApi {
         return new BitmovinApiBuilder<>(CustomdataApi.class);
     }
     /**
-     * SFTP Output Custom Data
+     * Get SFTP Output Custom Data
      * 
      * @param outputId Id of the output (required)
      * @return CustomData

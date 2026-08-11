@@ -70,7 +70,7 @@ public class ActionsApi {
         }
     }
     /**
-     * Delete error encodings from the standby pool
+     * Delete Error Encodings from Standby Pool
      * 
      * @param poolId Id of the standby pool (required)
      * @return LiveStandbyPoolEncoding

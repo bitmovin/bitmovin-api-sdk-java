@@ -43,7 +43,7 @@ public class FrameIdApi {
         return new BitmovinApiBuilder<>(FrameIdApi.class);
     }
     /**
-     * Add Frame ID ID3 Tag to a Progressive TS muxing
+     * Create Frame ID ID3 Tag to a Progressive TS muxing
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param muxingId ID of the Progressive TS muxing (required)
@@ -75,7 +75,7 @@ public class FrameIdApi {
         }
     }
     /**
-     * Frame ID ID3 Tag Details of a Progressive TS muxing
+     * Get Frame ID ID3 Tag of a Progressive TS muxing details
      * 
      * @param encodingId ID of the Encoding. (required)
      * @param muxingId ID of the Progressive TS muxing (required)

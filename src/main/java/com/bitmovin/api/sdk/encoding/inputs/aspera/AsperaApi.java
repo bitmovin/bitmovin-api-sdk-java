@@ -71,7 +71,7 @@ public class AsperaApi {
         }
     }
     /**
-     * Aspera Input Details
+     * Get Aspera Input details
      * 
      * @param inputId Id of the input (required)
      * @return AsperaInput

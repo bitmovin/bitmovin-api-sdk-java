@@ -40,7 +40,7 @@ public class LiveEncodingHeartbeatApi {
         return new BitmovinApiBuilder<>(LiveEncodingHeartbeatApi.class);
     }
     /**
-     * Add &#39;Live Encoding Heartbeat&#39; Webhook
+     * Create &#39;Live Encoding Heartbeat&#39; Webhook
      * Add a new webhook notification that triggers a heartbeat webhook with a fixed &#x60;interval&#x60; for all Live Encodings. 
      * @param liveEncodingHeartbeatWebhook The &#39;Live Encoding Heartbeat&#39; Webhook to be added. (required)
      * @return LiveEncodingHeartbeatWebhook
@@ -68,7 +68,7 @@ public class LiveEncodingHeartbeatApi {
         }
     }
     /**
-     * &#39;Live Encoding Heartbeat&#39; Webhook Details
+     * Get &#39;Live Encoding Heartbeat&#39; Webhook details
      * 
      * @param webhookId Id of the webhook (required)
      * @return LiveEncodingHeartbeatWebhook

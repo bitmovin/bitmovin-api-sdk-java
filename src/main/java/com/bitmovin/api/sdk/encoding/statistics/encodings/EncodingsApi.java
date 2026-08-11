@@ -49,7 +49,7 @@ public class EncodingsApi {
         return new BitmovinApiBuilder<>(EncodingsApi.class);
     }
     /**
-     * Get Statistics from an Encoding
+     * Get Encoding Statistics
      * 
      * @param encodingId Id of the encoding (required)
      * @return EncodingStats

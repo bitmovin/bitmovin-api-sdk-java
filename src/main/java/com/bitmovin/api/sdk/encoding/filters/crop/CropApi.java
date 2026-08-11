@@ -71,7 +71,7 @@ public class CropApi {
         }
     }
     /**
-     * Crop Filter Details
+     * Get Crop Filter details
      * 
      * @param filterId Id of the Crop Filter. (required)
      * @return CropFilter

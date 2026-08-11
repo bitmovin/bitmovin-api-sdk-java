@@ -40,7 +40,7 @@ public class Scte35TriggersApi {
         return new BitmovinApiBuilder<>(Scte35TriggersApi.class);
     }
     /**
-     * Create SCTE 35 trigger
+     * Create SCTE 35 Trigger
      * This endpoint supports VOD encodings only. Requests made with a live encoding ID will fail. 
      * @param encodingId Id of the encoding. (required)
      * @param scte35Trigger The SCTE 35 trigger to be created (required)
@@ -85,7 +85,7 @@ public class Scte35TriggersApi {
         }
     }
     /**
-     * List all SCTE 35 triggers for an encoding
+     * List SCTE 35 Triggers
      * This endpoint supports VOD encodings only. Requests made with a live encoding ID will fail. 
      * @param encodingId Id of the encoding. (required)
      * @return List&lt;Scte35Trigger&gt;
@@ -100,7 +100,7 @@ public class Scte35TriggersApi {
     }
 
     /**
-     * List all SCTE 35 triggers for an encoding
+     * List SCTE 35 Triggers
      * This endpoint supports VOD encodings only. Requests made with a live encoding ID will fail. 
      * @param encodingId Id of the encoding. (required)
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
