@@ -3,6 +3,7 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.MainSubject;
+import com.bitmovin.api.sdk.model.ShotAdvisories;
 import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,6 +32,9 @@ public class Shot {
   @JsonProperty("mainSubjects")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<MainSubject> mainSubjects = new ArrayList<MainSubject>();
+
+  @JsonProperty("shotAdvisories")
+  private ShotAdvisories shotAdvisories;
 
 
   /**
@@ -138,6 +142,25 @@ public class Shot {
   }
 
 
+  /**
+   * Content advisory detection results for this shot, such as tobacco or vaping imagery
+   * @return shotAdvisories
+   */
+  public ShotAdvisories getShotAdvisories() {
+    return shotAdvisories;
+  }
+
+  /**
+   * Content advisory detection results for this shot, such as tobacco or vaping imagery
+   *
+   * @param shotAdvisories
+   *        Content advisory detection results for this shot, such as tobacco or vaping imagery
+   */
+  public void setShotAdvisories(ShotAdvisories shotAdvisories) {
+    this.shotAdvisories = shotAdvisories;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -151,12 +174,13 @@ public class Shot {
         Objects.equals(this.endInSeconds, shot.endInSeconds) &&
         Objects.equals(this.detailedDescription, shot.detailedDescription) &&
         Objects.equals(this.keywords, shot.keywords) &&
-        Objects.equals(this.mainSubjects, shot.mainSubjects);
+        Objects.equals(this.mainSubjects, shot.mainSubjects) &&
+        Objects.equals(this.shotAdvisories, shot.shotAdvisories);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startInSeconds, endInSeconds, detailedDescription, keywords, mainSubjects);
+    return Objects.hash(startInSeconds, endInSeconds, detailedDescription, keywords, mainSubjects, shotAdvisories);
   }
 
   @Override
@@ -169,6 +193,7 @@ public class Shot {
     sb.append("    detailedDescription: ").append(toIndentedString(detailedDescription)).append("\n");
     sb.append("    keywords: ").append(toIndentedString(keywords)).append("\n");
     sb.append("    mainSubjects: ").append(toIndentedString(mainSubjects)).append("\n");
+    sb.append("    shotAdvisories: ").append(toIndentedString(shotAdvisories)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -13,10 +13,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum H265V2RateControlModeConfigType {
   
   
-  PERCEPTUAL_QUALITY_MODE("PERCEPTUAL_QUALITY_MODE"),
-  
-  
-  CONSTANT_BITRATE_MODE("CONSTANT_BITRATE_MODE");
+  PERCEPTUAL_QUALITY_MODE("PERCEPTUAL_QUALITY_MODE");
 
   private String value;
 

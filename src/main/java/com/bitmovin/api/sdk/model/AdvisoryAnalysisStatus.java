@@ -10,17 +10,21 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum AkamaiMslVersion {
+public enum AdvisoryAnalysisStatus {
   
+  /**
+   * The shot was analysed for content advisories. An empty list of advisories means none were found
+   */
+  ANALYZED("ANALYZED"),
   
-  MSL4("MSL4"),
-  
-  
-  MSL5("MSL5");
+  /**
+   * The shot could not be analysed because the request was blocked by the model safety filter, so no verdict exists for it. Such a shot is reported conservatively rather than as clean: it carries a TOBACCO advisory with UNKNOWN confidence, which is an assumption made on the absence of a verdict and not an observation. Review these shots manually
+   */
+  BLOCKED("BLOCKED");
 
   private String value;
 
-  AkamaiMslVersion(String value) {
+  AdvisoryAnalysisStatus(String value) {
     this.value = value;
   }
 
@@ -35,8 +39,8 @@ public enum AkamaiMslVersion {
   }
 
   @JsonCreator
-  public static AkamaiMslVersion fromValue(String text) {
-    for (AkamaiMslVersion b : AkamaiMslVersion.values()) {
+  public static AdvisoryAnalysisStatus fromValue(String text) {
+    for (AdvisoryAnalysisStatus b : AdvisoryAnalysisStatus.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

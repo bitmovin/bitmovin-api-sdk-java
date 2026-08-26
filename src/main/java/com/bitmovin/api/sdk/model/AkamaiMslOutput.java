@@ -5,6 +5,7 @@ import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AclEntry;
 import com.bitmovin.api.sdk.model.AkamaiMslStreamFormat;
 import com.bitmovin.api.sdk.model.AkamaiMslVersion;
+import com.bitmovin.api.sdk.model.MslPublishingAuthentication;
 import com.bitmovin.api.sdk.model.Output;
 import java.util.Date;
 import java.util.List;
@@ -30,6 +31,9 @@ public class AkamaiMslOutput extends Output {
 
   @JsonProperty("mslVersion")
   private AkamaiMslVersion mslVersion;
+
+  @JsonProperty("publishingAuthentication")
+  private MslPublishingAuthentication publishingAuthentication;
 
 
   /**
@@ -90,7 +94,7 @@ public class AkamaiMslOutput extends Output {
 
 
   /**
-   * The Akamai MSL Version. Only MSL4 is supported at the moment. (required)
+   * The Akamai MSL Version. MSL4 and MSL5 are supported. (required)
    * @return mslVersion
    */
   public AkamaiMslVersion getMslVersion() {
@@ -98,13 +102,32 @@ public class AkamaiMslOutput extends Output {
   }
 
   /**
-   * The Akamai MSL Version. Only MSL4 is supported at the moment. (required)
+   * The Akamai MSL Version. MSL4 and MSL5 are supported. (required)
    *
    * @param mslVersion
-   *        The Akamai MSL Version. Only MSL4 is supported at the moment. (required)
+   *        The Akamai MSL Version. MSL4 and MSL5 are supported. (required)
    */
   public void setMslVersion(AkamaiMslVersion mslVersion) {
     this.mslVersion = mslVersion;
+  }
+
+
+  /**
+   * MSL5 only. HTTP Digest publishing credentials. Sending this field with &#x60;mslVersion: MSL4&#x60; is rejected. Credentials (username, password) are write-only and not returned in responses. 
+   * @return publishingAuthentication
+   */
+  public MslPublishingAuthentication getPublishingAuthentication() {
+    return publishingAuthentication;
+  }
+
+  /**
+   * MSL5 only. HTTP Digest publishing credentials. Sending this field with &#x60;mslVersion: MSL4&#x60; is rejected. Credentials (username, password) are write-only and not returned in responses. 
+   *
+   * @param publishingAuthentication
+   *        MSL5 only. HTTP Digest publishing credentials. Sending this field with &#x60;mslVersion: MSL4&#x60; is rejected. Credentials (username, password) are write-only and not returned in responses. 
+   */
+  public void setPublishingAuthentication(MslPublishingAuthentication publishingAuthentication) {
+    this.publishingAuthentication = publishingAuthentication;
   }
 
 
@@ -121,12 +144,13 @@ public class AkamaiMslOutput extends Output {
         Objects.equals(this.eventName, akamaiMslOutput.eventName) &&
         Objects.equals(this.streamFormat, akamaiMslOutput.streamFormat) &&
         Objects.equals(this.mslVersion, akamaiMslOutput.mslVersion) &&
+        Objects.equals(this.publishingAuthentication, akamaiMslOutput.publishingAuthentication) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(streamId, eventName, streamFormat, mslVersion, super.hashCode());
+    return Objects.hash(streamId, eventName, streamFormat, mslVersion, publishingAuthentication, super.hashCode());
   }
 
   @Override
@@ -138,6 +162,7 @@ public class AkamaiMslOutput extends Output {
     sb.append("    eventName: ").append(toIndentedString(eventName)).append("\n");
     sb.append("    streamFormat: ").append(toIndentedString(streamFormat)).append("\n");
     sb.append("    mslVersion: ").append(toIndentedString(mslVersion)).append("\n");
+    sb.append("    publishingAuthentication: ").append(toIndentedString(publishingAuthentication)).append("\n");
     sb.append("}");
     return sb.toString();
   }

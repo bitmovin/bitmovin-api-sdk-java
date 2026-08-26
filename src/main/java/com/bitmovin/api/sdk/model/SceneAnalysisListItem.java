@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.SceneAnalysisMatchingSegment;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -40,6 +41,9 @@ public class SceneAnalysisListItem {
   @JsonProperty("outputLanguageCodes")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<String> outputLanguageCodes = new ArrayList<String>();
+
+  @JsonProperty("matchingSegment")
+  private SceneAnalysisMatchingSegment matchingSegment;
 
 
   /**
@@ -207,6 +211,25 @@ public class SceneAnalysisListItem {
   }
 
 
+  /**
+   * The scene segment that best matches searchText. Present only for semantic-search requests with a non-blank searchText; omitted from ordinary list results.
+   * @return matchingSegment
+   */
+  public SceneAnalysisMatchingSegment getMatchingSegment() {
+    return matchingSegment;
+  }
+
+  /**
+   * The scene segment that best matches searchText. Present only for semantic-search requests with a non-blank searchText; omitted from ordinary list results.
+   *
+   * @param matchingSegment
+   *        The scene segment that best matches searchText. Present only for semantic-search requests with a non-blank searchText; omitted from ordinary list results.
+   */
+  public void setMatchingSegment(SceneAnalysisMatchingSegment matchingSegment) {
+    this.matchingSegment = matchingSegment;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -223,12 +246,13 @@ public class SceneAnalysisListItem {
         Objects.equals(this.title, sceneAnalysisListItem.title) &&
         Objects.equals(this.keywords, sceneAnalysisListItem.keywords) &&
         Objects.equals(this.sceneCount, sceneAnalysisListItem.sceneCount) &&
-        Objects.equals(this.outputLanguageCodes, sceneAnalysisListItem.outputLanguageCodes);
+        Objects.equals(this.outputLanguageCodes, sceneAnalysisListItem.outputLanguageCodes) &&
+        Objects.equals(this.matchingSegment, sceneAnalysisListItem.matchingSegment);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, encodingId, createdAt, description, title, keywords, sceneCount, outputLanguageCodes);
+    return Objects.hash(id, encodingId, createdAt, description, title, keywords, sceneCount, outputLanguageCodes, matchingSegment);
   }
 
   @Override
@@ -244,6 +268,7 @@ public class SceneAnalysisListItem {
     sb.append("    keywords: ").append(toIndentedString(keywords)).append("\n");
     sb.append("    sceneCount: ").append(toIndentedString(sceneCount)).append("\n");
     sb.append("    outputLanguageCodes: ").append(toIndentedString(outputLanguageCodes)).append("\n");
+    sb.append("    matchingSegment: ").append(toIndentedString(matchingSegment)).append("\n");
     sb.append("}");
     return sb.toString();
   }

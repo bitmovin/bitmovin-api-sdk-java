@@ -10,17 +10,21 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum AkamaiMslVersion {
+public enum AdvisoryCategory {
   
+  /**
+   * Tobacco imagery such as smoking, cigarettes, cigars, pipes, or tobacco products
+   */
+  TOBACCO("TOBACCO"),
   
-  MSL4("MSL4"),
-  
-  
-  MSL5("MSL5");
+  /**
+   * Vaping imagery such as e-cigarettes, vape pens, or their use
+   */
+  VAPE("VAPE");
 
   private String value;
 
-  AkamaiMslVersion(String value) {
+  AdvisoryCategory(String value) {
     this.value = value;
   }
 
@@ -35,8 +39,8 @@ public enum AkamaiMslVersion {
   }
 
   @JsonCreator
-  public static AkamaiMslVersion fromValue(String text) {
-    for (AkamaiMslVersion b : AkamaiMslVersion.values()) {
+  public static AdvisoryCategory fromValue(String text) {
+    for (AdvisoryCategory b : AdvisoryCategory.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

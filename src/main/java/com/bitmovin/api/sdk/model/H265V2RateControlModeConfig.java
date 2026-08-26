@@ -9,12 +9,11 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * Rate control mode configuration. Use H265V2PerceptualQualityModeConfig for PQP mode or H265V2ConstantBitrateModeConfig for CBR mode.
+ * Rate control mode configuration. Use H265V2PerceptualQualityModeConfig for PQP mode.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = false, defaultImpl = H265V2RateControlModeConfig.class)
 @JsonSubTypes({
   @JsonSubTypes.Type(value = H265V2PerceptualQualityModeConfig.class, name = "PERCEPTUAL_QUALITY_MODE"),
-  @JsonSubTypes.Type(value = H265V2ConstantBitrateModeConfig.class, name = "CONSTANT_BITRATE_MODE"),
 })
 
 public class H265V2RateControlModeConfig {

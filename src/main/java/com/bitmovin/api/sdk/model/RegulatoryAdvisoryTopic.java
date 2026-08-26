@@ -10,17 +10,16 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum AkamaiMslVersion {
+public enum RegulatoryAdvisoryTopic {
   
-  
-  MSL4("MSL4"),
-  
-  
-  MSL5("MSL5");
+  /**
+   * Tobacco and vaping imagery, as covered by statutory on-screen advisory requirements such as the Indian Cigarettes and Other Tobacco Products Amendment Rules, 2023. Detected shots are reported per category, distinguishing tobacco from vaping imagery
+   */
+  TOBACCO("TOBACCO");
 
   private String value;
 
-  AkamaiMslVersion(String value) {
+  RegulatoryAdvisoryTopic(String value) {
     this.value = value;
   }
 
@@ -35,8 +34,8 @@ public enum AkamaiMslVersion {
   }
 
   @JsonCreator
-  public static AkamaiMslVersion fromValue(String text) {
-    for (AkamaiMslVersion b : AkamaiMslVersion.values()) {
+  public static RegulatoryAdvisoryTopic fromValue(String text) {
+    for (RegulatoryAdvisoryTopic b : RegulatoryAdvisoryTopic.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

@@ -5,6 +5,7 @@ import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AiSceneAnalysisAssetDescription;
 import com.bitmovin.api.sdk.model.AiSceneAnalysisAutomaticAdPlacement;
 import com.bitmovin.api.sdk.model.AiSceneAnalysisOutputLanguageCodes;
+import com.bitmovin.api.sdk.model.AiSceneAnalysisRegulatoryAdvisories;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -23,6 +24,9 @@ public class AiSceneAnalysisFeatures {
 
   @JsonProperty("outputLanguageCodes")
   private AiSceneAnalysisOutputLanguageCodes outputLanguageCodes;
+
+  @JsonProperty("regulatoryAdvisories")
+  private AiSceneAnalysisRegulatoryAdvisories regulatoryAdvisories;
 
 
   /**
@@ -82,6 +86,25 @@ public class AiSceneAnalysisFeatures {
   }
 
 
+  /**
+   * AI scene analysis will screen the asset for content requiring a statutory on-screen advisory and report the findings per shot in the asset description. Requires assetDescription. Contact support to enable this feature for your organization. 
+   * @return regulatoryAdvisories
+   */
+  public AiSceneAnalysisRegulatoryAdvisories getRegulatoryAdvisories() {
+    return regulatoryAdvisories;
+  }
+
+  /**
+   * AI scene analysis will screen the asset for content requiring a statutory on-screen advisory and report the findings per shot in the asset description. Requires assetDescription. Contact support to enable this feature for your organization. 
+   *
+   * @param regulatoryAdvisories
+   *        AI scene analysis will screen the asset for content requiring a statutory on-screen advisory and report the findings per shot in the asset description. Requires assetDescription. Contact support to enable this feature for your organization. 
+   */
+  public void setRegulatoryAdvisories(AiSceneAnalysisRegulatoryAdvisories regulatoryAdvisories) {
+    this.regulatoryAdvisories = regulatoryAdvisories;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -93,12 +116,13 @@ public class AiSceneAnalysisFeatures {
     AiSceneAnalysisFeatures aiSceneAnalysisFeatures = (AiSceneAnalysisFeatures) o;
     return Objects.equals(this.assetDescription, aiSceneAnalysisFeatures.assetDescription) &&
         Objects.equals(this.automaticAdPlacement, aiSceneAnalysisFeatures.automaticAdPlacement) &&
-        Objects.equals(this.outputLanguageCodes, aiSceneAnalysisFeatures.outputLanguageCodes);
+        Objects.equals(this.outputLanguageCodes, aiSceneAnalysisFeatures.outputLanguageCodes) &&
+        Objects.equals(this.regulatoryAdvisories, aiSceneAnalysisFeatures.regulatoryAdvisories);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(assetDescription, automaticAdPlacement, outputLanguageCodes);
+    return Objects.hash(assetDescription, automaticAdPlacement, outputLanguageCodes, regulatoryAdvisories);
   }
 
   @Override
@@ -109,6 +133,7 @@ public class AiSceneAnalysisFeatures {
     sb.append("    assetDescription: ").append(toIndentedString(assetDescription)).append("\n");
     sb.append("    automaticAdPlacement: ").append(toIndentedString(automaticAdPlacement)).append("\n");
     sb.append("    outputLanguageCodes: ").append(toIndentedString(outputLanguageCodes)).append("\n");
+    sb.append("    regulatoryAdvisories: ").append(toIndentedString(regulatoryAdvisories)).append("\n");
     sb.append("}");
     return sb.toString();
   }

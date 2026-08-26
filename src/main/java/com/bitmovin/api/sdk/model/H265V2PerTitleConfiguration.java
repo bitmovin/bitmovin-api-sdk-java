@@ -21,9 +21,6 @@ public class H265V2PerTitleConfiguration extends PerTitleConfiguration {
   @JsonProperty("codecMaxBitrateFactor")
   private Double codecMaxBitrateFactor;
 
-  @JsonProperty("codecBufsizeFactor")
-  private Double codecBufsizeFactor;
-
   @JsonProperty("targetQualityQp")
   private Integer targetQualityQp;
 
@@ -67,25 +64,6 @@ public class H265V2PerTitleConfiguration extends PerTitleConfiguration {
 
 
   /**
-   * This factor is used to calculate the bufsize of the codec configuration for the generated representations as a multiple of the targetBitrate
-   * @return codecBufsizeFactor
-   */
-  public Double getCodecBufsizeFactor() {
-    return codecBufsizeFactor;
-  }
-
-  /**
-   * This factor is used to calculate the bufsize of the codec configuration for the generated representations as a multiple of the targetBitrate
-   *
-   * @param codecBufsizeFactor
-   *        This factor is used to calculate the bufsize of the codec configuration for the generated representations as a multiple of the targetBitrate
-   */
-  public void setCodecBufsizeFactor(Double codecBufsizeFactor) {
-    this.codecBufsizeFactor = codecBufsizeFactor;
-  }
-
-
-  /**
    * Desired target quality of the highest representation expressed as QP value used for the CQP probe encode
    * @return targetQualityQp
    */
@@ -115,14 +93,13 @@ public class H265V2PerTitleConfiguration extends PerTitleConfiguration {
     H265V2PerTitleConfiguration h265V2PerTitleConfiguration = (H265V2PerTitleConfiguration) o;
     return Objects.equals(this.codecMinBitrateFactor, h265V2PerTitleConfiguration.codecMinBitrateFactor) &&
         Objects.equals(this.codecMaxBitrateFactor, h265V2PerTitleConfiguration.codecMaxBitrateFactor) &&
-        Objects.equals(this.codecBufsizeFactor, h265V2PerTitleConfiguration.codecBufsizeFactor) &&
         Objects.equals(this.targetQualityQp, h265V2PerTitleConfiguration.targetQualityQp) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(codecMinBitrateFactor, codecMaxBitrateFactor, codecBufsizeFactor, targetQualityQp, super.hashCode());
+    return Objects.hash(codecMinBitrateFactor, codecMaxBitrateFactor, targetQualityQp, super.hashCode());
   }
 
   @Override
@@ -132,7 +109,6 @@ public class H265V2PerTitleConfiguration extends PerTitleConfiguration {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    codecMinBitrateFactor: ").append(toIndentedString(codecMinBitrateFactor)).append("\n");
     sb.append("    codecMaxBitrateFactor: ").append(toIndentedString(codecMaxBitrateFactor)).append("\n");
-    sb.append("    codecBufsizeFactor: ").append(toIndentedString(codecBufsizeFactor)).append("\n");
     sb.append("    targetQualityQp: ").append(toIndentedString(targetQualityQp)).append("\n");
     sb.append("}");
     return sb.toString();

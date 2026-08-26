@@ -44,7 +44,7 @@ public class AnalysesApi {
     }
     /**
      * List AI Scene Analyses
-     * Returns a paginated list of AI scene analyses. A searchText containing at least one non-whitespace character enables semantic search, must contain between 3 and 100 characters, and uses relevance ordering; omitted, empty, or whitespace-only searchText preserves ordinary list behavior.
+     * Returns a paginated list of AI scene analyses. A searchText containing at least one non-whitespace character enables semantic search, must contain between 3 and 100 characters, and uses relevance ordering; each semantic-search result includes the matching scene segment. Omitted, empty, or whitespace-only searchText preserves ordinary list behavior and omits the matching segment.
      * @return List&lt;SceneAnalysisListItem&gt;
      * @throws BitmovinException if fails to make API call
      */
@@ -58,7 +58,7 @@ public class AnalysesApi {
 
     /**
      * List AI Scene Analyses
-     * Returns a paginated list of AI scene analyses. A searchText containing at least one non-whitespace character enables semantic search, must contain between 3 and 100 characters, and uses relevance ordering; omitted, empty, or whitespace-only searchText preserves ordinary list behavior.
+     * Returns a paginated list of AI scene analyses. A searchText containing at least one non-whitespace character enables semantic search, must contain between 3 and 100 characters, and uses relevance ordering; each semantic-search result includes the matching scene segment. Omitted, empty, or whitespace-only searchText preserves ordinary list behavior and omits the matching segment.
      * @param queryParams The query parameters for sorting, filtering and paging options (optional)
      * @return List&lt;SceneAnalysisListItem&gt;
      * @throws BitmovinException if fails to make API call
