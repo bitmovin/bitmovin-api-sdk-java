@@ -41,6 +41,9 @@ public class AdAnalyticsQueryRequest extends AnalyticsQueryTimeframe {
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<AdAnalyticsAttribute> groupBy = new ArrayList<AdAnalyticsAttribute>();
 
+  @JsonProperty("includeContext")
+  private Boolean includeContext;
+
   @JsonProperty("limit")
   private Long limit;
 
@@ -174,6 +177,25 @@ public class AdAnalyticsQueryRequest extends AnalyticsQueryTimeframe {
 
 
   /**
+   * Whether context data should be included in the response
+   * @return includeContext
+   */
+  public Boolean getIncludeContext() {
+    return includeContext;
+  }
+
+  /**
+   * Whether context data should be included in the response
+   *
+   * @param includeContext
+   *        Whether context data should be included in the response
+   */
+  public void setIncludeContext(Boolean includeContext) {
+    this.includeContext = includeContext;
+  }
+
+
+  /**
    * Maximum number of rows returned (max. 200)
    * @return limit
    */
@@ -226,6 +248,7 @@ public class AdAnalyticsQueryRequest extends AnalyticsQueryTimeframe {
         Objects.equals(this.dimension, adAnalyticsQueryRequest.dimension) &&
         Objects.equals(this.interval, adAnalyticsQueryRequest.interval) &&
         Objects.equals(this.groupBy, adAnalyticsQueryRequest.groupBy) &&
+        Objects.equals(this.includeContext, adAnalyticsQueryRequest.includeContext) &&
         Objects.equals(this.limit, adAnalyticsQueryRequest.limit) &&
         Objects.equals(this.offset, adAnalyticsQueryRequest.offset) &&
         super.equals(o);
@@ -233,7 +256,7 @@ public class AdAnalyticsQueryRequest extends AnalyticsQueryTimeframe {
 
   @Override
   public int hashCode() {
-    return Objects.hash(licenseKey, filters, orderBy, dimension, interval, groupBy, limit, offset, super.hashCode());
+    return Objects.hash(licenseKey, filters, orderBy, dimension, interval, groupBy, includeContext, limit, offset, super.hashCode());
   }
 
   @Override
@@ -247,6 +270,7 @@ public class AdAnalyticsQueryRequest extends AnalyticsQueryTimeframe {
     sb.append("    dimension: ").append(toIndentedString(dimension)).append("\n");
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    groupBy: ").append(toIndentedString(groupBy)).append("\n");
+    sb.append("    includeContext: ").append(toIndentedString(includeContext)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
     sb.append("}");

@@ -4,7 +4,6 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AudioConfiguration;
 import com.bitmovin.api.sdk.model.DtsXChannelLayout;
-import com.bitmovin.api.sdk.model.MediaConfigBitrate;
 import com.bitmovin.api.sdk.model.OttLoudnessMode;
 import java.util.Date;
 import java.util.List;
