@@ -5,11 +5,13 @@ import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.player.channels.ChannelsApi;
 import com.bitmovin.api.sdk.player.licenses.LicensesApi;
 import com.bitmovin.api.sdk.player.customBuilds.CustomBuildsApi;
+import com.bitmovin.api.sdk.player.testing.TestingApi;
 
 public class PlayerApi {
     public final ChannelsApi channels;
     public final LicensesApi licenses;
     public final CustomBuildsApi customBuilds;
+    public final TestingApi testing;
 
     public PlayerApi(BitmovinApiClientFactory clientFactory) {
         if (clientFactory == null)
@@ -20,6 +22,7 @@ public class PlayerApi {
         this.channels = new ChannelsApi(clientFactory);
         this.licenses = new LicensesApi(clientFactory);
         this.customBuilds = new CustomBuildsApi(clientFactory);
+        this.testing = new TestingApi(clientFactory);
     }
 
     /**

@@ -308,6 +308,11 @@ public enum CloudRegion {
   AZURE_UK_SOUTH("AZURE_UK_SOUTH"),
   
   /**
+   * Akamai Melbourne, Australia
+   */
+  AKAMAI_AU_MEL("AKAMAI_AU_MEL"),
+  
+  /**
    * Akamai São Paulo, Brazil
    */
   AKAMAI_BR_GRU("AKAMAI_BR_GRU"),

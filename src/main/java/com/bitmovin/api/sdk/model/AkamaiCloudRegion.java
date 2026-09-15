@@ -13,6 +13,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum AkamaiCloudRegion {
   
   /**
+   * Melbourne, Australia
+   */
+  AU_MEL("AU_MEL"),
+  
+  /**
    * São Paulo, Brazil
    */
   BR_GRU("BR_GRU"),
