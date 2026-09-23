@@ -13,6 +13,12 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum H265V2PresetConfiguration {
   
   
+  VOD_SPEED("VOD_SPEED"),
+  
+  
+  VOD_STANDARD("VOD_STANDARD"),
+  
+  
   VOD_QUALITY("VOD_QUALITY"),
   
   
