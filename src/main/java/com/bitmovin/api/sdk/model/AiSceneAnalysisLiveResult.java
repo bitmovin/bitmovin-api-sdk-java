@@ -30,6 +30,9 @@ public class AiSceneAnalysisLiveResult {
   @JsonProperty("producedAt")
   private Date producedAt;
 
+  @JsonProperty("mediaTimeOriginUnixMs")
+  private Long mediaTimeOriginUnixMs;
+
   @JsonProperty("isFinal")
   private Boolean isFinal;
 
@@ -127,6 +130,28 @@ public class AiSceneAnalysisLiveResult {
    */
   public void setProducedAt(Date producedAt) {
     this.producedAt = producedAt;
+  }
+
+
+  /**
+   * UTC presentation-clock time in Unix milliseconds corresponding to media time zero. This origin is fixed for the Live Analysis; coverage, observation, and source-gap times remain relative to it. It is not the source capture time or result publication time. (required)
+   * minimum: 1
+   * @return mediaTimeOriginUnixMs
+   */
+  public Long getMediaTimeOriginUnixMs() {
+    return mediaTimeOriginUnixMs;
+  }
+
+  /**
+   * UTC presentation-clock time in Unix milliseconds corresponding to media time zero. This origin is fixed for the Live Analysis; coverage, observation, and source-gap times remain relative to it. It is not the source capture time or result publication time. (required)
+   * minimum: 1
+   *
+   * @param mediaTimeOriginUnixMs
+   *        UTC presentation-clock time in Unix milliseconds corresponding to media time zero. This origin is fixed for the Live Analysis; coverage, observation, and source-gap times remain relative to it. It is not the source capture time or result publication time. (required)
+   *        minimum: 1
+   */
+  public void setMediaTimeOriginUnixMs(Long mediaTimeOriginUnixMs) {
+    this.mediaTimeOriginUnixMs = mediaTimeOriginUnixMs;
   }
 
 
@@ -273,6 +298,7 @@ public class AiSceneAnalysisLiveResult {
         Objects.equals(this.encodingId, aiSceneAnalysisLiveResult.encodingId) &&
         Objects.equals(this.sequence, aiSceneAnalysisLiveResult.sequence) &&
         Objects.equals(this.producedAt, aiSceneAnalysisLiveResult.producedAt) &&
+        Objects.equals(this.mediaTimeOriginUnixMs, aiSceneAnalysisLiveResult.mediaTimeOriginUnixMs) &&
         Objects.equals(this.isFinal, aiSceneAnalysisLiveResult.isFinal) &&
         Objects.equals(this.analyzedStartTimeSeconds, aiSceneAnalysisLiveResult.analyzedStartTimeSeconds) &&
         Objects.equals(this.analyzedEndTimeSeconds, aiSceneAnalysisLiveResult.analyzedEndTimeSeconds) &&
@@ -283,7 +309,7 @@ public class AiSceneAnalysisLiveResult {
 
   @Override
   public int hashCode() {
-    return Objects.hash(analysisId, encodingId, sequence, producedAt, isFinal, analyzedStartTimeSeconds, analyzedEndTimeSeconds, sourceGaps, metadata, observations);
+    return Objects.hash(analysisId, encodingId, sequence, producedAt, mediaTimeOriginUnixMs, isFinal, analyzedStartTimeSeconds, analyzedEndTimeSeconds, sourceGaps, metadata, observations);
   }
 
   @Override
@@ -295,6 +321,7 @@ public class AiSceneAnalysisLiveResult {
     sb.append("    encodingId: ").append(toIndentedString(encodingId)).append("\n");
     sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
     sb.append("    producedAt: ").append(toIndentedString(producedAt)).append("\n");
+    sb.append("    mediaTimeOriginUnixMs: ").append(toIndentedString(mediaTimeOriginUnixMs)).append("\n");
     sb.append("    isFinal: ").append(toIndentedString(isFinal)).append("\n");
     sb.append("    analyzedStartTimeSeconds: ").append(toIndentedString(analyzedStartTimeSeconds)).append("\n");
     sb.append("    analyzedEndTimeSeconds: ").append(toIndentedString(analyzedEndTimeSeconds)).append("\n");

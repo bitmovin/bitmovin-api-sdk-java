@@ -19,6 +19,7 @@ import com.bitmovin.api.sdk.common.QueryMapWrapper;
 import com.bitmovin.api.sdk.common.BitmovinApiBuilder;
 import com.bitmovin.api.sdk.common.BitmovinApiClientFactory;
 import com.bitmovin.api.sdk.encoding.encodings.live.resetLiveManifestTimeshift.ResetLiveManifestTimeshiftApi;
+import com.bitmovin.api.sdk.encoding.encodings.live.updateAutoshutdownConfig.UpdateAutoshutdownConfigApi;
 import com.bitmovin.api.sdk.encoding.encodings.live.heartbeat.HeartbeatApi;
 import com.bitmovin.api.sdk.encoding.encodings.live.heartbeatFinal.HeartbeatFinalApi;
 import com.bitmovin.api.sdk.encoding.encodings.live.hd.HdApi;
@@ -28,6 +29,7 @@ import com.bitmovin.api.sdk.encoding.encodings.live.scte35Cue.Scte35CueApi;
 
 public class LiveApi {
     public final ResetLiveManifestTimeshiftApi resetLiveManifestTimeshift;
+    public final UpdateAutoshutdownConfigApi updateAutoshutdownConfig;
     public final HeartbeatApi heartbeat;
     public final HeartbeatFinalApi heartbeatFinal;
     public final HdApi hd;
@@ -46,6 +48,7 @@ public class LiveApi {
         this.apiClient = clientFactory.createApiClient(LiveApiClient.class);
 
         this.resetLiveManifestTimeshift = new ResetLiveManifestTimeshiftApi(clientFactory);
+        this.updateAutoshutdownConfig = new UpdateAutoshutdownConfigApi(clientFactory);
         this.heartbeat = new HeartbeatApi(clientFactory);
         this.heartbeatFinal = new HeartbeatFinalApi(clientFactory);
         this.hd = new HdApi(clientFactory);

@@ -3,10 +3,12 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AutoLevelSetup;
+import com.bitmovin.api.sdk.model.Av1DynamicRangeFormat;
 import com.bitmovin.api.sdk.model.Av1PresetConfiguration;
 import com.bitmovin.api.sdk.model.ColorConfig;
 import com.bitmovin.api.sdk.model.DisplayAspectRatio;
 import com.bitmovin.api.sdk.model.EncodingMode;
+import com.bitmovin.api.sdk.model.LevelAv1;
 import com.bitmovin.api.sdk.model.PixelFormat;
 import com.bitmovin.api.sdk.model.VideoConfiguration;
 import java.util.Date;
@@ -27,6 +29,12 @@ public class Av1VideoConfiguration extends VideoConfiguration {
 
   @JsonProperty("autoLevelSetup")
   private AutoLevelSetup autoLevelSetup;
+
+  @JsonProperty("maxLevel")
+  private LevelAv1 maxLevel;
+
+  @JsonProperty("dynamicRangeFormat")
+  private Av1DynamicRangeFormat dynamicRangeFormat;
 
   @JsonProperty("masterDisplay")
   private String masterDisplay;
@@ -73,6 +81,44 @@ public class Av1VideoConfiguration extends VideoConfiguration {
    */
   public void setAutoLevelSetup(AutoLevelSetup autoLevelSetup) {
     this.autoLevelSetup = autoLevelSetup;
+  }
+
+
+  /**
+   * Upper bound for the automatically calculated level. The level determined by autoLevelSetup is clamped to this value, so the encoder never signals a level higher than the one given here. If the target bitrate does not fit within this level, the encoder constrains the bitrate distribution to stay conformant rather than raising the level. Has no effect when autoLevelSetup is disabled.
+   * @return maxLevel
+   */
+  public LevelAv1 getMaxLevel() {
+    return maxLevel;
+  }
+
+  /**
+   * Upper bound for the automatically calculated level. The level determined by autoLevelSetup is clamped to this value, so the encoder never signals a level higher than the one given here. If the target bitrate does not fit within this level, the encoder constrains the bitrate distribution to stay conformant rather than raising the level. Has no effect when autoLevelSetup is disabled.
+   *
+   * @param maxLevel
+   *        Upper bound for the automatically calculated level. The level determined by autoLevelSetup is clamped to this value, so the encoder never signals a level higher than the one given here. If the target bitrate does not fit within this level, the encoder constrains the bitrate distribution to stay conformant rather than raising the level. Has no effect when autoLevelSetup is disabled.
+   */
+  public void setMaxLevel(LevelAv1 maxLevel) {
+    this.maxLevel = maxLevel;
+  }
+
+
+  /**
+   * Configures what kind of dynamic range the output should conform to.
+   * @return dynamicRangeFormat
+   */
+  public Av1DynamicRangeFormat getDynamicRangeFormat() {
+    return dynamicRangeFormat;
+  }
+
+  /**
+   * Configures what kind of dynamic range the output should conform to.
+   *
+   * @param dynamicRangeFormat
+   *        Configures what kind of dynamic range the output should conform to.
+   */
+  public void setDynamicRangeFormat(Av1DynamicRangeFormat dynamicRangeFormat) {
+    this.dynamicRangeFormat = dynamicRangeFormat;
   }
 
 
@@ -156,6 +202,8 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     Av1VideoConfiguration av1VideoConfiguration = (Av1VideoConfiguration) o;
     return Objects.equals(this.presetConfiguration, av1VideoConfiguration.presetConfiguration) &&
         Objects.equals(this.autoLevelSetup, av1VideoConfiguration.autoLevelSetup) &&
+        Objects.equals(this.maxLevel, av1VideoConfiguration.maxLevel) &&
+        Objects.equals(this.dynamicRangeFormat, av1VideoConfiguration.dynamicRangeFormat) &&
         Objects.equals(this.masterDisplay, av1VideoConfiguration.masterDisplay) &&
         Objects.equals(this.maxContentLightLevel, av1VideoConfiguration.maxContentLightLevel) &&
         Objects.equals(this.maxPictureAverageLightLevel, av1VideoConfiguration.maxPictureAverageLightLevel) &&
@@ -164,7 +212,7 @@ public class Av1VideoConfiguration extends VideoConfiguration {
 
   @Override
   public int hashCode() {
-    return Objects.hash(presetConfiguration, autoLevelSetup, masterDisplay, maxContentLightLevel, maxPictureAverageLightLevel, super.hashCode());
+    return Objects.hash(presetConfiguration, autoLevelSetup, maxLevel, dynamicRangeFormat, masterDisplay, maxContentLightLevel, maxPictureAverageLightLevel, super.hashCode());
   }
 
   @Override
@@ -174,6 +222,8 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    presetConfiguration: ").append(toIndentedString(presetConfiguration)).append("\n");
     sb.append("    autoLevelSetup: ").append(toIndentedString(autoLevelSetup)).append("\n");
+    sb.append("    maxLevel: ").append(toIndentedString(maxLevel)).append("\n");
+    sb.append("    dynamicRangeFormat: ").append(toIndentedString(dynamicRangeFormat)).append("\n");
     sb.append("    masterDisplay: ").append(toIndentedString(masterDisplay)).append("\n");
     sb.append("    maxContentLightLevel: ").append(toIndentedString(maxContentLightLevel)).append("\n");
     sb.append("    maxPictureAverageLightLevel: ").append(toIndentedString(maxPictureAverageLightLevel)).append("\n");
