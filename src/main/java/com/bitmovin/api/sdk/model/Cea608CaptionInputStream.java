@@ -66,7 +66,7 @@ public class Cea608CaptionInputStream extends InputStream {
 
 
   /**
-   * The channel number of the subtitle on the respective stream position (required)
+   * The CEA-608 caption channel to extract, as defined in ANSI/CTA-608-E. Only the primary channel of each field is selectable: CC1 on field 1 and CC3 on field 2. (required)
    * @return channel
    */
   public Cea608ChannelType getChannel() {
@@ -74,10 +74,10 @@ public class Cea608CaptionInputStream extends InputStream {
   }
 
   /**
-   * The channel number of the subtitle on the respective stream position (required)
+   * The CEA-608 caption channel to extract, as defined in ANSI/CTA-608-E. Only the primary channel of each field is selectable: CC1 on field 1 and CC3 on field 2. (required)
    *
    * @param channel
-   *        The channel number of the subtitle on the respective stream position (required)
+   *        The CEA-608 caption channel to extract, as defined in ANSI/CTA-608-E. Only the primary channel of each field is selectable: CC1 on field 1 and CC3 on field 2. (required)
    */
   public void setChannel(Cea608ChannelType channel) {
     this.channel = channel;

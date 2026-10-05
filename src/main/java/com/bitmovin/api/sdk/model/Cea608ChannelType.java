@@ -13,12 +13,12 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum Cea608ChannelType {
   
   /**
-   * Subtitle channel track
+   * Primary caption channel of field 1, the channel that carries the main captions in almost every stream
    */
   CC1("CC1"),
   
   /**
-   * Subtitle channel track
+   * Primary caption channel of field 2, typically used for a secondary language
    */
   CC3("CC3");
 

@@ -57,7 +57,7 @@ public class Cea708Api {
     /**
      * Delete CEA 708 Input Stream
      * 
-     * @param encodingId Id of the Encoding (required)
+     * @param encodingId Id of the encoding. (required)
      * @param inputStreamId Id of the CEA 708 input stream. (required)
      * @return BitmovinResponse
      * @throws BitmovinException if fails to make API call

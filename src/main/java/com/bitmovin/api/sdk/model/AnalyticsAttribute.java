@@ -457,6 +457,9 @@ public enum AnalyticsAttribute {
   STARTUPTIME("STARTUPTIME"),
   
   
+  START_FAILURE_PERCENTAGE("START_FAILURE_PERCENTAGE"),
+  
+  
   STREAM_FORMAT("STREAM_FORMAT"),
   
   
