@@ -367,6 +367,9 @@ public enum AnalyticsAttribute {
   LATENCY("LATENCY"),
   
   
+  LATENCY_DELTA("LATENCY_DELTA"),
+  
+  
   LICENSE_KEY("LICENSE_KEY"),
   
   

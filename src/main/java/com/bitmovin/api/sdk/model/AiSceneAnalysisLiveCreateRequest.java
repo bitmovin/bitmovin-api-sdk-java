@@ -26,6 +26,9 @@ public class AiSceneAnalysisLiveCreateRequest {
   @JsonProperty("cloudRegion")
   private CloudRegion cloudRegion;
 
+  @JsonProperty("encoderVersion")
+  private String encoderVersion;
+
   @JsonProperty("recording")
   private AiSceneAnalysisLiveRecordingRequest recording;
 
@@ -92,6 +95,25 @@ public class AiSceneAnalysisLiveCreateRequest {
 
 
   /**
+   * Encoder release for the backing Live Encoding, using the same values and validation as &#x60;Encoding.encoderVersion&#x60; (for example, &#x60;LATEST&#x60; or a supported release version). Passed unchanged to the Encoding Resource Service. If omitted, the server default is used. Selects the full encoder release; component header overrides remain separate.
+   * @return encoderVersion
+   */
+  public String getEncoderVersion() {
+    return encoderVersion;
+  }
+
+  /**
+   * Encoder release for the backing Live Encoding, using the same values and validation as &#x60;Encoding.encoderVersion&#x60; (for example, &#x60;LATEST&#x60; or a supported release version). Passed unchanged to the Encoding Resource Service. If omitted, the server default is used. Selects the full encoder release; component header overrides remain separate.
+   *
+   * @param encoderVersion
+   *        Encoder release for the backing Live Encoding, using the same values and validation as &#x60;Encoding.encoderVersion&#x60; (for example, &#x60;LATEST&#x60; or a supported release version). Passed unchanged to the Encoding Resource Service. If omitted, the server default is used. Selects the full encoder release; component header overrides remain separate.
+   */
+  public void setEncoderVersion(String encoderVersion) {
+    this.encoderVersion = encoderVersion;
+  }
+
+
+  /**
    * Destinations for the stream recording (required)
    * @return recording
    */
@@ -146,13 +168,14 @@ public class AiSceneAnalysisLiveCreateRequest {
     return Objects.equals(this.name, aiSceneAnalysisLiveCreateRequest.name) &&
         Objects.equals(this.streamKey, aiSceneAnalysisLiveCreateRequest.streamKey) &&
         Objects.equals(this.cloudRegion, aiSceneAnalysisLiveCreateRequest.cloudRegion) &&
+        Objects.equals(this.encoderVersion, aiSceneAnalysisLiveCreateRequest.encoderVersion) &&
         Objects.equals(this.recording, aiSceneAnalysisLiveCreateRequest.recording) &&
         Objects.equals(this.outputs, aiSceneAnalysisLiveCreateRequest.outputs);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, streamKey, cloudRegion, recording, outputs);
+    return Objects.hash(name, streamKey, cloudRegion, encoderVersion, recording, outputs);
   }
 
   @Override
@@ -163,6 +186,7 @@ public class AiSceneAnalysisLiveCreateRequest {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    streamKey: ").append(toIndentedString(streamKey)).append("\n");
     sb.append("    cloudRegion: ").append(toIndentedString(cloudRegion)).append("\n");
+    sb.append("    encoderVersion: ").append(toIndentedString(encoderVersion)).append("\n");
     sb.append("    recording: ").append(toIndentedString(recording)).append("\n");
     sb.append("    outputs: ").append(toIndentedString(outputs)).append("\n");
     sb.append("}");
