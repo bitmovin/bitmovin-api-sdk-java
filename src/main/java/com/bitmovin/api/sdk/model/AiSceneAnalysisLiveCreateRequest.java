@@ -138,7 +138,7 @@ public class AiSceneAnalysisLiveCreateRequest {
   }
 
   /**
-   * Destinations for cumulative AI analysis results (required)
+   * Destinations for incremental Live Analysis result batches (required)
    * @return outputs
    */
   public List<AiSceneAnalysisLiveOutput> getOutputs() {
@@ -146,10 +146,10 @@ public class AiSceneAnalysisLiveCreateRequest {
   }
 
   /**
-   * Destinations for cumulative AI analysis results (required)
+   * Destinations for incremental Live Analysis result batches (required)
    *
    * @param outputs
-   *        Destinations for cumulative AI analysis results (required)
+   *        Destinations for incremental Live Analysis result batches (required)
    */
   public void setOutputs(List<AiSceneAnalysisLiveOutput> outputs) {
     this.outputs = outputs;

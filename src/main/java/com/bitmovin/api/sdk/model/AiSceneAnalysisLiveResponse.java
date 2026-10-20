@@ -89,7 +89,7 @@ public class AiSceneAnalysisLiveResponse {
   }
 
   /**
-   * Resolved Encoding Output ID references for cumulative AI analysis results (required)
+   * Resolved Encoding Output ID references for incremental Live Analysis result batches (required)
    * @return outputs
    */
   public List<EncodingOutput> getOutputs() {

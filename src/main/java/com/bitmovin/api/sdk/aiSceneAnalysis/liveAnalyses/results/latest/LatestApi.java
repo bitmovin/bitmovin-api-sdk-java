@@ -41,7 +41,7 @@ public class LatestApi {
     }
     /**
      * Get Live Analysis Latest Result
-     * Returns the latest cumulative AI analysis results. 
+     * Returns the latest complete Live Analysis result snapshot. 
      * @param analysisId ID of the Live Analysis (required)
      * @return AiSceneAnalysisLiveResult
      * @throws BitmovinException if fails to make API call

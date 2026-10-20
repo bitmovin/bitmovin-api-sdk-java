@@ -26,7 +26,7 @@ public class AiSceneAnalysisLiveObservation {
 
 
   /**
-   * Stable opaque observation ID that remains unchanged across cumulative result generations (required)
+   * Stable opaque observation ID that remains unchanged during the observation&#39;s lifetime and is never reused after removal (required)
    * @return id
    */
   public String getId() {
@@ -34,10 +34,10 @@ public class AiSceneAnalysisLiveObservation {
   }
 
   /**
-   * Stable opaque observation ID that remains unchanged across cumulative result generations (required)
+   * Stable opaque observation ID that remains unchanged during the observation&#39;s lifetime and is never reused after removal (required)
    *
    * @param id
-   *        Stable opaque observation ID that remains unchanged across cumulative result generations (required)
+   *        Stable opaque observation ID that remains unchanged during the observation&#39;s lifetime and is never reused after removal (required)
    */
   public void setId(String id) {
     this.id = id;

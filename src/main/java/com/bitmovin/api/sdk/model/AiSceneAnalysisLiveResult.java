@@ -2,6 +2,7 @@ package com.bitmovin.api.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.bitmovin.api.sdk.model.AiSceneAnalysisLiveKeyMoment;
 import com.bitmovin.api.sdk.model.AiSceneAnalysisLiveObservation;
 import com.bitmovin.api.sdk.model.AiSceneAnalysisLiveResultMetadata;
 import com.bitmovin.api.sdk.model.AiSceneAnalysisLiveSourceGap;
@@ -14,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * Cumulative immutable result generation for a Live Analysis
+ * Complete snapshot of a Live Analysis at a specific result sequence
  */
 
 public class AiSceneAnalysisLiveResult {
@@ -52,6 +53,10 @@ public class AiSceneAnalysisLiveResult {
   @JsonProperty("observations")
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
   private List<AiSceneAnalysisLiveObservation> observations = new ArrayList<AiSceneAnalysisLiveObservation>();
+
+  @JsonProperty("keyMoments")
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private List<AiSceneAnalysisLiveKeyMoment> keyMoments = new ArrayList<AiSceneAnalysisLiveKeyMoment>();
 
 
   /**
@@ -93,7 +98,7 @@ public class AiSceneAnalysisLiveResult {
 
 
   /**
-   * Monotonically increasing generation sequence, starting at 1 (required)
+   * Monotonically increasing result sequence, starting at 1 (required)
    * minimum: 1
    * @return sequence
    */
@@ -102,11 +107,11 @@ public class AiSceneAnalysisLiveResult {
   }
 
   /**
-   * Monotonically increasing generation sequence, starting at 1 (required)
+   * Monotonically increasing result sequence, starting at 1 (required)
    * minimum: 1
    *
    * @param sequence
-   *        Monotonically increasing generation sequence, starting at 1 (required)
+   *        Monotonically increasing result sequence, starting at 1 (required)
    *        minimum: 1
    */
   public void setSequence(Long sequence) {
@@ -115,7 +120,7 @@ public class AiSceneAnalysisLiveResult {
 
 
   /**
-   * Time at which the AI analysis produced this result generation (required)
+   * Time at which the AI analysis produced this result snapshot (required)
    * @return producedAt
    */
   public Date getProducedAt() {
@@ -123,10 +128,10 @@ public class AiSceneAnalysisLiveResult {
   }
 
   /**
-   * Time at which the AI analysis produced this result generation (required)
+   * Time at which the AI analysis produced this result snapshot (required)
    *
    * @param producedAt
-   *        Time at which the AI analysis produced this result generation (required)
+   *        Time at which the AI analysis produced this result snapshot (required)
    */
   public void setProducedAt(Date producedAt) {
     this.producedAt = producedAt;
@@ -134,7 +139,7 @@ public class AiSceneAnalysisLiveResult {
 
 
   /**
-   * UTC presentation-clock time in Unix milliseconds corresponding to media time zero. This origin is fixed for the Live Analysis; coverage, observation, and source-gap times remain relative to it. It is not the source capture time or result publication time. (required)
+   * UTC presentation-clock time in Unix milliseconds corresponding to media time zero. This origin is fixed for the Live Analysis; coverage, observation, key-moment, and source-gap times remain relative to it. It is not the source capture time or result publication time. (required)
    * minimum: 1
    * @return mediaTimeOriginUnixMs
    */
@@ -143,11 +148,11 @@ public class AiSceneAnalysisLiveResult {
   }
 
   /**
-   * UTC presentation-clock time in Unix milliseconds corresponding to media time zero. This origin is fixed for the Live Analysis; coverage, observation, and source-gap times remain relative to it. It is not the source capture time or result publication time. (required)
+   * UTC presentation-clock time in Unix milliseconds corresponding to media time zero. This origin is fixed for the Live Analysis; coverage, observation, key-moment, and source-gap times remain relative to it. It is not the source capture time or result publication time. (required)
    * minimum: 1
    *
    * @param mediaTimeOriginUnixMs
-   *        UTC presentation-clock time in Unix milliseconds corresponding to media time zero. This origin is fixed for the Live Analysis; coverage, observation, and source-gap times remain relative to it. It is not the source capture time or result publication time. (required)
+   *        UTC presentation-clock time in Unix milliseconds corresponding to media time zero. This origin is fixed for the Live Analysis; coverage, observation, key-moment, and source-gap times remain relative to it. It is not the source capture time or result publication time. (required)
    *        minimum: 1
    */
   public void setMediaTimeOriginUnixMs(Long mediaTimeOriginUnixMs) {
@@ -156,7 +161,7 @@ public class AiSceneAnalysisLiveResult {
 
 
   /**
-   * Whether AI analysis produced this as the final result generation. This does not by itself imply that the Analysis completed successfully. (required)
+   * Whether this is the final result snapshot. This does not by itself imply that the Analysis completed successfully. (required)
    * @return isFinal
    */
   public Boolean getIsFinal() {
@@ -164,10 +169,10 @@ public class AiSceneAnalysisLiveResult {
   }
 
   /**
-   * Whether AI analysis produced this as the final result generation. This does not by itself imply that the Analysis completed successfully. (required)
+   * Whether this is the final result snapshot. This does not by itself imply that the Analysis completed successfully. (required)
    *
    * @param isFinal
-   *        Whether AI analysis produced this as the final result generation. This does not by itself imply that the Analysis completed successfully. (required)
+   *        Whether this is the final result snapshot. This does not by itself imply that the Analysis completed successfully. (required)
    */
   public void setIsFinal(Boolean isFinal) {
     this.isFinal = isFinal;
@@ -224,7 +229,7 @@ public class AiSceneAnalysisLiveResult {
   }
 
   /**
-   * Cumulative closed source gaps on the monotonic analysis timeline (required)
+   * Cumulative closed source gaps on the monotonic analysis timeline. An empty or omitted array means there are no closed source gaps in this snapshot, not that the previous collection is unchanged.
    * @return sourceGaps
    */
   public List<AiSceneAnalysisLiveSourceGap> getSourceGaps() {
@@ -232,10 +237,10 @@ public class AiSceneAnalysisLiveResult {
   }
 
   /**
-   * Cumulative closed source gaps on the monotonic analysis timeline (required)
+   * Cumulative closed source gaps on the monotonic analysis timeline. An empty or omitted array means there are no closed source gaps in this snapshot, not that the previous collection is unchanged.
    *
    * @param sourceGaps
-   *        Cumulative closed source gaps on the monotonic analysis timeline (required)
+   *        Cumulative closed source gaps on the monotonic analysis timeline. An empty or omitted array means there are no closed source gaps in this snapshot, not that the previous collection is unchanged.
    */
   public void setSourceGaps(List<AiSceneAnalysisLiveSourceGap> sourceGaps) {
     this.sourceGaps = sourceGaps;
@@ -243,7 +248,7 @@ public class AiSceneAnalysisLiveResult {
 
 
   /**
-   * Producer metadata for this generation (required)
+   * Metadata for this result snapshot (required)
    * @return metadata
    */
   public AiSceneAnalysisLiveResultMetadata getMetadata() {
@@ -251,10 +256,10 @@ public class AiSceneAnalysisLiveResult {
   }
 
   /**
-   * Producer metadata for this generation (required)
+   * Metadata for this result snapshot (required)
    *
    * @param metadata
-   *        Producer metadata for this generation (required)
+   *        Metadata for this result snapshot (required)
    */
   public void setMetadata(AiSceneAnalysisLiveResultMetadata metadata) {
     this.metadata = metadata;
@@ -267,7 +272,7 @@ public class AiSceneAnalysisLiveResult {
   }
 
   /**
-   * Cumulative immutable observations. Existing observations retain the same ID and content across later generations. Each time range identifies the analyzed media window that produced the observation, not an exact event location. (required)
+   * Complete set of active observations for this result sequence. An empty or omitted array means there are no active observations in this snapshot, not that the previous collection is unchanged. Observations may be removed in later sequences. Observation IDs identify immutable observation content and are never reused. Each time range identifies the analyzed media window that produced the observation, not an exact event location.
    * @return observations
    */
   public List<AiSceneAnalysisLiveObservation> getObservations() {
@@ -275,13 +280,37 @@ public class AiSceneAnalysisLiveResult {
   }
 
   /**
-   * Cumulative immutable observations. Existing observations retain the same ID and content across later generations. Each time range identifies the analyzed media window that produced the observation, not an exact event location. (required)
+   * Complete set of active observations for this result sequence. An empty or omitted array means there are no active observations in this snapshot, not that the previous collection is unchanged. Observations may be removed in later sequences. Observation IDs identify immutable observation content and are never reused. Each time range identifies the analyzed media window that produced the observation, not an exact event location.
    *
    * @param observations
-   *        Cumulative immutable observations. Existing observations retain the same ID and content across later generations. Each time range identifies the analyzed media window that produced the observation, not an exact event location. (required)
+   *        Complete set of active observations for this result sequence. An empty or omitted array means there are no active observations in this snapshot, not that the previous collection is unchanged. Observations may be removed in later sequences. Observation IDs identify immutable observation content and are never reused. Each time range identifies the analyzed media window that produced the observation, not an exact event location.
    */
   public void setObservations(List<AiSceneAnalysisLiveObservation> observations) {
     this.observations = observations;
+  }
+
+
+  public AiSceneAnalysisLiveResult addKeyMomentsItem(AiSceneAnalysisLiveKeyMoment keyMomentsItem) {
+    this.keyMoments.add(keyMomentsItem);
+    return this;
+  }
+
+  /**
+   * Complete set of current key moments for this result sequence, ordered by ascending startInSeconds. Ordering of moments with equal start times is unspecified. An empty or omitted array means there are no current key moments in this snapshot, not that the previous collection is unchanged.  Moments may be refined or withdrawn in later result sequences until the final result. A refined moment retains its ID; a withdrawn moment is absent from subsequent snapshots and its ID is never reused. Consumers identify moments by ID and detect changes through lastUpdatedSequence, not array position. Changing array position alone or marking the result final does not change lastUpdatedSequence.  Every referenced observation is active in the same result snapshot. Moment references are updated or moments withdrawn when supporting observations are replaced or removed. 
+   * @return keyMoments
+   */
+  public List<AiSceneAnalysisLiveKeyMoment> getKeyMoments() {
+    return keyMoments;
+  }
+
+  /**
+   * Complete set of current key moments for this result sequence, ordered by ascending startInSeconds. Ordering of moments with equal start times is unspecified. An empty or omitted array means there are no current key moments in this snapshot, not that the previous collection is unchanged.  Moments may be refined or withdrawn in later result sequences until the final result. A refined moment retains its ID; a withdrawn moment is absent from subsequent snapshots and its ID is never reused. Consumers identify moments by ID and detect changes through lastUpdatedSequence, not array position. Changing array position alone or marking the result final does not change lastUpdatedSequence.  Every referenced observation is active in the same result snapshot. Moment references are updated or moments withdrawn when supporting observations are replaced or removed. 
+   *
+   * @param keyMoments
+   *        Complete set of current key moments for this result sequence, ordered by ascending startInSeconds. Ordering of moments with equal start times is unspecified. An empty or omitted array means there are no current key moments in this snapshot, not that the previous collection is unchanged.  Moments may be refined or withdrawn in later result sequences until the final result. A refined moment retains its ID; a withdrawn moment is absent from subsequent snapshots and its ID is never reused. Consumers identify moments by ID and detect changes through lastUpdatedSequence, not array position. Changing array position alone or marking the result final does not change lastUpdatedSequence.  Every referenced observation is active in the same result snapshot. Moment references are updated or moments withdrawn when supporting observations are replaced or removed. 
+   */
+  public void setKeyMoments(List<AiSceneAnalysisLiveKeyMoment> keyMoments) {
+    this.keyMoments = keyMoments;
   }
 
 
@@ -304,12 +333,13 @@ public class AiSceneAnalysisLiveResult {
         Objects.equals(this.analyzedEndTimeSeconds, aiSceneAnalysisLiveResult.analyzedEndTimeSeconds) &&
         Objects.equals(this.sourceGaps, aiSceneAnalysisLiveResult.sourceGaps) &&
         Objects.equals(this.metadata, aiSceneAnalysisLiveResult.metadata) &&
-        Objects.equals(this.observations, aiSceneAnalysisLiveResult.observations);
+        Objects.equals(this.observations, aiSceneAnalysisLiveResult.observations) &&
+        Objects.equals(this.keyMoments, aiSceneAnalysisLiveResult.keyMoments);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(analysisId, encodingId, sequence, producedAt, mediaTimeOriginUnixMs, isFinal, analyzedStartTimeSeconds, analyzedEndTimeSeconds, sourceGaps, metadata, observations);
+    return Objects.hash(analysisId, encodingId, sequence, producedAt, mediaTimeOriginUnixMs, isFinal, analyzedStartTimeSeconds, analyzedEndTimeSeconds, sourceGaps, metadata, observations, keyMoments);
   }
 
   @Override
@@ -328,6 +358,7 @@ public class AiSceneAnalysisLiveResult {
     sb.append("    sourceGaps: ").append(toIndentedString(sourceGaps)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    observations: ").append(toIndentedString(observations)).append("\n");
+    sb.append("    keyMoments: ").append(toIndentedString(keyMoments)).append("\n");
     sb.append("}");
     return sb.toString();
   }
