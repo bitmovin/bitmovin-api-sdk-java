@@ -3,6 +3,7 @@ package com.bitmovin.api.sdk.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitmovin.api.sdk.model.AutoLevelSetup;
+import com.bitmovin.api.sdk.model.Av1DetailPreservationMode;
 import com.bitmovin.api.sdk.model.Av1DynamicRangeFormat;
 import com.bitmovin.api.sdk.model.Av1PresetConfiguration;
 import com.bitmovin.api.sdk.model.ColorConfig;
@@ -32,6 +33,9 @@ public class Av1VideoConfiguration extends VideoConfiguration {
 
   @JsonProperty("maxLevel")
   private LevelAv1 maxLevel;
+
+  @JsonProperty("detailPreservationMode")
+  private Av1DetailPreservationMode detailPreservationMode;
 
   @JsonProperty("dynamicRangeFormat")
   private Av1DynamicRangeFormat dynamicRangeFormat;
@@ -100,6 +104,25 @@ public class Av1VideoConfiguration extends VideoConfiguration {
    */
   public void setMaxLevel(LevelAv1 maxLevel) {
     this.maxLevel = maxLevel;
+  }
+
+
+  /**
+   * Tunes the encoder to preserve film grain and fine detail. Defaults to OFF.
+   * @return detailPreservationMode
+   */
+  public Av1DetailPreservationMode getDetailPreservationMode() {
+    return detailPreservationMode;
+  }
+
+  /**
+   * Tunes the encoder to preserve film grain and fine detail. Defaults to OFF.
+   *
+   * @param detailPreservationMode
+   *        Tunes the encoder to preserve film grain and fine detail. Defaults to OFF.
+   */
+  public void setDetailPreservationMode(Av1DetailPreservationMode detailPreservationMode) {
+    this.detailPreservationMode = detailPreservationMode;
   }
 
 
@@ -203,6 +226,7 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     return Objects.equals(this.presetConfiguration, av1VideoConfiguration.presetConfiguration) &&
         Objects.equals(this.autoLevelSetup, av1VideoConfiguration.autoLevelSetup) &&
         Objects.equals(this.maxLevel, av1VideoConfiguration.maxLevel) &&
+        Objects.equals(this.detailPreservationMode, av1VideoConfiguration.detailPreservationMode) &&
         Objects.equals(this.dynamicRangeFormat, av1VideoConfiguration.dynamicRangeFormat) &&
         Objects.equals(this.masterDisplay, av1VideoConfiguration.masterDisplay) &&
         Objects.equals(this.maxContentLightLevel, av1VideoConfiguration.maxContentLightLevel) &&
@@ -212,7 +236,7 @@ public class Av1VideoConfiguration extends VideoConfiguration {
 
   @Override
   public int hashCode() {
-    return Objects.hash(presetConfiguration, autoLevelSetup, maxLevel, dynamicRangeFormat, masterDisplay, maxContentLightLevel, maxPictureAverageLightLevel, super.hashCode());
+    return Objects.hash(presetConfiguration, autoLevelSetup, maxLevel, detailPreservationMode, dynamicRangeFormat, masterDisplay, maxContentLightLevel, maxPictureAverageLightLevel, super.hashCode());
   }
 
   @Override
@@ -223,6 +247,7 @@ public class Av1VideoConfiguration extends VideoConfiguration {
     sb.append("    presetConfiguration: ").append(toIndentedString(presetConfiguration)).append("\n");
     sb.append("    autoLevelSetup: ").append(toIndentedString(autoLevelSetup)).append("\n");
     sb.append("    maxLevel: ").append(toIndentedString(maxLevel)).append("\n");
+    sb.append("    detailPreservationMode: ").append(toIndentedString(detailPreservationMode)).append("\n");
     sb.append("    dynamicRangeFormat: ").append(toIndentedString(dynamicRangeFormat)).append("\n");
     sb.append("    masterDisplay: ").append(toIndentedString(masterDisplay)).append("\n");
     sb.append("    maxContentLightLevel: ").append(toIndentedString(maxContentLightLevel)).append("\n");
